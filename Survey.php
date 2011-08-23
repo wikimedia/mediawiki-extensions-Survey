@@ -58,8 +58,11 @@ $wgAutoloadClasses['Survey'] 				= dirname( __FILE__ ) . '/includes/Survey.class
 $wgAutoloadClasses['SpecialSurveys'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
 $wgAutoloadClasses['SpecialSurveyStats'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
 
-$wgSpecialPages['SpecialSurveys'] 			= 'SpecialSurveys';
-$wgSpecialPages['SpecialSurveyStats'] 		= 'SpecialSurveyStats';
+$wgSpecialPages['Surveys'] 					= 'SpecialSurveys';
+$wgSpecialPages['SurveyStats'] 				= 'SpecialSurveyStats';
+
+$wgSpecialPageGroups['Surveys'] 			= 'other';
+$wgSpecialPageGroups['SurveyStats'] 		= 'other';
 
 $wgAPIModules['addsurvey'] 					= 'ApiAddSurvey';
 $wgAPIModules['deletesurvey'] 				= 'ApiDeleteSurvey';
@@ -71,6 +74,20 @@ $wgHooks['LoadExtensionSchemaUpdates'][] 	= 'SurveyHooks::onSchemaUpdate';
 
 $wgAvailableRights[] = 'surveyadmin';
 $wgAvailableRights[] = 'surveysubmit';
+
+# Users that can manage the surveys.
+$wgGroupPermissions['*'            ]['surveyadmin'] = false;
+$wgGroupPermissions['user'         ]['surveyadmin'] = false;
+$wgGroupPermissions['autoconfirmed']['surveyadmin'] = false;
+$wgGroupPermissions['bot'          ]['surveyadmin'] = false;
+$wgGroupPermissions['sysop'        ]['surveyadmin'] = true;
+
+# Users that can submit surveys.
+$wgGroupPermissions['*'            ]['surveysubmit'] = true;
+$wgGroupPermissions['user'         ]['surveysubmit'] = true;
+$wgGroupPermissions['autoconfirmed']['surveysubmit'] = true;
+$wgGroupPermissions['bot'          ]['surveysubmit'] = false;
+$wgGroupPermissions['sysop'        ]['surveysubmit'] = true;
 
 $egSurveyScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath;
 $egSurveyScriptPath .= '/Survey/resources';
