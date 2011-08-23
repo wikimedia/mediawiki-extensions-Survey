@@ -1,0 +1,13 @@
+These is the readme file for the Survey extension.
+	
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
+Latest version of the readme file: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/README?view=co
+
+== About ==
+
+Survey is a MediaWiki extension that allows administrators to define surveys
+that can then be shown to specified groups of users.
+
+=== Feature overview ===
+
+* 

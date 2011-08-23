@@ -1,0 +1,44 @@
+These is the install file for the Survey extension.
+	
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
+Latest version of the install file: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/INSTALL?view=co
+
+
+== Requirements ==
+
+Survey requires:
+
+* MediaWiki 1.16 or above
+* PHP 5.2 or above
+
+== Download ==
+
+You can find the current version of Survey on the [https://code.google.com/p/mwsuvey/downloads/list Google Code download page],
+as well as a [https://code.google.com/p/mwsuvey/downloads/list?can=1 list of legacy downloads].
+
+You can also get the code directly from SVN. Tags can be obtained via
+
+ svn checkout <nowiki>http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/REL_version</nowiki>
+
+Where 'version' is the version number of the tag, such as 0_1 (see the [http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/ available tags]).
+The latest code can be obtained from trunk:
+
+ svn checkout <nowiki>http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/Survey/</nowiki>
+
+== Installation ==
+
+Once you have downloaded the code, place the ''Survey'' directory within your MediaWiki
+'extensions' directory. Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
+
+# Survey
+require_once( "$IP/extensions/Survey/Survey.php" );
+
+== Configuration ==
+
+Configuration of Survey is done by assigning to $egSurveySettings in your
+[[Manual:LocalSettings.php|LocalSettings.php]] file. The options are
+listed below and their default is set in the Survey settings file [0].
+You should NOT modify the settings file, but can have a look at it to get an idea of
+how to use the  settings, in case the below descriptions do not suffice.
+
+[0] http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/Survey.settings.php?view=markup
