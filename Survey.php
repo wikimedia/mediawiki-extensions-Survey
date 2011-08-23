@@ -60,4 +60,33 @@ $wgAutoloadClasses['SpecialSurveyStats'] 	= dirname( __FILE__ ) . '/specials/Spe
 $wgSpecialPages['SpecialSurveys'] 			= 'SpecialSurveys';
 $wgSpecialPages['SpecialSurveyStats'] 		= 'SpecialSurveyStats';
 
+$wgAPIModules['addsurvey'] 					= 'ApiAddSurvey';
+$wgAPIModules['deletesurvey'] 				= 'ApiDeleteSurvey';
+$wgAPIModules['editsurvey'] 				= 'ApiEditSurvey';
+$wgAPIModules['submitsurvey'] 				= 'ApiSubmitSurvey';
+$wgAPIListModules['surveys'] 				= 'ApiQuerySurveys';
+
+$wgHooks['LoadExtensionSchemaUpdates'][] 	= 'SurveyHooks::onSchemaUpdate';
+
+$wgAvailableRights[] = 'surveyadmin';
+$wgAvailableRights[] = 'surveysubmit';
+
+$egSurveyScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath;
+$egSurveyScriptPath .= '/Survey/resources';
+
+$moduleTemplate = array(
+	'localBasePath' => dirname( __FILE__ ),
+	'remoteBasePath' => $egSurveyScriptPath
+);
+
+$wgResourceModules['ext.survey'] = $moduleTemplate + array(
+	'styles' => array(),
+	'scripts' => array(
+		'jquery.survey.js'
+	),
+	'dependencies' => array(),
+	'messages' => array(
+	)
+);
+
 $egSurveySettings = array();

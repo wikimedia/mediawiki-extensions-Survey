@@ -13,6 +13,46 @@
  */
 final class SurveyHooks {
 	
-	
+	/**
+	 * Schema update to set up the needed database tables.
+	 *
+	 * @since 0.1
+	 *
+	 * @param DatabaseUpdater $updater
+	 *
+	 * @return true
+	 */
+	public static function onSchemaUpdate( /* DatabaseUpdater */ $updater = null ) {
+		global $wgDBtype;
+
+		if ( $wgDBtype == 'mysql' ) {
+            $updater->addExtensionUpdate( array(
+                'addTable',
+                'surveys',
+                dirname( __FILE__ ) . '/Survey.sql',
+                true
+            ) );
+            $updater->addExtensionUpdate( array(
+                'addTable',
+                'survey_questions',
+                dirname( __FILE__ ) . '/Survey.sql',
+                true
+            ) );
+			$updater->addExtensionUpdate( array(
+                'addTable',
+                'survey_submissions',
+                dirname( __FILE__ ) . '/Survey.sql',
+                true
+            ) );
+			$updater->addExtensionUpdate( array(
+                'addTable',
+                'survey_answers',
+                dirname( __FILE__ ) . '/Survey.sql',
+                true
+            ) );
+		}
+
+		return true;
+	}
 	
 }
