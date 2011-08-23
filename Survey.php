@@ -42,6 +42,7 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgExtensionMessagesFiles['Survey'] 		= dirname( __FILE__ ) . '/Survey.i18n.php';
+$wgExtensionMessagesFiles['SurveyAlias']	= dirname( __FILE__ ) . '/Survey.alias.php';
 
 $wgAutoloadClasses['SurveyHooks'] 			= dirname( __FILE__ ) . '/Survey.hooks.php';
 $wgAutoloadClasses['SurveySettings'] 		= dirname( __FILE__ ) . '/Survey.settings.php';
