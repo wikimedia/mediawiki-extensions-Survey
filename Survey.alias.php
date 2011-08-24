@@ -17,5 +17,6 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'Surveys' => array( 'Surveys' ),
+	'Survey' => array( 'Survey' ),
 	'SurveyStats' => array( 'SurveyStats', 'SurveyStatistics' ),
 );

@@ -59,14 +59,21 @@ $wgAutoloadClasses['SurveyDBClass']	 		= dirname( __FILE__ ) . '/includes/Survey
 $wgAutoloadClasses['SurveyQuestion'] 		= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
 $wgAutoloadClasses['SurveySubmission'] 		= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
 
+$wgAutoloadClasses['SpecialSurvey'] 		= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
+$wgAutoloadClasses['SpecialSurveyPage'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyPage.php';
 $wgAutoloadClasses['SpecialSurveys'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
 $wgAutoloadClasses['SpecialSurveyStats'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
+$wgAutoloadClasses['SpecialTakeSurvey'] 	= dirname( __FILE__ ) . '/specials/SpecialTakeSurvey.php';
 
+$wgSpecialPages['Survey'] 					= 'SpecialSurvey';
 $wgSpecialPages['Surveys'] 					= 'SpecialSurveys';
 $wgSpecialPages['SurveyStats'] 				= 'SpecialSurveyStats';
+$wgSpecialPages['TakeSurvey'] 				= 'SpecialTakeSurvey';
 
+$wgSpecialPageGroups['Survey'] 				= 'other';
 $wgSpecialPageGroups['Surveys'] 			= 'other';
 $wgSpecialPageGroups['SurveyStats'] 		= 'other';
+$wgSpecialPageGroups['TakeSurvey'] 			= 'other';
 
 $wgAPIModules['addsurvey'] 					= 'ApiAddSurvey';
 $wgAPIModules['deletesurvey'] 				= 'ApiDeleteSurvey';

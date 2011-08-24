@@ -243,8 +243,6 @@ class Survey extends SurveyDBClass {
 	 * @return boolean Success indicator
 	 */
 	public function removeFromDB() {
-		$sucecss = parent::removeFromDB();
-		
 		$dbr= wfgetDB( DB_SLAVE );
 		
 		$submissionsForSurvey = $dbr->select(
@@ -257,10 +255,7 @@ class Survey extends SurveyDBClass {
 		
 		$dbw->begin();
 		
-		$sucecss = $dbw->delete(
-			'surveys',
-			array( 'survey_id' => $this->id )
-		);
+		$sucecss = parent::removeFromDB();
 		
 		$sucecss = $dbw->delete(
 			'survey_questions',
