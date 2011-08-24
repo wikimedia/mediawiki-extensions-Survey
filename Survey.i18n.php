@@ -25,4 +25,7 @@ $messages['en'] = array(
 
 	'special-surveys' => 'Surveys admin',
 	'special-surveystats' => 'Survey statistics',
+
+	'survey-err-id-xor-name' => 'You need to provide either the id or the name of the survey to submit',
+	'survey-err-survey-name-unknown' => 'There is no survey with the name "$1"'
 );

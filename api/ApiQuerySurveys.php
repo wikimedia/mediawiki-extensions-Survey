@@ -35,6 +35,9 @@ class ApiQuerySurveys extends ApiQueryBase {
 
 		foreach ( $params['ids'] as $surveyId ) {
 			$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 )->toArray();
+			foreach ( $survey['questions'] as $nr => $question ) {
+				$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
+			}
 			$this->getResult()->setIndexedTagName( $survey['questions'], 'question' );
 			$surveys[] = $survey;
 		}

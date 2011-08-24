@@ -54,7 +54,9 @@ $wgAutoloadClasses['ApiQuerySurveys'] 		= dirname( __FILE__ ) . '/api/ApiQuerySu
 $wgAutoloadClasses['ApiSubmitSurvey'] 		= dirname( __FILE__ ) . '/api/ApiSubmitSurvey.php';
 
 $wgAutoloadClasses['Survey'] 				= dirname( __FILE__ ) . '/includes/Survey.class.php';
+$wgAutoloadClasses['SurveyAnswer']	 		= dirname( __FILE__ ) . '/includes/SurveyAnswer.php';
 $wgAutoloadClasses['SurveyQuestion'] 		= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
+$wgAutoloadClasses['SurveySubmission'] 		= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
 
 $wgAutoloadClasses['SpecialSurveys'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
 $wgAutoloadClasses['SpecialSurveyStats'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';

@@ -106,6 +106,15 @@ class SurveyQuestion {
 		return self::newFromArray( $args );
 	}
 	
+	/**
+	 * Unserializes a survey question in the form of an associative array.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $args
+	 * 
+	 * @return SurveyQuestion
+	 */
 	public static function newFromArray( array $args ) {
 		return new self(
 			array_key_exists( 'id', $args ) ? $args['id'] : null,
@@ -129,6 +138,14 @@ class SurveyQuestion {
 		return str_replace( '=', '!', base64_encode( FormatJson::encode( $this->toArray() ) ) );
 	}
 	
+	/**
+	 * Serializes the survey question to an associative array which
+	 * can then easily be converted into JSON or similar.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
 	public function toArray() {
 		$args = array(
 			'text' => $this->text,
