@@ -11,15 +11,7 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SurveyAnswer {
-	
-	/**
-	 * The ID of the question DB record, or null if not inserted yet.
-	 * 
-	 * @since 0.1
-	 * @var integer|null
-	 */
-	protected $id;
+class SurveyAnswer extends SurveyDBClass {
 	
 	/**
 	 * The answer text.
@@ -63,57 +55,17 @@ class SurveyAnswer {
 	}
 	
 	/**
-	 * Writes the answer to the database, either updating it
-	 * when it already exists, or inserting it when it doesn't.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getDBTable()
 	 */
-	public function writeToDB() {
-		if ( is_null( $this->id ) ) {
-			return $this->insertIntoDB();
-		}
-		else {
-			return  $this->updateInDB();
-		}
+	protected function getDBTable() {
+		return 'survey_answers';
 	}
 	
 	/**
-	 * Updates the answer in the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getIDField()
 	 */
-	protected function updateInDB() {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		return $dbr->update(
-			'survey_answers',
-			$this->getWriteValues(),
-			array( 'answer_id' => $this->id )
-		);
-	}
-	
-	/**
-	 * Inserts the answer into the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function insertIntoDB() {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		$result = $dbr->insert(
-			'survey_answers',
-			$this->getWriteValues()
-		);
-		
-		$this->id = $dbr->insertId();
-		
-		return $result;
+	protected function getIDField() {
+		return 'answer_id';
 	}
 	
 	/**
@@ -129,17 +81,6 @@ class SurveyAnswer {
 			'answer_question_id' => $this->questionId,
 			'answer_text' => $this->text,
 		);
-	}
-	
-	/**
-	 * Returns the answer database id.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return integer|null
-	 */
-	public function getId() {
-		return $this->id;
 	}
 	
 }

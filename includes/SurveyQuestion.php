@@ -11,7 +11,7 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SurveyQuestion {
+class SurveyQuestion extends SurveyDBClass {
 	
 	public static $TYPE_TEXT = 0;
 	public static $TYPE_NUMBER = 1;
@@ -19,12 +19,12 @@ class SurveyQuestion {
 	public static $TYPE_RADIO = 3;
 	
 	/**
-	 * The ID of the question DB record, or null if not inserted yet.
+	 * The ID of the survey this question belongs to.
 	 * 
 	 * @since 0.1
-	 * @var integer|null
+	 * @var integer
 	 */
-	protected $id;
+	protected $surveyId;
 	
 	/**
 	 * The question text.
@@ -76,14 +76,16 @@ class SurveyQuestion {
 	 * @since 0.1
 	 * 
 	 * @param integer|null $id
+	 * @param integer $surveyId
 	 * @param string $text
 	 * @param integer $type
 	 * @param boolean $required
 	 * @param array $answers
 	 * @param boolean $removed
 	 */
-	public function __construct( $id, $text, $type, $required, array $answers = array(), $removed = false ) {
+	public function __construct( $id, $surveyId, $text, $type, $required, array $answers = array(), $removed = false ) {
 		$this->id = $id;
+		$this->surveyId = $surveyId;
 		$this->text = $text;
 		$this->type = $type;
 		$this->required = $required;
@@ -191,6 +193,7 @@ class SurveyQuestion {
 			'survey_questions',
 			array(
 				'question_id',
+				'question_survey_id',
 				'question_text',
 				'question_type',
 				'question_required',
@@ -208,6 +211,7 @@ class SurveyQuestion {
 		foreach ( $questions as $question ) {
 			$sQuestions[] = new SurveyQuestion(
 				$question->question_id,
+				$question->question_survey_id,
 				$question->question_text,
 				$question->question_type,
 				$question->question_required,
@@ -219,63 +223,17 @@ class SurveyQuestion {
 	}
 	
 	/**
-	 * Writes the question to the database, either updating it
-	 * when it already exists, or inserting it when it doesn't.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer $surveyId
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getDBTable()
 	 */
-	public function writeToDB( $surveyId ) {
-		if ( is_null( $this->id ) ) {
-			return $this->insertIntoDB( $surveyId );
-		}
-		else {
-			return  $this->updateInDB( $surveyId );
-		}
+	protected function getDBTable() {
+		return 'survey_questions';
 	}
 	
 	/**
-	 * Updates the question in the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer $surveyId
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getIDField()
 	 */
-	protected function updateInDB( $surveyId ) {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		return $dbr->update(
-			'survey_questions',
-			$this->getWriteValues( $surveyId ),
-			array( 'question_id' => $this->id )
-		);
-	}
-	
-	/**
-	 * Inserts the question into the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer $surveyId
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function insertIntoDB( $surveyId ) {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		$result = $dbr->insert(
-			'survey_questions',
-			$this->getWriteValues( $surveyId )
-		);
-		
-		$this->id = $dbr->insertId();
-		
-		return $result;
+	protected function getIDField() {
+		return 'question_id';
 	}
 	
 	/**
@@ -287,25 +245,14 @@ class SurveyQuestion {
 	 * 
 	 * @return array
 	 */
-	protected function getWriteValues( $surveyId ) {
+	protected function getWriteValues() {
 		return array(
-			'question_survey_id' => $surveyId,
+			'question_survey_id' => $this->surveyId,
 			'question_text' => $this->text,
 			'question_type' => $this->type,
 			'question_required' => $this->required,
 			'question_answers' => serialize( $this->answers ), 
 		);
-	}
-	
-	/**
-	 * Returns the question database id.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return integer|null
-	 */
-	public function getId() {
-		return $this->id;
 	}
 	
 }

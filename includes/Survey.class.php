@@ -11,15 +11,7 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class Survey {
-	
-	/**
-	 * The ID of the surveys DB record, or null if not inserted yet.
-	 * 
-	 * @since 0.1
-	 * @var integer|null
-	 */
-	protected $id;
+class Survey extends SurveyDBClass {
 	
 	/**
 	 * The name of the survey.
@@ -44,6 +36,34 @@ class Survey {
 	 * @var array of SurveyQuestion
 	 */
 	protected $questions;
+	
+	/**
+	 * @see SurveyDBClass::getDBTable()
+	 */
+	protected function getDBTable() {
+		return 'surveys';
+	}
+	
+	/**
+	 * @see SurveyDBClass::getIDField()
+	 */
+	protected function getIDField() {
+		return 'survey_id';
+	}
+	
+	/**
+	 * Gets the fields => values to write to the surveys table. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	protected function getWriteValues() {
+		return array(
+			'survey_enabled' => $this->enabled,
+			'survey_name' => $this->name, 
+		);
+	}
 	
 	/**
 	 * Returns the Survey with specified name, or false if there is no such survey.
@@ -151,19 +171,14 @@ class Survey {
 	 * @return boolean Success indicator
 	 */
 	public function writeToDB() {
-		if ( is_null( $this->id ) ) {
-			$success = $this->insertIntoDB();
-		}
-		else {
-			$success = $this->updateInDB();
-		}
+		$success = parent::writeToDB();
 		
 		$dbw = wfGetDB( DB_MASTER );
 		
 		$dbw->begin();
 		
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
-			$success = $question->writeToDB( $this->id ) && $success;
+			$success = $question->writeToDB() && $success;
 		}
 		
 		$dbw->commit();
@@ -171,69 +186,6 @@ class Survey {
 		return $success;
 	}
 	
-	/**
-	 * Updates the survey in the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function updateInDB() {
-		$dbw = wfGetDB( DB_MASTER );
-		
-		$success = $dbw->update(
-			'surveys',
-			$this->getWriteValues(),
-			array( 'survey_id' => $this->id )
-		);
-		
-		return $success;
-	}
-	
-	/**
-	 * Inserts the survey into the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function insertIntoDB() {
-		$dbw = wfGetDB( DB_MASTER );
-		
-		$success = $dbw->insert(
-			'surveys',
-			$this->getWriteValues()
-		);
-		
-		$this->id = $dbw->insertId();
-		
-		return $success;
-	}
-	
-	/**
-	 * Gets the fields => values to write to the surveys table. 
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return array
-	 */
-	protected function getWriteValues() {
-		return array(
-			'survey_enabled' => $this->enabled,
-			'survey_name' => $this->name, 
-		);
-	}
-	
-	/**
-	 * Returns the survey database id.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return integer|null
-	 */
-	public function getId() {
-		return $this->id;
-	}
 	
 	/**
 	 * Returns the survey name.

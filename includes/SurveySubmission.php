@@ -11,15 +11,7 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SurveySubmission {
-	
-	/**
-	 * The ID of the question DB record, or null if not inserted yet.
-	 * 
-	 * @since 0.1
-	 * @var integer|null
-	 */
-	protected $id;
+class SurveySubmission extends SurveyDBClass {
 	
 	/**
 	 * The ID of the survey this submission is for.
@@ -74,57 +66,17 @@ class SurveySubmission {
 	}
 	
 	/**
-	 * Writes the submission to the database, either updating it
-	 * when it already exists, or inserting it when it doesn't.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getDBTable()
 	 */
-	public function writeToDB() {
-		if ( is_null( $this->id ) ) {
-			return $this->insertIntoDB();
-		}
-		else {
-			return  $this->updateInDB();
-		}
+	protected function getDBTable() {
+		return 'survey_submissions';
 	}
 	
 	/**
-	 * Updates the submission in the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
+	 * @see SurveyDBClass::getIDField()
 	 */
-	protected function updateInDB() {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		return $dbr->update(
-			'survey_sumissions',
-			$this->getWriteValues(),
-			array( 'submission_id' => $this->id )
-		);
-	}
-	
-	/**
-	 * Inserts the survey into the database.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function insertIntoDB() {
-		$dbr = wfGetDB( DB_MASTER );
-		
-		$result = $dbr->insert(
-			'survey_sumissions',
-			$this->getWriteValues()
-		);
-		
-		$this->id = $dbr->insertId();
-		
-		return $result;
+	protected function getIDField() {
+		return 'submission_id';
 	}
 	
 	/**
@@ -141,17 +93,6 @@ class SurveySubmission {
 			'submission_page_id' => $this->pageId,
 			'submission_time' => $this->timeStamp,
 		);
-	}
-	
-	/**
-	 * Returns the submission database id.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return integer|null
-	 */
-	public function getId() {
-		return $this->id;
 	}
 	
 }
