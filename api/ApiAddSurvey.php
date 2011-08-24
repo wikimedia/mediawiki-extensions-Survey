@@ -31,7 +31,7 @@ class ApiAddSurvey extends ApiBase {
 			null,
 			$params['name'],
 			$params['enabled'] == 1,
-			$params['questions']
+			$params['questions'] // TODO
 		);
 		
 		$this->getResult()->addValue(

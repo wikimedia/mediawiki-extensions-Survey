@@ -45,9 +45,74 @@ class Survey {
 	 */
 	protected $questions;
 	
-	public static function newFromDBResult() {
-		
+	/**
+	 * Returns the Survey with specified name, or false if there is no such survey.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $surveyName
+	 * @param boolean $loadQuestions
+	 * 
+	 * @return Survey or false
+	 */
+	public static function newFromName( $surveyName, $loadQuestions = true ) {
+		return self::newFromDB( array( 'survey_name' => $surveyName ), $loadQuestions );
 	}
+	
+	/**
+	 * Returns the Survey with specified ID, or false if there is no such survey.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param integer surveyId
+	 * @param boolean $loadQuestions
+	 * 
+	 * @return Survey or false
+	 */
+	public static function newFromId( $surveyId, $loadQuestions = true ) {
+		return self::newFromDB( array( 'survey_id' => surveyId ), $loadQuestions );
+	}
+	
+	/**
+	 * Returns a new instance of Survey build from a database result
+	 * obtained by doing a select with the porvided conditions on the surveys table.
+	 * If no survey matches the conditions, false will be returned.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $conditions
+	 * @param boolean $loadQuestions
+	 * 
+	 * @return Survey or false
+	 */
+	protected static function newFromDB( array $conditions, $loadQuestions = true ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		
+		$survey = $dbr->selectRow(
+			'surveys',
+			array(
+				'survey_id',
+				'survey_name',
+				'survey_enabled',
+			),
+			$conditions
+		);
+		
+		if ( !$survey ) {
+			return false;
+		}
+
+		$questions = $loadQuestions ? self::getQuestionsFromDB( $dbr, $survey->survey_id ) : array();
+		
+		return new self(
+			$survey->survey_id,
+			$survey->survey_name,
+			$survey->survey_enabled,
+			$questions
+		);
+	}
+	
+
 	
 	/**
 	 * Constructor.
@@ -63,6 +128,7 @@ class Survey {
 		$this->id = $id;
 		$this->name = $name;
 		$this->enabled = $enabled;
+		
 		$this->questions = $questions;
 	}
 	
@@ -84,7 +150,7 @@ class Survey {
 	}
 	
 	/**
-	 * Updates the group in the database.
+	 * Updates the survey in the database.
 	 * 
 	 * @since 0.1
 	 * 
@@ -101,7 +167,7 @@ class Survey {
 	}
 	
 	/**
-	 * Inserts the group into the database.
+	 * Inserts the survey into the database.
 	 * 
 	 * @since 0.1
 	 * 
