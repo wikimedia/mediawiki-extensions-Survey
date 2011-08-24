@@ -31,17 +31,29 @@ class ApiAddSurvey extends ApiBase {
 			$question = SurveyQuestion::newFromUrlData( $question );
 		}
 		
-		$survey = new Survey(
-			null,
-			$params['name'],
-			$params['enabled'] == 1,
-			$params['questions']
-		);
+		try {
+			$survey = new Survey(
+				null,
+				$params['name'],
+				$params['enabled'] == 1,
+				$params['questions']
+			);
+			
+			$success = $survey->writeToDB();
+		}
+		catch ( DBQueryError $ex ) {
+			if ( $ex->errno == 1062 ) {
+				$this->dieUsage( wfMsgExt( 'survey-err-duplicate-name', 'parsemag', $params['name'] ), 'duplicate-survey-name' );
+			}
+			else {
+				throw $ex;
+			}
+		}
 		
 		$this->getResult()->addValue(
 			null,
 			'success',
-			$survey->writeToDB()
+			$success
 		);
 		
 		$this->getResult()->addValue(

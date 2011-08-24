@@ -145,7 +145,7 @@ class Survey extends SurveyDBClass {
 	 * @param boolean $enabled
 	 * @param array $questions
 	 */
-	public function __construct( $id, $name, $enabled, array $questions = array() ) {
+	public function __construct( $id, $name = '', $enabled = false, array $questions = array() ) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->enabled = $enabled;
@@ -233,6 +233,60 @@ class Survey extends SurveyDBClass {
 		}
 		
 		return $data;
+	}
+	
+	/**
+	 * Removes the object from the database.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean Success indicator
+	 */
+	public function removeFromDB() {
+		$sucecss = parent::removeFromDB();
+		
+		$dbr= wfgetDB( DB_SLAVE );
+		
+		$submissionsForSurvey = $dbr->select(
+			'survey_submissions',
+			array( 'submission_id' ),
+			array( 'submission_survey_id' => $this->id )
+		);
+		
+		$dbw = wfgetDB( DB_MASTER );
+		
+		$dbw->begin();
+		
+		$sucecss = $dbw->delete(
+			'surveys',
+			array( 'survey_id' => $this->id )
+		);
+		
+		$sucecss = $dbw->delete(
+			'survey_questions',
+			array( 'question_survey_id' => $this->id )
+		) && $sucecss;
+		
+		$sucecss = $dbw->delete(
+			'survey_submissions',
+			array( 'submission_survey_id' => $this->id )
+		) && $sucecss;
+		
+		foreach ( $submissionsForSurvey as $nr => $submission ) {
+			$sucecss = $dbw->delete(
+				'survey_answers',
+				array( 'answer_submission_id' => $submission->submission_id )
+			) && $sucecss;
+			
+			if ( $nr % 500 == 0 ) {
+				$dbw->commit();
+				$dbw->begin();
+			}
+		}
+		
+		$dbw->commit();
+		
+		return $sucecss;
 	}
 	
 }

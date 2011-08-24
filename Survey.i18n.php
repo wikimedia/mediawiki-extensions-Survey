@@ -27,5 +27,6 @@ $messages['en'] = array(
 	'special-surveystats' => 'Survey statistics',
 
 	'survey-err-id-xor-name' => 'You need to provide either the id or the name of the survey to submit',
-	'survey-err-survey-name-unknown' => 'There is no survey with the name "$1"'
+	'survey-err-survey-name-unknown' => 'There is no survey with the name "$1"',
+	'survey-err-duplicate-name' => 'There already is a survey with name "$1"',
 );

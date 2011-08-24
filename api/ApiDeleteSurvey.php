@@ -30,7 +30,8 @@ class ApiDeleteSurvey extends ApiBase {
 		$everythingOk = true;
 		
 		foreach ( $params['ids'] as $id ) {
-			$everythingOk = $this->deleteSurvey( $id ) && $everythingOk;
+			$surey = new Survey( $id );
+			$everythingOk = $surey->removeFromDB() && $everythingOk;
 		}
 		
 		$this->getResult()->addValue(
@@ -40,60 +41,6 @@ class ApiDeleteSurvey extends ApiBase {
 		);
 	}
 	
-	/**
-	 * Delete the survey with provided id.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer $id
-	 * 
-	 * @return boolean Success indicator
-	 */
-	protected function deleteSurvey( $id ) {
-		$dbr = wfgetDB( DB_SLAVE );
-		
-		$submissionsForSurvey = $dbr->select(
-			'survey_submissions',
-			array( 'submission_id' ),
-			array( 'submission_survey_id' => $id )
-		);
-		
-		$dbw = wfgetDB( DB_MASTER );
-		
-		$dbw->begin();
-		
-		$everythingOk = $dbw->delete(
-			'surveys',
-			array( 'survey_id' => $id )
-		);
-		
-		$everythingOk = $dbw->delete(
-			'survey_questions',
-			array( 'question_survey_id' => $id )
-		) && $everythingOk;
-		
-		$everythingOk = $dbw->delete(
-			'survey_submissions',
-			array( 'submission_survey_id' => $id )
-		) && $everythingOk;
-		
-		foreach ( $submissionsForSurvey as $nr => $submission ) {
-			$everythingOk = $dbw->delete(
-				'survey_answers',
-				array( 'answer_submission_id' => $submission->submission_id )
-			) && $everythingOk;
-			
-			if ( $nr % 500 == 0 ) {
-				$dbw->commit();
-				$dbw->begin();
-			}
-		}
-		
-		$dbw->commit();
-		
-		return $everythingOk;
-	}
-
 	public function getAllowedParams() {
 		return array(
 			'ids' => array(
