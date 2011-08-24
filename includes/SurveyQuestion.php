@@ -56,6 +56,16 @@ class SurveyQuestion {
 	protected $answers;
 	
 	/**
+	 * Indicated if the question was removed. 
+	 * Removed questions are kept in the db so their answers can
+	 * still be used untill the survey itself gets removed.
+	 * 
+	 * @since 0.1
+	 * @var boolean
+	 */
+	protected $removed;
+	
+	/**
 	 * Constructor.
 	 * 
 	 * @since 0.1
@@ -65,13 +75,62 @@ class SurveyQuestion {
 	 * @param integer $type
 	 * @param boolean $required
 	 * @param array $answers
+	 * @param boolean $removed
 	 */
-	public function __construct( $id, $text, $type, $required, array $answers = array() ) {
+	public function __construct( $id, $text, $type, $required, array $answers = array(), $removed = false ) {
 		$this->id = $id;
 		$this->text = $text;
 		$this->type = $type;
 		$this->required = $required;
 		$this->answers = $answers;
+		$this->removed = $removed;
+	}
+	
+	/**
+	 * Unserialization method for survey question data passed as a multi-value API parameter.
+	 * Uses base64 and replaces padding = by !, so the values does not contain any = or |. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $args
+	 * 
+	 * @return SurveyQuestion
+	 */
+	public static function newFromUrlData( $args ) {
+		$args = (array)FormatJson::decode( base64_decode( str_replace( '!', '=', $args ) ) );
+		
+		return new self(
+			array_key_exists( 'id', $args ) ? $args['id'] : null,
+			$args['text'],
+			$args['type'],
+			$args['required'],
+			$args['answers'],
+			$args['removed']
+		);
+	}
+	
+	/**
+	 * Serialization method for survey questions that need to be passed via multi-value API parameter.
+	 * Uses base64 and replaces padding = by !, so the values does not contain any = or |.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function toUrlData() {
+		$args = array(
+			'text' => $this->text,
+			'type' => $this->type,
+			'required' => $this->required,
+			'answers' => $this->answers,
+			'removed' => $this->removed,
+		);
+		
+		if ( !is_null( $this->id ) ) {
+			$args['id'] = $this->id;
+		}
+		
+		return str_replace( '=', '!', base64_encode( FormatJson::encode( $args ) ) );
 	}
 	
 	/**
@@ -134,14 +193,16 @@ class SurveyQuestion {
 	 * 
 	 * @since 0.1
 	 * 
+	 * @param integer $surveyId
+	 * 
 	 * @return boolean Success indicator
 	 */
-	public function writeToDB() {
+	public function writeToDB( $surveyId ) {
 		if ( is_null( $this->id ) ) {
-			return $this->insertIntoDB();
+			return $this->insertIntoDB( $surveyId );
 		}
 		else {
-			return  $this->updateInDB();
+			return  $this->updateInDB( $surveyId );
 		}
 	}
 	
@@ -150,14 +211,16 @@ class SurveyQuestion {
 	 * 
 	 * @since 0.1
 	 * 
+	 * @param integer $surveyId
+	 * 
 	 * @return boolean Success indicator
 	 */
-	protected function updateInDB() {
+	protected function updateInDB( $surveyId ) {
 		$dbr = wfGetDB( DB_MASTER );
 		
 		return $dbr->update(
 			'survey_questions',
-			$this->getWriteValues(),
+			$this->getWriteValues( $surveyId ),
 			array( 'question_id' => $this->id )
 		);
 	}
@@ -167,14 +230,16 @@ class SurveyQuestion {
 	 * 
 	 * @since 0.1
 	 * 
+	 * @param integer $surveyId
+	 * 
 	 * @return boolean Success indicator
 	 */
-	protected function insertIntoDB() {
+	protected function insertIntoDB( $surveyId ) {
 		$dbr = wfGetDB( DB_MASTER );
 		
 		$result = $dbr->insert(
 			'survey_questions',
-			$this->getWriteValues()
+			$this->getWriteValues( $surveyId )
 		);
 		
 		$this->id = $dbr->insertId();
@@ -187,10 +252,13 @@ class SurveyQuestion {
 	 * 
 	 * @since 0.1
 	 * 
+	 * @param integer $surveyId
+	 * 
 	 * @return array
 	 */
-	protected function getWriteValues() {
+	protected function getWriteValues( $surveyId ) {
 		return array(
+			'question_survey_id' => $surveyId,
 			'question_text' => $this->text,
 			'question_type' => $this->type,
 			'question_required' => $this->required,

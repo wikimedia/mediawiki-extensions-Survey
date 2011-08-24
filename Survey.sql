@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_questions (
   question_text            TEXT                NOT NULL,
   question_type            INT(2) unsigned     NOT NULL,
   question_required        INT(2) unsigned     NOT NULL,
-  question_answers         BLOB                NOT NULL
+  question_answers         BLOB                NOT NULL,
+  question_removed         TINYINT             NOT NULL default '0'
 ) /*$wgDBTableOptions*/;
 
 -- Submissions

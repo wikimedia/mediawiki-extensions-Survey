@@ -27,11 +27,15 @@ class ApiAddSurvey extends ApiBase {
 		
 		$params = $this->extractRequestParams();
 		
+		foreach ( $params['questions'] as &$question ) {
+			$question = SurveyQuestion::newFromUrlData( $question );
+		}
+		
 		$survey = new Survey(
 			null,
 			$params['name'],
 			$params['enabled'] == 1,
-			$params['questions'] // TODO
+			$params['questions']
 		);
 		
 		$this->getResult()->addValue(

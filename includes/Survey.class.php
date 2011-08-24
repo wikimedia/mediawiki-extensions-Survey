@@ -102,17 +102,18 @@ class Survey {
 			return false;
 		}
 
-		$questions = $loadQuestions ? self::getQuestionsFromDB( $dbr, $survey->survey_id ) : array();
-		
-		return new self(
+		$survey = new self(
 			$survey->survey_id,
 			$survey->survey_name,
-			$survey->survey_enabled,
-			$questions
+			$survey->survey_enabled
 		);
+		
+		if ( $loadQuestions ) {
+			$survey->loadQuestionsFromDB();
+		}
+		
+		return $survey;
 	}
-	
-
 	
 	/**
 	 * Constructor.
@@ -124,12 +125,21 @@ class Survey {
 	 * @param boolean $enabled
 	 * @param array $questions
 	 */
-	public function __construct( $id, $name, $enabled, array $questions ) {
+	public function __construct( $id, $name, $enabled, array $questions = array() ) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->enabled = $enabled;
 		
 		$this->questions = $questions;
+	}
+	
+	/**
+	 * Load the surveys questions from the database.
+	 * 
+	 * @since 0.1
+	 */
+	public function loadQuestionsFromDB() {
+		$this->questions = SurveyQuestion::getQuestionsForSurvey( $this->id );
 	}
 	
 	/**
@@ -142,11 +152,23 @@ class Survey {
 	 */
 	public function writeToDB() {
 		if ( is_null( $this->id ) ) {
-			return $this->insertIntoDB();
+			$success = $this->insertIntoDB();
 		}
 		else {
-			return  $this->updateInDB();
+			$success = $this->updateInDB();
 		}
+		
+		$dbw = wfGetDB( DB_MASTER );
+		
+		$dbw->begin();
+		
+		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
+			$success = $question->writeToDB( $this->id ) && $success;
+		}
+		
+		$dbw->commit();
+		
+		return $success;
 	}
 	
 	/**
@@ -157,13 +179,15 @@ class Survey {
 	 * @return boolean Success indicator
 	 */
 	protected function updateInDB() {
-		$dbr = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		
-		return $dbr->update(
+		$success = $dbw->update(
 			'surveys',
 			$this->getWriteValues(),
 			array( 'survey_id' => $this->id )
 		);
+		
+		return $success;
 	}
 	
 	/**
@@ -174,16 +198,16 @@ class Survey {
 	 * @return boolean Success indicator
 	 */
 	protected function insertIntoDB() {
-		$dbr = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		
-		$result = $dbr->insert(
+		$success = $dbw->insert(
 			'surveys',
 			$this->getWriteValues()
 		);
 		
-		$this->id = $dbr->insertId();
+		$this->id = $dbw->insertId();
 		
-		return $result;
+		return $success;
 	}
 	
 	/**
