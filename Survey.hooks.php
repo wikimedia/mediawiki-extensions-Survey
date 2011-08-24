@@ -60,4 +60,19 @@ final class SurveyHooks {
 		return true;
 	}
 	
+	/**
+	 * Hook to add PHPUnit test cases.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $files
+	 */
+	public static function registerUnitTests( array &$files ) {
+		$testDir = dirname( __FILE__ ) . '/test/';
+		
+		$files[] = $testDir . 'SurveyQuestionTest.php';
+		
+		return true;
+	}
+	
 }
