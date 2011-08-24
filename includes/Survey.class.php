@@ -70,7 +70,7 @@ class Survey {
 	 * @return Survey or false
 	 */
 	public static function newFromId( $surveyId, $loadQuestions = true ) {
-		return self::newFromDB( array( 'survey_id' => surveyId ), $loadQuestions );
+		return self::newFromDB( array( 'survey_id' => $surveyId ), $loadQuestions );
 	}
 	
 	/**
@@ -255,6 +255,32 @@ class Survey {
 	 */
 	public function getQuestions() {
 		return $this->questions;
+	}
+	
+	/**
+	 * Serializes the survey to an associative array which
+	 * can then easily be converted into JSON or similar.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	public function toArray() {
+		$data = array(
+			'enabled' => $this->enabled,
+			'name' => $this->name,
+			'questions' => array(),
+		);
+		
+		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
+			$data['questions'][] = $question->toArray();
+		}
+		
+		if ( !is_null( $this->id ) ) {
+			$data['id'] = $this->id;
+		}
+		
+		return $data;
 	}
 	
 }

@@ -13,6 +13,11 @@
  */
 class SurveyQuestion {
 	
+	public static $TYPE_TEXT = 0;
+	public static $TYPE_NUMBER = 1;
+	public static $TYPE_SELECT = 2;
+	public static $TYPE_RADIO = 3;
+	
 	/**
 	 * The ID of the question DB record, or null if not inserted yet.
 	 * 
@@ -98,7 +103,10 @@ class SurveyQuestion {
 	 */
 	public static function newFromUrlData( $args ) {
 		$args = (array)FormatJson::decode( base64_decode( str_replace( '!', '=', $args ) ) );
-		
+		return self::newFromArray( $args );
+	}
+	
+	public static function newFromArray( array $args ) {
 		return new self(
 			array_key_exists( 'id', $args ) ? $args['id'] : null,
 			$args['text'],
@@ -118,6 +126,10 @@ class SurveyQuestion {
 	 * @return string
 	 */
 	public function toUrlData() {
+		return str_replace( '=', '!', base64_encode( FormatJson::encode( $this->toArray() ) ) );
+	}
+	
+	public function toArray() {
 		$args = array(
 			'text' => $this->text,
 			'type' => $this->type,
@@ -130,7 +142,7 @@ class SurveyQuestion {
 			$args['id'] = $this->id;
 		}
 		
-		return str_replace( '=', '!', base64_encode( FormatJson::encode( $args ) ) );
+		return $args;
 	}
 	
 	/**
@@ -142,7 +154,7 @@ class SurveyQuestion {
 	 * 
 	 * @return array of SurveyQuestion
 	 */
-	protected static function getQuestionsForSurvey( $surveyId ) {
+	public static function getQuestionsForSurvey( $surveyId ) {
 		return self::getQuestionsFromDB( array( 'question_survey_id' => $surveyId ) );
 	}
 	
@@ -155,7 +167,7 @@ class SurveyQuestion {
 	 * 
 	 * @return array of SurveyQuestion
 	 */
-	protected static function getQuestionsFromDB( array $conditions ) {
+	public static function getQuestionsFromDB( array $conditions ) {
 		$dbr = wfgetDB( DB_SLAVE );
 		
 		$questions = $dbr->select(
@@ -174,8 +186,10 @@ class SurveyQuestion {
 			return array();
 		}
 		
-		foreach ( $questions as &$question ) {
-			$question = new SurveyQuestion(
+		$sQuestions = array();
+		
+		foreach ( $questions as $question ) {
+			$sQuestions[] = new SurveyQuestion(
 				$question->question_id,
 				$question->question_text,
 				$question->question_type,
@@ -184,7 +198,7 @@ class SurveyQuestion {
 			);
 		}
 		
-		return $questions;
+		return $sQuestions;
 	}
 	
 	/**

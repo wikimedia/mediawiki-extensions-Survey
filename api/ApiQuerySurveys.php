@@ -31,6 +31,21 @@ class ApiQuerySurveys extends ApiQueryBase {
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
 		
+		$surveys = array();
+
+		foreach ( $params['ids'] as $surveyId ) {
+			$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 )->toArray();
+			$this->getResult()->setIndexedTagName( $survey['questions'], 'question' );
+			$surveys[] = $survey;
+		}
+
+		$this->getResult()->setIndexedTagName( $surveys, 'survey' );
+		
+		$this->getResult()->addValue(
+			null,
+			'surveys',
+			$surveys
+		);
 	}
 	
 	/**
@@ -39,8 +54,14 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	public function getAllowedParams() {
 		return array (
-			'surveyids' => array(
+			'ids' => array(
 				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_ISMULTI => true,
+			),
+			'incquestions' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_DFLT => '0',
 			),
 			'limit' => array(
 				ApiBase :: PARAM_DFLT => 20,
@@ -60,7 +81,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	public function getParamDescription() {
 		return array (
-			'surveyids' => 'The IDs of the surveys to return',
+			'ids' => 'The IDs of the surveys to return',
+			'incquestions' => 'Include the questions of the surveys or not',
 			'continue' => 'Offset number from where to continue the query',
 			'limit'   => 'Max amount of words to return',
 		);
@@ -71,7 +93,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 * @see includes/api/ApiBase#getDescription()
 	 */
 	public function getDescription() {
-		return '';
+		return 'API module for obatining surveys and optionaly their questions';
 	}
 	
 	/**
@@ -80,7 +102,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
-
+			array( 'surveyids', 'name' ),
 		) );
 	}	
 	
