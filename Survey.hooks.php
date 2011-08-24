@@ -25,32 +25,37 @@ final class SurveyHooks {
 	public static function onSchemaUpdate( /* DatabaseUpdater */ $updater = null ) {
 		global $wgDBtype;
 
-		if ( $wgDBtype == 'mysql' ) {
-            $updater->addExtensionUpdate( array(
-                'addTable',
-                'surveys',
-                dirname( __FILE__ ) . '/Survey.sql',
-                true
-            ) );
-            $updater->addExtensionUpdate( array(
-                'addTable',
-                'survey_questions',
-                dirname( __FILE__ ) . '/Survey.sql',
-                true
-            ) );
-			$updater->addExtensionUpdate( array(
-                'addTable',
-                'survey_submissions',
-                dirname( __FILE__ ) . '/Survey.sql',
-                true
-            ) );
-			$updater->addExtensionUpdate( array(
-                'addTable',
-                'survey_answers',
-                dirname( __FILE__ ) . '/Survey.sql',
-                true
-            ) );
-		}
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'surveys',
+			dirname( __FILE__ ) . '/Survey.sql',
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'survey_questions',
+			dirname( __FILE__ ) . '/Survey.sql',
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'survey_submissions',
+			dirname( __FILE__ ) . '/Survey.sql',
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addTable',
+			'survey_answers',
+			dirname( __FILE__ ) . '/Survey.sql',
+			true
+		) );
+		$updater->addExtensionUpdate( array(
+			'addIndex',
+			'surveys',
+			'surveys_survey_name',
+			dirname( __FILE__ ) . '/sql/Survey_indexSurveyName.sql',
+			true
+		) );
 
 		return true;
 	}
