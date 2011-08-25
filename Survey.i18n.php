@@ -44,4 +44,6 @@ $messages['en'] = array(
 	'surveys-special-delete' => 'Delete',
 	'surveys-special-enabled' => 'Enabled',
 	'surveys-special-disabled' => 'Disabled',
+	'surveys-special-confirm-delete' => 'Are you sure you want to delete this survey?',
+	'surveys-special-delete-failed' => 'Failed to delete survey.',
 );

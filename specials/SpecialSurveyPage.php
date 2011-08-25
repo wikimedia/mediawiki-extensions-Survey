@@ -68,4 +68,25 @@ abstract class SpecialSurveyPage extends SpecialPage {
 		return version_compare( $GLOBALS['wgVersion'], '1.18', '>=' ) ? parent::getOutput() : $GLOBALS['wgOut'];
 	}
 	
+	/**
+	 * Add resource loader modules or use fallback code for
+	 * earlier versions of MediaWiki.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string|array $modules
+	 */
+	public function addModules( $modules ) {
+		$out = $this->getOutput();
+		$modules = (array)$modules;
+		
+		// For backward compatibility with MW < 1.17.
+		if ( is_callable( array( $out, 'addModules' ) ) ) {
+			$out->addModules( $modules );
+		}
+		else {
+			SurveyCompat::addResourceModules( $out, $modules );
+		}
+	}
+	
 }

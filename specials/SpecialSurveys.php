@@ -32,7 +32,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 		
-		global $wgRequest;
+		global $wgRequest, $wgUser;
 		
 		if ( $wgRequest->wasPosted()
 			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
@@ -66,6 +66,8 @@ class SpecialSurveys extends SpecialSurveyPage {
 		if ( $surveys->numRows() > 0 ) {
 			$this->displaySurveysTable( $surveys );
 		}
+		
+		$this->addModules( 'ext.survey.special' );
 	}
 	
 	/**

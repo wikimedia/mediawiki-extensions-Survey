@@ -55,6 +55,7 @@ $wgAutoloadClasses['ApiSubmitSurvey'] 		= dirname( __FILE__ ) . '/api/ApiSubmitS
 
 $wgAutoloadClasses['Survey'] 				= dirname( __FILE__ ) . '/includes/Survey.class.php';
 $wgAutoloadClasses['SurveyAnswer']	 		= dirname( __FILE__ ) . '/includes/SurveyAnswer.php';
+$wgAutoloadClasses['SurveyCompat']	 		= dirname( __FILE__ ) . '/includes/SurveyCompat.php';
 $wgAutoloadClasses['SurveyDBClass']	 		= dirname( __FILE__ ) . '/includes/SurveyDBClass.php';
 $wgAutoloadClasses['SurveyQuestion'] 		= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
 $wgAutoloadClasses['SurveySubmission'] 		= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
@@ -104,19 +105,40 @@ $wgGroupPermissions['sysop'        ]['surveysubmit'] = true;
 $egSurveyScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath;
 $egSurveyScriptPath .= '/Survey/resources';
 
+$egSurveyMessages = array(
+	'ext.survey.special' => array(
+		'surveys-special-confirm-delete'
+	),
+	'jquery.survey' => array(
+	
+	)
+);
+
 $moduleTemplate = array(
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteBasePath' => $egSurveyScriptPath
 );
 
 $wgResourceModules['ext.survey'] = $moduleTemplate + array(
-	'styles' => array(),
+	'scripts' => array(
+		'ext.survey.js'
+	),
+);
+
+$wgResourceModules['ext.survey.special'] = $moduleTemplate + array(
+	'scripts' => array(
+		'ext.survey.special.survey.js'
+	),
+	'dependencies' => array( 'ext.survey' ),
+	'messages' => $egSurveyMessages['ext.survey.special']
+);
+
+$wgResourceModules['jquery.survey'] = $moduleTemplate + array(
 	'scripts' => array(
 		'jquery.survey.js'
 	),
-	'dependencies' => array(),
-	'messages' => array(
-	)
+	'dependencies' => array( 'ext.survey' ),
+	'messages' => $egSurveyMessages['jquery.survey']
 );
 
 $egSurveySettings = array();
