@@ -21,26 +21,43 @@ class SurveyCompat {
 	 * 
 	 * @since 0.1 
 	 * 
-	 * @param OuputPage $out
-	 * @param array $modules
+	 * @param OuputPage|ParserOutput $out
+	 * @param array|string $modules
 	 */
-	public static function addResourceModules( OuputPage $out, array $modules ) {
+	public static function addResourceModules( $out, $modules ) {
 		global $egSurveyScriptPath, $egSurveyMessages;
-		static $addedJsMessages = false;
+		static $addedJsMessages = false, $addedBaseJs = false;
+		
+		$modules = (array)$modules;
+		
+		if ( !$addedBaseJs ) {
+			$out->addHeadItem(
+				Html::linkedScript( $egSurveyScriptPath . '/ext.survey.js' ),
+				'ext.survey'
+			);
+			
+			$addedBaseJs = true;
+		}
 		
 		foreach ( $modules as $module ) {
 			switch ( $module ) {
 				case 'ext.survey.special':
 					$out->addHeadItem(
-						$module,
-						Html::linkedScript( $egSurveyScriptPath . 'ext.survey.special.survey.js' )
+						Html::linkedScript( $egSurveyScriptPath . '/ext.survey.special.survey.js' ),
+						$module
+					);
+					break;
+				case 'ext.survey.jquery':
+					$out->addHeadItem(
+						Html::linkedScript( $egSurveyScriptPath . '/jquery.survey.js' ),
+						$module
 					);
 					break;
 			}
 			
 			if ( array_key_exists( $module, $egSurveyMessages ) ) {
 				if ( !$addedJsMessages ) {
-					$out->addInlineScript( 'var wgSurveyMessages = [];' );
+					$out->addHeadItem( Html::inlineScript( 'var wgSurveyMessages = [];' ), uniqid() );
 					
 					$addedJsMessages = true;
 				}
@@ -51,7 +68,9 @@ class SurveyCompat {
 					$messages[$msg] = wfMsgNoTrans( $msg );
 				}
 			
-				$out->addInlineScript( 'Array.push.apply( wgSurveyMessages, ' . FormatJson::encode( $messages ) . ');' );	
+				$out->addHeadItem( Html::inlineScript(
+					'Array.push.apply( wgSurveyMessages, ' . FormatJson::encode( $messages ) . ');'
+				), uniqid() );	
 			}
 		}
 	}

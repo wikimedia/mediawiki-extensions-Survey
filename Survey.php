@@ -59,6 +59,7 @@ $wgAutoloadClasses['SurveyCompat']	 		= dirname( __FILE__ ) . '/includes/SurveyC
 $wgAutoloadClasses['SurveyDBClass']	 		= dirname( __FILE__ ) . '/includes/SurveyDBClass.php';
 $wgAutoloadClasses['SurveyQuestion'] 		= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
 $wgAutoloadClasses['SurveySubmission'] 		= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
+$wgAutoloadClasses['SurveyTag'] 			= dirname( __FILE__ ) . '/includes/SurveyTag.php';
 
 $wgAutoloadClasses['SpecialSurvey'] 		= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
 $wgAutoloadClasses['SpecialSurveyPage'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyPage.php';
@@ -84,6 +85,7 @@ $wgAPIListModules['surveys'] 				= 'ApiQuerySurveys';
 
 $wgHooks['LoadExtensionSchemaUpdates'][] 	= 'SurveyHooks::onSchemaUpdate';
 $wgHooks['UnitTestsList'][] 				= 'SurveyHooks::registerUnitTests';
+$wgHooks['ParserFirstCallInit'][] 			= 'SurveyHooks::onParserFirstCallInit';
 
 $wgAvailableRights[] = 'surveyadmin';
 $wgAvailableRights[] = 'surveysubmit';
@@ -133,7 +135,7 @@ $wgResourceModules['ext.survey.special'] = $moduleTemplate + array(
 	'messages' => $egSurveyMessages['ext.survey.special']
 );
 
-$wgResourceModules['jquery.survey'] = $moduleTemplate + array(
+$wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'scripts' => array(
 		'jquery.survey.js'
 	),

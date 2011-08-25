@@ -32,6 +32,13 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 		
+		$this->getOutput()->addWikiText( Xml::element( 
+			'survey',
+			array(
+				'name' => $subPage
+			),
+			wfMsg( 'surveys-takesurvey-loading' )
+		) );
 	}
 	
 }

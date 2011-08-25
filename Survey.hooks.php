@@ -14,6 +14,35 @@
 final class SurveyHooks {
 	
 	/**
+	 * Register the survey tag extension when the parser initializes.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param Parser $parser
+	 * 
+	 * @return true
+	 */
+	public static function onParserFirstCallInit( Parser &$parser ) {
+		$parser->setHook( 'survey', __CLASS__ . '::onSurveyRender' );
+		return true;
+	}
+	
+	/**
+	 * Render the survey tag.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param mixed $input
+	 * @param array $args
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 */
+	public static function onSurveyRender( $input, array $args, Parser $parser, PPFrame $frame ) {
+		$tag = new SurveyTag( $args, $input );
+		return $tag->render( $parser );
+	}
+	
+	/**
 	 * Schema update to set up the needed database tables.
 	 *
 	 * @since 0.1
