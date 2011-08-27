@@ -26,26 +26,35 @@ class ApiQuerySurveys extends ApiQueryBase {
 		
 		if ( $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		}		
-		
+		}
+
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
 		
+		if ( !( isset( $params['ids'] ) XOR isset( $params['names'] ) ) ) {
+			$this->dieUsage( wfMsgExt( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
+		}
+		
 		$surveys = array();
 
-		foreach ( $params['ids'] as $surveyId ) {
-			$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 );
-			
-			if ( $survey !== false ) {
-				$survey = $survey->toArray();
+		if ( isset( $params['ids'] ) ) {
+			foreach ( $params['ids'] as $surveyId ) {
+				$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 );
 				
-				foreach ( $survey['questions'] as $nr => $question ) {
-					$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
+				if ( $survey !== false ) {
+					$surveys[] = $this->getSurveyData( $survey );
 				}
+			}			
+		}
+
+		if ( isset( $params['names'] ) ) {
+			foreach ( $params['names'] as $surveyName ) {
+				$survey = Survey::newFromName( $surveyName, $params['incquestions'] == 1 );
 				
-				$this->getResult()->setIndexedTagName( $survey['questions'], 'question' );
-				$surveys[] = $survey;
-			}
+				if ( $survey !== false ) {
+					$surveys[] = $this->getSurveyData( $survey );
+				}
+			}			
 		}
 
 		$this->getResult()->setIndexedTagName( $surveys, 'survey' );
@@ -57,6 +66,18 @@ class ApiQuerySurveys extends ApiQueryBase {
 		);
 	}
 	
+	function getSurveyData( Survey $survey ) {
+		$survey = $survey->toArray();
+		
+		foreach ( $survey['questions'] as $nr => $question ) {
+			$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
+		}
+		
+		$this->getResult()->setIndexedTagName( $survey['questions'], 'question' );
+		
+		return $survey;
+	}
+	
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
@@ -65,7 +86,10 @@ class ApiQuerySurveys extends ApiQueryBase {
 		return array (
 			'ids' => array(
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_ISMULTI => true,
+			),
+			'names' => array(
+				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'incquestions' => array(
@@ -91,6 +115,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	public function getParamDescription() {
 		return array (
 			'ids' => 'The IDs of the surveys to return',
+			'names' => 'The names of the surveys to return',
 			'incquestions' => 'Include the questions of the surveys or not',
 			'continue' => 'Offset number from where to continue the query',
 			'limit'   => 'Max amount of words to return',

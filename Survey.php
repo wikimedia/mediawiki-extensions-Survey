@@ -137,7 +137,11 @@ $wgResourceModules['ext.survey.special'] = $moduleTemplate + array(
 
 $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'scripts' => array(
+		'fancybox/jquery.fancybox-1.3.4.js',
 		'jquery.survey.js'
+	),
+	'styles' => array(
+		'fancybox/jquery.fancybox-1.3.4.css',
 	),
 	'dependencies' => array( 'ext.survey' ),
 	'messages' => $egSurveyMessages['jquery.survey']

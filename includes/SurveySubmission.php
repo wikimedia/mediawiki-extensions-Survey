@@ -58,10 +58,10 @@ class SurveySubmission extends SurveyDBClass {
 	 * @param string $timeStamp
 	 */
 	public function __construct( $id, $surveyId, $userName, $pageId, $timeStamp ) {
-		$this->id = $id;
-		$this->surveyId = $surveyId;
+		$this->id = is_null( $id ) ? $id : (int)$id;
+		$this->surveyId = (int)$surveyId;
 		$this->userName = $userName;
-		$this->pageId = $pageId;
+		$this->pageId = (int)$pageId;
 		$this->timeStamp = $timeStamp;
 	}
 	

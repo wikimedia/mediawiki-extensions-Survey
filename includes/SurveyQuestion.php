@@ -84,8 +84,8 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @param boolean $removed
 	 */
 	public function __construct( $id, $surveyId, $text, $type, $required, array $answers = array(), $removed = false ) {
-		$this->id = $id;
-		$this->surveyId = $surveyId;
+		$this->id = is_null( $id ) ? $id : (int)$id;
+		$this->surveyId = (int)$surveyId;
 		$this->text = $text;
 		$this->type = $type;
 		$this->required = $required;

@@ -48,9 +48,9 @@ class SurveyAnswer extends SurveyDBClass {
 	 * @param string $text
 	 */
 	public function __construct( $id, $submissionId, $questionId, $text ) {
-		$this->id = $id;
-		$this->submissionId = $submissionId;
-		$this->questionId = $questionId;
+		$this->id = is_null( $id ) ? $id : (int)$id;
+		$this->submissionId = (int)$submissionId;
+		$this->questionId = (int)$questionId;
 		$this->text = $text;
 	}
 	

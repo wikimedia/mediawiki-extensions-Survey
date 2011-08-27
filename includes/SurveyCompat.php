@@ -49,6 +49,8 @@ class SurveyCompat {
 					break;
 				case 'ext.survey.jquery':
 					$out->addHeadItem(
+						Html::linkedStyle( $egSurveyScriptPath . '/fancybox/jquery.fancybox-1.3.4.css' ) .
+						Html::linkedScript( $egSurveyScriptPath . '/fancybox/jquery.fancybox-1.3.4.js' ) .
 						Html::linkedScript( $egSurveyScriptPath . '/jquery.survey.js' ),
 						$module
 					);

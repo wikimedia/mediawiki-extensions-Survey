@@ -34,6 +34,7 @@ $messages['en'] = array(
 	'survey-err-id-xor-name' => 'You need to provide either the id or the name of the survey to submit',
 	'survey-err-survey-name-unknown' => 'There is no survey with the name "$1"',
 	'survey-err-duplicate-name' => 'There already is a survey with name "$1"',
+	'survey-err-ids-xor-names' => 'You need to provide either the ids or the names of the surveys to query',
 
 	// Special:Surveys
 	'surveys-special-addnew' => 'Add a new survey',

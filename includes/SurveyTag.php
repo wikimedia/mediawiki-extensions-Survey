@@ -45,6 +45,8 @@ class SurveyTag {
 					$this->parameters['survey-data-' . $name] = $value;
 				}
 			}
+			
+			$this->parameters['class'] = 'surveytag';
 		}
 		else {
 			throw new MWException( 'Invalid parameters for survey tag.' );
@@ -64,13 +66,15 @@ class SurveyTag {
 		static $loadedJs = false;
 		
 		if ( !$loadedJs ) {
+			$po /* ParserOutput */ = $parser->getOutput();
+			
 			// For backward compatibility with MW < 1.17.
-			if ( is_callable( array( $parser, 'addModules' ) ) ) {
-				$parser->addModules( 'ext.survey.jquery' );
-			}
-			else {
-				SurveyCompat::addResourceModules( $parser->getOutput(), 'ext.survey.jquery' );
-			}
+//			if ( is_callable( array( $po, 'addModules' ) ) ) {
+//				$po->addModules( 'ext.survey.jquery' );
+//			}
+//			else {
+				SurveyCompat::addResourceModules( $po, 'ext.survey.jquery' );
+//			}
 		}
 		
 		return Html::element(

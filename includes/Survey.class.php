@@ -123,9 +123,9 @@ class Survey extends SurveyDBClass {
 		}
 
 		$survey = new self(
-			$survey->survey_id,
+			(int)$survey->survey_id,
 			$survey->survey_name,
-			$survey->survey_enabled
+			(int)$survey->survey_enabled == 1
 		);
 		
 		if ( $loadQuestions ) {
