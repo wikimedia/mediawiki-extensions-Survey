@@ -36,13 +36,43 @@
 	};
 	
 	this.submitSurvey = function() {
+		// TODO
+	};
+	
+	this.getSurveyQuestion = function( question ) {
+		return ''; // TODO
+	};
+	
+	this.getSurveyQuestions = function( questions ) {
+		$questions = $( '<div />' );
 		
+		for ( i in questions ) {
+			$questions.append( this.getSurveyQuestion( questions[i] ) );
+		}
+		
+		return $questions;
+	};
+	
+	this.getSurveyBody = function( surveyData ) {
+		$survey = $( '<div />' );
+		
+		$survey.append( this.getSurveyQuestions( surveyData.questions ) );
+		
+		$survey.append( JSON.stringify( surveyData ) );
+		
+		return $survey;
 	};
 	
 	this.initSurvey = function( surveyElement, surveyData ) {
-		// TODO
-		$div = $( '<div />' ).attr( { 'style': 'display:none' } ).html( $( '<div />' ).attr( { 'id': 'data' } ).html( JSON.stringify( surveyData ) ) );
-		$link = $( '<a />' ).attr( { 'href': '#data', 'id': 'inline' } ).html( $div ).append( $('<p />') );
+		$div = $( '<div />' ).attr( {
+			'style': 'display:none'
+		} ).html( $( '<div />' ).attr( { 'id': 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
+		
+		$link = $( '<a />' ).attr( {
+			'href': '#survey-' + surveyData.id,
+			'id': 'inline'
+		} ).html( $div );
+		
 		surveyElement.html( $link );
 		$link.fancybox();
 		$link.click();
