@@ -66,15 +66,7 @@ class SurveyTag {
 		static $loadedJs = false;
 		
 		if ( !$loadedJs ) {
-			$po /* ParserOutput */ = $parser->getOutput();
-			
-			// For backward compatibility with MW < 1.17.
-//			if ( is_callable( array( $po, 'addModules' ) ) ) {
-//				$po->addModules( 'ext.survey.jquery' );
-//			}
-//			else {
-				SurveyCompat::addResourceModules( $po, 'ext.survey.jquery' );
-//			}
+			$parser->getOutput()->addModules( 'ext.survey.jquery' );
 		}
 		
 		return Html::element(

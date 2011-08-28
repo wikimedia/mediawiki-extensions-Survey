@@ -8,40 +8,6 @@
 
 (function( $ ) { $( document ).ready( function() {
 
-	function deleteSurvey( options, successCallback, failCallback ) {
-		$.getJSON(
-			wgScriptPath + '/api.php',
-			{
-				'action': 'deletesurvey',
-				'format': 'json',
-				'ids': options.id
-			},
-			function( data ) {
-				if ( data.success ) {
-					successCallback();
-				}
-				else {
-					failCallback( survey.msg( 'surveys-special-delete-failed' ) );
-				}
-			}
-		);	
-	}
-	
-	$( '.survey-delete' ).click( function() {
-		$this = $( this );
-		
-		if ( confirm( survey.msg( 'surveys-special-confirm-delete' ) ) ) {
-			deleteSurvey(
-				{ id: $this.attr( 'data-survey-id' ) },
-				function() {
-					$this.closest( 'tr' ).slideUp( 'slow', function() { $( this ).remove(); } );
-				},
-				function( error ) {
-					alert( error );
-				}
-			);
-		}
-		return false;
-	} );
+
 	
 } ); })( jQuery );

@@ -52,5 +52,13 @@ $messages['en'] = array(
 	'surveys-special-delete-failed' => 'Failed to delete survey.',
 
 	// Special:TakeSurvey
-	'surveys-takesurvey-loading' => 'Loading survey.'
+	'surveys-takesurvey-loading' => 'Loading survey.',
+
+	// Special:Survey
+	'surveys-special-unknown-name' => 'There is no survey with the requested name.',
+	'survey-special-label-name' => 'Survey name',
+	'survey-special-label-enabled' => 'Survey enabled',
+	'survey-special-label-question' => 'Question text',
+	'survey-special-label-button' => 'Add question',
+	'survey-special-label-add' => 'New question name',
 );

@@ -24,8 +24,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-if ( version_compare( $wgVersion, '1.16', '<' ) ) {
-	die( '<b>Error:</b> Survey requires MediaWiki 1.16 or above.' );
+if ( version_compare( $wgVersion, '1.17', '<' ) ) {
+	die( '<b>Error:</b> Survey requires MediaWiki 1.17 or above.' );
 }
 
 define( 'Survey_VERSION', '0.1 alpha' );
@@ -108,7 +108,7 @@ $egSurveyScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/exten
 $egSurveyScriptPath .= '/Survey/resources';
 
 $egSurveyMessages = array(
-	'ext.survey.special' => array(
+	'ext.survey.special.surveys' => array(
 		'surveys-special-confirm-delete'
 	),
 	'jquery.survey' => array(
@@ -127,12 +127,12 @@ $wgResourceModules['ext.survey'] = $moduleTemplate + array(
 	),
 );
 
-$wgResourceModules['ext.survey.special'] = $moduleTemplate + array(
+$wgResourceModules['ext.survey.special.surveys'] = $moduleTemplate + array(
 	'scripts' => array(
-		'ext.survey.special.survey.js'
+		'ext.survey.special.surveys.js'
 	),
 	'dependencies' => array( 'ext.survey' ),
-	'messages' => $egSurveyMessages['ext.survey.special']
+	'messages' => $egSurveyMessages['ext.survey.special.surveys']
 );
 
 $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(

@@ -77,16 +77,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @param string|array $modules
 	 */
 	public function addModules( $modules ) {
-		$out = $this->getOutput();
-		$modules = (array)$modules;
-		
-		// For backward compatibility with MW < 1.17.
-		if ( is_callable( array( $out, 'addModules' ) ) ) {
-			$out->addModules( $modules );
-		}
-		else {
-			SurveyCompat::addResourceModules( $out, $modules );
-		}
+		$this->getOutput()->addModules( $modules );
 	}
 	
 }

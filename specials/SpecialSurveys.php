@@ -67,7 +67,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			$this->displaySurveysTable( $surveys );
 		}
 		
-		$this->addModules( 'ext.survey.special' );
+		$this->addModules( 'ext.survey.special.surveys' );
 	}
 	
 	/**

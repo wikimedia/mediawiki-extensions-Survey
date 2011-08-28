@@ -88,7 +88,7 @@ class SurveyQuestion extends SurveyDBClass {
 		$this->surveyId = (int)$surveyId;
 		$this->text = $text;
 		$this->type = $type;
-		$this->required = $required;
+		$this->required = (boolean)$required;
 		$this->answers = $answers;
 		$this->removed = $removed;
 	}
@@ -120,6 +120,7 @@ class SurveyQuestion extends SurveyDBClass {
 	public static function newFromArray( array $args ) {
 		return new self(
 			array_key_exists( 'id', $args ) ? $args['id'] : null,
+			array_key_exists( 'surveyId', $args ) ? $args['surveyId'] : null,
 			$args['text'],
 			$args['type'],
 			$args['required'],
@@ -150,6 +151,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 */
 	public function toArray() {
 		$args = array(
+			'surveyId' => $this->surveyId,
 			'text' => $this->text,
 			'type' => $this->type,
 			'required' => $this->required,
@@ -253,6 +255,39 @@ class SurveyQuestion extends SurveyDBClass {
 			'question_required' => $this->required,
 			'question_answers' => serialize( $this->answers ), 
 		);
+	}
+	
+	/**
+	 * Gets the question text.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function getText() {
+		return $this->text;
+	}
+	
+	/**
+	 * Gets the questions type.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function getType() {
+		return $this->type;
+	}
+	
+	/**
+	 * Gets if the question is required.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean
+	 */
+	public function isRequired() {
+		return $this->required;
 	}
 	
 }
