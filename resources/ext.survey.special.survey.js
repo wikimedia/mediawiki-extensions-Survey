@@ -5,7 +5,7 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
-(function( $ ) { $( document ).ready( function() {
+(function( $, mw ) { $( document ).ready( function() {
 
 	var _this = this;
 
@@ -22,10 +22,8 @@
 		
 		// TODO: defaulting
 		
-		var id = 'foo';
-		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-label' } ).html(
-			$( '<label />' ).attr( { 'for': id } ).text( survey.msg( 'survey-question-label-nr', ++questionNr ) )
+			$( '<label />' ).text( mw.msg( 'survey-question-label-nr', ++questionNr ) )
 		) );
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
@@ -100,4 +98,4 @@
 	
 	setup();
 	
-} ); })( jQuery );
+} ); })( jQuery, window.mediaWiki );

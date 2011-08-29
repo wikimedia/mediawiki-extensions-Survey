@@ -172,11 +172,18 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param integer $surveyId
+	 * @param boolean $incRemoved
 	 * 
 	 * @return array of SurveyQuestion
 	 */
-	public static function getQuestionsForSurvey( $surveyId ) {
-		return self::getQuestionsFromDB( array( 'question_survey_id' => $surveyId ) );
+	public static function getQuestionsForSurvey( $surveyId, $incRemoved = false ) {
+		$conditions = array( 'question_survey_id' => $surveyId );
+		
+		if ( $incRemoved === false ) {
+			$conditions['question_removed'] = 0;
+		}
+		
+		return self::getQuestionsFromDB( $conditions );
 	}
 	
 	/**
@@ -288,6 +295,19 @@ class SurveyQuestion extends SurveyDBClass {
 	 */
 	public function isRequired() {
 		return $this->required;
+	}
+	
+	/**
+	 * Gets if the question was removed.
+	 * This means it should not be shown in the UI,
+	 * and is only kept to make sense of old answers liked to it. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean
+	 */
+	public function wasRemoved() {
+		return $this->removed;
 	}
 	
 }
