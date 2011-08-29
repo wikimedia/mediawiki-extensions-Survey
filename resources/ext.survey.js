@@ -36,8 +36,8 @@ window.survey = new( function() {
 		}
 	};
 	
-	this.htmlSelect = function( options, value ) {
-		$select = $( '<select />' );
+	this.htmlSelect = function( options, value, attributes ) {
+		$select = $( '<select />' ).attr( attributes );
 		
 		for ( message in options ) {
 			var attribs = { 'value': options[message] };

@@ -130,13 +130,21 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 	'scripts' => array(
 		'ext.survey.special.survey.js'
 	),
+	'styles' => array(
+		//'ext.survey.special.survey.css'
+	),
 	'dependencies' => array( 'ext.survey', 'jquery.ui.button' ),
 	'messages' => array(
 		'survey-question-type-text',
 		'survey-question-type-number',
 		'survey-question-type-select',
 		'survey-question-type-radio',
-		'survey-question-label-nr'
+		'survey-question-label-nr',
+		'survey-special-label-required',
+		'survey-special-label-type',
+		'survey-special-label-text',
+		'survey-special-label-addquestion',
+		'survey-special-label-button',
 	)
 );
 

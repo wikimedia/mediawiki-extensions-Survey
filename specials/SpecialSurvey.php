@@ -65,11 +65,19 @@ class SpecialSurvey extends SpecialSurveyPage {
 		$fields = array();
 		
 		$fields[] = array(
+			'type' => 'hidden',
+			'default' => $survey->getId(),
+			'name' => 'survey-id',
+			'id' => 'survey-id',
+		);
+		
+		$fields[] = array(
 			'type' => 'text',
 			//'options' => array(),
 			'default' => 'ohi',
 			'label-message' => 'survey-special-label-name',
-			'required' => true
+			'required' => true,
+			'id' => 'survey-name',
 		);
 		
 		$fields[] = array(
@@ -77,7 +85,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 			//'options' => array(),
 			'default' => 'there',
 			'label-message' => 'survey-special-label-enabled',
-			'required' => true
+			'required' => true,
+			'id' => 'survey-enabled',
 		);
 		
 		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
@@ -93,13 +102,6 @@ class SpecialSurvey extends SpecialSurveyPage {
 			);
 		}
 		
-		$fields[] = array(
-			'class' => 'SurveyAddQuestionField',
-			'default' => 'foo',
-			'label-message' => 'survey-special-label-add',
-			'id' => 'survey-add-question-text'
-		);
-		
 		// getContext was added in 1.18 and since that version is
 		// the second argument for the HTMLForm constructor.
 		if ( is_callable( array( $this, 'getContext' ) ) ) {
@@ -112,45 +114,6 @@ class SpecialSurvey extends SpecialSurveyPage {
 //		$q = new SurveyQuestion( null, 5, 'foo bar', 0, false, array(), false );
 //		var_dump($q->toUrlData());exit;
 		$form->displayForm( '' );
-	}
-	
-}
-
-class SurveyAddQuestionField extends HTMLTextField {
-	
-	/*
-			$fields[] = array(
-				'type' => 'text',
-				//'options' => array(),
-				'default' => $question->getText(),
-				'label-message' => 'survey-special-label-question',
-				'required' => $question->isRequired()
-			);
-			
-			$fields[] = array(
-				'type' => 'select',
-				'options' => array(
-			
-				),
-				'label-message' => 'survey-special-label-type',
-				'required' => $question->isRequired()
-			);
-			
-			$fields[] = array(
-				'class' => 'SurveyQuestionValuesField',
-				//'options' => array(),
-				'default' => '',
-				'label-message' => 'survey-special-label-required',
-				'required' => true
-			);
-	 */
-	
-	public function getInputHTML( $value ) {
-		return parent::getInputHTML( $value ) . '&#160;' . Html::element(
-			'button',
-			array( 'id' => 'survey-add-question-button' ),
-			wfMsg( 'survey-special-label-button' )
-		);
 	}
 	
 }
