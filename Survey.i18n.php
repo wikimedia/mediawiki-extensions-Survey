@@ -61,4 +61,9 @@ $messages['en'] = array(
 	'survey-special-label-question' => 'Question text',
 	'survey-special-label-button' => 'Add question',
 	'survey-special-label-add' => 'New question name',
+	'survey-question-type-text' => 'Free text',
+	'survey-question-type-number' => 'Number',
+	'survey-question-type-select' => 'Dropdown menu',
+	'survey-question-type-radio' => 'Radio boxes',
+	'survey-question-label-nr' => 'Question #$1',
 );

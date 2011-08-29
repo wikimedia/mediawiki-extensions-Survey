@@ -39,6 +39,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		}
 		else {
 			$this->showSurvey( $survey );
+			$this->addModules( 'ext.survey.special.survey' );
 		}
 	}
 	
@@ -79,13 +80,15 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'required' => true
 		);
 		
-		foreach ( $survey->getQuestions() as $question ) {
+		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
 			$fields[] = array(
 				'class' => 'SurveyQuestionField',
 				'options' => array(
 					'required' => $question->isRequired(),
 					'text' => $question->getText(),
-					'type' => $question->getType()
+					'type' => $question->getType(),
+					'id' => $question->getId(),
+					'type' => $question->getType(),
 				)
 			);
 		}
@@ -145,7 +148,7 @@ class SurveyAddQuestionField extends HTMLTextField {
 	public function getInputHTML( $value ) {
 		return parent::getInputHTML( $value ) . '&#160;' . Html::element(
 			'button',
-			array(),
+			array( 'id' => 'survey-add-question-button' ),
 			wfMsg( 'survey-special-label-button' )
 		);
 	}
@@ -155,7 +158,9 @@ class SurveyAddQuestionField extends HTMLTextField {
 class SurveyQuestionField extends HTMLFormField {
 	
 	public function getInputHTML( $value ) {
-		$attribs = array();
+		$attribs = array(
+			'class' => 'survey-question-data'
+		);
 		
 		foreach ( $this->mParams['options'] as $name => $value ) {
 			if ( is_bool( $value ) ) {

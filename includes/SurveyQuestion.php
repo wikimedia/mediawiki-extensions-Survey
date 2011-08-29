@@ -273,7 +273,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @return string
+	 * @return integer
 	 */
 	public function getType() {
 		return $this->type;

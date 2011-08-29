@@ -19,7 +19,7 @@ window.survey = new( function() {
 				return mediaWiki.log.call( mediaWiki.log, 'Survey: ' + message );
 			}
 		}
-	}
+	};
 	
 	this.msg = function() {
 		if ( typeof mediaWiki === 'undefined' ) {
@@ -34,7 +34,23 @@ window.survey = new( function() {
 		else {
 			return mediaWiki.msg.apply( mediaWiki.msg, arguments );
 		}
-	}
+	};
+	
+	this.htmlSelect = function( options, value ) {
+		$select = $( '<select />' );
+		
+		for ( message in options ) {
+			var attribs = { 'value': options[message] };
+			
+			if ( value === options[message] ) {
+				attribs.selected = 'selected';
+			}
+			
+			$select.append( $( '<option />' ).text( message ).attr( attribs ) );
+		}
+		
+		return $select;
+	};
 	
 } )();
 

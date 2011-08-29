@@ -104,21 +104,10 @@ $wgGroupPermissions['autoconfirmed']['surveysubmit'] = true;
 $wgGroupPermissions['bot'          ]['surveysubmit'] = false;
 $wgGroupPermissions['sysop'        ]['surveysubmit'] = true;
 
-$egSurveyScriptPath = $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath;
-$egSurveyScriptPath .= '/Survey/resources';
-
-$egSurveyMessages = array(
-	'ext.survey.special.surveys' => array(
-		'surveys-special-confirm-delete'
-	),
-	'jquery.survey' => array(
-	
-	)
-);
-
 $moduleTemplate = array(
 	'localBasePath' => dirname( __FILE__ ),
-	'remoteBasePath' => $egSurveyScriptPath
+	'remoteBasePath' => ( $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath )
+						. '/Survey/resources'
 );
 
 $wgResourceModules['ext.survey'] = $moduleTemplate + array(
@@ -132,7 +121,23 @@ $wgResourceModules['ext.survey.special.surveys'] = $moduleTemplate + array(
 		'ext.survey.special.surveys.js'
 	),
 	'dependencies' => array( 'ext.survey' ),
-	'messages' => $egSurveyMessages['ext.survey.special.surveys']
+	'messages' => array(
+		'surveys-special-confirm-delete'
+	)
+);
+
+$wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
+	'scripts' => array(
+		'ext.survey.special.survey.js'
+	),
+	'dependencies' => array( 'ext.survey' ),
+	'messages' => array(
+		'survey-question-type-text',
+		'survey-question-type-number',
+		'survey-question-type-select',
+		'survey-question-type-radio',
+		'survey-question-label-nr'
+	)
 );
 
 $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
@@ -144,7 +149,11 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 		'fancybox/jquery.fancybox-1.3.4.css',
 	),
 	'dependencies' => array( 'ext.survey' ),
-	'messages' => $egSurveyMessages['jquery.survey']
+	'messages' => array(
+	
+	)
 );
+
+unset( $moduleTemplate );
 
 $egSurveySettings = array();
