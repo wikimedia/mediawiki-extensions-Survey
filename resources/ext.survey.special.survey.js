@@ -43,9 +43,19 @@
 		
 		var $type = survey.htmlSelect( questionTypes, question.type );
 		
+		var $required = $( '<input />' ).attr( {
+			'type': 'checkbox',
+			'id': 'survey-required-' + question.id
+		} ).append( $( '<label />' ) ).attr( {
+			'for': 'survey-required-' + question.id
+		} ).text( mw.msg( 'survey-special-label-required' ) );
+		
 		// TODO
 		
-		$input.append( $text, $type );
+		$input.append( $text.prepend( $( '<p />' ).text( mw.msg( 'survey-special-label-text' ) ) ).append( '<br />' ) );
+		$input.append( $type.prepend( $( '<label />' ).text( mw.msg( 'survey-special-label-type' ) ) ) );
+		$input.append( $required );
+		
 		
 		return $input;
 	};
@@ -81,7 +91,7 @@
 			}
 		} );
 		
-		$( '#survey-add-question-button' ).click( _this.onAddQuestionRequest );
+		$( '#survey-add-question-button' ).click( _this.onAddQuestionRequest ).button();
 		
 		$( '.survey-question-data' ).each( function( index, domElement ) {
 			$this = $( domElement );
@@ -94,6 +104,8 @@
 				'type': $this.attr( 'data-type' ),
 			} );
 		} );
+		
+		$( '.mw-htmlform-submit' ).button();
 	};
 	
 	setup();
