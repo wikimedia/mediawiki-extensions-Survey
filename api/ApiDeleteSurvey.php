@@ -41,6 +41,14 @@ class ApiDeleteSurvey extends ApiBase {
 		);
 	}
 	
+	public function needsToken() {
+		return true;
+	}
+	
+	public function getTokenSalt() {
+		return '';
+	}
+	
 	public function getAllowedParams() {
 		return array(
 			'ids' => array(
@@ -48,12 +56,14 @@ class ApiDeleteSurvey extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_ISMULTI => true,
 			),
+			'token' => null,
 		);
 	}
 	
 	public function getParamDescription() {
 		return array(
-			'ids' => 'The IDs of the surveys to delete'
+			'ids' => 'The IDs of the surveys to delete',
+			'token' => 'Edit token. You can get one of these through prop=info.',
 		);
 	}
 	

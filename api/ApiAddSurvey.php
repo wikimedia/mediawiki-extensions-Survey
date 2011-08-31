@@ -68,6 +68,14 @@ class ApiAddSurvey extends ApiBase {
 			$survey->getName()
 		);
 	}
+	
+	public function needsToken() {
+		return true;
+	}
+	
+	public function getTokenSalt() {
+		return '';
+	}
 
 	public function getAllowedParams() {
 		return array(
@@ -84,6 +92,7 @@ class ApiAddSurvey extends ApiBase {
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => '',
 			),
+			'token' => null,
 		);
 	}
 	
@@ -92,6 +101,7 @@ class ApiAddSurvey extends ApiBase {
 			'name' => 'The name of the survey',
 			'enabled' => 'Enable the survey or not',
 			'questions' => 'The questions that make up the survey',
+			'token' => 'Edit token. You can get one of these through prop=info.',
 		);
 	}
 	
@@ -116,6 +126,6 @@ class ApiAddSurvey extends ApiBase {
 	
 	public function getVersion() {
 		return __CLASS__ . ': $Id$';
-	}		
+	}	
 	
 }

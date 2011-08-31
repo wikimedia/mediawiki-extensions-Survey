@@ -104,6 +104,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 				ApiBase :: PARAM_MAX2 => ApiBase :: LIMIT_BIG2
 			),
 			'continue' => null,
+			'token' => null,
 		);
 		
 	}
@@ -119,6 +120,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			'incquestions' => 'Include the questions of the surveys or not',
 			'continue' => 'Offset number from where to continue the query',
 			'limit'   => 'Max amount of words to return',
+			'token' => 'Edit token. You can get one of these through prop=info.',
 		);
 	}
 

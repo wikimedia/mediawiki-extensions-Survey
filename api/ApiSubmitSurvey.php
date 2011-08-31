@@ -44,6 +44,14 @@ class ApiSubmitSurvey extends ApiBase {
 		$submission = new SurveySubmission();
 	}
 
+	public function needsToken() {
+		return true;
+	}
+	
+	public function getTokenSalt() {
+		return '';
+	}
+	
 	public function getAllowedParams() {
 		return array(
 			'id' => array(
@@ -52,11 +60,15 @@ class ApiSubmitSurvey extends ApiBase {
 			'name' => array(
 				ApiBase::PARAM_TYPE => 'string',
 			),
+			'token' => null,
 		);
 	}
 	
 	public function getParamDescription() {
 		return array(
+			'id' => 'The ID of the survey being submitted.',
+			'name' => 'The name of the survey being submitted.',
+			'token' => 'Edit token. You can get one of these through prop=info.',
 		);
 	}
 	
