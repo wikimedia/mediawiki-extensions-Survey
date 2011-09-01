@@ -32,15 +32,114 @@ class SpecialSurvey extends SpecialSurveyPage {
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 		
-		$survey = Survey::newFromName( $subPage, true );
+		global $wgRequest, $wgUser;
 		
-		if ( $survey === false ) {
-			$this->showNameError();
+		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+			$this->handleSubmission();
 		}
 		else {
-			$this->showSurvey( $survey );
-			$this->addModules( 'ext.survey.special.survey' );
+			if ( is_null( $subPage ) ) {
+				$survey = new Survey( null );
+			}
+			else {
+				$survey = Survey::newFromName( $subPage, true );
+			}
+			
+			if ( $survey === false ) {
+				$this->showNameError();
+			}
+			else {
+				$this->showSurvey( $survey );
+				$this->addModules( 'ext.survey.special.survey' );
+			}
 		}
+	}
+	
+	/**
+	 * Handle submission of a survey.
+	 * This conists of finding the posted survey data, constructing the
+	 * corresponding objects, writing these to the db and then redirecting
+	 * the user back to the surveys list.
+	 * 
+	 * @since 0.1
+	 */
+	protected function handleSubmission() {
+		global $wgRequest;
+		
+		$values = $wgRequest->getValues();
+		
+		if ( $wgRequest->getInt( 'survey-id' ) == 0 ) {
+			$survey = new Survey( null );
+		}
+		else {
+			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), false );
+		}
+		
+		$survey->setName( $wgRequest->getText( 'survey-name' ) );
+		$survey->setEnabled( $wgRequest->getCheck( 'survey-enabled' ) );
+		
+		$survey->setQuestions( $this->getSubmittedQuestions() );
+		
+		$survey->writeToDB();
+		
+		$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
+	}
+	
+	/**
+	 * Gets a list of submitted surveys.
+	 * 
+	 * @return array of SurveyQuestion
+	 */
+	protected function getSubmittedQuestions() {
+		$questions = array();
+		
+//		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
+//			
+//		}
+		
+		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
+			$matches = array();
+			
+			if ( preg_match( '/survey-question-text-(\d)+/', $name, $matches ) ) {
+				$questions[] = $this->getSubmittedQuestion( $matches[1] );
+			}
+			else if ( preg_match( '/survey-question-text-new-(\d)+/', $name, $matches ) ) {
+				$questions[] = $this->getSubmittedQuestion( $matches[1], true );
+			}
+		}
+		
+		return $questions;
+	}
+	
+	/**
+	 * Create a 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param integer|null $questionId
+	 * 
+	 * @return SurveyQuestion
+	 */
+	protected function getSubmittedQuestion( $questionId, $isNewQuestion = false ) {
+		global $wgRequest;
+		
+		if ( $isNewQuestion ) {
+			$questionDbId = null;
+			$questionId = "new-$questionId";
+		}
+		else {
+			$questionId = $questionId;
+		}
+		
+		$question = new SurveyQuestion(
+			$questionId,
+			0,
+			$wgRequest->getText( "survey-question-text-$questionId" ),
+			$wgRequest->getInt( "survey-question-type-$questionId" ),
+			$wgRequest->getCheck( "survey-question-required-$questionDbId" )
+		);
+		
+		return $question;
 	}
 	
 	/**
@@ -78,6 +177,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'label-message' => 'survey-special-label-name',
 			'required' => true,
 			'id' => 'survey-name',
+			'name' => 'survey-name',
 		);
 		
 		$fields[] = array(
@@ -87,6 +187,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'label-message' => 'survey-special-label-enabled',
 			'required' => true,
 			'id' => 'survey-enabled',
+			'name' => 'survey-enabled',
 		);
 		
 		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {

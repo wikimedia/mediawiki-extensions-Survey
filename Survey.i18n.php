@@ -69,4 +69,6 @@ $messages['en'] = array(
 	'survey-special-label-required' => 'Question is required',
 	'survey-special-label-type' => 'Question type',
 	'survey-special-label-text' => 'Question text',
+	'survey-special-remove' => 'Remove question',
+	'survey-special-remove-confirm' => 'Are you sure you want to remove this question?',
 );

@@ -54,13 +54,27 @@
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
 			getQuestionInput( question )
+				.append( '<br />' )
+				.append( $( '<button />' ).button()
+					.text( mw.msg( 'survey-special-remove' ) )
+					.click( function() { 
+						if ( confirm( mw.msg( 'survey-special-remove-confirm' ) ) ) {
+							removeQuestion( question );
+						}
+						
+						return false;
+					} )
+				) 
 		) );
 		
 		$table.append( $tr );
 	};
 	
 	function getQuestionInput( question ) {
-		var $input = $( '<div />' ).attr( { 'border': '1px solid black', 'id': 'survey-question-div-' + question.id } );
+		var $input = $( '<div />' ).attr( {
+			'border': '1px solid black',
+			'id': 'survey-question-div-' + question.id
+		} );
 		
 		$input.append( $( '<label />' ).attr( {
 			'for': 'survey-question-text-' + question.id
@@ -71,7 +85,8 @@
 		$input.append( $( '<textarea />' ).attr( {
 			'rows': 2,
 			'cols': 80,
-			'id': 'survey-question-text-' + question.id
+			'id': 'survey-question-text-' + question.id,
+			'name': 'survey-question-text-' + question.id
 		} ).val( question.text ) );
 		
 		$input.append( '<br />' );
@@ -81,11 +96,13 @@
 		} ).text( mw.msg( 'survey-special-label-type' ) ) );
 
 		$input.append( survey.htmlSelect( questionTypes, question.type, {
-			'id': 'survey-question-type-' + question.id
+			'id': 'survey-question-type-' + question.id,
+			'name': 'survey-question-type-' + question.id
 		} ) );
 		
 		$required = $( '<input />' ).attr( {
 			'id': 'survey-question-required-' + question.id,
+			'name': 'survey-question-required-' + question.id,
 			'type': 'checkbox',
 		} ).text( mw.msg( 'survey-special-label-type' ) );
 		
@@ -103,7 +120,7 @@
 	};
 	
 	function removeQuestion( question ) {
-		$( 'survey-question-div-' + question.id ).slideUp( 'fast', function() { $( this ).remove(); } )
+		$( '#survey-question-div-' + question.id ).closest( 'tr' ).slideUp( 'fast', function() { $( this ).remove(); } )
 	};
 	
 	function onAddQuestionRequest() {

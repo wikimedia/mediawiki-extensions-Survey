@@ -122,7 +122,8 @@ $wgResourceModules['ext.survey.special.surveys'] = $moduleTemplate + array(
 	),
 	'dependencies' => array( 'ext.survey' ),
 	'messages' => array(
-		'surveys-special-confirm-delete'
+		'surveys-special-confirm-delete',
+		'surveys-special-delete-failed',
 	)
 );
 
@@ -145,6 +146,8 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 		'survey-special-label-text',
 		'survey-special-label-addquestion',
 		'survey-special-label-button',
+		'survey-special-remove',
+		'survey-special-remove-confirm',
 	)
 );
 

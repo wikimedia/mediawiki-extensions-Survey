@@ -20,9 +20,11 @@ class SurveyQuestion extends SurveyDBClass {
 	
 	/**
 	 * The ID of the survey this question belongs to.
+	 * This can be null. When written to the db via Survey::writeToDB of
+	 * a Survey holding this question, the survey ID will first be set.
 	 * 
 	 * @since 0.1
-	 * @var integer
+	 * @var integer|null
 	 */
 	protected $surveyId;
 	
@@ -295,6 +297,17 @@ class SurveyQuestion extends SurveyDBClass {
 	 */
 	public function isRequired() {
 		return $this->required;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param integer|null $id
+	 */
+	public function setSurveyId( $id ) {
+		$this->surveyId = $id;
 	}
 	
 	/**

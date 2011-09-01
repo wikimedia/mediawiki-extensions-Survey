@@ -150,7 +150,7 @@ class Survey extends SurveyDBClass {
 		$this->name = $name;
 		$this->enabled = $enabled;
 		
-		$this->questions = $questions;
+		$this->setQuestions( $questions );
 	}
 	
 	/**
@@ -178,6 +178,7 @@ class Survey extends SurveyDBClass {
 		$dbw->begin();
 		
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
+			$question->setSurveyId( $this->getId() );
 			$success = $question->writeToDB() && $success;
 		}
 		
@@ -199,6 +200,39 @@ class Survey extends SurveyDBClass {
 	}
 	
 	/**
+	 * Sets the survey name.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $name
+	 */
+	public function setName( $name ) {
+		$this->name = $name;
+	}
+	
+	/**
+	 * Returns if the survey is enabled.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean
+	 */
+	public function isEnabled() {
+		return $this->enabled;
+	}
+	
+	/**
+	 * Sets if the survey is enabled or not.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param boolean $enabled
+	 */
+	public function setEnabled( $enabled ) {
+		$this->enabled = $enabled;
+	}
+	
+	/**
 	 * Returns the surveys questions.
 	 * 
 	 * @since 0.1
@@ -207,6 +241,17 @@ class Survey extends SurveyDBClass {
 	 */
 	public function getQuestions() {
 		return $this->questions;
+	}
+	
+	/**
+	 * Sets the surveys questions.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $questions list of SurveyQuestion
+	 */
+	public function setQuestions( array /* of SurveyQuestion */ $questions ) {
+		$this->questions = $questions;
 	}
 	
 	/**
