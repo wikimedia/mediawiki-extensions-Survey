@@ -122,17 +122,19 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$out->addHTML( Xml::openElement(
 			'table',
-			array( 'class' => 'wikitable', 'style' => 'width:400px' )
+			array( 'class' => 'wikitable sortable', 'style' => 'width:400px' )
 		) );
 		
 		$out->addHTML( 
-			'<tr>' .
+			'<thead><tr>' .
 				Html::element( 'th', array(), wfMsg( 'surveys-special-name' ) ) .
 				Html::element( 'th', array(), wfMsg( 'surveys-special-status' ) ) .
-				Html::element( 'th', array(), wfMsg( 'surveys-special-edit' ) ) .
-				Html::element( 'th', array(), wfMsg( 'surveys-special-delete' ) ) .
-			'</tr>'
+				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-edit' ) ) .
+				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-delete' ) ) .
+			'</tr></thead>'
 		);
+		
+		$out->addHTML( '<tbody>' );
 		
 		foreach ( $surveys as $survey ) {
 			$out->addHTML(
@@ -172,6 +174,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			);
 		}
 		
+		$out->addHTML( '</tbody>' );
 		$out->addHTML( '</table>' );
 	}	
 	
