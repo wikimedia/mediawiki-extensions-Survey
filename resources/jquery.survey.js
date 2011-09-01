@@ -17,7 +17,9 @@
 				'action': 'query',
 				'list': 'surveys',
 				'format': 'json',
-				'sunames': options.names.join( '|' )
+				'sunames': options.names.join( '|' ),
+				'suincquestions': 1,
+				'suenabled': 1
 			},
 			function( data ) {
 				if ( data.surveys ) {
@@ -39,8 +41,32 @@
 		// TODO
 	};
 	
+	this.getQuestionInput = function( question ) {
+		var type = survey.question.type;
+		
+		var $input;
+		
+		switch ( question.type ) {
+			case type.TEXT: default:
+				$input = $( '<input />' ).attr( {
+					'id': 'survey-question-' + question.id,
+					'class': 'survey-question'
+				} );
+				break;
+		}
+		
+		return $input;
+	};
+	
 	this.getSurveyQuestion = function( question ) {
-		return ''; // TODO
+		$q = $( '<div />' );
+		
+		$q.append( '<hr />' );
+		$q.append( $( '<p />' ).text( question.text ) );
+		
+		$q.append( this.getQuestionInput( question ) )
+		
+		return $q;
 	};
 	
 	this.getSurveyQuestions = function( questions ) {
@@ -56,9 +82,9 @@
 	this.getSurveyBody = function( surveyData ) {
 		$survey = $( '<div />' );
 		
-		$survey.append( this.getSurveyQuestions( surveyData.questions ) );
+		$survey.append( $( '<h1 />' ).text( surveyData.name ) );
 		
-		$survey.append( JSON.stringify( surveyData ) );
+		$survey.append( this.getSurveyQuestions( surveyData.questions ) );
 		
 		return $survey;
 	};

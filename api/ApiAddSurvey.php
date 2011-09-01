@@ -74,7 +74,7 @@ class ApiAddSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return '';
+		return 'addsurvey';
 	}
 
 	public function getAllowedParams() {

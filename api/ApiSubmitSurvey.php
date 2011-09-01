@@ -49,7 +49,7 @@ class ApiSubmitSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return '';
+		return 'submitsurvey';
 	}
 	
 	public function getAllowedParams() {

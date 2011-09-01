@@ -52,6 +52,34 @@ window.survey = new( function() {
 		return $select;
 	};
 	
+	this.question = new( function() {
+		
+		this.type = new( function() {
+			this.TEXT = 0;
+			this.NUMBER = 1;
+			this.SELECT = 2;
+			this.RADIO = 3;
+		} );
+		
+		this.getTypeSelector = function( value, attributes ) {
+			var options = [];
+			
+			var types = {
+				'text': survey.question.type.TEXT,
+				'number': survey.question.type.NUMBER,
+				'select': survey.question.type.SELECT,
+				'radio': survey.question.type.RADIO
+			};
+			
+			for ( msg in types ) {
+				options[survey.msg( 'survey-question-type-' + msg )] = types[msg];
+			}
+			
+			return survey.htmlSelect( options, value, attributes );
+		};
+		
+	} );
+	
 } )();
 
 

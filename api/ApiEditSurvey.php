@@ -66,7 +66,7 @@ class ApiEditSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return '';
+		return 'editsurvey';
 	}
 
 	public function getAllowedParams() {

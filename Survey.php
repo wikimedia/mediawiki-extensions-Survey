@@ -157,7 +157,8 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 		'jquery.survey.js'
 	),
 	'styles' => array(
-		'fancybox/jquery.fancybox-1.3.4.css',
+		// This file makes the RL go mad for some reason, so for now load it the old fashioned way. 
+		//'fancybox/jquery.fancybox-1.3.4.css',
 	),
 	'dependencies' => array( 'ext.survey' ),
 	'messages' => array(

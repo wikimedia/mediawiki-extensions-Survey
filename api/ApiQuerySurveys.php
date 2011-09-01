@@ -37,6 +37,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 		
 		$surveys = array();
 
+		// TODO
+		
 		if ( isset( $params['ids'] ) ) {
 			foreach ( $params['ids'] as $surveyId ) {
 				$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 );
@@ -96,6 +98,9 @@ class ApiQuerySurveys extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => '0',
 			),
+			'enabled' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+			),
 			'limit' => array(
 				ApiBase :: PARAM_DFLT => 20,
 				ApiBase :: PARAM_TYPE => 'limit',
@@ -118,6 +123,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			'ids' => 'The IDs of the surveys to return',
 			'names' => 'The names of the surveys to return',
 			'incquestions' => 'Include the questions of the surveys or not',
+			'enabled' => 'Enabled state to filter on',
 			'continue' => 'Offset number from where to continue the query',
 			'limit'   => 'Max amount of words to return',
 			'token' => 'Edit token. You can get one of these through prop=info.',

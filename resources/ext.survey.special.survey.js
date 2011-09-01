@@ -9,8 +9,6 @@
 
 	var _this = this;
 
-	var questionTypes = {};
-	
 	var $table = null;
 	var newQuestionNr = 0;
 	var questionNr = 0;
@@ -95,7 +93,7 @@
 			'for': 'survey-question-type-' + question.id
 		} ).text( mw.msg( 'survey-special-label-type' ) ) );
 
-		$input.append( survey.htmlSelect( questionTypes, question.type, {
+		$input.append( survey.question.getTypeSelector( question.type, {
 			'id': 'survey-question-type-' + question.id,
 			'name': 'survey-question-type-' + question.id
 		} ) );
@@ -133,16 +131,7 @@
 		$( '#survey-question-text-new' ).focus().select();
 	};
 	
-	function initTypes() {
-		var types = [ 'text', 'number', 'select', 'radio' ];
-		for ( type in types ) {
-			questionTypes[survey.msg( 'survey-question-type-' + types[type] )] = type;
-		}
-	};
-	
 	function setup() {
-		initTypes();
-		
 		$table = $( '#survey-name' ).closest( 'tbody' );
 		
 		$table.append( '<tr><td colspan="2"><hr /></td></tr>' );
