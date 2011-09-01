@@ -46,12 +46,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 			}
 			
 			if ( $survey === false ) {
-				$this->showNameError();
+				$survey = new Survey( null, $subPage );
 			}
-			else {
-				$this->showSurvey( $survey );
-				$this->addModules( 'ext.survey.special.survey' );
-			}
+			
+			$this->showSurvey( $survey );
+			$this->addModules( 'ext.survey.special.survey' );
 		}
 	}
 	
@@ -132,11 +131,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 		}
 		
 		$question = new SurveyQuestion(
-			$questionId,
+			$questionDbId,
 			0,
 			$wgRequest->getText( "survey-question-text-$questionId" ),
 			$wgRequest->getInt( "survey-question-type-$questionId" ),
-			$wgRequest->getCheck( "survey-question-required-$questionDbId" )
+			$wgRequest->getCheck( "survey-question-required-$questionId" )
 		);
 		
 		return $question;
@@ -172,20 +171,16 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$fields[] = array(
 			'type' => 'text',
-			//'options' => array(),
-			'default' => 'ohi',
+			'default' => $survey->getName(),
 			'label-message' => 'survey-special-label-name',
-			'required' => true,
 			'id' => 'survey-name',
 			'name' => 'survey-name',
 		);
 		
 		$fields[] = array(
 			'type' => 'check',
-			//'options' => array(),
-			'default' => 'there',
+			'default' => $survey->isEnabled() ? '1' : '0',
 			'label-message' => 'survey-special-label-enabled',
-			'required' => true,
 			'id' => 'survey-enabled',
 			'name' => 'survey-enabled',
 		);
@@ -198,7 +193,6 @@ class SpecialSurvey extends SpecialSurveyPage {
 					'text' => $question->getText(),
 					'type' => $question->getType(),
 					'id' => $question->getId(),
-					'type' => $question->getType(),
 				)
 			);
 		}
@@ -212,9 +206,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$form = new HTMLForm( $fields );
 		}
 
-//		$q = new SurveyQuestion( null, 5, 'foo bar', 0, false, array(), false );
-//		var_dump($q->toUrlData());exit;
-		$form->displayForm( '' );
+		$form->show();
 	}
 	
 }

@@ -9,12 +9,13 @@
 (function( $ ) { $( document ).ready( function() {
 
 	function deleteSurvey( options, successCallback, failCallback ) {
-		$.getJSON(
+		$.post(
 			wgScriptPath + '/api.php',
 			{
 				'action': 'deletesurvey',
 				'format': 'json',
-				'ids': options.id
+				'ids': options.id,
+				'token': options.token
 			},
 			function( data ) {
 				if ( data.success ) {
@@ -32,7 +33,10 @@
 		
 		if ( confirm( survey.msg( 'surveys-special-confirm-delete' ) ) ) {
 			deleteSurvey(
-				{ id: $this.attr( 'data-survey-id' ) },
+				{
+					id: $this.attr( 'data-survey-id' ),
+					token: $this.attr( 'data-survey-token' )
+				},
 				function() {
 					$this.closest( 'tr' ).slideUp( 'slow', function() { $( this ).remove(); } );
 				},

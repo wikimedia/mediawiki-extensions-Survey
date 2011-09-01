@@ -23,7 +23,7 @@ class ApiDeleteSurvey extends ApiBase {
 		
 		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		}			
+		}
 		
 		$params = $this->extractRequestParams();
 		
@@ -46,7 +46,7 @@ class ApiDeleteSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return '';
+		return 'deletesurvey';
 	}
 	
 	public function getAllowedParams() {
