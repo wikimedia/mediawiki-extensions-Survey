@@ -61,10 +61,11 @@
 	this.getSurveyQuestion = function( question ) {
 		$q = $( '<div />' );
 		
-		$q.append( '<hr />' );
 		$q.append( $( '<p />' ).text( question.text ) );
 		
 		$q.append( this.getQuestionInput( question ) )
+		
+		$q.append( '<hr />' );
 		
 		return $q;
 	};

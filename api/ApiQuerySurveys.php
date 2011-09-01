@@ -35,36 +35,53 @@ class ApiQuerySurveys extends ApiQueryBase {
 			$this->dieUsage( wfMsgExt( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
 		}
 		
-		$surveys = array();
-
-		// TODO
+		
+		$this->addTables( 'surveys' );
+		
+		$this->addFields( 'survey_id' );
 		
 		if ( isset( $params['ids'] ) ) {
-			foreach ( $params['ids'] as $surveyId ) {
-				$survey = Survey::newFromId( $surveyId, $params['incquestions'] == 1 );
-				
-				if ( $survey !== false ) {
-					$surveys[] = $this->getSurveyData( $survey );
-				}
-			}			
+			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
+		}
+		else {
+			$this->addWhere( array( 'survey_name' => $params['names'] ) );
+		}
+		
+		if ( isset( $params['enabled'] ) ) {
+			$this->addWhere( array( 'survey_enabled' => $params['enabled'] ) );
+		}
+		
+		if ( isset( $params['continue'] ) ) {
+			$this->addWhere( 'survey_id >= ' . wfGetDB( DB_SLAVE )->addQuotes( $params['continue'] ) );
+		}
+		
+		$this->addOption( 'LIMIT', $params['limit'] + 1 );
+		$this->addOption( 'ORDER BY', 'survey_id ASC' );
+		
+		$surveys = $this->select( __METHOD__ );
+		$count = 0;
+		$resultSurveys = array();
+		
+		foreach ( $surveys as $survey ) {
+			if ( ++$count > $params['limit'] ) {
+				// We've reached the one extra which shows that
+				// there are additional pages to be had. Stop here...
+				$this->setContinueEnumParameter( 'continue', $survey->survey_id );
+				break;
+			}
+			
+			$resultSurveys[] = $this->getSurveyData( Survey::newFromId(
+				$survey->survey_id,
+				$params['incquestions'] == 1
+			) );
 		}
 
-		if ( isset( $params['names'] ) ) {
-			foreach ( $params['names'] as $surveyName ) {
-				$survey = Survey::newFromName( $surveyName, $params['incquestions'] == 1 );
-				
-				if ( $survey !== false ) {
-					$surveys[] = $this->getSurveyData( $survey );
-				}
-			}			
-		}
-
-		$this->getResult()->setIndexedTagName( $surveys, 'survey' );
+		$this->getResult()->setIndexedTagName( $resultSurveys, 'survey' );
 		
 		$this->getResult()->addValue(
 			null,
 			'surveys',
-			$surveys
+			$resultSurveys
 		);
 	}
 	
