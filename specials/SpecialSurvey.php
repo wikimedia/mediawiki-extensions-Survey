@@ -185,6 +185,30 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'name' => 'survey-enabled',
 		);
 		
+		$fields[] = array(
+			'type' => 'text',
+			'default' => $survey->getHeader(),
+			'label-message' => 'survey-special-label-header',
+			'id' => 'survey-header',
+			'name' => 'survey-header',
+		);
+		
+		$fields[] = array(
+			'type' => 'text',
+			'default' => $survey->getFooter(),
+			'label-message' => 'survey-special-label-footer',
+			'id' => 'survey-footer',
+			'name' => 'survey-footer',
+		);
+
+		$fields[] = array(
+			'type' => 'text',
+			'default' => $survey->getThanks(),
+			'label-message' => 'survey-special-label-thanks',
+			'id' => 'survey-thanks',
+			'name' => 'survey-thanks',
+		);
+		
 		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
 			$fields[] = array(
 				'class' => 'SurveyQuestionField',

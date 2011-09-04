@@ -6,7 +6,10 @@
 CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
   survey_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
   survey_name              VARCHAR(255)        NOT NULL,
-  survey_enabled           TINYINT             NOT NULL default '0'
+  survey_enabled           TINYINT             NOT NULL default '0',
+  survey_header            TEXT                NOT NULL,
+  survey_footer            TEXT                NOT NULL,
+  survey_thanks            TEXT                NOT NULL
 ) /*$wgDBTableOptions*/;
 
 -- Questions

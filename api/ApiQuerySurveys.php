@@ -31,14 +31,17 @@ class ApiQuerySurveys extends ApiQueryBase {
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
 		
-		if ( !( isset( $params['ids'] ) XOR isset( $params['names'] ) ) ) {
+		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
+			 XOR ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
+			 ) ) {
 			$this->dieUsage( wfMsgExt( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
 		}
 		
-		
 		$this->addTables( 'surveys' );
 		
-		$this->addFields( 'survey_id' );
+		$fields = array_merge( array( 'id' ), $params['props'] );
+		
+		$this->addFields( $this->getSurveyFields( $fields ) );
 		
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
@@ -70,10 +73,17 @@ class ApiQuerySurveys extends ApiQueryBase {
 				break;
 			}
 			
-			$resultSurveys[] = $this->getSurveyData( Survey::newFromId(
-				$survey->survey_id,
-				$params['incquestions'] == 1
-			) );
+			$surveyObject = new Survey( $survey->survey_id );
+			
+			foreach ( $fields as $prop ) {
+				$surveyObject->setProp( $prop, $survey->{ 'survey_' . $prop } );
+			}
+			
+			if ( $params['incquestions'] ) {
+				$surveyObject->loadQuestionsFromDB();
+			}
+			
+			$resultSurveys[] = $this->getSurveyData( $surveyObject->toArray( $fields ) );
 		}
 
 		$this->getResult()->setIndexedTagName( $resultSurveys, 'survey' );
@@ -85,9 +95,20 @@ class ApiQuerySurveys extends ApiQueryBase {
 		);
 	}
 	
-	function getSurveyData( Survey $survey ) {
-		$survey = $survey->toArray();
+	protected function getSurveyFields( array $props ) {
+		$fields = array();
+		$allowedFields = Survey::getSurveyProps();
 		
+		foreach ( $props as $prop ) {
+			if ( in_array( $prop, $allowedFields ) ) {
+				$fields[] = "survey_$prop";
+			}
+		}
+		
+		return $fields;
+	}
+	
+	protected function getSurveyData( array $survey ) {
 		foreach ( $survey['questions'] as $nr => $question ) {
 			$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
 		}
@@ -110,6 +131,11 @@ class ApiQuerySurveys extends ApiQueryBase {
 			'names' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
+			),
+			'props' => array(
+				ApiBase::PARAM_TYPE => Survey::getSurveyProps(),
+				ApiBase::PARAM_ISMULTI => true,
+				ApiBase::PARAM_DFLT => 'id|name|enabled'
 			),
 			'incquestions' => array(
 				ApiBase::PARAM_TYPE => 'integer',
@@ -141,6 +167,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			'names' => 'The names of the surveys to return',
 			'incquestions' => 'Include the questions of the surveys or not',
 			'enabled' => 'Enabled state to filter on',
+			'props' => 'Survey data to query',
 			'continue' => 'Offset number from where to continue the query',
 			'limit'   => 'Max amount of words to return',
 			'token' => 'Edit token. You can get one of these through prop=info.',

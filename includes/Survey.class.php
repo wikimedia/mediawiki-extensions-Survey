@@ -13,6 +13,23 @@
  */
 class Survey extends SurveyDBClass {
 	
+	protected static $fields = array(
+		'id' => 'int',
+		'name' => 'str',
+		'enabled' => 'bool',
+		'header' => 'str',
+		'footer' => 'str',
+		'thanks' => 'str',
+	);
+	
+	/**
+	 * 
+	 * 
+	 * @since 0.1
+	 * @var string
+	 */
+	protected static $fieldPrefix = 'survey_';
+	
 	/**
 	 * The name of the survey.
 	 * 
@@ -36,6 +53,30 @@ class Survey extends SurveyDBClass {
 	 * @var array of SurveyQuestion
 	 */
 	protected $questions;
+	
+	/**
+	 * Header text to display above the questions.
+	 * 
+	 * @since 0.1
+	 * @var string
+	 */
+	protected $header;
+	
+	/**
+	 * Footer text to display below the questions.
+	 * 
+	 * @since 0.1
+	 * @var string
+	 */
+	protected $footer;
+	
+	/**
+	 * Thanks message to display after submission of the survey.
+	 * 
+	 * @since 0.1
+	 * @var string
+	 */
+	protected $thanksMessage;
 	
 	/**
 	 * @see SurveyDBClass::getDBTable()
@@ -71,12 +112,13 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param string $surveyName
+	 * @param array|null $fields
 	 * @param boolean $loadQuestions
 	 * 
 	 * @return Survey or false
 	 */
-	public static function newFromName( $surveyName, $loadQuestions = true ) {
-		return self::newFromDB( array( 'survey_name' => $surveyName ), $loadQuestions );
+	public static function newFromName( $surveyName, $fields = null, $loadQuestions = true ) {
+		return self::newFromDB( array( 'survey_name' => $surveyName ), $fields, $loadQuestions );
 	}
 	
 	/**
@@ -85,12 +127,13 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param integer surveyId
+	 * @param array|null $fields
 	 * @param boolean $loadQuestions
 	 * 
 	 * @return Survey or false
 	 */
-	public static function newFromId( $surveyId, $loadQuestions = true ) {
-		return self::newFromDB( array( 'survey_id' => $surveyId ), $loadQuestions );
+	public static function newFromId( $surveyId, $fields = null, $loadQuestions = true ) {
+		return self::newFromDB( array( 'survey_id' => $surveyId ), $fields, $loadQuestions );
 	}
 	
 	/**
@@ -101,20 +144,25 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param array $conditions
+	 * @param array|null $fields
 	 * @param boolean $loadQuestions
 	 * 
 	 * @return Survey or false
 	 */
-	protected static function newFromDB( array $conditions, $loadQuestions = true ) {
+	protected static function newFromDB( array $conditions, $fields = null, $loadQuestions = true ) {
 		$dbr = wfGetDB( DB_SLAVE );
+		
+		if ( is_null( $fields ) ) {
+			$fields = array_keys( self::$fields );
+		}
+		
+		foreach ( $fields as &$field ) {
+			$field = self::$fieldPrefix . $field;
+		} 
 		
 		$survey = $dbr->selectRow(
 			'surveys',
-			array(
-				'survey_id',
-				'survey_name',
-				'survey_enabled',
-			),
+			$fields,
 			$conditions
 		);
 		
@@ -122,17 +170,44 @@ class Survey extends SurveyDBClass {
 			return false;
 		}
 
-		$survey = new self(
-			(int)$survey->survey_id,
-			$survey->survey_name,
-			(int)$survey->survey_enabled == 1
-		);
+		$survey = self::newFromDBResult( $survey );
 		
 		if ( $loadQuestions ) {
 			$survey->loadQuestionsFromDB();
 		}
 		
 		return $survey;
+	}
+	
+	protected static function newFromDBResult( $result ) {
+		$result = (array)$result;
+		$data = array();
+		
+		foreach ( $result as $name => $value ) {
+			$data[substr( $name, strlen( self::$fieldPrefix ) )] = $value;
+		}
+		
+		return self::newFromArray( $data );
+	}
+	
+	protected static function newFromArray( array $data ) {
+		$survey = new Survey( array_key_exists( 'id', $data ) ? $data['id'] : null );
+		
+		$survey->setProps( $data );
+		
+		return $survey;
+	}
+	
+	/**
+	 * Returns the survey fields. 
+	 * Field name => db field without prefix
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	public static function getSurveyProps() {
+		return array_keys( self::$fields );
 	}
 	
 	/**
@@ -244,6 +319,39 @@ class Survey extends SurveyDBClass {
 	}
 	
 	/**
+	 * Returns the surveys header.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function getHeader() {
+		return $this->header;
+	}
+	
+	/**
+	 * Returns the surveys footer.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function getFooter() {
+		return $this->footer;
+	}
+	
+	/**
+	 * Returns the surveys thanks message.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	public function getThanks() {
+		return $this->thanksMessage;
+	}
+	
+	/**
 	 * Sets the surveys questions.
 	 * 
 	 * @since 0.1
@@ -260,12 +368,12 @@ class Survey extends SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
+	 * @param null|array $props
+	 * 
 	 * @return array
 	 */
-	public function toArray() {
+	public function toArray( $props = null ) {
 		$data = array(
-			'enabled' => $this->enabled,
-			'name' => $this->name,
 			'questions' => array(),
 		);
 		
@@ -273,11 +381,29 @@ class Survey extends SurveyDBClass {
 			$data['questions'][] = $question->toArray();
 		}
 		
-		if ( !is_null( $this->id ) ) {
-			$data['id'] = $this->id;
+		if ( !is_array( $props ) ) {
+			$props = array_keys( self::$fields );
+		}
+		
+		foreach ( $props as $prop ) {
+			if ( !( $prop == 'id' && is_null( $this->{ $prop } ) ) ) {
+				$data[$prop] = $this->getProp( $prop );
+			}
 		}
 		
 		return $data;
+	}
+	
+	public static function fromArray( array $data ) {
+		$survey = new Survey( array_key_exists( 'id', $data ) ? $data['id'] : null );
+		
+		foreach ( $data as $name => $value ) {
+			if ( $name != 'id' && array_key_exists( $name, self::$fields ) ) {
+				$survey->setProp( $name, $value );
+			}
+		}
+		
+		return $survey;
 	}
 	
 	/**
@@ -327,6 +453,40 @@ class Survey extends SurveyDBClass {
 		$dbw->commit();
 		
 		return $sucecss;
+	}
+	
+	public function setProp( $name, $value ) {
+		if ( array_key_exists( $name, self::$fields ) ) {
+			switch ( self::$fields[$name] ) {
+				case 'int':
+					$value = (int)$value;
+				case 'bool':
+					if ( is_string( $value ) ) {
+						$value = $value != '0';
+					}
+			}
+			
+			$this->{ $name } = $value;
+		}
+	}
+	
+	public function getProp( $name ) {
+		if ( array_key_exists( $name, self::$fields ) ) {
+			return $this->{ $name };
+		}
+		else {
+			// TODO: exception
+		}
+	}
+	
+	public function setProps( array $props ) {
+		if ( array_key_exists( 'id', $props ) ) {
+			unset( $props['id'] );
+		}
+		
+		foreach ( $props as $name => $value ) {
+			$this->setProp( $name, $value );
+		}
 	}
 	
 }
