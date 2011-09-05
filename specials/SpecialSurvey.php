@@ -46,7 +46,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			}
 			
 			if ( $survey === false ) {
-				$survey = new Survey( null, $subPage );
+				$survey = new Survey( array( 'name' => $subPage ) );
 			}
 			
 			$this->showSurvey( $survey );
@@ -74,8 +74,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
 		}
 		
-		$survey->setName( $wgRequest->getText( 'survey-name' ) );
-		$survey->setEnabled( $wgRequest->getCheck( 'survey-enabled' ) );
+		$survey->setField( 'name', $wgRequest->getText( 'survey-name' ) );
+		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
 		
 		$survey->setQuestions( $this->getSubmittedQuestions() );
 		
@@ -127,16 +127,16 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$questionId = "new-$questionId";
 		}
 		else {
-			$questionId = $questionId;
+			$questionDbId = $questionId;
 		}
 		
-		$question = new SurveyQuestion(
-			$questionDbId,
-			0,
-			$wgRequest->getText( "survey-question-text-$questionId" ),
-			$wgRequest->getInt( "survey-question-type-$questionId" ),
-			$wgRequest->getCheck( "survey-question-required-$questionId" )
-		);
+		$question = new SurveyQuestion( array(
+			'id' => $questionDbId,
+			'removed' => 0,
+			'text' => $wgRequest->getText( "survey-question-text-$questionId" ),
+			'type' => $wgRequest->getInt( "survey-question-type-$questionId" ),
+			'required' => $wgRequest->getCheck( "survey-question-required-$questionId" )
+		) );
 		
 		return $question;
 	}

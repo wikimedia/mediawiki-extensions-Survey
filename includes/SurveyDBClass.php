@@ -30,8 +30,11 @@ abstract class SurveyDBClass {
 	 * @param array|null $fields
 	 */
 	public function __construct( $fields ) {
-		if ( !is_null( $fields ) ) {
+		if ( is_array( $fields ) ) {
 			$this->setFields( $fields );
+		}
+		else {
+			throw new Exception('');
 		}
 	}
 	
@@ -203,11 +206,11 @@ abstract class SurveyDBClass {
 	 * @return boolean Success indicator
 	 */
 	public function writeToDB() {
-		if ( $this->hadIdField() ) {
-			return $this->insertIntoDB();
+		if ( $this->hasIdField() ) {
+			return $this->updateInDB();
 		}
 		else {
-			return $this->updateInDB();
+			return $this->insertIntoDB();
 		}
 	}
 	
@@ -379,6 +382,17 @@ abstract class SurveyDBClass {
 	public function getId() {
 		return $this->getField( static::getIDField() );
 	}
+
+	/**
+	 * Sets the objects database id.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param integere|null $id
+	 */
+	public function setId( $id ) {
+		return $this->setField( static::getIDField(), $id );
+	}
 	
 	/**
 	 * Gets if a certain field is set.
@@ -442,14 +456,16 @@ abstract class SurveyDBClass {
 		$values = array();
 		
 		foreach ( static::getFieldTypes() as $name => $type ) {
-			$value = $this->fields[$name];
-			
-			switch ( $type ) {
-				case 'array':
-					$value = serialize( (array)$value );
+			if ( array_key_exists( $name, $this->fields ) ) {
+				$value = $this->fields[$name];
+				
+				switch ( $type ) {
+					case 'array':
+						$value = serialize( (array)$value );
+				}
+				
+				$values[static::getFieldPrefix() . $name] = $value;				
 			}
-			
-			$values[static::getFieldPrefix() . $name] = $value;
 		}
 		
 		return $values;

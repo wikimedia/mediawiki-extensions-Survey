@@ -134,7 +134,7 @@ class Survey extends SurveyDBClass {
 		$dbw->begin();
 		
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
-			$question->setSurveyId( $this->getId() );
+			$question->setId( $this->getId() );
 			$success = $question->writeToDB() && $success;
 		}
 		
