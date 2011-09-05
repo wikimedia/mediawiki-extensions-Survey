@@ -52,18 +52,9 @@ class SpecialSurveys extends SpecialSurveyPage {
 	protected function displaySurveys() {
 		$this->displayAddNewControl();
 		
-		$dbr = wfGetDB( DB_SLAVE );
+		$surveys = Survey::select( array( 'id', 'name', 'enabled' ) );
 		
-		$surveys = $dbr->select(
-			'surveys',
-			array(
-				'survey_id',
-				'survey_name',
-				'survey_enabled',
-			)
-		);
-		
-		if ( $surveys->numRows() > 0 ) {
+		if ( count( $surveys ) > 0 ) {
 			$this->displaySurveysTable( $surveys );
 		}
 		
@@ -113,9 +104,9 @@ class SpecialSurveys extends SpecialSurveyPage {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param ResultWrapper $surveys
+	 * @param array $surveys
 	 */
-	protected function displaySurveysTable( ResultWrapper $surveys ) {
+	protected function displaySurveysTable( array /* of Survey */ $surveys ) {
 		$out = $this->getOutput();
 		
 		$out->addHTML( Html::element( 'h2', array(), wfMsg( 'surveys-special-existing' ) ) );
@@ -143,17 +134,17 @@ class SpecialSurveys extends SpecialSurveyPage {
 						Html::element( 
 							'a',
 							array(
-								'href' => SpecialPage::getTitleFor( 'TakeSurvey', $survey->survey_name )->getLocalURL()
+								'href' => SpecialPage::getTitleFor( 'TakeSurvey', $survey->getField( 'name' ) )->getLocalURL()
 							),
-							$survey->survey_name
+							$survey->getField( 'name' )
 						) .
 					'</td>' .
-					Html::element( 'td', array(), wfMsg( 'surveys-special-' . ( $survey->survey_enabled ? 'enabled' : 'disabled' ) ) ) .
+					Html::element( 'td', array(), wfMsg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) ) ) .
 					'<td>' .
 						Html::element( 
 							'a',
 							array(
-								'href' => SpecialPage::getTitleFor( 'Survey', $survey->survey_name )->getLocalURL()
+								'href' => SpecialPage::getTitleFor( 'Survey', $survey->getField( 'name' ) )->getLocalURL()
 							),
 							wfMsg( 'surveys-special-edit' )
 						) .
@@ -164,7 +155,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 							array(
 								'href' => '#',
 								'class' => 'survey-delete',
-								'data-survey-id' => $survey->survey_id,
+								'data-survey-id' => $survey->getId(),
 								'data-survey-token' => $GLOBALS['wgUser']->editToken( 'deletesurvey' )
 							),
 							wfMsg( 'surveys-special-delete' )
