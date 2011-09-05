@@ -19,80 +19,47 @@ class SurveyQuestion extends SurveyDBClass {
 	public static $TYPE_RADIO = 3;
 	
 	/**
+	 * Returns an array with the fields and their types this object contains.
+	 * This corresponds directly to the fields in the database, without prefix.
+	 * 
+	 * survey_id:
 	 * The ID of the survey this question belongs to.
 	 * This can be null. When written to the db via Survey::writeToDB of
 	 * a Survey holding this question, the survey ID will first be set.
 	 * 
-	 * @since 0.1
-	 * @var integer|null
-	 */
-	protected $surveyId;
-	
-	/**
+	 * text:
 	 * The question text.
 	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $text;
-	
-	/**
+	 * type:
 	 * The question type.
 	 * 
-	 * @since 0.1
-	 * @var integer
-	 */
-	protected $type;
-	
-	/**
+	 * required:
 	 * Indicated if the question is required, 
 	 * ie if the user can not submit the survey without answering it.
 	 * 
-	 * @since 0.1
-	 * @var boolean
-	 */
-	protected $required;
-	
-	/**
+	 * answers:
 	 * List of allowed values for the question.
 	 * Empty list for no restrictions.
 	 * 
-	 * @since 0.1
-	 * @var array of string|number
-	 */
-	protected $answers;
-	
-	/**
+	 * removed:
 	 * Indicated if the question was removed. 
 	 * Removed questions are kept in the db so their answers can
 	 * still be used untill the survey itself gets removed.
 	 * 
 	 * @since 0.1
-	 * @var boolean
-	 */
-	protected $removed;
-	
-	/**
-	 * Constructor.
 	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer|null $id
-	 * @param integer $surveyId
-	 * @param string $text
-	 * @param integer $type
-	 * @param boolean $required
-	 * @param array $answers
-	 * @param boolean $removed
+	 * @return array
 	 */
-	public function __construct( $id, $surveyId, $text, $type, $required, array $answers = array(), $removed = false ) {
-		$this->id = is_null( $id ) ? $id : (int)$id;
-		$this->surveyId = (int)$surveyId;
-		$this->text = $text;
-		$this->type = $type;
-		$this->required = (boolean)$required;
-		$this->answers = $answers;
-		$this->removed = $removed;
+	protected static function getFieldTypes() {
+		return array(
+			'id' => 'int',
+			'survey_id' => 'int',
+			'text' => 'str',
+			'type' => 'int',
+			'required' => 'bool',
+			'answers' => 'array',
+			'removed' => 'bool',
+		);
 	}
 	
 	/**
@@ -111,27 +78,6 @@ class SurveyQuestion extends SurveyDBClass {
 	}
 	
 	/**
-	 * Unserializes a survey question in the form of an associative array.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param array $args
-	 * 
-	 * @return SurveyQuestion
-	 */
-	public static function newFromArray( array $args ) {
-		return new self(
-			array_key_exists( 'id', $args ) ? $args['id'] : null,
-			array_key_exists( 'surveyId', $args ) ? $args['surveyId'] : null,
-			$args['text'],
-			$args['type'],
-			$args['required'],
-			$args['answers'],
-			$args['removed']
-		);
-	}
-	
-	/**
 	 * Serialization method for survey questions that need to be passed via multi-value API parameter.
 	 * Uses base64 and replaces padding = by !, so the values does not contain any = or |.
 	 * 
@@ -141,31 +87,6 @@ class SurveyQuestion extends SurveyDBClass {
 	 */
 	public function toUrlData() {
 		return str_replace( '=', '!', base64_encode( FormatJson::encode( $this->toArray() ) ) );
-	}
-	
-	/**
-	 * Serializes the survey question to an associative array which
-	 * can then easily be converted into JSON or similar.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return array
-	 */
-	public function toArray() {
-		$args = array(
-			'surveyId' => $this->surveyId,
-			'text' => $this->text,
-			'type' => $this->type,
-			'required' => $this->required,
-			'answers' => $this->answers,
-			'removed' => $this->removed,
-		);
-		
-		if ( !is_null( $this->id ) ) {
-			$args['id'] = $this->id;
-		}
-		
-		return $args;
 	}
 	
 	/**
@@ -179,148 +100,24 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @return array of SurveyQuestion
 	 */
 	public static function getQuestionsForSurvey( $surveyId, $incRemoved = false ) {
-		$conditions = array( 'question_survey_id' => $surveyId );
+		$conditions = array( 'survey_id' => $surveyId );
 		
 		if ( $incRemoved === false ) {
-			$conditions['question_removed'] = 0;
+			$conditions['removed'] = 0;
 		}
 		
-		return self::getQuestionsFromDB( $conditions );
-	}
-	
-	/**
-	 * Returns the questions matching the specified conditions.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param array $conditions
-	 * 
-	 * @return array of SurveyQuestion
-	 */
-	public static function getQuestionsFromDB( array $conditions ) {
-		$dbr = wfgetDB( DB_SLAVE );
-		
-		$questions = $dbr->select(
-			'survey_questions',
-			array(
-				'question_id',
-				'question_survey_id',
-				'question_text',
-				'question_type',
-				'question_required',
-				'question_answers',
-			),
-			$conditions
-		);
-		
-		if ( !$questions ) {
-			return array();
-		}
-		
-		$sQuestions = array();
-		
-		foreach ( $questions as $question ) {
-			$sQuestions[] = new SurveyQuestion(
-				$question->question_id,
-				$question->question_survey_id,
-				$question->question_text,
-				$question->question_type,
-				$question->question_required,
-				unserialize( $question->question_answers )
-			);
-		}
-		
-		return $sQuestions;
+		return self::select( null, $conditions );
 	}
 	
 	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected function getDBTable() {
+	protected static function getDBTable() {
 		return 'survey_questions';
 	}
 	
-	/**
-	 * @see SurveyDBClass::getIDField()
-	 */
-	protected function getIDField() {
-		return 'question_id';
-	}
-	
-	/**
-	 * Gets the fields => values to write to the survey_questions table. 
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer $surveyId
-	 * 
-	 * @return array
-	 */
-	protected function getWriteValues() {
-		return array(
-			'question_survey_id' => $this->surveyId,
-			'question_text' => $this->text,
-			'question_type' => $this->type,
-			'question_required' => $this->required,
-			'question_answers' => serialize( $this->answers ), 
-		);
-	}
-	
-	/**
-	 * Gets the question text.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return string
-	 */
-	public function getText() {
-		return $this->text;
-	}
-	
-	/**
-	 * Gets the questions type.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return integer
-	 */
-	public function getType() {
-		return $this->type;
-	}
-	
-	/**
-	 * Gets if the question is required.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean
-	 */
-	public function isRequired() {
-		return $this->required;
-	}
-	
-	/**
-	 * 
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer|null $id
-	 */
-	public function setSurveyId( $id ) {
-		$this->surveyId = $id;
-	}
-	
-	/**
-	 * Gets if the question was removed.
-	 * This means it should not be shown in the UI,
-	 * and is only kept to make sense of old answers liked to it. 
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean
-	 */
-	public function wasRemoved() {
-		return $this->removed;
+	protected static function getFieldPrefix() {
+		return 'question_';
 	}
 	
 }

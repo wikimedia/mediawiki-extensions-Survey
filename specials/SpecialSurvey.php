@@ -42,7 +42,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 				$survey = new Survey( null );
 			}
 			else {
-				$survey = Survey::newFromName( $subPage, true );
+				$survey = Survey::newFromName( $subPage, null, true );
 			}
 			
 			if ( $survey === false ) {
@@ -71,7 +71,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$survey = new Survey( null );
 		}
 		else {
-			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), false );
+			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
 		}
 		
 		$survey->setName( $wgRequest->getText( 'survey-name' ) );
@@ -171,7 +171,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$fields[] = array(
 			'type' => 'text',
-			'default' => $survey->getName(),
+			'default' => $survey->getField( 'name' ),
 			'label-message' => 'survey-special-label-name',
 			'id' => 'survey-name',
 			'name' => 'survey-name',
@@ -179,7 +179,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$fields[] = array(
 			'type' => 'check',
-			'default' => $survey->isEnabled() ? '1' : '0',
+			'default' => $survey->getField( 'enabled' ) ? '1' : '0',
 			'label-message' => 'survey-special-label-enabled',
 			'id' => 'survey-enabled',
 			'name' => 'survey-enabled',
@@ -187,7 +187,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$fields[] = array(
 			'type' => 'text',
-			'default' => $survey->getHeader(),
+			'default' => $survey->getField( 'header' ),
 			'label-message' => 'survey-special-label-header',
 			'id' => 'survey-header',
 			'name' => 'survey-header',
@@ -195,7 +195,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$fields[] = array(
 			'type' => 'text',
-			'default' => $survey->getFooter(),
+			'default' => $survey->getField( 'footer' ),
 			'label-message' => 'survey-special-label-footer',
 			'id' => 'survey-footer',
 			'name' => 'survey-footer',
@@ -203,7 +203,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 
 		$fields[] = array(
 			'type' => 'text',
-			'default' => $survey->getThanks(),
+			'default' => $survey->getField( 'thanks' ),
 			'label-message' => 'survey-special-label-thanks',
 			'id' => 'survey-thanks',
 			'name' => 'survey-thanks',
@@ -213,9 +213,9 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$fields[] = array(
 				'class' => 'SurveyQuestionField',
 				'options' => array(
-					'required' => $question->isRequired(),
-					'text' => $question->getText(),
-					'type' => $question->getType(),
+					'required' => $question->getField( 'required' ),
+					'text' => $question->getField( 'text' ),
+					'type' => $question->getField( 'type' ),
 					'id' => $question->getId(),
 				)
 			);

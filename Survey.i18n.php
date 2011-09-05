@@ -71,4 +71,7 @@ $messages['en'] = array(
 	'survey-special-label-text' => 'Question text',
 	'survey-special-remove' => 'Remove question',
 	'survey-special-remove-confirm' => 'Are you sure you want to remove this question?',
+	'survey-special-label-header' => 'Text to display above the survey',
+	'survey-special-label-footer' => 'Text to display below the survey',
+	'survey-special-label-thanks' => 'Thanks message to display after submission of the survey',
 );

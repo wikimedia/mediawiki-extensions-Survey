@@ -41,7 +41,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		
 		$fields = array_merge( array( 'id' ), $params['props'] );
 		
-		$this->addFields( $this->getSurveyFields( $fields ) );
+		$this->addFields( Survey::getPrefixedFields( $fields ) );
 		
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
@@ -73,11 +73,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 				break;
 			}
 			
-			$surveyObject = new Survey( $survey->survey_id );
-			
-			foreach ( $fields as $prop ) {
-				$surveyObject->setProp( $prop, $survey->{ 'survey_' . $prop } );
-			}
+			$surveyObject = Survey::newFromDBResult( $survey );
 			
 			if ( $params['incquestions'] ) {
 				$surveyObject->loadQuestionsFromDB();
@@ -95,19 +91,15 @@ class ApiQuerySurveys extends ApiQueryBase {
 		);
 	}
 	
-	protected function getSurveyFields( array $props ) {
-		$fields = array();
-		$allowedFields = Survey::getSurveyProps();
-		
-		foreach ( $props as $prop ) {
-			if ( in_array( $prop, $allowedFields ) ) {
-				$fields[] = "survey_$prop";
-			}
-		}
-		
-		return $fields;
-	}
-	
+	/**
+	 * 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $survey
+	 * 
+	 * @return $survey
+	 */
 	protected function getSurveyData( array $survey ) {
 		foreach ( $survey['questions'] as $nr => $question ) {
 			$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
@@ -133,7 +125,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'props' => array(
-				ApiBase::PARAM_TYPE => Survey::getSurveyProps(),
+				ApiBase::PARAM_TYPE => Survey::getFieldNames(),
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => 'id|name|enabled'
 			),

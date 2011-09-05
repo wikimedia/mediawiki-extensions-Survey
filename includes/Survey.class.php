@@ -13,97 +13,34 @@
  */
 class Survey extends SurveyDBClass {
 	
-	protected static $fields = array(
-		'id' => 'int',
-		'name' => 'str',
-		'enabled' => 'bool',
-		'header' => 'str',
-		'footer' => 'str',
-		'thanks' => 'str',
-	);
-	
-	/**
-	 * 
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected static $fieldPrefix = 'survey_';
-	
-	/**
-	 * The name of the survey.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $name;
-	
-	/**
-	 * If the survey is enabled or not.
-	 * 
-	 * @since 0.1
-	 * @var boolean
-	 */
-	protected $enabled;
-	
-	/**
-	 * The questions that go with this survey.
-	 * 
-	 * @since 0.1
-	 * @var array of SurveyQuestion
-	 */
-	protected $questions;
-	
-	/**
-	 * Header text to display above the questions.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $header;
-	
-	/**
-	 * Footer text to display below the questions.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $footer;
-	
-	/**
-	 * Thanks message to display after submission of the survey.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $thanksMessage;
-	
 	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected function getDBTable() {
+	protected static function getDBTable() {
 		return 'surveys';
 	}
 	
 	/**
-	 * @see SurveyDBClass::getIDField()
-	 */
-	protected function getIDField() {
-		return 'survey_id';
-	}
-	
-	/**
-	 * Gets the fields => values to write to the surveys table. 
+	 * Returns an array with the fields and their types this object contains.
+	 * This corresponds directly to the fields in the database, without prefix.
 	 * 
 	 * @since 0.1
 	 * 
 	 * @return array
 	 */
-	protected function getWriteValues() {
+	protected static function getFieldTypes() {
 		return array(
-			'survey_enabled' => $this->enabled,
-			'survey_name' => $this->name, 
+			'id' => 'int',
+			'name' => 'str',
+			'enabled' => 'bool',
+			'header' => 'str',
+			'footer' => 'str',
+			'thanks' => 'str',
 		);
+	}
+	
+	protected static  function getFieldPrefix() {
+		return 'survey_';
 	}
 	
 	/**
@@ -118,7 +55,7 @@ class Survey extends SurveyDBClass {
 	 * @return Survey or false
 	 */
 	public static function newFromName( $surveyName, $fields = null, $loadQuestions = true ) {
-		return self::newFromDB( array( 'survey_name' => $surveyName ), $fields, $loadQuestions );
+		return self::newFromDB( array( 'name' => $surveyName ), $fields, $loadQuestions );
 	}
 	
 	/**
@@ -133,7 +70,7 @@ class Survey extends SurveyDBClass {
 	 * @return Survey or false
 	 */
 	public static function newFromId( $surveyId, $fields = null, $loadQuestions = true ) {
-		return self::newFromDB( array( 'survey_id' => $surveyId ), $fields, $loadQuestions );
+		return self::newFromDB( array( 'id' => $surveyId ), $fields, $loadQuestions );
 	}
 	
 	/**
@@ -149,28 +86,8 @@ class Survey extends SurveyDBClass {
 	 * 
 	 * @return Survey or false
 	 */
-	protected static function newFromDB( array $conditions, $fields = null, $loadQuestions = true ) {
-		$dbr = wfGetDB( DB_SLAVE );
-		
-		if ( is_null( $fields ) ) {
-			$fields = array_keys( self::$fields );
-		}
-		
-		foreach ( $fields as &$field ) {
-			$field = self::$fieldPrefix . $field;
-		} 
-		
-		$survey = $dbr->selectRow(
-			'surveys',
-			$fields,
-			$conditions
-		);
-		
-		if ( !$survey ) {
-			return false;
-		}
-
-		$survey = self::newFromDBResult( $survey );
+	public static function newFromDB( array $conditions, $fields = null, $loadQuestions = true ) {
+		$survey = self::selectRow( $fields, $conditions );
 		
 		if ( $loadQuestions ) {
 			$survey->loadQuestionsFromDB();
@@ -179,52 +96,16 @@ class Survey extends SurveyDBClass {
 		return $survey;
 	}
 	
-	protected static function newFromDBResult( $result ) {
-		$result = (array)$result;
-		$data = array();
-		
-		foreach ( $result as $name => $value ) {
-			$data[substr( $name, strlen( self::$fieldPrefix ) )] = $value;
-		}
-		
-		return self::newFromArray( $data );
-	}
-	
-	protected static function newFromArray( array $data ) {
-		$survey = new Survey( array_key_exists( 'id', $data ) ? $data['id'] : null );
-		
-		$survey->setProps( $data );
-		
-		return $survey;
-	}
-	
-	/**
-	 * Returns the survey fields. 
-	 * Field name => db field without prefix
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return array
-	 */
-	public static function getSurveyProps() {
-		return array_keys( self::$fields );
-	}
-	
 	/**
 	 * Constructor.
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param integer|null $id
-	 * @param string $name
-	 * @param boolean $enabled
+	 * @param array|null $fields
 	 * @param array $questions
 	 */
-	public function __construct( $id, $name = '', $enabled = false, array $questions = array() ) {
-		$this->id = $id;
-		$this->name = $name;
-		$this->enabled = $enabled;
-		
+	public function __construct( $fields, array $questions = array() ) {
+		parent::__construct( $fields );
 		$this->setQuestions( $questions );
 	}
 	
@@ -234,7 +115,7 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 */
 	public function loadQuestionsFromDB() {
-		$this->questions = SurveyQuestion::getQuestionsForSurvey( $this->id );
+		$this->questions = SurveyQuestion::getQuestionsForSurvey( $this->getId() );
 	}
 	
 	/**
@@ -262,51 +143,6 @@ class Survey extends SurveyDBClass {
 		return $success;
 	}
 	
-	
-	/**
-	 * Returns the survey name.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return string
-	 */
-	public function getName() {
-		return $this->name;
-	}
-	
-	/**
-	 * Sets the survey name.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param string $name
-	 */
-	public function setName( $name ) {
-		$this->name = $name;
-	}
-	
-	/**
-	 * Returns if the survey is enabled.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return boolean
-	 */
-	public function isEnabled() {
-		return $this->enabled;
-	}
-	
-	/**
-	 * Sets if the survey is enabled or not.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param boolean $enabled
-	 */
-	public function setEnabled( $enabled ) {
-		$this->enabled = $enabled;
-	}
-	
 	/**
 	 * Returns the surveys questions.
 	 * 
@@ -316,39 +152,6 @@ class Survey extends SurveyDBClass {
 	 */
 	public function getQuestions() {
 		return $this->questions;
-	}
-	
-	/**
-	 * Returns the surveys header.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return string
-	 */
-	public function getHeader() {
-		return $this->header;
-	}
-	
-	/**
-	 * Returns the surveys footer.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return string
-	 */
-	public function getFooter() {
-		return $this->footer;
-	}
-	
-	/**
-	 * Returns the surveys thanks message.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @return string
-	 */
-	public function getThanks() {
-		return $this->thanksMessage;
 	}
 	
 	/**
@@ -368,42 +171,20 @@ class Survey extends SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param null|array $props
+	 * @param null|array $fields
 	 * 
 	 * @return array
 	 */
-	public function toArray( $props = null ) {
-		$data = array(
-			'questions' => array(),
-		);
+	public function toArray( $fields = null ) {
+		$data = parent::toArray( $fields );
+		
+		$data['questions'] = array();
 		
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
 			$data['questions'][] = $question->toArray();
 		}
 		
-		if ( !is_array( $props ) ) {
-			$props = array_keys( self::$fields );
-		}
-		
-		foreach ( $props as $prop ) {
-			if ( !( $prop == 'id' && is_null( $this->{ $prop } ) ) ) {
-				$data[$prop] = $this->getProp( $prop );
-			}
-		}
-		
 		return $data;
-	}
-	
-	public static function fromArray( array $data ) {
-		$survey = new Survey( array_key_exists( 'id', $data ) ? $data['id'] : null );
-		
-		foreach ( $data as $name => $value ) {
-			if ( $name != 'id' && array_key_exists( $name, self::$fields ) ) {
-				$survey->setProp( $name, $value );
-			}
-		}
-		
-		return $survey;
 	}
 	
 	/**
@@ -453,40 +234,6 @@ class Survey extends SurveyDBClass {
 		$dbw->commit();
 		
 		return $sucecss;
-	}
-	
-	public function setProp( $name, $value ) {
-		if ( array_key_exists( $name, self::$fields ) ) {
-			switch ( self::$fields[$name] ) {
-				case 'int':
-					$value = (int)$value;
-				case 'bool':
-					if ( is_string( $value ) ) {
-						$value = $value != '0';
-					}
-			}
-			
-			$this->{ $name } = $value;
-		}
-	}
-	
-	public function getProp( $name ) {
-		if ( array_key_exists( $name, self::$fields ) ) {
-			return $this->{ $name };
-		}
-		else {
-			// TODO: exception
-		}
-	}
-	
-	public function setProps( array $props ) {
-		if ( array_key_exists( 'id', $props ) ) {
-			unset( $props['id'] );
-		}
-		
-		foreach ( $props as $name => $value ) {
-			$this->setProp( $name, $value );
-		}
 	}
 	
 }

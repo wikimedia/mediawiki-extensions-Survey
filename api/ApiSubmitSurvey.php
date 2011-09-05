@@ -32,7 +32,7 @@ class ApiSubmitSurvey extends ApiBase {
 		}
 		
 		if ( isset( $params['name'] ) ) {
-			$survey = Survey::newFromName( $params['name'], false );
+			$survey = Survey::newFromName( $params['name'], null, false );
 			
 			if ( $survey === false ) {
 				$this->dieUsage( wfMsgExt( 'survey-err-survey-name-unknown', 'parsemag', $params['name'] ), 'survey-name-unknown' );
