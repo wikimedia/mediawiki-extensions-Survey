@@ -14,84 +14,50 @@
 class SurveySubmission extends SurveyDBClass {
 	
 	/**
-	 * The ID of the survey this submission is for.
-	 * 
-	 * @since 0.1
-	 * @var integer
-	 */
-	protected $surveyId;
-	
-	/**
-	 * The ID of the page this submission was made on.
-	 * 
-	 * @since 0.1
-	 * @var integer
-	 */
-	protected $pageId;
-	
-	/**
-	 * The name of the user that made the submission (username or ip).
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $userName;
-	
-	/**
-	 * Timestamp idnicating when the submission was made.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $timeStamp;
-	
-	
-	/**
-	 * Constructor.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer|null $id
-	 * @param integer $surveyId
-	 * @param string $userName
-	 * @param integer $pageId
-	 * @param string $timeStamp
-	 */
-	public function __construct( $id, $surveyId, $userName, $pageId, $timeStamp ) {
-		$this->id = is_null( $id ) ? $id : (int)$id;
-		$this->surveyId = (int)$surveyId;
-		$this->userName = $userName;
-		$this->pageId = (int)$pageId;
-		$this->timeStamp = $timeStamp;
-	}
-	
-	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected function getDBTable() {
+	protected static function getDBTable() {
 		return 'survey_submissions';
 	}
 	
 	/**
-	 * @see SurveyDBClass::getIDField()
+	 * Gets the db field prefix. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
 	 */
-	protected function getIDField() {
-		return 'submission_id';
+	protected static function getFieldPrefix() {
+		return 'submission_';
 	}
 	
 	/**
-	 * Gets the fields => values to write to the survey_sumissions table. 
+	 * Returns an array with the fields and their types this object contains.
+	 * This corresponds directly to the fields in the database, without prefix.
+	 * 
+	 * survey_id:
+	 * The ID of the survey this submission is for.
+	 * 
+	 * page_id:
+	 * The ID of the page this submission was made on.
+	 * 
+	 * user_name:
+	 * The name of the user that made the submission (username or ip).
+	 * 
+	 * time:
+	 * Timestamp idnicating when the submission was made.
 	 * 
 	 * @since 0.1
 	 * 
 	 * @return array
 	 */
-	protected function getWriteValues() {
+	protected static function getFieldTypes() {
 		return array(
-			'submission_survey_id' => $this->surveyId,
-			'submission_user_name' => $this->userName,
-			'submission_page_id' => $this->pageId,
-			'submission_time' => $this->timeStamp,
+			'id' => 'id',
+			'survey_id' => 'id',
+			'page_id' => 'id',
+			'user_name' => 'str',
+			'time' => 'str',
 		);
 	}
 	

@@ -75,7 +75,10 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
 		}
 		
-		$survey->setField( 'name', $wgRequest->getText( 'survey-name' ) );
+		foreach ( array( 'name', 'header', 'footer', 'thanks' ) as $field ) {
+			$survey->setField( $field, $wgRequest->getText( 'survey-' . $field ) );
+		}
+		
 		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
 		
 		$survey->setQuestions( $this->getSubmittedQuestions() );

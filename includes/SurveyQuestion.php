@@ -52,7 +52,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 */
 	protected static function getFieldTypes() {
 		return array(
-			'id' => 'int',
+			'id' => 'id',
 			'survey_id' => 'int',
 			'text' => 'str',
 			'type' => 'int',

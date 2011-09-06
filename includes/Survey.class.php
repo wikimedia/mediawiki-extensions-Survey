@@ -226,7 +226,7 @@ class Survey extends SurveyDBClass {
 		$submissionsForSurvey = $dbr->select(
 			'survey_submissions',
 			array( 'submission_id' ),
-			array( 'submission_survey_id' => $this->id )
+			array( 'submission_survey_id' => $this->getId() )
 		);
 		
 		$dbw = wfgetDB( DB_MASTER );
@@ -237,18 +237,18 @@ class Survey extends SurveyDBClass {
 		
 		$sucecss = $dbw->delete(
 			'survey_questions',
-			array( 'question_survey_id' => $this->id )
+			array( 'question_survey_id' => $this->getId() )
 		) && $sucecss;
 		
 		$sucecss = $dbw->delete(
 			'survey_submissions',
-			array( 'submission_survey_id' => $this->id )
+			array( 'submission_survey_id' => $this->getId() )
 		) && $sucecss;
 		
 		foreach ( $submissionsForSurvey as $nr => $submission ) {
 			$sucecss = $dbw->delete(
 				'survey_answers',
-				array( 'answer_submission_id' => $submission->submission_id )
+				array( 'answer_submission_id' => $submission->getId() )
 			) && $sucecss;
 			
 			if ( $nr % 500 == 0 ) {

@@ -20,7 +20,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * @var array
 	 */
-	protected $fields;
+	protected $fields = array();
 	
 	/**
 	 * Constructor.
@@ -32,6 +32,10 @@ abstract class SurveyDBClass {
 	 */
 	public function __construct( $fields, $loadDefaults = false ) {
 		$this->setField( static::getIDField(), null );
+		
+		if ( !is_array( $fields ) ) {
+			$fields = array();
+		}
 		
 		if ( $loadDefaults ) {
 			$fields = array_merge( static::getDefaults(), $fields );
@@ -47,9 +51,11 @@ abstract class SurveyDBClass {
 	 * field name => type
 	 * 
 	 * Allowed types:
+	 * * id
 	 * * str
 	 * * int
 	 * * bool
+	 * * array
 	 * 
 	 * @since 0.1
 	 * 
@@ -270,7 +276,7 @@ abstract class SurveyDBClass {
 		);
 		
 		if ( $sucecss ) {
-			$this->removeField( static::getIDField() );
+			$this->setField( static::getIDField(), null );
 		}
 		
 		return $sucecss;
@@ -339,6 +345,10 @@ abstract class SurveyDBClass {
 					if ( is_string( $value ) ) {
 						$value = unserialize( $value );
 					}
+				case 'id':
+					if ( is_string( $value ) ) {
+						$value = (int)$value;
+					}
 			}
 			
 			$this->fields[$name] = $value;
@@ -363,7 +373,6 @@ abstract class SurveyDBClass {
 			return $this->fields[$name];
 		}
 		else {
-			var_dump($this->fields);
 			throw new MWException( 'Attempted to get not-set field ' . $name );
 		}
 	}

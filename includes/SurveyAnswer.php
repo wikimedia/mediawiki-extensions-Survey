@@ -14,72 +14,46 @@
 class SurveyAnswer extends SurveyDBClass {
 	
 	/**
-	 * The answer text.
-	 * 
-	 * @since 0.1
-	 * @var string
-	 */
-	protected $text;
-	
-	/**
-	 * The ID of the submission this answer is part of.
-	 * 
-	 * @since 0.1
-	 * @var integer
-	 */
-	protected $submissionId;
-	
-	/**
-	 * The ID of the question this answer corresponds to.
-	 * 
-	 * @since 0.1
-	 * @var integer
-	 */
-	protected $questionId;
-	
-	/**
-	 * Constructor.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param integer|null $id
-	 * @param integer $submissionId
-	 * @param integer $questionId
-	 * @param string $text
-	 */
-	public function __construct( $id, $submissionId, $questionId, $text ) {
-		$this->id = is_null( $id ) ? $id : (int)$id;
-		$this->submissionId = (int)$submissionId;
-		$this->questionId = (int)$questionId;
-		$this->text = $text;
-	}
-	
-	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected function getDBTable() {
+	protected static function getDBTable() {
 		return 'survey_answers';
 	}
 	
 	/**
-	 * @see SurveyDBClass::getIDField()
+	 * Gets the db field prefix. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
 	 */
-	protected function getIDField() {
-		return 'answer_id';
+	protected static function getFieldPrefix() {
+		return 'answer_';
 	}
 	
 	/**
-	 * Gets the fields => values to write to the survey_answers table. 
+	 * Returns an array with the fields and their types this object contains.
+	 * This corresponds directly to the fields in the database, without prefix.
+	 * 
+	 * text:
+	 * The answer text.
+	 * 
+	 * submission_id:
+	 * The ID of the submission this answer is part of.
+	 * 
+	 * question_id:
+	 * The ID of the question this answer corresponds to.
 	 * 
 	 * @since 0.1
 	 * 
 	 * @return array
 	 */
-	protected function getWriteValues() {
+	protected static function getFieldTypes() {
 		return array(
-			'answer_submission_id' => $this->submissionId,
-			'answer_question_id' => $this->questionId,
-			'answer_text' => $this->text,
+			'id' => 'id',
+			'text' => 'str',
+			'submission_id' => 'id',
+			'question_id' => 'id',
 		);
 	}
 	

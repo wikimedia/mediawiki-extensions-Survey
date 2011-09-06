@@ -30,7 +30,7 @@ class ApiDeleteSurvey extends ApiBase {
 		$everythingOk = true;
 		
 		foreach ( $params['ids'] as $id ) {
-			$surey = new Survey( $id );
+			$surey = new Survey( array( 'id' => $id ) );
 			$everythingOk = $surey->removeFromDB() && $everythingOk;
 		}
 		
