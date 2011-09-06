@@ -39,14 +39,15 @@ class SpecialSurvey extends SpecialSurveyPage {
 		}
 		else {
 			if ( is_null( $subPage ) ) {
-				$survey = new Survey( null );
+				$survey = new Survey( null, true );
+				$survey->loadDefaults();
 			}
 			else {
 				$survey = Survey::newFromName( $subPage, null, true );
 			}
 			
 			if ( $survey === false ) {
-				$survey = new Survey( array( 'name' => $subPage ) );
+				$survey = new Survey( array( 'name' => $subPage ), true );
 			}
 			
 			$this->showSurvey( $survey );
@@ -91,10 +92,6 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 */
 	protected function getSubmittedQuestions() {
 		$questions = array();
-		
-//		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
-//			
-//		}
 		
 		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
 			$matches = array();

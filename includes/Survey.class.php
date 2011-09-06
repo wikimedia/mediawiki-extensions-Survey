@@ -39,7 +39,32 @@ class Survey extends SurveyDBClass {
 		);
 	}
 	
-	protected static  function getFieldPrefix() {
+	/**
+	 * Returns a list of default field values.
+	 * field name => field value
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	public static function getDefaults() {
+		return array(
+			'name' => '',
+			'enabled' => '0',
+			'header' => '',
+			'footer' => '',
+			'thanks' => '',
+		);
+	}
+	
+	/**
+	 * Gets the db field prefix. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	protected static function getFieldPrefix() {
 		return 'survey_';
 	}
 	
@@ -89,7 +114,7 @@ class Survey extends SurveyDBClass {
 	public static function newFromDB( array $conditions, $fields = null, $loadQuestions = true ) {
 		$survey = self::selectRow( $fields, $conditions );
 		
-		if ( $loadQuestions ) {
+		if ( $survey !== false && $loadQuestions ) {
 			$survey->loadQuestionsFromDB();
 		}
 		
@@ -102,10 +127,11 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param array|null $fields
+	 * @param boolean $loadDefaults
 	 * @param array $questions
 	 */
-	public function __construct( $fields, array $questions = array() ) {
-		parent::__construct( $fields );
+	public function __construct( $fields, $loadDefaults = false, array $questions = array() ) {
+		parent::__construct( $fields, $loadDefaults );
 		$this->setQuestions( $questions );
 	}
 	

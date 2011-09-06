@@ -28,14 +28,16 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param array|null $fields
+	 * @param boolean $loadDefaults
 	 */
-	public function __construct( $fields ) {
-		if ( is_array( $fields ) ) {
-			$this->setFields( $fields );
+	public function __construct( $fields, $loadDefaults = false ) {
+		$this->setField( static::getIDField(), null );
+		
+		if ( $loadDefaults ) {
+			$fields = array_merge( static::getDefaults(), $fields );
 		}
-		else {
-			throw new Exception('');
-		}
+		
+		$this->setFields( $fields );
 	}
 	
 	/**
@@ -75,7 +77,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @throws MWException
-	 * @return array
+	 * @return string
 	 */
 	protected static function getFieldPrefix() {
 		throw new MWException( 'Class did not implement getFieldPrefix' );
@@ -119,11 +121,12 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param array $data
+	 * @param boolean $loadDefaults
 	 * 
 	 * @return SurveyDBClass
 	 */	
-	public static function newFromArray( array $data ) {
-		return new static( $data );
+	public static function newFromArray( array $data, $loadDefaults = false ) {
+		return new static( $data, $loadDefaults );
 	}
 	
 	/**
@@ -353,11 +356,12 @@ abstract class SurveyDBClass {
 	 * @return mixed
 	 */
 	public function getField( $name ) {
-		if ( array_key_exists( $name, static::getFieldTypes() ) ) {
+		if ( $this->hasField( $name ) ) {
 			return $this->fields[$name];
 		}
 		else {
-			throw new MWException( 'Attempted to get unknonw field ' . $name );
+			var_dump($this->fields);
+			throw new MWException( 'Attempted to get not-set field ' . $name );
 		}
 	}
 	
@@ -437,11 +441,14 @@ abstract class SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param array $fields
+	 * @param array $fields The fields to set
+	 * @param boolean $override Override already set fields with the provided values?
 	 */
-	public function setFields( array $fields ) {
+	public function setFields( array $fields, $override = true ) {
 		foreach ( $fields as $name => $value ) {
-			$this->setField( $name, $value );
+			if ( $override || !$this->hasField( $name ) ) {
+				$this->setField( $name, $value );
+			}
 		}
 	}
 	
@@ -544,25 +551,50 @@ abstract class SurveyDBClass {
 		return $data;
 	}
 	
+	public function loadDefaults( $override = true ) {
+		$this->setFields( static::getDefaults(), $override );
+	}
+	
 	/**
-	 * Creates and returns a new instance from an array.
+	 * Returns a list of default field values.
+	 * field name => field value
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param array $data
-	 * 
-	 * @return SurveyDBClass
+	 * @return array
 	 */
-	public static function fromArray( array $data ) {
-		$validData = array();
+	public static function getDefaults() {
+		return array();
+	}
+	
+	public static function getAPIParams() {
+		$typeMap = array(
+			'int' => 'integer',
+			'str' => 'string',
+			'bool' => 'integer'
+		);
 		
-		foreach ( $data as $name => $value ) {
-			if ( static::canHasField( $name ) ) {
-				$validData[$name] = $value;
+		$params = array();
+		$defaults = static::getDefaults();
+		
+		foreach ( static::getFieldTypes() as $field => $type ) {
+			if ( $field == static::getIDField() ) {
+				continue;
+			}
+			
+			$hasDefault = array_key_exists( $field, $defaults );
+			
+			$params[$field] = array(
+				ApiBase::PARAM_TYPE => $typeMap[$type],
+				ApiBase::PARAM_REQUIRED => !$hasDefault
+			);
+			
+			if ( $hasDefault ) {
+				$params[$field][ApiBase::PARAM_DFLT] = $defaults[$field];
 			}
 		}
 		
-		return new static( $validData );
+		return $params;
 	}
 	
 }

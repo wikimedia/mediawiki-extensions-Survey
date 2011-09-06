@@ -23,7 +23,7 @@ class ApiAddSurvey extends ApiBase {
 		
 		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		}			
+		}
 		
 		$params = $this->extractRequestParams();
 		
@@ -69,24 +69,16 @@ class ApiAddSurvey extends ApiBase {
 		);
 	}
 	
-	public function needsToken() {
-		return true;
-	}
-	
-	public function getTokenSalt() {
-		return 'addsurvey';
-	}
+//	public function needsToken() {
+//		return true;
+//	}
+//	
+//	public function getTokenSalt() {
+//		return 'addsurvey';
+//	}
 
 	public function getAllowedParams() {
-		return array(
-			'name' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
-			),
-			'enabled' => array(
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true,
-			),
+		$params = array(
 			'questions' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
@@ -94,6 +86,8 @@ class ApiAddSurvey extends ApiBase {
 			),
 			'token' => null,
 		);
+		
+		return array_merge( Survey::getAPIParams(), $params );
 	}
 	
 	public function getParamDescription() {
