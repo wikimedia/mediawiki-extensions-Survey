@@ -46,7 +46,8 @@ class ApiDeleteSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return 'deletesurvey';
+		$params = $this->extractRequestParams();
+		return 'deletesurvey' . implode( '|', $params['ids'] );
 	}
 	
 	public function mustBePosted() {

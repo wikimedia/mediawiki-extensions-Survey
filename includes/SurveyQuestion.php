@@ -19,6 +19,24 @@ class SurveyQuestion extends SurveyDBClass {
 	public static $TYPE_RADIO = 3;
 	
 	/**
+	 * @see SurveyDBClass::getDBTable()
+	 */
+	protected static function getDBTable() {
+		return 'survey_questions';
+	}
+	
+	/**
+	 * Gets the db field prefix. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return string
+	 */
+	protected static function getFieldPrefix() {
+		return 'question_';
+	}
+	
+	/**
 	 * Returns an array with the fields and their types this object contains.
 	 * This corresponds directly to the fields in the database, without prefix.
 	 * 
@@ -107,17 +125,6 @@ class SurveyQuestion extends SurveyDBClass {
 		}
 		
 		return self::select( null, $conditions );
-	}
-	
-	/**
-	 * @see SurveyDBClass::getDBTable()
-	 */
-	protected static function getDBTable() {
-		return 'survey_questions';
-	}
-	
-	protected static function getFieldPrefix() {
-		return 'question_';
 	}
 	
 }

@@ -23,7 +23,7 @@ class ApiEditSurvey extends ApiBase {
 		
 		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		}			
+		}
 		
 		$params = $this->extractRequestParams();
 		

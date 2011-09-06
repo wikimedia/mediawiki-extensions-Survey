@@ -156,7 +156,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 								'href' => '#',
 								'class' => 'survey-delete',
 								'data-survey-id' => $survey->getId(),
-								'data-survey-token' => $GLOBALS['wgUser']->editToken( 'deletesurvey' )
+								'data-survey-token' => $GLOBALS['wgUser']->editToken( 'deletesurvey' . $survey->getId() )
 							),
 							wfMsg( 'surveys-special-delete' )
 						) .
