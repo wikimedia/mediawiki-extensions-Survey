@@ -32,13 +32,7 @@ class ApiAddSurvey extends ApiBase {
 		}
 		
 		try {
-			$survey = new Survey(
-				null,
-				$params['name'],
-				$params['enabled'] == 1,
-				$params['questions']
-			);
-			
+			$survey = Survey::newFromAPIParams( $params );
 			$success = $survey->writeToDB();
 		}
 		catch ( DBQueryError $ex ) {
@@ -65,17 +59,21 @@ class ApiAddSurvey extends ApiBase {
 		$this->getResult()->addValue(
 			'survey',
 			'name',
-			$survey->getName()
+			$survey->getField( 'name' )
 		);
 	}
 	
-//	public function needsToken() {
-//		return true;
-//	}
-//	
-//	public function getTokenSalt() {
-//		return 'addsurvey';
-//	}
+	public function needsToken() {
+		return true;
+	}
+	
+	public function getTokenSalt() {
+		return 'addsurvey';
+	}
+	
+	public function mustBePosted() {
+		return true;
+	}
 
 	public function getAllowedParams() {
 		$params = array(

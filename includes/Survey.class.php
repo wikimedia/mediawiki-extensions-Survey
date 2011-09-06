@@ -30,7 +30,7 @@ class Survey extends SurveyDBClass {
 	 */
 	protected static function getFieldTypes() {
 		return array(
-			'id' => 'int',
+			'id' => 'id',
 			'name' => 'str',
 			'enabled' => 'bool',
 			'header' => 'str',

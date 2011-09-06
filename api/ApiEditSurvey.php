@@ -27,20 +27,11 @@ class ApiEditSurvey extends ApiBase {
 		
 		$params = $this->extractRequestParams();
 		
-//		$q = new SurveyQuestion(null, 'new q', 1, false);
-//		var_dump($q->toUrlData());exit;
-		// eyJ0ZXh0IjoibmV3IHEiLCJ0eXBlIjoxLCJyZXF1aXJlZCI6ZmFsc2UsImFuc3dlcnMiOltdfQ!!
-		
 		foreach ( $params['questions'] as &$question ) {
 			$question = SurveyQuestion::newFromUrlData( $question );
 		}
 		
-		$survey = new Survey(
-			$params['id'],
-			$params['name'],
-			$params['enabled'] == 1,
-			$params['questions']
-		);
+		$survey = Survey::newFromAPIParams( $params, $params['id'] );
 		
 		$this->getResult()->addValue(
 			null,
@@ -57,7 +48,7 @@ class ApiEditSurvey extends ApiBase {
 		$this->getResult()->addValue(
 			'survey',
 			'name',
-			$survey->getName()
+			$survey->getField( 'name' )
 		);
 	}
 	
@@ -68,18 +59,14 @@ class ApiEditSurvey extends ApiBase {
 	public function getTokenSalt() {
 		return 'editsurvey';
 	}
+	
+	public function mustBePosted() {
+		return true;
+	}
 
 	public function getAllowedParams() {
-		return array(
+		$params = array(
 			'id' => array(
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true,
-			),
-			'name' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
-			),
-			'enabled' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
 			),
@@ -90,6 +77,8 @@ class ApiEditSurvey extends ApiBase {
 			),
 			'token' => null,
 		);
+		
+		return array_merge( Survey::getAPIParams(), $params );
 	}
 	
 	public function getParamDescription() {

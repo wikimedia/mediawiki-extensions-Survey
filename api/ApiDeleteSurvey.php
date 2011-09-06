@@ -49,6 +49,10 @@ class ApiDeleteSurvey extends ApiBase {
 		return 'deletesurvey';
 	}
 	
+	public function mustBePosted() {
+		return true;
+	}
+	
 	public function getAllowedParams() {
 		return array(
 			'ids' => array(

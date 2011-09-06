@@ -330,7 +330,10 @@ abstract class SurveyDBClass {
 					$value = (int)$value;
 				case 'bool':
 					if ( is_string( $value ) ) {
-						$value = $value != '0';
+						$value = $value !== '0';
+					}
+					else if ( is_int( $value ) ) {
+						$value = $value !== 0;
 					}
 				case 'array':
 					if ( is_string( $value ) ) {
@@ -595,6 +598,33 @@ abstract class SurveyDBClass {
 		}
 		
 		return $params;
+	}
+	
+	/**
+	 * Create a new instance from API parameters.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $params
+	 * 
+	 * @return SurveyDBClass
+	 */
+	public static function newFromAPIParams( array $params, $id = false ) {
+		$validParams = array();
+		
+		$fields = static::getFieldTypes();
+		
+		foreach ( $params as $name => $value ) {
+			if ( array_key_exists( $name, $fields ) ) {
+				$validParams[$name] = $value;
+			}
+		}
+		
+		if ( $id !== false ) {
+			$validParams[static::getIDField()] = $id;
+		}
+		
+		return new static( $validParams );
 	}
 	
 }
