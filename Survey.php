@@ -140,6 +140,7 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 		'survey-question-type-select',
 		'survey-question-type-radio',
 		'survey-question-type-textarea',
+		'survey-question-type-check',
 		'survey-question-label-nr',
 		'survey-special-label-required',
 		'survey-special-label-type',

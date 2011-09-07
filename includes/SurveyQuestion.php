@@ -18,6 +18,7 @@ class SurveyQuestion extends SurveyDBClass {
 	public static $TYPE_SELECT = 2;
 	public static $TYPE_RADIO = 3;
 	public static $TYPE_TEXTAREA = 4;
+	public static $TYPE_CHECK = 5;
 	
 	/**
 	 * @see SurveyDBClass::getDBTable()

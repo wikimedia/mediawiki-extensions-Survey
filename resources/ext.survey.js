@@ -60,6 +60,7 @@ window.survey = new( function() {
 			this.SELECT = 2;
 			this.RADIO = 3;
 			this.TEXTAREA = 4;
+			this.CHECK = 5;
 		} );
 		
 		this.getTypeSelector = function( value, attributes ) {
