@@ -9,7 +9,9 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
   survey_enabled           TINYINT             NOT NULL default '0',
   survey_header            TEXT                NOT NULL,
   survey_footer            TEXT                NOT NULL,
-  survey_thanks            TEXT                NOT NULL
+  survey_thanks            TEXT                NOT NULL,
+  survey_user_type         TINYINT             NOT NULL default '0',
+  survey_namespaces        BLOB                NOT NULL
 ) /*$wgDBTableOptions*/;
 
 -- Questions
