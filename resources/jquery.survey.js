@@ -38,12 +38,6 @@
 		);
 	};
 	
-	this.submitSurvey = function() {
-		// TODO
-		
-		// $survey.append( $( '<p />' ).text( surveyData.thanks ) );
-	};
-	
 	this.getQuestionInput = function( question ) {
 		survey.log( 'getQuestionInput: ' + question.id );
 		
@@ -111,6 +105,27 @@
 		return $questions;
 	};
 	
+	this.submitSurvey = function( surveyId, callback ) {
+		// TODO
+		
+		callback();
+	};
+	
+	this.doCompletion = function() {
+		$.fancybox.close();
+	};
+	
+	this.showCompletion = function( surveyData ) {
+		$div = $( '#survey-' + surveyData.id );
+		
+		$div.html( $( '<p />' ).text( surveyData.thanks ) );
+		
+		$div.append( $( '<button />' )
+			.button( { label: mw.msg( 'survey-jquery-finish' ) } )
+			.click( this.doCompletion )
+		);
+	};
+	
 	this.getSurveyBody = function( surveyData ) {
 		$survey = $( '<div />' );
 		
@@ -120,7 +135,33 @@
 		
 		$survey.append( this.getSurveyQuestions( surveyData.questions ) );
 		
-		$survey.append( $( '<button />' ).button( { label: mw.msg( 'survey-jquery-submit' ) } ) );
+		var submissionButton = $( '<button />' )
+			.button( { label: mw.msg( 'survey-jquery-submit' ) } )
+			.click( function() {
+				var $this = $( this ); 
+				$this.button( 'disable' );
+				
+				if ( true /* isValid */ ) {
+					_this.submitSurvey(
+						surveyData.id,
+						function() {
+							if ( surveyData.thanks == '' ) {
+								_this.doCompletion();
+							}
+							else {
+								_this.showCompletion( surveyData );
+							}
+						}
+					);
+				}
+				else {
+					// TODO
+					
+					$this.button( 'enable' );
+				}
+			} );
+		
+		$survey.append( submissionButton );
 		
 		$survey.append( $( '<p />' ).text( surveyData.footer ) );
 		

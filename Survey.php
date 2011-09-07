@@ -169,6 +169,7 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'dependencies' => array( 'ext.survey', 'jquery.ui.button', 'ext.survey.numeric' ),
 	'messages' => array(
 		'survey-jquery-submit',
+		'survey-jquery-finish',
 	)
 );
 

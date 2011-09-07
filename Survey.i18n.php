@@ -78,4 +78,5 @@ $messages['en'] = array(
 
 	// Survey jQuery
 	'survey-jquery-submit' => 'Submit',
+	'survey-jquery-finish' => 'Finish',
 );
