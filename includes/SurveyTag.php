@@ -67,12 +67,6 @@ class SurveyTag {
 		
 		if ( !$loadedJs ) {
 			$parser->getOutput()->addModules( 'ext.survey.jquery' );
-			
-			global $wgExtensionAssetsPath, $wgScriptPath;
-			$parser->getOutput()->addHeadItem( Html::linkedStyle(
-				( $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath )
-				. '/Survey/resources/fancybox/jquery.fancybox-1.3.4.css'
-			) );
 		}
 		
 		return Html::element(

@@ -65,6 +65,7 @@ $messages['en'] = array(
 	'survey-question-type-number' => 'Number',
 	'survey-question-type-select' => 'Dropdown menu',
 	'survey-question-type-radio' => 'Radio boxes',
+	'survey-question-type-textarea' => 'Text area',
 	'survey-question-label-nr' => 'Question #$1',
 	'survey-special-label-required' => 'Question is required',
 	'survey-special-label-type' => 'Question type',
@@ -74,4 +75,7 @@ $messages['en'] = array(
 	'survey-special-label-header' => 'Text to display above the survey',
 	'survey-special-label-footer' => 'Text to display below the survey',
 	'survey-special-label-thanks' => 'Thanks message to display after submission of the survey',
+
+	// Survey jQuery
+	'survey-jquery-submit' => 'Submit',
 );

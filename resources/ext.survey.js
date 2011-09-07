@@ -59,6 +59,7 @@ window.survey = new( function() {
 			this.NUMBER = 1;
 			this.SELECT = 2;
 			this.RADIO = 3;
+			this.TEXTAREA = 4;
 		} );
 		
 		this.getTypeSelector = function( value, attributes ) {
@@ -68,7 +69,8 @@ window.survey = new( function() {
 				'text': survey.question.type.TEXT,
 				'number': survey.question.type.NUMBER,
 				'select': survey.question.type.SELECT,
-				'radio': survey.question.type.RADIO
+				'radio': survey.question.type.RADIO,
+				'textarea': survey.question.type.TEXTAREA,
 			};
 			
 			for ( msg in types ) {

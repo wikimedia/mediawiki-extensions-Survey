@@ -105,9 +105,8 @@ $wgGroupPermissions['bot'          ]['surveysubmit'] = false;
 $wgGroupPermissions['sysop'        ]['surveysubmit'] = true;
 
 $moduleTemplate = array(
-	'localBasePath' => dirname( __FILE__ ),
-	'remoteBasePath' => ( $wgExtensionAssetsPath === false ? $wgScriptPath . '/extensions' : $wgExtensionAssetsPath )
-						. '/Survey/resources'
+	'localBasePath' => dirname( __FILE__ ) . '/resources',
+	'remoteExtPath' => 'Survey/resources'
 );
 
 $wgResourceModules['ext.survey'] = $moduleTemplate + array(
@@ -132,7 +131,7 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 		'ext.survey.special.survey.js'
 	),
 	'styles' => array(
-		//'ext.survey.special.survey.css'
+		'ext.survey.special.survey.css'
 	),
 	'dependencies' => array( 'ext.survey', 'jquery.ui.button' ),
 	'messages' => array(
@@ -140,6 +139,7 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 		'survey-question-type-number',
 		'survey-question-type-select',
 		'survey-question-type-radio',
+		'survey-question-type-textarea',
 		'survey-question-label-nr',
 		'survey-special-label-required',
 		'survey-special-label-type',
@@ -151,18 +151,24 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 	)
 );
 
+$wgResourceModules['ext.survey.numeric'] = $moduleTemplate + array(
+	'scripts' => array(
+		'jquery.numeric.js'
+	)
+);
+
 $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'scripts' => array(
 		'fancybox/jquery.fancybox-1.3.4.js',
 		'jquery.survey.js'
 	),
 	'styles' => array(
-		// This file makes the RL go mad for some reason, so for now load it the old fashioned way. 
-		//'fancybox/jquery.fancybox-1.3.4.css',
+		'jquery.survey.css',
+		'fancybox/jquery.fancybox-1.3.4.css'
 	),
-	'dependencies' => array( 'ext.survey' ),
+	'dependencies' => array( 'ext.survey', 'jquery.ui.button', 'ext.survey.numeric' ),
 	'messages' => array(
-	
+		'survey-jquery-submit',
 	)
 );
 

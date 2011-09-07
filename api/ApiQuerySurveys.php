@@ -39,6 +39,13 @@ class ApiQuerySurveys extends ApiQueryBase {
 		
 		$this->addTables( 'surveys' );
 		
+		$starPropPosition = array_search( '*', $params['props'] );
+		
+		if ( $starPropPosition !== false ) {
+			unset( $params['props'][$starPropPosition] );
+			$params['props'] = array_merge( $params['props'], Survey::getFieldNames() );
+		}
+		
 		$fields = array_merge( array( 'id' ), $params['props'] );
 		
 		$this->addFields( Survey::getPrefixedFields( $fields ) );
@@ -125,7 +132,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'props' => array(
-				ApiBase::PARAM_TYPE => Survey::getFieldNames(),
+				ApiBase::PARAM_TYPE => array_merge( Survey::getFieldNames(), array( '*' ) ),
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => 'id|name|enabled'
 			),
