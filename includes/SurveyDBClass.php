@@ -73,7 +73,7 @@ abstract class SurveyDBClass {
 	 * @throws MWException
 	 * @return string
 	 */
-	protected static function getDBTable() {
+	public static function getDBTable() {
 		throw new MWException( 'Class did not implement getDBTable' );
 	}
 
@@ -206,6 +206,16 @@ abstract class SurveyDBClass {
 		);
 	}
 	
+	public static function update( array $values, array $conditions = array() ) {
+		$dbw = wfGetDB( DB_MASTER );
+		
+		return $dbw->update(
+			static::getDBTable(),
+			static::getPrefixedValues( $values ),
+			static::getPrefixedValues( $conditions )
+		);
+	}
+	
 	/**
 	 * Writes the answer to the database, either updating it
 	 * when it already exists, or inserting it when it doesn't.
@@ -334,6 +344,7 @@ abstract class SurveyDBClass {
 			switch ( $fields[$name] ) {
 				case 'int':
 					$value = (int)$value;
+					break;
 				case 'bool':
 					if ( is_string( $value ) ) {
 						$value = $value !== '0';
@@ -341,14 +352,17 @@ abstract class SurveyDBClass {
 					else if ( is_int( $value ) ) {
 						$value = $value !== 0;
 					}
+					break;
 				case 'array':
 					if ( is_string( $value ) ) {
 						$value = unserialize( $value );
 					}
+					break;
 				case 'id':
 					if ( is_string( $value ) ) {
 						$value = (int)$value;
 					}
+					break;
 			}
 			
 			$this->fields[$name] = $value;

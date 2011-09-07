@@ -111,7 +111,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 	}
 	
 	/**
-	 * Create a 
+	 * Create and return a survey question object from the submitted data. 
 	 * 
 	 * @since 0.1
 	 * 

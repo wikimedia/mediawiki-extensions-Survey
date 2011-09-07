@@ -75,7 +75,7 @@ window.survey = new( function() {
 				options[survey.msg( 'survey-question-type-' + msg )] = types[msg];
 			}
 			
-			return survey.htmlSelect( options, value, attributes );
+			return survey.htmlSelect( options, parseInt( value ), attributes );
 		};
 		
 	} );

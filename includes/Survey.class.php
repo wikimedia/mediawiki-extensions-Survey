@@ -16,7 +16,7 @@ class Survey extends SurveyDBClass {
 	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected static function getDBTable() {
+	public static function getDBTable() {
 		return 'surveys';
 	}
 	
@@ -122,6 +122,14 @@ class Survey extends SurveyDBClass {
 	}
 	
 	/**
+	 * The questions that go with this survey.
+	 * 
+	 * @since 0.1
+	 * @var array of SurveyQuestion
+	 */
+	protected $questions;
+	
+	/**
 	 * Constructor.
 	 * 
 	 * @since 0.1
@@ -145,7 +153,7 @@ class Survey extends SurveyDBClass {
 	}
 	
 	/**
-	 * Writes the survey to the database, either updating it
+	 * Writes the surveyand it's questions to the database, either updating it
 	 * when it already exists, or inserting it when it doesn't.
 	 * 
 	 * @since 0.1
@@ -155,12 +163,34 @@ class Survey extends SurveyDBClass {
 	public function writeToDB() {
 		$success = parent::writeToDB();
 		
+		if ( $success ) {
+			$success = $this->writeQuestionsToDB();
+		}
+		
+		return $success;
+	}
+	
+	/**
+	 * Writes the surveys questions to the database.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean Success indicator
+	 */
+	public function writeQuestionsToDB() {
+		$success = true;
+		
 		$dbw = wfGetDB( DB_MASTER );
 		
 		$dbw->begin();
+
+		SurveyQuestion::update(
+			array( 'removed' => 1 ),
+			array( 'survey_id' => $this->getId() )
+		);
 		
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
-			$question->setId( $this->getId() );
+			$question->setField( 'survey_id', $this->getId() );
 			$success = $question->writeToDB() && $success;
 		}
 		

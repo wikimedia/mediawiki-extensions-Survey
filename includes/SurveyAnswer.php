@@ -16,7 +16,7 @@ class SurveyAnswer extends SurveyDBClass {
 	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
-	protected static function getDBTable() {
+	public static function getDBTable() {
 		return 'survey_answers';
 	}
 	
