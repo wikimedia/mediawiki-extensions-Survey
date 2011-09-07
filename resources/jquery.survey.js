@@ -9,6 +9,10 @@
 ( function ( $ ) { $.fn.mwSurvey = function( options ) {
 	
 	var _this = this;
+	this.inputs = [];
+	
+	this.identifier = null;
+	this.identifierType = null;
 	
 	this.getSurveyData = function( options, callback ) {
 		var requestArgs = {
@@ -20,7 +24,7 @@
 			'suprops': '*'
 		};
 		
-		requestArgs = $.extend( requestArgs, options.requestArgs )
+		requestArgs[ 'su' + this.identifierType + 's' ] = this.identifier;
 		
 		$.getJSON(
 			wgScriptPath + '/api.php',
@@ -85,6 +89,10 @@
 				break;
 		}
 		
+		$input.data( 'question-id', question.id );
+		
+		this.inputs.push( $input );
+		
 		return $input;
 	};
 	
@@ -111,21 +119,31 @@
 	this.getAnswers = function( surveyId ) {
 		var answers = [];
 		
-		
+		for ( i in this.inputs ) {
+			var $input = this.inputs[i];
+			
+			answers.push( {
+				'text': $input.val(),
+				'question_id': $input.data( 'question-id' )
+			} );
+		}
 		
 		return JSON.stringify( answers );
 	};
 	
 	this.submitSurvey = function( surveyId, callback ) {
+		var requestArgs = {
+			'action': 'submitsurvey',
+			'format': 'json',
+			'token': $( this ).attr( 'survey-data-token' ),
+			'answers': this.getAnswers( surveyId )
+		};
+		
+		requestArgs[this.identifierType] = this.identifier;
+		
 		$.post(
 			wgScriptPath + '/api.php',
-			{
-				'action': 'submitsurvey',
-				'format': 'json',
-				'ids': options.id,
-				'token': options.token,
-				'answers': this.getAnswers( surveyId )
-			},
+			requestArgs,
 			function( data ) {
 				callback();
 				// TODO
@@ -217,26 +235,19 @@
 	
 	this.init = function() {
 		var $this = $( this );
-		var identifier = false;
-		var type;
 		
 		if ( $this.attr( 'survey-data-id' ) ) {
-			identifier = $this.attr( 'survey-data-id' );
-			type = 'suids';
+			this.identifier = $this.attr( 'survey-data-id' );
+			this.identifierType = 'id';
 		}
 		else if ( $this.attr( 'survey-data-name' ) ) {
-			identifier = $this.attr( 'survey-data-name' );
-			type = 'sunames';
+			this.identifier = $this.attr( 'survey-data-name' );
+			this.identifierType = 'name';
 		}
 		
-		if ( identifier !== false ) {
-			var requestArgs = {};
-			requestArgs[type] = identifier;
-			
+		if ( this.identifier !== null ) {
 			this.getSurveyData(
-				{
-					'requestArgs': requestArgs
-				},
+				{},
 				function( surveyData ) {
 					for ( i in surveyData ) {
 						_this.initSurvey( surveyData[i] );

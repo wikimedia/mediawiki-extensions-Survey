@@ -54,7 +54,7 @@ class ApiSubmitSurvey extends ApiBase {
 		) );
 		
 		foreach ( FormatJson::decode( $params['answers'] ) as $answer ) {
-			$submission->addAnswer( SurveyAnswer::newFromArray( $answer ) );
+			$submission->addAnswer( SurveyAnswer::newFromArray( (array)$answer ) );
 		}
 		
 		$submission->writeToDB();
