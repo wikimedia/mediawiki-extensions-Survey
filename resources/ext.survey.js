@@ -72,6 +72,7 @@ window.survey = new( function() {
 				'select': survey.question.type.SELECT,
 				'radio': survey.question.type.RADIO,
 				'textarea': survey.question.type.TEXTAREA,
+				'check': survey.question.type.CHECK
 			};
 			
 			for ( msg in types ) {
