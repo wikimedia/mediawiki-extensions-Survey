@@ -61,4 +61,50 @@ class SurveySubmission extends SurveyDBClass {
 		);
 	}
 	
+	/**
+	 * List of answers.
+	 * 
+	 * @since 0.1
+	 * @var array of SurveyAnswer
+	 */
+	protected $answers;
+	
+	
+	public function addAnswer( SurveyAnswer $answer ) {
+		$this->answers[] = $answer;
+	}
+	
+	public function setAnswers( array $answers ) {
+		$this->answers = $answers;
+	}
+	
+	public function getAnswers() {
+		return $this->answers;
+	}
+	
+	/**
+	 * Writes the answer to the database, either updating it
+	 * when it already exists, or inserting it when it doesn't.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean Success indicator
+	 */
+	public function writeToDB() {
+		$success = parent::writeToDB();
+		
+		if ( $success ) {
+			$this->writeAnswersToDB();
+		}
+		
+		return $success;
+	}
+	
+	public function writeAnswersToDB() {
+		foreach ( $this->answers as /* SurveyAnswer */ $answer ) {
+			$answer->setField( 'submission_id', $this->getId() );
+			$answer->writeToDB();
+		}
+	}
+	
 }

@@ -6,22 +6,25 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-(function( $ ) { $( document ).ready( function() {
+( function ( $ ) { $.fn.mwSurvey = function( options ) {
 	
 	var _this = this;
 	
 	this.getSurveyData = function( options, callback ) {
+		var requestArgs = {
+			'action': 'query',
+			'list': 'surveys',
+			'format': 'json',
+			'suincquestions': 1,
+			'suenabled': 1,
+			'suprops': '*'
+		};
+		
+		requestArgs = $.extend( requestArgs, options.requestArgs )
+		
 		$.getJSON(
 			wgScriptPath + '/api.php',
-			{
-				'action': 'query',
-				'list': 'surveys',
-				'format': 'json',
-				'sunames': options.names.join( '|' ),
-				'suincquestions': 1,
-				'suenabled': 1,
-				'suprops': '*'
-			},
+			requestArgs,
 			function( data ) {
 				if ( data.surveys ) {
 					callback( data.surveys );
@@ -105,10 +108,29 @@
 		return $questions;
 	};
 	
-	this.submitSurvey = function( surveyId, callback ) {
-		// TODO
+	this.getAnswers = function( surveyId ) {
+		var answers = [];
 		
-		callback();
+		
+		
+		return JSON.stringify( answers );
+	};
+	
+	this.submitSurvey = function( surveyId, callback ) {
+		$.post(
+			wgScriptPath + '/api.php',
+			{
+				'action': 'submitsurvey',
+				'format': 'json',
+				'ids': options.id,
+				'token': options.token,
+				'answers': this.getAnswers( surveyId )
+			},
+			function( data ) {
+				callback();
+				// TODO
+			}	
+		);
 	};
 	
 	this.doCompletion = function() {
@@ -168,7 +190,7 @@
 		return $survey;
 	};
 	
-	this.initSurvey = function( surveyElement, surveyData ) {
+	this.initSurvey = function( surveyData ) {
 		$div = $( '<div />' ).attr( {
 			'style': 'display:none'
 		} ).html( $( '<div />' ).attr( { 'id': 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
@@ -177,7 +199,7 @@
 			'href': '#survey-' + surveyData.id,
 		} ).html( $div );
 		
-		surveyElement.html( $link );
+		$( this ).html( $link );
 		
 		$link.fancybox( {
 //			'width'         : '75%',
@@ -194,29 +216,44 @@
 	};
 	
 	this.init = function() {
-		var surveyNames = [];
-		var surveys = [];
+		var $this = $( this );
+		var identifier = false;
+		var type;
 		
-		$( '.surveytag' ).each( function( index, domElement ) {
-			$survey = $( domElement );
-			surveyNames.push( $survey.attr( 'survey-data-name' ) );
-			surveys[$survey.attr( 'survey-data-name' )] = $survey;
-		} );
+		if ( $this.attr( 'survey-data-id' ) ) {
+			identifier = $this.attr( 'survey-data-id' );
+			type = 'suids';
+		}
+		else if ( $this.attr( 'survey-data-name' ) ) {
+			identifier = $this.attr( 'survey-data-name' );
+			type = 'sunames';
+		}
 		
-		if ( surveyNames.length > 0 ) {
+		if ( identifier !== false ) {
+			var requestArgs = {};
+			requestArgs[type] = identifier;
+			
 			this.getSurveyData(
 				{
-					'names': surveyNames
+					'requestArgs': requestArgs
 				},
 				function( surveyData ) {
 					for ( i in surveyData ) {
-						_this.initSurvey( surveys[surveyData[i].name], surveyData[i] );
+						_this.initSurvey( surveyData[i] );
 					}
 				}
-			);			
+			);
 		}
 	};
 	
 	this.init();
+	
+}; } )( jQuery );
+
+(function( $ ) { $( document ).ready( function() {
+	
+	$( '.surveytag' ).each( function( index, domElement ) {
+		$( domElement ).mwSurvey();
+	} );
 	
 } ); })( jQuery );

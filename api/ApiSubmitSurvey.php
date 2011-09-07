@@ -37,11 +37,27 @@ class ApiSubmitSurvey extends ApiBase {
 			if ( $survey === false ) {
 				$this->dieUsage( wfMsgExt( 'survey-err-survey-name-unknown', 'parsemag', $params['name'] ), 'survey-name-unknown' );
 			}
+		}
+		else {
+			$survey = Survey::newFromId( $params['id'], null, false );
 			
-			$params['id'] = $survey->getId();
+			if ( $survey === false ) {
+				$this->dieUsage( wfMsgExt( 'survey-err-survey-id-unknown', 'parsemag', $params['id'] ), 'survey-id-unknown' );
+			}
 		}
 		
-		$submission = new SurveySubmission();
+		$submission = new SurveySubmission( array(
+			'survey_id' => $survey->getId(),
+			'page_id' => 0, // TODO
+			'user_name' => $GLOBALS['wgUser']->getName(),
+			'time' => wfTimestampNow()
+		) );
+		
+		foreach ( FormatJson::decode( $params['answers'] ) as $answer ) {
+			$submission->addAnswer( SurveyAnswer::newFromArray( $answer ) );
+		}
+		
+		$submission->writeToDB();
 	}
 
 	public function needsToken() {
@@ -52,12 +68,19 @@ class ApiSubmitSurvey extends ApiBase {
 		return 'submitsurvey';
 	}
 	
+	public function mustBePosted() {
+		return true;
+	}
+	
 	public function getAllowedParams() {
 		return array(
 			'id' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 			),
 			'name' => array(
+				ApiBase::PARAM_TYPE => 'string',
+			),
+			'answers' => array(
 				ApiBase::PARAM_TYPE => 'string',
 			),
 			'token' => null,
