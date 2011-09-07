@@ -80,6 +80,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		}
 		
 		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
+		$survey->setField( 'user_type', $wgRequest->getInt( 'survey-user_type' ) );
 		
 		$survey->setQuestions( $this->getSubmittedQuestions() );
 		
@@ -183,6 +184,21 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'label-message' => 'survey-special-label-enabled',
 			'id' => 'survey-enabled',
 			'name' => 'survey-enabled',
+		);
+		
+		$fields[] = array(
+			'type' => 'radio',
+			'default' => $survey->getField( 'user_type' ),
+			'label-message' => 'survey-special-label-usertype',
+			'id' => 'survey-user_type',
+			'name' => 'survey-user_type',
+			'options' => array(
+				wfMsg( 'survey-user-type-all' ) => Survey::$USER_ALL,
+				wfMsg( 'survey-user-type-loggedin' ) => Survey::$USER_LOGGEDIN,
+				wfMsg( 'survey-user-type-confirmed' ) => Survey::$USER_CONFIRMED,
+				wfMsg( 'survey-user-type-editor' ) => Survey::$USER_EDITOR,
+				wfMsg( 'survey-user-type-anon' ) => Survey::$USER_ANON,
+			),
 		);
 		
 		$fields[] = array(

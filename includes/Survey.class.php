@@ -13,6 +13,12 @@
  */
 class Survey extends SurveyDBClass {
 	
+	public static $USER_ALL = 0;
+	public static $USER_LOGGEDIN = 1;
+	public static $USER_CONFIRMED = 2;
+	public static $USER_EDITOR = 3;
+	public static $USER_ANON = 4;
+	
 	/**
 	 * @see SurveyDBClass::getDBTable()
 	 */
@@ -36,6 +42,8 @@ class Survey extends SurveyDBClass {
 			'header' => 'str',
 			'footer' => 'str',
 			'thanks' => 'str',
+			'user_type' => 'int',
+			'namespaces' => 'array'
 		);
 	}
 	
@@ -54,6 +62,8 @@ class Survey extends SurveyDBClass {
 			'header' => '',
 			'footer' => '',
 			'thanks' => '',
+			'user_type' => self::$USER_ALL,
+			'namespaces' => array(),
 		);
 	}
 	

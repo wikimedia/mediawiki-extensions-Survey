@@ -50,6 +50,12 @@ $messages['en'] = array(
 	'surveys-special-disabled' => 'Disabled',
 	'surveys-special-confirm-delete' => 'Are you sure you want to delete this survey?',
 	'surveys-special-delete-failed' => 'Failed to delete survey.',
+	'survey-special-label-usertype' => 'Users that should get the survey',
+	'survey-user-type-all' => 'Everyone',
+	'survey-user-type-loggedin' => 'Logged in users',
+	'survey-user-type-confirmed' => 'Confirmed users',
+	'survey-user-type-editor' => 'Editors',
+	'survey-user-type-anon' => 'Anonymouse users',
 
 	// Special:TakeSurvey
 	'surveys-takesurvey-loading' => 'Loading survey.',
