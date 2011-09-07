@@ -38,8 +38,7 @@ class ApiAddSurvey extends ApiBase {
 		catch ( DBQueryError $ex ) {
 			if ( $ex->errno == 1062 ) {
 				$this->dieUsage( wfMsgExt( 'survey-err-duplicate-name', 'parsemag', $params['name'] ), 'duplicate-survey-name' );
-			}
-			else {
+			} else {
 				throw $ex;
 			}
 		}

@@ -14,8 +14,7 @@ window.survey = new( function() {
 				if ( typeof console !== 'undefined' ) {
 					console.log( 'Survey: ' + message );
 				}
-			}
-			else {
+			} else {
 				return mediaWiki.log.call( mediaWiki.log, 'Survey: ' + message );
 			}
 		}
@@ -30,8 +29,7 @@ window.survey = new( function() {
 			}
 			
 			return message;
-		}
-		else {
+		} else {
 			return mediaWiki.msg.apply( mediaWiki.msg, arguments );
 		}
 	};

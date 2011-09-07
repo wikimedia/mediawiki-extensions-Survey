@@ -36,13 +36,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$this->handleSubmission();
-		}
-		else {
+		} else {
 			if ( is_null( $subPage ) ) {
 				$survey = new Survey( null, true );
 				$survey->loadDefaults();
-			}
-			else {
+			} else {
 				$survey = Survey::newFromName( $subPage, null, true );
 			}
 			
@@ -70,8 +68,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		if ( $wgRequest->getInt( 'survey-id' ) == 0 ) {
 			$survey = new Survey( null );
-		}
-		else {
+		} else {
 			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
 		}
 		
@@ -102,8 +99,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			
 			if ( preg_match( '/survey-question-text-(\d)+/', $name, $matches ) ) {
 				$questions[] = $this->getSubmittedQuestion( $matches[1] );
-			}
-			else if ( preg_match( '/survey-question-text-new-(\d)+/', $name, $matches ) ) {
+			} elseif ( preg_match( '/survey-question-text-new-(\d)+/', $name, $matches ) ) {
 				$questions[] = $this->getSubmittedQuestion( $matches[1], true );
 			}
 		}
@@ -126,8 +122,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		if ( $isNewQuestion ) {
 			$questionDbId = null;
 			$questionId = "new-$questionId";
-		}
-		else {
+		} else {
 			$questionDbId = $questionId;
 		}
 		
@@ -241,8 +236,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		// the second argument for the HTMLForm constructor.
 		if ( is_callable( array( $this, 'getContext' ) ) ) {
 			$form = new HTMLForm( $fields, $this->getContext() );
-		}
-		else {
+		} else {
 			$form = new HTMLForm( $fields );
 		}
 
@@ -270,8 +264,7 @@ class SurveyQuestionField extends HTMLFormField {
 		foreach ( $this->mParams['options'] as $name => $value ) {
 			if ( is_bool( $value ) ) {
 				$value = $value ? '1' : '0';
-			}
-			elseif( is_object( $value ) || is_array( $value ) ) {
+			} elseif( is_object( $value ) || is_array( $value ) ) {
 				$value = FormatJson::encode( $value );
 			}
 			

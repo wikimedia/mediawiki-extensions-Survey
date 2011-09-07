@@ -38,8 +38,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
 			&& $wgRequest->getCheck( 'newsurvey' ) ) {
 				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Survey', $wgRequest->getVal( 'newsurvey' ) )->getLocalURL() );
-		}
-		else {
+		} else {
 			$this->displaySurveys();
 		}
 	}

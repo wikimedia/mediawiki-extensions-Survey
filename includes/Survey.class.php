@@ -269,7 +269,7 @@ class Survey extends SurveyDBClass {
 			array( 'submission_survey_id' => $this->getId() )
 		);
 		
-		$dbw = wfgetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		
 		$dbw->begin();
 		

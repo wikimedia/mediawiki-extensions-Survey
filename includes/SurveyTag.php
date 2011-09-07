@@ -48,8 +48,7 @@ class SurveyTag {
 			
 			$this->parameters['class'] = 'surveytag';
 			$this->parameters['survey-data-token'] = $GLOBALS['wgUser']->editToken();
-		}
-		else {
+		} else {
 			throw new MWException( 'Invalid parameters for survey tag.' );
 		}
 	}

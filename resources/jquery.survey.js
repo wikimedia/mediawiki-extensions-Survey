@@ -32,12 +32,10 @@
 			function( data ) {
 				if ( data.surveys ) {
 					callback( data.surveys );
-				}
-				else if ( data.error ) {
+				} else if ( data.error ) {
 					debugger;
 					// TODO
-				}
-				else {
+				} else {
 					debugger;
 					// TODO
 				}
@@ -187,14 +185,12 @@
 						function() {
 							if ( surveyData.thanks == '' ) {
 								_this.doCompletion();
-							}
-							else {
+							} else {
 								_this.showCompletion( surveyData );
 							}
 						}
 					);
-				}
-				else {
+				} else {
 					// TODO
 					
 					$this.button( 'enable' );
@@ -239,8 +235,7 @@
 		if ( $this.attr( 'survey-data-id' ) ) {
 			this.identifier = $this.attr( 'survey-data-id' );
 			this.identifierType = 'id';
-		}
-		else if ( $this.attr( 'survey-data-name' ) ) {
+		} else if ( $this.attr( 'survey-data-name' ) ) {
 			this.identifier = $this.attr( 'survey-data-name' );
 			this.identifierType = 'name';
 		}

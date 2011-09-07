@@ -15,11 +15,11 @@
 class ApiQuerySurveys extends ApiQueryBase {
 	
 	public function __construct( $main, $action ) {
-		parent :: __construct( $main, $action, 'su' );
+		parent::__construct( $main, $action, 'su' );
 	}
 
 	/**
-	 * Retrieve the specil words from the database.
+	 * Retrieve the special words from the database.
 	 */
 	public function execute() {
 		global $wgUser;
@@ -52,8 +52,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
-		}
-		else {
+		} else {
 			$this->addWhere( array( 'survey_name' => $params['names'] ) );
 		}
 		
@@ -144,11 +143,11 @@ class ApiQuerySurveys extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'integer',
 			),
 			'limit' => array(
-				ApiBase :: PARAM_DFLT => 20,
-				ApiBase :: PARAM_TYPE => 'limit',
-				ApiBase :: PARAM_MIN => 1,
-				ApiBase :: PARAM_MAX => ApiBase :: LIMIT_BIG1,
-				ApiBase :: PARAM_MAX2 => ApiBase :: LIMIT_BIG2
+				ApiBase::PARAM_DFLT => 20,
+				ApiBase::PARAM_TYPE => 'limit',
+				ApiBase::PARAM_MIN => 1,
+				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
+				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			),
 			'continue' => null,
 			'token' => null,
@@ -168,7 +167,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			'enabled' => 'Enabled state to filter on',
 			'props' => 'Survey data to query',
 			'continue' => 'Offset number from where to continue the query',
-			'limit'   => 'Max amount of words to return',
+			'limit' => 'Max amount of words to return',
 			'token' => 'Edit token. You can get one of these through prop=info.',
 		);
 	}

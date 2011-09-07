@@ -20,8 +20,7 @@
 			function( data ) {
 				if ( data.success ) {
 					successCallback();
-				}
-				else {
+				} else {
 					failCallback( survey.msg( 'surveys-special-delete-failed' ) );
 				}
 			}

@@ -195,7 +195,7 @@ abstract class SurveyDBClass {
 			$fields = array_keys( static::getFieldTypes() );
 		}
 		
-		$dbr = wfgetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_SLAVE );
 		
 		return $dbr->select(
 			static::getDBTable(),
@@ -227,8 +227,7 @@ abstract class SurveyDBClass {
 	public function writeToDB() {
 		if ( $this->hasIdField() ) {
 			return $this->updateInDB();
-		}
-		else {
+		} else {
 			return $this->insertIntoDB();
 		}
 	}
@@ -348,8 +347,7 @@ abstract class SurveyDBClass {
 				case 'bool':
 					if ( is_string( $value ) ) {
 						$value = $value !== '0';
-					}
-					else if ( is_int( $value ) ) {
+					} elseif ( is_int( $value ) ) {
 						$value = $value !== 0;
 					}
 					break;
@@ -366,8 +364,7 @@ abstract class SurveyDBClass {
 			}
 			
 			$this->fields[$name] = $value;
-		}
-		else {
+		} else {
 			throw new MWException( 'Attempted to set unknonw field ' . $name );
 		}
 	}
@@ -385,8 +382,7 @@ abstract class SurveyDBClass {
 	public function getField( $name ) {
 		if ( $this->hasField( $name ) ) {
 			return $this->fields[$name];
-		}
-		else {
+		} else {
 			throw new MWException( 'Attempted to get not-set field ' . $name );
 		}
 	}
@@ -561,8 +557,7 @@ abstract class SurveyDBClass {
 		
 		if ( !is_array( $fields ) ) {
 			$setFields = $this->getSetFieldNames();
-		}
-		else {
+		} else {
 			foreach ( $fields as $field ) {
 				if ( $this->hasField( $field ) ) {
 					$setFields[] = $field;
