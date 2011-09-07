@@ -246,6 +246,15 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$form = new HTMLForm( $fields );
 		}
 
+		$form->addButton(
+			'cancelEdit',
+			wfMsg( 'cancel' ),
+			'cancelEdit',
+			array(
+				'onclick' => 'window.location="' . SpecialPage::getTitleFor( 'Surveys' )->getFullURL() . '";return false;'
+			)
+		);
+		
 		$form->show();
 	}
 	

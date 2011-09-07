@@ -153,6 +153,8 @@
 		} );
 		
 		$( '.mw-htmlform-submit' ).button();
+		$( '#cancelEdit' ).button();
+		
 	};
 	
 	setup();

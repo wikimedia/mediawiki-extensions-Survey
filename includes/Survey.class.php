@@ -59,9 +59,9 @@ class Survey extends SurveyDBClass {
 		return array(
 			'name' => '',
 			'enabled' => '0',
-			'header' => '',
+			'header' => 'Thank you for taking this short survey. Please fill out the following questions:',
 			'footer' => '',
-			'thanks' => '',
+			'thanks' => 'Thank you for your responses.',
 			'user_type' => self::$USER_ALL,
 			'namespaces' => array(),
 		);
