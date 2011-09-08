@@ -30,7 +30,7 @@
 	$( '.survey-delete' ).click( function() {
 		$this = $( this );
 		
-		if ( confirm( survey.msg( 'surveys-special-confirm-delete' ) ) ) {
+		if ( confirm( mw.msg( 'surveys-special-confirm-delete' ) ) ) {
 			deleteSurvey(
 				{
 					id: $this.attr( 'data-survey-id' ),
