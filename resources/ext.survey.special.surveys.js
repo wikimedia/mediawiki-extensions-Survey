@@ -21,7 +21,7 @@
 				if ( data.success ) {
 					successCallback();
 				} else {
-					failCallback( survey.msg( 'surveys-special-delete-failed' ) );
+					failCallback( mw.msg( 'surveys-special-delete-failed' ) );
 				}
 			}
 		);	
