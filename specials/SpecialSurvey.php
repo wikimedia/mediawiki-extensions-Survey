@@ -240,6 +240,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$form = new HTMLForm( $fields );
 		}
 
+		$form->setSubmitText( wfMsg( 'surveys-special-save' ) );
+		
 		$form->addButton(
 			'cancelEdit',
 			wfMsg( 'cancel' ),

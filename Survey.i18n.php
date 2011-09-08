@@ -45,6 +45,7 @@ $messages['en'] = array(
 	'surveys-special-name' => 'Name',
 	'surveys-special-status' => 'Status',
 	'surveys-special-edit' => 'Edit',
+	'surveys-special-save' => 'Save',
 	'surveys-special-delete' => 'Delete',
 	'surveys-special-enabled' => 'Enabled',
 	'surveys-special-disabled' => 'Disabled',
