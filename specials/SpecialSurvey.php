@@ -171,6 +171,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'label-message' => 'survey-special-label-name',
 			'id' => 'survey-name',
 			'name' => 'survey-name',
+			//'disabled' => true
 		);
 		
 		$fields[] = array(

@@ -26,8 +26,7 @@
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
 			getQuestionInput( { 'id': 'new' } )
-		).append( $( '<button />' ).button()
-			.text( mw.msg( 'survey-special-label-button' ) )
+		).append( $( '<button />' ).button( { 'label': mw.msg( 'survey-special-label-button' ) } )
 			.click( function() { onAddQuestionRequest(); return false; } )
 		) );
 		
@@ -44,8 +43,6 @@
 			'class': 'mw-htmlform-field-SurveyQuestionField'
 		} );
 		
-		// TODO: defaulting
-		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-label question-label' } ).html(
 			$( '<label />' ).text( mw.msg( 'survey-question-label-nr', ++questionNr ) )
 		) );
@@ -53,8 +50,7 @@
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
 			getQuestionInput( question )
 				.append( '<br />' )
-				.append( $( '<button />' ).button()
-					.text( mw.msg( 'survey-special-remove' ) )
+				.append( $( '<button />' ).button( { 'label': mw.msg( 'survey-special-remove' ) } )
 					.click( function() { 
 						if ( confirm( mw.msg( 'survey-special-remove-confirm' ) ) ) {
 							removeQuestion( question );
@@ -65,7 +61,7 @@
 				) 
 		) );
 		
-		$table.append( $tr );
+		$table.find( '.add-question' ).before( $tr );
 	};
 	
 	function getQuestionInput( question ) {
@@ -129,6 +125,7 @@
 			'id': 'new-' + newQuestionNr++
 		} );
 		$( '#survey-question-text-new' ).focus().select();
+		$( 'html' ).animate( { scrollTop: $( document ).height() }, 'fast' );
 	};
 	
 	function setup() {
