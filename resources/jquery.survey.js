@@ -66,15 +66,27 @@
 				} );
 				break;
 			case type.SELECT:
-				$input = survey.htmlSelect( question.answers, 0, { 
+				var answers = {};
+				
+				for ( i in question.answers ) {
+					answers[question.answers[i]] = question.answers[i]; 
+				}
+				
+				$input = survey.htmlSelect( answers, 0, { 
 					'id': id,
 					'class': 'survey-question survey-select'
 				} );
 				break;
 			case type.RADIO:
+				var answers = {};
+				
+				for ( i in question.answers ) {
+					answers[question.answers[i]] = question.answers[i]; 
+				}
+				
 				$input = survey.htmlRadio(
-					question.answers,
-					0,
+					answers,
+					null,
 					id,
 					{
 						'id': id,
