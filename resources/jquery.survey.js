@@ -49,40 +49,52 @@
 		var type = survey.question.type;
 		
 		var $input;
+		var id = 'survey-question-' + question.id;
 		
 		switch ( question.type ) {
 			case type.TEXT: default:
 				$input = $( '<input />' ).attr( {
-					'id': 'survey-question-' + question.id,
+					'id': id,
 					'class': 'survey-question survey-text'
 				} );
 				break;
 			case type.NUMBER:
 				$input = $( '<input />' ).numeric().attr( {
-					'id': 'survey-question-' + question.id,
+					'id': id,
 					'class': 'survey-question survey-number',
 					'size': 7
 				} );
 				break;
 			case type.SELECT:
 				$input = survey.htmlSelect( question.answers, 0, { 
-					'id': 'survey-question-' + question.id,
+					'id': id,
 					'class': 'survey-question survey-select'
 				} );
 				break;
 			case type.RADIO:
-				// TODO
-				$input = $( '<input />' ).attr( {
-					'id': 'survey-question-' + question.id,
-					'class': 'survey-question'
-				} );
+				$input = survey.htmlRadio(
+					question.answers,
+					0,
+					id,
+					{
+						'id': id,
+						'class': 'survey-question survey-radio'
+					}
+				);
 				break;
 			case type.TEXTAREA:
 				$input = $( '<textarea />' ).attr( {
-					'id': 'survey-question-' + question.id,
+					'id': id,
 					'class': 'survey-question survey-textarea',
 					'cols': 80,
 					'rows': 2
+				} );
+				break;
+			case type.CHECK:
+				$input = $( '<input />' ).attr( {
+					'id': id,
+					'type': 'checkbox',
+					'class': 'survey-question survey-check',
 				} );
 				break;
 		}
@@ -91,17 +103,27 @@
 		
 		this.inputs.push( $input );
 		
-		return $input;
+		$q = $( '<div />' ).html( $input );
+		
+		if ( question.type == type.CHECK ) {
+			$q.append( $( '<label />' ).text( question.text ).attr( 'for', id ) );
+		}
+		else {
+			$q.prepend( $( '<p />' ).text( question.text ) );
+		}
+		
+		return $q;
 	};
 	
 	this.getSurveyQuestion = function( question ) {
-		$q = $( '<div />' );
-		
-		$q.append( $( '<p />' ).text( question.text ) );
-		
-		$q.append( this.getQuestionInput( question ) )
-		
-		return $q;
+		if ( survey.question.typeHasAnswers( question.type )
+			&& question.answers.length == 0 ) {
+			survey.log( 'getSurveyQuestion: no answers for: ' + question.id );
+			return '';
+		}
+		else {
+			return this.getQuestionInput( question );
+		}
 	};
 	
 	this.getSurveyQuestions = function( questions ) {

@@ -83,6 +83,7 @@ $messages['en'] = array(
 	'survey-special-label-header' => 'Text to display above the survey',
 	'survey-special-label-footer' => 'Text to display below the survey',
 	'survey-special-label-thanks' => 'Thanks message to display after submission of the survey',
+	'survey-special-label-answers' => 'Available answers, one per line.',
 
 	// Survey jQuery
 	'survey-jquery-submit' => 'Submit',

@@ -83,6 +83,24 @@ class SurveyQuestion extends SurveyDBClass {
 	}
 	
 	/**
+	 * Returns a list of default field values.
+	 * field name => field value
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	public static function getDefaults() {
+		return array(
+			'text' => '',
+			'type' => self::$TYPE_TEXT,
+			'required' => false,
+			'answers' => array(),
+			'removed' => false,
+		);
+	}
+	
+	/**
 	 * Unserialization method for survey question data passed as a multi-value API parameter.
 	 * Uses base64 and replaces padding = by !, so the values does not contain any = or |. 
 	 * 

@@ -126,12 +126,20 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$questionDbId = $questionId;
 		}
 		
+		$answers = array_filter(
+			explode( "\n", $wgRequest->getText( "survey-question-answers-$questionId" ) ),
+			function( $line ) {
+				return trim( $line ) != '';
+			}
+		);
+		
 		$question = new SurveyQuestion( array(
 			'id' => $questionDbId,
 			'removed' => 0,
 			'text' => $wgRequest->getText( "survey-question-text-$questionId" ),
 			'type' => $wgRequest->getInt( "survey-question-type-$questionId" ),
-			'required' => $wgRequest->getCheck( "survey-question-required-$questionId" )
+			'required' => $wgRequest->getCheck( "survey-question-required-$questionId" ),
+			'answers' => $answers
 		) );
 		
 		return $question;
@@ -224,12 +232,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
 			$fields[] = array(
 				'class' => 'SurveyQuestionField',
-				'options' => array(
-					'required' => $question->getField( 'required' ),
-					'text' => $question->getField( 'text' ),
-					'type' => $question->getField( 'type' ),
-					'id' => $question->getId(),
-				)
+				'options' => $question->toArray()
 			);
 		}
 		

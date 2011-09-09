@@ -149,6 +149,7 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 		'survey-special-label-button',
 		'survey-special-remove',
 		'survey-special-remove-confirm',
+		'survey-special-label-answers'
 	)
 );
 

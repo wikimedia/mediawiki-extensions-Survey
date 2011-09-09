@@ -34,7 +34,7 @@ window.survey = new( function() {
 		}
 	};
 	
-	this.htmlSelect = function( options, value, attributes ) {
+	this.htmlSelect = function( options, value, attributes, onChangeCallback ) {
 		$select = $( '<select />' ).attr( attributes );
 		
 		for ( message in options ) {
@@ -47,7 +47,38 @@ window.survey = new( function() {
 			$select.append( $( '<option />' ).text( message ).attr( attribs ) );
 		}
 		
+		if ( typeof onChangeCallback !== 'undefined' ) {
+			$select.change( function() { onChangeCallback( $( this ).val() ) } );
+		}
+		
 		return $select;
+	};
+	
+	this.htmlRadio = function( options, value, name, attributes ) {
+		var $radio = $( '<div />' ).attr( attributes );
+		$radio.html( '' );
+		
+		for ( message in options ) {
+			var value = options[message];
+			var id = name + value;
+			
+			$input = $( '<input />' ).attr( {
+				'id': id,
+				'type': 'radio',
+				'name': name,
+				'value': value
+			} );
+			
+			if ( value === options[message] ) {
+				$input.attr( 'checked', 'checked' );
+			}
+			
+			$radio.append( $input );
+			$radio.append( $( '<label />' ).attr( 'for', id ).text( message ) );
+			$radio.append( $( '<br />' ) );
+		}
+		
+		return $radio;
 	};
 	
 	this.question = new( function() {
@@ -61,7 +92,11 @@ window.survey = new( function() {
 			this.CHECK = 5;
 		} );
 		
-		this.getTypeSelector = function( value, attributes ) {
+		this.typeHasAnswers = function( t ) {
+			return $.inArray( t, [ survey.question.type.RADIO, survey.question.type.SELECT ] ) !== -1;
+		};
+		
+		this.getTypeSelector = function( value, attributes, onChangeCallback ) {
 			var options = [];
 			
 			var types = {
@@ -77,7 +112,7 @@ window.survey = new( function() {
 				options[survey.msg( 'survey-question-type-' + msg )] = types[msg];
 			}
 			
-			return survey.htmlSelect( options, parseInt( value ), attributes );
+			return survey.htmlSelect( options, parseInt( value ), attributes, onChangeCallback );
 		};
 		
 	} );

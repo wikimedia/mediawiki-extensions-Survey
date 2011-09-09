@@ -5,7 +5,56 @@
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
-(function( $, mw ) { $( document ).ready( function() {
+
+(function( $, mw, survey ) {
+	
+	survey.answerSelector = function( options ) {
+		var _this = this;
+		
+		var defaults = {
+			'visible': true,
+			'answers': []
+		};
+		
+		options = $.extend( defaults, options );
+		
+		this.$div = $( '<div />' ).html( '' );
+		
+		this.$div.append( $( '<p />' ).text( mw.msg( 'survey-special-label-answers' ) ) );
+
+		this.$div.append( $( '<textarea />' ).attr( options.attr ).val( options.answers.join( '\n' ) ) );
+		
+		this.setVisible( options.visible );
+	};
+
+	survey.answerSelector.prototype = {
+		
+		getHtml: function() {
+			return this.$div;
+		},
+			
+		show: function() {
+			this.$div.show();
+		},
+		
+		hide: function() {
+			this.$div.hide();
+		},
+		
+		setVisible: function( visible ) {
+			if ( visible ) {
+				this.show();
+			}
+			else {
+				this.hide();
+			}
+		}
+			
+	};
+	
+} )( jQuery, window.mediaWiki, window.survey );
+
+(function( $, mw, survey ) { $( document ).ready( function() {
 
 	var _this = this;
 
@@ -25,7 +74,7 @@
 		) );
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
-			getQuestionInput( { 'id': 'new' } )
+			getQuestionInput( { 'id': 'new', 'answers': [], 'type': 0 } )
 		).append( $( '<button />' ).button( { 'label': mw.msg( 'survey-special-label-button' ) } )
 			.click( function() { onAddQuestionRequest(); return false; } )
 		) );
@@ -69,6 +118,17 @@
 			'border': '1px solid black',
 			'id': 'survey-question-div-' + question.id
 		} );
+
+		var answerSelector = new survey.answerSelector( {
+			'visible': survey.question.typeHasAnswers( parseInt( question.type ) ),
+			'attr': {
+				'rows': 2,
+				'cols': 80,
+				'id': 'survey-question-answers-' + question.id,
+				'name': 'survey-question-answers-' + question.id
+			},
+			'answers': question.answers
+		} );
 		
 		$input.append( $( '<label />' ).attr( {
 			'for': 'survey-question-text-' + question.id
@@ -89,10 +149,16 @@
 			'for': 'survey-question-type-' + question.id
 		} ).text( mw.msg( 'survey-special-label-type' ) ) );
 
-		$input.append( survey.question.getTypeSelector( question.type, {
-			'id': 'survey-question-type-' + question.id,
-			'name': 'survey-question-type-' + question.id
-		} ) );
+		$input.append( survey.question.getTypeSelector(
+			question.type,
+			{
+				'id': 'survey-question-type-' + question.id,
+				'name': 'survey-question-type-' + question.id
+			},
+			function( newValue ) {
+				answerSelector.setVisible( survey.question.typeHasAnswers( parseInt( newValue ) ) );
+			}
+		) );
 		
 		$required = $( '<input />' ).attr( {
 			'id': 'survey-question-required-' + question.id,
@@ -110,6 +176,8 @@
 			'for': 'survey-question-required-' + question.id
 		} ).text( mw.msg( 'survey-special-label-required' ) ) );
 		
+		$input.append( answerSelector.getHtml() );
+		
 		return $input;
 	};
 	
@@ -122,7 +190,8 @@
 			'text': $( '#survey-question-text-new' ).val(),
 			'required': !!$( '#survey-question-required-new' ).attr( 'checked' ),
 			'type': $( '#survey-question-type-new' ).val(),
-			'id': 'new-' + newQuestionNr++
+			'id': 'new-' + newQuestionNr++,
+			'answers': $( '#survey-question-answers-new' ).val().split( '\n' )
 		} );
 		$( '#survey-question-text-new' ).focus().select();
 		$( 'html' ).animate( { scrollTop: $( document ).height() }, 'fast' );
@@ -146,6 +215,7 @@
 				'required': $this.attr( 'data-required' ) == '1',
 				'id': $this.attr( 'data-id' ),
 				'type': $this.attr( 'data-type' ),
+				'answers': eval( $this.attr( 'data-answers' ) ),
 			} );
 		} );
 		
@@ -156,4 +226,4 @@
 	
 	setup();
 	
-} ); })( jQuery, window.mediaWiki );
+} ); })( jQuery, window.mediaWiki, window.survey );
