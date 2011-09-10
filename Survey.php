@@ -178,6 +178,7 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'messages' => array(
 		'survey-jquery-submit',
 		'survey-jquery-finish',
+		'survey-jquery-load-failed',
 	)
 );
 

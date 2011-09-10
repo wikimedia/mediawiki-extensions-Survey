@@ -20,9 +20,12 @@
 			'list': 'surveys',
 			'format': 'json',
 			'suincquestions': 1,
-			'suenabled': 1,
 			'suprops': '*'
 		};
+		
+		if ( options.requireEnabled ) {
+			requestArgs['suenabled'] = 1;
+		}
 		
 		requestArgs[ 'su' + this.identifierType + 's' ] = this.identifier;
 		
@@ -276,10 +279,15 @@
 		
 		if ( this.identifier !== null ) {
 			this.getSurveyData(
-				{},
+				{
+					'requireEnabled': $this.attr( 'survey-data-require-enabled' ) !== '0'
+				},
 				function( surveyData ) {
-					for ( i in surveyData ) {
-						_this.initSurvey( surveyData[i] );
+					if ( 0 in surveyData ) {
+						_this.initSurvey( surveyData[0] );
+					}
+					else {
+						$this.text( mw.msg( 'survey-jquery-load-failed' ) );
 					}
 				}
 			);

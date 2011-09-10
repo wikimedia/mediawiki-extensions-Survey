@@ -179,6 +179,19 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
+	 * Returns if there is at least one record matching the provided conditions.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $conditions
+	 * 
+	 * @return boolean
+	 */
+	public static function has( array $conditions = array() ) {
+		return static::selectRow( array( static::getIDField() ), $conditions ) !== false;
+	}
+	
+	/**
 	 * Selects the the specified fields of the records matching the provided
 	 * conditions.
 	 * 

@@ -34,6 +34,7 @@ class SurveyTag {
 	 */
 	public function __construct( array $args, $contents = null ) {
 		$this->parameters = $args;
+		$this->contents = $contents;
 		
 		$args = filter_var_array( $args, $this->getSurveyParameters() );
 		
@@ -89,6 +90,7 @@ class SurveyTag {
 		return array(
 			'id' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 1 ) ),
 			'name' => array(),
+			'require-enabled' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 0, 'max_range' => 1 ) ),
 		);
 	}
 

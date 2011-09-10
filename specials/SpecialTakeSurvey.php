@@ -32,13 +32,48 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 		
+		$survey = Survey::selectRow(
+			array( 'enabled' ),
+			array( 'name' => $subPage )
+		);
+		
+		if ( $survey === false ) {
+			$this->showError( 'surveys-takesurvey-nosuchsurvey' );
+		}
+		else if ( $survey->getField( 'enabled' ) ) {
+			$this->displaySurvey( $subPage );
+		}
+		else if ( $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ) {
+			$this->showWarning( 'surveys-takesurvey-warn-notenabled' );
+			$this->getOutput()->addHTML( '<br /><br /><br /><br />' );
+			$this->displaySurvey( $subPage );
+		}
+		else {
+			$this->showError( 'surveys-takesurvey-surveynotenabled' );
+		}
+	}
+	
+	protected function displaySurvey( $surveyName ) {
 		$this->getOutput()->addWikiText( Xml::element( 
 			'survey',
 			array(
-				'name' => $subPage
+				'name' => $surveyName,
+				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1'
 			),
 			wfMsg( 'surveys-takesurvey-loading' )
 		) );
+	}
+	
+	protected function showError( $message ) {
+		$this->getOutput()->addHTML(
+			'<p class="visualClear errorbox">' . wfMsgHtml( $message ) . '</p>'
+		);
+	}
+	
+	protected function showWarning( $message ) {
+		$this->getOutput()->addHTML(
+			'<p class="visualClear warningbox">' . wfMsgHtml( $message ) . '</p>'
+		);
 	}
 	
 }

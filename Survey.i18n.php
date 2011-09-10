@@ -59,7 +59,10 @@ $messages['en'] = array(
 	'survey-user-type-anon' => 'Anonymouse users',
 
 	// Special:TakeSurvey
-	'surveys-takesurvey-loading' => 'Loading survey.',
+	'surveys-takesurvey-loading' => 'Loading survey...',
+	'surveys-takesurvey-nosuchsurvey' => 'There requested survey does not exist.',
+	'surveys-takesurvey-warn-notenabled' => 'This survey has not been enabled yet, and therefore is not visible to users.',
+	'surveys-takesurvey-surveynotenabled' => 'The requested survey has not been enabled yet.',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',
@@ -88,4 +91,5 @@ $messages['en'] = array(
 	// Survey jQuery
 	'survey-jquery-submit' => 'Submit',
 	'survey-jquery-finish' => 'Finish',
+	'survey-jquery-load-failed' => 'Could not load the survey.',
 );
