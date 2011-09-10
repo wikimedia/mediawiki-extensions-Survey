@@ -47,7 +47,51 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	}
 	
 	protected function displayStats( Survey $survey ) {
-		// TODO
+		$this->displaySummary( $this->getSummaryData( $survey ) );
+		
+		// TODO: magic
+		//$this->displayQuestionStats();
+	}
+	
+	protected function getSummaryData( Survey $survey ) {
+		$stats = array();
+		
+		$stats['name'] = $survey->getField( 'name' );
+		$stats['status'] = wfMsg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) );
+		$stats['questioncount'] = count( $survey->getQuestions() ) ;
+		$stats['submissioncount'] = SurveySubmission::count( array( 'survey_id' => $survey->getId() ) );
+		
+		return $stats;
+	}
+	
+	protected function displaySummary( array $stats ) {
+		$out = $this->getOutput();
+		
+		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable survey-stats' ) ) );
+		
+		foreach ( $stats as $stat => $value ) {
+			$out->addHTML( '<tr>' );
+			
+			$out->addHTML( Html::element(
+				'th',
+				array( 'class' => 'survey-stat-name' ),
+				wfMsg( 'surveys-surveystats-' . $stat )
+			) );
+			
+			$out->addHTML( Html::element(
+				'td',
+				array( 'class' => 'survey-stat-value' ),
+				$value
+			) );
+			
+			$out->addHTML( '</tr>' );
+		}
+		
+		$out->addHTML( Html::closeElement( 'table' ) );
+	}
+	
+	protected function displayQuestionStats( SurveyQuestion $question ) {
+		
 	}
 	
 }

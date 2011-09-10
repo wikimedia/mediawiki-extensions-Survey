@@ -67,6 +67,12 @@ $messages['en'] = array(
 
 	// Special:SurveyStats
 	'surveys-surveystats-nosuchsurvey' => 'The requested survey does not exist. A list of available surveys can be found on [[Special:Surveys]]',
+	'surveys-surveystats-name' => 'Survey name',
+	'surveys-surveystats-status' => 'Survey status',
+	'surveys-surveystats-questioncount' => 'Number of questions',
+	'surveys-surveystats-submissioncount' => 'Number of submissions',
+	'surveys-surveystats-enabled' => 'Enabled',
+	'surveys-surveystats-disabled' => 'Disabled',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',

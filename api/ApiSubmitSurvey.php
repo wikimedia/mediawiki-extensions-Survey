@@ -64,7 +64,7 @@ class ApiSubmitSurvey extends ApiBase {
 	}
 	
 	public function getTokenSalt() {
-		return 'submitsurvey';
+		return serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) );
 	}
 	
 	public function mustBePosted() {

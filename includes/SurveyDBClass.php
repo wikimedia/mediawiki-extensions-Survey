@@ -137,7 +137,7 @@ abstract class SurveyDBClass {
 	
 	/**
 	 * Selects the the specified fields of the records matching the provided
-	 * conditions.
+	 * conditions. Field names get prefixed.
 	 * 
 	 * @since 0.1
 	 * 
@@ -148,7 +148,15 @@ abstract class SurveyDBClass {
 	 * @return array of self
 	 */
 	public static function select( $fields = null, array $conditions = array(), array $options = array() ) {
-		$result = static::rawSelect( $fields, $conditions, $options );
+		if ( is_null( $fields ) ) {
+			$fields = array_keys( static::getFieldTypes() );
+		}
+		
+		$result = static::rawSelect(
+			static::getPrefixedFields( $fields ),
+			static::getPrefixedValues( $conditions ),
+			$options
+		);
 		
 		$objects = array();
 		
@@ -161,6 +169,7 @@ abstract class SurveyDBClass {
 	
 	/**
 	 * Selects the the specified fields of the first matching record.
+	 * Field names get prefixed.
 	 * 
 	 * @since 0.1
 	 * 
@@ -180,6 +189,7 @@ abstract class SurveyDBClass {
 	
 	/**
 	 * Returns if there is at least one record matching the provided conditions.
+	 * Condition field names get prefixed.
 	 * 
 	 * @since 0.1
 	 * 
@@ -192,8 +202,29 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
+	 * Returns the amount of matching records.
+	 * Condition field names get prefixed.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $conditions
+	 * @param array $options
+	 * 
+	 * @return integer
+	 */
+	public static function count( array $conditions = array(), array $options = array() ) {
+		$res = static::rawSelect(
+			array( 'COUNT(*) AS rowcount' ),
+			static::getPrefixedValues( $conditions ),
+			$options
+		)->fetchObject();
+		
+		return $res->rowcount;
+	}
+	
+	/**
 	 * Selects the the specified fields of the records matching the provided
-	 * conditions.
+	 * conditions. Field names do NOT get prefixed. 
 	 * 
 	 * @since 0.1
 	 * 
@@ -203,17 +234,13 @@ abstract class SurveyDBClass {
 	 * 
 	 * @return ResultWrapper
 	 */
-	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {
-		if ( is_null( $fields ) ) {
-			$fields = array_keys( static::getFieldTypes() );
-		}
-		
+	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {		
 		$dbr = wfGetDB( DB_SLAVE );
 		
 		return $dbr->select(
 			static::getDBTable(),
-			static::getPrefixedFields( $fields ),
-			count( $conditions ) == 0 ? '' : static::getPrefixedValues( $conditions ),
+			$fields,
+			count( $conditions ) == 0 ? '' : $conditions,
 			'',
 			$options
 		);

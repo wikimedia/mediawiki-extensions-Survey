@@ -48,7 +48,8 @@ class SurveyTag {
 			}
 			
 			$this->parameters['class'] = 'surveytag';
-			$this->parameters['survey-data-token'] = $GLOBALS['wgUser']->editToken();
+			$this->parameters['survey-data-token'] = 
+				$GLOBALS['wgUser']->editToken( serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) ) );
 		} else {
 			throw new MWException( 'Invalid parameters for survey tag.' );
 		}
