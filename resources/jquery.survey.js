@@ -297,11 +297,3 @@
 	this.init();
 	
 }; } )( jQuery );
-
-(function( $ ) { $( document ).ready( function() {
-	
-	$( '.surveytag' ).each( function( index, domElement ) {
-		$( domElement ).mwSurvey();
-	} );
-	
-} ); })( jQuery );

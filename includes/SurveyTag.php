@@ -67,7 +67,7 @@ class SurveyTag {
 		static $loadedJs = false;
 		
 		if ( !$loadedJs ) {
-			$parser->getOutput()->addModules( 'ext.survey.jquery' );
+			$parser->getOutput()->addModules( 'ext.survey.tag' );
 		}
 		
 		return Html::element(
