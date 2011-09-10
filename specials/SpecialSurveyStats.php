@@ -46,9 +46,19 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		}
 	}
 	
+	/**
+	 * Display the statistics that go with the survey.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param Survey $survey
+	 */
 	protected function displayStats( Survey $survey ) {
 		$this->displaySummary( $this->getSummaryData( $survey ) );
-		$this->displayQuestions( $survey );
+		
+		if ( count( $survey->getQuestions() ) > 0 ) {
+			$this->displayQuestions( $survey );
+		}
 	}
 	
 	/**
@@ -106,6 +116,13 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
 	
+	/**
+	 * Displays a table with the surveys questions and some summary stats about them.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param Survey $survey
+	 */
 	protected function displayQuestions( Survey $survey ) {
 		$out = $this->getOutput();
 		
@@ -134,6 +151,13 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
 	
+	/**
+	 * Adds a table row with the summary stats for the provided question.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param SurveyQuestion $question
+	 */
 	protected function displayQuestionStats( SurveyQuestion $question ) {
 		static $qNr = 0;
 		
