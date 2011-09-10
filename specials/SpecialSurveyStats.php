@@ -19,7 +19,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	public function __construct() {
-		parent::__construct( 'SurveyStats', 'surveyadmin' );
+		parent::__construct( 'SurveyStats', 'surveyadmin', false );
 	}
 	
 	/**
