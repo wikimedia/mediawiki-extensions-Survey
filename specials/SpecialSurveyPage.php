@@ -80,4 +80,30 @@ abstract class SpecialSurveyPage extends SpecialPage {
 		$this->getOutput()->addModules( $modules );
 	}
 	
+	/**
+	 * Show a message in an error box.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $message
+	 */
+	protected function showError( $message ) {
+		$this->getOutput()->addHTML(
+			'<p class="visualClear errorbox">' . wfMsgExt( $message, 'parseinline' ) . '</p>'
+		);
+	}
+	
+	/**
+	 * Show a message in a warning box.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $message
+	 */
+	protected function showWarning( $message ) {
+		$this->getOutput()->addHTML(
+			'<p class="visualClear warningbox">' . wfMsgExt( $message, 'parseinline' ) . '</p>'
+		);
+	}
+	
 }

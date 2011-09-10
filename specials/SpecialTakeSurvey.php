@@ -53,6 +53,14 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 		}
 	}
 	
+	/**
+	 * Add the output for the actual survey.
+	 * This is done by adding a survey tag as wikitext, which then get's rendered.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $surveyName
+	 */
 	protected function displaySurvey( $surveyName ) {
 		$this->getOutput()->addWikiText( Xml::element( 
 			'survey',
@@ -62,18 +70,6 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 			),
 			wfMsg( 'surveys-takesurvey-loading' )
 		) );
-	}
-	
-	protected function showError( $message ) {
-		$this->getOutput()->addHTML(
-			'<p class="visualClear errorbox">' . wfMsgHtml( $message ) . '</p>'
-		);
-	}
-	
-	protected function showWarning( $message ) {
-		$this->getOutput()->addHTML(
-			'<p class="visualClear warningbox">' . wfMsgHtml( $message ) . '</p>'
-		);
 	}
 	
 }

@@ -32,6 +32,22 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	public function execute( $subPage ) {
 		parent::execute( $subPage );
 		
+		if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
+			$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
+		} else {
+			$subPage = trim( $subPage );
+			
+			if ( Survey::has( array( 'name' => $subPage ) ) ) {
+				$this->displayStats( Survey::newFromName( $subPage ) );
+			}
+			else {
+				$this->showError( 'surveys-surveystats-nosuchsurvey' );
+			}
+		}
+	}
+	
+	protected function displayStats( Survey $survey ) {
+		// TODO
 	}
 	
 }

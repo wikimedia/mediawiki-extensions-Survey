@@ -44,6 +44,7 @@ $messages['en'] = array(
 	'surveys-special-existing' => 'Existing surveys',
 	'surveys-special-name' => 'Name',
 	'surveys-special-status' => 'Status',
+	'surveys-special-stats' => 'Statistics',
 	'surveys-special-edit' => 'Edit',
 	'surveys-special-save' => 'Save',
 	'surveys-special-delete' => 'Delete',
@@ -63,6 +64,9 @@ $messages['en'] = array(
 	'surveys-takesurvey-nosuchsurvey' => 'There requested survey does not exist.',
 	'surveys-takesurvey-warn-notenabled' => 'This survey has not been enabled yet, and therefore is not visible to users.',
 	'surveys-takesurvey-surveynotenabled' => 'The requested survey has not been enabled yet.',
+
+	// Special:SurveyStats
+	'surveys-surveystats-nosuchsurvey' => 'The requested survey does not exist. A list of available surveys can be found on [[Special:Surveys]]',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',

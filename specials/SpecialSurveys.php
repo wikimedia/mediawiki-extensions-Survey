@@ -119,6 +119,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			'<thead><tr>' .
 				Html::element( 'th', array(), wfMsg( 'surveys-special-name' ) ) .
 				Html::element( 'th', array(), wfMsg( 'surveys-special-status' ) ) .
+				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-stats' ) ) .
 				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-edit' ) ) .
 				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-delete' ) ) .
 			'</tr></thead>'
@@ -139,6 +140,15 @@ class SpecialSurveys extends SpecialSurveyPage {
 						) .
 					'</td>' .
 					Html::element( 'td', array(), wfMsg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) ) ) .
+					'<td>' .
+						Html::element( 
+							'a',
+							array(
+								'href' => SpecialPage::getTitleFor( 'SurveyStats', $survey->getField( 'name' ) )->getLocalURL()
+							),
+							wfMsg( 'surveys-special-stats' )
+						) .
+					'</td>' .
 					'<td>' .
 						Html::element( 
 							'a',

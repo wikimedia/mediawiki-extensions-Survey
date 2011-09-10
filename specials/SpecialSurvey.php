@@ -37,19 +37,20 @@ class SpecialSurvey extends SpecialSurveyPage {
 		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$this->handleSubmission();
 		} else {
-			if ( is_null( $subPage ) ) {
-				$survey = new Survey( null, true );
-				$survey->loadDefaults();
+			if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
+				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
 			} else {
+				$subPage = trim( $subPage );
+				
 				$survey = Survey::newFromName( $subPage, null, true );
+				
+				if ( $survey === false ) {
+					$survey = new Survey( array( 'name' => $subPage ), true );
+				}
+				
+				$this->showSurvey( $survey );
+				$this->addModules( 'ext.survey.special.survey' );
 			}
-			
-			if ( $survey === false ) {
-				$survey = new Survey( array( 'name' => $subPage ), true );
-			}
-			
-			$this->showSurvey( $survey );
-			$this->addModules( 'ext.survey.special.survey' );
 		}
 	}
 	
