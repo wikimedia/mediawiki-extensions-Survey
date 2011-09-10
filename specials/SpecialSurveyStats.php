@@ -48,11 +48,18 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	
 	protected function displayStats( Survey $survey ) {
 		$this->displaySummary( $this->getSummaryData( $survey ) );
-		
-		// TODO: magic
-		//$this->displayQuestionStats();
+		$this->displayQuestions( $survey );
 	}
 	
+	/**
+	 * Gets the summary data.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param Survey $survey
+	 * 
+	 * @return array
+	 */
 	protected function getSummaryData( Survey $survey ) {
 		$stats = array();
 		
@@ -64,6 +71,15 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		return $stats;
 	}
 	
+	/**
+	 * Display a summary table with the provided data.
+	 * The keys are messages that get prepended with surveys-surveystats-.
+	 * message => value
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $stats
+	 */
 	protected function displaySummary( array $stats ) {
 		$out = $this->getOutput();
 		
@@ -90,8 +106,72 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
 	
-	protected function displayQuestionStats( SurveyQuestion $question ) {
+	protected function displayQuestions( Survey $survey ) {
+		$out = $this->getOutput();
 		
+		$out->addHTML( '<h2>' . wfMsgHtml( 'surveys-surveystats-questions' ) . '</h2>' );
+		
+		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable sortable survey-questions' ) ) );
+		
+		$out->addHTML(
+			'<thead><tr>' .
+				'<th>' . wfMsgHtml( 'surveys-surveystats-question-nr' ) . '</th>' .
+				'<th>' . wfMsgHtml( 'surveys-surveystats-question-type' ) . '</th>' .
+				'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-text' ) . '</th>' .
+				'<th>' . wfMsgHtml( 'surveys-surveystats-question-answercount' ) . '</th>' .
+				//'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-answers' ) . '</th>' .
+			'</tr></thead>'	
+		);
+		
+		$out->addHTML( '<tbody>' );
+		
+		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
+			$this->displayQuestionStats( $question );
+		}
+		
+		$out->addHTML( '</tbody>' );
+		
+		$out->addHTML( Html::closeElement( 'table' ) );
+	}
+	
+	protected function displayQuestionStats( SurveyQuestion $question ) {
+		static $qNr = 0;
+		
+		$out = $this->getOutput();
+		
+		$out->addHTML( '<tr>' );
+		
+		$out->addHTML( Html::element(
+			'td',
+			array( 'data-sort-value' => ++$qNr ),
+			wfMsgExt( 'surveys-surveystats-question-#', 'parsemag', $qNr )
+		) );
+		
+		$out->addHTML( Html::element(
+			'td',
+			array(),
+			wfMsg( SurveyQuestion::getTypeMessage( $question->getField( 'type' ) ) )
+		) );
+		
+		$out->addHTML( Html::element(
+			'td',
+			array(),
+			$question->getField( 'text' )
+		) );
+		
+		$out->addHTML( Html::element(
+			'td',
+			array(),
+			SurveyAnswer::count( array( 'question_id' => $question->getId() ) )
+		) );
+		
+//		$out->addHTML( Html::element(
+//			'td',
+//			array(),
+//			'...'
+//		) );
+		
+		$out->addHTML( '</tr>' );
 	}
 	
 }

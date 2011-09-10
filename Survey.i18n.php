@@ -36,6 +36,14 @@ $messages['en'] = array(
 	'survey-err-duplicate-name' => 'There already is a survey with name "$1"',
 	'survey-err-ids-xor-names' => 'You need to provide either the ids or the names of the surveys to query',
 
+	// Question types
+	'survey-question-type-text' => 'Single line text field',
+	'survey-question-type-number' => 'Number',
+	'survey-question-type-select' => 'Dropdown menu',
+	'survey-question-type-radio' => 'Radio boxes',
+	'survey-question-type-textarea' => 'Multi line text field',
+	'survey-question-type-check' => 'Checkbox',
+
 	// Special:Surveys
 	'surveys-special-addnew' => 'Add a new survey',
 	'surveys-special-namedoc' => 'Enter the name for the new survey.',
@@ -73,6 +81,13 @@ $messages['en'] = array(
 	'surveys-surveystats-submissioncount' => 'Number of submissions',
 	'surveys-surveystats-enabled' => 'Enabled',
 	'surveys-surveystats-disabled' => 'Disabled',
+	'surveys-surveystats-questions' => 'Question statistics',
+	'surveys-surveystats-question-nr' => '#',
+	'surveys-surveystats-question-#' => '$1',
+	'surveys-surveystats-question-type' => 'Question type',
+	'surveys-surveystats-question-text' => 'Question text',
+	'surveys-surveystats-question-answercount' => 'Amount of answers',
+	'surveys-surveystats-question-answers' => 'Most provided answers',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',
@@ -81,12 +96,6 @@ $messages['en'] = array(
 	'survey-special-label-button' => 'Add question',
 	'survey-special-label-addquestion' => 'New question',
 	'survey-special-label-add' => 'New question name',
-	'survey-question-type-text' => 'Single line text field',
-	'survey-question-type-number' => 'Number',
-	'survey-question-type-select' => 'Dropdown menu',
-	'survey-question-type-radio' => 'Radio boxes',
-	'survey-question-type-textarea' => 'Multi line text field',
-	'survey-question-type-check' => 'Checkbox',
 	'survey-question-label-nr' => 'Question #$1',
 	'survey-special-label-required' => 'Question is required',
 	'survey-special-label-type' => 'Question type',

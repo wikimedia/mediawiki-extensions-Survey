@@ -147,4 +147,31 @@ class SurveyQuestion extends SurveyDBClass {
 		return self::select( null, $conditions );
 	}
 	
+	/**
+	 * Gets the message for a question type.
+	 * The message key, not the internationalized string. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param integer $type
+	 * 
+	 * @return string
+	 */
+	public static function getTypeMessage( $type ) {
+		static $messageMap = false;
+		
+		if ( $messageMap === false ) {
+			$messageMap = array(
+				self::$TYPE_TEXT = 'text',
+				self::$TYPE_NUMBER = 'number',
+				self::$TYPE_SELECT = 'select',
+				self::$TYPE_RADIO = 'radio',
+				self::$TYPE_TEXTAREA = 'textarea',
+				self::$TYPE_CHECK = 'check',
+			);
+		}
+		
+		return 'survey-question-type-' . $messageMap[$type];
+	}
+	
 }
