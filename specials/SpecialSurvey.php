@@ -47,6 +47,13 @@ class SpecialSurvey extends SpecialSurveyPage {
 				if ( $survey === false ) {
 					$survey = new Survey( array( 'name' => $subPage ), true );
 				}
+				else {
+					$this->displayNavigation( array(
+						wfMsgExt( 'survey-navigation-take', 'parseinline', $subPage ),
+						wfMsgExt( 'survey-navigation-stats', 'parseinline', $subPage ),
+						wfMsgExt( 'survey-navigation-list', 'parseinline' )
+					) );
+				}
 				
 				$this->showSurvey( $survey );
 				$this->addModules( 'ext.survey.special.survey' );

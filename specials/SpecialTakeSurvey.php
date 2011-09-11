@@ -62,6 +62,12 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 * @param string $subPage
 	 */
 	protected function displaySurvey( $subPage ) {
+		$this->displayNavigation( array(
+			wfMsgExt( 'survey-navigation-edit', 'parseinline', $subPage ),
+			wfMsgExt( 'survey-navigation-stats', 'parseinline', $subPage ),
+			wfMsgExt( 'survey-navigation-list', 'parseinline' )
+		) );
+		
 		$this->getOutput()->addWikiText( Xml::element( 
 			'survey',
 			array(

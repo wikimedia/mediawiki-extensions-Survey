@@ -39,30 +39,19 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			
 			if ( Survey::has( array( 'name' => $subPage ) ) ) {
 				$survey = Survey::newFromName( $subPage );
-				$this->displayNavigation( $survey );
+
+				$this->displayNavigation( array(
+					wfMsgExt( 'survey-navigation-edit', 'parseinline', $survey->getField( 'name' ) ),
+					wfMsgExt( 'survey-navigation-take', 'parseinline', $survey->getField( 'name' ) ),
+					wfMsgExt( 'survey-navigation-list', 'parseinline' )
+				) );
+				
 				$this->displayStats( $survey );
 			}
 			else {
 				$this->showError( 'surveys-surveystats-nosuchsurvey' );
 			}
 		}
-	}
-	
-	/**
-	 * Display links to edit and take the survey.
-	 * 
-	 * @since 0.1
-	 * 
-	 * @param Survey $survey
-	 */
-	protected function displayNavigation( Survey $survey ) {
-		$links = array(
-			wfMsgExt( 'survey-navigation-edit', 'parseinline', $survey->getField( 'name' ) ),
-			wfMsgExt( 'survey-navigation-take', 'parseinline', $survey->getField( 'name' ) ),
-			wfMsgExt( 'survey-navigation-list', 'parseinline' )
-		);
-		
-		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), implode( ' - ', $links ) ) );
 	}
 	
 	/**

@@ -47,6 +47,7 @@ $messages['en'] = array(
 	'survey-navigation-edit' => '[[Special:Survey/$1|Edit this survey]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Take this survey]]',
 	'survey-navigation-list' => '[[Special:Surveys|Surveys list]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|View statistics]]',
 
 	// Special:Surveys
 	'surveys-special-addnew' => 'Add a new survey',
