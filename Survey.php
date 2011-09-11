@@ -41,51 +41,55 @@ $wgExtensionCredits['other'][] = array(
 	'descriptionmsg' => 'survey-desc'
 );
 
-$wgExtensionMessagesFiles['Survey'] 		= dirname( __FILE__ ) . '/Survey.i18n.php';
-$wgExtensionMessagesFiles['SurveyAlias']	= dirname( __FILE__ ) . '/Survey.alias.php';
+$wgExtensionMessagesFiles['Survey'] 			= dirname( __FILE__ ) . '/Survey.i18n.php';
+$wgExtensionMessagesFiles['SurveyAlias']		= dirname( __FILE__ ) . '/Survey.alias.php';
 
-$wgAutoloadClasses['SurveyHooks'] 			= dirname( __FILE__ ) . '/Survey.hooks.php';
-$wgAutoloadClasses['SurveySettings'] 		= dirname( __FILE__ ) . '/Survey.settings.php';
+$wgAutoloadClasses['SurveyHooks'] 				= dirname( __FILE__ ) . '/Survey.hooks.php';
+$wgAutoloadClasses['SurveySettings'] 			= dirname( __FILE__ ) . '/Survey.settings.php';
 
-$wgAutoloadClasses['ApiAddSurvey'] 			= dirname( __FILE__ ) . '/api/ApiAddSurvey.php';
-$wgAutoloadClasses['ApiDeleteSurvey'] 		= dirname( __FILE__ ) . '/api/ApiDeleteSurvey.php';
-$wgAutoloadClasses['ApiEditSurvey'] 		= dirname( __FILE__ ) . '/api/ApiEditSurvey.php';
-$wgAutoloadClasses['ApiQuerySurveys'] 		= dirname( __FILE__ ) . '/api/ApiQuerySurveys.php';
-$wgAutoloadClasses['ApiSubmitSurvey'] 		= dirname( __FILE__ ) . '/api/ApiSubmitSurvey.php';
+$wgAutoloadClasses['ApiAddSurvey'] 				= dirname( __FILE__ ) . '/api/ApiAddSurvey.php';
+$wgAutoloadClasses['ApiDeleteSurvey'] 			= dirname( __FILE__ ) . '/api/ApiDeleteSurvey.php';
+$wgAutoloadClasses['ApiEditSurvey'] 			= dirname( __FILE__ ) . '/api/ApiEditSurvey.php';
+$wgAutoloadClasses['ApiQuerySurveyAnswers'] 	= dirname( __FILE__ ) . '/api/ApiQuerySurveyAnswers.php';
+$wgAutoloadClasses['ApiQuerySurveys'] 			= dirname( __FILE__ ) . '/api/ApiQuerySurveys.php';
+$wgAutoloadClasses['ApiQuerySurveySubmissions']	= dirname( __FILE__ ) . '/api/ApiQuerySurveySubmissions.php';
+$wgAutoloadClasses['ApiSubmitSurvey'] 			= dirname( __FILE__ ) . '/api/ApiSubmitSurvey.php';
 
-$wgAutoloadClasses['Survey'] 				= dirname( __FILE__ ) . '/includes/Survey.class.php';
-$wgAutoloadClasses['SurveyAnswer']	 		= dirname( __FILE__ ) . '/includes/SurveyAnswer.php';
-$wgAutoloadClasses['SurveyCompat']	 		= dirname( __FILE__ ) . '/includes/SurveyCompat.php';
-$wgAutoloadClasses['SurveyDBClass']	 		= dirname( __FILE__ ) . '/includes/SurveyDBClass.php';
-$wgAutoloadClasses['SurveyQuestion'] 		= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
-$wgAutoloadClasses['SurveySubmission'] 		= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
-$wgAutoloadClasses['SurveyTag'] 			= dirname( __FILE__ ) . '/includes/SurveyTag.php';
+$wgAutoloadClasses['Survey'] 					= dirname( __FILE__ ) . '/includes/Survey.class.php';
+$wgAutoloadClasses['SurveyAnswer']	 			= dirname( __FILE__ ) . '/includes/SurveyAnswer.php';
+$wgAutoloadClasses['SurveyCompat']	 			= dirname( __FILE__ ) . '/includes/SurveyCompat.php';
+$wgAutoloadClasses['SurveyDBClass']	 			= dirname( __FILE__ ) . '/includes/SurveyDBClass.php';
+$wgAutoloadClasses['SurveyQuestion'] 			= dirname( __FILE__ ) . '/includes/SurveyQuestion.php';
+$wgAutoloadClasses['SurveySubmission'] 			= dirname( __FILE__ ) . '/includes/SurveySubmission.php';
+$wgAutoloadClasses['SurveyTag'] 				= dirname( __FILE__ ) . '/includes/SurveyTag.php';
 
-$wgAutoloadClasses['SpecialSurvey'] 		= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
-$wgAutoloadClasses['SpecialSurveyPage'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyPage.php';
-$wgAutoloadClasses['SpecialSurveys'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
-$wgAutoloadClasses['SpecialSurveyStats'] 	= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
-$wgAutoloadClasses['SpecialTakeSurvey'] 	= dirname( __FILE__ ) . '/specials/SpecialTakeSurvey.php';
+$wgAutoloadClasses['SpecialSurvey'] 			= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
+$wgAutoloadClasses['SpecialSurveyPage'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveyPage.php';
+$wgAutoloadClasses['SpecialSurveys'] 			= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
+$wgAutoloadClasses['SpecialSurveyStats'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
+$wgAutoloadClasses['SpecialTakeSurvey'] 		= dirname( __FILE__ ) . '/specials/SpecialTakeSurvey.php';
 
-$wgSpecialPages['Survey'] 					= 'SpecialSurvey';
-$wgSpecialPages['Surveys'] 					= 'SpecialSurveys';
-$wgSpecialPages['SurveyStats'] 				= 'SpecialSurveyStats';
-$wgSpecialPages['TakeSurvey'] 				= 'SpecialTakeSurvey';
+$wgSpecialPages['Survey'] 						= 'SpecialSurvey';
+$wgSpecialPages['Surveys'] 						= 'SpecialSurveys';
+$wgSpecialPages['SurveyStats'] 					= 'SpecialSurveyStats';
+$wgSpecialPages['TakeSurvey'] 					= 'SpecialTakeSurvey';
 
-$wgSpecialPageGroups['Survey'] 				= 'other';
-$wgSpecialPageGroups['Surveys'] 			= 'other';
-$wgSpecialPageGroups['SurveyStats'] 		= 'other';
-$wgSpecialPageGroups['TakeSurvey'] 			= 'other';
+$wgSpecialPageGroups['Survey'] 					= 'other';
+$wgSpecialPageGroups['Surveys'] 				= 'other';
+$wgSpecialPageGroups['SurveyStats'] 			= 'other';
+$wgSpecialPageGroups['TakeSurvey'] 				= 'other';
 
-$wgAPIModules['addsurvey'] 					= 'ApiAddSurvey';
-$wgAPIModules['deletesurvey'] 				= 'ApiDeleteSurvey';
-$wgAPIModules['editsurvey'] 				= 'ApiEditSurvey';
-$wgAPIModules['submitsurvey'] 				= 'ApiSubmitSurvey';
-$wgAPIListModules['surveys'] 				= 'ApiQuerySurveys';
+$wgAPIModules['addsurvey'] 						= 'ApiAddSurvey';
+$wgAPIModules['deletesurvey'] 					= 'ApiDeleteSurvey';
+$wgAPIModules['editsurvey'] 					= 'ApiEditSurvey';
+$wgAPIModules['submitsurvey'] 					= 'ApiSubmitSurvey';
+$wgAPIListModules['surveys'] 					= 'ApiQuerySurveys';
+$wgAPIListModules['surveyanswers'] 				= 'ApiQuerySurveyAnswers';
+$wgAPIListModules['surveysubmissions'] 			= 'ApiQuerySurveySubmissions';
 
-$wgHooks['LoadExtensionSchemaUpdates'][] 	= 'SurveyHooks::onSchemaUpdate';
-$wgHooks['UnitTestsList'][] 				= 'SurveyHooks::registerUnitTests';
-$wgHooks['ParserFirstCallInit'][] 			= 'SurveyHooks::onParserFirstCallInit';
+$wgHooks['LoadExtensionSchemaUpdates'][] 		= 'SurveyHooks::onSchemaUpdate';
+$wgHooks['UnitTestsList'][] 					= 'SurveyHooks::registerUnitTests';
+$wgHooks['ParserFirstCallInit'][] 				= 'SurveyHooks::onParserFirstCallInit';
 
 $wgAvailableRights[] = 'surveyadmin';
 $wgAvailableRights[] = 'surveysubmit';

@@ -32,7 +32,7 @@ class ApiAddSurvey extends ApiBase {
 		}
 		
 		try {
-			$survey = Survey::newFromAPIParams( $params );
+			$survey = new Survey( Survey::getValidFields( $params ) );
 			$success = $survey->writeToDB();
 		}
 		catch ( DBQueryError $ex ) {

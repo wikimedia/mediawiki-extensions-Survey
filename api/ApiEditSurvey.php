@@ -31,7 +31,7 @@ class ApiEditSurvey extends ApiBase {
 			$question = SurveyQuestion::newFromUrlData( $question );
 		}
 		
-		$survey = Survey::newFromAPIParams( $params, $params['id'] );
+		$survey = new Survey( Survey::getValidFields( $params, $params['id'] ) );
 		
 		$this->getResult()->addValue(
 			null,

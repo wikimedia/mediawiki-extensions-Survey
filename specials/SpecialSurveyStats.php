@@ -217,6 +217,15 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( '</tr>' );
 	}
 	
+	/**
+	 * Get a list of most provided answers for the question.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param SurveyQuestion $question
+	 * 
+	 * @return string
+	 */
 	protected function getAnswerList( SurveyQuestion $question ) {
 		if ( $question->isRestrictiveType() ) {
 			$list = '<ul>';

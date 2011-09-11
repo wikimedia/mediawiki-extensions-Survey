@@ -66,6 +66,19 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
+	 * Returns an array with the fields and their descriptions.
+	 * 
+	 * field name => field description
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return array
+	 */
+	public static function getFieldDescriptions() {
+		return array();
+	}
+	
+	/**
 	 * Returns the name of the database table objects of this type are stored in.
 	 * 
 	 * @since 0.1
@@ -561,6 +574,19 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
+	 * Takes in a field and returns an it's prefixed version, ready for db usage.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param string $field
+	 * 
+	 * @return string
+	 */
+	public static function getPrefixedField( $field ) {
+		return static::getFieldPrefix() . $field;
+	}
+	
+	/**
 	 * Takes in an associative array with field names as keys and
 	 * their values as value. The field names are prefixed with the
 	 * db field prefix.
@@ -628,11 +654,22 @@ abstract class SurveyDBClass {
 		return array();
 	}
 	
-	public static function getAPIParams() {
+	/**
+	 * Get API parameters for the fields supported by this object.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param boolean $requireParams
+	 * 
+	 * @return array
+	 */
+	public static function getAPIParams( $requireParams = true ) {
 		$typeMap = array(
+			'id' => 'integer',
 			'int' => 'integer',
 			'str' => 'string',
-			'bool' => 'integer'
+			'bool' => 'integer',
+			'array' => 'string'
 		);
 		
 		$params = array();
@@ -647,11 +684,16 @@ abstract class SurveyDBClass {
 			
 			$params[$field] = array(
 				ApiBase::PARAM_TYPE => $typeMap[$type],
-				ApiBase::PARAM_REQUIRED => !$hasDefault
+				ApiBase::PARAM_REQUIRED => $requireParams && !$hasDefault
 			);
 			
+			if ( $type == 'array' ) {
+				$params[$field][ApiBase::PARAM_ISMULTI] = true;
+			}
+			
 			if ( $hasDefault ) {
-				$params[$field][ApiBase::PARAM_DFLT] = $defaults[$field];
+				$default = is_array( $defaults[$field] ) ? implode( '|', $defaults[$field] ) : $defaults[$field];
+				$params[$field][ApiBase::PARAM_DFLT] = $default;
 			}
 		}
 		
@@ -659,22 +701,24 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
-	 * Create a new instance from API parameters.
+	 * Takes an array of field name => field value and
+	 * filters it on valid field names.
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param array $params
+	 * @param array $conditions
+	 * @param false|integer $id
 	 * 
-	 * @return SurveyDBClass
+	 * @return array
 	 */
-	public static function newFromAPIParams( array $params, $id = false ) {
-		$validParams = array();
+	public static function getValidFields( array $conditions, $id = false ) {
+		$validFields = array();
 		
 		$fields = static::getFieldTypes();
 		
-		foreach ( $params as $name => $value ) {
+		foreach ( $conditions as $name => $value ) {
 			if ( array_key_exists( $name, $fields ) ) {
-				$validParams[$name] = $value;
+				$validFields[$name] = $value;
 			}
 		}
 		
@@ -682,7 +726,7 @@ abstract class SurveyDBClass {
 			$validParams[static::getIDField()] = $id;
 		}
 		
-		return new static( $validParams );
+		return $validFields;
 	}
 	
 }

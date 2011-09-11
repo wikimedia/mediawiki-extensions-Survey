@@ -116,6 +116,14 @@ class ApiQuerySurveys extends ApiQueryBase {
 		return $survey;
 	}
 	
+	public function needsToken() {
+		return true;
+	}
+	
+	public function getTokenSalt() {
+		return 'querysurveys';
+	}
+	
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
