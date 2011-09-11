@@ -1,0 +1,1 @@
+CREATE INDEX /*i*/surveys_question_id ON /*_*/survey_answers (answer_question_id);
