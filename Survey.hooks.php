@@ -134,27 +134,13 @@ final class SurveyHooks {
 			return true;
 		}
 		
-		global $wgUser;
-		
-		$userTypes = array( Survey::$USER_ALL );
-		
-		$userTypes[] = $wgUser->isLoggedIn() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
-		
-		if ( $wgUser->isEmailConfirmed() ) {
-			$userTypes[] = Survey::$USER_CONFIRMED;
-		}
-		
-		if ( $wgUser->getEditCount() > 0 ) {
-			$userTypes[] = Survey::$USER_EDITOR;
-		}
-		
 		$surveys = Survey::select(
 			array(
 				'id', 'namespaces'
 			),
 			array(
 				'enabled' => 1,
-				'user_type' => $userTypes
+				'user_type' => Survey::getTypesForUser( $GLOBALS['wgUser'] )
 			)
 		);
 		

@@ -308,4 +308,29 @@ class Survey extends SurveyDBClass {
 		return $sucecss;
 	}
 	
+	/**
+	 * Returns the survey user types the provided user has.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param User $user
+	 * 
+	 * @return array of Survey::$USER_
+	 */
+	public static function getTypesForUser( User $user ) {
+		$userTypes = array( Survey::$USER_ALL );
+		
+		$userTypes[] = $user->isLoggedIn() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
+		
+		if ( $user->isEmailConfirmed() ) {
+			$userTypes[] = Survey::$USER_CONFIRMED;
+		}
+		
+		if ( $user->getEditCount() > 0 ) {
+			$userTypes[] = Survey::$USER_EDITOR;
+		}
+		
+		return $userTypes;
+	}
+	
 }
