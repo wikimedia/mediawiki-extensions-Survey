@@ -125,4 +125,6 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'survey-question-type-number' => 'Indicates an input type that accepts a number (which can be multiple digits)',
+	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question'
 );
