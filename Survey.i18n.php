@@ -102,6 +102,7 @@ $messages['en'] = array(
 	'survey-special-label-name' => 'Survey ID',
 	'survey-special-label-title' => 'Survey title',
 	'survey-special-label-enabled' => 'Survey enabled',
+	'survey-special-label-ratio' => 'Percentage of people to show the survey to',
 	'survey-special-label-add-first' => 'Add question',
 	'survey-special-label-add-another' => 'Add another question',
 	'survey-special-label-addquestion' => 'New question',

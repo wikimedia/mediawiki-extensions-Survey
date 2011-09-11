@@ -79,7 +79,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
 		
-		foreach ( array( 'user_type' ) as $field ) {
+		foreach ( array( 'user_type', 'ratio' ) as $field ) {
 			$survey->setField( $field, $wgRequest->getInt( 'survey-' . $field ) );
 		}
 		
@@ -222,6 +222,20 @@ class SpecialSurvey extends SpecialSurveyPage {
 				wfMsg( 'survey-user-type-editor' ) => Survey::$USER_EDITOR,
 				wfMsg( 'survey-user-type-anon' ) => Survey::$USER_ANON,
 			),
+		);
+		
+		$nrs = array_merge( array( 0.01, 0.1 ), range( 1, 100 ) );
+		
+		$fields[] = array(
+			'type' => 'select',
+			'default' => $survey->getField( 'ratio' ),
+			'label-message' => 'survey-special-label-ratio',
+			'id' => 'survey-ratio',
+			'name' => 'survey-ratio',
+			'options' => array_flip( array_map(
+				function( $n ) { return $GLOBALS['wgLang']->formatNum( $n ); },
+				array_combine( $nrs, $nrs )
+			) ),
 		);
 		
 		$fields[] = array(
