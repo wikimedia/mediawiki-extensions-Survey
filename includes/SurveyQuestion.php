@@ -183,7 +183,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @return boolean
 	 */
 	public function isRestrictiveType() {
-		return in_array( $this->getField( 'type' ), array( self::$TYPE_SELECT, self::$TYPE_RADIO ) );
+		return in_array( $this->getField( 'type' ), array( self::$TYPE_SELECT, self::$TYPE_RADIO, self::$TYPE_CHECK ) );
 	}
 	
 }

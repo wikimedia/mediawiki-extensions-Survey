@@ -93,6 +93,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$stats = array();
 		
 		$stats['name'] = $survey->getField( 'name' );
+		$stats['title'] = $survey->getField( 'title' );
 		$stats['status'] = wfMsg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) );
 		$stats['questioncount'] = count( $survey->getQuestions() ) ;
 		$stats['submissioncount'] = SurveySubmission::count( array( 'survey_id' => $survey->getId() ) );
@@ -231,14 +232,28 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			$list = '<ul>';
 
 			$answers = array();
+			$answerTranslations = array();
 			
-			foreach ( $question->getField( 'answers' ) as $answer ) {
+			if ( $question->getField( 'type' ) == SurveyQuestion::$TYPE_CHECK ) {
+				$possibilities = array( '0', '1' );
+				$answerTranslations['0'] = wfMsg( 'surveys-surveystats-unchecked' );
+				$answerTranslations['1'] = wfMsg( 'surveys-surveystats-checked' );
+			}
+			else {
+				$possibilities = $question->getField( 'answers' );
+			}
+			
+			foreach ( $possibilities as $answer ) {
 				$answers[$answer] = SurveyAnswer::count( array( 'text' => $answer ) );
 			}
 			
 			asort( $answers, SORT_NUMERIC );
 			
 			foreach ( array_reverse( $answers ) as $answer => $answerCount ) {
+				if ( array_key_exists( $answer, $answerTranslations ) ) {
+					$answer = $answerTranslations[$answer];
+				}
+				
 				$list .= Html::element(
 					'li',
 					array(),
