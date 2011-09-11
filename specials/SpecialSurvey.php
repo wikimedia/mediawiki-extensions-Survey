@@ -240,7 +240,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-ratio',
 			'name' => 'survey-ratio',
 			'options' => array_flip( array_map(
-				function( $n ) { return $GLOBALS['wgLang']->formatNum( $n ); },
+				function( $n ) { return $this->getLang()->formatNum( $n ); },
 				array_combine( $nrs, $nrs )
 			) ),
 		);
