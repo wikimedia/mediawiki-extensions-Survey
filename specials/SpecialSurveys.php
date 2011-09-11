@@ -37,7 +37,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 		if ( $wgRequest->wasPosted()
 			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
 			&& $wgRequest->getCheck( 'newsurvey' ) ) {
-				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Survey', $wgRequest->getVal( 'newsurvey' ) )->getLocalURL() );
+				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'EditSurvey', $wgRequest->getVal( 'newsurvey' ) )->getLocalURL() );
 		} else {
 			$this->displaySurveys();
 		}
@@ -153,7 +153,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 						Html::element( 
 							'a',
 							array(
-								'href' => SpecialPage::getTitleFor( 'Survey', $survey->getField( 'name' ) )->getLocalURL()
+								'href' => SpecialPage::getTitleFor( 'EditSurvey', $survey->getField( 'name' ) )->getLocalURL()
 							),
 							wfMsg( 'surveys-special-edit' )
 						) .

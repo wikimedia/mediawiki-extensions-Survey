@@ -25,7 +25,7 @@ $messages['en'] = array(
 	'right-surveysubmit' => 'Participate in surveys',
 
 	// Special page names
-	'special-survey' => 'Survey admin',
+	'special-editsurvey' => 'Survey admin',
 	'special-surveys' => 'Surveys admin',
 	'special-surveystats' => 'Survey statistics',
 	'special-takesurvey' => 'Take survey',

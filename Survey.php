@@ -69,12 +69,12 @@ $wgAutoloadClasses['SpecialSurveys'] 			= dirname( __FILE__ ) . '/specials/Speci
 $wgAutoloadClasses['SpecialSurveyStats'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
 $wgAutoloadClasses['SpecialTakeSurvey'] 		= dirname( __FILE__ ) . '/specials/SpecialTakeSurvey.php';
 
-$wgSpecialPages['Survey'] 						= 'SpecialSurvey';
+$wgSpecialPages['EditSurvey'] 					= 'SpecialSurvey';
 $wgSpecialPages['Surveys'] 						= 'SpecialSurveys';
 $wgSpecialPages['SurveyStats'] 					= 'SpecialSurveyStats';
 $wgSpecialPages['TakeSurvey'] 					= 'SpecialTakeSurvey';
 
-$wgSpecialPageGroups['Survey'] 					= 'other';
+$wgSpecialPageGroups['EditSurvey'] 				= 'other';
 $wgSpecialPageGroups['Surveys'] 				= 'other';
 $wgSpecialPageGroups['SurveyStats'] 			= 'other';
 $wgSpecialPageGroups['TakeSurvey'] 				= 'other';
