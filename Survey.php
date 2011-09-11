@@ -90,6 +90,7 @@ $wgAPIListModules['surveysubmissions'] 			= 'ApiQuerySurveySubmissions';
 $wgHooks['LoadExtensionSchemaUpdates'][] 		= 'SurveyHooks::onSchemaUpdate';
 $wgHooks['UnitTestsList'][] 					= 'SurveyHooks::registerUnitTests';
 $wgHooks['ParserFirstCallInit'][] 				= 'SurveyHooks::onParserFirstCallInit';
+$wgHooks['ArticleViewHeader'][] 				= 'SurveyHooks::onArticleViewHeader';
 
 $wgAvailableRights[] = 'surveyadmin';
 $wgAvailableRights[] = 'surveysubmit';

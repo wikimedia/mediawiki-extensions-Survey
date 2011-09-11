@@ -118,4 +118,66 @@ final class SurveyHooks {
 		return true;
 	}
 	
+	/**
+	 * Hook to insert things into article headers.
+	 *
+	 * @since 0.1
+	 *
+	 * @param Article &$article
+	 * @param boolean $outputDone
+	 * @param boolean $useParserCache
+	 *
+	 * @return true
+	 */
+	public static function onArticleViewHeader( Article &$article, &$outputDone, &$useParserCache ) {
+		if ( !Survey::has( array( 'enabled' => 1 ) ) ) {
+			return true;
+		}
+		
+		global $wgUser;
+		
+		$userTypes = array( Survey::$USER_ALL );
+		
+		$userTypes[] = $wgUser->isLoggedIn() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
+		
+		if ( $wgUser->isEmailConfirmed() ) {
+			$userTypes[] = Survey::$USER_CONFIRMED;
+		}
+		
+		if ( $wgUser->getEditCount() > 0 ) {
+			$userTypes[] = Survey::$USER_EDITOR;
+		}
+		
+		$surveys = Survey::select(
+			array(
+				'id', 'namespaces'
+			),
+			array(
+				'enabled' => 1,
+				'user_type' => $userTypes
+			)
+		);
+		
+		foreach ( $surveys as /* Survey */ $survey ) {
+			
+			if ( count( $survey->getField( 'namespaces' ) ) == 0 ) {
+				$nsValid = true;
+			}
+			else {
+				$nsValid = in_array( $article->getTitle()->getNamespace(), $survey->getField( 'namespaces' ) );
+			}
+			
+			if ( $nsValid ) {
+				$GLOBALS['wgOut']->addWikiText( Xml::element( 
+					'survey',
+					array(
+						'id' => $survey->getId()
+					)
+				) );
+			}
+		}
+		
+		return true;
+	}
+	
 }
