@@ -66,7 +66,8 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 			'survey',
 			array(
 				'name' => $subPage,
-				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1'
+				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
+				'cookie' => 'no'
 			),
 			wfMsg( 'surveys-takesurvey-loading' )
 		) );

@@ -9,6 +9,8 @@
 ( function ( $ ) { $.fn.mwSurvey = function( options ) {
 	
 	var _this = this;
+	this.options = options;
+	
 	this.inputs = [];
 	
 	this.identifier = null;
@@ -116,11 +118,11 @@
 		
 		$input.data( 'question-id', question.id );
 		
-		this.inputs.push( $input );
+		this.inputs.push( { 'input': $input, 'type': question.type } );
 		
 		$q = $( '<div />' ).html( $input );
 		
-		if ( question.type == type.CHECK ) {
+		if ( question.type === type.CHECK ) {
 			$q.append( $( '<label />' ).text( question.text ).attr( 'for', id ) );
 		}
 		else {
@@ -155,11 +157,19 @@
 		var answers = [];
 		
 		for ( i in this.inputs ) {
-			var $input = this.inputs[i];
+			var $input = this.inputs[i].input;
+			var id = $input.data( 'question-id' );
+			
+			if ( this.inputs[i].type === survey.question.type.RADIO ) {
+				var value = $( 'input:radio[name=survey-question-' + id + ']:checked' ).val();
+			}
+			else {
+				var value = $input.val();
+			}
 			
 			answers.push( {
-				'text': $input.val(),
-				'question_id': $input.data( 'question-id' )
+				'text': value,
+				'question_id': id
 			} );
 		}
 		
@@ -264,6 +274,10 @@
 		} );
 		
 		$link.click();
+		
+		if ( typeof this.options.onShow === 'function' ) {
+			this.options.onShow( { 'id': surveyData.id } );
+		}
 	};
 	
 	this.init = function() {

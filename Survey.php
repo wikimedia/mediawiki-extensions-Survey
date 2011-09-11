@@ -192,7 +192,7 @@ $wgResourceModules['ext.survey.tag'] = $moduleTemplate + array(
 	'scripts' => array(
 		'ext.survey.tag.js'
 	),
-	'dependencies' => array( 'ext.survey.jquery' ),
+	'dependencies' => array( 'ext.survey.jquery', 'jquery.cookie' ),
 );
 
 unset( $moduleTemplate );

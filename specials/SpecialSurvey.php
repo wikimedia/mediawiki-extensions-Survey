@@ -83,6 +83,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$survey->setField( $field, $wgRequest->getInt( 'survey-' . $field ) );
 		}
 		
+		$survey->setField( 'namespaces', array() );
+		
 		$survey->setQuestions( $this->getSubmittedQuestions() );
 		
 		$survey->writeToDB();
@@ -101,9 +103,9 @@ class SpecialSurvey extends SpecialSurveyPage {
 		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
 			$matches = array();
 			
-			if ( preg_match( '/survey-question-text-(\d)+/', $name, $matches ) ) {
+			if ( preg_match( '/survey-question-text-(\d+)/', $name, $matches ) ) {
 				$questions[] = $this->getSubmittedQuestion( $matches[1] );
-			} elseif ( preg_match( '/survey-question-text-new-(\d)+/', $name, $matches ) ) {
+			} elseif ( preg_match( '/survey-question-text-new-(\d+)/', $name, $matches ) ) {
 				$questions[] = $this->getSubmittedQuestion( $matches[1], true );
 			}
 		}
