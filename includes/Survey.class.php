@@ -38,12 +38,15 @@ class Survey extends SurveyDBClass {
 		return array(
 			'id' => 'id',
 			'name' => 'str',
+			'title' => 'str',
 			'enabled' => 'bool',
 			'header' => 'str',
 			'footer' => 'str',
 			'thanks' => 'str',
 			'user_type' => 'int',
-			'namespaces' => 'array'
+			'namespaces' => 'array',
+			'ratio' => 'int',
+			'expiry' => 'int'
 		);
 	}
 	
@@ -58,12 +61,15 @@ class Survey extends SurveyDBClass {
 	public static function getDefaults() {
 		return array(
 			'name' => '',
+			'title' => '',
 			'enabled' => '0',
 			'header' => 'Thank you for taking this short survey. Please fill out the following questions:',
 			'footer' => '',
 			'thanks' => 'Thank you for your responses.',
 			'user_type' => self::$USER_ALL,
 			'namespaces' => array(),
+			'ratio' => 100,
+			'expiry' => 60 * 60 * 24 * 30
 		);
 	}
 	
@@ -288,7 +294,7 @@ class Survey extends SurveyDBClass {
 		foreach ( $submissionsForSurvey as $nr => $submission ) {
 			$sucecss = $dbw->delete(
 				'survey_answers',
-				array( 'answer_submission_id' => $submission->getId() )
+				array( 'answer_submission_id' => $submission->id )
 			) && $sucecss;
 			
 			if ( $nr % 500 == 0 ) {

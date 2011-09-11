@@ -73,12 +73,15 @@ class SpecialSurvey extends SpecialSurveyPage {
 			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
 		}
 		
-		foreach ( array( 'name', 'header', 'footer', 'thanks' ) as $field ) {
+		foreach ( array( 'name', 'title', 'header', 'footer', 'thanks' ) as $field ) {
 			$survey->setField( $field, $wgRequest->getText( 'survey-' . $field ) );
 		}
 		
 		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
-		$survey->setField( 'user_type', $wgRequest->getInt( 'survey-user_type' ) );
+		
+		foreach ( array( 'user_type' ) as $field ) {
+			$survey->setField( $field, $wgRequest->getInt( 'survey-' . $field ) );
+		}
 		
 		$survey->setQuestions( $this->getSubmittedQuestions() );
 		
@@ -175,12 +178,20 @@ class SpecialSurvey extends SpecialSurveyPage {
 		);
 		
 		$fields[] = array(
-			'type' => 'text',
+			'class' => 'SurveyNameField',
 			'default' => $survey->getField( 'name' ),
 			'label-message' => 'survey-special-label-name',
 			'id' => 'survey-name',
 			'name' => 'survey-name',
-			//'disabled' => true
+			'style' => 'font-weight: bold;'
+		);
+		
+		$fields[] = array(
+			'type' => 'text',
+			'default' => $survey->getField( 'title' ),
+			'label-message' => 'survey-special-label-title',
+			'id' => 'survey-title',
+			'name' => 'survey-title',
 		);
 		
 		$fields[] = array(
@@ -281,6 +292,22 @@ class SurveyQuestionField extends HTMLFormField {
 		return Html::element(
 			'div',
 			$attribs
+		);
+	}
+	
+}
+
+class SurveyNameField extends HTMLFormField {
+	
+	public function getInputHTML( $value ) {
+		return Html::element(
+			'span',
+			array(
+				'id' => $this->mParams['id'],
+				'name' => $this->mParams['name'],
+				'style' => $this->mParams['style']
+			),
+			$value
 		);
 	}
 	

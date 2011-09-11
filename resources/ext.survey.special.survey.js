@@ -70,21 +70,25 @@
 		$table.append( $tr );
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-label question-label' } ).html(
-			$( '<label />' ).text( mw.msg( 'survey-special-label-addquestion' ) )
+			'' //$( '<label />' ).text( mw.msg( 'survey-special-label-addquestion' ) )
 		) );
 		
 		$tr.append( $( '<td />' ).attr( { 'class': 'mw-input' } ).html(
-			getQuestionInput( { 'id': 'new', 'answers': [], 'type': 0 } )
-		).append( $( '<button />' ).button( { 'label': mw.msg( 'survey-special-label-button' ) } )
-			.click( function() { onAddQuestionRequest(); return false; } )
-		) );
-		
-		$( '#survey-question-text-new' ).keypress( function( event ) { 
-			if ( event.which == '13' ) {
-				event.preventDefault();
+			'' //getQuestionInput( { 'id': 'new', 'answers': [], 'type': 0 } )
+		).append( $( '<button />' ).button( { 'label': mw.msg( 'survey-special-label-add-first' ) } )
+			.click( function() {
+				$( this ).button( { 'label': mw.msg( 'survey-special-label-add-another' ) } );
 				onAddQuestionRequest();
-			}
-		} );
+				return false;
+			} )
+		) );
+//		
+//		$( '#survey-question-text-new' ).keypress( function( event ) { 
+//			if ( event.which == '13' ) {
+//				event.preventDefault();
+//				onAddQuestionRequest();
+//			}
+//		} );
 	};
 	
 	function addQuestion( question ) {
@@ -187,13 +191,13 @@
 	
 	function onAddQuestionRequest() {
 		addQuestion( {
-			'text': $( '#survey-question-text-new' ).val(),
-			'required': !!$( '#survey-question-required-new' ).attr( 'checked' ),
-			'type': $( '#survey-question-type-new' ).val(),
-			'id': 'new-' + newQuestionNr++,
-			'answers': $( '#survey-question-answers-new' ).val().split( '\n' )
+			'text': '', // $( '#survey-question-text-new' ).val(),
+			'required': false, //!!$( '#survey-question-required-new' ).attr( 'checked' ),
+			'type': 0, // $( '#survey-question-type-new' ).val(),
+			'id': 'new-' + ++newQuestionNr,
+			'answers': [] //$( '#survey-question-answers-new' ).val().split( '\n' )
 		} );
-		$( '#survey-question-text-new' ).focus().select();
+		$( '#survey-question-text-new-' + newQuestionNr ).focus().select();
 		$( 'html' ).animate( { scrollTop: $( document ).height() }, 'fast' );
 	};
 	

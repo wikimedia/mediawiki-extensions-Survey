@@ -5,13 +5,16 @@
 -- Surveys
 CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
   survey_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
-  survey_name              VARCHAR(255)        NOT NULL,
-  survey_enabled           TINYINT             NOT NULL default '0',
-  survey_header            TEXT                NOT NULL,
-  survey_footer            TEXT                NOT NULL,
-  survey_thanks            TEXT                NOT NULL,
-  survey_user_type         TINYINT             NOT NULL default '0',
-  survey_namespaces        BLOB                NOT NULL
+  survey_name              VARCHAR(255)        NOT NULL, -- String indentifier for the survey
+  survey_title             VARCHAR(255)        NOT NULL, -- Title of the survey
+  survey_enabled           TINYINT             NOT NULL default '0', -- If the survey can be taken by users
+  survey_header            TEXT                NOT NULL, -- Text to display above the survey
+  survey_footer            TEXT                NOT NULL, -- Text to display below the survey
+  survey_thanks            TEXT                NOT NULL, -- Text to display after survey submission
+  survey_user_type         TINYINT             NOT NULL default '0', -- Type of users that can participate in the survey
+  survey_namespaces        BLOB                NOT NULL, -- Namespaces on which the survey can be displayed
+  survey_ratio             TINYINT unsigned    NOT NULL, -- Percentage of users to show the survey to
+  survey_expiry            INT unsigned        NOT NULL -- Coockie expiry time for the survey
 ) /*$wgDBTableOptions*/;
 
 -- Questions

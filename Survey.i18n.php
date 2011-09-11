@@ -50,7 +50,7 @@ $messages['en'] = array(
 
 	// Special:Surveys
 	'surveys-special-addnew' => 'Add a new survey',
-	'surveys-special-namedoc' => 'Enter the name for the new survey.',
+	'surveys-special-namedoc' => 'Enter a name for the new survey that will be used as simple identifier. For example: editor-motivation.',
 	'surveys-special-newname' => 'New survey name:',
 	'surveys-special-add' => 'Add survey',
 	'surveys-special-existing' => 'Existing surveys',
@@ -97,8 +97,10 @@ $messages['en'] = array(
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',
 	'survey-special-label-name' => 'Survey name',
+	'survey-special-label-title' => 'Survey title',
 	'survey-special-label-enabled' => 'Survey enabled',
-	'survey-special-label-button' => 'Add question',
+	'survey-special-label-add-first' => 'Add question',
+	'survey-special-label-add-another' => 'Add another question',
 	'survey-special-label-addquestion' => 'New question',
 	'survey-special-label-add' => 'New question name',
 	'survey-question-label-nr' => 'Question #$1',
