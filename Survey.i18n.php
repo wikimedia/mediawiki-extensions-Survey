@@ -44,6 +44,10 @@ $messages['en'] = array(
 	'survey-question-type-textarea' => 'Multi line text field',
 	'survey-question-type-check' => 'Checkbox',
 
+	'survey-navigation-edit' => '[[Special:Survey/$1|Edit this survey]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Take this survey]]',
+	'survey-navigation-list' => '[[Special:Surveys|Surveys list]]',
+
 	// Special:Surveys
 	'surveys-special-addnew' => 'Add a new survey',
 	'surveys-special-namedoc' => 'Enter the name for the new survey.',
@@ -88,6 +92,7 @@ $messages['en'] = array(
 	'surveys-surveystats-question-text' => 'Question text',
 	'surveys-surveystats-question-answercount' => 'Amount of answers',
 	'surveys-surveystats-question-answers' => 'Most provided answers',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$3|answer|answers}})',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',

@@ -162,16 +162,28 @@ class SurveyQuestion extends SurveyDBClass {
 		
 		if ( $messageMap === false ) {
 			$messageMap = array(
-				self::$TYPE_TEXT = 'text',
-				self::$TYPE_NUMBER = 'number',
-				self::$TYPE_SELECT = 'select',
-				self::$TYPE_RADIO = 'radio',
-				self::$TYPE_TEXTAREA = 'textarea',
-				self::$TYPE_CHECK = 'check',
+				self::$TYPE_TEXT => 'text',
+				self::$TYPE_NUMBER => 'number',
+				self::$TYPE_SELECT => 'select',
+				self::$TYPE_RADIO => 'radio',
+				self::$TYPE_TEXTAREA => 'textarea',
+				self::$TYPE_CHECK => 'check',
 			);
 		}
 		
 		return 'survey-question-type-' . $messageMap[$type];
+	}
+	
+	/**
+	 * Returns if the type of the question is restrictive,
+	 * ie if the question input only allows certain answers. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return boolean
+	 */
+	public function isRestrictiveType() {
+		return in_array( $this->getField( 'type' ), array( self::$TYPE_SELECT, self::$TYPE_RADIO ) );
 	}
 	
 }

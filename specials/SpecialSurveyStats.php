@@ -38,12 +38,31 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			$subPage = trim( $subPage );
 			
 			if ( Survey::has( array( 'name' => $subPage ) ) ) {
-				$this->displayStats( Survey::newFromName( $subPage ) );
+				$survey = Survey::newFromName( $subPage );
+				$this->displayNavigation( $survey );
+				$this->displayStats( $survey );
 			}
 			else {
 				$this->showError( 'surveys-surveystats-nosuchsurvey' );
 			}
 		}
+	}
+	
+	/**
+	 * Display links to edit and take the survey.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param Survey $survey
+	 */
+	protected function displayNavigation( Survey $survey ) {
+		$links = array(
+			wfMsgExt( 'survey-navigation-edit', 'parseinline', $survey->getField( 'name' ) ),
+			wfMsgExt( 'survey-navigation-take', 'parseinline', $survey->getField( 'name' ) ),
+			wfMsgExt( 'survey-navigation-list', 'parseinline' )
+		);
+		
+		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), implode( ' - ', $links ) ) );
 	}
 	
 	/**
@@ -136,7 +155,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 				'<th>' . wfMsgHtml( 'surveys-surveystats-question-type' ) . '</th>' .
 				'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-text' ) . '</th>' .
 				'<th>' . wfMsgHtml( 'surveys-surveystats-question-answercount' ) . '</th>' .
-				//'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-answers' ) . '</th>' .
+				'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-answers' ) . '</th>' .
 			'</tr></thead>'	
 		);
 		
@@ -189,13 +208,46 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			SurveyAnswer::count( array( 'question_id' => $question->getId() ) )
 		) );
 		
-//		$out->addHTML( Html::element(
-//			'td',
-//			array(),
-//			'...'
-//		) );
+		$out->addHTML( Html::rawElement(
+			'td',
+			array(),
+			$this->getAnswerList( $question )
+		) );
 		
 		$out->addHTML( '</tr>' );
+	}
+	
+	protected function getAnswerList( SurveyQuestion $question ) {
+		if ( $question->isRestrictiveType() ) {
+			$list = '<ul>';
+
+			$answers = array();
+			
+			foreach ( $question->getField( 'answers' ) as $answer ) {
+				$answers[$answer] = SurveyAnswer::count( array( 'text' => $answer ) );
+			}
+			
+			asort( $answers, SORT_NUMERIC );
+			
+			foreach ( array_reverse( $answers ) as $answer => $answerCount ) {
+				$list .= Html::element(
+					'li',
+					array(),
+					wfMsgExt(
+						'surveys-surveystats-question-answer',
+						'parsemag',
+						$answer,
+						$GLOBALS['wgLang']->formatNum( $answerCount ),
+						$answerCount
+					)
+				);
+			}
+			
+			return $list . '</ul>';
+		}
+		else {
+			return '';
+		}
 	}
 	
 }
