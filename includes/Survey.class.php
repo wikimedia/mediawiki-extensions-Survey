@@ -62,14 +62,14 @@ class Survey extends SurveyDBClass {
 		return array(
 			'name' => '',
 			'title' => '',
-			'enabled' => '0',
+			'enabled' => SurveySettings::get( 'defaultEnabled' ) ? '1' : '0',
 			'header' => 'Thank you for taking this short survey. Please fill out the following questions:',
 			'footer' => '',
 			'thanks' => 'Thank you for your responses.',
-			'user_type' => self::$USER_ALL,
-			'namespaces' => array(),
-			'ratio' => 100,
-			'expiry' => 60 * 60 * 24 * 30
+			'user_type' => SurveySettings::get( 'defaultUserType' ),
+			'namespaces' => SurveySettings::get( 'defaultNamespaces' ),
+			'ratio' => SurveySettings::get( 'defaultRatio' ),
+			'expiry' => SurveySettings::get( 'defaultExpiry' ),
 		);
 	}
 	

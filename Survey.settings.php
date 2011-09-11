@@ -20,6 +20,11 @@ class SurveySettings {
 
 	protected static function getDefaultSettings() {
 		return array(
+			'defaultEnabled' => false,
+			'defaultUserType' => Survey::$USER_ALL,
+			'defaultNamespaces' => array(),
+			'defaultRatio' => 100,
+			'defaultExpiry' => 60 * 60 * 24 * 30
 		);
 	}
 
