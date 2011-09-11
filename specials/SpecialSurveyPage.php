@@ -114,7 +114,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @param array $links
 	 */
 	protected function displayNavigation( array $links ) {
-		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), implode( ' - ', $links ) ) );
+		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), $GLOBALS['wgLang']->pipeList( $links ) ) );
 	}
 	
 }
