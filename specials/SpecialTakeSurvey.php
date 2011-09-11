@@ -33,7 +33,7 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 		parent::execute( $subPage );
 		
 		$survey = Survey::selectRow(
-			array( 'enabled' ),
+			array( 'name', 'title', 'enabled' ),
 			array( 'name' => $subPage )
 		);
 		
@@ -41,12 +41,12 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 			$this->showError( 'surveys-takesurvey-nosuchsurvey' );
 		}
 		else if ( $survey->getField( 'enabled' ) ) {
-			$this->displaySurvey( $subPage );
+			$this->displaySurvey( $survey );
 		}
 		else if ( $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ) {
 			$this->showWarning( 'surveys-takesurvey-warn-notenabled' );
 			$this->getOutput()->addHTML( '<br /><br /><br /><br />' );
-			$this->displaySurvey( $subPage );
+			$this->displaySurvey( $survey );
 		}
 		else {
 			$this->showError( 'surveys-takesurvey-surveynotenabled' );
@@ -59,13 +59,14 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param string $surveyName
+	 * @param Survey $surveyName
 	 */
-	protected function displaySurvey( $surveyName ) {
+	protected function displaySurvey( $survey ) {
 		$this->getOutput()->addWikiText( Xml::element( 
 			'survey',
 			array(
-				'name' => $surveyName,
+				'name' => $survey->getField( 'name' ),
+				'title' => $survey->getField( 'title' ),
 				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1'
 			),
 			wfMsg( 'surveys-takesurvey-loading' )

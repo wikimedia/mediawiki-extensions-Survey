@@ -91,6 +91,7 @@ class SurveyTag {
 		return array(
 			'id' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 1 ) ),
 			'name' => array(),
+			'title' => array(),
 			'require-enabled' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 0, 'max_range' => 1 ) ),
 		);
 	}

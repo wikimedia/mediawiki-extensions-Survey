@@ -204,7 +204,7 @@
 	this.getSurveyBody = function( surveyData ) {
 		$survey = $( '<div />' );
 		
-		$survey.append( $( '<h1 />' ).text( surveyData.name ) );
+		$survey.append( $( '<h1 />' ).text( surveyData.title ) );
 		
 		$survey.append( $( '<p />' ).text( surveyData.header ) );
 		
