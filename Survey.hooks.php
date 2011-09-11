@@ -136,7 +136,7 @@ final class SurveyHooks {
 		
 		$surveys = Survey::select(
 			array(
-				'id', 'namespaces'
+				'id', 'namespaces', 'ratio', 'expiry'
 			),
 			array(
 				'enabled' => 1,
@@ -157,7 +157,9 @@ final class SurveyHooks {
 				$GLOBALS['wgOut']->addWikiText( Xml::element( 
 					'survey',
 					array(
-						'id' => $survey->getId()
+						'id' => $survey->getId(),
+						'ratio' => $survey->getField( 'ratio' ),
+						'expiry' => $survey->getField( 'expiry' ),
 					)
 				) );
 			}

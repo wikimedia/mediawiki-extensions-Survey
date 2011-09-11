@@ -94,6 +94,8 @@ class SurveyTag {
 			'cookie' => array(),
 			'title' => array(),
 			'require-enabled' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 0, 'max_range' => 1 ) ),
+			'expiry' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 0 ) ),
+			'ratio' => array( 'filter' => FILTER_VALIDATE_INT, 'options' => array( 'min_range' => 0, 'max_range' => 100 ) ),
 		);
 	}
 

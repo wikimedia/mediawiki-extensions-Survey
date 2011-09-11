@@ -17,40 +17,52 @@
 	function shouldShowSurvey( options ) {
 		var shouldShow = $.cookie( getCookieName( options ) ) != 'done';
 		survey.log( 'shouldShowSurvey ' + getCookieName( options ) + ': ' + shouldShow.toString() );
-		return shouldShow;
+		return options.cookie || shouldShow;
 	}
 	
-	function onSurveyShown( options ) {
-		var expirySeconds = ( typeof options.expiry !== 'undefined' ) ? options.expiry : 60 * 60 * 24 * 30;
-		var date = new Date();
-		date.setTime( date.getTime() + expirySeconds * 1000 );
-		$.cookie( getCookieName( options ), 'done', { 'expires': date, 'path': '/' } );
+	function onSurveyDone( options ) {
+		if ( options.cookie ) {
+			var date = new Date();
+			date.setTime( date.getTime() + options.expiry * 1000 );
+			$.cookie( getCookieName( options ), 'done', { 'expires': date, 'path': '/' } );
+			survey.log( 'wrote done to cookie ' + getCookieName( options ) );
+		}
 	}
 	
 	function initTag( $tag ) {
-		var options = {};
+		var ratioAttr = $tag.attr( 'survey-data-ratio' );
+		var expiryAttr = $tag.attr( 'survey-data-expiry' );
+		
+		var options = {
+			'ratio': typeof ratioAttr === 'undefined' ? 1 : parseFloat( ratioAttr ) / 100,
+			'cookie': $tag.attr( 'survey-data-cookie' ) !== 'no',
+			'expiry': typeof expiryAttr === 'undefined' ? 60 * 60 * 24 * 30 : expiryAttr
+		};
 		
 		if ( $tag.attr( 'survey-data-id' ) ) {
-			options['id'] = $tag.attr( 'survey-data-id' );
+			options.id = $tag.attr( 'survey-data-id' );
 		} else if ( $tag.attr( 'survey-data-name' ) ) {
-			options['name'] = $tag.attr( 'survey-data-name' );
+			options.name = $tag.attr( 'survey-data-name' );
 		}
 		else {
 			// TODO
 			return;
 		}
 		
-		if ( $tag.attr( 'survey-data-cookie' ) === 'no' ) {
-			$tag.mwSurvey( options );
-		}
-		else {
+		var rand = Math.random();
+		survey.log( rand + ' < ' + options.ratio );
+		
+		if ( rand < options.ratio ) {
 			if ( shouldShowSurvey( options ) ) {
 				options['onShow'] = function( eventArgs ) {
-					onSurveyShown( options );
+					onSurveyDone( options );
 				};
 				
 				$tag.mwSurvey( options );
 			}
+		}
+		else {
+			onSurveyDone( options );
 		}
 	}
 	
