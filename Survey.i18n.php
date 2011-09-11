@@ -40,7 +40,7 @@ $messages['en'] = array(
 	'survey-question-type-text' => 'Single-line text field',
 	'survey-question-type-number' => 'Number',
 	'survey-question-type-select' => 'Dropdown menu',
-	'survey-question-type-radio' => 'Radio boxes',
+	'survey-question-type-radio' => 'Radio buttons',
 	'survey-question-type-textarea' => 'Multi-line text field',
 	'survey-question-type-check' => 'Checkbox',
 
