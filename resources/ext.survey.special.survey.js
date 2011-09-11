@@ -202,7 +202,7 @@
 	};
 	
 	function setup() {
-		$table = $( '#survey-name' ).closest( 'tbody' );
+		$table = $( '#survey-title' ).closest( 'tbody' );
 		
 		$table.append( '<tr><td colspan="2"><hr /></td></tr>' );
 		

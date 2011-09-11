@@ -178,11 +178,16 @@ class SpecialSurvey extends SpecialSurveyPage {
 		);
 		
 		$fields[] = array(
+			'type' => 'hidden',
+			'default' => $survey->getField( 'name' ),
+			'name' => 'survey-name',
+			'id' => 'survey-name',
+		);
+		
+		$fields[] = array(
 			'class' => 'SurveyNameField',
 			'default' => $survey->getField( 'name' ),
 			'label-message' => 'survey-special-label-name',
-			'id' => 'survey-name',
-			'name' => 'survey-name',
 			'style' => 'font-weight: bold;'
 		);
 		
@@ -303,8 +308,6 @@ class SurveyNameField extends HTMLFormField {
 		return Html::element(
 			'span',
 			array(
-				'id' => $this->mParams['id'],
-				'name' => $this->mParams['name'],
 				'style' => $this->mParams['style']
 			),
 			$value

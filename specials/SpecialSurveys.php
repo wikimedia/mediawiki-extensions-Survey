@@ -51,7 +51,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 	protected function displaySurveys() {
 		$this->displayAddNewControl();
 		
-		$surveys = Survey::select( array( 'id', 'name', 'enabled' ) );
+		$surveys = Survey::select( array( 'id', 'name', 'enabled', 'title' ) );
 		
 		if ( count( $surveys ) > 0 ) {
 			$this->displaySurveysTable( $surveys );
@@ -117,7 +117,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$out->addHTML( 
 			'<thead><tr>' .
-				Html::element( 'th', array(), wfMsg( 'surveys-special-name' ) ) .
+				Html::element( 'th', array(), wfMsg( 'surveys-special-title' ) ) .
 				Html::element( 'th', array(), wfMsg( 'surveys-special-status' ) ) .
 				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-stats' ) ) .
 				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-edit' ) ) .
@@ -130,13 +130,13 @@ class SpecialSurveys extends SpecialSurveyPage {
 		foreach ( $surveys as $survey ) {
 			$out->addHTML(
 				'<tr>' .
-					'<td>' .
+					'<td data-sort-value="' . htmlspecialchars( $survey->getField( 'title' ) ) . '">' .
 						Html::element( 
 							'a',
 							array(
 								'href' => SpecialPage::getTitleFor( 'TakeSurvey', $survey->getField( 'name' ) )->getLocalURL()
 							),
-							$survey->getField( 'name' )
+							$survey->getField( 'title' )
 						) .
 					'</td>' .
 					Html::element( 'td', array(), wfMsg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) ) ) .
