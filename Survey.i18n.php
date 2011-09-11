@@ -92,7 +92,7 @@ $messages['en'] = array(
 	'surveys-surveystats-question-text' => 'Question text',
 	'surveys-surveystats-question-answercount' => 'Number of answers',
 	'surveys-surveystats-question-answers' => 'Most provided answers',
-	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$3|answer|answers}})',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|answer|answers}})',
 
 	// Special:Survey
 	'surveys-special-unknown-name' => 'There is no survey with the requested name.',
@@ -118,4 +118,11 @@ $messages['en'] = array(
 	'survey-jquery-submit' => 'Submit',
 	'survey-jquery-finish' => 'Finish',
 	'survey-jquery-load-failed' => 'Could not load the survey.',
+);
+
+/** Message docs
+ * @author Jeroen De Dauw
+ */
+$messages['qqq'] = array(
+	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
 );

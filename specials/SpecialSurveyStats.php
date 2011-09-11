@@ -246,8 +246,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 						'surveys-surveystats-question-answer',
 						'parsemag',
 						$answer,
-						$GLOBALS['wgLang']->formatNum( $answerCount ),
-						$answerCount
+						$GLOBALS['wgLang']->formatNum( $answerCount )
 					)
 				);
 			}
