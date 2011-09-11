@@ -168,7 +168,7 @@
 			'id': 'survey-question-required-' + question.id,
 			'name': 'survey-question-required-' + question.id,
 			'type': 'checkbox',
-		} ).text( mw.msg( 'survey-special-label-type' ) );
+		} );
 		
 		if ( question.required ) {
 			$required.attr( 'checked', 'checked' );
