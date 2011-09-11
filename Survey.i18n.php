@@ -31,17 +31,17 @@ $messages['en'] = array(
 	'special-takesurvey' => 'Take survey',
 
 	// API errors
-	'survey-err-id-xor-name' => 'You need to provide either the id or the name of the survey to submit',
+	'survey-err-id-xor-name' => 'You need to provide either the ID or the name of the survey to submit',
 	'survey-err-survey-name-unknown' => 'There is no survey with the name "$1"',
-	'survey-err-duplicate-name' => 'There already is a survey with name "$1"',
-	'survey-err-ids-xor-names' => 'You need to provide either the ids or the names of the surveys to query',
+	'survey-err-duplicate-name' => 'There already is a survey with the name "$1"',
+	'survey-err-ids-xor-names' => 'You need to provide either the IDs or the names of the surveys to query',
 
 	// Question types
-	'survey-question-type-text' => 'Single line text field',
+	'survey-question-type-text' => 'Single-line text field',
 	'survey-question-type-number' => 'Number',
 	'survey-question-type-select' => 'Dropdown menu',
 	'survey-question-type-radio' => 'Radio boxes',
-	'survey-question-type-textarea' => 'Multi line text field',
+	'survey-question-type-textarea' => 'Multi-line text field',
 	'survey-question-type-check' => 'Checkbox',
 
 	'survey-navigation-edit' => '[[Special:Survey/$1|Edit this survey]]',
@@ -69,11 +69,11 @@ $messages['en'] = array(
 	'survey-user-type-loggedin' => 'Logged in users',
 	'survey-user-type-confirmed' => 'Confirmed users',
 	'survey-user-type-editor' => 'Editors',
-	'survey-user-type-anon' => 'Anonymouse users',
+	'survey-user-type-anon' => 'Anonymous users',
 
 	// Special:TakeSurvey
 	'surveys-takesurvey-loading' => 'Loading survey...',
-	'surveys-takesurvey-nosuchsurvey' => 'There requested survey does not exist.',
+	'surveys-takesurvey-nosuchsurvey' => 'The requested survey does not exist.',
 	'surveys-takesurvey-warn-notenabled' => 'This survey has not been enabled yet, and therefore is not visible to users.',
 	'surveys-takesurvey-surveynotenabled' => 'The requested survey has not been enabled yet.',
 
@@ -90,7 +90,7 @@ $messages['en'] = array(
 	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Question type',
 	'surveys-surveystats-question-text' => 'Question text',
-	'surveys-surveystats-question-answercount' => 'Amount of answers',
+	'surveys-surveystats-question-answercount' => 'Number of answers',
 	'surveys-surveystats-question-answers' => 'Most provided answers',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$3|answer|answers}})',
 
