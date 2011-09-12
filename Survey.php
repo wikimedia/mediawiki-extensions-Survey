@@ -133,6 +133,7 @@ $wgResourceModules['ext.survey.special.surveys'] = $moduleTemplate + array(
 
 $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 	'scripts' => array(
+		'ext.survey.answerSelector.js',
 		'ext.survey.special.survey.js'
 	),
 	'styles' => array(
