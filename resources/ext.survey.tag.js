@@ -21,12 +21,10 @@
 	}
 	
 	function setCookie( options, cookieValue ) {
-		if ( options.cookie ) {
-			var date = new Date();
-			date.setTime( date.getTime() + options.expiry * 1000 );
-			$.cookie( getCookieName( options ), cookieValue, { 'expires': date, 'path': '/' } );
-			survey.log( 'wrote "' + cookieValue + '" to cookie ' + getCookieName( options ) );
-		}
+		var date = new Date();
+		date.setTime( date.getTime() + options.expiry * 1000 );
+		$.cookie( getCookieName( options ), cookieValue, { 'expires': date, 'path': '/' } );
+		survey.log( 'wrote "' + cookieValue + '" to cookie ' + getCookieName( options ) );
 	}
 	
 	function hasCookie( options ) {
@@ -37,6 +35,26 @@
 		var rand = Math.random();
 		survey.log( 'doLottery: ' + rand + ' < ' + options.ratio );
 		return rand < options.ratio;
+	}
+	
+	function initCookieSurvey( options ) {
+		if ( hasCookie( options ) || options.ratio === 1 || winsLottery( options ) ) {
+			var cookie = getCookie( options );
+			
+			if ( cookie !== 'done' ) {
+				if ( ( options.pages === 0 || parseInt( cookie ) >= options.pages ) ) {
+					$tag.mwSurvey( options );
+					setCookie( options, 'done' );
+				}
+				else if ( options.pages !== 0  ) {
+					var nr = parseInt( getCookie( options ) );
+					setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 )
+				}
+			}
+		}
+		else {
+			setCookie( options, 'done' );
+		}
 	}
 	
 	function initTag( $tag ) {
@@ -61,27 +79,11 @@
 			return;
 		}
 		
-		if ( hasCookie( options ) || options.ratio === 1 || winsLottery( options ) ) {
-			if ( !options.cookie ) {
-				$tag.mwSurvey( options );
-			}
-			else {
-				var cookie = getCookie( options );
-				
-				if ( cookie !== 'done' ) {
-					if ( ( options.pages === 0 || parseInt( cookie ) >= options.pages ) ) {
-						$tag.mwSurvey( options );
-						setCookie( options, 'done' );
-					}
-					else if ( options.pages !== 0  ) {
-						var nr = parseInt( getCookie( options ) );
-						setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 )
-					}
-				}
-			}
+		if ( options.cookie ) {
+			initCookieSurvey( options );
 		}
 		else {
-			setCookie( options, 'done' );
+			$tag.mwSurvey( options );
 		}
 	}
 	

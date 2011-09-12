@@ -169,6 +169,15 @@ class SpecialSurvey extends SpecialSurveyPage {
 		);
 	}
 	
+	/**
+	 * Get an array of numbers with as keys the formatted version of the values. 
+	 * 
+	 * @since 0.1
+	 * 
+	 * @param array $numbers
+	 * 
+	 * @return array
+	 */
 	protected function getNumericalOptions( array $numbers ) {
 		$lang = $this->getLang();
 		

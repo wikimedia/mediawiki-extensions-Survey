@@ -123,7 +123,7 @@
 		$q = $( '<div />' ).html( $input );
 		
 		if ( question.type === type.CHECK ) {
-			$q.append( $( '<label />' ).text( question.text ).attr( 'for', id ) );
+			$q.prepend( $( '<label />' ).text( question.text ).attr( 'for', id ) );
 		}
 		else {
 			$q.prepend( $( '<p />' ).text( question.text ) );
