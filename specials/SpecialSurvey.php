@@ -233,6 +233,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$nrs = array_merge( array( 0.01, 0.1 ), range( 1, 100 ) );
 		
+		$lang = $this->getLang();
+		
 		$fields[] = array(
 			'type' => 'select',
 			'default' => $survey->getField( 'ratio' ),
@@ -240,7 +242,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-ratio',
 			'name' => 'survey-ratio',
 			'options' => array_flip( array_map(
-				function( $n ) { return $this->getLang()->formatNum( $n ); },
+				function( $n ) use( $lang ) { return $lang->formatNum( $n ); },
 				array_combine( $nrs, $nrs )
 			) ),
 		);
