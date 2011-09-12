@@ -169,4 +169,20 @@ final class SurveyHooks {
 		return true;
 	}
 	
+	/**
+	 * Adds a link to Admin Links page.
+	 * 
+	 * @since 0.1
+	 * 
+	 * @return true
+	 */
+	public static function addToAdminLinks( &$admin_links_tree ) {
+		$section = new ALSection( 'Survey' );
+		$row = new ALRow( 'smw' );
+	    $row->addItem( AlItem::newFromSpecialPage( 'Surveys' ) );
+		$section->addRow( $row );
+		$admin_links_tree->addSection( $section, 'Survey' );
+	    return true;
+	}
+	
 }

@@ -91,6 +91,7 @@ $wgHooks['LoadExtensionSchemaUpdates'][] 		= 'SurveyHooks::onSchemaUpdate';
 $wgHooks['UnitTestsList'][] 					= 'SurveyHooks::registerUnitTests';
 $wgHooks['ParserFirstCallInit'][] 				= 'SurveyHooks::onParserFirstCallInit';
 $wgHooks['ArticleViewHeader'][] 				= 'SurveyHooks::onArticleViewHeader';
+$wgHooks['AdminLinks'][] 						= 'SurveyHooks::addToAdminLinks';
 
 $wgAvailableRights[] = 'surveyadmin';
 $wgAvailableRights[] = 'surveysubmit';
