@@ -10,19 +10,8 @@
 	
 	function getCookieName( options ) {
 		return ( typeof options.id !== 'undefined' ) ?
-			'ssurvey-id-' + options.id
-			: 'ssurvey-name-' + options.name
-	}
-	
-	function shouldShowSurvey( options ) {
-		if ( !options.cookie ) {
-			return true;
-		}
-		else {
-			var cookie = getCookie( options );
-			return ( options.pages === 0 && cookie !== 'done' )
-				|| ( options.pages !== 0 && parseInt( cookie ) >= options.pages );
-		}
+			'survey-id-' + options.id
+			: 'survey-name-' + options.name
 	}
 	
 	function getCookie( options ) {
@@ -58,7 +47,7 @@
 		var options = {
 			'ratio': typeof ratioAttr === 'undefined' ? 1 : parseFloat( ratioAttr ) / 100,
 			'cookie': $tag.attr( 'survey-data-cookie' ) !== 'no',
-			'expiry': typeof expiryAttr === 'undefined' ? 60 * 60 * 24 * 30 : 60 * 60 * 24 * 30,//parseInt( expiryAttr ),
+			'expiry': typeof expiryAttr === 'undefined' ? 60 * 60 * 24 * 30 : parseInt( expiryAttr ),
 			'pages': typeof pagesAttr === 'undefined' ? 0 : parseInt( pagesAttr )
 		};
 		
@@ -72,18 +61,27 @@
 			return;
 		}
 		
-		if ( hasCookie( options ) || winsLottery( options ) ) {
-			if ( shouldShowSurvey( options ) ) {
+		if ( hasCookie( options ) || options.ratio === 1 || winsLottery( options ) ) {
+			if ( !options.cookie ) {
 				$tag.mwSurvey( options );
-				setCookie( options, 'done' );
 			}
-			else if ( options.pages !== 0 ) {
-				var nr = parseInt( getCookie( options ) );
-				setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 )
+			else {
+				var cookie = getCookie( options );
+				
+				if ( cookie !== 'done' ) {
+					if ( ( options.pages === 0 || parseInt( cookie ) >= options.pages ) ) {
+						$tag.mwSurvey( options );
+						setCookie( options, 'done' );
+					}
+					else if ( options.pages !== 0  ) {
+						var nr = parseInt( getCookie( options ) );
+						setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 )
+					}
+				}
 			}
 		}
 		else {
-			onSurveyDone( options );
+			setCookie( options, 'done' );
 		}
 	}
 	

@@ -86,7 +86,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
 		
-		foreach ( array( 'user_type', 'ratio', 'min_pages' ) as $field ) {
+		foreach ( array( 'user_type', 'ratio', 'min_pages', 'expiry' ) as $field ) {
 			$survey->setField( $field, $wgRequest->getInt( 'survey-' . $field ) );
 		}
 		
@@ -200,6 +200,13 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'default' => $survey->getField( 'name' ),
 			'name' => 'survey-name',
 			'id' => 'survey-name',
+		);
+		
+		$fields[] = array(
+			'type' => 'hidden',
+			'default' => $survey->getField( 'expiry' ),
+			'name' => 'survey-expiry',
+			'id' => 'survey-expiry',
 		);
 		
 		$fields[] = array(
