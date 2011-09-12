@@ -37,7 +37,7 @@
 		return rand < options.ratio;
 	}
 	
-	function initCookieSurvey( options ) {
+	function initCookieSurvey( options, $tag ) {
 		if ( hasCookie( options ) || options.ratio === 1 || winsLottery( options ) ) {
 			var cookie = getCookie( options );
 			
@@ -80,7 +80,7 @@
 		}
 		
 		if ( options.cookie ) {
-			initCookieSurvey( options );
+			initCookieSurvey( options, $tag );
 		}
 		else {
 			$tag.mwSurvey( options );
