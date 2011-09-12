@@ -134,5 +134,31 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
 	'survey-question-type-number' => 'Indicates an input type that accepts a number (which can be multiple digits)',
-	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question'
+	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
+
+	'survey-question-type-text' => 'Input type for a question, selectable in administration interface.',
+	'survey-question-type-number' => 'Input type for a question, selectable in administration interface.',
+	'survey-question-type-select' => 'Input type for a question, selectable in administration interface.',
+	'survey-question-type-radio' => 'Input type for a question, selectable in administration interface.',
+	'survey-question-type-textarea' => 'Input type for a question, selectable in administration interface.',
+	'survey-question-type-check' => 'Input type for a question, selectable in administration interface.',
+
+	'survey-user-type-all' => 'Group of users for which a survey can be available.',
+	'survey-user-type-loggedin' => 'Group of users for which a survey can be available.',
+	'survey-user-type-confirmed' => 'Group of users for which a survey can be available.',
+	'survey-user-type-editor' => 'Group of users for which a survey can be available.',
+	'survey-user-type-anon' => 'Group of users for which a survey can be available.',
+
+	'survey-err-id-xor-name' => 'API error message.',
+	'survey-err-survey-name-unknown' => 'API error message. $1 is the name of a survey.',
+	'survey-err-duplicate-name' => 'API error message. $1 is the name of a survey.',
+	'survey-err-ids-xor-names' => 'API error message.',
+
+	'right-surveyadmin' => 'User right',
+	'right-surveysubmit' => 'User right',
+
+	'special-editsurvey' => 'Special page name/title',
+	'special-surveys' => 'Special page name/title',
+	'special-surveystats' => 'Special page name/title',
+	'special-takesurvey' => 'Special page name/title',
 );
