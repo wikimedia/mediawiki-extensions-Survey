@@ -30,7 +30,9 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 * @param string $arg
 	 */
 	public function execute( $subPage ) {
-		parent::execute( $subPage );
+		if ( !parent::execute( $subPage ) ) {
+			return;
+		}
 		
 		$survey = Survey::selectRow(
 			array( 'enabled' ),

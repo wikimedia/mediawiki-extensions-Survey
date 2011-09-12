@@ -51,8 +51,10 @@ abstract class SpecialSurveyPage extends SpecialPage {
 		// If the user is authorized, display the page, if not, show an error.
 		if ( !$this->userCanExecute( $wgUser ) ) {
 			$this->displayRestrictionError();
-			return;
+			return false;
 		}
+		
+		return true;
 	}
 	
 	/**

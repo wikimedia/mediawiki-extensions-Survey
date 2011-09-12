@@ -30,7 +30,9 @@ class SpecialSurveys extends SpecialSurveyPage {
 	 * @param string $arg
 	 */
 	public function execute( $subPage ) {
-		parent::execute( $subPage );
+		if ( !parent::execute( $subPage ) ) {
+			return;
+		}
 		
 		global $wgRequest, $wgUser;
 		

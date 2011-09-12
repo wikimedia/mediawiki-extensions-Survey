@@ -30,7 +30,9 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 * @param string $arg
 	 */
 	public function execute( $subPage ) {
-		parent::execute( $subPage );
+		if ( !parent::execute( $subPage ) ) {
+			return;
+		}
 		
 		if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
 			$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
