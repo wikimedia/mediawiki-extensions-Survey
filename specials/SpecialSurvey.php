@@ -151,7 +151,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'removed' => 0,
 			'text' => $wgRequest->getText( "survey-question-text-$questionId" ),
 			'type' => $wgRequest->getInt( "survey-question-type-$questionId" ),
-			'required' => $wgRequest->getCheck( "survey-question-required-$questionId" ),
+			'required' => 0, // $wgRequest->getCheck( "survey-question-required-$questionId" ),
 			'answers' => $answers
 		) );
 		

@@ -115,22 +115,23 @@
 				answerSelector.setVisible( survey.question.typeHasAnswers( parseInt( newValue ) ) );
 			}
 		) );
-		
-		$required = $( '<input />' ).attr( {
-			'id': 'survey-question-required-' + question.id,
-			'name': 'survey-question-required-' + question.id,
-			'type': 'checkbox',
-		} );
-		
-		if ( question.required ) {
-			$required.attr( 'checked', 'checked' );
-		}
-		
-		$input.append( $required );
-		
-		$input.append( $( '<label />' ).attr( {
-			'for': 'survey-question-required-' + question.id
-		} ).text( mw.msg( 'survey-special-label-required' ) ) );
+	
+		// Not implemented in actual survey yet, so don't show for now.
+//		$required = $( '<input />' ).attr( {
+//			'id': 'survey-question-required-' + question.id,
+//			'name': 'survey-question-required-' + question.id,
+//			'type': 'checkbox',
+//		} );
+//		
+//		if ( question.required ) {
+//			$required.attr( 'checked', 'checked' );
+//		}
+//		
+//		$input.append( $required );
+//		
+//		$input.append( $( '<label />' ).attr( {
+//			'for': 'survey-question-required-' + question.id
+//		} ).text( mw.msg( 'survey-special-label-required' ) ) );
 		
 		$input.append( answerSelector.getHtml() );
 		
