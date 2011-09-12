@@ -9,7 +9,7 @@
 window.survey = new( function() {
 	
 	this.log = function( message ) {
-		if ( true /* window.wgSurveyDebug */ ) { // TODO
+		if ( mediaWiki.config.get( 'wgSurveyDebug' ) ) {
 			if ( typeof mediaWiki === 'undefined' ) {
 				if ( typeof console !== 'undefined' ) {
 					console.log( 'Survey: ' + message );

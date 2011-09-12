@@ -42,7 +42,7 @@ http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/Survey.setting
 You should NOT modify the settings file, but can have a look at it to get an idea of
 how to use the  settings, in case the below descriptions do not suffice.
 
-{|
+{| class="wikitable sortable"
 ! Name
 ! Type
 ! Default
@@ -77,4 +77,9 @@ how to use the  settings, in case the below descriptions do not suffice.
 | integer
 | 0
 | The default minimun amount of pages users should visit before getting a survey
+| -
+| JSDebug
+| boolean
+| false
+| Indicates if JavaScript debugging should be on or not. Should be false on production environments.
 |}

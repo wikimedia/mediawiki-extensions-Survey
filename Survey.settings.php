@@ -20,6 +20,7 @@ class SurveySettings {
 
 	protected static function getDefaultSettings() {
 		return array(
+			'JSDebug' => false,
 			'defaultEnabled' => false,
 			'defaultUserType' => Survey::$USER_ALL,
 			'defaultNamespaces' => array(),

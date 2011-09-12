@@ -69,6 +69,11 @@ class SurveyTag {
 		
 		if ( !$loadedJs ) {
 			$parser->getOutput()->addModules( 'ext.survey.tag' );
+			$parser->getOutput()->addHeadItem( 
+				Skin::makeVariablesScript( array(  
+					'wgSurveyDebug' => SurveySettings::get( 'JSDebug' )
+				) )
+			);
 		}
 		
 		return Html::element(
