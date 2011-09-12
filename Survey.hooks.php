@@ -136,7 +136,7 @@ final class SurveyHooks {
 		
 		$surveys = Survey::select(
 			array(
-				'id', 'namespaces', 'ratio', 'expiry'
+				'id', 'namespaces', 'ratio', 'expiry', 'min_pages'
 			),
 			array(
 				'enabled' => 1,
@@ -160,6 +160,7 @@ final class SurveyHooks {
 						'id' => $survey->getId(),
 						'ratio' => $survey->getField( 'ratio' ),
 						'expiry' => $survey->getField( 'expiry' ),
+						'min-pages' => $survey->getField( 'min_pages' ),
 					)
 				) );
 			}
