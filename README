@@ -12,7 +12,7 @@ that can then be shown to specified groups of users.
 
 * Surveys get displayed to wiki users using a nice pop-up form.
 * Surveys can be created and modified via an admin panel (Special:Surveys).
-* Surveys can be shown to specific types of users (logged in, anonymouse, editor, confirmed, ...)
+* Surveys can be shown to specific types of users (logged in, anonymous, editor, confirmed, ...)
 * Surveys can be shown for a specified percentage of users, and only after a certain amount of page views.
 * Survey questions can have different types of inputs, of which some allow restricting answers.
 * Surveys can be tested by admins via Special:TakeSurvey without them being live on the wiki.

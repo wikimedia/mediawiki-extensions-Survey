@@ -28,7 +28,7 @@ if ( version_compare( $wgVersion, '1.17', '<' ) ) {
 	die( '<b>Error:</b> Survey requires MediaWiki 1.17 or above.' );
 }
 
-define( 'Survey_VERSION', '0.1' );
+define( 'Survey_VERSION', '0.2 alpha' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
