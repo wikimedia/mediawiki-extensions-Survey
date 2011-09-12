@@ -3,3 +3,8 @@
 .survey-textarea {
 	width: 80%
 }
+
+div .survey-question {
+	padding-bottom: 7px;
+	font-size: 10pt;
+}

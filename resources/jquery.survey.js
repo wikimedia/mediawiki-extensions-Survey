@@ -54,19 +54,19 @@
 		var type = survey.question.type;
 		
 		var $input;
-		var id = 'survey-question-' + question.id;
+		var id = 'question-input-' + question.id;
 		
 		switch ( question.type ) {
 			case type.TEXT: default:
 				$input = $( '<input />' ).attr( {
 					'id': id,
-					'class': 'survey-question survey-text'
+					'class': 'question-input survey-text'
 				} );
 				break;
 			case type.NUMBER:
 				$input = $( '<input />' ).numeric().attr( {
 					'id': id,
-					'class': 'survey-question survey-number',
+					'class': 'question-input survey-number',
 					'size': 7
 				} );
 				break;
@@ -79,7 +79,7 @@
 				
 				$input = survey.htmlSelect( answers, 0, { 
 					'id': id,
-					'class': 'survey-question survey-select'
+					'class': 'question-input survey-select'
 				} );
 				break;
 			case type.RADIO:
@@ -95,14 +95,14 @@
 					id,
 					{
 						'id': id,
-						'class': 'survey-question survey-radio'
+						'class': 'question-input survey-radio'
 					}
 				);
 				break;
 			case type.TEXTAREA:
 				$input = $( '<textarea />' ).attr( {
 					'id': id,
-					'class': 'survey-question survey-textarea',
+					'class': 'question-input survey-textarea',
 					'cols': 80,
 					'rows': 2
 				} );
@@ -111,7 +111,7 @@
 				$input = $( '<input />' ).attr( {
 					'id': id,
 					'type': 'checkbox',
-					'class': 'survey-question survey-check',
+					'class': 'question-input survey-check',
 				} );
 				break;
 		}
@@ -120,13 +120,13 @@
 		
 		this.inputs.push( { 'input': $input, 'type': question.type } );
 		
-		$q = $( '<div />' ).html( $input );
+		$q = $( '<div />' ).attr( 'class', 'survey-question' ).html( $input );
 		
 		if ( question.type === type.CHECK ) {
 			$q.prepend( $( '<label />' ).text( question.text ).attr( 'for', id ) );
 		}
 		else {
-			$q.prepend( $( '<p />' ).text( question.text ) );
+			$q.prepend( $( '<p />' ).text( question.text ).attr( 'class', 'question-text' ) );
 		}
 		
 		return $q;
@@ -161,7 +161,7 @@
 			var id = $input.data( 'question-id' );
 			
 			if ( this.inputs[i].type === survey.question.type.RADIO ) {
-				var value = $( 'input:radio[name=survey-question-' + id + ']:checked' ).val();
+				var value = $( 'input:radio[name=question-input-' + id + ']:checked' ).val();
 			}
 			else {
 				var value = $input.val();
