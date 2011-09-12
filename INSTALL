@@ -37,8 +37,44 @@ require_once( "$IP/extensions/Survey/Survey.php" );
 
 Configuration of Survey is done by assigning to $egSurveySettings in your
 [[Manual:LocalSettings.php|LocalSettings.php]] file, AFTER the inlcusion of the
-extension. The options are listed below and their default is set in the Survey settings file [0].
+extension. The options are listed below and their default is set in the Survey settings file:
+http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/Survey.settings.php?view=markup
 You should NOT modify the settings file, but can have a look at it to get an idea of
 how to use the  settings, in case the below descriptions do not suffice.
 
-[0] http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/Survey.settings.php?view=markup
+{|
+! Name
+! Type
+! Default
+! Description
+|-
+| defaultEnabled
+| boolean
+| false
+| If surveys should be enabled by default
+|-
+| defaultUserType
+| Survey::$USER_
+| Survey::$USER_ALL
+| The default type of users a survey is shown to
+|-
+| defaultNamespaces
+| array
+| array()
+| The default namespaces in which surveys should be shown. Empty list for no namespace restrictions
+|-
+| defaultRatio
+| integer
+| 100
+| The default percentage of users the surveys should be shown to
+|-
+| defaultExpiry
+| integer
+| 60 * 60 * 24 * 30
+| The default expiry of cookies used to track survey completion of users, in seconds
+|-
+| defaultMinPages
+| integer
+| 0
+| The default minimun amount of pages users should visit before getting a survey
+|}
