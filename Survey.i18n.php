@@ -44,6 +44,14 @@ $messages['en'] = array(
 	'survey-question-type-textarea' => 'Multi-line text field',
 	'survey-question-type-check' => 'Checkbox',
 
+	// User types
+	'survey-user-type-all' => 'Everyone',
+	'survey-user-type-loggedin' => 'Logged in users',
+	'survey-user-type-confirmed' => 'Confirmed users',
+	'survey-user-type-editor' => 'Editors',
+	'survey-user-type-anon' => 'Anonymous users',
+
+	// Navigation
 	'survey-navigation-edit' => '[[Special:Survey/$1|Edit this survey]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Take this survey]]',
 	'survey-navigation-list' => '[[Special:Surveys|Surveys list]]',
@@ -66,11 +74,7 @@ $messages['en'] = array(
 	'surveys-special-confirm-delete' => 'Are you sure you want to delete this survey?',
 	'surveys-special-delete-failed' => 'Failed to delete survey.',
 	'survey-special-label-usertype' => 'Users that should get the survey',
-	'survey-user-type-all' => 'Everyone',
-	'survey-user-type-loggedin' => 'Logged in users',
-	'survey-user-type-confirmed' => 'Confirmed users',
-	'survey-user-type-editor' => 'Editors',
-	'survey-user-type-anon' => 'Anonymous users',
+	'survey-special-label-minpages' => 'Minimun amount of pages the user needs to visit before getting the survey',
 
 	// Special:TakeSurvey
 	'surveys-takesurvey-loading' => 'Loading survey...',

@@ -11,10 +11,11 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
   survey_header            TEXT                NOT NULL, -- Text to display above the survey
   survey_footer            TEXT                NOT NULL, -- Text to display below the survey
   survey_thanks            TEXT                NOT NULL, -- Text to display after survey submission
-  survey_user_type         TINYINT             NOT NULL default '0', -- Type of users that can participate in the survey
+  survey_user_type         TINYINT unsigned    NOT NULL default '0', -- Type of users that can participate in the survey
   survey_namespaces        BLOB                NOT NULL, -- Namespaces on which the survey can be displayed
   survey_ratio             TINYINT unsigned    NOT NULL, -- Percentage of users to show the survey to
   survey_expiry            INT unsigned        NOT NULL, -- Coockie expiry time for the survey
+  survey_min_pages         TINYINT unsigned    NOT NULL -- Min amount of pages the user needs to view before getting the survey
 ) /*$wgDBTableOptions*/;
 
 -- Questions
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_questions (
   question_survey_id       SMALLINT unsigned   NOT NULL, -- Foreign key: surveys.survey_id
   question_text            TEXT                NOT NULL,
   question_type            INT(2) unsigned     NOT NULL,
-  question_required        INT(2) unsigned     NOT NULL,
+  question_required        TINYINT             NOT NULL,
   question_answers         BLOB                NOT NULL,
   question_removed         TINYINT             NOT NULL default '0'
 ) /*$wgDBTableOptions*/;

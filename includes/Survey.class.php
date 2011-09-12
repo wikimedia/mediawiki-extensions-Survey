@@ -46,7 +46,8 @@ class Survey extends SurveyDBClass {
 			'user_type' => 'int',
 			'namespaces' => 'array',
 			'ratio' => 'int',
-			'expiry' => 'int'
+			'expiry' => 'int',
+			'min_pages' => 'int'
 		);
 	}
 	
@@ -70,6 +71,7 @@ class Survey extends SurveyDBClass {
 			'namespaces' => SurveySettings::get( 'defaultNamespaces' ),
 			'ratio' => SurveySettings::get( 'defaultRatio' ),
 			'expiry' => SurveySettings::get( 'defaultExpiry' ),
+			'min_pages' => SurveySettings::get( 'defaultMinPages' ),
 		);
 	}
 	

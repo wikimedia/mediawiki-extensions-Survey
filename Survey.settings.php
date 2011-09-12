@@ -24,7 +24,8 @@ class SurveySettings {
 			'defaultUserType' => Survey::$USER_ALL,
 			'defaultNamespaces' => array(),
 			'defaultRatio' => 100,
-			'defaultExpiry' => 60 * 60 * 24 * 30
+			'defaultExpiry' => 60 * 60 * 24 * 30,
+			'defaultMinPages' => 0
 		);
 	}
 
