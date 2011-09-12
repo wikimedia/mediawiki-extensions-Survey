@@ -309,10 +309,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		// getContext was added in 1.18 and since that version is
 		// the second argument for the HTMLForm constructor.
-		if ( is_callable( array( $this, 'getContext' ) ) ) {
+		if ( version_compare( $GLOBALS['wgVersion'], '1.18', '>=' ) ) {
 			$form = new HTMLForm( $fields, $this->getContext() );
 		} else {
 			$form = new HTMLForm( $fields );
+			$form->setTitle( $this->getTitle() );
 		}
 
 		$form->setSubmitText( wfMsg( 'surveys-special-save' ) );
