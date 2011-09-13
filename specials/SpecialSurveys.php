@@ -114,7 +114,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$out->addHTML( Xml::openElement(
 			'table',
-			array( 'class' => 'wikitable sortable', 'style' => 'width:400px' )
+			array( 'class' => 'wikitable sortable' )
 		) );
 		
 		$out->addHTML( 
