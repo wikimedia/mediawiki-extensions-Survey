@@ -72,14 +72,6 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 		);
 	}
 	
-	public function needsToken() {
-		return true;
-	}
-	
-	public function getTokenSalt() {
-		return 'querysurveyanswers';
-	}
-	
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
