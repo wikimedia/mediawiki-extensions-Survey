@@ -24,7 +24,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	public function execute() {
 		global $wgUser;
 		
-		if ( $wgUser->isBlocked() ) {
+		if ( !$wgUser->isAllowed( 'surveysubmit' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 

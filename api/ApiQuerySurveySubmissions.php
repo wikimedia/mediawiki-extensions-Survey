@@ -24,10 +24,10 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 	public function execute() {
 		global $wgUser;
 		
-		if ( $wgUser->isBlocked() ) {
+		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
-
+		
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
 		

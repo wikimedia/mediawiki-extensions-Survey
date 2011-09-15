@@ -7,7 +7,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 === Version 0.2 ===
 2011-xx-xx
 
-* 
+* Restricted access to survey statistics via the API to survey admins.
 
 === Version 0.1 ===
 2011-09-13
