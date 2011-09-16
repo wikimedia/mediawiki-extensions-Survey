@@ -83,7 +83,7 @@ $messages['en'] = array(
 	'surveys-takesurvey-surveynotenabled' => 'The requested survey has not been enabled yet.',
 
 	// Special:SurveyStats
-	'surveys-surveystats-nosuchsurvey' => 'The requested survey does not exist. A list of available surveys can be found on [[Special:Surveys]]',
+	'surveys-surveystats-nosuchsurvey' => 'The requested survey does not exist. You can view a [[Special:Surveys|list of available surveys]].',
 	'surveys-surveystats-name' => 'Survey ID',
 	'surveys-surveystats-title' => 'Survey title',
 	'surveys-surveystats-status' => 'Survey status',
