@@ -28,14 +28,14 @@ if ( version_compare( $wgVersion, '1.17', '<' ) ) {
 	die( '<b>Error:</b> Survey requires MediaWiki 1.17 or above.' );
 }
 
-define( 'Survey_VERSION', '0.2 alpha' );
+define( 'Survey_VERSION', '0.1.1' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'Survey',
 	'version' => Survey_VERSION,
 	'author' => array(
-		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw]',
+		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]',
 	),
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Survey',
 	'descriptionmsg' => 'survey-desc'
