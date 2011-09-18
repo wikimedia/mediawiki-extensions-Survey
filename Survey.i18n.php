@@ -157,8 +157,83 @@ $messages['qqq'] = array(
 	'survey-user-type-confirmed' => 'Group of users for which a survey can be available.',
 	'survey-user-type-editor' => 'Group of users for which a survey can be available.',
 	'survey-user-type-anon' => 'Group of users for which a survey can be available.',
+	'surveys-special-namedoc' => '[[File:Survey-surveys.png|300px]]',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+);
+
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'survey-question-type-number' => 'Getal',
+	'survey-user-type-all' => 'Almal',
+	'survey-user-type-loggedin' => 'Aangemelde gebruikers',
+	'survey-user-type-confirmed' => 'Bevestigde gebruikers',
+	'survey-user-type-anon' => 'Anonieme gebruikers',
+	'surveys-special-title' => 'Naam',
+	'surveys-special-status' => 'Status',
+	'surveys-special-stats' => 'Statistieke',
+	'surveys-special-edit' => 'Wysig',
+	'surveys-special-save' => 'Stoor',
+	'surveys-special-delete' => 'Skrap',
+	'surveys-special-enabled' => 'Aangeskakel',
+	'surveys-special-disabled' => 'Afgeskakel',
+	'surveys-surveystats-enabled' => 'Aangeskakel',
+	'surveys-surveystats-disabled' => 'Afgeskakel',
+	'surveys-surveystats-questions' => 'Vraagstatistieke',
+	'surveys-surveystats-question-type' => 'Tipe vraag',
+	'surveys-surveystats-question-text' => 'Vraagteks',
+	'surveys-surveystats-question-answercount' => 'Aantal antwoorde',
+	'surveys-surveystats-question-answers' => 'Mees gegewe antwoorde',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|antwoord|antwoorde}})',
+	'survey-jquery-submit' => 'Dien in',
+	'survey-jquery-finish' => 'Voltooi',
+);
+
+/** Breton (Brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'survey-desc' => 'Ostilh sontadegoù evit MediaWiki',
+	'right-surveyadmin' => 'Merañ sontadegoù',
+	'right-surveysubmit' => 'Kemer perzh er sontadegoù',
+	'survey-question-type-number' => 'Niver',
+	'survey-user-type-all' => 'An holl',
+	'survey-user-type-loggedin' => 'Implijerien kevreet',
+	'survey-user-type-confirmed' => 'Implijerien kadarnaet',
+	'survey-user-type-editor' => 'Skridaozerien',
+	'survey-user-type-anon' => 'Implijerien dizanv',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Kemmañ ar sontadeg-mañ]]',
+	'survey-navigation-list' => '[[Special:Surveys|Roll ar sontadegoù]]',
+	'surveys-special-addnew' => 'Ouzhpennañ ur sontadeg nevez',
+	'surveys-special-add' => 'Ouzhpennañ ur sontadeg',
+	'surveys-special-existing' => 'Ar sontadegoù a zo diouto',
+	'surveys-special-title' => 'Titl',
+	'surveys-special-status' => 'Statud',
+	'surveys-special-stats' => 'Stadegoù',
+	'surveys-special-edit' => 'Aozañ',
+	'surveys-special-save' => 'Enrollañ',
+	'surveys-special-delete' => 'Diverkañ',
+	'surveys-special-enabled' => 'Gweredekaet',
+	'surveys-special-disabled' => 'Diweredekaet',
+	'surveys-takesurvey-loading' => 'O kargañ ar sontadeg...',
+	'surveys-surveystats-name' => 'ID ar sontadeg',
+	'surveys-surveystats-title' => 'Titl ar sontadeg',
+	'surveys-surveystats-enabled' => 'Gweredekaet',
+	'surveys-surveystats-disabled' => 'Diweredekaet',
+	'surveys-surveystats-question-answercount' => 'Niver a respontoù',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|respont|respont}})',
+	'surveys-surveystats-unchecked' => 'Nann-gwiriet',
+	'surveys-surveystats-checked' => 'Gwiriet',
+	'survey-special-label-name' => 'ID ar sontadeg',
+	'survey-special-label-title' => 'Titl ar sontadeg',
+	'survey-special-label-add-first' => 'Ouzhpennañ ur goulenn',
+	'survey-special-label-add-another' => 'Ouzhpennañ ur goulenn all',
+	'survey-special-label-addquestion' => 'Goulenn nevez',
+	'survey-question-label-nr' => 'Goulenn #$1',
+	'survey-jquery-submit' => 'Kas',
+	'survey-jquery-finish' => 'Echuiñ',
 );
 
 /** German (Deutsch)
@@ -510,6 +585,41 @@ $messages['lb'] = array(
 	'survey-jquery-load-failed' => "D'Ëmfro konnt net geluede ginn.",
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Eitvys200
+ */
+$messages['lt'] = array(
+	'survey-desc' => 'Apklausos įrankis puslapiui MediaWiki',
+	'right-surveyadmin' => 'Valdyti apklausas',
+	'special-editsurvey' => 'Apklausos administratorius',
+	'special-surveys' => 'Apklausų administratorius',
+	'special-surveystats' => 'Apklausos statistika',
+	'special-takesurvey' => 'Atlikti apklausą',
+	'survey-err-survey-name-unknown' => 'Nėra jokios apklausos pavadinimu "$1"',
+	'survey-err-duplicate-name' => 'Jau yra apklausa pavadinimu "$1"',
+	'survey-question-type-number' => 'Skaičius',
+	'survey-question-type-select' => 'Išskleidžiamas meniu',
+	'survey-user-type-all' => 'Visi',
+	'survey-user-type-loggedin' => 'Prisijungę naudotojai',
+	'survey-user-type-confirmed' => 'Patvirtinti naudotojai',
+	'survey-user-type-editor' => 'Redaktoriai',
+	'survey-user-type-anon' => 'Anoniminiai naudotojai',
+	'surveys-special-addnew' => 'Pridėti naują apklausą',
+	'surveys-special-newname' => 'Naujos apklausos ID:',
+	'surveys-special-add' => 'Pridėti apklausą',
+	'surveys-special-existing' => 'Egzistuojančios apklausos',
+	'surveys-special-title' => 'Pavadinimas',
+	'surveys-special-status' => 'Būsena',
+	'surveys-special-edit' => 'Redaguoti',
+	'surveys-special-save' => 'Išsaugoti',
+	'surveys-special-delete' => 'Ištrinti',
+	'surveys-special-confirm-delete' => 'Ar tikrai norite ištrinti šią apklausą?',
+	'surveys-special-delete-failed' => 'Nepavyko ištrinti apklausą.',
+	'surveys-takesurvey-loading' => 'Kraunama apklausa...',
+	'surveys-surveystats-name' => 'Apklausos ID',
+	'surveys-surveystats-title' => 'Apklausos pavadinimas',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
@@ -689,6 +799,18 @@ $messages['nl'] = array(
 	'survey-jquery-submit' => 'Opslaan',
 	'survey-jquery-finish' => 'Afronden',
 	'survey-jquery-load-failed' => 'De vragenlijst kon niet worden geladen.',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'survey-user-type-editor' => 'سمونګران',
+	'surveys-special-status' => 'دريځ',
+	'surveys-special-edit' => 'سمول',
+	'surveys-special-save' => 'خوندي کول',
+	'surveys-special-delete' => 'ړنګول',
+	'survey-jquery-submit' => 'سپارل',
 );
 
 /** Telugu (తెలుగు)
