@@ -346,6 +346,41 @@ $messages['fr'] = array(
 	'survey-special-label-text' => 'Texte de la question',
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'survey-question-type-number' => 'Numerô',
+	'survey-user-type-loggedin' => 'Utilisators branchiês',
+	'survey-user-type-confirmed' => 'Utilisators confirmâs',
+	'survey-user-type-anon' => 'Utilisators pas encartâs',
+	'surveys-special-title' => 'Titro',
+	'surveys-special-stats' => 'Statistiques',
+	'surveys-special-edit' => 'Changiér',
+	'surveys-special-save' => 'Encartar',
+	'surveys-special-delete' => 'Suprimar',
+	'surveys-special-enabled' => 'Activâ',
+	'surveys-special-disabled' => 'Dèsactivâ',
+	'surveys-surveystats-questioncount' => 'Nombro de quèstions',
+	'surveys-surveystats-submissioncount' => 'Nombro de somissions',
+	'surveys-surveystats-enabled' => 'Activâ',
+	'surveys-surveystats-disabled' => 'Dèsactivâ',
+	'surveys-surveystats-question-type' => 'Tipo de quèstion',
+	'surveys-surveystats-question-text' => 'Tèxto de la quèstion',
+	'surveys-surveystats-question-answercount' => 'Nombro de rèponses',
+	'surveys-surveystats-question-answer' => '$1 ($2 rèpons{{PLURAL:$2|a|es}})',
+	'surveys-surveystats-unchecked' => 'Pas controlâ',
+	'surveys-surveystats-checked' => 'Controlâ',
+	'survey-special-label-add-first' => 'Apondre una quèstion',
+	'survey-special-label-add-another' => 'Apondre una ôtra quèstion',
+	'survey-special-label-addquestion' => 'Novèla quèstion',
+	'survey-special-label-type' => 'Tipo de quèstion',
+	'survey-special-label-text' => 'Tèxto de la quèstion',
+	'survey-special-remove' => 'Enlevar la quèstion',
+	'survey-jquery-submit' => 'Sometre',
+	'survey-jquery-finish' => 'Chavonar',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
@@ -542,6 +577,7 @@ $messages['lb'] = array(
 	'survey-question-type-number' => 'Zuel',
 	'survey-user-type-all' => 'Jiddwereen',
 	'survey-user-type-loggedin' => 'Ageloggte Benotzer',
+	'survey-user-type-confirmed' => 'Confirméiert Benotzer',
 	'survey-user-type-anon' => 'Anonym Benotzer',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Ännert dës Ëmfro]]',
 	'survey-navigation-list' => '[[Special:Surveys|Lëscht vun den Ëmfroen]]',
@@ -549,7 +585,9 @@ $messages['lb'] = array(
 	'surveys-special-addnew' => 'Eng nei Ëmfro derbäisetzen',
 	'surveys-special-newname' => "Nei ID fir d'Ëmfro:",
 	'surveys-special-add' => 'Ëmfro derbäisetzen',
+	'surveys-special-existing' => 'Ëmfroen déi et gëtt',
 	'surveys-special-title' => 'Titel',
+	'surveys-special-status' => 'Status',
 	'surveys-special-stats' => 'Statistiken',
 	'surveys-special-edit' => 'Änneren',
 	'surveys-special-save' => 'Späicheren',
@@ -560,6 +598,7 @@ $messages['lb'] = array(
 	'survey-special-label-minpages' => "D'Mindestzuel vu Säiten, déi e Benotzer muss gekuckt hu ier hie bäi der Ëmfro matmaache kann",
 	'surveys-takesurvey-loading' => "D'Ëmfro gëtt gelueden...",
 	'surveys-takesurvey-nosuchsurvey' => 'Déi gefroten Ëmfro gëtt et net.',
+	'surveys-takesurvey-warn-notenabled' => 'Dës Ëmfro ass nach net aktivéiert a kann dowéinst vun de Benotzer nach net gesi ginn.',
 	'surveys-surveystats-title' => 'Titel vun der Ëmfro',
 	'surveys-surveystats-questioncount' => 'Zuel vun de Froen',
 	'surveys-surveystats-questions' => 'Statistike vun de Froen',
@@ -576,6 +615,8 @@ $messages['lb'] = array(
 	'survey-special-label-add-another' => 'Eng aner Fro derbäisetzen',
 	'survey-special-label-addquestion' => 'Nei Fro',
 	'survey-question-label-nr' => 'Fro #$1',
+	'survey-special-label-required' => "D'Äntwert op dës Fro ass obligatoresch",
+	'survey-special-label-type' => 'Typ vun der Fro',
 	'survey-special-label-text' => 'Text vun der Fro',
 	'survey-special-remove' => 'Fro ewechhuelen',
 	'survey-special-remove-confirm' => 'Sidd Dir sécher datt Dir dës Fro ewechhuele wëllt?',
