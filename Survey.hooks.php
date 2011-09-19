@@ -88,14 +88,14 @@ final class SurveyHooks {
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'survey_answers',
-			'answer_question_id',
+			'surveys_question_id',
 			dirname( __FILE__ ) . '/sql/Survey_indexQuestionId.sql',
 			true
 		) );
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'survey_answers',
-			'answer_submission_id',
+			'surveys_submission_id',
 			dirname( __FILE__ ) . '/sql/Survey_indexSubmissionId.sql',
 			true
 		) );
