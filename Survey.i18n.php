@@ -622,6 +622,7 @@ $messages['lb'] = array(
 	'survey-special-remove-confirm' => 'Sidd Dir sécher datt Dir dës Fro ewechhuele wëllt?',
 	'survey-special-label-header' => 'Text deen iwwer der Ëmfro gewise gëtt',
 	'survey-special-label-footer' => 'Text deen ënnert der Ëmfro gewise gëtt',
+	'survey-special-label-answers' => 'Disponibel Äntwerten, eng pro Linn.',
 	'survey-jquery-finish' => 'Fäerdeg maachen',
 	'survey-jquery-load-failed' => "D'Ëmfro konnt net geluede ginn.",
 );
