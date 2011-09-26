@@ -528,7 +528,7 @@ abstract class SurveyDBClass {
 	}
 	
 	/**
-	 * Gets the fields => values to write to the surveys table. 
+	 * Gets the fields => values to write to the table. 
 	 * 
 	 * @since 0.1
 	 * 
