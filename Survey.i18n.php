@@ -142,10 +142,17 @@ $messages['en'] = array(
  * @author Kghbln
  * @author SPQRobin
  * @author Siebrand
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'right-surveyadmin' => '{{doc-right|surveyadmin}}',
 	'right-surveysubmit' => '{{doc-right|surveysubmit}}',
+	'group-surveyadmin' => '{{doc-group|surveyadmin}}',
+	'group-surveyadmin-member' => '{{doc-group|surveyadmin|member}}',
+	'grouppage-surveyadmin' => '{{doc-group|surveyadmin|page}}',
+	'group-surveysubmit' => '{{doc-group|surveysubmit}}',
+	'group-surveysubmit-member' => '{{doc-group|surveysubmit|member}}',
+	'grouppage-surveysubmit' => '{{doc-group|surveysubmit|page}}',
 	'special-editsurvey' => 'Special page name/title - shows on specified survery to edit',
 	'special-surveys' => 'Special page name/title',
 	'special-surveystats' => 'Special page name/title - shows statistics for one specified survey',
@@ -252,6 +259,12 @@ $messages['de'] = array(
 	'survey-desc' => 'Ermöglicht Umfragen',
 	'right-surveyadmin' => 'Umfragen verwalten',
 	'right-surveysubmit' => 'An Umfragen teilnehmen',
+	'group-surveyadmin' => 'Umfrageadministratoren',
+	'group-surveyadmin-member' => '{{GENDER:$1|Umfrageadministrator|Umfrageadministratorin}}',
+	'grouppage-surveyadmin' => 'Project:Umfrageadministratoren',
+	'group-surveysubmit' => 'Umfrageteilnehmer',
+	'group-surveysubmit-member' => '{{GENDER:$1|Umfrageteilnehmer|Umfrageteilnehmerin}}',
+	'grouppage-surveysubmit' => 'Project:Umfrageteilnehmer',
 	'special-editsurvey' => 'Umfrageverwaltung',
 	'special-surveys' => 'Umfragenliste',
 	'special-surveystats' => 'Umfragestatistiken',
