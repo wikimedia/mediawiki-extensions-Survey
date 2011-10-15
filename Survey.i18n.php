@@ -26,11 +26,11 @@ $messages['en'] = array(
 
 	// Groups
 	'group-surveyadmin' => 'Survey admins',
-	'group-surveyadmin-member' => 'survey admin',
+	'group-surveyadmin-member' => '{{GENDER:$1|survey admin}}',
 	'grouppage-surveyadmin' => 'Project:Survey_admins',
 
 	'group-surveysubmit' => 'Survey participants',
-	'group-surveysubmit-member' => 'survey participant',
+	'group-surveysubmit-member' => '{{GENDER:$1|survey participant}}',
 	'grouppage-surveysubmit' => 'Project:Survey_participants',
 
 	// Special page names
