@@ -24,6 +24,15 @@ $messages['en'] = array(
 	'right-surveyadmin' => 'Manage surveys',
 	'right-surveysubmit' => 'Participate in surveys',
 
+	// Groups
+	'group-surveyadmin' => 'Survey admins',
+	'group-surveyadmin-member' => 'survey admin',
+	'grouppage-surveyadmin' => 'Project:Survey_admins',
+
+	'group-surveysubmit' => 'Survey participants',
+	'group-surveysubmit-member' => 'survey participant',
+	'grouppage-surveysubmit' => 'Project:Survey_participants',
+
 	// Special page names
 	'special-editsurvey' => 'Survey admin',
 	'special-surveys' => 'Surveys admin',
