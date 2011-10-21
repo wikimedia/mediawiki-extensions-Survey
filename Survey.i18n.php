@@ -456,8 +456,15 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'survey-desc' => 'Outil de sondâjo por MediaWiki',
 	'right-surveyadmin' => 'Administrar los sondâjos',
 	'right-surveysubmit' => 'Participar ux sondâjos',
+	'group-surveyadmin' => 'Administrators de sondâjo',
+	'group-surveyadmin-member' => 'administrat{{GENDER:$1|or|rice}} de sondâjo',
+	'grouppage-surveyadmin' => 'Project:Administrators_de_sondâjo',
+	'group-surveysubmit' => 'Participents u sondâjo',
+	'group-surveysubmit-member' => 'participent{{GENDER:$1||a}} u sondâjo',
+	'grouppage-surveysubmit' => 'Project:Participents_u_sondâjo',
 	'special-editsurvey' => 'Administrator de sondâjo',
 	'special-surveys' => 'Administrator des sondâjos',
 	'special-surveystats' => 'Statistiques des sondâjos',
