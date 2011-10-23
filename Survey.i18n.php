@@ -208,6 +208,7 @@ $messages['af'] = array(
 );
 
 /** Breton (Brezhoneg)
+ * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
@@ -236,8 +237,12 @@ $messages['br'] = array(
 	'surveys-takesurvey-loading' => 'O kargañ ar sontadeg...',
 	'surveys-surveystats-name' => 'ID ar sontadeg',
 	'surveys-surveystats-title' => 'Titl ar sontadeg',
+	'surveys-surveystats-status' => 'Statud ar sontadeg',
+	'surveys-surveystats-questioncount' => "Niver a c'houlennoù",
+	'surveys-surveystats-submissioncount' => 'Niver a respontoù',
 	'surveys-surveystats-enabled' => 'Gweredekaet',
 	'surveys-surveystats-disabled' => 'Diweredekaet',
+	'surveys-surveystats-questions' => 'Stadegoù ar goulennoù',
 	'surveys-surveystats-question-answercount' => 'Niver a respontoù',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|respont|respont}})',
 	'surveys-surveystats-unchecked' => 'Nann-gwiriet',
@@ -755,6 +760,7 @@ $messages['lb'] = array(
 	'surveys-takesurvey-loading' => "D'Ëmfro gëtt gelueden...",
 	'surveys-takesurvey-nosuchsurvey' => 'Déi gefroten Ëmfro gëtt et net.',
 	'surveys-takesurvey-warn-notenabled' => 'Dës Ëmfro ass nach net aktivéiert a kann dowéinst vun de Benotzer nach net gesi ginn.',
+	'surveys-surveystats-name' => 'ID vun der Ëmfro',
 	'surveys-surveystats-title' => 'Titel vun der Ëmfro',
 	'surveys-surveystats-questioncount' => 'Zuel vun de Froen',
 	'surveys-surveystats-enabled' => 'Aktivéiert',
@@ -767,7 +773,10 @@ $messages['lb'] = array(
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|Äntwert|Äntwerten}})',
 	'surveys-surveystats-unchecked' => 'Netnogekuckt',
 	'surveys-surveystats-checked' => 'Nogekuckt',
+	'surveys-special-unknown-name' => 'Et gëtt keng Ëmfro mat der ugefroter ID.',
+	'survey-special-label-name' => 'ID vun der Ëmfro',
 	'survey-special-label-title' => 'Titel vun der Ëmfro',
+	'survey-special-label-enabled' => 'Ëmfro aktivéiert',
 	'survey-special-label-ratio' => "Prozentsaz vun de Benotzer déi d'Ëmfro gewise kréien",
 	'survey-special-label-add-first' => 'Fro derbäisetzen',
 	'survey-special-label-add-another' => 'Eng aner Fro derbäisetzen',
