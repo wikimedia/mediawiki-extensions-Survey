@@ -1039,6 +1039,7 @@ $messages['ps'] = array(
  */
 $messages['te'] = array(
 	'survey-question-type-number' => 'సంఖ్య',
+	'survey-user-type-all' => 'అందరూ',
 	'survey-user-type-anon' => 'అజ్ఞాత వాడుకరులు',
 	'survey-navigation-stats' => '[[Special:SurveyStats/$1|గణాంకాలను చూడండి]]',
 	'surveys-special-title' => 'శీర్షిక',
@@ -1048,6 +1049,9 @@ $messages['te'] = array(
 	'surveys-special-delete' => 'తొలగించు',
 	'surveys-surveystats-questioncount' => 'ప్రశ్నల సంఖ్య',
 	'surveys-surveystats-questions' => 'ప్రశ్నల గణాంకాలు',
+	'surveys-surveystats-question-type' => 'ప్రశ్న రకం',
+	'surveys-surveystats-question-text' => 'ప్రశ్న పాఠ్యం',
+	'surveys-surveystats-question-answercount' => 'జవాబుల సంఖ్య',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|జవాబు|జవాబులు}})',
 	'survey-special-label-addquestion' => 'కొత్త ప్రశ్న',
 	'survey-special-label-required' => 'ప్రశ్న తప్పనిసరి',
