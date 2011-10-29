@@ -623,6 +623,42 @@ $messages['gl'] = array(
 	'survey-jquery-load-failed' => 'Non se puido cargar a enquisa.',
 );
 
+/** Swiss German (Alemannisch)
+ * @author Als-Chlämens
+ */
+$messages['gsw'] = array(
+	'surveys-special-addnew' => 'E neiji Umfroog starte',
+	'surveys-special-add' => 'Umfroog dezuefiege',
+	'surveys-special-existing' => "Umfrooge, wo's scho git",
+	'surveys-special-title' => 'Titel',
+	'surveys-special-status' => 'Status',
+	'surveys-special-stats' => 'Statischtike',
+	'surveys-special-edit' => 'Bearbeite',
+	'surveys-special-save' => 'Spychere',
+	'surveys-special-delete' => 'Lösche',
+	'surveys-special-enabled' => 'Aktiviert',
+	'surveys-special-disabled' => 'Deaktiviert',
+	'surveys-special-confirm-delete' => 'Bisch sicher, ass Du die Umfroog witt lesche?',
+	'surveys-special-delete-failed' => 'Die Umfroog het nit chönne glöscht werde.',
+	'surveys-takesurvey-loading' => 'Die Umfroog wird glade...',
+);
+
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'surveys-special-title' => 'Titul',
+	'surveys-special-status' => 'Status',
+	'surveys-special-stats' => 'Statistika',
+	'surveys-special-edit' => 'Wobdźěłać',
+	'surveys-special-save' => 'Składować',
+	'surveys-special-enabled' => 'Zmóžnjeny',
+	'surveys-special-disabled' => 'Znjemóžnjeny',
+	'surveys-surveystats-enabled' => 'Zmóžnjeny',
+	'surveys-surveystats-disabled' => 'Znjemóžnjeny',
+	'survey-question-label-nr' => 'Prašenje #$1',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
@@ -1020,6 +1056,22 @@ $messages['nl'] = array(
 	'survey-jquery-submit' => 'Opslaan',
 	'survey-jquery-finish' => 'Afronden',
 	'survey-jquery-load-failed' => 'De vragenlijst kon niet worden geladen.',
+);
+
+/** Polish (Polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'survey-user-type-loggedin' => 'Zalogowani użytkownicy',
+	'survey-user-type-confirmed' => 'Zatwierdzeni użytkownicy',
+	'survey-user-type-editor' => 'Redaktorzy',
+	'survey-user-type-anon' => 'Anonimowi użytkownicy',
+	'surveys-special-title' => 'Tytuł',
+	'surveys-special-status' => 'Status',
+	'surveys-special-stats' => 'Statystyki',
+	'surveys-special-edit' => 'Edytuj',
+	'surveys-special-save' => 'Zapisz',
+	'surveys-special-delete' => 'Usuń',
 );
 
 /** Pashto (پښتو)
