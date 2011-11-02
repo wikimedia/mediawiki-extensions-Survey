@@ -520,6 +520,7 @@ $messages['frp'] = array(
 	'survey-special-label-add-another' => 'Apondre una ôtra quèstion',
 	'survey-special-label-addquestion' => 'Novèla quèstion',
 	'survey-question-label-nr' => 'Quèstion numerô $1',
+	'survey-special-label-required' => 'Una quèstion est oblegatouèra',
 	'survey-special-label-type' => 'Tipo de quèstion',
 	'survey-special-label-text' => 'Tèxto de la quèstion',
 	'survey-special-remove' => 'Enlevar la quèstion',
