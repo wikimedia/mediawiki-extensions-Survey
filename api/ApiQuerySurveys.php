@@ -197,7 +197,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	protected function getExamples() {
 		return array (
-			'api.php?action=query&list=surveys&',
+			'api.php?action=query&list=surveys&suids=4|2',
+			'api.php?action=query&list=surveys&suenabled=1&suprops=id|name',
 		);
 	}
 

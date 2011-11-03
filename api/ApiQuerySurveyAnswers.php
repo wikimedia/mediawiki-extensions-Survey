@@ -133,7 +133,9 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 	 */
 	protected function getExamples() {
 		return array (
-			'api.php?action=query&list=surveyanswers&',
+			'api.php?action=query&list=surveyanswers&qaid=42',
+			'api.php?action=query&list=surveyanswers&qaid=42&qaprops=text|submission_id',
+			'api.php?action=query&list=surveyanswers&qaquestion_id=9001&qaprops=text',
 		);
 	}
 

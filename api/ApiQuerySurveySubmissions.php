@@ -133,7 +133,9 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 	 */
 	protected function getExamples() {
 		return array (
-			'api.php?action=query&list=surveysubmissions&',
+			'api.php?action=query&list=surveysubmissions&qsid=42',
+			'api.php?action=query&list=surveysubmissions&qssurvey_id=9001',
+			'api.php?action=query&list=surveysubmissions&qsuser_name=Jeroen%20De%20Dauw&qsprops=survey_id|page_id|time',
 		);
 	}
 
