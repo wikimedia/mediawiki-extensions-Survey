@@ -207,6 +207,38 @@ $messages['af'] = array(
 	'survey-jquery-finish' => 'Voltooi',
 );
 
+/** Arabic (العربية)
+ * @author روخو
+ */
+$messages['ar'] = array(
+	'survey-question-type-number' => 'رقم',
+	'survey-user-type-all' => 'الجميع',
+	'survey-user-type-editor' => 'محررون',
+	'surveys-special-addnew' => 'إضافة استطلاع جديد',
+	'surveys-special-title' => 'العنوان',
+	'surveys-special-status' => 'الحالة',
+	'surveys-special-stats' => 'إحصاءات',
+	'surveys-special-save' => 'احفظ',
+	'surveys-special-delete' => 'احذف',
+	'surveys-special-enabled' => 'مُفعّل',
+	'surveys-special-disabled' => 'معطل',
+	'surveys-special-confirm-delete' => 'هل أنت متأكد أنك تريد حذف هذا الاستطلاع؟',
+	'surveys-special-delete-failed' => 'فشل في حذف الاستطلاع.',
+	'surveys-surveystats-enabled' => 'مُفعّل',
+	'surveys-surveystats-disabled' => 'معطل',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|إجابة|إجابات}})',
+	'surveys-surveystats-unchecked' => 'غير مفحوصة',
+	'surveys-surveystats-checked' => 'مفحوصة',
+	'survey-special-label-add-first' => 'اضف سؤال',
+	'survey-special-label-add-another' => 'اضف سؤال اخر',
+	'survey-special-label-addquestion' => 'سؤال جديد',
+	'survey-special-label-type' => 'نمط السؤال',
+	'survey-special-label-text' => 'نص السؤال',
+	'survey-special-remove' => 'حذف السؤال',
+	'survey-jquery-submit' => 'أرسل',
+	'survey-jquery-finish' => 'أنهي',
+);
+
 /** Breton (Brezhoneg)
  * @author Fulup
  * @author Y-M D
