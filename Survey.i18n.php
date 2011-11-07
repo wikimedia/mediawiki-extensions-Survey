@@ -1087,7 +1087,7 @@ $messages['nl'] = array(
 	'survey-special-label-thanks' => 'Dankbericht om weer te geven na het inzenden van de vragenlijst',
 	'survey-special-label-answers' => 'Beschikbare antwoorden, één per regel.',
 	'survey-jquery-submit' => 'Opslaan',
-	'survey-jquery-finish' => 'Afronden',
+	'survey-jquery-finish' => 'Voltooien',
 	'survey-jquery-load-failed' => 'De vragenlijst kon niet worden geladen.',
 );
 
