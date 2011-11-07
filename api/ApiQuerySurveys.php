@@ -34,7 +34,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
 			 XOR ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
 			 ) ) {
-			$this->dieUsage( wfMsgExt( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
+			$this->dieUsage( wfMsg( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
 		}
 		
 		$this->addTables( 'surveys' );
