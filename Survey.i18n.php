@@ -248,6 +248,7 @@ $messages['br'] = array(
 	'right-surveyadmin' => 'Merañ sontadegoù',
 	'right-surveysubmit' => 'Kemer perzh er sontadegoù',
 	'survey-question-type-number' => 'Niver',
+	'survey-question-type-check' => 'Log da askañ',
 	'survey-user-type-all' => 'An holl',
 	'survey-user-type-loggedin' => 'Implijerien kevreet',
 	'survey-user-type-confirmed' => 'Implijerien kadarnaet',
@@ -285,6 +286,7 @@ $messages['br'] = array(
 	'survey-special-label-add-another' => 'Ouzhpennañ ur goulenn all',
 	'survey-special-label-addquestion' => 'Goulenn nevez',
 	'survey-question-label-nr' => 'Goulenn #$1',
+	'survey-special-remove' => 'Lemel kuit at goulenn',
 	'survey-jquery-submit' => 'Kas',
 	'survey-jquery-finish' => 'Echuiñ',
 );
