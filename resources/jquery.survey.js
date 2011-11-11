@@ -297,7 +297,7 @@
 					'requireEnabled': $this.attr( 'survey-data-require-enabled' ) !== '0'
 				},
 				function( surveyData ) {
-					if ( 0 in surveyData ) {
+					if ( surveyData.hasOwnProperty( 0 ) ) {
 						_this.initSurvey( surveyData[0] );
 					}
 					else {

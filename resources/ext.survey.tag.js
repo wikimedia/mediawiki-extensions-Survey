@@ -11,7 +11,7 @@
 	function getCookieName( options ) {
 		return ( typeof options.id !== 'undefined' ) ?
 			'survey-id-' + options.id
-			: 'survey-name-' + options.name
+			: 'survey-name-' + options.name;
 	}
 	
 	function getCookie( options ) {
@@ -42,13 +42,13 @@
 			var cookie = getCookie( options );
 			
 			if ( cookie !== 'done' ) {
-				if ( ( options.pages === 0 || parseInt( cookie ) >= options.pages ) ) {
+				if ( ( options.pages === 0 || parseInt( cookie, 10 ) >= options.pages ) ) {
 					$tag.mwSurvey( options );
 					setCookie( options, 'done' );
 				}
 				else if ( options.pages !== 0  ) {
-					var nr = parseInt( getCookie( options ) );
-					setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 )
+					var nr = parseInt( getCookie( options ), 10 );
+					setCookie( options, ( isNaN( nr ) ? 0 : nr ) + 1 );
 				}
 			}
 		}
@@ -65,8 +65,8 @@
 		var options = {
 			'ratio': typeof ratioAttr === 'undefined' ? 1 : parseFloat( ratioAttr ) / 100,
 			'cookie': $tag.attr( 'survey-data-cookie' ) !== 'no',
-			'expiry': typeof expiryAttr === 'undefined' ? 60 * 60 * 24 * 30 : parseInt( expiryAttr ),
-			'pages': typeof pagesAttr === 'undefined' ? 0 : parseInt( pagesAttr )
+			'expiry': typeof expiryAttr === 'undefined' ? 60 * 60 * 24 * 30 : parseInt( expiryAttr, 10 ),
+			'pages': typeof pagesAttr === 'undefined' ? 0 : parseInt( pagesAttr, 10 )
 		};
 		
 		if ( $tag.attr( 'survey-data-id' ) ) {
