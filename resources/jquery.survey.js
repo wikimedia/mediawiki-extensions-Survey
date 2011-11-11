@@ -26,7 +26,7 @@
 		};
 		
 		if ( options.requireEnabled ) {
-			requestArgs['suenabled'] = 1;
+			requestArgs.suenabled = 1;
 		}
 		
 		requestArgs[ 'su' + this.identifierType + 's' ] = this.identifier;
@@ -111,7 +111,7 @@
 				$input = $( '<input />' ).attr( {
 					'id': id,
 					'type': 'checkbox',
-					'class': 'question-input survey-check',
+					'class': 'question-input survey-check'
 				} );
 				break;
 		}
@@ -257,7 +257,7 @@
 		} ).html( $( '<div />' ).attr( { 'id': 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
 		
 		$link = $( '<a />' ).attr( {
-			'href': '#survey-' + surveyData.id,
+			'href': '#survey-' + surveyData.id
 		} ).html( $div );
 		
 		$( this ).html( $link );

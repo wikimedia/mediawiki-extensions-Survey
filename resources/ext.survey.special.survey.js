@@ -172,7 +172,7 @@
 				'required': $this.attr( 'data-required' ) == '1',
 				'id': $this.attr( 'data-id' ),
 				'type': $this.attr( 'data-type' ),
-				'answers': eval( $this.attr( 'data-answers' ) ),
+				'answers': eval( $this.attr( 'data-answers' ) )
 			} );
 		} );
 		
