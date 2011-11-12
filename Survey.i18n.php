@@ -248,6 +248,7 @@ $messages['br'] = array(
 	'right-surveyadmin' => 'Merañ sontadegoù',
 	'right-surveysubmit' => 'Kemer perzh er sontadegoù',
 	'survey-question-type-number' => 'Niver',
+	'survey-question-type-select' => 'Lañser desachañ',
 	'survey-question-type-check' => 'Log da askañ',
 	'survey-user-type-all' => 'An holl',
 	'survey-user-type-loggedin' => 'Implijerien kevreet',
