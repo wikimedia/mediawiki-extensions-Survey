@@ -9,6 +9,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 
 * Fixed issue with database index names causing update.php to fail when running after installation of Survey.
 * Fixed several IE JavaScript issues. 
+* Added missing action- messages.
 
 === Version 0.1.1 ===
 2011-09-18

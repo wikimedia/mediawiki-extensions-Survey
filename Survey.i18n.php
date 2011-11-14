@@ -24,6 +24,9 @@ $messages['en'] = array(
 	'right-surveyadmin' => 'Manage surveys',
 	'right-surveysubmit' => 'Participate in surveys',
 
+	'action-surveyadmin' => 'manage surveys',
+	'action-surveysubmit' => 'participate in surveys',
+
 	// Groups
 	'group-surveyadmin' => 'Survey admins',
 	'group-surveyadmin-member' => '{{GENDER:$1|survey admin}}',
