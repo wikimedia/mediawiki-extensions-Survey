@@ -13,7 +13,7 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiQuerySurveys extends ApiQueryBase {
-	
+
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action, 'su' );
 	}
@@ -23,57 +23,57 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	public function execute() {
 		global $wgUser;
-		
+
 		if ( !$wgUser->isAllowed( 'surveysubmit' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
-		
+
 		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
 			 XOR ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
 			 ) ) {
 			$this->dieUsage( wfMsg( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
 		}
-		
+
 		$this->addTables( 'surveys' );
-		
+
 		$starPropPosition = array_search( '*', $params['props'] );
-		
+
 		if ( $starPropPosition !== false ) {
 			unset( $params['props'][$starPropPosition] );
 			$params['props'] = array_merge( $params['props'], Survey::getFieldNames() );
 		}
-		
+
 		$fields = array_merge( array( 'id' ), $params['props'] );
-		
+
 		$this->addFields( Survey::getPrefixedFields( $fields ) );
-		
+
 		if ( isset( $params['ids'] ) ) {
 			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
 		} else {
 			$this->addWhere( array( 'survey_name' => $params['names'] ) );
 		}
-		
+
 		if ( !$GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ) {
 			$this->addWhere( array( 'survey_enabled' => 1 ) );
 		}
-		else if ( isset( $params['enabled'] ) ) {
+		elseif ( isset( $params['enabled'] ) ) {
 			$this->addWhere( array( 'survey_enabled' => $params['enabled'] ) );
 		}
-		
+
 		if ( isset( $params['continue'] ) ) {
 			$this->addWhere( 'survey_id >= ' . wfGetDB( DB_SLAVE )->addQuotes( $params['continue'] ) );
 		}
-		
+
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );
 		$this->addOption( 'ORDER BY', 'survey_id ASC' );
-		
+
 		$surveys = $this->select( __METHOD__ );
 		$count = 0;
 		$resultSurveys = array();
-		
+
 		foreach ( $surveys as $survey ) {
 			if ( ++$count > $params['limit'] ) {
 				// We've reached the one extra which shows that
@@ -81,44 +81,44 @@ class ApiQuerySurveys extends ApiQueryBase {
 				$this->setContinueEnumParameter( 'continue', $survey->survey_id );
 				break;
 			}
-			
+
 			$surveyObject = Survey::newFromDBResult( $survey );
-			
+
 			if ( $params['incquestions'] ) {
 				$surveyObject->loadQuestionsFromDB();
 			}
-			
+
 			$resultSurveys[] = $this->getSurveyData( $surveyObject->toArray( $fields ) );
 		}
 
 		$this->getResult()->setIndexedTagName( $resultSurveys, 'survey' );
-		
+
 		$this->getResult()->addValue(
 			null,
 			'surveys',
 			$resultSurveys
 		);
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $survey
-	 * 
+	 *
 	 * @return $survey
 	 */
 	protected function getSurveyData( array $survey ) {
 		foreach ( $survey['questions'] as $nr => $question ) {
 			$this->getResult()->setIndexedTagName( $survey['questions'][$nr], 'answer' );
 		}
-		
+
 		$this->getResult()->setIndexedTagName( $survey['questions'], 'question' );
-		
+
 		return $survey;
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
@@ -154,7 +154,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			),
 			'continue' => null,
 		);
-		
+
 	}
 
 	/**
@@ -180,7 +180,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	public function getDescription() {
 		return 'API module for obatining surveys and optionaly their questions';
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getPossibleErrors()
@@ -189,8 +189,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'surveyids', 'name' ),
 		) );
-	}	
-	
+	}
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getExamples()
@@ -204,6 +204,6 @@ class ApiQuerySurveys extends ApiQueryBase {
 
 	public function getVersion() {
 		return __CLASS__ . ': $Id$';
-	}	
-	
+	}
+
 }
