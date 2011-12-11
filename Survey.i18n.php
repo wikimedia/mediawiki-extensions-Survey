@@ -848,6 +848,7 @@ $messages['lb'] = array(
 	'surveys-surveystats-name' => 'ID vun der Ëmfro',
 	'surveys-surveystats-title' => 'Titel vun der Ëmfro',
 	'surveys-surveystats-questioncount' => 'Zuel vun de Froen',
+	'surveys-surveystats-submissioncount' => 'Zuel vun den Äntwerten',
 	'surveys-surveystats-enabled' => 'Aktivéiert',
 	'surveys-surveystats-disabled' => 'Desaktivéiert',
 	'surveys-surveystats-questions' => 'Statistike vun de Froen',
