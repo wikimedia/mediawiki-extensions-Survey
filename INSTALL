@@ -8,7 +8,7 @@ Latest version of the install file: http://svn.wikimedia.org/viewvc/mediawiki/tr
 
 Survey requires:
 
-* MediaWiki 1.17 or above
+* MediaWiki 1.18 or above (Use Survey 0.1.2 if you are running MediaWiki 1.17.x and cannot upgrade to 1.18 or later.)
 * PHP 5.3 or above
 
 == Download ==
@@ -18,12 +18,12 @@ as well as a [https://code.google.com/p/mwsuvey/downloads/list?can=1 list of leg
 
 You can also get the code directly from SVN. Tags can be obtained via
 
- svn checkout <nowiki>http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/REL_version</nowiki>
+ svn checkout http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/REL_version
 
 Where 'version' is the version number of the tag, such as 0_1 (see the [http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/ available tags]).
 The latest code can be obtained from trunk:
 
- svn checkout <nowiki>http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/Survey/</nowiki>
+ svn checkout http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/Survey/
 
 == Installation ==
 

@@ -58,32 +58,6 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	}
 	
 	/**
-	 * Get the OutputPage being used for this instance.
-	 * This overrides the getOutput method of Specialpage added in MediaWiki 1.18,
-	 * and returns $wgOut for older versions.
-	 *
-	 * @since 0.1
-	 *
-	 * @return OutputPage
-	 */
-	public function getOutput() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>=' ) ? parent::getOutput() : $GLOBALS['wgOut'];
-	}
-	
-	/**
-	 * Shortcut to get user's language.
-	 * This overrides the getLang method of Specialpage added in MediaWiki 1.18,
-	 * and returns $wgLang for older versions.
-	 *
-	 * @since 0.1
-	 * 
-	 * @return Language
-	 */
-	public function getLang() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>=' ) ? parent::getLang() : $GLOBALS['wgLang'];
-	}
-	
-	/**
 	 * Add resource loader modules or use fallback code for
 	 * earlier versions of MediaWiki.
 	 * 
@@ -129,7 +103,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @param array $links
 	 */
 	protected function displayNavigation( array $links ) {
-		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), $this->getLang()->pipeList( $links ) ) );
+		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), $this->getLanguage()->pipeList( $links ) ) );
 	}
 	
 }

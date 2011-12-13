@@ -34,12 +34,12 @@ class SpecialSurveys extends SpecialSurveyPage {
 			return;
 		}
 		
-		global $wgRequest, $wgUser;
+		$req = $this->getRequest();
 		
-		if ( $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
-			&& $wgRequest->getCheck( 'newsurvey' ) ) {
-				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'EditSurvey', $wgRequest->getVal( 'newsurvey' ) )->getLocalURL() );
+		if ( $req->wasPosted()
+			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) )
+			&& $req->getCheck( 'newsurvey' ) ) {
+				$this->getOutput()->redirect( SpecialPage::getTitleFor( 'EditSurvey', $req->getVal( 'newsurvey' ) )->getLocalURL() );
 		} else {
 			$this->displaySurveys();
 		}

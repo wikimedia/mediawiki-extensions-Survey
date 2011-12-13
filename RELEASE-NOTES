@@ -4,6 +4,13 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/RELEASE-NOTES?view=co
 
 
+=== Version 0.2 ===
+(trunk)
+
+* Dropped compatibility with MediaWiki 1.17.
+* Use of RequestContext methods to get rid of globals. 
+* Cleanup of database table index code.
+
 === Version 0.1.2 ===
 2011-11-14
 

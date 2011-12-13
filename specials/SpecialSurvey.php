@@ -34,9 +34,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			return;
 		}
 		
-		global $wgRequest, $wgUser;
-		
-		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+		if ( $this->getRequest()->wasPosted() && $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 			$this->handleSubmission();
 		} else {
 			if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
@@ -72,24 +70,24 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	protected function handleSubmission() {
-		global $wgRequest;
+		$req = $this->getRequest();
 		
-		$values = $wgRequest->getValues();
+		$values = $req->getValues();
 		
-		if ( $wgRequest->getInt( 'survey-id' ) == 0 ) {
+		if ( $req->getInt( 'survey-id' ) == 0 ) {
 			$survey = new Survey( null );
 		} else {
-			$survey = Survey::newFromId( $wgRequest->getInt( 'survey-id' ), null, false );
+			$survey = Survey::newFromId( $req->getInt( 'survey-id' ), null, false );
 		}
 		
 		foreach ( array( 'name', 'title', 'header', 'footer', 'thanks' ) as $field ) {
-			$survey->setField( $field, $wgRequest->getText( 'survey-' . $field ) );
+			$survey->setField( $field, $req->getText( 'survey-' . $field ) );
 		}
 		
-		$survey->setField( 'enabled', $wgRequest->getCheck( 'survey-enabled' ) );
+		$survey->setField( 'enabled', $req->getCheck( 'survey-enabled' ) );
 		
 		foreach ( array( 'user_type', 'ratio', 'min_pages', 'expiry' ) as $field ) {
-			$survey->setField( $field, $wgRequest->getInt( 'survey-' . $field ) );
+			$survey->setField( $field, $req->getInt( 'survey-' . $field ) );
 		}
 		
 		$survey->setField( 'namespaces', array() );
@@ -132,7 +130,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 * @return SurveyQuestion
 	 */
 	protected function getSubmittedQuestion( $questionId, $isNewQuestion = false ) {
-		global $wgRequest;
+		$req = $this->getRequest();
 		
 		if ( $isNewQuestion ) {
 			$questionDbId = null;
@@ -142,7 +140,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		}
 		
 		$answers = array_filter(
-			explode( "\n", $wgRequest->getText( "survey-question-answers-$questionId" ) ),
+			explode( "\n", $req->getText( "survey-question-answers-$questionId" ) ),
 			function( $line ) {
 				return trim( $line ) != '';
 			}
@@ -151,8 +149,8 @@ class SpecialSurvey extends SpecialSurveyPage {
 		$question = new SurveyQuestion( array(
 			'id' => $questionDbId,
 			'removed' => 0,
-			'text' => $wgRequest->getText( "survey-question-text-$questionId" ),
-			'type' => $wgRequest->getInt( "survey-question-type-$questionId" ),
+			'text' => $req->getText( "survey-question-text-$questionId" ),
+			'type' => $req->getInt( "survey-question-type-$questionId" ),
 			'required' => 0, // $wgRequest->getCheck( "survey-question-required-$questionId" ),
 			'answers' => $answers
 		) );
@@ -181,7 +179,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 * @return array
 	 */
 	protected function getNumericalOptions( array $numbers ) {
-		$lang = $this->getLang();
+		$lang = $this->getLanguage();
 		
 		return array_flip( array_map(
 			function( $n ) use( $lang ) { return $lang->formatNum( $n ); },

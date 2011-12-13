@@ -3,7 +3,7 @@
 -- Author: Jeroen De Dauw < jeroendedauw@gmail.com >
 
 -- Surveys
-CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
+CREATE TABLE IF NOT EXISTS /*_*/surveys (
   survey_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
   survey_name              VARCHAR(255)        NOT NULL, -- String indentifier for the survey
   survey_title             VARCHAR(255)        NOT NULL, -- Title of the survey
@@ -18,8 +18,10 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/surveys (
   survey_min_pages         TINYINT unsigned    NOT NULL -- Min amount of pages the user needs to view before getting the survey
 ) /*$wgDBTableOptions*/;
 
+CREATE UNIQUE INDEX /*i*/surveys_survey_name ON /*_*/surveys (survey_name);
+
 -- Questions
-CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_questions (
+CREATE TABLE IF NOT EXISTS /*_*/survey_questions (
   question_id              INT(10) unsigned    NOT NULL auto_increment PRIMARY KEY,
   question_survey_id       SMALLINT unsigned   NOT NULL, -- Foreign key: surveys.survey_id
   question_text            TEXT                NOT NULL,
@@ -30,7 +32,7 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_questions (
 ) /*$wgDBTableOptions*/;
 
 -- Submissions
-CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_submissions (
+CREATE TABLE IF NOT EXISTS /*_*/survey_submissions (
   submission_id            INT(10) unsigned    NOT NULL auto_increment PRIMARY KEY,
   submission_survey_id     SMALLINT unsigned   NOT NULL, -- Foreign key: surveys.survey_id
   submission_user_name     VARCHAR(255)        NOT NULL, -- The person that made the submission (account name or ip)
@@ -39,9 +41,12 @@ CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_submissions (
 ) /*$wgDBTableOptions*/;
 
 -- Answers
-CREATE TABLE IF NOT EXISTS /*$wgDBprefix*/survey_answers (
+CREATE TABLE IF NOT EXISTS /*_*/survey_answers (
   answer_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
   answer_submission_id     INT(10) unsigned    NOT NULL, -- Foreign key: survey_submissions.submission_id
   answer_question_id       INT(10) unsigned    NOT NULL, -- Foreign key: survey_questions.question_id
   answer_text              BLOB                NOT NULL
 ) /*$wgDBTableOptions*/;
+
+CREATE INDEX /*i*/surveys_submission_id ON /*_*/survey_answers (answer_submission_id);
+CREATE INDEX /*i*/surveys_question_id ON /*_*/survey_answers (answer_question_id);

@@ -24,11 +24,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-if ( version_compare( $wgVersion, '1.17', '<' ) ) {
-	die( '<b>Error:</b> Survey requires MediaWiki 1.17 or above.' );
+if ( version_compare( $wgVersion, '1.18c', '<' ) ) {
+	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.18 or above. For MediaWiki 1.17.x, you can use Survey 0.1.2.' );
 }
 
-define( 'Survey_VERSION', '0.1.2' );
+define( 'Survey_VERSION', '0.2 alpha' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,

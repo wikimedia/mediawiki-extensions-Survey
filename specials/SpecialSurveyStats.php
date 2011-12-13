@@ -252,7 +252,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 						'surveys-surveystats-question-answer',
 						'parsemag',
 						$answer,
-						$this->getLang()->formatNum( $answerCount )
+						$this->getLanguage()->formatNum( $answerCount )
 					)
 				);
 			}

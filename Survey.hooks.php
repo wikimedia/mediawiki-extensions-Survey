@@ -51,52 +51,13 @@ final class SurveyHooks {
 	 *
 	 * @return true
 	 */
-	public static function onSchemaUpdate( /* DatabaseUpdater */ $updater = null ) {
+	public static function onSchemaUpdate( DatabaseUpdater $updater ) {
 		global $wgDBtype;
 
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'surveys',
-			dirname( __FILE__ ) . '/Survey.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addTable',
-			'survey_questions',
-			dirname( __FILE__ ) . '/Survey.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addTable',
-			'survey_submissions',
-			dirname( __FILE__ ) . '/Survey.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addTable',
-			'survey_answers',
-			dirname( __FILE__ ) . '/Survey.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addIndex',
-			'surveys',
-			'surveys_survey_name',
-			dirname( __FILE__ ) . '/sql/Survey_indexSurveyName.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addIndex',
-			'survey_answers',
-			'surveys_question_id',
-			dirname( __FILE__ ) . '/sql/Survey_indexQuestionId.sql',
-			true
-		) );
-		$updater->addExtensionUpdate( array(
-			'addIndex',
-			'survey_answers',
-			'surveys_submission_id',
-			dirname( __FILE__ ) . '/sql/Survey_indexSubmissionId.sql',
+			dirname( __FILE__ ) . '/sql/Survey.sql',
 			true
 		) );
 
