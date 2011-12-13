@@ -64,7 +64,7 @@ final class SurveyHooks {
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'surveys',
-			'',
+			'surveys_survey_title',
 			dirname( __FILE__ ) . '/sql/AddMissingIndexes.sql',
 			true
 		) );

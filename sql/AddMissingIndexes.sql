@@ -18,4 +18,3 @@ CREATE INDEX /*i*/survey_submissions_survey_id ON /*_*/survey_submissions (submi
 CREATE INDEX /*i*/survey_submissions_user_name ON /*_*/survey_submissions (submission_user_name);
 CREATE INDEX /*i*/survey_submissions_page_id ON /*_*/survey_submissions (submission_page_id);
 CREATE INDEX /*i*/survey_submissions_time ON /*_*/survey_submissions (submission_time);
-
