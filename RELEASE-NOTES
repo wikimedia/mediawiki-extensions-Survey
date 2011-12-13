@@ -10,6 +10,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 * Dropped compatibility with MediaWiki 1.17.
 * Use of RequestContext methods to get rid of globals. 
 * Cleanup of database table index code.
+* Added missing database table indexes.
 
 === Version 0.1.2 ===
 2011-11-14

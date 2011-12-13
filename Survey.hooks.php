@@ -60,6 +60,14 @@ final class SurveyHooks {
 			dirname( __FILE__ ) . '/sql/Survey.sql',
 			true
 		) );
+		
+		$updater->addExtensionUpdate( array(
+			'addIndex',
+			'surveys',
+			'',
+			dirname( __FILE__ ) . '/sql/AddMissingIndexes.sql',
+			true
+		) );
 
 		return true;
 	}
