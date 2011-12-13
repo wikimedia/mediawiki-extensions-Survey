@@ -37,7 +37,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array(
 		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]',
 	),
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Survey',
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Survey',
 	'descriptionmsg' => 'survey-desc'
 );
 
