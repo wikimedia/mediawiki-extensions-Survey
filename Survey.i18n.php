@@ -28,13 +28,13 @@ $messages['en'] = array(
 	'action-surveysubmit' => 'participate in surveys',
 
 	// Groups
-	'group-surveyadmin' => 'Survey admins',
-	'group-surveyadmin-member' => '{{GENDER:$1|survey admin}}',
-	'grouppage-surveyadmin' => 'Project:Survey_admins',
+	'group-surveyadmin' => 'Survey administrators',
+	'group-surveyadmin-member' => '{{GENDER:$1|survey administrator}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:Survey administrators',
 
 	'group-surveysubmit' => 'Survey participants',
 	'group-surveysubmit-member' => '{{GENDER:$1|survey participant}}',
-	'grouppage-surveysubmit' => 'Project:Survey_participants',
+	'grouppage-surveysubmit' => '{{ns:project}}:Survey_participants',
 
 	// Special page names
 	'special-editsurvey' => 'Survey admin',
