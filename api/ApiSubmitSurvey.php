@@ -28,7 +28,7 @@ class ApiSubmitSurvey extends ApiBase {
 		$params = $this->extractRequestParams();
 		
 		if ( !( isset( $params['id'] ) XOR isset( $params['name'] ) ) ) {
-			$this->dieUsage( wfMsgExt( 'survey-err-id-xor-name' ), 'id-xor-name' );
+			$this->dieUsage( wfMsg( 'survey-err-id-xor-name' ), 'id-xor-name' );
 		}
 		
 		if ( isset( $params['name'] ) ) {

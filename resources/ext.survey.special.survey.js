@@ -41,7 +41,7 @@
 //				onAddQuestionRequest();
 //			}
 //		} );
-	};
+	}
 	
 	function addQuestion( question ) {
 		var $tr = $( '<tr />' ).attr( {
@@ -67,7 +67,7 @@
 		) );
 		
 		$table.find( '.add-question' ).before( $tr );
-	};
+	}
 	
 	function getQuestionInput( question ) {
 		var $input = $( '<div />' ).attr( {
@@ -136,11 +136,11 @@
 		$input.append( answerSelector.getHtml() );
 		
 		return $input;
-	};
+	}
 	
 	function removeQuestion( question ) {
 		$( '#survey-question-div-' + question.id ).closest( 'tr' ).slideUp( 'fast', function() { $( this ).remove(); } )
-	};
+	}
 	
 	function onAddQuestionRequest() {
 		addQuestion( {
@@ -152,7 +152,7 @@
 		} );
 		$( '#survey-question-text-new-' + newQuestionNr ).focus().select();
 		$( 'html' ).animate( { scrollTop: $( document ).height() }, 'fast' );
-	};
+	}
 	
 	function setup() {
 		$table = $( '#survey-title' ).closest( 'tbody' );
@@ -179,7 +179,7 @@
 		$( '.mw-htmlform-submit' ).button();
 		$( '#cancelEdit' ).button();
 		
-	};
+	}
 	
 	setup();
 	
