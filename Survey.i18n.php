@@ -182,8 +182,17 @@ $messages['qqq'] = array(
 	'surveys-special-namedoc' => '[[File:Survey-surveys.png|300px]]',
 	'surveys-special-title' => '{{Identical|Title}}',
 	'surveys-special-status' => '{{Identical|Status}}',
+	'surveys-special-stats' => '{{Identical|Statistics}}',
+	'surveys-special-edit' => '{{Identical|Edit}}',
+	'surveys-special-save' => '{{Identical|Save}}',
+	'surveys-special-delete' => '{{Identical|Delete}}',
+	'surveys-special-enabled' => '{{Identical|Enabled}}',
+	'surveys-special-disabled' => '{{Identical|Disabled}}',
+	'surveys-surveystats-enabled' => '{{Identical|Enabled}}',
+	'surveys-surveystats-disabled' => '{{Identical|Disabled}}',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'survey-jquery-submit' => '{{Identical|Submit}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -300,17 +309,17 @@ $messages['be-tarask'] = array(
 	'surveys-special-enabled' => 'Уключанае',
 	'surveys-special-disabled' => 'Выключанае',
 	'surveys-special-confirm-delete' => 'Вы ўпэўнены, што жадаеце выдаліць гэтае апытаньне?',
-	'surveys-special-delete-failed' => 'Не атрымалася выдаліць апытаньне.',
-	'survey-special-label-usertype' => 'Удзельнікі, якія могуць узяць удзел у апытаньні',
+	'surveys-special-delete-failed' => 'Немагчыма выдаліць апытаньне.',
+	'survey-special-label-usertype' => 'Удзельнікі, якія могуць прыняць удзел у апытаньні',
 	'survey-special-label-minpages' => 'Мінімальная колькасьць старонак, якую ўдзельнік мусіць наведаць перад удзелам у апытаньні',
-	'surveys-takesurvey-loading' => 'Загрузка апытаньня...',
+	'surveys-takesurvey-loading' => 'Загрузка апытаньня…',
 	'surveys-takesurvey-nosuchsurvey' => 'Запытанае апытаньне не існуе.',
 	'surveys-takesurvey-warn-notenabled' => 'Гэтае апытаньне яшчэ ня ўключанае, таму ня бачнае ўдзельнікам.',
 	'surveys-takesurvey-surveynotenabled' => 'Запытанае апытаньне яшчэ не было ўключана.',
 	'surveys-surveystats-nosuchsurvey' => 'Запытанае апытаньне не існуе. Вы можаце прагледзіць [[Special:Surveys|сьпіс даступных апытаньняў]].',
-	'surveys-surveystats-name' => 'ID апытаньня',
+	'surveys-surveystats-name' => 'Ідэнтыфікатар апытаньня',
 	'surveys-surveystats-title' => 'Назва апытаньня',
-	'surveys-surveystats-status' => 'Стан апытаньня',
+	'surveys-surveystats-status' => 'Статус апытаньня',
 	'surveys-surveystats-questioncount' => 'Колькасьць пытаньняў',
 	'surveys-surveystats-submissioncount' => 'Колькасьць адказаў',
 	'surveys-surveystats-enabled' => 'Уключанае',
@@ -323,27 +332,70 @@ $messages['be-tarask'] = array(
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|адказ|адказы|адказаў}})',
 	'surveys-surveystats-unchecked' => 'Не пазначанае',
 	'surveys-surveystats-checked' => 'Пазначанае',
-	'surveys-special-unknown-name' => 'Апытаньня з запытаным ID не існуе.',
-	'survey-special-label-name' => 'ID апытаньня',
+	'surveys-special-unknown-name' => 'Апытаньня з запытаным ідэнтыфікатарам не існуе.',
+	'survey-special-label-name' => 'Ідэнтыфікатар апытаньня',
 	'survey-special-label-title' => 'Назва апытаньня',
 	'survey-special-label-enabled' => 'Апытаньне ўключанае',
 	'survey-special-label-ratio' => 'Адсотак людзей, якім мусіць быць паказанае апытаньне',
 	'survey-special-label-add-first' => 'Дадаць пытаньне',
 	'survey-special-label-add-another' => 'Дадаць яшчэ пытаньне',
 	'survey-special-label-addquestion' => 'Новае пытаньне',
-	'survey-question-label-nr' => 'Апытаньне №$1',
-	'survey-special-label-required' => 'Патрэбна пытаньне',
+	'survey-question-label-nr' => 'Пытаньне № $1',
+	'survey-special-label-required' => 'Патрабуецца пытаньне',
 	'survey-special-label-type' => 'Тып пытаньня',
-	'survey-special-label-text' => 'Зьмест пытаньня',
+	'survey-special-label-text' => 'Тэкст пытаньня',
 	'survey-special-remove' => 'Выдаліць пытаньне',
 	'survey-special-remove-confirm' => 'Вы ўпэўнены, што жадаеце выдаліць гэта пытаньне?',
-	'survey-special-label-header' => 'Тэкст, які трэба адлюстраваць па-над апытаньнем',
-	'survey-special-label-footer' => 'Тэкст, які трэба адлюстраваць пад апытаньнем',
-	'survey-special-label-thanks' => 'Падзячнае паведамленьне, якое трэба адлюстраваць пасьля праходжаньня апытаньня',
+	'survey-special-label-header' => 'Тэкст, які трэба паказаць па-над апытаньнем',
+	'survey-special-label-footer' => 'Тэкст, які трэба паказаць пад апытаньнем',
+	'survey-special-label-thanks' => 'Паведамленьне з падзякамі, якое трэба паказаць пасьля праходжаньня апытаньня',
 	'survey-special-label-answers' => 'Даступныя адказы, па адным на радок.',
 	'survey-jquery-submit' => 'Даслаць',
 	'survey-jquery-finish' => 'Скончыць',
-	'survey-jquery-load-failed' => 'Не атрымалася загрузіць апытаньне.',
+	'survey-jquery-load-failed' => 'Немагчыма загрузіць апытаньне.',
+);
+
+/** Bulgarian (Български)
+ * @author DCLXVI
+ */
+$messages['bg'] = array(
+	'survey-desc' => 'Инструмент за проучвания за МедияУики',
+	'right-surveyadmin' => 'Управление на проучвания',
+	'right-surveysubmit' => 'Участване в проучвания',
+	'special-surveys' => 'Администриране на проучванията',
+	'survey-question-type-number' => 'Число',
+	'survey-question-type-select' => 'Падащо меню',
+	'survey-question-type-radio' => 'Радио бутони',
+	'survey-question-type-check' => 'Отметка',
+	'survey-user-type-all' => 'Всички потребители',
+	'survey-user-type-loggedin' => 'Влезли потребители',
+	'survey-user-type-confirmed' => 'Потвърдени потребители',
+	'survey-user-type-editor' => 'Редактори',
+	'survey-user-type-anon' => 'Анонимни потребители',
+	'surveys-special-addnew' => 'Добавяне на ново проучване',
+	'surveys-special-namedoc' => 'Въвежда се уникален идентификатор (ID) за новото проучване. Той не може да бъде променян по-късно. Пример: мотивация-за-редактиране.',
+	'surveys-special-newname' => 'Идентификатор на новото проучване:',
+	'surveys-special-add' => 'Добавяне на проучване',
+	'surveys-special-existing' => 'Съществуващи проучвания',
+	'surveys-special-title' => 'Заглавие',
+	'surveys-special-status' => 'Статут',
+	'surveys-special-stats' => 'Статистики',
+	'surveys-special-edit' => 'Редактиране',
+	'surveys-special-save' => 'Съхраняване',
+	'surveys-special-delete' => 'Изтриване',
+	'surveys-special-confirm-delete' => 'Необходимо е потвърждение за изтриване на проучването.',
+	'surveys-special-delete-failed' => 'Неуспех при изтриване на проучването.',
+	'surveys-takesurvey-loading' => 'Зареждане на проучване...',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|отговор|отговора}})',
+	'survey-special-label-add-first' => 'Добавяне на въпрос',
+	'survey-special-label-add-another' => 'Добавяне на друг въпрос',
+	'survey-special-label-addquestion' => 'Нов въпрос',
+	'survey-question-label-nr' => 'Въпрос #$1',
+	'survey-special-label-required' => 'Въпросът е задължителен за отговаряне',
+	'survey-special-remove' => 'Премахване на въпрос',
+	'survey-special-remove-confirm' => 'Необходимо е потвърждение за премахване на въпроса.',
+	'survey-special-label-header' => 'Текст за показване над изследването',
+	'survey-special-label-footer' => 'Текст за показване под изследването',
 );
 
 /** Breton (Brezhoneg)
@@ -506,6 +558,13 @@ $messages['de'] = array(
  */
 $messages['de-formal'] = array(
 	'surveys-special-namedoc' => 'Geben Sie eine eindeutige Kennung für die neue Umfrage an, z. B. Bearbeitermotivation. Sie kann später nicht mehr verändert werden.',
+);
+
+/** Finnish (Suomi)
+ * @author Crt
+ */
+$messages['fi'] = array(
+	'surveys-special-save' => 'Tallenna',
 );
 
 /** French (Français)
