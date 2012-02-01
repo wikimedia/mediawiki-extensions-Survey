@@ -1333,3 +1333,22 @@ $messages['te'] = array(
 	'survey-special-remove' => 'ప్రశ్నను తొలగించు',
 );
 
+/** Turkish (Türkçe)
+ * @author Incelemeelemani
+ */
+$messages['tr'] = array(
+	'surveys-special-add' => 'Anket ekle',
+	'surveys-special-existing' => 'Mevcut anketler',
+	'surveys-special-title' => 'Başlık',
+	'surveys-special-status' => 'Durum',
+	'surveys-special-stats' => 'İstatistikler',
+	'surveys-special-edit' => 'Düzenle',
+	'surveys-special-enabled' => 'Etkin',
+	'surveys-special-disabled' => 'Devre dışı',
+	'surveys-surveystats-name' => 'Anket ID',
+	'surveys-surveystats-enabled' => 'Etkin',
+	'surveys-surveystats-disabled' => 'Devre dışı',
+	'survey-jquery-submit' => 'Gönder',
+	'survey-jquery-finish' => 'Tamamlandı',
+);
+
