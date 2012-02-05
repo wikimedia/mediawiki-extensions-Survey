@@ -1283,6 +1283,14 @@ $messages['nl'] = array(
 	'survey-jquery-load-failed' => 'De vragenlijst kon niet worden geladen.',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'surveys-special-save' => 'Beilege',
+	'surveys-special-delete' => 'Verwische',
+);
+
 /** Polish (Polski)
  * @author Woytecr
  */
