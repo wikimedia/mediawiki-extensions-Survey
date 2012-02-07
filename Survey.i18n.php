@@ -979,6 +979,7 @@ $messages['lb'] = array(
 	'action-surveyadmin' => 'Ëmfroe geréieren',
 	'action-surveysubmit' => 'bäi Ëmfroe matmaachen',
 	'group-surveyadmin' => 'Administrateure vun Ëmfroen',
+	'group-surveyadmin-member' => '{{GENDER:$1|Administrateur vun der Ëmfro}}',
 	'grouppage-surveyadmin' => '{{ns:project}}:Administrateure vun Ëmfroen',
 	'special-editsurvey' => 'Gestioun vun Ëmfroen',
 	'special-surveys' => 'Gestioun vun Ëmfroen',
@@ -1047,6 +1048,7 @@ $messages['lb'] = array(
 	'survey-special-label-header' => 'Text deen iwwer der Ëmfro gewise gëtt',
 	'survey-special-label-footer' => 'Text deen ënnert der Ëmfro gewise gëtt',
 	'survey-special-label-answers' => 'Disponibel Äntwerten, eng pro Linn.',
+	'survey-jquery-submit' => 'Schécken',
 	'survey-jquery-finish' => 'Fäerdeg maachen',
 	'survey-jquery-load-failed' => "D'Ëmfro konnt net geluede ginn.",
 );
