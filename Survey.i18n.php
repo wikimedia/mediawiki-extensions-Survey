@@ -981,18 +981,22 @@ $messages['lb'] = array(
 	'group-surveyadmin' => 'Administrateure vun Ëmfroen',
 	'group-surveyadmin-member' => '{{GENDER:$1|Administrateur vun der Ëmfro}}',
 	'grouppage-surveyadmin' => '{{ns:project}}:Administrateure vun Ëmfroen',
+	'group-surveysubmit' => 'Leit déi bei der Ëmfro matmaachen',
 	'special-editsurvey' => 'Gestioun vun Ëmfroen',
 	'special-surveys' => 'Gestioun vun Ëmfroen',
 	'special-surveystats' => 'Statistike vun Ëmfroen',
 	'special-takesurvey' => 'Bäi der Ëmfro matmaachen',
 	'survey-err-survey-name-unknown' => 'Et gëtt keng Ëmfro mam Numm "$1"',
 	'survey-err-duplicate-name' => 'Et gëtt schonn eng Ëmfro mam Numm "$1"',
+	'survey-question-type-text' => 'Textfeld mat enger Linn',
 	'survey-question-type-number' => 'Zuel',
 	'survey-question-type-select' => 'Dropdown-Menü',
+	'survey-question-type-textarea' => 'Textfeld mat méi Linnen',
 	'survey-question-type-check' => 'Këscht fir unzekräizen',
 	'survey-user-type-all' => 'Jiddwereen',
 	'survey-user-type-loggedin' => 'Ageloggte Benotzer',
 	'survey-user-type-confirmed' => 'Confirméiert Benotzer',
+	'survey-user-type-editor' => 'Editeuren',
 	'survey-user-type-anon' => 'Anonym Benotzer',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Ännert dës Ëmfro]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Bedeelegt Iech un dëser Ëmfro]]',
@@ -1366,5 +1370,12 @@ $messages['tr'] = array(
 	'surveys-surveystats-disabled' => 'Devre dışı',
 	'survey-jquery-submit' => 'Gönder',
 	'survey-jquery-finish' => 'Tamamlandı',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'surveys-special-stats' => 'סטאַטיסטיק',
 );
 
