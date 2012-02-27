@@ -1,5 +1,5 @@
 /**
- * JavasSript for the Survey MediaWiki extension.
+ * JavaScript for the Survey MediaWiki extension.
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  * 
  * @licence GNU GPL v3 or later
