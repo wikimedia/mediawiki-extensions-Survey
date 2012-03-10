@@ -36,6 +36,11 @@ $messages['en'] = array(
 	'group-surveysubmit-member' => '{{GENDER:$1|survey participant}}',
 	'grouppage-surveysubmit' => '{{ns:project}}:Survey_participants',
 
+	'group-surveyadmin.css'  => '/* CSS placed here will affect survey administrators only */', # only translate this message to other languages if you have to change it
+	'group-surveyadmin.js'   => '/* JS placed here will affect survey administrators only */', # only translate this message to other languages if you have to change it
+	'group-surveysubmit.css' => '/* CSS placed here will affect survey participants only */', # only translate this message to other languages if you have to change it
+	'group-surveysubmit.js'  => '/* JS placed here will affect survey participants only */', # only translate this message to other languages if you have to change it
+
 	// Special page names
 	'special-editsurvey' => 'Survey admin',
 	'special-surveys' => 'Surveys admin',
