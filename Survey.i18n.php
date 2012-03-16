@@ -979,16 +979,38 @@ $messages['gsw'] = array(
  * @author Michawiki
  */
 $messages['hsb'] = array(
+	'survey-question-type-number' => 'Čisło',
+	'survey-user-type-all' => 'Kóždy',
+	'survey-user-type-loggedin' => 'Přizjewjeni wužiwarjo',
+	'survey-user-type-editor' => 'Wobdźěłowarjo',
+	'survey-user-type-anon' => 'Anonymni wužiwarjo',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Statistiku sej wohladać]]',
 	'surveys-special-title' => 'Titul',
 	'surveys-special-status' => 'Status',
 	'surveys-special-stats' => 'Statistika',
 	'surveys-special-edit' => 'Wobdźěłać',
 	'surveys-special-save' => 'Składować',
+	'surveys-special-delete' => 'Zhašeć',
 	'surveys-special-enabled' => 'Zmóžnjeny',
 	'surveys-special-disabled' => 'Znjemóžnjeny',
+	'surveys-surveystats-questioncount' => 'Ličba prašenjow',
 	'surveys-surveystats-enabled' => 'Zmóžnjeny',
 	'surveys-surveystats-disabled' => 'Znjemóžnjeny',
+	'surveys-surveystats-questions' => 'Prašenske statistiki',
+	'surveys-surveystats-question-type' => 'Prašenjowy typ',
+	'surveys-surveystats-question-text' => 'Prašenjowy tekst',
+	'surveys-surveystats-question-answercount' => 'Ličba wotmołwow',
+	'survey-special-label-add-first' => 'Prašenje přidać',
+	'survey-special-label-add-another' => 'Dalše prašenje přidać',
+	'survey-special-label-addquestion' => 'Nowe prašenje',
 	'survey-question-label-nr' => 'Prašenje #$1',
+	'survey-special-label-required' => 'Prašenje je trěbne',
+	'survey-special-label-type' => 'Prašenjowy typ',
+	'survey-special-label-text' => 'Prašenjowy tekst',
+	'survey-special-remove' => 'Prašenje wotstronić',
+	'survey-special-label-answers' => 'K dispoziciji stejace wotmołwy, jedna na linku.',
+	'survey-jquery-submit' => 'Wotpósłać',
+	'survey-jquery-finish' => 'Dokónčić',
 );
 
 /** Interlingua (Interlingua)
