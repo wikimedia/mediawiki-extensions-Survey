@@ -582,6 +582,13 @@ $messages['de-formal'] = array(
 	'surveys-special-namedoc' => 'Geben Sie eine eindeutige Kennung für die neue Umfrage an, z. B. Bearbeitermotivation. Sie kann später nicht mehr verändert werden.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Mirzali
+ */
+$messages['diq'] = array(
+	'surveys-special-stats' => 'İstatistiki',
+);
+
 /** Spanish (Español)
  * @author Armando-Martin
  */
