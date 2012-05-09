@@ -582,6 +582,13 @@ $messages['de-formal'] = array(
 	'surveys-special-namedoc' => 'Geben Sie eine eindeutige Kennung für die neue Umfrage an, z. B. Bearbeitermotivation. Sie kann später nicht mehr verändert werden.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Mirzali
+ */
+$messages['diq'] = array(
+	'surveys-special-stats' => 'İstatistiki',
+);
+
 /** Spanish (Español)
  * @author Armando-Martin
  */
@@ -994,6 +1001,7 @@ $messages['hsb'] = array(
 	'survey-err-survey-name-unknown' => 'Naprašowanje z mjenom "$1" njeje.',
 	'survey-err-duplicate-name' => 'Naprašowanje z mjenom "$1" hižo eksistuje.',
 	'survey-question-type-number' => 'Čisło',
+	'survey-question-type-select' => 'Padacy meni',
 	'survey-question-type-check' => 'Kontrolny kašćik',
 	'survey-user-type-all' => 'Kóždy',
 	'survey-user-type-loggedin' => 'Přizjewjeni wužiwarjo',
@@ -1030,6 +1038,8 @@ $messages['hsb'] = array(
 	'surveys-surveystats-question-answercount' => 'Ličba wotmołwow',
 	'surveys-surveystats-question-answers' => 'Najčasćiše wotmołwy',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|wotmołwa|wotmołwje|wotmołwy|wotmołwow}})',
+	'surveys-surveystats-unchecked' => 'Njepřepruwowany',
+	'surveys-surveystats-checked' => 'Přepruwowany',
 	'surveys-special-unknown-name' => 'Naprašowanje z požadanym ID njeeksistuje.',
 	'survey-special-label-name' => 'ID naprašowanja',
 	'survey-special-label-title' => 'Titul naprašowanja',
@@ -1144,6 +1154,80 @@ $messages['ia'] = array(
 	'survey-jquery-submit' => 'Submitter',
 	'survey-jquery-finish' => 'Finir',
 	'survey-jquery-load-failed' => 'Non poteva cargar le questionario.',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'survey-desc' => 'MediaWiki 用の調査ツール',
+	'right-surveyadmin' => '調査を管理',
+	'right-surveysubmit' => '調査に参加',
+	'action-surveyadmin' => '調査を管理',
+	'action-surveysubmit' => '調査に参加',
+	'group-surveyadmin' => '調査管理者',
+	'group-surveyadmin-member' => '{{GENDER:$1|調査管理者}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:調査管理者',
+	'group-surveysubmit' => '調査参加者',
+	'group-surveysubmit-member' => '{{GENDER:$1|調査参加者}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:調査参加者',
+	'special-editsurvey' => '調査の管理',
+	'special-surveys' => '調査の管理',
+	'special-surveystats' => '調査の統計',
+	'special-takesurvey' => '調査の実施',
+	'survey-err-id-xor-name' => '送信するには調査の ID または名前を指定する必要があります',
+	'survey-err-survey-name-unknown' => '"$1" という名前の調査はありません',
+	'survey-err-duplicate-name' => '"$1" という名前の調査は既にあります',
+	'survey-question-type-number' => '番号',
+	'survey-question-type-select' => 'ドロップダウンメニュー',
+	'survey-question-type-radio' => 'ラジオボタン',
+	'survey-question-type-check' => 'チェックボックス',
+	'survey-user-type-all' => 'すべての人',
+	'survey-user-type-loggedin' => 'ログイン利用者',
+	'survey-user-type-confirmed' => '承認された利用者',
+	'survey-user-type-editor' => '編集者',
+	'survey-user-type-anon' => '匿名利用者',
+	'survey-navigation-edit' => '[[Special:Survey/$1|この調査を編集]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|この調査を実施]]',
+	'survey-navigation-list' => '[[Special:Surveys|調査一覧]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|統計を表示]]',
+	'surveys-special-addnew' => '新しい調査を追加',
+	'surveys-special-newname' => '新しい調査 ID：',
+	'surveys-special-add' => '調査を追加',
+	'surveys-special-existing' => '既存の調査',
+	'surveys-special-status' => '状態',
+	'surveys-special-stats' => '統計',
+	'surveys-special-edit' => '編集',
+	'surveys-special-save' => '保存',
+	'surveys-special-delete' => '削除',
+	'surveys-special-enabled' => '有効',
+	'surveys-special-disabled' => '無効',
+	'surveys-special-confirm-delete' => 'この調査を本当に削除しますか?',
+	'surveys-special-delete-failed' => '調査の削除に失敗しました。',
+	'surveys-takesurvey-loading' => '調査を読み込み中...',
+	'surveys-takesurvey-warn-notenabled' => 'この調査はまだ有効になっていないため、利用者から見えません。',
+	'surveys-surveystats-name' => '調査 ID',
+	'surveys-surveystats-status' => '調査の状態',
+	'surveys-surveystats-questioncount' => '質問数',
+	'surveys-surveystats-enabled' => '有効',
+	'surveys-surveystats-disabled' => '無効',
+	'surveys-surveystats-questions' => '質問の統計',
+	'surveys-surveystats-question-answer' => '$1（$2 {{PLURAL:$2|回答}}）',
+	'survey-special-label-name' => '調査 ID',
+	'survey-special-label-add-first' => '質問を追加',
+	'survey-special-label-add-another' => '他の質問を追加',
+	'survey-special-label-addquestion' => '新しい質問',
+	'survey-question-label-nr' => '質問 #$1',
+	'survey-special-label-required' => '質問が必要です',
+	'survey-special-label-text' => '質問文',
+	'survey-special-remove' => '質問を除去',
+	'survey-special-remove-confirm' => 'この質問を本当に除去しますか?',
+	'survey-special-label-header' => '調査の上に表示する文章',
+	'survey-special-label-footer' => '調査の下に表示する文章',
+	'survey-special-label-thanks' => '調査の送信後に表示するお礼メッセージ',
+	'survey-jquery-submit' => '送信',
+	'survey-jquery-finish' => '完了',
+	'survey-jquery-load-failed' => '調査を読み込めませんでした。',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
