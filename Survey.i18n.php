@@ -1370,6 +1370,10 @@ $messages['mk'] = array(
 	'group-surveysubmit' => 'Анкетирани',
 	'group-surveysubmit-member' => '{{GENDER:$1|анкетиран}}',
 	'grouppage-surveysubmit' => '{{ns:project}}:Анкетирани',
+	'group-surveyadmin.css' => '/* Тука поставениот CSS ќе се применува само врз анкетни администратори */',
+	'group-surveyadmin.js' => '/* Тука поставениот JS ќе се применува само врз анкетни администратори */',
+	'group-surveysubmit.css' => '/* Тука поставениот CSS ќе се применува само врз анкетираните */',
+	'group-surveysubmit.js' => '/* Тука поставениот JS ќе се применува само врз анкетираните */',
 	'special-editsurvey' => 'Администратор на анкетата',
 	'special-surveys' => 'Анкетен администратор',
 	'special-surveystats' => 'Статистики на анкетата',
@@ -1558,6 +1562,17 @@ $messages['nl'] = array(
 $messages['pdc'] = array(
 	'surveys-special-save' => 'Beilege',
 	'surveys-special-delete' => 'Verwische',
+);
+
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'surveys-special-stats' => 'Schdadischdige',
+	'surveys-special-save' => 'Schbaischere',
+	'surveys-special-delete' => 'Lesche',
+	'surveys-special-confirm-delete' => 'Bischda sischa, dass die Umfrooch lesche wilschd?',
+	'surveys-special-delete-failed' => 'Die Umfrooch hod ned gleschd were kenne.',
 );
 
 /** Polish (Polski)
