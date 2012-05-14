@@ -1252,6 +1252,7 @@ $messages['lb'] = array(
 	'survey-question-type-text' => 'Textfeld mat enger Linn',
 	'survey-question-type-number' => 'Zuel',
 	'survey-question-type-select' => 'Dropdown-Menü',
+	'survey-question-type-radio' => 'Radio-Knäppecher',
 	'survey-question-type-textarea' => 'Textfeld mat méi Linnen',
 	'survey-question-type-check' => 'Këscht fir unzekräizen',
 	'survey-user-type-all' => 'Jiddwereen',
@@ -1283,6 +1284,7 @@ $messages['lb'] = array(
 	'surveys-takesurvey-nosuchsurvey' => 'Déi gefroten Ëmfro gëtt et net.',
 	'surveys-takesurvey-warn-notenabled' => 'Dës Ëmfro ass nach net aktivéiert a kann dowéinst vun de Benotzer nach net gesi ginn.',
 	'surveys-takesurvey-surveynotenabled' => 'Déi gefroten ëmfro gouf nach net fräigeschalt.',
+	'surveys-surveystats-nosuchsurvey' => 'Déi ugefroten Ëmfro gëtt et net. Dir kënnt eng [[Special:Surveys|Lëscht vun den diponibelen Ëmfroe]] kucken.',
 	'surveys-surveystats-name' => 'ID vun der Ëmfro',
 	'surveys-surveystats-title' => 'Titel vun der Ëmfro',
 	'surveys-surveystats-status' => 'Status vun der Ëmfro',
@@ -1370,6 +1372,10 @@ $messages['mk'] = array(
 	'group-surveysubmit' => 'Анкетирани',
 	'group-surveysubmit-member' => '{{GENDER:$1|анкетиран}}',
 	'grouppage-surveysubmit' => '{{ns:project}}:Анкетирани',
+	'group-surveyadmin.css' => '/* Тука поставениот CSS ќе се применува само врз анкетни администратори */',
+	'group-surveyadmin.js' => '/* Тука поставениот JS ќе се применува само врз анкетни администратори */',
+	'group-surveysubmit.css' => '/* Тука поставениот CSS ќе се применува само врз анкетираните */',
+	'group-surveysubmit.js' => '/* Тука поставениот JS ќе се применува само врз анкетираните */',
 	'special-editsurvey' => 'Администратор на анкетата',
 	'special-surveys' => 'Анкетен администратор',
 	'special-surveystats' => 'Статистики на анкетата',
@@ -1558,6 +1564,17 @@ $messages['nl'] = array(
 $messages['pdc'] = array(
 	'surveys-special-save' => 'Beilege',
 	'surveys-special-delete' => 'Verwische',
+);
+
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'surveys-special-stats' => 'Schdadischdige',
+	'surveys-special-save' => 'Schbaischere',
+	'surveys-special-delete' => 'Lesche',
+	'surveys-special-confirm-delete' => 'Bischda sischa, dass die Umfrooch lesche wilschd?',
+	'surveys-special-delete-failed' => 'Die Umfrooch hod ned gleschd were kenne.',
 );
 
 /** Polish (Polski)
