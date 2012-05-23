@@ -30,6 +30,14 @@ $specialPageAliases['de'] = array(
 	'TakeSurvey' => array( 'Umfrage_beantworten' ),
 );
 
+/** Swiss German (Alemannisch) */
+$specialPageAliases['gsw'] = array(
+	'EditSurvey' => array( 'Umfroog_bearbeite' ),
+	'Surveys' => array( 'Umfrooge' ),
+	'SurveyStats' => array( 'Umfroogstatistike' ),
+	'TakeSurvey' => array( 'Umfroog_beantworte' ),
+);
+
 /** Interlingua (Interlingua) */
 $specialPageAliases['ia'] = array(
 	'EditSurvey' => array( 'Modificar_questionario', 'Questionario' ),
@@ -45,6 +53,14 @@ $specialPageAliases['ja'] = array(
 	'SurveyStats' => array( 'アンケート統計情報' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'EditSurvey' => array( 'Ëmfro_änneren' ),
+	'Surveys' => array( 'Ëmfroen' ),
+	'SurveyStats' => array( 'Statistike_vun_Ëmfroen' ),
+	'TakeSurvey' => array( 'Bei_der_Ëmfro_matmaachen' ),
+);
+
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
 	'EditSurvey' => array( 'УредиАнкета', 'Анкета' ),
@@ -53,10 +69,24 @@ $specialPageAliases['mk'] = array(
 	'TakeSurvey' => array( 'ПополниАнкета' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'EditSurvey' => array( 'Rediger_undersøkelse' ),
+	'Surveys' => array( 'Undersøkelser' ),
+	'SurveyStats' => array( 'Undersøkelsesstatistikk' ),
+	'TakeSurvey' => array( 'Ta_undersøkelse' ),
+);
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'EditSurvey' => array( 'Bewerkingsvragenlijst' ),
 	'Surveys' => array( 'Vragenlijsten' ),
 	'SurveyStats' => array( 'Vragenlijstresultaten' ),
 	'TakeSurvey' => array( 'VragenlijstBeantwoorden' ),
+);
+
+/** Simplified Chinese (‪中文(简体)‬) */
+$specialPageAliases['zh-hans'] = array(
+	'Surveys' => array( '问卷' ),
+	'TakeSurvey' => array( '做问卷' ),
 );
