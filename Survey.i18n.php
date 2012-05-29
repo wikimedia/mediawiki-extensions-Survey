@@ -152,6 +152,7 @@ $messages['en'] = array(
  * @author SPQRobin
  * @author Siebrand
  * @author Umherirrender
+ * @author 아라
  */
 $messages['qqq'] = array(
 	'right-surveyadmin' => '{{doc-right|surveyadmin}}',
@@ -164,6 +165,10 @@ $messages['qqq'] = array(
 	'group-surveysubmit' => '{{doc-group|surveysubmit}}',
 	'group-surveysubmit-member' => '{{doc-group|surveysubmit|member}}',
 	'grouppage-surveysubmit' => '{{doc-group|surveysubmit|page}}',
+	'group-surveyadmin.css' => '{{doc-group|surveyadmin}}',
+	'group-surveyadmin.js' => '{{doc-group|surveyadmin}}',
+	'group-surveysubmit.css' => '{{doc-group|surveysubmit}}',
+	'group-surveysubmit.js' => '{{doc-group|surveysubmit}}',
 	'special-editsurvey' => 'Special page name/title - shows on specified survery to edit',
 	'special-surveys' => 'Special page name/title',
 	'special-surveystats' => 'Special page name/title - shows statistics for one specified survey',
@@ -1250,6 +1255,23 @@ $messages['ja'] = array(
 	'survey-jquery-submit' => '送信',
 	'survey-jquery-finish' => '完了',
 	'survey-jquery-load-failed' => '調査を読み込めませんでした。',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'survey-desc' => 'MediaWiki에 대한 설문 조사 도구',
+	'group-surveyadmin' => '설문 조사 관리자',
+	'group-surveyadmin-member' => '{{GENDER:$1|설문 조사 관리자}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:설문 조사 관리자',
+	'group-surveysubmit' => '설문 조사 참가자',
+	'group-surveysubmit-member' => '{{GENDER:$1|설문 조사 참가자}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:설문 조사 참가자',
+	'group-surveyadmin.css' => '/* 이 CSS 설정은 설문 조사 관리자에만 적용됩니다 */',
+	'group-surveyadmin.js' => '/* 이 자바스크립트 설정은 설문 조사 관리자에만 적용됩니다 */',
+	'group-surveysubmit.css' => '/* 이 CSS 설정은 설문 조사 참가자에만 적용됩니다 */',
+	'group-surveysubmit.js' => '/* 이 자바스크립트 설정은 설문 조사 참가자에만 적용됩니다 */',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
