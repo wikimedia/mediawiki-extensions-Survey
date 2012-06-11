@@ -22,12 +22,28 @@ $specialPageAliases['en'] = array(
 	'TakeSurvey' => array( 'TakeSurvey' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'EditSurvey' => array( 'تعديل_الاستقصاء' ),
+	'Surveys' => array( 'استقصاءات' ),
+	'SurveyStats' => array( 'إحصاءات_الاستقصاء' ),
+	'TakeSurvey' => array( 'المشاركة_بالاستقصاء' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'EditSurvey' => array( 'Umfrage_bearbeiten' ),
 	'Surveys' => array( 'Umfragen' ),
 	'SurveyStats' => array( 'Umfragestatistiken' ),
 	'TakeSurvey' => array( 'Umfrage_beantworten' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'EditSurvey' => array( 'AnketBıvurne' ),
+	'Surveys' => array( 'Anket' ),
+	'SurveyStats' => array( 'İstatêAnket', 'İstatıstikêAnketan' ),
+	'TakeSurvey' => array( 'AnketBıgi' ),
 );
 
 /** Swiss German (Alemannisch) */
@@ -38,7 +54,7 @@ $specialPageAliases['gsw'] = array(
 	'TakeSurvey' => array( 'Umfroog_beantworte' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'EditSurvey' => array( 'Modificar_questionario', 'Questionario' ),
 	'Surveys' => array( 'Questionarios' ),
@@ -53,6 +69,14 @@ $specialPageAliases['ja'] = array(
 	'SurveyStats' => array( 'アンケート統計情報' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'EditSurvey' => array( '설문조사편집' ),
+	'Surveys' => array( '설문조사' ),
+	'SurveyStats' => array( '설문조사통계' ),
+	'TakeSurvey' => array( '설문조사하기' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
 	'EditSurvey' => array( 'Ëmfro_änneren' ),
@@ -61,7 +85,7 @@ $specialPageAliases['lb'] = array(
 	'TakeSurvey' => array( 'Bei_der_Ëmfro_matmaachen' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'EditSurvey' => array( 'УредиАнкета', 'Анкета' ),
 	'Surveys' => array( 'Анкети' ),
@@ -69,7 +93,7 @@ $specialPageAliases['mk'] = array(
 	'TakeSurvey' => array( 'ПополниАнкета' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
 	'EditSurvey' => array( 'Rediger_undersøkelse' ),
 	'Surveys' => array( 'Undersøkelser' ),
@@ -85,7 +109,7 @@ $specialPageAliases['nl'] = array(
 	'TakeSurvey' => array( 'VragenlijstBeantwoorden' ),
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文（简体）‬) */
 $specialPageAliases['zh-hans'] = array(
 	'Surveys' => array( '问卷' ),
 	'TakeSurvey' => array( '做问卷' ),
