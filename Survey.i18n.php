@@ -365,7 +365,7 @@ $messages['be-tarask'] = array(
 	'survey-jquery-load-failed' => 'Немагчыма загрузіць апытаньне.',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -425,7 +425,7 @@ $messages['bg'] = array(
 	'survey-special-label-thanks' => 'Благодарствено съобщение, което се показва след приключване на проучването',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
  */
@@ -594,7 +594,7 @@ $messages['diq'] = array(
 	'surveys-special-stats' => 'İstatistiki',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -692,14 +692,14 @@ $messages['es'] = array(
 	'survey-jquery-load-failed' => 'No se pudo cargar la encuesta.',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Crt
  */
 $messages['fi'] = array(
 	'surveys-special-save' => 'Tallenna',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  * @author Tpt
  */
@@ -798,7 +798,7 @@ $messages['fr'] = array(
 	'survey-jquery-load-failed' => 'Impossible de charger le sondage.',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -1085,7 +1085,7 @@ $messages['hsb'] = array(
 	'survey-jquery-load-failed' => 'Naprašowanje njeda so začitać.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1451,7 +1451,7 @@ $messages['lb'] = array(
 	'survey-jquery-load-failed' => "D'Ëmfro konnt net geluede ginn.",
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  */
 $messages['lt'] = array(
@@ -1486,7 +1486,7 @@ $messages['lt'] = array(
 	'surveys-surveystats-title' => 'Apklausos pavadinimas',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1706,7 +1706,7 @@ $messages['pfl'] = array(
 	'surveys-special-delete-failed' => 'Die Umfrooch hod ned gleschd were kenne.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Woytecr
  */
 $messages['pl'] = array(
