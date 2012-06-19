@@ -146,6 +146,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Beta16
  * @author EugeneZelenko
  * @author Jeroen De Dauw
  * @author Kghbln
@@ -155,6 +156,7 @@ $messages['en'] = array(
  * @author 아라
  */
 $messages['qqq'] = array(
+	'survey-desc' => '{{desc}}',
 	'right-surveyadmin' => '{{doc-right|surveyadmin}}',
 	'right-surveysubmit' => '{{doc-right|surveysubmit}}',
 	'action-surveyadmin' => '{{doc-action|surveyadmin}}',
@@ -1181,6 +1183,32 @@ $messages['ia'] = array(
 	'survey-jquery-submit' => 'Submitter',
 	'survey-jquery-finish' => 'Finir',
 	'survey-jquery-load-failed' => 'Non poteva cargar le questionario.',
+);
+
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'survey-user-type-all' => 'Tutti',
+	'survey-user-type-loggedin' => 'Utenti registrati',
+	'survey-user-type-confirmed' => 'Utenti confermati',
+	'survey-user-type-editor' => 'Editori',
+	'survey-user-type-anon' => 'Utenti anonimi',
+	'surveys-special-title' => 'Titolo',
+	'surveys-special-status' => 'Stato',
+	'surveys-special-stats' => 'Statistiche',
+	'surveys-special-edit' => 'Modifica',
+	'surveys-special-save' => 'Salva',
+	'surveys-special-delete' => 'Cancella',
+	'surveys-special-enabled' => 'Attiva',
+	'surveys-special-disabled' => 'Disattiva',
+	'surveys-surveystats-enabled' => 'Attivato',
+	'surveys-surveystats-disabled' => 'Disattivato',
+	'survey-special-label-add-first' => 'Aggiungi domanda',
+	'survey-special-label-add-another' => "Aggiungi un'altra domanda",
+	'survey-special-label-addquestion' => 'Nuova domanda',
+	'survey-question-label-nr' => 'Domanda #$1',
+	'survey-jquery-submit' => 'Invia',
 );
 
 /** Japanese (日本語)
