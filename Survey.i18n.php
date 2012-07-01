@@ -268,7 +268,7 @@ $messages['ar'] = array(
 	'survey-jquery-finish' => 'أنهي',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -871,7 +871,7 @@ $messages['frp'] = array(
 	'survey-jquery-finish' => 'Chavonar',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -989,7 +989,7 @@ $messages['gsw'] = array(
 	'surveys-takesurvey-loading' => 'Die Umfroog wird glade...',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
