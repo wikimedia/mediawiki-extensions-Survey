@@ -1459,6 +1459,13 @@ $messages['ko'] = array(
 	'survey-jquery-load-failed' => '설문 조사를 읽을 수 없습니다.',
 );
 
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'surveys-special-save' => 'Tomar bike',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
