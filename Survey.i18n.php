@@ -1817,6 +1817,13 @@ $messages['pfl'] = array(
  * @author Woytecr
  */
 $messages['pl'] = array(
+	'survey-question-type-text' => 'Pole pojedynczego wiersza tekstu',
+	'survey-question-type-number' => 'Liczba',
+	'survey-question-type-select' => 'Menu rozwijane',
+	'survey-question-type-radio' => 'Pola opcji',
+	'survey-question-type-textarea' => 'Pole tekstu wielowierszowego',
+	'survey-question-type-check' => 'Pole wyboru',
+	'survey-user-type-all' => 'Wszyscy',
 	'survey-user-type-loggedin' => 'Zalogowani użytkownicy',
 	'survey-user-type-confirmed' => 'Zatwierdzeni użytkownicy',
 	'survey-user-type-editor' => 'Redaktorzy',
