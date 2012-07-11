@@ -109,6 +109,11 @@ $specialPageAliases['nl'] = array(
 	'TakeSurvey' => array( 'VragenlijstBeantwoorden' ),
 );
 
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'EditSurvey' => array( 'Опитування' ),
+);
+
 /** Simplified Chinese (‪中文（简体）‬) */
 $specialPageAliases['zh-hans'] = array(
 	'Surveys' => array( '问卷' ),
