@@ -52,8 +52,6 @@ final class SurveyHooks {
 	 * @return true
 	 */
 	public static function onSchemaUpdate( DatabaseUpdater $updater ) {
-		global $wgDBtype;
-
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'surveys',

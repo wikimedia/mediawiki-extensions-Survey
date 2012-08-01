@@ -182,7 +182,7 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 		'jquery.survey.css',
 		'fancybox/jquery.fancybox-1.3.4.css'
 	),
-	'dependencies' => array( 'ext.survey', 'jquery.ui.button', 'ext.survey.numeric', 'ext.survey.JSON' ),
+	'dependencies' => array( 'ext.survey', 'jquery.ui.button', 'ext.survey.numeric', 'jquery.json' ),
 	'messages' => array(
 		'survey-jquery-submit',
 		'survey-jquery-finish',

@@ -144,7 +144,7 @@
 	};
 	
 	this.getSurveyQuestions = function( questions ) {
-		$questions = $( '<div />' );
+		var $questions = $( '<div />' );
 		
 		for ( i in questions ) {
 			$questions.append( this.getSurveyQuestion( questions[i] ) );
@@ -156,7 +156,7 @@
 	this.getAnswers = function( surveyId ) {
 		var answers = [];
 		
-		for ( i in this.inputs ) {
+		for ( var i in this.inputs ) {
 			var $input = this.inputs[i].input;
 			var id = $input.data( 'question-id' );
 			
@@ -173,7 +173,7 @@
 			} );
 		}
 		
-		return JSON.stringify( answers );
+		return $.toJSON( answers );
 	};
 	
 	this.submitSurvey = function( surveyId, callback ) {

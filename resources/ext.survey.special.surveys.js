@@ -28,7 +28,7 @@
 	}
 	
 	$( '.survey-delete' ).click( function() {
-		$this = $( this );
+		var $this = $( this );
 		
 		if ( confirm( mw.msg( 'surveys-special-confirm-delete' ) ) ) {
 			deleteSurvey(
