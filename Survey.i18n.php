@@ -146,14 +146,17 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Beta16
  * @author EugeneZelenko
  * @author Jeroen De Dauw
  * @author Kghbln
  * @author SPQRobin
  * @author Siebrand
  * @author Umherirrender
+ * @author 아라
  */
 $messages['qqq'] = array(
+	'survey-desc' => '{{desc}}',
 	'right-surveyadmin' => '{{doc-right|surveyadmin}}',
 	'right-surveysubmit' => '{{doc-right|surveysubmit}}',
 	'action-surveyadmin' => '{{doc-action|surveyadmin}}',
@@ -164,6 +167,10 @@ $messages['qqq'] = array(
 	'group-surveysubmit' => '{{doc-group|surveysubmit}}',
 	'group-surveysubmit-member' => '{{doc-group|surveysubmit|member}}',
 	'grouppage-surveysubmit' => '{{doc-group|surveysubmit|page}}',
+	'group-surveyadmin.css' => '{{doc-group|surveyadmin}}',
+	'group-surveyadmin.js' => '{{doc-group|surveyadmin}}',
+	'group-surveysubmit.css' => '{{doc-group|surveysubmit}}',
+	'group-surveysubmit.js' => '{{doc-group|surveysubmit}}',
 	'special-editsurvey' => 'Special page name/title - shows on specified survery to edit',
 	'special-surveys' => 'Special page name/title',
 	'special-surveystats' => 'Special page name/title - shows statistics for one specified survey',
@@ -261,7 +268,7 @@ $messages['ar'] = array(
 	'survey-jquery-finish' => 'أنهي',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -360,7 +367,7 @@ $messages['be-tarask'] = array(
 	'survey-jquery-load-failed' => 'Немагчыма загрузіць апытаньне.',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -420,7 +427,7 @@ $messages['bg'] = array(
 	'survey-special-label-thanks' => 'Благодарствено съобщение, което се показва след приключване на проучването',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
  */
@@ -583,13 +590,49 @@ $messages['de-formal'] = array(
 );
 
 /** Zazaki (Zazaki)
+ * @author Erdemaslancan
  * @author Mirzali
  */
 $messages['diq'] = array(
+	'survey-desc' => 'Qan dê MediaWiki hecatê enketa',
+	'right-surveyadmin' => 'Anketa saz ke',
+	'action-surveyadmin' => 'Anketa saz ke',
+	'group-surveyadmin-member' => '{{GENDER:$1|Adminê anketa}}',
+	'special-editsurvey' => 'Adminê anketa',
+	'special-surveys' => 'Adminê anketan',
+	'special-surveystats' => 'İstatistikê anketa',
+	'special-takesurvey' => 'Anket bıgi',
+	'survey-question-type-number' => 'Nımre',
+	'survey-user-type-all' => 'Şar pêro',
+	'survey-user-type-editor' => 'Editori',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Na enket bıvurne]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Na enket bıgi]]',
+	'survey-navigation-list' => '[[Special:Surveys|Listey anketan]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|İstatistikan bıvin]]',
+	'surveys-special-addnew' => 'Anketa newi vıraze',
+	'surveys-special-title' => 'Sername',
+	'surveys-special-status' => 'Weziyet',
 	'surveys-special-stats' => 'İstatistiki',
+	'surveys-special-edit' => 'Timar ke',
+	'surveys-special-save' => 'Star ke',
+	'surveys-special-delete' => 'Besterne',
+	'surveys-special-enabled' => 'Kefılneyayo',
+	'surveys-special-disabled' => 'Bikefilne',
+	'surveys-surveystats-enabled' => 'Kefılneyayo',
+	'surveys-surveystats-disabled' => 'Bikefilne',
+	'surveys-surveystats-questions' => 'İstatistike persa',
+	'surveys-surveystats-question-type' => 'Babeta persi',
+	'surveys-surveystats-question-text' => 'Nusnê persi',
+	'surveys-surveystats-question-answercount' => 'Amariya serykeran',
+	'survey-question-label-nr' => 'Persa #$1',
+	'survey-special-label-type' => 'Babeta persi',
+	'survey-special-label-text' => 'Nusnê persi',
+	'survey-special-remove' => 'Persi wedarne',
+	'survey-jquery-submit' => 'Bırşê',
+	'survey-jquery-finish' => 'Qediya',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -687,14 +730,14 @@ $messages['es'] = array(
 	'survey-jquery-load-failed' => 'No se pudo cargar la encuesta.',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Crt
  */
 $messages['fi'] = array(
 	'surveys-special-save' => 'Tallenna',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  * @author Tpt
  */
@@ -793,7 +836,7 @@ $messages['fr'] = array(
 	'survey-jquery-load-failed' => 'Impossible de charger le sondage.',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -864,7 +907,7 @@ $messages['frp'] = array(
 	'survey-jquery-finish' => 'Chavonar',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -982,7 +1025,7 @@ $messages['gsw'] = array(
 	'surveys-takesurvey-loading' => 'Die Umfroog wird glade...',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -997,11 +1040,19 @@ $messages['hsb'] = array(
 	'group-surveysubmit' => 'Wobdźělnicy naprašowanja',
 	'group-surveysubmit-member' => '{{GENDER:$1|wobdźělnik|wobdźělnica}} naprašowanja',
 	'grouppage-surveysubmit' => '{{ns:project}}:Wobdźělnicy_naprašowanja',
+	'special-editsurvey' => 'Naprašowanski administrator',
+	'special-surveys' => 'Administrator naprašowanjow',
 	'special-surveystats' => 'Naprašowanske statistiki',
+	'special-takesurvey' => 'Na naprašowanju so wobdźělić',
+	'survey-err-id-xor-name' => 'Dyrbiš pak ID pak mjeno naprašowanja, kotrež ma so zapódać, podać',
 	'survey-err-survey-name-unknown' => 'Naprašowanje z mjenom "$1" njeje.',
 	'survey-err-duplicate-name' => 'Naprašowanje z mjenom "$1" hižo eksistuje.',
+	'survey-err-ids-xor-names' => 'Dyrbiš pak ID pak mjena naprašowanjow podać, kotrež maja so naprašować',
+	'survey-question-type-text' => 'Jednorjadkowy tekstowe polo',
 	'survey-question-type-number' => 'Čisło',
 	'survey-question-type-select' => 'Padacy meni',
+	'survey-question-type-radio' => 'Opciske tłóčatka',
+	'survey-question-type-textarea' => 'Wjacerjadkowy tekstowe polo',
 	'survey-question-type-check' => 'Kontrolny kašćik',
 	'survey-user-type-all' => 'Kóždy',
 	'survey-user-type-loggedin' => 'Přizjewjeni wužiwarjo',
@@ -1009,9 +1060,11 @@ $messages['hsb'] = array(
 	'survey-user-type-editor' => 'Wobdźěłowarjo',
 	'survey-user-type-anon' => 'Anonymni wužiwarjo',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Tute naprašowanje wobdźěłać]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Na tutym naprašowanju so wobdźělić]]',
 	'survey-navigation-list' => '[[Special:Surveys|Lisćina naprašowanjow]]',
 	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Statistiku sej wohladać]]',
 	'surveys-special-addnew' => 'Nowe naprašowanje přidać',
+	'surveys-special-namedoc' => 'Zapodaj jónkróćny identifikator (ID) za nowe naprašowanje. Tón njeda so pozdźišo změnić. Na přikład: motiwacija_wobdźěłarja.',
 	'surveys-special-newname' => 'Nowy ID naprašowanja:',
 	'surveys-special-add' => 'Naprašowanje přidać',
 	'surveys-special-existing' => 'Eksistowace naprašowanja',
@@ -1024,12 +1077,19 @@ $messages['hsb'] = array(
 	'surveys-special-enabled' => 'Zmóžnjeny',
 	'surveys-special-disabled' => 'Znjemóžnjeny',
 	'surveys-special-confirm-delete' => 'Chceće woprawdźe tute naprašowanje zhašeć?',
+	'surveys-special-delete-failed' => 'Naprašowanje njeda so zhašeć.',
+	'survey-special-label-usertype' => 'Wužiwarjo, kotřiž dyrbjeli naprašowanje dóstać',
+	'survey-special-label-minpages' => 'Minimalna ličba stronow, kotrež wužiwar dyrbi wopytać, prjedy hač naprašowanje dóstanješ',
 	'surveys-takesurvey-loading' => 'Naprašowanje so začituje...',
 	'surveys-takesurvey-nosuchsurvey' => 'Požadane naprašowanje njeeksistuje.',
+	'surveys-takesurvey-warn-notenabled' => 'Tute naprašowanje hišće njeje zmóžnjene, a tohodla njeje za wužiwarjow widźomne.',
+	'surveys-takesurvey-surveynotenabled' => 'Požadane naprašowanje njeje so hišće zmóžniło.',
+	'surveys-surveystats-nosuchsurvey' => 'Požadane naprašowanje njeeksistuje. Móžeš sej [[Special:Surveys|lisćinu k dispoziciji stejacych naprašowanjow]] wobhladać.',
 	'surveys-surveystats-name' => 'ID naprašowanja',
 	'surveys-surveystats-title' => 'Titul naprašowanja',
 	'surveys-surveystats-status' => 'Naprašowanski status',
 	'surveys-surveystats-questioncount' => 'Ličba prašenjow',
+	'surveys-surveystats-submissioncount' => 'Ličba zapósłanjow',
 	'surveys-surveystats-enabled' => 'Zmóžnjeny',
 	'surveys-surveystats-disabled' => 'Znjemóžnjeny',
 	'surveys-surveystats-questions' => 'Prašenske statistiki',
@@ -1044,6 +1104,7 @@ $messages['hsb'] = array(
 	'survey-special-label-name' => 'ID naprašowanja',
 	'survey-special-label-title' => 'Titul naprašowanja',
 	'survey-special-label-enabled' => 'Naprašowanje zmóžnjene',
+	'survey-special-label-ratio' => 'Procentowa sadźba ludźi, kotrymž so naprašowanje ma pokazać',
 	'survey-special-label-add-first' => 'Prašenje přidać',
 	'survey-special-label-add-another' => 'Dalše prašenje přidać',
 	'survey-special-label-addquestion' => 'Nowe prašenje',
@@ -1052,13 +1113,17 @@ $messages['hsb'] = array(
 	'survey-special-label-type' => 'Prašenjowy typ',
 	'survey-special-label-text' => 'Prašenjowy tekst',
 	'survey-special-remove' => 'Prašenje wotstronić',
+	'survey-special-remove-confirm' => 'Chceće tute prašenje woprawdźe wotstronić?',
+	'survey-special-label-header' => 'Tekst, kotryž ma so nad naprašowanjom zwobraznić',
+	'survey-special-label-footer' => 'Tekst, kotryž ma so pod naprašowanjom zwobraznić',
+	'survey-special-label-thanks' => 'Dźakna zdźělenka, kotraž ma so po zapósłanju naprašowanja zwobraznić',
 	'survey-special-label-answers' => 'K dispoziciji stejace wotmołwy, jedna na linku.',
 	'survey-jquery-submit' => 'Wotpósłać',
 	'survey-jquery-finish' => 'Dokónčić',
 	'survey-jquery-load-failed' => 'Naprašowanje njeda so začitać.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1156,6 +1221,104 @@ $messages['ia'] = array(
 	'survey-jquery-load-failed' => 'Non poteva cargar le questionario.',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'survey-desc' => 'Strumento per i sondaggi su MediaWiki',
+	'right-surveyadmin' => 'Gestisce sondaggi',
+	'right-surveysubmit' => 'Partecipa a sondaggi',
+	'action-surveyadmin' => 'gestire sondaggi',
+	'action-surveysubmit' => 'partecipare a sondaggi',
+	'group-surveyadmin' => 'Amministratori di sondaggi',
+	'group-surveyadmin-member' => '{{GENDER:$1|amministratore|amministratrice|amministratore/trice}} di sondaggi',
+	'grouppage-surveyadmin' => '{{ns:project}}:Amministratori di sondaggi',
+	'group-surveysubmit' => 'Partecipanti a sondaggi',
+	'group-surveysubmit-member' => '{{GENDER:$1|partecipante a sondaggi}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:Partecipanti a sondaggi',
+	'special-editsurvey' => 'Amministra sondaggio',
+	'special-surveys' => 'Amministra sondaggi',
+	'special-surveystats' => 'Statistiche sondaggi',
+	'special-takesurvey' => 'Rispondi sondaggio',
+	'survey-err-id-xor-name' => "E' necessario fornire il nome o l'ID del sondaggio per inviare i dati",
+	'survey-err-survey-name-unknown' => 'Non c\'è alcun sondaggio con il nome "$1"',
+	'survey-err-duplicate-name' => 'Esiste già un sondaggio con il nome "$1"',
+	'survey-err-ids-xor-names' => "E' necessario fornire il nome o l'ID del sondaggio per interrogare i dati",
+	'survey-question-type-text' => 'Campo di testo a riga singola',
+	'survey-question-type-number' => 'Numero',
+	'survey-question-type-select' => 'Menu a discesa',
+	'survey-question-type-radio' => 'Pulsanti di scelta',
+	'survey-question-type-textarea' => 'Campo di testo a riga multipla',
+	'survey-question-type-check' => 'Casella di controllo',
+	'survey-user-type-all' => 'Tutti',
+	'survey-user-type-loggedin' => 'Utenti registrati',
+	'survey-user-type-confirmed' => 'Utenti confermati',
+	'survey-user-type-editor' => 'Editori',
+	'survey-user-type-anon' => 'Utenti anonimi',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Modifica questo sondaggio]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Rispondi a questo sondaggio]]',
+	'survey-navigation-list' => '[[Special:Surveys|Elenco sondaggi]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Vedi statistiche]]',
+	'surveys-special-addnew' => 'Aggiungi un nuovo sondaggio',
+	'surveys-special-namedoc' => 'Inserisci un identificatore univoco (ID) per il nuovo sondaggio. Non può essere modificato successivamente. Per esempio: motivazioni-contributori.',
+	'surveys-special-newname' => 'ID nuovo sondaggio:',
+	'surveys-special-add' => 'Aggiungi sondaggio',
+	'surveys-special-existing' => 'Sondaggi esistenti',
+	'surveys-special-title' => 'Titolo',
+	'surveys-special-status' => 'Stato',
+	'surveys-special-stats' => 'Statistiche',
+	'surveys-special-edit' => 'Modifica',
+	'surveys-special-save' => 'Salva',
+	'surveys-special-delete' => 'Cancella',
+	'surveys-special-enabled' => 'Attiva',
+	'surveys-special-disabled' => 'Disattiva',
+	'surveys-special-confirm-delete' => 'Sei sicuro di voler eliminare questo sondaggio?',
+	'surveys-special-delete-failed' => 'Errore durante la cancellazione del sondaggio.',
+	'survey-special-label-usertype' => 'Gli utenti che dovrebbero rispondere al sondaggio',
+	'survey-special-label-minpages' => "Numero minimo di pagine che l'utente deve visitare prima di poter rispondere al sondaggio",
+	'surveys-takesurvey-loading' => 'Caricamento sondaggio...',
+	'surveys-takesurvey-nosuchsurvey' => 'Il sondaggio richiesto non esiste.',
+	'surveys-takesurvey-warn-notenabled' => 'Il sondaggio richiesto non è stato ancora attivato, e perciò non è visibile agli utenti.',
+	'surveys-takesurvey-surveynotenabled' => 'Il sondaggio richiesto non è stato ancora attivato.',
+	'surveys-surveystats-nosuchsurvey' => 'Il sondaggio richiesto non esiste. Puoi vedere la [[Special:Surveys|lista dei sondaggi disponibili]].',
+	'surveys-surveystats-name' => 'ID sondaggio',
+	'surveys-surveystats-title' => 'Titolo sondaggio',
+	'surveys-surveystats-status' => 'Stato sondaggio',
+	'surveys-surveystats-questioncount' => 'Numero di domande',
+	'surveys-surveystats-submissioncount' => 'Numero di sondaggi risposti',
+	'surveys-surveystats-enabled' => 'Attivato',
+	'surveys-surveystats-disabled' => 'Disattivato',
+	'surveys-surveystats-questions' => 'Statistiche sulle domande',
+	'surveys-surveystats-question-type' => 'Tipo di domanda',
+	'surveys-surveystats-question-text' => 'Testo della domanda',
+	'surveys-surveystats-question-answercount' => 'Numero di risposte',
+	'surveys-surveystats-question-answers' => 'Risposte maggiormente fornite',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|risposta|risposte}})',
+	'surveys-surveystats-unchecked' => 'Deselezionato',
+	'surveys-surveystats-checked' => 'Selezionato',
+	'surveys-special-unknown-name' => "Non c'è alcune sondaggio con l'ID richiesto.",
+	'survey-special-label-name' => 'ID sondaggio',
+	'survey-special-label-title' => 'Titolo sondaggio',
+	'survey-special-label-enabled' => 'Sondaggio attivato',
+	'survey-special-label-ratio' => 'Percentuale di persone a cui sottoporre il sondaggio',
+	'survey-special-label-add-first' => 'Aggiungi domanda',
+	'survey-special-label-add-another' => "Aggiungi un'altra domanda",
+	'survey-special-label-addquestion' => 'Nuova domanda',
+	'survey-question-label-nr' => 'Domanda #$1',
+	'survey-special-label-required' => 'Domanda è obbligatoria',
+	'survey-special-label-type' => 'Tipo di domanda',
+	'survey-special-label-text' => 'Testo della domanda',
+	'survey-special-remove' => 'Rimuovi domanda',
+	'survey-special-remove-confirm' => 'Sei sicuro di voler rimuovere questa domanda?',
+	'survey-special-label-header' => 'Testo da mostrare sopra il sondaggio',
+	'survey-special-label-footer' => 'Testo da mostrare sotto il sondaggio',
+	'survey-special-label-thanks' => "Messaggio di ringraziamento da mostrare dopo l'invio delle risposte al sondaggio",
+	'survey-special-label-answers' => 'Possibili risposte, una per linea.',
+	'survey-jquery-submit' => 'Invia',
+	'survey-jquery-finish' => 'Termina',
+	'survey-jquery-load-failed' => 'Impossibile caricare il sondaggio.',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
@@ -1228,6 +1391,115 @@ $messages['ja'] = array(
 	'survey-jquery-submit' => '送信',
 	'survey-jquery-finish' => '完了',
 	'survey-jquery-load-failed' => '調査を読み込めませんでした。',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'survey-desc' => 'MediaWiki에 대한 설문 조사 도구',
+	'right-surveyadmin' => '설문 조사 관리',
+	'right-surveysubmit' => '설문 조사에 참가하기',
+	'action-surveyadmin' => '설문 조사 관리',
+	'action-surveysubmit' => '설문 조사에 참가하기',
+	'group-surveyadmin' => '설문 조사 관리자',
+	'group-surveyadmin-member' => '{{GENDER:$1|설문 조사 관리자}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:설문 조사 관리자',
+	'group-surveysubmit' => '설문 조사 참가자',
+	'group-surveysubmit-member' => '{{GENDER:$1|설문 조사 참가자}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:설문 조사 참가자',
+	'group-surveyadmin.css' => '/* 이 CSS 설정은 설문 조사 관리자에만 적용됩니다 */',
+	'group-surveyadmin.js' => '/* 이 자바스크립트 설정은 설문 조사 관리자에만 적용됩니다 */',
+	'group-surveysubmit.css' => '/* 이 CSS 설정은 설문 조사 참가자에만 적용됩니다 */',
+	'group-surveysubmit.js' => '/* 이 자바스크립트 설정은 설문 조사 참가자에만 적용됩니다 */',
+	'special-editsurvey' => '설문 조사 관리자',
+	'special-surveys' => '설문 조사 관리자',
+	'special-surveystats' => '설문 조사 통계',
+	'special-takesurvey' => '설문 조사에 참가하기',
+	'survey-err-id-xor-name' => 'ID나 설문 조사의 이름 중 하나를 제출하여 제공해야 합니다',
+	'survey-err-survey-name-unknown' => '"$1" 이름에 대한 설문 조사가 없음',
+	'survey-err-duplicate-name' => '"$1" 이름에 대한 설문 조사가 이미 있음',
+	'survey-err-ids-xor-names' => 'ID나 설문 조사의 이름 중 하나를 쿼리로 제공해야 합니다',
+	'survey-question-type-text' => '한 줄 텍스트 필드',
+	'survey-question-type-number' => '번호',
+	'survey-question-type-select' => '드롭다운 메뉴',
+	'survey-question-type-radio' => '라디오 버튼',
+	'survey-question-type-textarea' => '여러 줄 텍스트 필드',
+	'survey-question-type-check' => '체크란',
+	'survey-user-type-all' => '모두',
+	'survey-user-type-loggedin' => '로그인한 사용자',
+	'survey-user-type-confirmed' => '인증된 사용자',
+	'survey-user-type-editor' => '편집자',
+	'survey-user-type-anon' => '익명 사용자',
+	'survey-navigation-edit' => '[[Special:Survey/$1|이 설문 조사 편집]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|이 설문 조사 하기]]',
+	'survey-navigation-list' => '[[Special:Surveys|설문 조사 목록]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|통계 보기]]',
+	'surveys-special-addnew' => '새 설문 조사 더함',
+	'surveys-special-namedoc' => '새 설문 조사를 위한 고유 식별자 (ID)를 입력하세요. 나중에 바꿀 수 없습니다. 예: editor-motivation.',
+	'surveys-special-newname' => '새 설문 조사 ID:',
+	'surveys-special-add' => '설문 조사 더함',
+	'surveys-special-existing' => '기존 설문 조사',
+	'surveys-special-title' => '제목',
+	'surveys-special-status' => '상태',
+	'surveys-special-stats' => '통계',
+	'surveys-special-edit' => '편집',
+	'surveys-special-save' => '저장',
+	'surveys-special-delete' => '삭제',
+	'surveys-special-enabled' => '활성화됨',
+	'surveys-special-disabled' => '비활성화됨',
+	'surveys-special-confirm-delete' => '이 설문 조사를 삭제하겠습니까?',
+	'surveys-special-delete-failed' => '설문 조사를 삭제하지 못함.',
+	'survey-special-label-usertype' => '사용자는 설문 조사를 받아야 합니다',
+	'survey-special-label-minpages' => '사용자가 설문 조사를 하기 전에 방문해야 하는 문서의 최소 금액',
+	'surveys-takesurvey-loading' => '설문 조사 로드 중...',
+	'surveys-takesurvey-nosuchsurvey' => '요청한 설문 조사가 없습니다.',
+	'surveys-takesurvey-warn-notenabled' => '이 설문 조사는 아직 활성화되지 않아 사용자에게 보여지지 않습니다.',
+	'surveys-takesurvey-surveynotenabled' => '요청한 설문 조사는 아직 활성화가 되지 않았습니다.',
+	'surveys-surveystats-nosuchsurvey' => '요청한 설문 조사가 없습니다. [[Special:Surveys|가능한 설문 조사]]를 볼 수 있습니다.',
+	'surveys-surveystats-name' => '설문 조사 ID',
+	'surveys-surveystats-title' => '설문 조사 제목',
+	'surveys-surveystats-status' => '설문 조사 상태',
+	'surveys-surveystats-questioncount' => '질문 번호',
+	'surveys-surveystats-submissioncount' => '제출 수',
+	'surveys-surveystats-enabled' => '활성화됨',
+	'surveys-surveystats-disabled' => '비활성화됨',
+	'surveys-surveystats-questions' => '질문 통계',
+	'surveys-surveystats-question-type' => '질문 유형',
+	'surveys-surveystats-question-text' => '질문 텍스트',
+	'surveys-surveystats-question-answercount' => '답변자 수',
+	'surveys-surveystats-question-answers' => '많이 제공한 답변',
+	'surveys-surveystats-question-answer' => '$1 (답변 $2)',
+	'surveys-surveystats-unchecked' => '체크되지 않음',
+	'surveys-surveystats-checked' => '체크됨',
+	'surveys-special-unknown-name' => '요청 ID에 대한 설문 조사가 없습니다.',
+	'survey-special-label-name' => '설문 조사 ID',
+	'survey-special-label-title' => '설문 조사 제목',
+	'survey-special-label-enabled' => '설문 조사 활성화됨',
+	'survey-special-label-ratio' => '설문 조사를 한 사람의 백분율',
+	'survey-special-label-add-first' => '질문 더함',
+	'survey-special-label-add-another' => '다른 질문 더함',
+	'survey-special-label-addquestion' => '새 질문',
+	'survey-question-label-nr' => '질문 #$1',
+	'survey-special-label-required' => '질문이 필요함',
+	'survey-special-label-type' => '질문 유형',
+	'survey-special-label-text' => '질문 텍스트',
+	'survey-special-remove' => '질문 삭제',
+	'survey-special-remove-confirm' => '이 질문을 삭제하겠습니까?',
+	'survey-special-label-header' => '설문 조사 위에 보여줄 텍스트',
+	'survey-special-label-footer' => '설문 조사 아래에 보여줄 텍스트',
+	'survey-special-label-thanks' => '설문 조사를 제출하고 나서 감사 메시지 보이기',
+	'survey-special-label-answers' => '가능한 답변을 줄 당 하나.',
+	'survey-jquery-submit' => '제출',
+	'survey-jquery-finish' => '완료',
+	'survey-jquery-load-failed' => '설문 조사를 읽을 수 없습니다.',
+);
+
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'surveys-special-save' => 'Tomar bike',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1322,7 +1594,7 @@ $messages['lb'] = array(
 	'survey-jquery-load-failed' => "D'Ëmfro konnt net geluede ginn.",
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  */
 $messages['lt'] = array(
@@ -1357,7 +1629,7 @@ $messages['lt'] = array(
 	'surveys-surveystats-title' => 'Apklausos pavadinimas',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1577,10 +1849,17 @@ $messages['pfl'] = array(
 	'surveys-special-delete-failed' => 'Die Umfrooch hod ned gleschd were kenne.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Woytecr
  */
 $messages['pl'] = array(
+	'survey-question-type-text' => 'Pole pojedynczego wiersza tekstu',
+	'survey-question-type-number' => 'Liczba',
+	'survey-question-type-select' => 'Menu rozwijane',
+	'survey-question-type-radio' => 'Pola opcji',
+	'survey-question-type-textarea' => 'Pole tekstu wielowierszowego',
+	'survey-question-type-check' => 'Pole wyboru',
+	'survey-user-type-all' => 'Wszyscy',
 	'survey-user-type-loggedin' => 'Zalogowani użytkownicy',
 	'survey-user-type-confirmed' => 'Zatwierdzeni użytkownicy',
 	'survey-user-type-editor' => 'Redaktorzy',
@@ -1629,6 +1908,104 @@ $messages['te'] = array(
 	'survey-special-label-type' => 'ప్రశ్న రకం',
 	'survey-special-label-text' => 'ప్రశ్న పాఠ్యం',
 	'survey-special-remove' => 'ప్రశ్నను తొలగించు',
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'survey-desc' => 'Kasangkapang pampagtatanung-tanong para sa MediaWiki',
+	'right-surveyadmin' => 'Mamahala ng mga pagtatanung-tanong',
+	'right-surveysubmit' => 'Makilahok sa mga pagtatanung-tanong',
+	'action-surveyadmin' => 'mamahala ng mga pagtatanung-tanong',
+	'action-surveysubmit' => 'makilahok sa mga pagtatanung-tanong',
+	'group-surveyadmin' => 'Mga tagapangasiwa ng pagtatanung-tanong',
+	'group-surveyadmin-member' => '{{GENDER:$1|tagapangasiwa ng pagtatanung-tanong}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:Mga tagapangasiwa ng pagtatanung-tanong',
+	'group-surveysubmit' => 'Mga kalahok sa pagtatanung-tanong',
+	'group-surveysubmit-member' => '{{GENDER:$1|kalahok sa pagtatanung-tanong}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:Mga_kalahok_sa_pagtatanung-tanong',
+	'special-editsurvey' => 'Tagapangasiwa ng pagtatanung-tanong',
+	'special-surveys' => 'Tagapangasiwa ng mga pagtatanung-tanong',
+	'special-surveystats' => 'Estadistika ng pagtatanung-tanong',
+	'special-takesurvey' => 'Lumahok sa pagtatanung-tanong',
+	'survey-err-id-xor-name' => 'Kailangan mong ibigay ang ID o kaya ang pangalan ng pagtatanung-tanong na ipapasa',
+	'survey-err-survey-name-unknown' => 'Walang pagtatanung-tanong na mayroong pangalan na "$1"',
+	'survey-err-duplicate-name' => 'Mayroon nang isang pagtatanung-tanong na mayroong pangalan na "$1"',
+	'survey-err-ids-xor-names' => 'Kailangan mong ibigay ang ID o kaya ang mga pangalan ng mga pagtatanung-tanong na uusisain',
+	'survey-question-type-text' => 'Hanay ng teksto na pang-isahang guhit',
+	'survey-question-type-number' => 'Bilang',
+	'survey-question-type-select' => 'Menung naibabagsak na pababa',
+	'survey-question-type-radio' => 'Mga pindutang pangradyo',
+	'survey-question-type-textarea' => 'Hanay ng teksto na pangmaramihang guhit',
+	'survey-question-type-check' => 'Kahong nalalagyan ng tsek',
+	'survey-user-type-all' => 'Lahat ng tao',
+	'survey-user-type-loggedin' => 'Nakalagdang mga tagagamit',
+	'survey-user-type-confirmed' => 'Natiyak na mga tagagamit',
+	'survey-user-type-editor' => 'Mga patnugot',
+	'survey-user-type-anon' => 'Hindi nakikilalang mga tagagamit',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Baguhin ang pagtatanung-tanong na ito]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Makilahok sa pagtatanung-tanong na ito]]',
+	'survey-navigation-list' => '[[Special:Surveys|Listahan ng mga pagtatanung-tanong]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Tingnan ang estadistika]]',
+	'surveys-special-addnew' => 'Magdagdag ng isang bagong pagtatanung-tanong',
+	'surveys-special-namedoc' => 'Magpasok ng isang namumukod-tanging pangkilala (ID) para sa bagong pagtatanung-tanong. Hindi maaaring baguhin mamaya. Bilang halimbawa: patnugot-ng-motibasyon.',
+	'surveys-special-newname' => 'Bagong ID ng pagtatanung-tanong:',
+	'surveys-special-add' => 'Idagdag ang pagtatanung-tanong',
+	'surveys-special-existing' => 'Umiiral na mga pagtatanung-tanong',
+	'surveys-special-title' => 'Pamagat',
+	'surveys-special-status' => 'Katayuan',
+	'surveys-special-stats' => 'Estadistika',
+	'surveys-special-edit' => 'Baguhin',
+	'surveys-special-save' => 'Sagipin',
+	'surveys-special-delete' => 'Burahin',
+	'surveys-special-enabled' => 'Pinagana',
+	'surveys-special-disabled' => 'Hindi pinagagana',
+	'surveys-special-confirm-delete' => 'Nakatitiyak ka bang nais mong burahin ang pagtatanung-tanong na ito?',
+	'surveys-special-delete-failed' => 'Nabigo sa pagbura ng pagtatanung-tanong.',
+	'survey-special-label-usertype' => 'Mga tagagamit na dapat makakuha ng pagtatanung-tanong',
+	'survey-special-label-minpages' => 'Pinaka mababang dami ng mga pahina na kailangang dalawin ng tagagamit bago makuha ang pagtatanung-tanong',
+	'surveys-takesurvey-loading' => 'Ikinakarga ang pagtatanung-tanong...',
+	'surveys-takesurvey-nosuchsurvey' => 'Hindi umiiral ang hiniling na pagtatanung-tanong.',
+	'surveys-takesurvey-warn-notenabled' => "Hindi pa pinagagana ang pagtatanung-tanong na ito, kung kaya't hindi makikita ng mga tagagamit.",
+	'surveys-takesurvey-surveynotenabled' => 'Hindi pa pinagagana ang hiniling na pagtatanung-tanong.',
+	'surveys-surveystats-nosuchsurvey' => 'Hindi umiiral ang hiniling na pagtatanung-tanong. Matitingnan mo ang isang [[Special:Surveys|listahan ng makukuhang mga pagtatanung-tanong]].',
+	'surveys-surveystats-name' => 'ID ng pagtatanung-tanong',
+	'surveys-surveystats-title' => 'Pamagat ng pagtatanung-tanong',
+	'surveys-surveystats-status' => 'Katayuan ng pagtatanung-tanong',
+	'surveys-surveystats-questioncount' => 'Bilang ng mga tanong',
+	'surveys-surveystats-submissioncount' => 'Bilang ng mga pagpapasa',
+	'surveys-surveystats-enabled' => 'Pinagana',
+	'surveys-surveystats-disabled' => 'Hindi pinagagana',
+	'surveys-surveystats-questions' => 'Estadistika ng tanong',
+	'surveys-surveystats-question-type' => 'Pamagat ng tanong',
+	'surveys-surveystats-question-text' => 'Teksto ng tanong',
+	'surveys-surveystats-question-answercount' => 'Bilang ng mga sagot',
+	'surveys-surveystats-question-answers' => 'Pinaka ibinibigay na mga sagot',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|sagot|mga sagot}})',
+	'surveys-surveystats-unchecked' => 'Hindi na nilagyan ng tsek',
+	'surveys-surveystats-checked' => 'Natsekan na',
+	'surveys-special-unknown-name' => 'Walang patatanung-tanong na mayroon ng hiniling na ID.',
+	'survey-special-label-name' => 'ID ng pagtatanung-tanong',
+	'survey-special-label-title' => 'Pamagat ng pagtatanung-tanong',
+	'survey-special-label-enabled' => 'Pinagana ang pagtatanung-tanong',
+	'survey-special-label-ratio' => 'Kabahagdanan ng mga tao na pagpapakitaan ng pagtatanung-tanong',
+	'survey-special-label-add-first' => 'Idagdag ang tanong',
+	'survey-special-label-add-another' => 'Magdagdag ng isa pang tanong',
+	'survey-special-label-addquestion' => 'Bagong tanong',
+	'survey-question-label-nr' => 'Tanong #$1',
+	'survey-special-label-required' => 'Kailangan ang tanong',
+	'survey-special-label-type' => 'Uri ng tanong',
+	'survey-special-label-text' => 'Teksto ng tanong',
+	'survey-special-remove' => 'Tanggalin ang tanong',
+	'survey-special-remove-confirm' => 'Nakatitiyak ka bang nais mong tanggalin ang tanong ito?',
+	'survey-special-label-header' => 'Tekstong ipapakita sa ibabaw ng pagtatanung-tanong',
+	'survey-special-label-footer' => 'Tekstong ipapakita sa ilalim ng pagtatanung-tanong',
+	'survey-special-label-thanks' => 'Mensahe ng pagpapasalamat na ipapakita pagkaraan ng pagpapasa ng pagtatanung-tanong',
+	'survey-special-label-answers' => 'Makukuhang mga sagot, isa sa bawat isang guhit.',
+	'survey-jquery-submit' => 'Ipasa',
+	'survey-jquery-finish' => 'Tapusin',
+	'survey-jquery-load-failed' => 'Hindi maikarga ang pagtatanung-tanong.',
 );
 
 /** Turkish (Türkçe)
