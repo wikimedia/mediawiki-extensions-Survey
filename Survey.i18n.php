@@ -1884,6 +1884,82 @@ $messages['ps'] = array(
 	'survey-jquery-submit' => 'سپارل',
 );
 
+/** Portuguese (português)
+ * @author SandroHc
+ */
+$messages['pt'] = array(
+	'right-surveyadmin' => 'Gerir inquéritos',
+	'right-surveysubmit' => 'Participar em inquéritos',
+	'special-editsurvey' => 'Administrador do inquérito',
+	'special-surveys' => 'Administrador dos inquérito',
+	'special-surveystats' => 'Estatísticas do inquérito',
+	'special-takesurvey' => 'Completar inquérito',
+	'survey-question-type-number' => 'Número',
+	'survey-user-type-all' => 'Todos',
+	'survey-user-type-loggedin' => 'Utilizadores logados',
+	'survey-user-type-confirmed' => 'Utilizadores confirmados',
+	'survey-user-type-editor' => 'Editores',
+	'survey-user-type-anon' => 'Utilizadores anónimos',
+	'surveys-special-addnew' => 'Adicionar um novo inquérito',
+	'surveys-special-newname' => 'ID do novo inquérito:',
+	'surveys-special-add' => 'Adicionar inquérito',
+	'surveys-special-existing' => 'Inquérito existentes',
+	'surveys-special-title' => 'Título',
+	'surveys-special-status' => 'Estado',
+	'surveys-special-stats' => 'Estatísticas',
+	'surveys-special-edit' => 'Editar',
+	'surveys-special-save' => 'Gravar',
+	'surveys-special-delete' => 'Eliminar',
+	'surveys-special-enabled' => 'Ativado',
+	'surveys-special-disabled' => 'Desativado',
+	'surveys-takesurvey-loading' => 'A carregar o inquérito...',
+	'surveys-surveystats-name' => 'ID do inquérito',
+	'surveys-surveystats-title' => 'Título do inquérito',
+	'surveys-surveystats-status' => 'Estado do inquérito',
+	'surveys-surveystats-enabled' => 'Ativado',
+	'surveys-surveystats-disabled' => 'Desativado',
+	'surveys-special-unknown-name' => 'Não existe nenhum inquérito com o ID solicitado.',
+	'survey-special-label-name' => 'ID do inquérito',
+	'survey-special-label-title' => 'Título do inquérito',
+	'survey-special-label-enabled' => 'Inquérito ativo',
+	'survey-special-label-add-first' => 'Adicionar pergunta',
+	'survey-special-label-add-another' => 'Adicionar outra pergunta',
+	'survey-special-label-addquestion' => 'Nova pergunta',
+	'survey-question-label-nr' => 'Pergunta nº$1',
+	'survey-special-label-required' => 'Uma pergunta é necessária',
+	'survey-special-label-type' => 'Tipo de pergunta',
+	'survey-special-label-text' => 'Texto da pergunta',
+	'survey-special-remove' => 'Remover pergunta',
+	'survey-jquery-submit' => 'Enviar',
+	'survey-jquery-finish' => 'Finalizar',
+	'survey-jquery-load-failed' => 'Não foi possível carregar o inquérito.',
+);
+
+/** Romanian (română)
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'surveys-surveystats-title' => 'Titlul sondajului',
+	'surveys-surveystats-status' => 'Starea sondajului',
+	'surveys-surveystats-questioncount' => 'Numărul de întrebări',
+	'surveys-surveystats-submissioncount' => 'Numărul de trimiteri',
+	'surveys-surveystats-questions' => 'Statistici legate de întrebare',
+	'surveys-surveystats-question-type' => 'Tipul întrebării',
+	'surveys-surveystats-question-text' => 'Textul întrebării',
+	'surveys-surveystats-question-answercount' => 'Numărul de răspunsuri',
+	'survey-special-label-title' => 'Titlul sondajului',
+	'survey-special-label-enabled' => 'Sondajul activat',
+	'survey-special-label-add-first' => 'Adaugă o întrebare',
+	'survey-special-label-add-another' => 'Adaugă o altă întrebare',
+	'survey-special-label-addquestion' => 'Întrebare nouă',
+	'survey-question-label-nr' => 'Întrebarea nr. $1',
+	'survey-special-label-required' => 'Întrebarea este necesară',
+	'survey-special-label-type' => 'Tipul întrebării',
+	'survey-special-label-text' => 'Textul întrebării',
+	'survey-special-remove' => 'Elimină întrebarea',
+	'survey-jquery-submit' => 'Trimite',
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */
@@ -2127,5 +2203,35 @@ $messages['tr'] = array(
  */
 $messages['yi'] = array(
 	'surveys-special-stats' => 'סטאַטיסטיק',
+);
+
+/** Traditional Chinese (‪中文（繁體）‬)
+ * @author Simon Shek
+ */
+$messages['zh-hant'] = array(
+	'survey-desc' => 'MediaWiki的調查工具',
+	'right-surveyadmin' => '管理調查',
+	'right-surveysubmit' => '參加調查',
+	'action-surveyadmin' => '管理調查',
+	'action-surveysubmit' => '參加調查',
+	'group-surveyadmin' => '調查管理員',
+	'group-surveyadmin-member' => '{{GENDER:$1|調查管理員}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員',
+	'group-surveysubmit' => '調查參與者',
+	'group-surveysubmit-member' => '{{GENDER:$1|調查參與者}}',
+	'survey-user-type-all' => '所有人',
+	'survey-user-type-loggedin' => '已登入用戶',
+	'survey-user-type-confirmed' => '確認用戶',
+	'survey-user-type-editor' => '編輯者',
+	'survey-user-type-anon' => '匿名用戶',
+	'survey-navigation-edit' => '[[Special:Survey/$1||編輯此調查]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1||填寫此調查]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|查看統計]]',
+	'surveys-special-addnew' => '添加新調查',
+	'surveys-special-newname' => '新調查ID：',
+	'surveys-special-add' => '添加調查',
+	'surveys-special-existing' => '現有調查',
+	'surveys-special-title' => '標題',
+	'surveys-special-status' => '狀態',
 );
 
