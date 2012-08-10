@@ -1939,6 +1939,23 @@ $messages['pt'] = array(
  * @author Stelistcristi
  */
 $messages['ro'] = array(
+	'right-surveyadmin' => 'Gestionează sondajele',
+	'right-surveysubmit' => 'Participă în sondaje',
+	'action-surveyadmin' => 'gestionează sondaje',
+	'action-surveysubmit' => 'participă în sondaje',
+	'group-surveyadmin' => 'Administratorii de sondaje',
+	'group-surveysubmit' => 'Participanți la sondaj',
+	'survey-question-type-number' => 'Număr',
+	'survey-question-type-select' => 'Meniu de derulare',
+	'survey-user-type-all' => 'Toată lumea',
+	'survey-user-type-loggedin' => 'Utilizatori autentificați',
+	'survey-user-type-confirmed' => 'Utilizatori confirmați',
+	'survey-user-type-anon' => 'Utilizatori anonimi',
+	'surveys-special-addnew' => 'Adaugă un sondaj nou',
+	'surveys-special-add' => 'Adaugă sondaj',
+	'surveys-special-title' => 'Titlu',
+	'surveys-special-status' => 'Stare',
+	'surveys-special-stats' => 'Statistici',
 	'surveys-surveystats-title' => 'Titlul sondajului',
 	'surveys-surveystats-status' => 'Starea sondajului',
 	'surveys-surveystats-questioncount' => 'Numărul de întrebări',
@@ -2205,7 +2222,15 @@ $messages['yi'] = array(
 	'surveys-special-stats' => 'סטאַטיסטיק',
 );
 
+/** Simplified Chinese (‪中文（简体）‬)
+ * @author Shirayuki
+ */
+$messages['zh-hans'] = array(
+	'survey-jquery-submit' => '提交',
+);
+
 /** Traditional Chinese (‪中文（繁體）‬)
+ * @author Shirayuki
  * @author Simon Shek
  */
 $messages['zh-hant'] = array(
@@ -2233,5 +2258,6 @@ $messages['zh-hant'] = array(
 	'surveys-special-existing' => '現有調查',
 	'surveys-special-title' => '標題',
 	'surveys-special-status' => '狀態',
+	'survey-jquery-submit' => '提交',
 );
 
