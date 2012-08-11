@@ -237,6 +237,7 @@ $messages['af'] = array(
 );
 
 /** Arabic (العربية)
+ * @author Meno25
  * @author روخو
  */
 $messages['ar'] = array(
@@ -247,8 +248,9 @@ $messages['ar'] = array(
 	'surveys-special-title' => 'العنوان',
 	'surveys-special-status' => 'الحالة',
 	'surveys-special-stats' => 'إحصاءات',
+	'surveys-special-edit' => 'تعديل',
 	'surveys-special-save' => 'احفظ',
-	'surveys-special-delete' => 'احذف',
+	'surveys-special-delete' => 'حذف',
 	'surveys-special-enabled' => 'مُفعّل',
 	'surveys-special-disabled' => 'معطل',
 	'surveys-special-confirm-delete' => 'هل أنت متأكد أنك تريد حذف هذا الاستطلاع؟',
@@ -264,7 +266,7 @@ $messages['ar'] = array(
 	'survey-special-label-type' => 'نمط السؤال',
 	'survey-special-label-text' => 'نص السؤال',
 	'survey-special-remove' => 'حذف السؤال',
-	'survey-jquery-submit' => 'أرسل',
+	'survey-jquery-submit' => 'إرسال',
 	'survey-jquery-finish' => 'أنهي',
 );
 
@@ -1393,6 +1395,41 @@ $messages['ja'] = array(
 	'survey-jquery-load-failed' => '調査を読み込めませんでした。',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'survey-question-type-number' => 'ნომერი',
+	'survey-user-type-all' => 'ყველა',
+	'survey-user-type-confirmed' => 'დადასტურებული მომხმარებლები',
+	'survey-user-type-editor' => 'რედაქტორები',
+	'survey-user-type-anon' => 'ანონიმური მომხმარებლები',
+	'surveys-special-title' => 'სათაური',
+	'surveys-special-status' => 'სტატუსი',
+	'surveys-special-stats' => 'სტატისტიკა',
+	'surveys-special-edit' => 'რედაქტირება',
+	'surveys-special-save' => 'შენახვა',
+	'surveys-special-delete' => 'წაშლა',
+	'surveys-special-enabled' => 'ჩართული',
+	'surveys-special-disabled' => 'გამორთული',
+	'surveys-surveystats-questioncount' => 'შეკითხვების რაოდენობა',
+	'surveys-surveystats-enabled' => 'ჩართული',
+	'surveys-surveystats-disabled' => 'გამორთული',
+	'surveys-surveystats-questions' => 'შეკითხვის სტატისტიკა',
+	'surveys-surveystats-question-type' => 'შეკითხვის ტიპი',
+	'surveys-surveystats-question-text' => 'შეკითხვის ტექსტი',
+	'surveys-surveystats-question-answercount' => 'პასუხების რაოდენობა',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|პასუხი|პასუხი}})',
+	'survey-question-label-nr' => 'შეკითხვა #$1',
+	'survey-special-label-required' => 'შეკითხვა სავალდებულოა',
+	'survey-special-label-type' => 'შეკითხვის ტიპი',
+	'survey-special-label-text' => 'შეკითხვის ტექსტი',
+	'survey-special-remove' => 'შეკითხვის წაშლა',
+	'survey-special-remove-confirm' => 'დარწმუნებული ხართ, რომ გსურთ ამ შეკითხვის წაშლა?',
+	'survey-jquery-submit' => 'მიღება',
+	'survey-jquery-finish' => 'დასრულება',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
@@ -1731,6 +1768,98 @@ $messages['mk'] = array(
 	'survey-jquery-load-failed' => 'Не можев да ја вчитам анкетата.',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'right-surveyadmin' => 'Jamministra s-sondaġġi',
+	'right-surveysubmit' => 'Jipparteċipa fis-sondaġġi',
+	'action-surveyadmin' => 'tamministra s-sondaġġi',
+	'action-surveysubmit' => "tipparteċipa f'sondaġġi",
+	'group-surveyadmin' => "Amministraturi ta' sondaġġi",
+	'group-surveyadmin-member' => "{{GENDER:$1|amministratur|amministratriċi}} ta' sondaġġi",
+	'grouppage-surveyadmin' => "{{ns:project}}:Amministraturi ta' sondaġġi",
+	'group-surveysubmit' => 'Parteċipanti tas-sondaġġi',
+	'group-surveysubmit-member' => "{{GENDER:$1|parteċipant|parteċipanta}} f'sondaġġi",
+	'grouppage-surveysubmit' => "{{ns:project}}:Parteċipanti f'sondaġġi",
+	'special-editsurvey' => 'Amministra s-sondaġġ',
+	'special-surveys' => 'Amministra s-sondaġġi',
+	'special-surveystats' => 'Statistika tas-sondaġġ',
+	'special-takesurvey' => 'Wieġeb is-sondaġġ',
+	'survey-err-id-xor-name' => 'Trid tipprova l-ID jew isem is-sondaġġ sabiex tibgħat l-informazzjoni',
+	'survey-err-survey-name-unknown' => 'M\'hemm l-ebda sondaġġ bl-isem "$1"',
+	'survey-err-duplicate-name' => 'Hemm diġà sondaġġ bl-isem "$1"',
+	'survey-err-ids-xor-names' => 'Trid tipprovdi jew l-IDs jew l-ismijiet tas-sondaġġ sabiex tanalizza l-informazzjoni',
+	'survey-question-type-number' => 'Numru',
+	'survey-user-type-all' => 'Kulħadd',
+	'survey-user-type-loggedin' => 'Utenti illogjati',
+	'survey-user-type-confirmed' => 'Utenti konfermati',
+	'survey-user-type-editor' => 'Edituri',
+	'survey-user-type-anon' => 'Utenti anonimi',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Immodifika dan is-sondaġġ]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Ħu dan is-sondaġġ]]',
+	'survey-navigation-list' => "[[Special:Surveys|Lista ta' sondaġġi]]",
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Ara l-istatistika]]',
+	'surveys-special-addnew' => 'Żid sondaġġ ġdid',
+	'surveys-special-namedoc' => 'Daħħal identifikatur uniku (ID) għas-sondaġġ il-ġdid. Ma jistax jiġi mibdul iktar tard. Per eżempju: motivazzjoni-editur.',
+	'surveys-special-newname' => 'ID tas-sondaġġ il-ġdid:',
+	'surveys-special-add' => 'Żid sondaġġ',
+	'surveys-special-existing' => 'Sondaġġi eżistenti',
+	'surveys-special-title' => 'Titlu',
+	'surveys-special-status' => 'Stat',
+	'surveys-special-stats' => 'Statistika',
+	'surveys-special-edit' => 'Immodifika',
+	'surveys-special-save' => 'Salva',
+	'surveys-special-delete' => 'Ħassar',
+	'surveys-special-enabled' => 'Attiva',
+	'surveys-special-disabled' => 'Iddiżattiva',
+	'surveys-special-confirm-delete' => 'Inti ċert li tixtieq tħassar dan is-sondaġġ?',
+	'surveys-special-delete-failed' => 'Is-sondaġġ naqas li jiġi mħassar.',
+	'survey-special-label-usertype' => 'Utenti li għandhom jirrispondu għal dan is-sondaġġ',
+	'survey-special-label-minpages' => "Numru minimu ta' paġni l-utent irid iżur qabel ma jwieġeb is-sondaġġ",
+	'surveys-takesurvey-loading' => "Is-sondaġġ tiela'...",
+	'surveys-takesurvey-nosuchsurvey' => 'Is-sondaġġ rikjest ma jeżistix.',
+	'surveys-takesurvey-warn-notenabled' => 'Is-sondaġġ għadu ma ġiex attivat, u għalhekk mhuwiex viżibbli lill-utenti.',
+	'surveys-takesurvey-surveynotenabled' => 'Is-sondaġġ rikjest għadu ma ġiex attivat.',
+	'surveys-surveystats-nosuchsurvey' => "Is-sondaġġ rikjest ma jeżistix. Tista' tara [[Special:Surveys|lista ta' sondaġġi disponibbli]].",
+	'surveys-surveystats-name' => 'ID tas-sondaġġ',
+	'surveys-surveystats-title' => 'Titlu tas-sondaġġ',
+	'surveys-surveystats-status' => 'Stat tas-sondaġġ',
+	'surveys-surveystats-questioncount' => "Numru ta' mistoqsijiet",
+	'surveys-surveystats-submissioncount' => "Numru ta' risposti",
+	'surveys-surveystats-enabled' => 'Attivat',
+	'surveys-surveystats-disabled' => 'Diżattivat',
+	'surveys-surveystats-questions' => 'Statistika tal-mistoqsija',
+	'surveys-surveystats-question-type' => "Tip ta' mistoqsija",
+	'surveys-surveystats-question-text' => 'Test tal-mistoqsija',
+	'surveys-surveystats-question-answercount' => "Numru ta' tweġibiet",
+	'surveys-surveystats-question-answers' => 'L-aktar tweġibiet mogħtija',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|tweġiba|tweġibiet}})',
+	'surveys-surveystats-unchecked' => 'Mhux magħżula',
+	'surveys-surveystats-checked' => 'Magħżula',
+	'surveys-special-unknown-name' => "M'hemm l-ebda sondaġġ b'dan l-ID.",
+	'survey-special-label-name' => 'ID tas-sondaġġ',
+	'survey-special-label-title' => 'Titlu tas-sondaġġ',
+	'survey-special-label-enabled' => 'Sondaġġ attivat',
+	'survey-special-label-ratio' => "Perċentwal ta' persuni li trid turi dan is-sondaġġ lil",
+	'survey-special-label-add-first' => 'Żid mistoqsija',
+	'survey-special-label-add-another' => 'Żid mistoqsija oħra',
+	'survey-special-label-addquestion' => 'Mistoqsija ġdida',
+	'survey-question-label-nr' => 'Mistqosija #$1',
+	'survey-special-label-required' => 'Mistoqsija hija neċessarja',
+	'survey-special-label-type' => "Tip ta' mistoqsija",
+	'survey-special-label-text' => 'Test tal-mistoqsija',
+	'survey-special-remove' => 'Neħħi l-mistoqsija',
+	'survey-special-remove-confirm' => 'Inti ċert li trid tneħħi din il-mistoqsija?',
+	'survey-special-label-header' => "Test x'turi fuq is-sondaġġ",
+	'survey-special-label-footer' => "Test x'turi taħt is-sondaġġ",
+	'survey-special-label-thanks' => "Messaġġ ta' ringrazzjament wara li jintbagħat is-sondaġġ",
+	'survey-special-label-answers' => "Tweġibiet disponibbli, waħda f'kull linja.",
+	'survey-jquery-submit' => 'Ibgħat',
+	'survey-jquery-finish' => 'Temm',
+	'survey-jquery-load-failed' => "Is-sondaġġ ma setax jitla'.",
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -1979,6 +2108,22 @@ $messages['ro'] = array(
 	'survey-jquery-submit' => 'Trimite',
 );
 
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'survey-question-type-number' => 'අංකය',
+	'survey-user-type-all' => 'සියලුමදෙනා',
+	'survey-user-type-editor' => 'සංස්කාරකවරු',
+	'surveys-special-title' => 'ශීර්ෂය',
+	'surveys-special-status' => 'තත්වය',
+	'surveys-special-edit' => 'සංස්කරණය',
+	'surveys-special-save' => 'සුරකින්න',
+	'surveys-special-delete' => 'මකන්න',
+	'survey-jquery-submit' => 'යොමන්න',
+	'survey-jquery-finish' => 'අවසාන කරන්න',
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */
@@ -2076,6 +2221,7 @@ $messages['sv'] = array(
 $messages['te'] = array(
 	'survey-question-type-number' => 'సంఖ్య',
 	'survey-user-type-all' => 'అందరూ',
+	'survey-user-type-confirmed' => 'నిర్ధారిత వాడుకరులు',
 	'survey-user-type-anon' => 'అజ్ఞాత వాడుకరులు',
 	'survey-navigation-stats' => '[[Special:SurveyStats/$1|గణాంకాలను చూడండి]]',
 	'surveys-special-title' => 'శీర్షిక',
@@ -2094,6 +2240,7 @@ $messages['te'] = array(
 	'survey-special-label-type' => 'ప్రశ్న రకం',
 	'survey-special-label-text' => 'ప్రశ్న పాఠ్యం',
 	'survey-special-remove' => 'ప్రశ్నను తొలగించు',
+	'survey-jquery-finish' => 'ముగించు',
 );
 
 /** Tagalog (Tagalog)
