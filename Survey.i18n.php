@@ -2010,6 +2010,8 @@ $messages['ps'] = array(
 	'surveys-special-edit' => 'سمول',
 	'surveys-special-save' => 'خوندي کول',
 	'surveys-special-delete' => 'ړنګول',
+	'survey-special-label-add-first' => 'پوښتنه ورګډول',
+	'survey-special-label-addquestion' => 'نوې پوښتنه',
 	'survey-jquery-submit' => 'سپارل',
 );
 
@@ -2117,9 +2119,18 @@ $messages['si'] = array(
 	'survey-user-type-editor' => 'සංස්කාරකවරු',
 	'surveys-special-title' => 'ශීර්ෂය',
 	'surveys-special-status' => 'තත්වය',
+	'surveys-special-stats' => 'සංඛ්‍යාන දත්ත',
 	'surveys-special-edit' => 'සංස්කරණය',
 	'surveys-special-save' => 'සුරකින්න',
 	'surveys-special-delete' => 'මකන්න',
+	'surveys-surveystats-enabled' => 'සක්‍රීයයි',
+	'surveys-surveystats-disabled' => 'අක්‍රීයයි',
+	'surveys-surveystats-question-type' => 'ප්‍රශ්න වර්ගය',
+	'surveys-surveystats-question-text' => 'ප්‍රශ්න පාඨය',
+	'survey-special-label-addquestion' => 'නව ප්‍රශ්නය',
+	'survey-question-label-nr' => 'ප්‍රශ්නය #$1',
+	'survey-special-label-type' => 'ප්‍රශ්න වර්ගය',
+	'survey-special-remove' => 'ප්‍රශ්නය ඉවත් කරන්න',
 	'survey-jquery-submit' => 'යොමන්න',
 	'survey-jquery-finish' => 'අවසාන කරන්න',
 );
@@ -2213,6 +2224,41 @@ $messages['sv'] = array(
 	'survey-jquery-submit' => 'Skicka',
 	'survey-jquery-finish' => 'Slutför',
 	'survey-jquery-load-failed' => 'Kunder inte läsa in undersökning.',
+);
+
+/** Tamil (தமிழ்)
+ * @author Karthi.dr
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'surveys-special-title' => 'தலைப்பு',
+	'surveys-special-status' => 'நிலை',
+	'surveys-special-stats' => 'புள்ளிவிவரங்கள்',
+	'surveys-special-edit' => 'தொகு',
+	'surveys-special-save' => 'சேமி',
+	'surveys-special-delete' => 'நீக்கு',
+	'surveys-special-enabled' => 'செயலாக்கப்பட்டது',
+	'surveys-special-disabled' => 'செயலிழக்கம் செய்யப்பட்டுள்ளது',
+	'surveys-surveystats-questioncount' => 'வினாக்களின் எண்ணிக்கை',
+	'surveys-surveystats-enabled' => 'செயலாக்கப்பட்டது',
+	'surveys-surveystats-disabled' => 'செயலிழக்கம் செய்யப்பட்டுள்ளது',
+	'surveys-surveystats-questions' => 'கேள்வி புள்ளிவிவரங்கள்',
+	'surveys-surveystats-question-type' => 'வினா வகை',
+	'surveys-surveystats-question-text' => 'வினா உரை',
+	'surveys-surveystats-question-answercount' => 'விடைகளின் எண்ணிக்கை',
+	'surveys-surveystats-question-answers' => 'அதிகம் தரப்பட்ட விடைகள்',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|பதில்|பதில்கள்}})',
+	'survey-special-label-add-first' => 'வினாவினைச் சேர்',
+	'survey-special-label-add-another' => 'மற்றொரு வினாவைச் சேர்',
+	'survey-special-label-addquestion' => 'புதிய வினா',
+	'survey-question-label-nr' => 'வினா #$1',
+	'survey-special-label-required' => 'வினா அவசியம் தேவை',
+	'survey-special-label-type' => 'வினா வகை',
+	'survey-special-label-text' => 'வினா உரை',
+	'survey-special-remove' => 'வினாவை நீக்கு',
+	'survey-special-remove-confirm' => 'இந்த வினாவை நீங்கள் நீக்க விரும்புவது உறுதியா ?',
+	'survey-jquery-submit' => 'சமர்ப்பி',
+	'survey-jquery-finish' => 'நிறைவு செய்',
 );
 
 /** Telugu (తెలుగు)
