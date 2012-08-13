@@ -486,6 +486,16 @@ $messages['br'] = array(
 	'survey-jquery-finish' => 'Echuiñ',
 );
 
+/** Catalan (català)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ca'] = array(
+	'surveys-special-status' => 'Estat',
+	'surveys-special-edit' => 'Edita',
+	'surveys-special-save' => 'Desa',
+	'surveys-special-delete' => 'Esborrar',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
@@ -2231,6 +2241,11 @@ $messages['sv'] = array(
  * @author Shanmugamp7
  */
 $messages['ta'] = array(
+	'survey-user-type-all' => 'அனைவரும்',
+	'survey-user-type-loggedin' => 'புகுபதிகை செய்த பயனர்கள்',
+	'survey-user-type-confirmed' => 'உறுதிசெய்யப்பட்ட பயனர்கள்',
+	'survey-user-type-editor' => 'தொகுப்பாளர்கள்',
+	'survey-user-type-anon' => 'அடையாளம் காட்டாத பயனர்கள்',
 	'surveys-special-title' => 'தலைப்பு',
 	'surveys-special-status' => 'நிலை',
 	'surveys-special-stats' => 'புள்ளிவிவரங்கள்',
