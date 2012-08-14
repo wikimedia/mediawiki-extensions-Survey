@@ -742,6 +742,27 @@ $messages['es'] = array(
 	'survey-jquery-load-failed' => 'No se pudo cargar la encuesta.',
 );
 
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'survey-user-type-all' => 'Kõigile',
+	'survey-user-type-loggedin' => 'Sisse logitud kasutajatele',
+	'survey-user-type-confirmed' => 'Kinnitatud kasutajatele',
+	'survey-user-type-editor' => 'Toimetajatele',
+	'survey-user-type-anon' => 'Anonüümsetele kasutajatele',
+	'surveys-special-title' => 'Pealkiri',
+	'surveys-special-status' => 'Olek',
+	'surveys-special-stats' => 'Statistika',
+	'surveys-special-edit' => 'Redigeeri',
+	'surveys-special-save' => 'Salvesta',
+	'surveys-special-delete' => 'Kustuta',
+	'surveys-special-enabled' => 'Lubatud',
+	'surveys-special-disabled' => 'Välja lülitatud',
+	'surveys-surveystats-enabled' => 'Lubatud',
+	'surveys-surveystats-disabled' => 'Välja lülitatud',
+);
+
 /** Finnish (suomi)
  * @author Crt
  */
