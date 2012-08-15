@@ -150,6 +150,7 @@ $messages['en'] = array(
  * @author EugeneZelenko
  * @author Jeroen De Dauw
  * @author Kghbln
+ * @author Pikne
  * @author SPQRobin
  * @author Siebrand
  * @author Umherirrender
@@ -186,12 +187,24 @@ $messages['qqq'] = array(
 	'survey-question-type-radio' => 'Input type for a question, selectable in administration interface.',
 	'survey-question-type-textarea' => 'Input type for a question, selectable in administration interface.',
 	'survey-question-type-check' => 'Input type for a question, selectable in administration interface.',
-	'survey-user-type-all' => 'Group of users for which a survey can be available.',
-	'survey-user-type-loggedin' => 'Group of users for which a survey can be available.',
-	'survey-user-type-confirmed' => 'Group of users for which a survey can be available.',
-	'survey-user-type-editor' => 'Group of users for which a survey can be available.',
-	'survey-user-type-anon' => 'Group of users for which a survey can be available.',
+	'survey-user-type-all' => 'Group of users for which a survey can be available.
+
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+	'survey-user-type-loggedin' => 'Group of users for which a survey can be available.
+
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+	'survey-user-type-confirmed' => 'Group of users for which a survey can be available.
+
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+	'survey-user-type-editor' => 'Group of users for which a survey can be available.
+
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+	'survey-user-type-anon' => 'Group of users for which a survey can be available.
+
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+	'surveys-special-addnew' => 'Form header ([[:File:Survey-surveys.png|screenshot]])',
 	'surveys-special-namedoc' => '[[File:Survey-surveys.png|300px]]',
+	'surveys-special-add' => 'Button text ([[:File:Survey-surveys.png|screenshot]])',
 	'surveys-special-title' => '{{Identical|Title}}',
 	'surveys-special-status' => '{{Identical|Status}}',
 	'surveys-special-stats' => '{{Identical|Statistics}}',
@@ -200,10 +213,13 @@ $messages['qqq'] = array(
 	'surveys-special-delete' => '{{Identical|Delete}}',
 	'surveys-special-enabled' => '{{Identical|Enabled}}',
 	'surveys-special-disabled' => '{{Identical|Disabled}}',
+	'survey-special-label-usertype' => 'Label in front of radio button options ([[:File:Survey-survey.png|screenshot]])',
 	'surveys-surveystats-enabled' => '{{Identical|Enabled}}',
 	'surveys-surveystats-disabled' => '{{Identical|Disabled}}',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
+	'survey-special-remove' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-jquery-submit' => '{{Identical|Submit}}',
 );
 
@@ -744,13 +760,21 @@ $messages['es'] = array(
 
 /** Estonian (eesti)
  * @author Avjoska
+ * @author Pikne
  */
 $messages['et'] = array(
-	'survey-user-type-all' => 'Kõigile',
-	'survey-user-type-loggedin' => 'Sisse logitud kasutajatele',
-	'survey-user-type-confirmed' => 'Kinnitatud kasutajatele',
-	'survey-user-type-editor' => 'Toimetajatele',
-	'survey-user-type-anon' => 'Anonüümsetele kasutajatele',
+	'right-surveyadmin' => 'Hallata küsitlusi',
+	'right-surveysubmit' => 'Osaleda küsitlustel',
+	'action-surveyadmin' => 'küsitlusi hallata',
+	'action-surveysubmit' => 'küsitlustel osaleda',
+	'special-takesurvey' => 'Küsitlusele vastamine',
+	'survey-user-type-all' => 'Kõik',
+	'survey-user-type-loggedin' => 'Sisseloginud kasutajad',
+	'survey-user-type-confirmed' => 'Kinnitatud kasutajad',
+	'survey-user-type-editor' => 'Toimetajad',
+	'survey-user-type-anon' => 'Anonüümsed kasutajad',
+	'surveys-special-addnew' => 'Uue küsitluse lisamine',
+	'surveys-special-add' => 'Lisa küsitlus',
 	'surveys-special-title' => 'Pealkiri',
 	'surveys-special-status' => 'Olek',
 	'surveys-special-stats' => 'Statistika',
@@ -758,9 +782,25 @@ $messages['et'] = array(
 	'surveys-special-save' => 'Salvesta',
 	'surveys-special-delete' => 'Kustuta',
 	'surveys-special-enabled' => 'Lubatud',
-	'surveys-special-disabled' => 'Välja lülitatud',
+	'surveys-special-disabled' => 'Keelatud',
+	'survey-special-label-usertype' => 'Kasutajad, kes saavad küsitlusele vastata',
 	'surveys-surveystats-enabled' => 'Lubatud',
-	'surveys-surveystats-disabled' => 'Välja lülitatud',
+	'surveys-surveystats-disabled' => 'Keelatud',
+	'survey-special-label-add-first' => 'Lisa küsimus',
+	'survey-special-remove' => 'Eemalda küsimus',
+	'survey-jquery-submit' => 'Saada',
+);
+
+/** Basque (euskara)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['eu'] = array(
+	'surveys-special-title' => 'Izenburua',
+	'surveys-special-status' => 'Egoera',
+	'surveys-special-edit' => 'Aldatu',
+	'surveys-special-save' => 'Gorde',
+	'surveys-special-delete' => 'Ezabatu',
+	'survey-jquery-submit' => 'Bidali',
 );
 
 /** Finnish (suomi)
