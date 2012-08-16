@@ -916,6 +916,8 @@ $messages['frp'] = array(
 	'survey-desc' => 'Outil de sondâjo por MediaWiki',
 	'right-surveyadmin' => 'Administrar los sondâjos',
 	'right-surveysubmit' => 'Participar ux sondâjos',
+	'action-surveyadmin' => 'administrar los sondâjos',
+	'action-surveysubmit' => 'participar ux sondâjos',
 	'group-surveyadmin' => 'Administrators de sondâjo',
 	'group-surveyadmin-member' => 'administrat{{GENDER:$1|or|rice}} de sondâjo',
 	'grouppage-surveyadmin' => '{{ns:project}}:Administrators_de_sondâjo',
@@ -927,6 +929,7 @@ $messages['frp'] = array(
 	'special-surveystats' => 'Statistiques des sondâjos',
 	'special-takesurvey' => 'Prendre lo sondâjo',
 	'survey-question-type-number' => 'Numerô',
+	'survey-question-type-select' => 'Menu dèroulant',
 	'survey-question-type-radio' => 'Botons radiô',
 	'survey-question-type-check' => 'Câsa a pouentar',
 	'survey-user-type-all' => 'Tot lo mondo',
@@ -978,6 +981,17 @@ $messages['frp'] = array(
 	'survey-special-remove' => 'Enlevar la quèstion',
 	'survey-jquery-submit' => 'Sometre',
 	'survey-jquery-finish' => 'Chavonar',
+);
+
+/** Irish (Gaeilge)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ga'] = array(
+	'surveys-special-title' => 'Teideal',
+	'surveys-special-stats' => 'Staidrimh',
+	'surveys-special-edit' => 'Cuir in eagar',
+	'surveys-special-save' => 'Sábháil',
+	'surveys-special-delete' => 'Scrios',
 );
 
 /** Galician (galego)
@@ -2486,11 +2500,32 @@ $messages['tr'] = array(
 	'survey-jquery-finish' => 'Tamamlandı',
 );
 
+/** Vietnamese (Tiếng Việt)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['vi'] = array(
+	'survey-question-type-number' => 'Số',
+	'survey-user-type-all' => 'Tất cả mọi người',
+	'surveys-special-title' => 'Tựa đề',
+	'surveys-special-status' => 'Trạng thái',
+	'surveys-special-stats' => 'Thống kê',
+	'surveys-special-edit' => 'Chỉnh Sửa',
+	'surveys-special-save' => 'Lưu',
+	'surveys-special-delete' => 'Xóa',
+	'survey-jquery-finish' => 'Kết thúc',
+);
+
 /** Yiddish (ייִדיש)
  * @author פוילישער
+ * @author පසිඳු කාවින්ද
  */
 $messages['yi'] = array(
+	'survey-question-type-number' => 'נומער',
+	'surveys-special-title' => 'טיטל',
+	'surveys-special-status' => 'סטאַטוס',
 	'surveys-special-stats' => 'סטאַטיסטיק',
+	'surveys-special-save' => 'אויפֿהיטן',
+	'surveys-special-delete' => 'אויסמעקן',
 );
 
 /** Simplified Chinese (‪中文（简体）‬)
