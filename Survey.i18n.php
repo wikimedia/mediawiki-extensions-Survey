@@ -1557,10 +1557,10 @@ $messages['ko'] = array(
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|이 설문 조사 하기]]',
 	'survey-navigation-list' => '[[Special:Surveys|설문 조사 목록]]',
 	'survey-navigation-stats' => '[[Special:SurveyStats/$1|통계 보기]]',
-	'surveys-special-addnew' => '새 설문 조사 더함',
+	'surveys-special-addnew' => '새 설문 조사 추가',
 	'surveys-special-namedoc' => '새 설문 조사를 위한 고유 식별자 (ID)를 입력하세요. 나중에 바꿀 수 없습니다. 예: editor-motivation.',
 	'surveys-special-newname' => '새 설문 조사 ID:',
-	'surveys-special-add' => '설문 조사 더함',
+	'surveys-special-add' => '설문 조사 추가',
 	'surveys-special-existing' => '기존 설문 조사',
 	'surveys-special-title' => '제목',
 	'surveys-special-status' => '상태',
@@ -1599,8 +1599,8 @@ $messages['ko'] = array(
 	'survey-special-label-title' => '설문 조사 제목',
 	'survey-special-label-enabled' => '설문 조사 활성화됨',
 	'survey-special-label-ratio' => '설문 조사를 한 사람의 백분율',
-	'survey-special-label-add-first' => '질문 더함',
-	'survey-special-label-add-another' => '다른 질문 더함',
+	'survey-special-label-add-first' => '질문 추가',
+	'survey-special-label-add-another' => '다른 질문 추가',
 	'survey-special-label-addquestion' => '새 질문',
 	'survey-question-label-nr' => '질문 #$1',
 	'survey-special-label-required' => '질문이 필요함',
@@ -2498,6 +2498,24 @@ $messages['tr'] = array(
 	'surveys-surveystats-disabled' => 'Devre dışı',
 	'survey-jquery-submit' => 'Gönder',
 	'survey-jquery-finish' => 'Tamamlandı',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'survey-question-type-number' => 'تعداد',
+	'survey-user-type-all' => 'ہر کوئی',
+	'survey-user-type-editor' => 'ایڈیٹرز',
+	'survey-user-type-anon' => 'گمنام صارفین',
+	'surveys-special-title' => 'عنوان',
+	'surveys-special-status' => 'حیثیت',
+	'surveys-special-stats' => 'اعداد و شمار',
+	'surveys-special-edit' => 'ترمیم کریں',
+	'surveys-special-save' => 'محفوظ کریں',
+	'surveys-special-delete' => 'حذف کریں',
+	'survey-jquery-submit' => 'جمع کرائیں',
+	'survey-jquery-finish' => 'ختم',
 );
 
 /** Vietnamese (Tiếng Việt)
