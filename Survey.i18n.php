@@ -2090,14 +2090,25 @@ $messages['pl'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'survey-question-type-number' => 'شمېره',
+	'survey-user-type-all' => 'هر څوک',
+	'survey-user-type-confirmed' => 'تاييد شوي کارنان',
 	'survey-user-type-editor' => 'سمونګران',
+	'survey-user-type-anon' => 'ورکنومي کارنان',
+	'surveys-special-title' => 'سرليک',
 	'surveys-special-status' => 'دريځ',
+	'surveys-special-stats' => 'شمارنې',
 	'surveys-special-edit' => 'سمول',
 	'surveys-special-save' => 'خوندي کول',
 	'surveys-special-delete' => 'ړنګول',
+	'surveys-special-enabled' => 'چارن',
+	'surveys-special-disabled' => 'ناچارن',
+	'surveys-surveystats-enabled' => 'چارن',
+	'surveys-surveystats-disabled' => 'ناچارن',
 	'survey-special-label-add-first' => 'پوښتنه ورګډول',
 	'survey-special-label-addquestion' => 'نوې پوښتنه',
 	'survey-jquery-submit' => 'سپارل',
+	'survey-jquery-finish' => 'پای',
 );
 
 /** Portuguese (português)
