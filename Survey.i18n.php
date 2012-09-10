@@ -1421,6 +1421,10 @@ $messages['ja'] = array(
 	'group-surveysubmit' => '調査参加者',
 	'group-surveysubmit-member' => '{{GENDER:$1|調査参加者}}',
 	'grouppage-surveysubmit' => '{{ns:project}}:調査参加者',
+	'group-surveyadmin.css' => '/* ここに記述したCSSは調査管理者のみに影響します */',
+	'group-surveyadmin.js' => '/* ここに記述したJSは調査管理者のみに影響します */',
+	'group-surveysubmit.css' => '/* ここに記述したCSSは調査参加者のみに影響します */',
+	'group-surveysubmit.js' => '/* ここに記述したJSは調査参加者のみに影響します */',
 	'special-editsurvey' => '調査の管理',
 	'special-surveys' => '調査の管理',
 	'special-surveystats' => '調査の統計',
@@ -2160,6 +2164,44 @@ $messages['pt'] = array(
 	'survey-jquery-submit' => 'Enviar',
 	'survey-jquery-finish' => 'Finalizar',
 	'survey-jquery-load-failed' => 'Não foi possível carregar o inquérito.',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas Blade
+ */
+$messages['pt-br'] = array(
+	'survey-user-type-confirmed' => 'Usuários confirmados',
+	'survey-user-type-editor' => 'Editores',
+	'survey-user-type-anon' => 'Usuários anônimos',
+	'surveys-special-add' => 'Adicionar pesquisa',
+	'surveys-special-existing' => 'Pesquisas existentes',
+	'surveys-special-title' => 'Título',
+	'surveys-special-status' => 'Estado',
+	'surveys-special-stats' => 'Estatísticas',
+	'surveys-special-edit' => 'Editar',
+	'surveys-special-save' => 'Salvar',
+	'surveys-special-delete' => 'Eliminar',
+	'surveys-special-enabled' => 'Ativado',
+	'surveys-special-disabled' => 'Desativado',
+	'surveys-special-confirm-delete' => 'Tem certeza que deseja excluir esta pesquisa?',
+	'surveys-special-delete-failed' => 'Falha ao excluir pesquisa.',
+	'surveys-surveystats-name' => 'ID da pesquisa',
+	'surveys-surveystats-title' => 'Título da pesquisa',
+	'surveys-surveystats-status' => 'Status da pesquisa',
+	'surveys-surveystats-questioncount' => 'Número de perguntas',
+	'surveys-surveystats-submissioncount' => 'Número de envios',
+	'surveys-surveystats-enabled' => 'Ativado',
+	'surveys-surveystats-disabled' => 'Desativado',
+	'surveys-surveystats-questions' => 'Estatísticas da pergunta',
+	'surveys-surveystats-question-type' => 'Tipo de pergunta',
+	'surveys-surveystats-question-text' => 'Texto da pergunta',
+	'surveys-surveystats-question-answercount' => 'Número de respostas',
+	'surveys-surveystats-question-answers' => 'Respostas mais frequentes',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|resposta|respostas}})',
+	'surveys-surveystats-unchecked' => 'Desmarcada',
+	'surveys-surveystats-checked' => 'Marcada',
+	'survey-jquery-submit' => 'Enviar',
+	'survey-jquery-finish' => 'Finalizar',
 );
 
 /** Romanian (română)
