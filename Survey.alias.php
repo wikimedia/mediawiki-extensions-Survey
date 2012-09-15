@@ -64,9 +64,10 @@ $specialPageAliases['ia'] = array(
 
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
-	'EditSurvey' => array( '編集アンケート' ),
+	'EditSurvey' => array( 'アンケート編集', '編集アンケート' ),
 	'Surveys' => array( 'アンケート' ),
 	'SurveyStats' => array( 'アンケート統計情報' ),
+	'TakeSurvey' => array( 'アンケート実施' ),
 );
 
 /** Korean (한국어) */
