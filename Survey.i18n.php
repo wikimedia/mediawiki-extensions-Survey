@@ -355,6 +355,7 @@ $messages['be-tarask'] = array(
 	'surveys-surveystats-enabled' => 'Уключанае',
 	'surveys-surveystats-disabled' => 'Выключанае',
 	'surveys-surveystats-questions' => 'Статыстыка пытаньняў',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Тып пытаньня',
 	'surveys-surveystats-question-text' => 'Зьмест пытаньня',
 	'surveys-surveystats-question-answercount' => 'Колькасьць адказаў',
@@ -514,6 +515,7 @@ $messages['ca'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  */
 $messages['de'] = array(
 	'survey-desc' => 'Ermöglicht Umfragen',
@@ -580,6 +582,7 @@ $messages['de'] = array(
 	'surveys-surveystats-enabled' => 'Aktiviert',
 	'surveys-surveystats-disabled' => 'Deaktiviert',
 	'surveys-surveystats-questions' => 'Fragestatistiken',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Fragentyp',
 	'surveys-surveystats-question-text' => 'Text der Frage',
 	'surveys-surveystats-question-answercount' => 'Anzahl der Antworten',
