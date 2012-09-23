@@ -28,20 +28,22 @@ class ApiSubmitSurvey extends ApiBase {
 		$params = $this->extractRequestParams();
 		
 		if ( !( isset( $params['id'] ) XOR isset( $params['name'] ) ) ) {
-			$this->dieUsage( wfMsg( 'survey-err-id-xor-name' ), 'id-xor-name' );
+			$this->dieUsage( $this->msg( 'survey-err-id-xor-name' )->text(), 'id-xor-name' );
 		}
 		
 		if ( isset( $params['name'] ) ) {
 			$survey = Survey::newFromName( $params['name'], null, false );
 			
 			if ( $survey === false ) {
-				$this->dieUsage( wfMsgExt( 'survey-err-survey-name-unknown', 'parsemag', $params['name'] ), 'survey-name-unknown' );
+				$this->dieUsage( $this->msg( 'survey-err-survey-name-unknown',
+						$params['name'] )->text(), 'survey-name-unknown' );
 			}
 		} else {
 			$survey = Survey::newFromId( $params['id'], null, false );
 			
 			if ( $survey === false ) {
-				$this->dieUsage( wfMsgExt( 'survey-err-survey-id-unknown', 'parsemag', $params['id'] ), 'survey-id-unknown' );
+				$this->dieUsage( $this->msg( 'survey-err-survey-id-unknown',
+						$params['id'] )->text(), 'survey-id-unknown' );
 			}
 		}
 		
