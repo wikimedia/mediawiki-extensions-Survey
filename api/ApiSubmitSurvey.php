@@ -13,15 +13,14 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiSubmitSurvey extends ApiBase {
-	
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
 	
 	public function execute() {
-		global $wgUser;
-		
-		if ( !$wgUser->isAllowed( 'surveysubmit' ) || $wgUser->isBlocked() ) {
+		$user = $this->getUser();
+
+		if ( !$user->isAllowed( 'surveysubmit' ) || $user->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}			
 		
@@ -116,5 +115,4 @@ class ApiSubmitSurvey extends ApiBase {
 	public function getVersion() {
 		return __CLASS__ . ': $Id$';
 	}		
-	
 }

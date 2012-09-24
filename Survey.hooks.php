@@ -36,8 +36,7 @@ final class SurveyHooks {
 	 * @param array $args
 	 * @param Parser $parser
 	 * @param PPFrame $frame
-	 *
-	 * @return boolean
+	 * @return string
 	 */
 	public static function onSurveyRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 		$tag = new SurveyTag( $args, $input );
@@ -57,7 +56,7 @@ final class SurveyHooks {
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'surveys',
-			dirname( __FILE__ ) . '/sql/Survey.sql',
+			__DIR__ . '/sql/Survey.sql',
 			true
 		) );
 		
@@ -65,7 +64,7 @@ final class SurveyHooks {
 			'addIndex',
 			'surveys',
 			'surveys_survey_title',
-			dirname( __FILE__ ) . '/sql/AddMissingIndexes.sql',
+			__DIR__ . '/sql/AddMissingIndexes.sql',
 			true
 		) );
 
@@ -119,7 +118,6 @@ final class SurveyHooks {
 		 * @var Survey $survey
 		 */
 		foreach ( $surveys as $survey ) {
-			
 			if ( count( $survey->getField( 'namespaces' ) ) == 0 ) {
 				$nsValid = true;
 			}
@@ -128,7 +126,8 @@ final class SurveyHooks {
 			}
 			
 			if ( $nsValid ) {
-				$GLOBALS['wgOut']->addWikiText( Xml::element( 
+				global $wgOut;
+				$wgOut->addWikiText( Xml::element(
 					'survey',
 					array(
 						'id' => $survey->getId(),
@@ -148,8 +147,8 @@ final class SurveyHooks {
 	 * 
 	 * @since 0.1
 	 *
-	 * @param $admin_links_tree
-	 * 
+	 * @param ALTree $admin_links_tree
+	 *
 	 * @return boolean
 	 */
 	public static function addToAdminLinks( &$admin_links_tree ) {
@@ -160,5 +159,5 @@ final class SurveyHooks {
 		$admin_links_tree->addSection( $section, 'Survey' );
 	    return true;
 	}
-	
+
 }

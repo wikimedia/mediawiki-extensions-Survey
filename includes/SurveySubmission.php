@@ -101,10 +101,12 @@ class SurveySubmission extends SurveyDBClass {
 	}
 	
 	public function writeAnswersToDB() {
-		foreach ( $this->answers as /* SurveyAnswer */ $answer ) {
+		/**
+		 * @var $answer SurveyAnswer
+		 */
+		foreach ( $this->answers as $answer ) {
 			$answer->setField( 'submission_id', $this->getId() );
 			$answer->writeToDB();
 		}
 	}
-	
 }

@@ -12,7 +12,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SpecialSurveys extends SpecialSurveyPage {
-	
 	/**
 	 * Constructor.
 	 * 
@@ -21,13 +20,14 @@ class SpecialSurveys extends SpecialSurveyPage {
 	public function __construct() {
 		parent::__construct( 'Surveys', 'surveyadmin' );
 	}
-	
+
 	/**
 	 * Main method.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
-	 * @param string $arg
+	 *
+	 * @param null|string $subPage
+	 * @return bool|void
 	 */
 	public function execute( $subPage ) {
 		if ( !parent::execute( $subPage ) ) {
@@ -77,26 +77,17 @@ class SpecialSurveys extends SpecialSurveyPage {
 				'action' => $this->getTitle()->getLocalURL(),
 			)
 		) );
-		
 		$out->addHTML( '<fieldset>' );
-		
-		$out->addHTML( '<legend>' . htmlspecialchars( wfMsg( 'surveys-special-addnew' ) ) . '</legend>' );
-		
-		$out->addHTML( Html::element( 'p', array(), wfMsg( 'surveys-special-namedoc' ) ) );
-		
-		$out->addHTML( Html::element( 'label', array( 'for' => 'newcampaign' ), wfMsg( 'surveys-special-newname' ) ) );
-		
+		$out->addHTML( '<legend>' . $this->msg( 'surveys-special-addnew' )->escaped() . '</legend>' );
+		$out->addHTML( Html::element( 'p', array(), $this->msg( 'surveys-special-namedoc' )->text() ) );
+		$out->addHTML( Html::element( 'label', array( 'for' => 'newcampaign' ), $this->msg( 'surveys-special-newname' )->text() ) );
 		$out->addHTML( '&#160;' . Html::input( 'newsurvey' ) . '&#160;' );
-		
 		$out->addHTML( Html::input(
 			'addnewsurvey',
-			wfMsg( 'surveys-special-add' ),
+				$this->msg( 'surveys-special-add' )->text(),
 			'submit'
 		) );
-		
-		global $wgUser;
-		$out->addHTML( Html::hidden( 'wpEditToken', $wgUser->editToken() ) );
-		
+		$out->addHTML( Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) );
 		$out->addHTML( '</fieldset></form>' );
 	}
 	
@@ -110,7 +101,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 	protected function displaySurveysTable( array /* of Survey */ $surveys ) {
 		$out = $this->getOutput();
 		
-		$out->addHTML( Html::element( 'h2', array(), wfMsg( 'surveys-special-existing' ) ) );
+		$out->addHTML( Html::element( 'h2', array(), $this->msg( 'surveys-special-existing' )->text() ) );
 		
 		$out->addHTML( Xml::openElement(
 			'table',
@@ -119,16 +110,19 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$out->addHTML( 
 			'<thead><tr>' .
-				Html::element( 'th', array(), wfMsg( 'surveys-special-title' ) ) .
-				Html::element( 'th', array(), wfMsg( 'surveys-special-status' ) ) .
-				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-stats' ) ) .
-				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-edit' ) ) .
-				Html::element( 'th', array( 'class' => 'unsortable' ), wfMsg( 'surveys-special-delete' ) ) .
+				Html::element( 'th', array(), $this->msg( 'surveys-special-title' )->text() ) .
+				Html::element( 'th', array(), $this->msg( 'surveys-special-status' )->text() ) .
+				Html::element( 'th', array( 'class' => 'unsortable' ), $this->msg( 'surveys-special-stats' )->text() ) .
+				Html::element( 'th', array( 'class' => 'unsortable' ), $this->msg( 'surveys-special-edit' )->text() ) .
+				Html::element( 'th', array( 'class' => 'unsortable' ), $this->msg( 'surveys-special-delete' )->text() ) .
 			'</tr></thead>'
 		);
 		
 		$out->addHTML( '<tbody>' );
-		
+
+		/**
+		 * @var $survey Survey
+		 */
 		foreach ( $surveys as $survey ) {
 			$out->addHTML(
 				'<tr>' .
@@ -141,14 +135,14 @@ class SpecialSurveys extends SpecialSurveyPage {
 							$survey->getField( 'title' )
 						) .
 					'</td>' .
-					Html::element( 'td', array(), wfMsg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) ) ) .
+					Html::element( 'td', array(), $this->msg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text() ) .
 					'<td>' .
 						Html::element( 
 							'a',
 							array(
 								'href' => SpecialPage::getTitleFor( 'SurveyStats', $survey->getField( 'name' ) )->getLocalURL()
 							),
-							wfMsg( 'surveys-special-stats' )
+							$this->msg( 'surveys-special-stats' )->text()
 						) .
 					'</td>' .
 					'<td>' .
@@ -157,7 +151,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 							array(
 								'href' => SpecialPage::getTitleFor( 'EditSurvey', $survey->getField( 'name' ) )->getLocalURL()
 							),
-							wfMsg( 'surveys-special-edit' )
+							$this->msg( 'surveys-special-edit' )->text()
 						) .
 					'</td>' .
 					'<td>' .
@@ -167,9 +161,11 @@ class SpecialSurveys extends SpecialSurveyPage {
 								'href' => '#',
 								'class' => 'survey-delete',
 								'data-survey-id' => $survey->getId(),
-								'data-survey-token' => $GLOBALS['wgUser']->editToken( 'deletesurvey' . $survey->getId() )
+								'data-survey-token' => $this->getUser()->getEditToken(
+									'deletesurvey' .
+										$survey->getId() )
 							),
-							wfMsg( 'surveys-special-delete' )
+							$this->msg( 'surveys-special-delete' )->text()
 						) .
 					'</td>' .
 				'</tr>'
@@ -178,6 +174,5 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$out->addHTML( '</tbody>' );
 		$out->addHTML( '</table>' );
-	}	
-	
+	}
 }

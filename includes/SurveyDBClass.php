@@ -12,7 +12,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 abstract class SurveyDBClass {
-	
 	/**
 	 * The fields of the object.
 	 * field name (w/o prefix) => value
@@ -190,7 +189,7 @@ abstract class SurveyDBClass {
 	 * @param array $conditions
 	 * @param array $options
 	 * 
-	 * @return self|false
+	 * @return self|bool false
 	 */
 	public static function selectRow( $fields = null, array $conditions = array(), array $options = array() ) {
 		$options['LIMIT'] = 1;
@@ -247,7 +246,7 @@ abstract class SurveyDBClass {
 	 * 
 	 * @return ResultWrapper
 	 */
-	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {		
+	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		
 		return $dbr->select(
@@ -467,10 +466,10 @@ abstract class SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param integere|null $id
+	 * @param int|null $id
 	 */
 	public function setId( $id ) {
-		return $this->setField( static::getIDField(), $id );
+		$this->setField( static::getIDField(), $id );
 	}
 	
 	/**
@@ -610,11 +609,11 @@ abstract class SurveyDBClass {
 	/**
 	 * Serializes the survey to an associative array which
 	 * can then easily be converted into JSON or similar.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
-	 * @param null|array $props
-	 * 
+	 *
+	 * @param param array|null $fields
+	 *
 	 * @return array
 	 */
 	public function toArray( $fields = null ) {
@@ -707,7 +706,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * 
 	 * @param array $conditions
-	 * @param false|integer $id
+	 * @param bool|integer $id false
 	 * 
 	 * @return array
 	 */

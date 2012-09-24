@@ -12,7 +12,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class Survey extends SurveyDBClass {
-	
 	public static $USER_ALL = 0;
 	public static $USER_LOGGEDIN = 1;
 	public static $USER_CONFIRMED = 2;
@@ -25,7 +24,7 @@ class Survey extends SurveyDBClass {
 	public static function getDBTable() {
 		return 'surveys';
 	}
-	
+
 	/**
 	 * Returns an array with the fields and their types this object contains.
 	 * This corresponds directly to the fields in the database, without prefix.
@@ -106,7 +105,7 @@ class Survey extends SurveyDBClass {
 	 * 
 	 * @since 0.1
 	 * 
-	 * @param integer surveyId
+	 * @param int $surveyId
 	 * @param array|null $fields
 	 * @param boolean $loadQuestions
 	 * 
@@ -206,7 +205,10 @@ class Survey extends SurveyDBClass {
 			array( 'removed' => 1 ),
 			array( 'survey_id' => $this->getId() )
 		);
-		
+
+		/**
+		 * @var $question SurveyQuestion
+		 */
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
 			$question->setField( 'survey_id', $this->getId() );
 			$success = $question->writeToDB() && $success;
@@ -253,7 +255,10 @@ class Survey extends SurveyDBClass {
 		$data = parent::toArray( $fields );
 		
 		$data['questions'] = array();
-		
+
+		/**
+		 * @var $question SurveyQuestion
+		 */
 		foreach ( $this->questions as /* SurveyQuestion */ $question ) {
 			$data['questions'][] = $question->toArray();
 		}

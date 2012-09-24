@@ -21,13 +21,14 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	public function __construct() {
 		parent::__construct( 'SurveyStats', 'surveyadmin', false );
 	}
-	
+
 	/**
 	 * Main method.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
-	 * @param string $arg
+	 *
+	 * @param null|string $subPage
+	 * @return bool|void
 	 */
 	public function execute( $subPage ) {
 		if ( !parent::execute( $subPage ) ) {
@@ -43,9 +44,9 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 				$survey = Survey::newFromName( $subPage );
 
 				$this->displayNavigation( array(
-					wfMsgExt( 'survey-navigation-edit', 'parseinline', $survey->getField( 'name' ) ),
-					wfMsgExt( 'survey-navigation-take', 'parseinline', $survey->getField( 'name' ) ),
-					wfMsgExt( 'survey-navigation-list', 'parseinline' )
+					$this->msg( 'survey-navigation-edit', $survey->getField( 'name' ) )->parse(),
+					$this->msg( 'survey-navigation-take', $survey->getField( 'name' ) )->parse(),
+					$this->msg( 'survey-navigation-list' )->parse()
 				) );
 				
 				$this->displayStats( $survey );
@@ -85,7 +86,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		
 		$stats['name'] = $survey->getField( 'name' );
 		$stats['title'] = $survey->getField( 'title' );
-		$stats['status'] = wfMsg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) );
+		$stats['status'] = $this->msg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text();
 		$stats['questioncount'] = count( $survey->getQuestions() ) ;
 		$stats['submissioncount'] = SurveySubmission::count( array( 'survey_id' => $survey->getId() ) );
 		
@@ -112,7 +113,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			$out->addHTML( Html::element(
 				'th',
 				array( 'class' => 'survey-stat-name' ),
-				wfMsg( 'surveys-surveystats-' . $stat )
+					$this->msg( 'surveys-surveystats-' . $stat )->text()
 			) );
 			
 			$out->addHTML( Html::element(
@@ -137,28 +138,27 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	protected function displayQuestions( Survey $survey ) {
 		$out = $this->getOutput();
 		
-		$out->addHTML( '<h2>' . wfMsgHtml( 'surveys-surveystats-questions' ) . '</h2>' );
-		
+		$out->addHTML( '<h2>' . $this->msg( 'surveys-surveystats-questions' )->escaped() . '</h2>' );
 		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable sortable survey-questions' ) ) );
-		
 		$out->addHTML(
 			'<thead><tr>' .
-				'<th>' . wfMsgHtml( 'surveys-surveystats-question-nr' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'surveys-surveystats-question-type' ) . '</th>' .
-				'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-text' ) . '</th>' .
-				'<th>' . wfMsgHtml( 'surveys-surveystats-question-answercount' ) . '</th>' .
-				'<th class="unsortable">' . wfMsgHtml( 'surveys-surveystats-question-answers' ) . '</th>' .
+				'<th>' . $this->msg( 'surveys-surveystats-question-nr' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'surveys-surveystats-question-type' )->escaped() . '</th>' .
+				'<th class="unsortable">' . $this->msg( 'surveys-surveystats-question-text' )->escaped() . '</th>' .
+				'<th>' . $this->msg( 'surveys-surveystats-question-answercount' )->escaped() . '</th>' .
+				'<th class="unsortable">' . $this->msg( 'surveys-surveystats-question-answers' )->escaped() . '</th>' .
 			'</tr></thead>'	
 		);
-		
 		$out->addHTML( '<tbody>' );
-		
-		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
+
+		/**
+		 * @var SurveyQuestion $question
+		 */
+		foreach ( $survey->getQuestions() as $question ) {
 			$this->displayQuestionStats( $question );
 		}
 		
 		$out->addHTML( '</tbody>' );
-		
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
 	
@@ -175,17 +175,16 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out = $this->getOutput();
 		
 		$out->addHTML( '<tr>' );
-		
 		$out->addHTML( Html::element(
 			'td',
 			array( 'data-sort-value' => ++$qNr ),
-			wfMsgExt( 'surveys-surveystats-question-#', 'parsemag', $qNr )
+				$this->msg( 'surveys-surveystats-question-#', $qNr )->text()
 		) );
 		
 		$out->addHTML( Html::element(
 			'td',
 			array(),
-			wfMsg( SurveyQuestion::getTypeMessage( $question->getField( 'type' ) ) )
+				$this->msg( SurveyQuestion::getTypeMessage( $question->getField( 'type' ) ) )->text()
 		) );
 		
 		$out->addHTML( Html::element(
@@ -227,8 +226,8 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			
 			if ( $question->getField( 'type' ) == SurveyQuestion::$TYPE_CHECK ) {
 				$possibilities = array( '0', '1' );
-				$answerTranslations['0'] = wfMsg( 'surveys-surveystats-unchecked' );
-				$answerTranslations['1'] = wfMsg( 'surveys-surveystats-checked' );
+				$answerTranslations['0'] = $this->msg( 'surveys-surveystats-unchecked' )->text();
+				$answerTranslations['1'] = $this->msg( 'surveys-surveystats-checked' )->text();
 			}
 			else {
 				$possibilities = $question->getField( 'answers' );
@@ -248,12 +247,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 				$list .= Html::element(
 					'li',
 					array(),
-					wfMsgExt(
-						'surveys-surveystats-question-answer',
-						'parsemag',
-						$answer,
-						$this->getLanguage()->formatNum( $answerCount )
-					)
+					$this->msg( 'surveys-surveystats-question-answer', $answer )->numParams( $answerCount )->text()
 				);
 			}
 			
@@ -263,5 +257,4 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			return '';
 		}
 	}
-	
 }

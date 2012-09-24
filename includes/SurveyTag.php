@@ -12,7 +12,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SurveyTag {
-	
 	/**
 	 * List of survey parameters.
 	 * 
@@ -23,14 +22,15 @@ class SurveyTag {
 	protected $parameters;
 	
 	protected $contents;
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $args
 	 * @param string|null $contents
+	 * @throws MWException
 	 */
 	public function __construct( array $args, $contents = null ) {
 		$this->parameters = $args;
@@ -49,7 +49,7 @@ class SurveyTag {
 			
 			$this->parameters['class'] = 'surveytag';
 			$this->parameters['survey-data-token'] = 
-				$GLOBALS['wgUser']->editToken( serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) ) );
+				$GLOBALS['wgUser']->getEditToken( serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) ) );
 		} else {
 			throw new MWException( 'Invalid parameters for survey tag.' );
 		}
@@ -82,14 +82,12 @@ class SurveyTag {
 			$this->contents
 		);
 	}
-	
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @since 0.1
-	 * 
-	 * @param array $args
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getSurveyParameters() {

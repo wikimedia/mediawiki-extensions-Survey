@@ -51,7 +51,10 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 		
 		$serializedResults = array();
 		$count = 0;
-		
+
+		/**
+		 * @var $result SurveyDBClass
+		 */
 		foreach ( $results as $result ) {
 			if ( ++$count > $params['limit'] ) {
 				// We've reached the one extra which shows that

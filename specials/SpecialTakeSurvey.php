@@ -12,7 +12,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SpecialTakeSurvey extends SpecialSurveyPage {
-
 	/**
 	 * Constructor.
 	 *
@@ -27,7 +26,8 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 *
 	 * @since 0.1
 	 *
-	 * @param string $arg
+	 * @param null|string $subPage
+	 * @return bool|void
 	 */
 	public function execute( $subPage ) {
 		if ( !parent::execute( $subPage ) ) {
@@ -45,7 +45,7 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 		elseif ( $survey->getField( 'enabled' ) ) {
 			$this->displaySurvey( $subPage );
 		}
-		elseif ( $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ) {
+		elseif ( $this->getUser()->isAllowed( 'surveyadmin' ) ) {
 			$this->showWarning( 'surveys-takesurvey-warn-notenabled' );
 			$this->getOutput()->addHTML( '<br /><br /><br /><br />' );
 			$this->displaySurvey( $subPage );
@@ -65,9 +65,9 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 */
 	protected function displaySurvey( $subPage ) {
 		$this->displayNavigation( array(
-			wfMsgExt( 'survey-navigation-edit', 'parseinline', $subPage ),
-			wfMsgExt( 'survey-navigation-stats', 'parseinline', $subPage ),
-			wfMsgExt( 'survey-navigation-list', 'parseinline' )
+			$this->msg( 'survey-navigation-edit', $subPage )->parse(),
+			$this->msg( 'survey-navigation-stats', $subPage )->parse(),
+			$this->msg( 'survey-navigation-list' )->parse()
 		) );
 
 		$this->getOutput()->addWikiText( Xml::element(
@@ -77,8 +77,7 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
 				'cookie' => 'no'
 			),
-			wfMsg( 'surveys-takesurvey-loading' )
+				$this->msg( 'surveys-takesurvey-loading' )->text()
 		) );
 	}
-
 }

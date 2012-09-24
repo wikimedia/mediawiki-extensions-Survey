@@ -10,7 +10,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SurveyQuestionTest extends MediaWikiTestCase {
-
 	/**
 	 * Tests SurveyQuestion::newFromUrlData and SurveyQuestion::toUrlData
 	 */
@@ -23,5 +22,4 @@ class SurveyQuestionTest extends MediaWikiTestCase {
 			"Serializaion test failed at " . __METHOD__
 		);
 	}
-
 }

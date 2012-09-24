@@ -21,13 +21,14 @@ class SpecialSurvey extends SpecialSurveyPage {
 	public function __construct() {
 		parent::__construct( 'EditSurvey', 'surveyadmin', false );
 	}
-	
+
 	/**
 	 * Main method.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
-	 * @param string $arg
+	 *
+	 * @param null|string $subPage
+	 * @return bool|void
 	 */
 	public function execute( $subPage ) {
 		if ( !parent::execute( $subPage ) ) {
@@ -49,9 +50,9 @@ class SpecialSurvey extends SpecialSurveyPage {
 				}
 				else {
 					$this->displayNavigation( array(
-						wfMsgExt( 'survey-navigation-take', 'parseinline', $subPage ),
-						wfMsgExt( 'survey-navigation-stats', 'parseinline', $subPage ),
-						wfMsgExt( 'survey-navigation-list', 'parseinline' )
+						$this->msg( 'survey-navigation-take', $subPage )->parse(),
+						$this->msg( 'survey-navigation-stats', $subPage )->parse(),
+						$this->msg( 'survey-navigation-list' )->parse()
 					) );
 				}
 				
@@ -71,8 +72,6 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 */
 	protected function handleSubmission() {
 		$req = $this->getRequest();
-		
-		$values = $req->getValues();
 		
 		if ( $req->getInt( 'survey-id' ) == 0 ) {
 			$survey = new Survey( null );
@@ -107,7 +106,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 	protected function getSubmittedQuestions() {
 		$questions = array();
 		
-		foreach ( $GLOBALS['wgRequest']->getValues() as $name => $value ) {
+		foreach ( $this->getRequest()->getValues() as $name => $value ) {
 			$matches = array();
 			
 			if ( preg_match( '/survey-question-text-(\d+)/', $name, $matches ) ) {
@@ -119,14 +118,14 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		return $questions;
 	}
-	
+
 	/**
-	 * Create and return a survey question object from the submitted data. 
-	 * 
+	 * Create and return a survey question object from the submitted data.
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param integer|null $questionId
-	 * 
+	 * @param bool $isNewQuestion
 	 * @return SurveyQuestion
 	 */
 	protected function getSubmittedQuestion( $questionId, $isNewQuestion = false ) {
@@ -165,7 +164,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 */
 	protected function showNameError() {
 		$this->getOutput()->addHTML(
-			'<p class="errorbox">' . wfMsgHtml( 'surveys-special-unknown-name' ) . '</p>'
+			'<p class="errorbox">' . $this->msg( 'surveys-special-unknown-name' )->escaped() . '</p>'
 		);
 	}
 	
@@ -248,11 +247,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-user_type',
 			'name' => 'survey-user_type',
 			'options' => array(
-				wfMsg( 'survey-user-type-all' ) => Survey::$USER_ALL,
-				wfMsg( 'survey-user-type-loggedin' ) => Survey::$USER_LOGGEDIN,
-				wfMsg( 'survey-user-type-confirmed' ) => Survey::$USER_CONFIRMED,
-				wfMsg( 'survey-user-type-editor' ) => Survey::$USER_EDITOR,
-				wfMsg( 'survey-user-type-anon' ) => Survey::$USER_ANON,
+				$this->msg( 'survey-user-type-all' )->text() => Survey::$USER_ALL,
+				$this->msg( 'survey-user-type-loggedin' )->text() => Survey::$USER_LOGGEDIN,
+				$this->msg( 'survey-user-type-confirmed' )->text() => Survey::$USER_CONFIRMED,
+				$this->msg( 'survey-user-type-editor' )->text() => Survey::$USER_EDITOR,
+				$this->msg( 'survey-user-type-anon' )->text() => Survey::$USER_ANON,
 			),
 		);
 		
@@ -297,28 +296,24 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-thanks',
 			'name' => 'survey-thanks',
 		);
-		
-		foreach ( $survey->getQuestions() as /* SurveyQuestion */ $question ) {
+
+		/**
+		 * @var $question SurveyQuestion
+		 */
+		foreach ( $survey->getQuestions() as $question ) {
 			$fields[] = array(
 				'class' => 'SurveyQuestionField',
 				'options' => $question->toArray()
 			);
 		}
 		
-		// getContext was added in 1.18 and since that version is
-		// the second argument for the HTMLForm constructor.
-		if ( version_compare( $GLOBALS['wgVersion'], '1.18', '>=' ) ) {
-			$form = new HTMLForm( $fields, $this->getContext() );
-		} else {
-			$form = new HTMLForm( $fields );
-			$form->setTitle( $this->getTitle() );
-		}
+		$form = new HTMLForm( $fields, $this->getContext() );
 
-		$form->setSubmitText( wfMsg( 'surveys-special-save' ) );
+		$form->setSubmitText( $this->msg( 'surveys-special-save' )->text() );
 		
 		$form->addButton(
 			'cancelEdit',
-			wfMsg( 'cancel' ),
+			$this->msg( 'cancel' )->text(),
 			'cancelEdit',
 			array(
 				'onclick' => 'window.location="' . SpecialPage::getTitleFor( 'Surveys' )->getFullURL() . '";return false;'
@@ -327,11 +322,9 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$form->show();
 	}
-	
 }
 
 class SurveyQuestionField extends HTMLFormField {
-	
 	public function getInputHTML( $value ) {
 		$attribs = array(
 			'class' => 'survey-question-data'
@@ -352,11 +345,9 @@ class SurveyQuestionField extends HTMLFormField {
 			$attribs
 		);
 	}
-	
 }
 
 class SurveyNameField extends HTMLFormField {
-	
 	public function getInputHTML( $value ) {
 		return Html::element(
 			'span',
@@ -366,5 +357,4 @@ class SurveyNameField extends HTMLFormField {
 			$value
 		);
 	}
-	
 }

@@ -51,7 +51,10 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 		
 		$serializedAnswers = array();
 		$count = 0;
-		
+
+		/**
+		 * @var $answer SurveyAnswer
+		 */
 		foreach ( $answers as $answer ) {
 			if ( ++$count > $params['limit'] ) {
 				// We've reached the one extra which shows that

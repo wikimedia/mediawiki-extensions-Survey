@@ -32,14 +32,15 @@ abstract class SpecialSurveyPage extends SpecialPage {
 		$out->setArticleRelated( false );
 		$out->setRobotPolicy( 'noindex,nofollow' );
 		$out->setPageTitle( $this->getDescription() );
-	}	
-	
+	}
+
 	/**
 	 * Main method.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
-	 * @param string $arg
+	 *
+	 * @param null|string $subPage
+	 * @return bool|void
 	 */
 	public function execute( $subPage ) {
 		global $wgUser;
@@ -77,7 +78,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 */
 	protected function showError( $message ) {
 		$this->getOutput()->addHTML(
-			'<p class="visualClear errorbox">' . wfMsgExt( $message, 'parseinline' ) . '</p>'
+			'<p class="visualClear errorbox">' . $this->msg( $message )->parse() . '</p>'
 		);
 	}
 	
@@ -90,7 +91,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 */
 	protected function showWarning( $message ) {
 		$this->getOutput()->addHTML(
-			'<p class="visualClear warningbox">' . wfMsgExt( $message, 'parseinline' ) . '</p>'
+			'<p class="visualClear warningbox">' . $this->msg( $message )->parse() . '</p>'
 		);
 	}
 	
@@ -104,5 +105,4 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	protected function displayNavigation( array $links ) {
 		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), $this->getLanguage()->pipeList( $links ) ) );
 	}
-	
 }

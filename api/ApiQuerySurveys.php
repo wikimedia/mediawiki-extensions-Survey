@@ -22,9 +22,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 * Retrieve the special words from the database.
 	 */
 	public function execute() {
-		global $wgUser;
-
-		if ( !$wgUser->isAllowed( 'surveysubmit' ) || $wgUser->isBlocked() ) {
+		$user = $this->getUser();
+		if ( !$user->isAllowed( 'surveysubmit' ) || $user->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
@@ -34,7 +33,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
 			 XOR ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
 			 ) ) {
-			$this->dieUsage( wfMsg( 'survey-err-ids-xor-names' ), 'ids-xor-names' );
+			$this->dieUsage( $this->msg( 'survey-err-ids-xor-names' )->text(), 'ids-xor-names' );
 		}
 
 		$this->addTables( 'surveys' );
@@ -107,7 +106,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 *
 	 * @param array $survey
 	 *
-	 * @return $survey
+	 * @return array $survey
 	 */
 	protected function getSurveyData( array $survey ) {
 		foreach ( $survey['questions'] as $nr => $question ) {

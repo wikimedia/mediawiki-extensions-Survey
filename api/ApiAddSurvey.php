@@ -13,7 +13,6 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiAddSurvey extends ApiBase {
-	
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
@@ -37,7 +36,12 @@ class ApiAddSurvey extends ApiBase {
 		}
 		catch ( DBQueryError $ex ) {
 			if ( $ex->errno == 1062 ) {
-				$this->dieUsage( wfMsgExt( 'survey-err-duplicate-name', 'parsemag', $params['name'] ), 'duplicate-survey-name' );
+				$this->dieUsage( $this->msg(
+						'survey-err-duplicate-name',
+						$params['name']
+					)->text(),
+					'duplicate-survey-name'
+				);
 			} else {
 				throw $ex;
 			}
