@@ -1,11 +1,11 @@
 These are the release notes for the Survey extension.
 	
 Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
-Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey/RELEASE-NOTES?view=co
+Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git;a=blob;f=RELEASE-NOTES
 
 
 === Version 0.2 ===
-(trunk)
+2012-9-24
 
 * Dropped compatibility with MediaWiki 1.17.
 * Use of RequestContext methods to get rid of globals. 

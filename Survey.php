@@ -5,7 +5,7 @@
  *
  * Documentation:	 		http://www.mediawiki.org/wiki/Extension:Survey
  * Support					http://www.mediawiki.org/wiki/Extension_talk:Survey
- * Source code:			    http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Survey
+ * Source code:			    https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git
  *
  * @file Survey.php
  * @ingroup Survey
@@ -15,7 +15,7 @@
  */
 
 /**
- * This documenation group collects source code files belonging to Survey.
+ * This documentation group collects source code files belonging to Survey.
  *
  * @defgroup Survey Survey
  */

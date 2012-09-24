@@ -20,7 +20,7 @@ final class SurveyHooks {
 	 * 
 	 * @param Parser $parser
 	 * 
-	 * @return true
+	 * @return boolean
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'survey', __CLASS__ . '::onSurveyRender' );
@@ -36,6 +36,8 @@ final class SurveyHooks {
 	 * @param array $args
 	 * @param Parser $parser
 	 * @param PPFrame $frame
+	 *
+	 * @return boolean
 	 */
 	public static function onSurveyRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 		$tag = new SurveyTag( $args, $input );
@@ -49,7 +51,7 @@ final class SurveyHooks {
 	 *
 	 * @param DatabaseUpdater $updater
 	 *
-	 * @return true
+	 * @return boolean
 	 */
 	public static function onSchemaUpdate( DatabaseUpdater $updater ) {
 		$updater->addExtensionUpdate( array(
@@ -76,6 +78,8 @@ final class SurveyHooks {
 	 * @since 0.1
 	 * 
 	 * @param array $files
+	 *
+	 * @return boolean
 	 */
 	public static function registerUnitTests( array &$files ) {
 		$testDir = dirname( __FILE__ ) . '/test/';
@@ -94,7 +98,7 @@ final class SurveyHooks {
 	 * @param boolean $outputDone
 	 * @param boolean $useParserCache
 	 *
-	 * @return true
+	 * @return boolean
 	 */
 	public static function onArticleViewHeader( Article &$article, &$outputDone, &$useParserCache ) {
 		if ( !Survey::has( array( 'enabled' => 1 ) ) ) {
@@ -110,8 +114,11 @@ final class SurveyHooks {
 				'user_type' => Survey::getTypesForUser( $GLOBALS['wgUser'] )
 			)
 		);
-		
-		foreach ( $surveys as /* Survey */ $survey ) {
+
+		/**
+		 * @var Survey $survey
+		 */
+		foreach ( $surveys as $survey ) {
 			
 			if ( count( $survey->getField( 'namespaces' ) ) == 0 ) {
 				$nsValid = true;
@@ -140,8 +147,10 @@ final class SurveyHooks {
 	 * Adds a link to Admin Links page.
 	 * 
 	 * @since 0.1
+	 *
+	 * @param $admin_links_tree
 	 * 
-	 * @return true
+	 * @return boolean
 	 */
 	public static function addToAdminLinks( &$admin_links_tree ) {
 		$section = new ALSection( 'Survey' );
