@@ -13,14 +13,13 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 abstract class SpecialSurveyPage extends SpecialPage {
-	
 	/**
 	 * @see SpecialPage::getDescription
 	 * 
 	 * @since 0.1
 	 */
 	public function getDescription() {
-		return wfMsg( 'special-' . strtolower( $this->getName() ) );
+		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
 	}
 	
 	/**
