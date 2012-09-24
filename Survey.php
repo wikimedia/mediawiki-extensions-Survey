@@ -28,7 +28,7 @@ if ( version_compare( $wgVersion, '1.18c', '<' ) ) {
 	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.18 or above. For MediaWiki 1.17.x, you can use Survey 0.1.2.' );
 }
 
-define( 'Survey_VERSION', '0.2 alpha' );
+define( 'Survey_VERSION', '0.2' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
