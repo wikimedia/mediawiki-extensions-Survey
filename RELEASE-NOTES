@@ -4,6 +4,13 @@ Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
 Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git;a=blob;f=RELEASE-NOTES
 
 
+=== Version 0.2.1 ===
+(dev)
+
+* Dropped compatibility with MediaWiki 1.18.
+* Use of modern message functions.
+* Use of local context instead of globals.
+
 === Version 0.2 ===
 2012-9-24
 
