@@ -94,7 +94,7 @@ $specialPageAliases['mk'] = array(
 	'TakeSurvey' => array( 'ПополниАнкета' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'EditSurvey' => array( 'Rediger_undersøkelse' ),
 	'Surveys' => array( 'Undersøkelser' ),
@@ -115,7 +115,7 @@ $specialPageAliases['uk'] = array(
 	'EditSurvey' => array( 'Опитування' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Surveys' => array( '问卷' ),
 	'TakeSurvey' => array( '做问卷' ),
