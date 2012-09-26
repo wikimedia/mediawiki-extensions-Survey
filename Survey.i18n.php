@@ -808,7 +808,9 @@ $messages['eu'] = array(
  * @author Crt
  */
 $messages['fi'] = array(
+	'surveys-special-edit' => 'Muokkaa',
 	'surveys-special-save' => 'Tallenna',
+	'surveys-special-delete' => 'Poista',
 );
 
 /** French (français)
@@ -2701,10 +2703,33 @@ $messages['yi'] = array(
 	'surveys-special-delete' => 'אויסמעקן',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Shirayuki
  */
 $messages['zh-hans'] = array(
+	'survey-desc' => 'MediaWiki的调查工具',
+	'right-surveyadmin' => '管理调查',
+	'right-surveysubmit' => '参加调查',
+	'action-surveyadmin' => '管理调查',
+	'action-surveysubmit' => '参加调查',
+	'group-surveyadmin' => '调查管理员',
+	'group-surveyadmin-member' => '{{GENDER:$1|调查管理员}}',
+	'group-surveysubmit' => '调查参与者',
+	'group-surveysubmit-member' => '{{GENDER:$1|调查参与者}}',
+	'survey-user-type-all' => '所有人',
+	'survey-user-type-loggedin' => '已登入用户',
+	'survey-user-type-confirmed' => '确认用户',
+	'survey-user-type-editor' => '编辑者',
+	'survey-user-type-anon' => '匿名用户',
+	'survey-navigation-edit' => '[[Special:Survey/$1||编辑此调查]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1||填写此调查]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|查看统计]]',
+	'surveys-special-addnew' => '添加新调查',
+	'surveys-special-newname' => '新调查ID：',
+	'surveys-special-add' => '添加调查',
+	'surveys-special-existing' => '现有调查',
+	'surveys-special-title' => '标题',
+	'surveys-special-status' => '状态',
 	'survey-jquery-submit' => '提交',
 );
 
