@@ -2073,6 +2073,7 @@ $messages['pfl'] = array(
 );
 
 /** Polish (polski)
+ * @author BeginaFelicysym
  * @author Woytecr
  */
 $messages['pl'] = array(
@@ -2093,6 +2094,23 @@ $messages['pl'] = array(
 	'surveys-special-edit' => 'Edytuj',
 	'surveys-special-save' => 'Zapisz',
 	'surveys-special-delete' => 'Usuń',
+	'surveys-surveystats-questioncount' => 'Liczba pytań',
+	'surveys-surveystats-questions' => 'Statystyki pytań',
+	'surveys-surveystats-question-type' => 'Typ pytania',
+	'surveys-surveystats-question-text' => 'Treść pytania',
+	'surveys-surveystats-question-answercount' => 'Liczba odpowiedzi',
+	'survey-special-label-add-first' => 'Dodaj pytanie',
+	'survey-special-label-add-another' => 'Dodać kolejne pytanie',
+	'survey-special-label-addquestion' => 'Nowe pytanie',
+	'survey-question-label-nr' => 'Pytanie #$1',
+	'survey-special-label-required' => 'Pytanie jest wymagane',
+	'survey-special-label-type' => 'Typ pytania',
+	'survey-special-label-text' => 'Treść pytania',
+	'survey-special-remove' => 'Usuń pytanie',
+	'survey-special-remove-confirm' => 'Czy na pewno chcesz usunąć to pytanie?',
+	'survey-special-label-answers' => 'Dostępne odpowiedzi, po jednej w wierszu.',
+	'survey-jquery-submit' => 'Prześlij',
+	'survey-jquery-finish' => 'Zakończ',
 );
 
 /** Pashto (پښتو)
