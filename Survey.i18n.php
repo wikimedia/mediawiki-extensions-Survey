@@ -286,7 +286,7 @@ $messages['ar'] = array(
 	'survey-jquery-finish' => 'أنهي',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -611,7 +611,7 @@ $messages['de'] = array(
 	'survey-jquery-load-failed' => 'Die Umfrage konnte nicht geladen werden.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -1626,7 +1626,7 @@ $messages['ko'] = array(
 	'survey-jquery-load-failed' => '설문 조사를 읽을 수 없습니다.',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -2751,7 +2751,7 @@ $messages['zh-hans'] = array(
 	'survey-jquery-submit' => '提交',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Shirayuki
  * @author Simon Shek
  */
