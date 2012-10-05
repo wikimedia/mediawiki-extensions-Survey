@@ -62,10 +62,6 @@ window.survey = new( function() {
 			var itemValue = options[message];
 			var id = name + itemValue;
 			
-//			if ( value === null ) {
-//				value = itemValue;
-//			}
-			
 			$input = $( '<input />' ).attr( {
 				'id': id,
 				'type': 'radio',
