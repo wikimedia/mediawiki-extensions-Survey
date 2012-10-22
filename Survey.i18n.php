@@ -216,6 +216,8 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'survey-special-label-usertype' => 'Label in front of radio button options ([[:File:Survey-survey.png|screenshot]])',
 	'surveys-surveystats-enabled' => '{{Identical|Enabled}}',
 	'surveys-surveystats-disabled' => '{{Identical|Disabled}}',
+	'surveys-surveystats-question-nr' => '{{notranslate}}',
+	'surveys-surveystats-question-#' => '{{optional}}',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
@@ -355,6 +357,7 @@ $messages['be-tarask'] = array(
 	'surveys-surveystats-enabled' => 'Уключанае',
 	'surveys-surveystats-disabled' => 'Выключанае',
 	'surveys-surveystats-questions' => 'Статыстыка пытаньняў',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Тып пытаньня',
 	'surveys-surveystats-question-text' => 'Зьмест пытаньня',
 	'surveys-surveystats-question-answercount' => 'Колькасьць адказаў',
@@ -581,6 +584,7 @@ $messages['de'] = array(
 	'surveys-surveystats-enabled' => 'Aktiviert',
 	'surveys-surveystats-disabled' => 'Deaktiviert',
 	'surveys-surveystats-questions' => 'Fragestatistiken',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Fragentyp',
 	'surveys-surveystats-question-text' => 'Text der Frage',
 	'surveys-surveystats-question-answercount' => 'Anzahl der Antworten',
@@ -663,6 +667,7 @@ $messages['diq'] = array(
 
 /** Spanish (español)
  * @author Armando-Martin
+ * @author Ralgis
  */
 $messages['es'] = array(
 	'survey-desc' => 'Herramienta de encuesta para MediaWiki',
@@ -729,6 +734,7 @@ $messages['es'] = array(
 	'surveys-surveystats-enabled' => 'Activa',
 	'surveys-surveystats-disabled' => 'Inactiva',
 	'surveys-surveystats-questions' => 'Estadísticas de la pregunta',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Tipo de pregunta',
 	'surveys-surveystats-question-text' => 'Texto de la pregunta',
 	'surveys-surveystats-question-answercount' => 'Número de respuestas',
@@ -1470,6 +1476,7 @@ $messages['ja'] = array(
 	'surveys-surveystats-enabled' => '有効',
 	'surveys-surveystats-disabled' => '無効',
 	'surveys-surveystats-questions' => '質問の統計',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-text' => '質問文',
 	'surveys-surveystats-question-answer' => '$1（$2 {{PLURAL:$2|回答}}）',
 	'survey-special-label-name' => '調査 ID',
@@ -1832,6 +1839,7 @@ $messages['mk'] = array(
 	'surveys-surveystats-enabled' => 'Овозможено',
 	'surveys-surveystats-disabled' => 'Оневозможено',
 	'surveys-surveystats-questions' => 'Статистики за прашањата',
+	'surveys-surveystats-question-#' => '$1',
 	'surveys-surveystats-question-type' => 'Тип на прашање',
 	'surveys-surveystats-question-text' => 'Текст на прашањето',
 	'surveys-surveystats-question-answercount' => 'Број на одговори',
@@ -2763,7 +2771,7 @@ $messages['zh-hant'] = array(
 	'action-surveysubmit' => '參加調查',
 	'group-surveyadmin' => '調查管理員',
 	'group-surveyadmin-member' => '{{GENDER:$1|調查管理員}}',
-	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員',
+	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員', # Fuzzy
 	'group-surveysubmit' => '調查參與者',
 	'group-surveysubmit-member' => '{{GENDER:$1|調查參與者}}',
 	'survey-user-type-all' => '所有人',
@@ -2782,4 +2790,3 @@ $messages['zh-hant'] = array(
 	'surveys-special-status' => '狀態',
 	'survey-jquery-submit' => '提交',
 );
-
