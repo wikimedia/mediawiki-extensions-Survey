@@ -809,6 +809,26 @@ $messages['eu'] = array(
 	'survey-jquery-submit' => 'Bidali',
 );
 
+/** Persian (فارسی)
+ * @author پاناروما
+ */
+$messages['fa'] = array(
+	'surveys-special-title' => 'عنوان',
+	'surveys-special-stats' => 'آمار',
+	'surveys-special-edit' => 'ویرایش',
+	'surveys-special-save' => 'ذخیره کردن',
+	'surveys-special-delete' => 'حذف کردن',
+	'surveys-special-enabled' => 'فعال شد',
+	'surveys-special-disabled' => 'غیرفعال شد',
+	'surveys-special-confirm-delete' => 'آیا اطمینان دارید که می‌خواهید این پیام را پاک کنید؟',
+	'surveys-surveystats-questioncount' => 'تعدادی از سوال‌ها',
+	'surveys-surveystats-enabled' => 'فعال شد',
+	'surveys-surveystats-disabled' => 'غیرفعال شد',
+	'surveys-surveystats-checked' => 'بررسی شده',
+	'survey-jquery-submit' => 'ثبت',
+	'survey-jquery-finish' => 'پایان',
+);
+
 /** Finnish (suomi)
  * @author Crt
  */
