@@ -117,6 +117,8 @@ $specialPageAliases['uk'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
+	'EditSurvey' => array( '编辑问卷' ),
 	'Surveys' => array( '问卷' ),
+	'SurveyStats' => array( '问卷统计' ),
 	'TakeSurvey' => array( '做问卷' ),
 );
