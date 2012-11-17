@@ -62,6 +62,14 @@ $specialPageAliases['ia'] = array(
 	'TakeSurvey' => array( 'Responder_a_questionario' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'EditSurvey' => array( 'ModificaSondaggio' ),
+	'Surveys' => array( 'Sondaggio' ),
+	'SurveyStats' => array( 'StatSondaggio' ),
+	'TakeSurvey' => array( 'FaiSondaggio' ),
+);
+
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'EditSurvey' => array( 'アンケート編集', '編集アンケート' ),
