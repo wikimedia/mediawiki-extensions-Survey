@@ -288,6 +288,14 @@ $messages['ar'] = array(
 	'survey-jquery-finish' => 'أنهي',
 );
 
+/** تورکجه (تورکجه)
+ * @author Erdemaslancan
+ */
+$messages['azb'] = array(
+	'surveys-special-enabled' => 'قوشولوب',
+	'surveys-surveystats-enabled' => 'قوشولوب',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Wizardist
@@ -647,9 +655,9 @@ $messages['diq'] = array(
 	'surveys-special-edit' => 'Timar ke',
 	'surveys-special-save' => 'Star ke',
 	'surveys-special-delete' => 'Besterne',
-	'surveys-special-enabled' => 'Kefılneyayo',
+	'surveys-special-enabled' => 'Aktifiyaye',
 	'surveys-special-disabled' => 'Astengın',
-	'surveys-surveystats-enabled' => 'Kefılneyayo',
+	'surveys-surveystats-enabled' => 'Aktifiyaye',
 	'surveys-surveystats-disabled' => 'Astengın',
 	'surveys-surveystats-questions' => 'İstatistike persa',
 	'surveys-surveystats-question-type' => 'Babeta persi',
