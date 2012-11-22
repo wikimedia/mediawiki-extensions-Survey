@@ -118,6 +118,14 @@ $specialPageAliases['nl'] = array(
 	'TakeSurvey' => array( 'VragenlijstBeantwoorden' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'EditSurvey' => array( 'ModificaSondaggio' ),
+	'Surveys' => array( 'Sondaggio' ),
+	'SurveyStats' => array( 'StatSondaggio' ),
+	'TakeSurvey' => array( 'FaiSondaggio' ),
+);
+
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
 	'EditSurvey' => array( 'Опитування' ),
