@@ -288,6 +288,13 @@ $messages['ar'] = array(
 	'survey-jquery-finish' => 'أنهي',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'surveys-special-stats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ',
+);
+
 /** تورکجه (تورکجه)
  * @author Erdemaslancan
  */

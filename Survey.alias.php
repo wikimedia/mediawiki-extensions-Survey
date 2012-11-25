@@ -118,6 +118,11 @@ $specialPageAliases['nl'] = array(
 	'TakeSurvey' => array( 'VragenlijstBeantwoorden' ),
 );
 
+/** Punjabi (ਪੰਜਾਬੀ) */
+$specialPageAliases['pa'] = array(
+	'EditSurvey' => array( 'ਸੰਪਾਦਨ_ਸਰਵੇ', 'ਸਰਵੇ' ),
+);
+
 /** Sicilian (sicilianu) */
 $specialPageAliases['scn'] = array(
 	'EditSurvey' => array( 'ModificaSondaggio' ),
