@@ -152,6 +152,7 @@ $messages['en'] = array(
  * @author Kghbln
  * @author Pikne
  * @author SPQRobin
+ * @author Shirayuki
  * @author Siebrand
  * @author Umherirrender
  * @author 아라
@@ -168,10 +169,10 @@ $messages['qqq'] = array(
 	'group-surveysubmit' => '{{doc-group|surveysubmit}}',
 	'group-surveysubmit-member' => '{{doc-group|surveysubmit|member}}',
 	'grouppage-surveysubmit' => '{{doc-group|surveysubmit|page}}',
-	'group-surveyadmin.css' => '{{doc-group|surveyadmin}}',
-	'group-surveyadmin.js' => '{{doc-group|surveyadmin}}',
-	'group-surveysubmit.css' => '{{doc-group|surveysubmit}}',
-	'group-surveysubmit.js' => '{{doc-group|surveysubmit}}',
+	'group-surveyadmin.css' => '{{doc-group|surveyadmin|css}}',
+	'group-surveyadmin.js' => '{{doc-group|surveyadmin|js}}',
+	'group-surveysubmit.css' => '{{doc-group|surveysubmit|css}}',
+	'group-surveysubmit.js' => '{{doc-group|surveysubmit|js}}',
 	'special-editsurvey' => 'Special page name/title - shows on specified survery to edit',
 	'special-surveys' => 'Special page name/title',
 	'special-surveystats' => 'Special page name/title - shows statistics for one specified survey',
