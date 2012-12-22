@@ -826,10 +826,14 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Mjbmr
  * @author پاناروما
  */
 $messages['fa'] = array(
+	'survey-question-type-number' => 'شماره',
+	'survey-user-type-editor' => 'ویرایشگران',
 	'surveys-special-title' => 'عنوان',
+	'surveys-special-status' => 'وضعیت',
 	'surveys-special-stats' => 'آمار',
 	'surveys-special-edit' => 'ویرایش',
 	'surveys-special-save' => 'ذخیره کردن',
@@ -2033,7 +2037,7 @@ $messages['nl'] = array(
 	'right-surveysubmit' => 'Vragenlijsten beantwoorden',
 	'action-surveyadmin' => 'vragenlijsten te beheren',
 	'action-surveysubmit' => 'vragenlijsten te beantwoorden',
-	'group-surveyadmin' => 'Vragenlijstbeheerders',
+	'group-surveyadmin' => 'vragenlijstbeheerders',
 	'group-surveyadmin-member' => '{{GENDER:$1|vragenlijstbeheerder}}',
 	'grouppage-surveyadmin' => '{{ns:project}}:Vragenlijstbeheerders',
 	'group-surveysubmit' => 'Vragenlijstdeelnemers',
@@ -2939,6 +2943,14 @@ $messages['zh-hans'] = array(
 	'surveys-special-existing' => '现有调查',
 	'surveys-special-title' => '标题',
 	'surveys-special-status' => '状态',
+	'surveys-special-stats' => '统计',
+	'surveys-special-edit' => '编辑',
+	'surveys-special-save' => '保存',
+	'surveys-special-delete' => '删除',
+	'surveys-special-enabled' => '已启用',
+	'surveys-special-disabled' => '已停用',
+	'surveys-surveystats-enabled' => '已启用',
+	'surveys-surveystats-disabled' => '已停用',
 	'survey-jquery-submit' => '提交',
 );
 
@@ -2971,5 +2983,7 @@ $messages['zh-hant'] = array(
 	'surveys-special-existing' => '現有調查',
 	'surveys-special-title' => '標題',
 	'surveys-special-status' => '狀態',
+	'surveys-special-edit' => '編輯',
+	'surveys-special-delete' => '刪除',
 	'survey-jquery-submit' => '提交',
 );
