@@ -1360,6 +1360,20 @@ $messages['ia'] = array(
 	'survey-jquery-load-failed' => 'Non poteva cargar le questionario.',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['id'] = array(
+	'survey-question-type-number' => 'Nomor',
+	'surveys-special-title' => 'Judul',
+	'surveys-special-status' => 'Status',
+	'surveys-special-edit' => 'Sunting',
+	'surveys-special-save' => 'Simpan',
+	'surveys-surveystats-enabled' => 'Diaktifkan',
+	'surveys-surveystats-disabled' => 'Dinonaktifkan',
+	'survey-jquery-submit' => 'Kirim',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
@@ -2927,8 +2941,11 @@ $messages['zh-hans'] = array(
 	'action-surveysubmit' => '参加调查',
 	'group-surveyadmin' => '调查管理员',
 	'group-surveyadmin-member' => '{{GENDER:$1|调查管理员}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:调查管理员',
 	'group-surveysubmit' => '调查参与者',
 	'group-surveysubmit-member' => '{{GENDER:$1|调查参与者}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:调查参与者',
+	'special-surveystats' => '调查统计',
 	'survey-user-type-all' => '所有人',
 	'survey-user-type-loggedin' => '已登入用户',
 	'survey-user-type-confirmed' => '确认用户',
@@ -2949,9 +2966,21 @@ $messages['zh-hans'] = array(
 	'surveys-special-delete' => '删除',
 	'surveys-special-enabled' => '已启用',
 	'surveys-special-disabled' => '已停用',
+	'surveys-special-confirm-delete' => '确实要删除此调查吗？',
+	'surveys-special-delete-failed' => '删除调查失败。',
+	'surveys-takesurvey-nosuchsurvey' => '请求的调查不存在。',
 	'surveys-surveystats-enabled' => '已启用',
 	'surveys-surveystats-disabled' => '已停用',
+	'surveys-surveystats-questions' => '问题统计',
+	'surveys-surveystats-question-type' => '问题类型',
+	'survey-special-label-add-first' => '添加问题',
+	'survey-special-label-addquestion' => '新问题',
+	'survey-question-label-nr' => '问题 #$1',
+	'survey-special-label-type' => '问题类型',
+	'survey-special-remove' => '删除问题',
+	'survey-special-remove-confirm' => '确定要删除该调查吗？',
 	'survey-jquery-submit' => '提交',
+	'survey-jquery-finish' => '完成',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
@@ -2969,6 +2998,7 @@ $messages['zh-hant'] = array(
 	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員', # Fuzzy
 	'group-surveysubmit' => '調查參與者',
 	'group-surveysubmit-member' => '{{GENDER:$1|調查參與者}}',
+	'special-surveystats' => '調查統計',
 	'survey-user-type-all' => '所有人',
 	'survey-user-type-loggedin' => '已登入用戶',
 	'survey-user-type-confirmed' => '確認用戶',
@@ -2983,7 +3013,24 @@ $messages['zh-hant'] = array(
 	'surveys-special-existing' => '現有調查',
 	'surveys-special-title' => '標題',
 	'surveys-special-status' => '狀態',
+	'surveys-special-stats' => '統計',
 	'surveys-special-edit' => '編輯',
+	'surveys-special-save' => '儲存',
 	'surveys-special-delete' => '刪除',
+	'surveys-special-enabled' => '已啟用',
+	'surveys-special-disabled' => '已禁用',
+	'surveys-special-confirm-delete' => '確定要刪除這調查嗎？',
+	'surveys-special-delete-failed' => '刪除調查失敗。',
+	'surveys-takesurvey-nosuchsurvey' => '要求的調查不存在。',
+	'surveys-surveystats-enabled' => '已啟用',
+	'surveys-surveystats-disabled' => '已禁用',
+	'surveys-surveystats-questions' => '問題統計',
+	'surveys-surveystats-question-type' => '問題類型',
+	'survey-special-label-add-first' => '新增問題',
+	'survey-question-label-nr' => '問題 #$1',
+	'survey-special-label-type' => '問題類型',
+	'survey-special-remove' => '刪除問題',
+	'survey-special-remove-confirm' => '確定要移除這問題嗎？',
 	'survey-jquery-submit' => '提交',
+	'survey-jquery-finish' => '完成',
 );
