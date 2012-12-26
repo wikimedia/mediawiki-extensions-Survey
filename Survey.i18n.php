@@ -1713,6 +1713,16 @@ $messages['ko'] = array(
 	'survey-jquery-load-failed' => '설문 조사를 읽을 수 없습니다.',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'group-surveyadmin.css' => '/* Dat CSS heh aan dä Schtäll wirrek bloß op de Verwallder vun Ömfroore */',
+	'group-surveyadmin.js' => '/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Verwallder vun Ömfroore */',
+	'group-surveysubmit.css' => '/* Dat CSS heh aan dä Schtäll wirrek bloß op de Ömfroore */',
+	'group-surveysubmit.js' => '/* Dat JavaSkrep heh aan dä Schtäll wirrek bloß op de Ömfroore */',
+);
+
 /** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  */
@@ -2461,6 +2471,7 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'special-takesurvey' => 'සමීක්ෂණය ලබා ගන්න',
 	'survey-question-type-number' => 'අංකය',
 	'survey-user-type-all' => 'සියලුමදෙනා',
 	'survey-user-type-editor' => 'සංස්කාරකවරු',
@@ -2470,6 +2481,8 @@ $messages['si'] = array(
 	'surveys-special-edit' => 'සංස්කරණය',
 	'surveys-special-save' => 'සුරකින්න',
 	'surveys-special-delete' => 'මකන්න',
+	'surveys-special-enabled' => 'සක්‍රීයයි',
+	'surveys-special-disabled' => 'අක්‍රීයයි',
 	'surveys-surveystats-enabled' => 'සක්‍රීයයි',
 	'surveys-surveystats-disabled' => 'අක්‍රීයයි',
 	'surveys-surveystats-question-type' => 'ප්‍රශ්න වර්ගය',
