@@ -143,3 +143,11 @@ $specialPageAliases['zh-hans'] = array(
 	'SurveyStats' => array( '问卷统计' ),
 	'TakeSurvey' => array( '做问卷' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'EditSurvey' => array( '編輯問卷' ),
+	'Surveys' => array( '問卷' ),
+	'SurveyStats' => array( '問卷統計' ),
+	'TakeSurvey' => array( '做問卷' ),
+);
