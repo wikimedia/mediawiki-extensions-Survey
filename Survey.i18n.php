@@ -1857,6 +1857,62 @@ $messages['lt'] = array(
 	'surveys-surveystats-title' => 'Apklausos pavadinimas',
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'group-surveyadmin' => 'Aptaujas administratori',
+	'special-editsurvey' => 'Aptauju administrēšana',
+	'special-surveys' => 'Aptauju administrēšana',
+	'special-surveystats' => 'Aptaujas statistika',
+	'special-takesurvey' => 'Piedalīties aptaujā',
+	'survey-user-type-all' => 'Visi',
+	'survey-user-type-loggedin' => 'Pieslēgušies lietotāji',
+	'survey-user-type-confirmed' => 'Apstiprināti lietotāji',
+	'survey-user-type-editor' => 'Redaktori',
+	'survey-user-type-anon' => 'Anonīmi lietotāji',
+	'survey-navigation-edit' => '[[Special:Survey/$1|Labot šo aptauju]]',
+	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Piedalīties šajā aptaujā]]',
+	'survey-navigation-list' => '[[Special:Surveys|Aptauju saraksts]]',
+	'survey-navigation-stats' => '[[Special:SurveyStats/$1|Apskatīt statistiku]]',
+	'surveys-special-addnew' => 'Pievienot jaunu aptauju',
+	'surveys-special-newname' => 'Jaunās aptaujas ID:',
+	'surveys-special-add' => 'Pievienot aptauju',
+	'surveys-special-existing' => 'Esošās aptaujas',
+	'surveys-special-title' => 'Nosaukums',
+	'surveys-special-status' => 'Statuss',
+	'surveys-special-stats' => 'Statistika',
+	'surveys-special-edit' => 'Labot',
+	'surveys-special-save' => 'Saglabāt',
+	'surveys-special-delete' => 'Dzēst',
+	'surveys-special-confirm-delete' => 'Vai tiešām vēlaties izdzēst šo aptauju?',
+	'surveys-special-delete-failed' => 'Neizdevās dzēst aptauju.',
+	'surveys-takesurvey-loading' => 'Ielādē aptauju...',
+	'surveys-surveystats-name' => 'Aptaujas ID',
+	'surveys-surveystats-title' => 'Aptaujas nosaukums',
+	'surveys-surveystats-status' => 'Aptaujas statuss',
+	'surveys-surveystats-questioncount' => 'Jautājumu skaits',
+	'surveys-surveystats-submissioncount' => 'Iesniegumu skaits',
+	'surveys-surveystats-questions' => 'Jautājumu statistika',
+	'surveys-surveystats-question-type' => 'Jautājuma veids',
+	'surveys-surveystats-question-text' => 'Jautājuma teksts',
+	'surveys-surveystats-question-answercount' => 'Atbilžu skaits',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|atbilde|atbildes}})',
+	'survey-special-label-name' => 'Aptaujas ID',
+	'survey-special-label-title' => 'Aptaujas nosaukums',
+	'survey-special-label-add-first' => 'Pievienot jautājumu',
+	'survey-special-label-add-another' => 'Pievienot vēl vienu jautājumu',
+	'survey-special-label-addquestion' => 'Jauns jautājums',
+	'survey-question-label-nr' => '#$1. jautājums',
+	'survey-special-label-required' => 'Jautājums ir obligāts',
+	'survey-special-label-type' => 'Jautājuma veids',
+	'survey-special-label-text' => 'Jautājuma teksts',
+	'survey-special-remove' => 'Noņemt jautājumu',
+	'survey-jquery-submit' => 'Iesniegt',
+	'survey-jquery-finish' => 'Pabeigt',
+	'survey-jquery-load-failed' => 'Nevar ielādēt aptauju.',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
