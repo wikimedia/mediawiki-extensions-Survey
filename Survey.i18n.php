@@ -532,6 +532,24 @@ $messages['ca'] = array(
 	'surveys-special-delete' => 'Esborrar',
 );
 
+/** Czech (česky)
+ * @author Vks
+ */
+$messages['cs'] = array(
+	'survey-question-type-number' => 'Číslo',
+	'survey-user-type-editor' => 'Editoři',
+	'surveys-special-title' => 'Názvu',
+	'surveys-special-status' => 'Stav',
+	'surveys-special-edit' => 'Editovat',
+	'surveys-special-save' => 'Uložit',
+	'surveys-special-delete' => 'Smazat',
+	'surveys-special-enabled' => 'Povoleno',
+	'surveys-special-disabled' => 'Zakázáno',
+	'surveys-surveystats-enabled' => 'Povoleno',
+	'surveys-surveystats-disabled' => 'Zakázáno',
+	'survey-jquery-submit' => 'Odeslat',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
@@ -984,7 +1002,7 @@ $messages['frp'] = array(
 	'survey-user-type-loggedin' => 'Usanciérs branchiês',
 	'survey-user-type-confirmed' => 'Usanciérs confirmâs',
 	'survey-user-type-editor' => 'Contributors',
-	'survey-user-type-anon' => 'Usanciérs pas encartâs',
+	'survey-user-type-anon' => 'Utilisators anonimos',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Changiér cél sondâjo]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Participar a cél sondâjo]]',
 	'survey-navigation-list' => '[[Special:Surveys|Lista des sondâjos]]',
@@ -2696,6 +2714,7 @@ $messages['si'] = array(
 	'survey-special-label-type' => 'ප්‍රශ්න වර්ගය',
 	'survey-special-label-text' => 'ප්‍රශ්න පාඨය',
 	'survey-special-remove' => 'ප්‍රශ්නය ඉවත් කරන්න',
+	'survey-special-label-answers' => 'ලබා ගත හැකි පිළිතුරු, පේළියකට එක බැගින්.',
 	'survey-jquery-submit' => 'යොමන්න',
 	'survey-jquery-finish' => 'අවසාන කරන්න',
 );
