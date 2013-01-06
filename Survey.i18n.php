@@ -1553,6 +1553,7 @@ $messages['ja'] = array(
 	'surveys-surveystats-name' => '調査 ID',
 	'surveys-surveystats-status' => '調査の状態',
 	'surveys-surveystats-questioncount' => '質問数',
+	'surveys-surveystats-submissioncount' => '投稿数',
 	'surveys-surveystats-enabled' => '有効',
 	'surveys-surveystats-disabled' => '無効',
 	'surveys-surveystats-questions' => '質問の統計',
