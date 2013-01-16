@@ -2546,6 +2546,13 @@ $messages['ro'] = array(
 	'survey-jquery-submit' => 'Trimite',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'survey-question-type-number' => 'Numere',
+);
+
 /** Russian (русский)
  * @author Kalan
  */
