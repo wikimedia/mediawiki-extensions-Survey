@@ -1636,7 +1636,7 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'survey-desc' => 'MediaWiki에 대한 설문 조사 도구',
+	'survey-desc' => '미디어위키에 대한 설문 조사 도구',
 	'right-surveyadmin' => '설문 조사 관리',
 	'right-surveysubmit' => '설문 조사에 참가하기',
 	'action-surveyadmin' => '설문 조사 관리',
@@ -1728,7 +1728,7 @@ $messages['ko'] = array(
 	'survey-special-label-header' => '설문 조사 위에 보여줄 텍스트',
 	'survey-special-label-footer' => '설문 조사 아래에 보여줄 텍스트',
 	'survey-special-label-thanks' => '설문 조사를 제출하고 나서 감사 메시지 보이기',
-	'survey-special-label-answers' => '가능한 답변입니다. 줄 당 하나',
+	'survey-special-label-answers' => '가능한 답변입니다. 줄 당 하나입니다.',
 	'survey-jquery-submit' => '제출',
 	'survey-jquery-finish' => '완료',
 	'survey-jquery-load-failed' => '설문 조사를 읽을 수 없습니다.',
