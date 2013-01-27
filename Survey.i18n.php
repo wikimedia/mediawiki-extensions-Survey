@@ -298,7 +298,7 @@ $messages['arc'] = array(
 	'surveys-special-stats' => 'ܚܒܝܫܘܬ ܡܢܝܢܐ',
 );
 
-/** تورکجه (تورکجه)
+/** South Azerbaijani (تورکجه)
  * @author Erdemaslancan
  */
 $messages['azb'] = array(
