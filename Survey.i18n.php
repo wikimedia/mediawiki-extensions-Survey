@@ -2554,6 +2554,8 @@ $messages['ro'] = array(
  */
 $messages['roa-tara'] = array(
 	'survey-question-type-number' => 'Numere',
+	'survey-jquery-submit' => 'Conferme',
+	'survey-jquery-finish' => 'Spicce',
 );
 
 /** Russian (русский)
