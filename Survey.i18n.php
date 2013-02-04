@@ -525,6 +525,7 @@ $messages['br'] = array(
 );
 
 /** Catalan (català)
+ * @author Pitort
  * @author පසිඳු කාවින්ද
  */
 $messages['ca'] = array(
@@ -532,6 +533,9 @@ $messages['ca'] = array(
 	'surveys-special-edit' => 'Edita',
 	'surveys-special-save' => 'Desa',
 	'surveys-special-delete' => 'Esborrar',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|resposta|respostes}})',
+	'surveys-surveystats-unchecked' => 'No seleccionat',
+	'surveys-surveystats-checked' => 'Seleccionat',
 );
 
 /** Czech (česky)
