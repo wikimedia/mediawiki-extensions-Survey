@@ -102,7 +102,7 @@ $specialPageAliases['mk'] = array(
 	'TakeSurvey' => array( 'ПополниАнкета' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'EditSurvey' => array( 'Rediger_undersøkelse' ),
 	'Surveys' => array( 'Undersøkelser' ),
