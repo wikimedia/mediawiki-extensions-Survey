@@ -200,7 +200,8 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
 	'survey-user-type-editor' => 'Group of users for which a survey can be available.
 
-Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])',
+Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])
+{{Identical|Editor}}',
 	'survey-user-type-anon' => 'Group of users for which a survey can be available.
 
 Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])
