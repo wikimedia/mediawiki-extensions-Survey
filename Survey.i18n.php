@@ -3080,6 +3080,13 @@ $messages['tr'] = array(
 	'survey-jquery-finish' => 'Tamamlandı',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'survey-question-type-number' => 'ⵓⵟⵟⵓⵏ',
+);
+
 /** Ukrainian (українська)
  * @author Base
  */
