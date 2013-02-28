@@ -158,7 +158,7 @@ $messages['en'] = array(
  * @author 아라
  */
 $messages['qqq'] = array(
-	'survey-desc' => '{{desc}}',
+	'survey-desc' => '{{desc|name=Survey|url=http://www.mediawiki.org/wiki/Extension:Survey}}',
 	'right-surveyadmin' => '{{doc-right|surveyadmin}}',
 	'right-surveysubmit' => '{{doc-right|surveysubmit}}',
 	'action-surveyadmin' => '{{doc-action|surveyadmin}}',
