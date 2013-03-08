@@ -469,6 +469,7 @@ $messages['bg'] = array(
 );
 
 /** Breton (brezhoneg)
+ * @author Fohanno
  * @author Fulup
  * @author Y-M D
  */
@@ -509,6 +510,8 @@ $messages['br'] = array(
 	'surveys-surveystats-enabled' => 'Gweredekaet',
 	'surveys-surveystats-disabled' => 'Diweredekaet',
 	'surveys-surveystats-questions' => 'Stadegoù ar goulennoù',
+	'surveys-surveystats-question-type' => 'Seurt goulenn',
+	'surveys-surveystats-question-text' => 'Testenn ar goulenn',
 	'surveys-surveystats-question-answercount' => 'Niver a respontoù',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|respont|respont}})',
 	'surveys-surveystats-unchecked' => 'Nann-gwiriet',
@@ -520,6 +523,8 @@ $messages['br'] = array(
 	'survey-special-label-addquestion' => 'Goulenn nevez',
 	'survey-question-label-nr' => 'Goulenn #$1',
 	'survey-special-label-required' => 'Rekis eo lakaat ur goulenn',
+	'survey-special-label-type' => 'Seurt goulenn',
+	'survey-special-label-text' => 'Testenn ar goulenn',
 	'survey-special-remove' => 'Lemel kuit at goulenn',
 	'survey-jquery-submit' => 'Kas',
 	'survey-jquery-finish' => 'Echuiñ',
