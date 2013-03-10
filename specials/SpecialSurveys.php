@@ -135,6 +135,8 @@ class SpecialSurveys extends SpecialSurveyPage {
 							$survey->getField( 'title' )
 						) .
 					'</td>' .
+					// Give grep a chance to find the usages:
+					// surveys-special-enabled, surveys-special-disabled
 					Html::element( 'td', array(), $this->msg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text() ) .
 					'<td>' .
 						Html::element( 

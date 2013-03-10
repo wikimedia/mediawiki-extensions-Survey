@@ -107,7 +107,10 @@ window.survey = new( function() {
 				'textarea': survey.question.type.TEXTAREA,
 				'check': survey.question.type.CHECK
 			};
-			
+
+			// Give grep a chance to find the usages:
+			// survey-question-type-text, survey-question-type-number, survey-question-type-select,
+			// survey-question-type-radio, survey-question-type-textarea, survey-question-type-check
 			for ( msg in types ) {
 				options[survey.msg( 'survey-question-type-' + msg )] = types[msg];
 			}
