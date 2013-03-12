@@ -83,7 +83,8 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 */
 	protected function getSummaryData( Survey $survey ) {
 		$stats = array();
-		
+
+		// Give grep a chance to find the usages: surveys-surveystats-enabled, surveys-surveystats-disabled
 		$stats['name'] = $survey->getField( 'name' );
 		$stats['title'] = $survey->getField( 'title' );
 		$stats['status'] = $this->msg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text();
@@ -109,7 +110,10 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		
 		foreach ( $stats as $stat => $value ) {
 			$out->addHTML( '<tr>' );
-			
+
+			// Give grep a chance to find the usages:
+			// surveys-surveystats-name, surveys-surveystats-title, surveys-surveystats-status,
+			// surveys-surveystats-questioncount, surveys-surveystats-submissioncount
 			$out->addHTML( Html::element(
 				'th',
 				array( 'class' => 'survey-stat-name' ),
@@ -180,7 +184,10 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			array( 'data-sort-value' => ++$qNr ),
 				$this->msg( 'surveys-surveystats-question-#', $qNr )->text()
 		) );
-		
+
+		// For grep: getTypeMessage returns any one of the following messages:
+		// survey-question-type-text, survey-question-type-number, survey-question-type-select,
+		// survey-question-type-radio, survey-question-type-textarea, survey-question-type-check
 		$out->addHTML( Html::element(
 			'td',
 			array(),
