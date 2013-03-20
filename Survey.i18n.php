@@ -206,6 +206,18 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 
 Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])
 {{Identical|Anonymous user}}',
+	'survey-navigation-edit' => 'Used as a link in the navigation links. Parameters:
+* $1 - the name of a survey
+{{Related|Survey-navigation}}',
+	'survey-navigation-take' => 'Used as a link in the navigation links. Parameters:
+* $1 - the name of a survey
+{{Related|Survey-navigation}}',
+	'survey-navigation-list' => 'Used as a link in the navigation links. Parameters:
+* $1 - the name of a survey
+{{Related|Survey-navigation}}',
+	'survey-navigation-stats' => 'Used as a link in the navigation links. Parameters:
+* $1 - the name of a survey
+{{Related|Survey-navigation}}',
 	'surveys-special-addnew' => 'Form header ([[:File:Survey-surveys.png|screenshot]])',
 	'surveys-special-namedoc' => '[[File:Survey-surveys.png|300px]]',
 	'surveys-special-add' => 'Button text ([[:File:Survey-surveys.png|screenshot]])',
@@ -225,6 +237,10 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
+	'survey-question-label-nr' => 'Used as label ([[:File:Survey-survey.png|screenshot]])
+
+Parameters:
+* $1 - question number (# is number sign)',
 	'survey-special-remove' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-jquery-submit' => '{{Identical|Submit}}',
 );
