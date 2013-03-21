@@ -1798,7 +1798,11 @@ $messages['ksh'] = array(
  * @author George Animal
  */
 $messages['ku-latn'] = array(
+	'survey-user-type-all' => 'Her kes',
 	'surveys-special-save' => 'Tomar bike',
+	'surveys-special-delete' => 'Jê bibe',
+	'survey-special-label-add-first' => 'Pirsekê lê zêde bike',
+	'survey-special-remove' => 'Pirsê jê bibe',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
