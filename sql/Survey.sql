@@ -4,7 +4,7 @@
 
 -- Surveys
 CREATE TABLE IF NOT EXISTS /*_*/surveys (
-  survey_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
+  survey_id                SMALLINT unsigned   NOT NULL PRIMARY KEY AUTO_INCREMENT,
   survey_name              VARCHAR(255)        NOT NULL, -- String indentifier for the survey
   survey_title             VARCHAR(255)        NOT NULL, -- Title of the survey
   survey_enabled           TINYINT             NOT NULL default '0', -- If the survey can be taken by users
@@ -28,7 +28,7 @@ CREATE INDEX /*i*/surveys_survey_min_pages ON /*_*/surveys (survey_min_pages);
 
 -- Questions
 CREATE TABLE IF NOT EXISTS /*_*/survey_questions (
-  question_id              INT(10) unsigned    NOT NULL auto_increment PRIMARY KEY,
+  question_id              INT(10) unsigned    NOT NULL PRIMARY KEY AUTO_INCREMENT,
   question_survey_id       SMALLINT unsigned   NOT NULL, -- Foreign key: surveys.survey_id
   question_text            TEXT                NOT NULL,
   question_type            INT(2) unsigned     NOT NULL,
@@ -44,7 +44,7 @@ CREATE INDEX /*i*/survey_questions_removed ON /*_*/survey_questions (question_re
 
 -- Submissions
 CREATE TABLE IF NOT EXISTS /*_*/survey_submissions (
-  submission_id            INT(10) unsigned    NOT NULL auto_increment PRIMARY KEY,
+  submission_id            INT(10) unsigned    NOT NULL PRIMARY KEY AUTO_INCREMENT,
   submission_survey_id     SMALLINT unsigned   NOT NULL, -- Foreign key: surveys.survey_id
   submission_user_name     VARCHAR(255)        NOT NULL, -- The person that made the submission (account name or ip)
   submission_page_id       INT(10) unsigned    NULL, -- The id of the page the submission was made on 
@@ -58,7 +58,7 @@ CREATE INDEX /*i*/survey_submissions_time ON /*_*/survey_submissions (submission
 
 -- Answers
 CREATE TABLE IF NOT EXISTS /*_*/survey_answers (
-  answer_id                SMALLINT unsigned   NOT NULL auto_increment PRIMARY KEY,
+  answer_id                SMALLINT unsigned   NOT NULL PRIMARY KEY AUTO_INCREMENT,
   answer_submission_id     INT(10) unsigned    NOT NULL, -- Foreign key: survey_submissions.submission_id
   answer_question_id       INT(10) unsigned    NOT NULL, -- Foreign key: survey_questions.question_id
   answer_text              BLOB                NOT NULL
