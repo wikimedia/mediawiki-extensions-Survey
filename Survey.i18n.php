@@ -173,10 +173,12 @@ $messages['qqq'] = array(
 	'group-surveyadmin.js' => '{{doc-group|surveyadmin|js}}',
 	'group-surveysubmit.css' => '{{doc-group|surveysubmit|css}}',
 	'group-surveysubmit.js' => '{{doc-group|surveysubmit|js}}',
-	'special-editsurvey' => 'Special page name/title - shows on specified survery to edit',
-	'special-surveys' => 'Special page name/title',
-	'special-surveystats' => 'Special page name/title - shows statistics for one specified survey',
-	'special-takesurvey' => 'Special page name/title',
+	'special-editsurvey' => '{{doc-special|EditSurvey}}
+The special page shows on specified survey to edit.',
+	'special-surveys' => '{{doc-special|Surveys}}',
+	'special-surveystats' => '{{doc-special|SurveyStatistics}}
+The special page shows statistics for one specified survey.',
+	'special-takesurvey' => '{{doc-special|TakeSurvey}}',
 	'survey-err-id-xor-name' => 'API error message.',
 	'survey-err-survey-name-unknown' => 'API error message. Parameters:
 * $1 is the name of a survey.',
@@ -711,6 +713,7 @@ $messages['diq'] = array(
 	'survey-question-type-number' => 'Nımre',
 	'survey-user-type-all' => 'Şar pêro',
 	'survey-user-type-editor' => 'Editori',
+	'survey-user-type-anon' => 'Karberê bênamey',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Na enket bıvurne]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1|Na enket bıgi]]',
 	'survey-navigation-list' => '[[Special:Surveys|Listey anketan]]',
