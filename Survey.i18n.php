@@ -927,7 +927,7 @@ $messages['fi'] = array(
 	'surveys-special-save' => 'Tallenna',
 	'surveys-special-delete' => 'Poista',
 	'surveys-special-confirm-delete' => 'Haluatko varmasti poistaa tämän kyselyn?',
-	'surveys-surveystats-name' => 'Kyselyn tunnus',
+	'surveys-surveystats-name' => 'Kyselyn tunniste',
 	'surveys-surveystats-title' => 'Kyselyn otsikko',
 	'surveys-surveystats-status' => 'Kyselyn tila',
 	'surveys-surveystats-questioncount' => 'Kysymysten määrä',
@@ -935,7 +935,7 @@ $messages['fi'] = array(
 	'surveys-surveystats-question-answercount' => 'Vastausten määrä',
 	'surveys-surveystats-question-answers' => 'Yleisimmät vastaukset',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|vastaus|vastausta}})',
-	'survey-special-label-name' => 'Kyselyn tunnus',
+	'survey-special-label-name' => 'Kyselyn tunniste',
 	'survey-special-label-title' => 'Kyselyn otsikko',
 	'survey-special-label-add-first' => 'Lisää kysymys',
 	'survey-special-label-addquestion' => 'Uusi kysymys',
@@ -2212,6 +2212,15 @@ $messages['mt'] = array(
 	'survey-jquery-load-failed' => "Is-sondaġġ ma setax jitla'.",
 );
 
+/** Low German (Plattdüütsch)
+ * @author Joachim Mos
+ */
+$messages['nds'] = array(
+	'surveys-special-edit' => 'Ännern',
+	'surveys-special-save' => 'Spiekern',
+	'surveys-special-delete' => 'Wegdoon',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -3292,6 +3301,7 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Shirayuki
+ * @author Zhuyifei1999
  */
 $messages['zh-hans'] = array(
 	'survey-desc' => 'MediaWiki的调查工具',
@@ -3305,7 +3315,20 @@ $messages['zh-hans'] = array(
 	'group-surveysubmit' => '调查参与者',
 	'group-surveysubmit-member' => '{{GENDER:$1|调查参与者}}',
 	'grouppage-surveysubmit' => '{{ns:project}}:调查参与者',
+	'special-editsurvey' => '调查管理',
+	'special-surveys' => '调查管理',
 	'special-surveystats' => '调查统计',
+	'special-takesurvey' => '参加调查',
+	'survey-err-id-xor-name' => '您需要提供ID或调查的名称用于提交',
+	'survey-err-survey-name-unknown' => '有没有调查具有名称"$1"',
+	'survey-err-duplicate-name' => '已存在同名的一项调查，"$1"',
+	'survey-err-ids-xor-names' => '您需要提供ID或调查的名称用于查询',
+	'survey-question-type-text' => '单行文本字段',
+	'survey-question-type-number' => '数值',
+	'survey-question-type-select' => '下拉菜单',
+	'survey-question-type-radio' => '单选按钮',
+	'survey-question-type-textarea' => '多行文本字段',
+	'survey-question-type-check' => '复选框',
 	'survey-user-type-all' => '所有人',
 	'survey-user-type-loggedin' => '已登入用户',
 	'survey-user-type-confirmed' => '确认用户',
@@ -3313,8 +3336,10 @@ $messages['zh-hans'] = array(
 	'survey-user-type-anon' => '匿名用户',
 	'survey-navigation-edit' => '[[Special:Survey/$1||编辑此调查]]',
 	'survey-navigation-take' => '[[Special:TakeSurvey/$1||填写此调查]]',
+	'survey-navigation-list' => '[[Special:Surveys|调查列表]]',
 	'survey-navigation-stats' => '[[Special:SurveyStats/$1|查看统计]]',
 	'surveys-special-addnew' => '添加新调查',
+	'surveys-special-namedoc' => '为新的调查为输入一个唯一的标识符 (ID)。以后不能更改。例如： 编辑器动机。',
 	'surveys-special-newname' => '新调查ID：',
 	'surveys-special-add' => '添加调查',
 	'surveys-special-existing' => '现有调查',
@@ -3328,19 +3353,49 @@ $messages['zh-hans'] = array(
 	'surveys-special-disabled' => '已停用',
 	'surveys-special-confirm-delete' => '确实要删除此调查吗？',
 	'surveys-special-delete-failed' => '删除调查失败。',
+	'survey-special-label-usertype' => '应收到这项调查的用户',
+	'survey-special-label-minpages' => '用户获取调查之前需要访问的最小数量的页面',
+	'surveys-takesurvey-loading' => '正在加载调查...',
 	'surveys-takesurvey-nosuchsurvey' => '请求的调查不存在。',
+	'surveys-takesurvey-warn-notenabled' => '这项调查但尚未启用，因此对用户不可见。',
+	'surveys-takesurvey-surveynotenabled' => '请求的调查尚未启用。',
+	'surveys-surveystats-nosuchsurvey' => '不存在请求的调查。您可以查看 [[Special:Surveys|可用调查列表]]。',
+	'surveys-surveystats-name' => '调查ID',
+	'surveys-surveystats-title' => '调查标题',
+	'surveys-surveystats-status' => '调查状态',
+	'surveys-surveystats-questioncount' => '问题的数量',
+	'surveys-surveystats-submissioncount' => '提交的数量',
 	'surveys-surveystats-enabled' => '已启用',
 	'surveys-surveystats-disabled' => '已停用',
 	'surveys-surveystats-questions' => '问题统计',
 	'surveys-surveystats-question-type' => '问题类型',
+	'surveys-surveystats-question-text' => '问题的文本',
+	'surveys-surveystats-question-answercount' => '答案的数量',
+	'surveys-surveystats-question-answers' => '最多提供的答案',
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|答案|答案}})',
+	'surveys-surveystats-unchecked' => '未选中',
+	'surveys-surveystats-checked' => '未选中',
+	'surveys-special-unknown-name' => '没有调查具有请求的ID。',
+	'survey-special-label-name' => '调查ID',
+	'survey-special-label-title' => '调查标题',
+	'survey-special-label-enabled' => '启用的调查',
+	'survey-special-label-ratio' => '要显示调查的人的百分比',
 	'survey-special-label-add-first' => '添加问题',
+	'survey-special-label-add-another' => '添加另一个问题',
 	'survey-special-label-addquestion' => '新问题',
 	'survey-question-label-nr' => '问题 #$1',
+	'survey-special-label-required' => '问题是必需的',
 	'survey-special-label-type' => '问题类型',
+	'survey-special-label-text' => '问题的文本',
 	'survey-special-remove' => '删除问题',
 	'survey-special-remove-confirm' => '确定要删除该调查吗？',
+	'survey-special-label-header' => '调查上方显示的文本',
+	'survey-special-label-footer' => '调查下方显示的文本',
+	'survey-special-label-thanks' => '提交调查后显示的感谢消息',
+	'survey-special-label-answers' => '可用的答案，每行一个。',
 	'survey-jquery-submit' => '提交',
 	'survey-jquery-finish' => '完成',
+	'survey-jquery-load-failed' => '无法加载该调查。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
