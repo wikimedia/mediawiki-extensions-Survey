@@ -2646,7 +2646,18 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'right-surveyadmin' => 'Gestisce le sondagge',
+	'action-surveyadmin' => 'gestisce le sondagge',
 	'survey-question-type-number' => 'Numere',
+	'survey-user-type-editor' => 'Cangiature',
+	'surveys-special-title' => 'Titole',
+	'surveys-special-status' => 'State',
+	'surveys-special-stats' => 'Statisteche',
+	'surveys-special-edit' => 'Cange',
+	'surveys-special-save' => 'Reggìstre',
+	'surveys-special-delete' => 'Scangille',
+	'surveys-special-enabled' => 'Abbilitate',
+	'surveys-special-disabled' => 'Disabbilitate',
 	'survey-jquery-submit' => 'Conferme',
 	'survey-jquery-finish' => 'Spicce',
 );
