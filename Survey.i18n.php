@@ -3413,6 +3413,7 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Littletung
  * @author Shirayuki
  * @author Simon Shek
  */
@@ -3424,7 +3425,7 @@ $messages['zh-hant'] = array(
 	'action-surveysubmit' => '參加調查',
 	'group-surveyadmin' => '調查管理員',
 	'group-surveyadmin-member' => '{{GENDER:$1|調查管理員}}',
-	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員', # Fuzzy
+	'grouppage-surveyadmin' => '{{ns:project}}:調查管理員',
 	'group-surveysubmit' => '調查參與者',
 	'group-surveysubmit-member' => '{{GENDER:$1|調查參與者}}',
 	'special-surveystats' => '調查統計',
