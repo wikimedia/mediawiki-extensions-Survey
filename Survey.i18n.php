@@ -245,6 +245,7 @@ Parameters:
 * $1 - question number (# is number sign)',
 	'survey-special-remove' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-jquery-submit' => '{{Identical|Submit}}',
+	'survey-jquery-finish' => '{{Identical|Finish}}',
 );
 
 /** Afrikaans (Afrikaans)
