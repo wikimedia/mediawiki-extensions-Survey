@@ -102,6 +102,14 @@ $specialPageAliases['mk'] = array(
 	'TakeSurvey' => array( 'ПополниАнкета' ),
 );
 
+/** Marathi (मराठी) */
+$specialPageAliases['mr'] = array(
+	'EditSurvey' => array( 'सर्वेक्षण' ),
+	'Surveys' => array( 'सर्वेक्षणे' ),
+	'SurveyStats' => array( 'सर्वेक्षणसांख्यिकी' ),
+	'TakeSurvey' => array( 'सर्वेक्षणातसहभागीव्हा' ),
+);
+
 /** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'EditSurvey' => array( 'Rediger_undersøkelse' ),
