@@ -3309,12 +3309,30 @@ $messages['vi'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['yi'] = array(
+	'survey-desc' => 'אומפרעג געצייג פאר מעדיעוויקי',
+	'right-surveyadmin' => 'פארוואלטן אומפרעגן',
+	'right-surveysubmit' => 'מיטטיילן אין אומפרעגן',
+	'action-surveyadmin' => 'פארוואלטן אומפרעגן',
+	'action-surveysubmit' => 'מיטטיילן אין אומפרעגן',
+	'group-surveyadmin' => 'אומפרעג אדמיניסטראטארן',
+	'group-surveyadmin-member' => '{{GENDER:$1|אומפרעג אדמיניסטראטאר}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:אומפרעג אדמיניסטראטארן',
+	'group-surveysubmit' => 'אומפרעג אנטייל־נעמער',
+	'special-surveystats' => 'אומפרעג סטאטיסטיק',
+	'survey-err-survey-name-unknown' => 'נישט פאראן קיין אומפרעג מיט נאמען "$1"',
+	'survey-err-duplicate-name' => 'שוין פאראן אן אומפרעג מיט נאמען "$1"',
 	'survey-question-type-number' => 'נומער',
+	'survey-user-type-editor' => 'רעדאַקטאָרן',
+	'survey-user-type-anon' => 'אַנאָנימע באַניצער',
+	'survey-navigation-list' => '[[Special:Surveys|אומפרעגליסטע]]',
+	'surveys-special-addnew' => 'צולייגן א נײַעם אומפרעג',
 	'surveys-special-title' => 'טיטל',
 	'surveys-special-status' => 'סטאַטוס',
 	'surveys-special-stats' => 'סטאַטיסטיק',
 	'surveys-special-save' => 'אויפֿהיטן',
 	'surveys-special-delete' => 'אויסמעקן',
+	'survey-jquery-submit' => 'אײַנגעבן',
+	'survey-jquery-finish' => 'קאנטשן',
 );
 
 /** Simplified Chinese (中文（简体）‎)
