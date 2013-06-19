@@ -574,6 +574,13 @@ $messages['ca'] = array(
 	'survey-question-label-nr' => 'Pregunta #$1',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'surveys-special-edit' => 'Нисйé',
+);
+
 /** Czech (česky)
  * @author Vks
  */
