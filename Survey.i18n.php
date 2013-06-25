@@ -579,6 +579,7 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'surveys-special-edit' => 'Нисйé',
+	'survey-jquery-submit' => 'ДӀадахьийта',
 );
 
 /** Czech (česky)
