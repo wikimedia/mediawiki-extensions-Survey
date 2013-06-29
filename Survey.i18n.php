@@ -238,6 +238,7 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'surveys-surveystats-question-#' => '{{optional}}',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'surveys-surveystats-checked' => '{{Identical|Checked}}',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-question-label-nr' => 'Used as label ([[:File:Survey-survey.png|screenshot]])
 
