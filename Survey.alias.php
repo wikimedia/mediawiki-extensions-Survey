@@ -42,7 +42,7 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['diq'] = array(
 	'EditSurvey' => array( 'AnketBıvurne' ),
 	'Surveys' => array( 'Anket' ),
-	'SurveyStats' => array( 'İstatêAnket', 'İstatıstikêAnketan' ),
+	'SurveyStats' => array( 'İstatéAnket', 'İstatıstikéAnketan' ),
 	'TakeSurvey' => array( 'AnketBıgi' ),
 );
 

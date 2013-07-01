@@ -238,12 +238,14 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'surveys-surveystats-question-#' => '{{optional}}',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'surveys-surveystats-unchecked' => '{{Identical|Unchecked}}',
 	'surveys-surveystats-checked' => '{{Identical|Checked}}',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-question-label-nr' => 'Used as label ([[:File:Survey-survey.png|screenshot]])
 
 Parameters:
-* $1 - question number (# is number sign)',
+* $1 - question number (# is number sign)
+{{Identical|Question}}',
 	'survey-special-remove' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-jquery-submit' => '{{Identical|Submit}}',
 	'survey-jquery-finish' => '{{Identical|Finish}}',
@@ -1640,6 +1642,7 @@ $messages['ja'] = array(
 	'surveys-surveystats-question-text' => '質問文',
 	'surveys-surveystats-question-answercount' => '回答数',
 	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|回答}})',
+	'surveys-surveystats-unchecked' => '未確認',
 	'survey-special-label-name' => '調査 ID',
 	'survey-special-label-add-first' => '質問を追加',
 	'survey-special-label-add-another' => '他の質問を追加',
