@@ -435,6 +435,8 @@ $messages['bg'] = array(
 	'survey-desc' => 'Инструмент за проучвания за МедияУики',
 	'right-surveyadmin' => 'Управление на проучвания',
 	'right-surveysubmit' => 'Участване в проучвания',
+	'action-surveyadmin' => 'управление на проучванията',
+	'action-surveysubmit' => 'участие в проучванията',
 	'special-surveys' => 'Администриране на проучванията',
 	'survey-err-survey-name-unknown' => 'Не съществува проучване с името „$1“',
 	'survey-question-type-text' => 'Едноредово текстово поле',
@@ -488,6 +490,9 @@ $messages['bg'] = array(
 	'survey-special-label-header' => 'Текст за показване над изследването',
 	'survey-special-label-footer' => 'Текст за показване под изследването',
 	'survey-special-label-thanks' => 'Благодарствено съобщение, което се показва след приключване на проучването',
+	'survey-special-label-answers' => 'Възможни отговори, по един на ред.',
+	'survey-jquery-submit' => 'Изпращане',
+	'survey-jquery-finish' => 'Приключване',
 );
 
 /** Breton (brezhoneg)
