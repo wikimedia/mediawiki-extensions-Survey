@@ -91,7 +91,7 @@ $messages['en'] = array(
 	'surveys-special-confirm-delete' => 'Are you sure you want to delete this survey?',
 	'surveys-special-delete-failed' => 'Failed to delete survey.',
 	'survey-special-label-usertype' => 'Users that should get the survey',
-	'survey-special-label-minpages' => 'Minimun amount of pages the user needs to visit before getting the survey',
+	'survey-special-label-minpages' => 'Minimum amount of pages the user needs to visit before getting the survey',
 
 	// Special:TakeSurvey
 	'surveys-takesurvey-loading' => 'Loading survey...',

@@ -76,7 +76,7 @@ how to use the  settings, in case the below descriptions do not suffice.
 | defaultMinPages
 | integer
 | 0
-| The default minimun amount of pages users should visit before getting a survey
+| The default minimum amount of pages users should visit before getting a survey
 | -
 | JSDebug
 | boolean
