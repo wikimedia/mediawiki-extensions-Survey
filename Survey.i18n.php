@@ -586,6 +586,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'survey-navigation-edit' => '[[Special:Survey/$1|Нисде хӀара хаттарш]]',
 	'surveys-special-edit' => 'Нисйé',
 	'survey-jquery-submit' => 'ДӀадахьийта',
 );
