@@ -2139,6 +2139,27 @@ $messages['mk'] = array(
 	'survey-jquery-load-failed' => 'Не можев да ја вчитам анкетата.',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'survey-desc' => 'Alat tinjauan untuk MediaWiki',
+	'right-surveyadmin' => 'Menguruskan tinjauan',
+	'right-surveysubmit' => 'Menyertai tinjauan',
+	'action-surveyadmin' => 'menguruskan tinjauan',
+	'action-surveysubmit' => 'menyertai tinjauan',
+	'group-surveyadmin' => 'Penyelia tinjauan',
+	'group-surveyadmin-member' => '{{GENDER:$1|penyelia tinjauan}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:Penyelia tinjauan',
+	'group-surveysubmit' => 'Peserta tinjauan',
+	'group-surveysubmit-member' => '{{GENDER:$1|peserta tinjauan}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:Peserta_tinjauan',
+	'special-editsurvey' => 'Penyelia tinjauan',
+	'special-surveys' => 'Penyelia tinjauan',
+	'special-surveystats' => 'Statistik tinjauan',
+	'special-takesurvey' => 'Ambil tinjauan',
+);
+
 /** Maltese (Malti)
  * @author Chrisportelli
  */
