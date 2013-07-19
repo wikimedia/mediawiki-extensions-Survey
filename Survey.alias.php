@@ -128,7 +128,7 @@ $specialPageAliases['nl'] = array(
 
 /** Punjabi (ਪੰਜਾਬੀ) */
 $specialPageAliases['pa'] = array(
-	'EditSurvey' => array( 'ਸੰਪਾਦਨ_ਸਰਵੇ', 'ਸਰਵੇ' ),
+	'EditSurvey' => array( 'ਸੋਧ_ਸਰਵੇ', 'ਸਰਵੇ' ),
 );
 
 /** Sicilian (sicilianu) */
