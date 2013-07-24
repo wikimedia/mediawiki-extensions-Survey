@@ -612,6 +612,13 @@ $messages['cs'] = array(
 	'survey-jquery-submit' => 'Odeslat',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'surveys-special-stats' => 'статїстїка',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
