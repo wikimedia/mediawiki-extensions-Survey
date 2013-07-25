@@ -617,6 +617,7 @@ $messages['cs'] = array(
  */
 $messages['cu'] = array(
 	'surveys-special-stats' => 'статїстїка',
+	'surveys-special-edit' => 'исправлѥниѥ',
 );
 
 /** German (Deutsch)
