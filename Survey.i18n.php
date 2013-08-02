@@ -772,6 +772,7 @@ $messages['diq'] = array(
 
 /** Spanish (español)
  * @author Armando-Martin
+ * @author Fitoschido
  * @author Ralgis
  */
 $messages['es'] = array(
@@ -831,7 +832,7 @@ $messages['es'] = array(
 	'surveys-takesurvey-warn-notenabled' => 'Esta encuesta no se ha habilitado todavía y por lo tanto no es visible para los usuarios.',
 	'surveys-takesurvey-surveynotenabled' => 'La encuesta solicitada aún no se ha activado.',
 	'surveys-surveystats-nosuchsurvey' => 'La encuesta solicitada no existe. Puede ver una [[Special:Surveys|lista de encuestas disponibles]].',
-	'surveys-surveystats-name' => 'ID de la encuesta',
+	'surveys-surveystats-name' => 'Id. de la encuesta',
 	'surveys-surveystats-title' => 'Título de la encuesta',
 	'surveys-surveystats-status' => 'Estado de la encuesta',
 	'surveys-surveystats-questioncount' => 'Número de preguntas',
@@ -847,7 +848,7 @@ $messages['es'] = array(
 	'surveys-surveystats-unchecked' => 'Desmarcada',
 	'surveys-surveystats-checked' => 'Marcada',
 	'surveys-special-unknown-name' => 'No hay ninguna encuesta con el identificador ID solicitado.',
-	'survey-special-label-name' => 'ID de la encuesta',
+	'survey-special-label-name' => 'Id. de la encuesta',
 	'survey-special-label-title' => 'Título de la encuesta',
 	'survey-special-label-enabled' => 'Encuesta activa',
 	'survey-special-label-ratio' => 'Porcentaje de personas a las que mostrar la encuesta',
