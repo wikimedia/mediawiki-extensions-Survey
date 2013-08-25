@@ -182,7 +182,8 @@ The special page shows statistics for one specified survey.',
 	'survey-err-id-xor-name' => 'API error message.',
 	'survey-err-survey-name-unknown' => 'API error message. Parameters:
 * $1 is the name of a survey.',
-	'survey-err-duplicate-name' => 'API error message. $1 is the name of a survey.',
+	'survey-err-duplicate-name' => 'API error message. Parameters:
+* $1 - the name of a survey',
 	'survey-err-ids-xor-names' => 'API error message.',
 	'survey-question-type-text' => 'Input type for a question, selectable in administration interface.',
 	'survey-question-type-number' => 'Input type for a question, selectable in administration interface.',
@@ -235,9 +236,12 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'surveys-surveystats-enabled' => '{{Identical|Enabled}}',
 	'surveys-surveystats-disabled' => '{{Identical|Disabled}}',
 	'surveys-surveystats-question-nr' => '{{notranslate}}',
-	'surveys-surveystats-question-#' => '{{optional}}',
+	'surveys-surveystats-question-#' => '{{optional}}
+Parameters:
+* $1 - question number',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
-	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question',
+	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question. Parameters:
+* $1 - number of answers',
 	'surveys-surveystats-unchecked' => '{{Identical|Unchecked}}',
 	'surveys-surveystats-checked' => '{{Identical|Checked}}',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
