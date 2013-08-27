@@ -215,8 +215,7 @@ Form option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Sur
 	'survey-navigation-take' => 'Used as a link in the navigation links. Parameters:
 * $1 - the name of a survey
 {{Related|Survey-navigation}}',
-	'survey-navigation-list' => 'Used as a link in the navigation links. Parameters:
-* $1 - the name of a survey
+	'survey-navigation-list' => 'Used as a link in the navigation links.
 {{Related|Survey-navigation}}',
 	'survey-navigation-stats' => 'Used as a link in the navigation links. Parameters:
 * $1 - the name of a survey
