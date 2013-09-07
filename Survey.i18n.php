@@ -240,9 +240,20 @@ Parameters:
 * $1 - question number',
 	'surveys-surveystats-question-answers' => 'Header for a column listing the most provided answers per question',
 	'surveys-surveystats-question-answer' => 'Header for a column listing the amount of answers per question. Parameters:
-* $1 - number of answers',
-	'surveys-surveystats-unchecked' => '{{Identical|Unchecked}}',
-	'surveys-surveystats-checked' => '{{Identical|Checked}}',
+* $1 - answer. any one of the following messages:
+** {{msg-mw|Surveys-surveystats-unchecked}}
+** {{msg-mw|Surveys-surveystats-checked}}
+* $2 - number of answers, can be used for GENDER',
+	'surveys-surveystats-unchecked' => 'Used as <code>$1</code> in {{msg-mw|Surveys-surveystats-question-answer}}.
+
+See also:
+* {{msg-mw|Surveys-surveystats-checked}}
+{{Identical|Unchecked}}',
+	'surveys-surveystats-checked' => 'Used as <code>$1</code> in {{msg-mw|Surveys-surveystats-question-answer}}.
+
+See also:
+* {{msg-mw|Surveys-surveystats-unchecked}}
+{{Identical|Checked}}',
 	'survey-special-label-add-first' => 'Button text ([[:File:Survey-survey.png|screenshot]])',
 	'survey-question-label-nr' => 'Used as label ([[:File:Survey-survey.png|screenshot]])
 
