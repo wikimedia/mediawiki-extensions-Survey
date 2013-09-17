@@ -1882,6 +1882,7 @@ $messages['ku-latn'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'survey-desc' => 'Tool fir Ëmfroe fir MediaWiki',
@@ -1966,7 +1967,7 @@ $messages['lb'] = array(
 	'survey-special-remove' => 'Fro ewechhuelen',
 	'survey-special-remove-confirm' => 'Sidd Dir sécher datt Dir dës Fro ewechhuele wëllt?',
 	'survey-special-label-header' => 'Text deen iwwer der Ëmfro gewise gëtt',
-	'survey-special-label-footer' => 'Text deen ënnert der Ëmfro gewise gëtt',
+	'survey-special-label-footer' => 'Text deen ënner der Ëmfro gewise gëtt',
 	'survey-special-label-thanks' => "Message dee gewise gëtt fir um Ënn vun der Ëmfro 'Merci' ze soen",
 	'survey-special-label-answers' => 'Disponibel Äntwerten, eng pro Linn.',
 	'survey-jquery-submit' => 'Schécken',
