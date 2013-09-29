@@ -297,6 +297,7 @@ $messages['af'] = array(
 /** Arabic (العربية)
  * @author Meno25
  * @author روخو
+ * @author زكريا
  */
 $messages['ar'] = array(
 	'survey-question-type-number' => 'رقم',
@@ -306,7 +307,7 @@ $messages['ar'] = array(
 	'surveys-special-title' => 'العنوان',
 	'surveys-special-status' => 'الحالة',
 	'surveys-special-stats' => 'إحصاءات',
-	'surveys-special-edit' => 'تعديل',
+	'surveys-special-edit' => 'عدل',
 	'surveys-special-save' => 'احفظ',
 	'surveys-special-delete' => 'حذف',
 	'surveys-special-enabled' => 'مُفعّل',
@@ -2562,7 +2563,7 @@ $messages['ps'] = array(
 	'surveys-special-stats' => 'شمارنې',
 	'surveys-special-edit' => 'سمول',
 	'surveys-special-save' => 'خوندي کول',
-	'surveys-special-delete' => 'ړنګول',
+	'surveys-special-delete' => 'ړنگول',
 	'surveys-special-enabled' => 'چارن',
 	'surveys-special-disabled' => 'ناچارن',
 	'surveys-surveystats-enabled' => 'چارن',
