@@ -2575,6 +2575,7 @@ $messages['ps'] = array(
 );
 
 /** Portuguese (português)
+ * @author Hamilton Abreu
  * @author Luckas
  * @author SandroHc
  */
@@ -2599,7 +2600,7 @@ $messages['pt'] = array(
 	'surveys-special-status' => 'Estado',
 	'surveys-special-stats' => 'Estatísticas',
 	'surveys-special-edit' => 'Editar',
-	'surveys-special-save' => 'Salvar',
+	'surveys-special-save' => 'Gravar',
 	'surveys-special-delete' => 'Eliminar',
 	'surveys-special-enabled' => 'Ativado',
 	'surveys-special-disabled' => 'Desativado',
