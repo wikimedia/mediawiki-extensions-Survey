@@ -931,6 +931,7 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Mjbmr
  * @author پاناروما
  */
@@ -949,7 +950,7 @@ $messages['fa'] = array(
 	'surveys-surveystats-questioncount' => 'تعدادی از سوال‌ها',
 	'surveys-surveystats-enabled' => 'فعال شد',
 	'surveys-surveystats-disabled' => 'غیرفعال شد',
-	'surveys-surveystats-checked' => 'بررسی شده',
+	'surveys-surveystats-checked' => 'بررسی‌شده',
 	'survey-jquery-submit' => 'ثبت',
 	'survey-jquery-finish' => 'پایان',
 );
