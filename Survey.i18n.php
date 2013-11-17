@@ -1403,6 +1403,7 @@ $messages['hsb'] = array(
 
 /** Interlingua (interlingua)
  * @author McDutchie
+ * @author Shirayuki
  */
 $messages['ia'] = array(
 	'survey-desc' => 'Instrumento de questionario pro MediaWiki',
