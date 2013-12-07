@@ -615,7 +615,7 @@ $messages['ce'] = array(
 	'survey-jquery-submit' => 'ДӀадахьийта',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Vks
  */
 $messages['cs'] = array(
@@ -633,7 +633,7 @@ $messages['cs'] = array(
 	'survey-jquery-submit' => 'Odeslat',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
