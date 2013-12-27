@@ -610,6 +610,7 @@ $messages['ce'] = array(
 	'survey-navigation-edit' => '[[Special:Survey/$1|Нисде хӀара хаттарш]]',
 	'surveys-special-title' => 'ЦӀе',
 	'surveys-special-edit' => 'Нисйé',
+	'surveys-takesurvey-surveynotenabled' => 'Хаттар хӀинца а юкъатоьхна дац.',
 	'surveys-surveystats-title' => 'Хеттаршан цӀе',
 	'survey-special-label-title' => 'Хеттаршан цӀе',
 	'survey-jquery-submit' => 'ДӀадахьийта',
