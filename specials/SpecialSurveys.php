@@ -74,7 +74,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			'form',
 			array(
 				'method' => 'post',
-				'action' => $this->getTitle()->getLocalURL(),
+				'action' => $this->getPageTitle()->getLocalURL(),
 			)
 		) );
 		$out->addHTML( '<fieldset>' );
