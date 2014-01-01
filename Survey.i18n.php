@@ -607,6 +607,8 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'group-surveyadmin' => 'Хаттаршан куьйгалхой',
+	'grouppage-surveyadmin' => '{{ns:project}}:Хаттаршан куьйгалхой',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Нисде хӀара хаттарш]]',
 	'surveys-special-title' => 'ЦӀе',
 	'surveys-special-edit' => 'Нисйé',
