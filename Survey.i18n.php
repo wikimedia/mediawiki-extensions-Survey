@@ -951,8 +951,8 @@ $messages['fa'] = array(
 	'surveys-special-status' => 'وضعیت',
 	'surveys-special-stats' => 'آمار',
 	'surveys-special-edit' => 'ویرایش',
-	'surveys-special-save' => 'ذخیره کردن',
-	'surveys-special-delete' => 'حذف کردن',
+	'surveys-special-save' => 'ذخیره‌کردن',
+	'surveys-special-delete' => 'حذف‌کردن',
 	'surveys-special-enabled' => 'فعال شد',
 	'surveys-special-disabled' => 'غیرفعال شد',
 	'surveys-special-confirm-delete' => 'آیا اطمینان دارید که می‌خواهید این پیام را پاک کنید؟',
@@ -2750,6 +2750,7 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (русский)
+ * @author Kaganer
  * @author Kalan
  */
 $messages['ru'] = array(
@@ -2821,7 +2822,7 @@ $messages['ru'] = array(
 	'surveys-surveystats-question-text' => 'Текст вопроса',
 	'surveys-surveystats-question-answercount' => 'Количество ответов',
 	'surveys-surveystats-question-answers' => 'Наиболее частые ответы',
-	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|ответ|ответов|ответа}})', # Fuzzy
+	'surveys-surveystats-question-answer' => '$1 ($2 {{PLURAL:$2|ответ|ответов|ответа}})',
 	'surveys-surveystats-unchecked' => 'Не помечен',
 	'surveys-surveystats-checked' => 'Помечен',
 	'surveys-special-unknown-name' => 'Не существует опроса с запрошенным идентификатором.',
