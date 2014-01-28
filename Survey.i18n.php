@@ -940,13 +940,39 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Ebraminio
  * @author Mjbmr
  * @author پاناروما
  */
 $messages['fa'] = array(
+	'survey-desc' => 'ابزار برآورد برای مدیاویکی',
+	'right-surveyadmin' => 'مدیریت برآوردها',
+	'right-surveysubmit' => 'شرکت در برآوردها',
+	'action-surveyadmin' => 'مدیریت برآوردها',
+	'action-surveysubmit' => 'شرکت در برآوردها',
+	'group-surveyadmin' => 'سرپرستان برآورد',
+	'group-surveyadmin-member' => '{{GENDER:$1|سرپرست برآورد}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:سرپرستان برآورد',
+	'group-surveysubmit' => 'شرکت‌ کنندگان برآورد',
+	'group-surveysubmit-member' => '{{GENDER:$1|شرکت کنندگان برآورد}}',
+	'grouppage-surveysubmit' => '{{ns:project}}:برآورد_شرکت کنندگان',
+	'special-editsurvey' => 'ادمین برآورد',
+	'special-surveys' => 'ادمین برآورد',
+	'special-surveystats' => 'آمارّای برآورد',
+	'special-takesurvey' => 'برآورد کردن',
+	'survey-err-survey-name-unknown' => 'هیچ برآوردی با نام "$1" وجود ندارد',
+	'survey-err-duplicate-name' => 'در حال حاضر برآوردی با نام "$1" وجود دارد',
 	'survey-question-type-number' => 'شماره',
+	'survey-question-type-radio' => 'دکمه‌های رادیو',
+	'survey-question-type-textarea' => 'زمینهٔ متن چند خطی',
+	'survey-question-type-check' => 'جعبهٔ بررسی',
+	'survey-user-type-all' => 'هر کس',
+	'survey-user-type-loggedin' => 'کاربران وارد شده',
+	'survey-user-type-confirmed' => 'کاربران تأیید شده',
 	'survey-user-type-editor' => 'ویرایشگران',
+	'survey-user-type-anon' => 'کاربران ناشناس',
+	'survey-navigation-edit' => '[[Special:برآورد/$1|ویرایش این برآورد]]', # Fuzzy
 	'surveys-special-title' => 'عنوان',
 	'surveys-special-status' => 'وضعیت',
 	'surveys-special-stats' => 'آمار',
