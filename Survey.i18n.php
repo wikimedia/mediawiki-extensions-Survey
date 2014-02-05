@@ -1070,6 +1070,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author Gomoko
  * @author Tpt
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'survey-desc' => 'Outil de sondage pour MediaWiki',
@@ -1077,12 +1078,16 @@ $messages['fr'] = array(
 	'right-surveysubmit' => 'Participer aux sondages',
 	'action-surveyadmin' => 'gérer les sondages',
 	'action-surveysubmit' => 'participer aux sondages',
-	'group-surveyadmin' => 'Administrateurs de sondage',
-	'group-surveyadmin-member' => '{{GENDER:$1|administrateur de sondage}}',
-	'grouppage-surveyadmin' => '{{ns:project}}:Survey_admins',
-	'group-surveysubmit' => 'Participants au sondage',
-	'group-surveysubmit-member' => '{{GENDER:$1|participant au sondage}}',
-	'grouppage-surveysubmit' => '{{ns:project}}:Survey_participants',
+	'group-surveyadmin' => 'Administrateurs de sondages',
+	'group-surveyadmin-member' => '{{GENDER:$1|administrateur de sondages}}',
+	'grouppage-surveyadmin' => '{{ns:project}}:Administrateurs de sondages',
+	'group-surveysubmit' => 'Participants aux sondages',
+	'group-surveysubmit-member' => 'participant{{GENDER:$1||e}} au sondage',
+	'grouppage-surveysubmit' => '{{ns:project}}:Participants aux sondages',
+	'group-surveyadmin.css' => '/* Le CSS placé ici n’affectera que les administrateurs de sondages */',
+	'group-surveyadmin.js' => '/* Le Javascript placé ici n’affectera que les administrateurs de sondages */',
+	'group-surveysubmit.css' => '/* Le CSS placé ici n’affectera que les participants aux sondages */',
+	'group-surveysubmit.js' => '/* Le Javascript placé ici n’affectera que les participants aux sondages */',
 	'special-editsurvey' => 'Administrateur de sondage',
 	'special-surveys' => 'Administrateur des sondages',
 	'special-surveystats' => 'Statistiques des sondages',
