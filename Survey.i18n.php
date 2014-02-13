@@ -607,6 +607,7 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'action-surveysubmit' => 'дакъалаца хаттаршкахь',
 	'group-surveyadmin' => 'Хаттаршан куьйгалхой',
 	'grouppage-surveyadmin' => '{{ns:project}}:Хаттаршан куьйгалхой',
 	'survey-navigation-edit' => '[[Special:Survey/$1|Нисде хӀара хаттарш]]',
@@ -1842,6 +1843,7 @@ $messages['ka'] = array(
 );
 
 /** Korean (한국어)
+ * @author Priviet
  * @author 아라
  */
 $messages['ko'] = array(
@@ -1902,7 +1904,7 @@ $messages['ko'] = array(
 	'survey-special-label-minpages' => '사용자가 설문 조사를 하기 전에 방문해야 하는 문서의 최소 금액',
 	'surveys-takesurvey-loading' => '설문 조사 로드 중...',
 	'surveys-takesurvey-nosuchsurvey' => '요청한 설문 조사가 존재하지 않습니다.',
-	'surveys-takesurvey-warn-notenabled' => '이 설문 조사는 아직 활성화되지 않아 사용자에게 보여지지 않습니다.',
+	'surveys-takesurvey-warn-notenabled' => '이 설문 조사는 아직 활성화되지 않아 사용자에게 보이지 않습니다.',
 	'surveys-takesurvey-surveynotenabled' => '요청한 설문 조사는 아직 활성화가 되지 않았습니다.',
 	'surveys-surveystats-nosuchsurvey' => '요청한 설문 조사가 없습니다. [[Special:Surveys|가능한 설문 조사]]를 볼 수 있습니다.',
 	'surveys-surveystats-name' => '설문 조사 ID',
