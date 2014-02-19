@@ -25,10 +25,18 @@ $specialPageAliases['en'] = array(
 
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = array(
-	'EditSurvey' => array( 'تعديل_الاستقصاء' ),
+	'EditSurvey' => array( 'تعديل_الاستقصاء', 'استقصاء' ),
 	'Surveys' => array( 'استقصاءات' ),
 	'SurveyStats' => array( 'إحصاءات_الاستقصاء' ),
 	'TakeSurvey' => array( 'المشاركة_بالاستقصاء' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'EditSurvey' => array( 'تعديل_الاستقصا', 'استقصا' ),
+	'Surveys' => array( 'استقصايات' ),
+	'SurveyStats' => array( 'احصاءات_الاستقصا' ),
+	'TakeSurvey' => array( 'المشاركه_بالاستقصا' ),
 );
 
 /** German (Deutsch) */
