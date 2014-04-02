@@ -1,0 +1,21 @@
+{
+    "@metadata": {
+        "authors": [
+            "Als-Chlämens"
+        ]
+    },
+    "surveys-special-addnew": "E neiji Umfroog starte",
+    "surveys-special-add": "Umfroog dezuefiege",
+    "surveys-special-existing": "Umfrooge, wo's scho git",
+    "surveys-special-title": "Titel",
+    "surveys-special-status": "Status",
+    "surveys-special-stats": "Statischtike",
+    "surveys-special-edit": "Bearbeite",
+    "surveys-special-save": "Spychere",
+    "surveys-special-delete": "Lösche",
+    "surveys-special-enabled": "Aktiviert",
+    "surveys-special-disabled": "Deaktiviert",
+    "surveys-special-confirm-delete": "Bisch sicher, ass Du die Umfroog witt lesche?",
+    "surveys-special-delete-failed": "Die Umfroog het nit chönne glöscht werde.",
+    "surveys-takesurvey-loading": "Die Umfroog wird glade..."
+}

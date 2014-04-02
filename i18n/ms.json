@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Anakmalaysia"
+        ]
+    },
+    "survey-desc": "Alat tinjauan untuk MediaWiki",
+    "right-surveyadmin": "Menguruskan tinjauan",
+    "right-surveysubmit": "Menyertai tinjauan",
+    "action-surveyadmin": "menguruskan tinjauan",
+    "action-surveysubmit": "menyertai tinjauan",
+    "group-surveyadmin": "Penyelia tinjauan",
+    "group-surveyadmin-member": "{{GENDER:$1|penyelia tinjauan}}",
+    "grouppage-surveyadmin": "{{ns:project}}:Penyelia tinjauan",
+    "group-surveysubmit": "Peserta tinjauan",
+    "group-surveysubmit-member": "{{GENDER:$1|peserta tinjauan}}",
+    "grouppage-surveysubmit": "{{ns:project}}:Peserta_tinjauan",
+    "special-editsurvey": "Penyelia tinjauan",
+    "special-surveys": "Penyelia tinjauan",
+    "special-surveystats": "Statistik tinjauan",
+    "special-takesurvey": "Ambil tinjauan"
+}

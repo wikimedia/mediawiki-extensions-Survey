@@ -1,0 +1,30 @@
+{
+    "@metadata": {
+        "authors": [
+            "Naudefj"
+        ]
+    },
+    "survey-question-type-number": "Getal",
+    "survey-user-type-all": "Almal",
+    "survey-user-type-loggedin": "Aangemelde gebruikers",
+    "survey-user-type-confirmed": "Bevestigde gebruikers",
+    "survey-user-type-anon": "Anonieme gebruikers",
+    "surveys-special-title": "Naam",
+    "surveys-special-status": "Status",
+    "surveys-special-stats": "Statistieke",
+    "surveys-special-edit": "Wysig",
+    "surveys-special-save": "Stoor",
+    "surveys-special-delete": "Skrap",
+    "surveys-special-enabled": "Aangeskakel",
+    "surveys-special-disabled": "Afgeskakel",
+    "surveys-surveystats-enabled": "Aangeskakel",
+    "surveys-surveystats-disabled": "Afgeskakel",
+    "surveys-surveystats-questions": "Vraagstatistieke",
+    "surveys-surveystats-question-type": "Tipe vraag",
+    "surveys-surveystats-question-text": "Vraagteks",
+    "surveys-surveystats-question-answercount": "Aantal antwoorde",
+    "surveys-surveystats-question-answers": "Mees gegewe antwoorde",
+    "surveys-surveystats-question-answer": "$1 ($2 {{PLURAL:$2|antwoord|antwoorde}})",
+    "survey-jquery-submit": "Dien in",
+    "survey-jquery-finish": "Voltooi"
+}

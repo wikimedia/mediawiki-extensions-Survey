@@ -1,0 +1,19 @@
+{
+    "@metadata": {
+        "authors": [
+            "Vks"
+        ]
+    },
+    "survey-question-type-number": "Číslo",
+    "survey-user-type-editor": "Editoři",
+    "surveys-special-title": "Názvu",
+    "surveys-special-status": "Stav",
+    "surveys-special-edit": "Editovat",
+    "surveys-special-save": "Uložit",
+    "surveys-special-delete": "Smazat",
+    "surveys-special-enabled": "Povoleno",
+    "surveys-special-disabled": "Zakázáno",
+    "surveys-surveystats-enabled": "Povoleno",
+    "surveys-surveystats-disabled": "Zakázáno",
+    "survey-jquery-submit": "Odeslat"
+}

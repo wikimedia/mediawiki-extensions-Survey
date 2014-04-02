@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Pitort",
+            "පසිඳු කාවින්ද"
+        ]
+    },
+    "survey-question-type-number": "Nombre",
+    "surveys-special-title": "Títol",
+    "surveys-special-status": "Estat",
+    "surveys-special-stats": "Estadístiques",
+    "surveys-special-edit": "Edita",
+    "surveys-special-save": "Desa",
+    "surveys-special-delete": "Esborrar",
+    "surveys-special-enabled": "Activat",
+    "surveys-special-disabled": "Desactivat",
+    "surveys-surveystats-enabled": "Activat",
+    "surveys-surveystats-disabled": "Desactivat",
+    "surveys-surveystats-question-answer": "$1 ($2 {{PLURAL:$2|resposta|respostes}})",
+    "surveys-surveystats-unchecked": "No seleccionat",
+    "surveys-surveystats-checked": "Seleccionat",
+    "survey-special-label-add-first": "Afegeix una pregunta",
+    "survey-special-label-add-another": "Afegeix una altra pregunta",
+    "survey-special-label-addquestion": "Nova pregunta",
+    "survey-question-label-nr": "Pregunta #$1"
+}

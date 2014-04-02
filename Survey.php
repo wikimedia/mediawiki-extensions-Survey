@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Initialization file for the Survey extension.
  *
@@ -28,7 +27,7 @@ if ( version_compare( $wgVersion, '1.19c', '<' ) ) {
 	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.19 or above. For MediaWiki 1.18.x, you can use Survey 0.2.' );
 }
 
-define( 'Survey_VERSION', '0.2.1 alpha' );
+define( 'Survey_VERSION', '0.3.0 alpha' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
@@ -41,6 +40,7 @@ $wgExtensionCredits['other'][] = array(
 	'descriptionmsg' => 'survey-desc'
 );
 
+$wgMessagesDirs['Survey'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Survey'] 			= dirname( __FILE__ ) . '/Survey.i18n.php';
 $wgExtensionMessagesFiles['SurveyAlias']		= dirname( __FILE__ ) . '/Survey.alias.php';
 
