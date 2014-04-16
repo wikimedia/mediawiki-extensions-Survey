@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Iltever"
-        ]
-    },
-    "survey-user-type-anon": "Анонимлеге",
-    "survey-special-label-usertype": "Соруулаугъа къатышыргъа кимг теджелсин"
+	"@metadata": {
+		"authors": [
+			"Iltever"
+		]
+	},
+	"survey-user-type-anon": "Анонимлеге",
+	"survey-special-label-usertype": "Соруулаугъа къатышыргъа кимг теджелсин"
 }

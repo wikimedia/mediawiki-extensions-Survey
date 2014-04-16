@@ -1,19 +1,19 @@
 {
-    "@metadata": {
-        "authors": [
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "survey-question-type-number": "تعداد",
-    "survey-user-type-all": "ہر کوئی",
-    "survey-user-type-editor": "ایڈیٹرز",
-    "survey-user-type-anon": "گمنام صارفین",
-    "surveys-special-title": "عنوان",
-    "surveys-special-status": "حیثیت",
-    "surveys-special-stats": "اعداد و شمار",
-    "surveys-special-edit": "ترمیم کریں",
-    "surveys-special-save": "محفوظ کریں",
-    "surveys-special-delete": "حذف کریں",
-    "survey-jquery-submit": "جمع کرائیں",
-    "survey-jquery-finish": "ختم"
+	"@metadata": {
+		"authors": [
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"survey-question-type-number": "تعداد",
+	"survey-user-type-all": "ہر کوئی",
+	"survey-user-type-editor": "ایڈیٹرز",
+	"survey-user-type-anon": "گمنام صارفین",
+	"surveys-special-title": "عنوان",
+	"surveys-special-status": "حیثیت",
+	"surveys-special-stats": "اعداد و شمار",
+	"surveys-special-edit": "ترمیم کریں",
+	"surveys-special-save": "محفوظ کریں",
+	"surveys-special-delete": "حذف کریں",
+	"survey-jquery-submit": "جمع کرائیں",
+	"survey-jquery-finish": "ختم"
 }

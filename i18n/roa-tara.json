@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joetaras"
-        ]
-    },
-    "right-surveyadmin": "Gestisce le sondagge",
-    "action-surveyadmin": "gestisce le sondagge",
-    "group-surveyadmin": "Amministrature de le sondagge",
-    "group-surveyadmin-member": "{{GENDER:$1|amministratore d'u sondagge}}",
-    "grouppage-surveyadmin": "{{ns:project}}:Amministrature de le sondagge",
-    "survey-question-type-number": "Numere",
-    "survey-user-type-editor": "Cangiature",
-    "surveys-special-title": "Titole",
-    "surveys-special-status": "State",
-    "surveys-special-stats": "Statisteche",
-    "surveys-special-edit": "Cange",
-    "surveys-special-save": "Reggìstre",
-    "surveys-special-delete": "Scangille",
-    "surveys-special-enabled": "Abbilitate",
-    "surveys-special-disabled": "Disabbilitate",
-    "survey-jquery-submit": "Conferme",
-    "survey-jquery-finish": "Spicce"
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"right-surveyadmin": "Gestisce le sondagge",
+	"action-surveyadmin": "gestisce le sondagge",
+	"group-surveyadmin": "Amministrature de le sondagge",
+	"group-surveyadmin-member": "{{GENDER:$1|amministratore d'u sondagge}}",
+	"grouppage-surveyadmin": "{{ns:project}}:Amministrature de le sondagge",
+	"survey-question-type-number": "Numere",
+	"survey-user-type-editor": "Cangiature",
+	"surveys-special-title": "Titole",
+	"surveys-special-status": "State",
+	"surveys-special-stats": "Statisteche",
+	"surveys-special-edit": "Cange",
+	"surveys-special-save": "Reggìstre",
+	"surveys-special-delete": "Scangille",
+	"surveys-special-enabled": "Abbilitate",
+	"surveys-special-disabled": "Disabbilitate",
+	"survey-jquery-submit": "Conferme",
+	"survey-jquery-finish": "Spicce"
 }

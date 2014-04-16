@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "surveys-special-title": "Izenburua",
-    "surveys-special-status": "Egoera",
-    "surveys-special-edit": "Aldatu",
-    "surveys-special-save": "Gorde",
-    "surveys-special-delete": "Ezabatu",
-    "survey-jquery-submit": "Bidali"
+	"@metadata": {
+		"authors": [
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"surveys-special-title": "Izenburua",
+	"surveys-special-status": "Egoera",
+	"surveys-special-edit": "Aldatu",
+	"surveys-special-save": "Gorde",
+	"surveys-special-delete": "Ezabatu",
+	"survey-jquery-submit": "Bidali"
 }

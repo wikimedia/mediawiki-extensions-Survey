@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Erdemaslancan"
-        ]
-    },
-    "surveys-special-enabled": "قوشولوب",
-    "surveys-surveystats-enabled": "قوشولوب"
+	"@metadata": {
+		"authors": [
+			"Erdemaslancan"
+		]
+	},
+	"surveys-special-enabled": "قوشولوب",
+	"surveys-surveystats-enabled": "قوشولوب"
 }

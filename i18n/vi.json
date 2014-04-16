@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "survey-question-type-number": "Số",
-    "survey-user-type-all": "Tất cả mọi người",
-    "surveys-special-title": "Tựa đề",
-    "surveys-special-status": "Trạng thái",
-    "surveys-special-stats": "Thống kê",
-    "surveys-special-edit": "Chỉnh Sửa",
-    "surveys-special-save": "Lưu",
-    "surveys-special-delete": "Xóa",
-    "survey-jquery-finish": "Kết thúc"
+	"@metadata": {
+		"authors": [
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"survey-question-type-number": "Số",
+	"survey-user-type-all": "Tất cả mọi người",
+	"surveys-special-title": "Tựa đề",
+	"surveys-special-status": "Trạng thái",
+	"surveys-special-stats": "Thống kê",
+	"surveys-special-edit": "Chỉnh Sửa",
+	"surveys-special-save": "Lưu",
+	"surveys-special-delete": "Xóa",
+	"survey-jquery-finish": "Kết thúc"
 }

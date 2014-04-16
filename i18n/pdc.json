@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xqt"
-        ]
-    },
-    "surveys-special-save": "Beilege",
-    "surveys-special-delete": "Verwische"
+	"@metadata": {
+		"authors": [
+			"Xqt"
+		]
+	},
+	"surveys-special-save": "Beilege",
+	"surveys-special-delete": "Verwische"
 }

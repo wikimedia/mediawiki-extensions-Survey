@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "Avjoska",
-            "Pikne"
-        ]
-    },
-    "right-surveyadmin": "Hallata küsitlusi",
-    "right-surveysubmit": "Osaleda küsitlustel",
-    "action-surveyadmin": "küsitlusi hallata",
-    "action-surveysubmit": "küsitlustel osaleda",
-    "special-takesurvey": "Küsitlusele vastamine",
-    "survey-user-type-all": "Kõik",
-    "survey-user-type-loggedin": "Sisseloginud kasutajad",
-    "survey-user-type-confirmed": "Kinnitatud kasutajad",
-    "survey-user-type-editor": "Toimetajad",
-    "survey-user-type-anon": "Anonüümsed kasutajad",
-    "surveys-special-addnew": "Uue küsitluse lisamine",
-    "surveys-special-add": "Lisa küsitlus",
-    "surveys-special-title": "Pealkiri",
-    "surveys-special-status": "Olek",
-    "surveys-special-stats": "Statistika",
-    "surveys-special-edit": "Redigeeri",
-    "surveys-special-save": "Salvesta",
-    "surveys-special-delete": "Kustuta",
-    "surveys-special-enabled": "Lubatud",
-    "surveys-special-disabled": "Keelatud",
-    "survey-special-label-usertype": "Kasutajad, kes saavad küsitlusele vastata",
-    "surveys-surveystats-enabled": "Lubatud",
-    "surveys-surveystats-disabled": "Keelatud",
-    "survey-special-label-add-first": "Lisa küsimus",
-    "survey-special-remove": "Eemalda küsimus",
-    "survey-jquery-submit": "Saada"
+	"@metadata": {
+		"authors": [
+			"Avjoska",
+			"Pikne"
+		]
+	},
+	"right-surveyadmin": "Hallata küsitlusi",
+	"right-surveysubmit": "Osaleda küsitlustel",
+	"action-surveyadmin": "küsitlusi hallata",
+	"action-surveysubmit": "küsitlustel osaleda",
+	"special-takesurvey": "Küsitlusele vastamine",
+	"survey-user-type-all": "Kõik",
+	"survey-user-type-loggedin": "Sisseloginud kasutajad",
+	"survey-user-type-confirmed": "Kinnitatud kasutajad",
+	"survey-user-type-editor": "Toimetajad",
+	"survey-user-type-anon": "Anonüümsed kasutajad",
+	"surveys-special-addnew": "Uue küsitluse lisamine",
+	"surveys-special-add": "Lisa küsitlus",
+	"surveys-special-title": "Pealkiri",
+	"surveys-special-status": "Olek",
+	"surveys-special-stats": "Statistika",
+	"surveys-special-edit": "Redigeeri",
+	"surveys-special-save": "Salvesta",
+	"surveys-special-delete": "Kustuta",
+	"surveys-special-enabled": "Lubatud",
+	"surveys-special-disabled": "Keelatud",
+	"survey-special-label-usertype": "Kasutajad, kes saavad küsitlusele vastata",
+	"surveys-surveystats-enabled": "Lubatud",
+	"surveys-surveystats-disabled": "Keelatud",
+	"survey-special-label-add-first": "Lisa küsimus",
+	"survey-special-remove": "Eemalda küsimus",
+	"survey-jquery-submit": "Saada"
 }

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "survey-question-type-number": "Nomor",
-    "surveys-special-title": "Judul",
-    "surveys-special-status": "Status",
-    "surveys-special-edit": "Sunting",
-    "surveys-special-save": "Simpan",
-    "surveys-surveystats-enabled": "Diaktifkan",
-    "surveys-surveystats-disabled": "Dinonaktifkan",
-    "survey-jquery-submit": "Kirim"
+	"@metadata": {
+		"authors": [
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"survey-question-type-number": "Nomor",
+	"surveys-special-title": "Judul",
+	"surveys-special-status": "Status",
+	"surveys-special-edit": "Sunting",
+	"surveys-special-save": "Simpan",
+	"surveys-surveystats-enabled": "Diaktifkan",
+	"surveys-surveystats-disabled": "Dinonaktifkan",
+	"survey-jquery-submit": "Kirim"
 }
