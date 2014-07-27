@@ -4,7 +4,8 @@
 			"Justincheng12345",
 			"Littletung",
 			"Shirayuki",
-			"Simon Shek"
+			"Simon Shek",
+			"LNDDYL"
 		]
 	},
 	"survey-desc": "MediaWiki的調查工具",
@@ -56,13 +57,13 @@
 	"surveys-special-disabled": "已禁用",
 	"surveys-special-confirm-delete": "確定要刪除這調查嗎？",
 	"surveys-special-delete-failed": "刪除調查失敗。",
-	"survey-special-label-usertype": "應收到此項調查的用戶",
-	"survey-special-label-minpages": "用戶取得調查前需訪問的最小頁面數",
+	"survey-special-label-usertype": "應收到此項調查的使用者",
+	"survey-special-label-minpages": "使用者取得調查前需訪問的最小頁面數",
 	"surveys-takesurvey-loading": "正在載入調查…",
 	"surveys-takesurvey-nosuchsurvey": "要求的調查不存在。",
-	"surveys-takesurvey-warn-notenabled": "此項調查尚未啟用，因此對用戶不可見。",
+	"surveys-takesurvey-warn-notenabled": "此項調查尚未啟用，因此對使用者不可見。",
 	"surveys-takesurvey-surveynotenabled": "請求的調查尚未啟用。",
-	"surveys-surveystats-nosuchsurvey": "請求的調查不存在。您可以查看[[Special:Surveys|可用調查列表]]。",
+	"surveys-surveystats-nosuchsurvey": "請求的調查不存在。您可以檢視[[Special:Surveys|可用調查清單]]。",
 	"surveys-surveystats-name": "調查ID",
 	"surveys-surveystats-title": "調查標題",
 	"surveys-surveystats-status": "調查狀況",
