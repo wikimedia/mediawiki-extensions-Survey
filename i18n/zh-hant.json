@@ -41,7 +41,7 @@
 	"survey-navigation-edit": "[[Special:Survey/$1||編輯此調查]]",
 	"survey-navigation-take": "[[Special:TakeSurvey/$1||填寫此調查]]",
 	"survey-navigation-list": "[[Special:Surveys|調查清單]]",
-	"survey-navigation-stats": "[[Special:SurveyStats/$1|查看統計]]",
+	"survey-navigation-stats": "[[Special:SurveyStats/$1|檢視統計]]",
 	"surveys-special-addnew": "添加新調查",
 	"surveys-special-namedoc": "輸入新調查的唯一識別碼（ID）。以後不能再更改。例子：編者動機。",
 	"surveys-special-newname": "新調查ID：",
