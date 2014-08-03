@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Zhuyifei1999"
+			"Zhuyifei1999",
+			"Liuxinyu970226"
 		]
 	},
 	"survey-desc": "MediaWiki的调查工具",
@@ -16,6 +17,8 @@
 	"group-surveysubmit": "调查参与者",
 	"group-surveysubmit-member": "{{GENDER:$1|调查参与者}}",
 	"grouppage-surveysubmit": "{{ns:project}}:调查参与者",
+	"group-surveyadmin.css": "/* 放置于这里的CSS将只影响调查管理员 */",
+	"group-surveyadmin.js": "/* 放置于这里的JS将只影响调查管理员 */",
 	"special-editsurvey": "调查管理",
 	"special-surveys": "调查管理",
 	"special-surveystats": "调查统计",
