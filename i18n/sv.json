@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Lokal Profil"
 		]
 	},
 	"survey-desc": "Undersökningsverktyg för MediaWiki",
@@ -25,7 +26,7 @@
 	"survey-err-ids-xor-names": "Du måste antingen ange ett ID eller namnet på den begärda undersökningen",
 	"survey-question-type-text": "Enradigt textfält",
 	"survey-question-type-number": "Nummer",
-	"survey-question-type-select": "Rullgardinslist",
+	"survey-question-type-select": "Rullgardinsmenyn",
 	"survey-question-type-radio": "Alternativknappar",
 	"survey-question-type-textarea": "Flerradiga textfält",
 	"survey-question-type-check": "Kryssruta",
