@@ -42,11 +42,15 @@ class ApiDeleteSurvey extends ApiBase {
 	}
 	
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 	
 	public function getTokenSalt() {
 		$params = $this->extractRequestParams();
+		return $this->getWebUITokenSalt( $params );
+	}
+
+	protected function getWebUITokenSalt( array $params ) {
 		return 'deletesurvey' . implode( '|', $params['ids'] );
 	}
 	
