@@ -120,16 +120,7 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 	public function getDescription() {
 		return 'API module for obatining survey submissions';
 	}
-	
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getPossibleErrors()
-	 */
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-		) );
-	}	
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getExamples()

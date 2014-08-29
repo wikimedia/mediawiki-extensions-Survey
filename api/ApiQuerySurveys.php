@@ -182,16 +182,6 @@ class ApiQuerySurveys extends ApiQueryBase {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getPossibleErrors()
-	 */
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'surveyids', 'name' ),
-		) );
-	}
-
-	/**
-	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getExamples()
 	 */
 	protected function getExamples() {

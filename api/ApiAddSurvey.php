@@ -105,13 +105,7 @@ class ApiAddSurvey extends ApiBase {
 			'API module for adding surveys.'
 		);
 	}
-	
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'name' ),
-			array( 'missingparam', 'enabled' ),
-		) );
-	}
+
 
 	protected function getExamples() {
 		return array(

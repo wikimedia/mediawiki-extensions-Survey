@@ -96,15 +96,6 @@ class ApiEditSurvey extends ApiBase {
 			'API module for editing a survey.'
 		);
 	}
-	
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'id' ),
-			array( 'missingparam', 'name' ),
-			array( 'missingparam', 'enabled' ),
-			array( 'missingparam', 'questions' ),
-		) );
-	}
 
 	protected function getExamples() {
 		return array(

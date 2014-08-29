@@ -81,12 +81,6 @@ class ApiDeleteSurvey extends ApiBase {
 			'API module for deleting surveys.'
 		);
 	}
-	
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'ids' ),
-		) );
-	}
 
 	protected function getExamples() {
 		return array(
