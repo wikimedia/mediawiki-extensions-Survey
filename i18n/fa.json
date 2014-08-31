@@ -4,7 +4,8 @@
 			"Armin1392",
 			"Ebraminio",
 			"Mjbmr",
-			"پاناروما"
+			"پاناروما",
+			"Alirezaaa"
 		]
 	},
 	"survey-desc": "ابزار برآورد برای مدیاویکی",
@@ -41,9 +42,9 @@
 	"survey-navigation-take": "[[Special:TakeSurvey/$1|برآورد کردن این]]",
 	"survey-navigation-list": "[[Special:Surveys|فهرست برآوردها]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|مشاهدهٔ آمارها]]",
-	"surveys-special-addnew": "افزودن یک برآورد جدید",
+	"surveys-special-addnew": "افزودن یک برآورد تازه",
 	"surveys-special-namedoc": "یک شناسه منحصر به فرد (شناسه) برای ارزیابی جدید وارد کنید. بعداً نمی‌تواند تغییر کند. برای مثالː انگیزه ویرایشگر.",
-	"surveys-special-newname": "شناسهٔ برآورد جدید:",
+	"surveys-special-newname": "شناسهٔ برآورد تازه:",
 	"surveys-special-add": "افرودن برآورد",
 	"surveys-special-existing": "براوردهای موجود",
 	"surveys-special-title": "عنوان",
@@ -85,7 +86,7 @@
 	"survey-special-label-ratio": "درصد مردم برای نمایش برآورد به",
 	"survey-special-label-add-first": "افزودن سوال",
 	"survey-special-label-add-another": "افزودن سوال دیگر",
-	"survey-special-label-addquestion": "سوال جدید",
+	"survey-special-label-addquestion": "سوال تازه",
 	"survey-question-label-nr": "سوال #$1",
 	"survey-special-label-required": "سوال مورد نیاز شده‌است",
 	"survey-special-label-type": "نوع سوال",
