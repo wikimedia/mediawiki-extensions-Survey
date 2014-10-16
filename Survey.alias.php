@@ -55,6 +55,14 @@ $specialPageAliases['diq'] = array(
 	'TakeSurvey' => array( 'AnketBıgi' ),
 );
 
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'EditSurvey' => array( 'ویرایش_نظرسنجی' ),
+	'Surveys' => array( 'نظرسنجی‌ها' ),
+	'SurveyStats' => array( 'آمار_نظرسنجی' ),
+	'TakeSurvey' => array( 'شرکت_در_نظرسنجی' ),
+);
+
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
 	'EditSurvey' => array( 'Umfroog_bearbeite' ),
