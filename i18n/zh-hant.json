@@ -5,7 +5,8 @@
 			"Littletung",
 			"Shirayuki",
 			"Simon Shek",
-			"LNDDYL"
+			"LNDDYL",
+			"Liuxinyu970226"
 		]
 	},
 	"survey-desc": "MediaWiki的調查工具",
@@ -97,7 +98,7 @@
 	"survey-special-label-footer": "調查下方顯示的文本",
 	"survey-special-label-thanks": "提交調查後顯示的感謝訊息",
 	"survey-special-label-answers": "每行一個可用答案。",
-	"survey-jquery-submit": "提交",
+	"survey-jquery-submit": "送出",
 	"survey-jquery-finish": "完成",
 	"survey-jquery-load-failed": "無法載入調查。"
 }
