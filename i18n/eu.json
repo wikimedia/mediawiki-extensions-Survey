@@ -1,13 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Subi"
 		]
 	},
+	"right-surveyadmin": "Kudeatu inkestak",
+	"right-surveysubmit": "Parte hartu inkestetan",
+	"action-surveyadmin": "inkestak kudeatu",
+	"action-surveysubmit": "inkestetan parte hartu",
+	"survey-user-type-all": "Denak",
+	"survey-user-type-anon": "Erabiltzaile anonimoak",
 	"surveys-special-title": "Izenburua",
 	"surveys-special-status": "Egoera",
+	"surveys-special-stats": "Estatistikak",
 	"surveys-special-edit": "Aldatu",
 	"surveys-special-save": "Gorde",
 	"surveys-special-delete": "Ezabatu",
-	"survey-jquery-submit": "Bidali"
+	"surveys-surveystats-question-type": "Galdera-mota",
+	"surveys-surveystats-question-text": "Galderaren testua",
+	"surveys-surveystats-question-answercount": "Erantzun-kopurua",
+	"surveys-surveystats-question-answers": "Erantzun ohikoenak",
+	"survey-special-label-add-first": "Gehitu galdera",
+	"survey-special-label-add-another": "Gehitu beste galdera bat",
+	"survey-special-label-addquestion": "Galdera berria",
+	"survey-question-label-nr": "#$1. galdera",
+	"survey-special-label-required": "Galdera beharrezkoa da",
+	"survey-special-label-type": "Galdera-mota",
+	"survey-special-label-text": "Galderaren testua",
+	"survey-special-remove": "Kendu galdera",
+	"survey-special-remove-confirm": "Ziur zaude galdera hau kendu nahi duzula?",
+	"survey-jquery-submit": "Bidali",
+	"survey-jquery-finish": "Amaitu"
 }
