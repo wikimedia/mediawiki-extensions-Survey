@@ -40,7 +40,7 @@
 	"surveys-surveystats-question-type": "Jautājuma veids",
 	"surveys-surveystats-question-text": "Jautājuma teksts",
 	"surveys-surveystats-question-answercount": "Atbilžu skaits",
-	"surveys-surveystats-question-answer": "$1 ($2 {{PLURAL:$2|atbilde|atbildes}})",
+	"surveys-surveystats-question-answer": "$1 ($2 {{PLURAL:$2|atbildes|atbilde|atbildes}})",
 	"survey-special-label-name": "Aptaujas ID",
 	"survey-special-label-title": "Aptaujas nosaukums",
 	"survey-special-label-add-first": "Pievienot jautājumu",
