@@ -105,9 +105,5 @@ class ApiSubmitSurvey extends ApiBase {
 		return array(
 			'api.php?action=submitsurvey&',
 		);
-	}	
-	
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}		
+	}
 }

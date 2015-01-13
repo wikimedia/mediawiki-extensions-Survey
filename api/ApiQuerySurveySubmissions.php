@@ -132,9 +132,5 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 			'api.php?action=query&list=surveysubmissions&qsuser_name=Jeroen%20De%20Dauw&qsprops=survey_id|page_id|time',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}
 	
 }

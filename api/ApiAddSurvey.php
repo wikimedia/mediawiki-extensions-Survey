@@ -111,10 +111,6 @@ class ApiAddSurvey extends ApiBase {
 		return array(
 			'api.php?action=addsurvey&name=My awesome survey&enabled=1&questions=',
 		);
-	}	
-	
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}	
+	}
 	
 }

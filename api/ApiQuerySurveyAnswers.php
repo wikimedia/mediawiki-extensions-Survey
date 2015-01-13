@@ -132,9 +132,5 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 			'api.php?action=query&list=surveyanswers&qaquestion_id=9001&qaprops=text',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}
 	
 }
