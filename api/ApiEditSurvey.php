@@ -101,10 +101,6 @@ class ApiEditSurvey extends ApiBase {
 		return array(
 			'api.php?action=editsurvey&',
 		);
-	}	
-	
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}		
+	}
 	
 }

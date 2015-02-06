@@ -87,10 +87,6 @@ class ApiDeleteSurvey extends ApiBase {
 			'api.php?action=deletesurvey&ids=42',
 			'api.php?action=deletesurvey&ids=4|2',
 		);
-	}	
-	
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}		
+	}
 	
 }
