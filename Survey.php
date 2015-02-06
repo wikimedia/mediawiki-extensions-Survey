@@ -64,6 +64,8 @@ $wgAutoloadClasses['SurveySubmission'] 			= dirname( __FILE__ ) . '/includes/Sur
 $wgAutoloadClasses['SurveyTag'] 				= dirname( __FILE__ ) . '/includes/SurveyTag.php';
 
 $wgAutoloadClasses['SpecialSurvey'] 			= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
+$wgAutoloadClasses['SurveyQuestionField']		= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
+$wgAutoloadClasses['SurveyNameField']			= dirname( __FILE__ ) . '/specials/SpecialSurvey.php';
 $wgAutoloadClasses['SpecialSurveyPage'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveyPage.php';
 $wgAutoloadClasses['SpecialSurveys'] 			= dirname( __FILE__ ) . '/specials/SpecialSurveys.php';
 $wgAutoloadClasses['SpecialSurveyStats'] 		= dirname( __FILE__ ) . '/specials/SpecialSurveyStats.php';
