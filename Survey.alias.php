@@ -71,6 +71,14 @@ $specialPageAliases['gsw'] = array(
 	'TakeSurvey' => array( 'Umfroog_beantworte' ),
 );
 
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = array(
+	'EditSurvey' => array( 'עריכת_סקר' ),
+	'Surveys' => array( 'סקרים' ),
+	'SurveyStats' => array( 'סטטיסטיקות_סקר' ),
+	'TakeSurvey' => array( 'מילוי_סקר' ),
+);
+
 /** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'EditSurvey' => array( 'Modificar_questionario', 'Questionario' ),
