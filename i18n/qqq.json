@@ -13,7 +13,7 @@
 			"아라"
 		]
 	},
-	"survey-desc": "{{desc|name=Survey|url=http://www.mediawiki.org/wiki/Extension:Survey}}",
+	"survey-desc": "{{desc|name=Survey|url=https://www.mediawiki.org/wiki/Extension:Survey}}",
 	"right-surveyadmin": "{{doc-right|surveyadmin}}",
 	"right-surveysubmit": "{{doc-right|surveysubmit}}",
 	"action-surveyadmin": "{{doc-action|surveyadmin}}",
