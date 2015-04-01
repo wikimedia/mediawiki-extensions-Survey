@@ -50,9 +50,9 @@ $specialPageAliases['de'] = array(
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
 	'EditSurvey' => array( 'AnketBıvurne' ),
-	'Surveys' => array( 'Anket' ),
-	'SurveyStats' => array( 'İstatéAnket', 'İstatıstikéAnketan' ),
-	'TakeSurvey' => array( 'AnketBıgi' ),
+	'Surveys' => array( 'Anketi' ),
+	'SurveyStats' => array( 'İstatıstikêAnketan' ),
+	'TakeSurvey' => array( 'AnketBıgê' ),
 );
 
 /** Persian (فارسی) */
