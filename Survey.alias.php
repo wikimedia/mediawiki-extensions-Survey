@@ -39,6 +39,14 @@ $specialPageAliases['arz'] = array(
 	'TakeSurvey' => array( 'المشاركه_بالاستقصا' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'EditSurvey' => array( 'نَزز_سنجی_ئی_دستکاری' ),
+	'Surveys' => array( 'نَزر_سنجی_ئان' ),
+	'SurveyStats' => array( 'نّزر_سنجی_ئی_سرجم' ),
+	'TakeSurvey' => array( 'بئ_نَزر_سنجی_تا_شریک_بوتین' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'EditSurvey' => array( 'Umfrage_bearbeiten' ),
