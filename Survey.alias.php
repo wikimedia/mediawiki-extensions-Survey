@@ -87,6 +87,13 @@ $specialPageAliases['he'] = array(
 	'TakeSurvey' => array( 'מילוי_סקר' ),
 );
 
+/** Hindi (हिन्दी) */
+$specialPageAliases['hi'] = array(
+	'EditSurvey' => array( 'सम्पादन_सर्वेक्षण' ),
+	'Surveys' => array( 'सर्वेक्षण' ),
+	'SurveyStats' => array( 'सर्वेक्षण_आँकड़े' ),
+);
+
 /** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'EditSurvey' => array( 'Modificar_questionario', 'Questionario' ),
