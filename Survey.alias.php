@@ -31,7 +31,7 @@ $specialPageAliases['ar'] = array(
 	'TakeSurvey' => array( 'المشاركة_بالاستقصاء' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'EditSurvey' => array( 'تعديل_الاستقصا', 'استقصا' ),
 	'Surveys' => array( 'استقصايات' ),
