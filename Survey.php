@@ -169,12 +169,6 @@ $wgResourceModules['ext.survey.numeric'] = $moduleTemplate + array(
 	)
 );
 
-$wgResourceModules['ext.survey.JSON'] = $moduleTemplate + array(
-	'scripts' => array(
-		'JSON.js'
-	)
-);
-
 $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	'scripts' => array(
 		'fancybox/jquery.fancybox-1.3.4.js',
