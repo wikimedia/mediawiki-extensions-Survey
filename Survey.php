@@ -76,11 +76,6 @@ $wgSpecialPages['Surveys'] 						= 'SpecialSurveys';
 $wgSpecialPages['SurveyStats'] 					= 'SpecialSurveyStats';
 $wgSpecialPages['TakeSurvey'] 					= 'SpecialTakeSurvey';
 
-$wgSpecialPageGroups['EditSurvey'] 				= 'other';
-$wgSpecialPageGroups['Surveys'] 				= 'other';
-$wgSpecialPageGroups['SurveyStats'] 			= 'other';
-$wgSpecialPageGroups['TakeSurvey'] 				= 'other';
-
 $wgAPIModules['addsurvey'] 						= 'ApiAddSurvey';
 $wgAPIModules['deletesurvey'] 					= 'ApiDeleteSurvey';
 $wgAPIModules['editsurvey'] 					= 'ApiEditSurvey';

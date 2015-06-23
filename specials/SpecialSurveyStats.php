@@ -264,4 +264,8 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			return '';
 		}
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }

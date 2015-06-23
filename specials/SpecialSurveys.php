@@ -177,4 +177,8 @@ class SpecialSurveys extends SpecialSurveyPage {
 		$out->addHTML( '</tbody>' );
 		$out->addHTML( '</table>' );
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }

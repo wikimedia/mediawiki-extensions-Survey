@@ -322,6 +322,10 @@ class SpecialSurvey extends SpecialSurveyPage {
 		
 		$form->show();
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }
 
 class SurveyQuestionField extends HTMLFormField {

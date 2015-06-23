@@ -80,4 +80,8 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 				$this->msg( 'surveys-takesurvey-loading' )->text()
 		) );
 	}
+
+	protected function getGroupName() {
+		return 'other';
+	}
 }
