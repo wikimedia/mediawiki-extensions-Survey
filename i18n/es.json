@@ -3,7 +3,8 @@
 		"authors": [
 			"Armando-Martin",
 			"Fitoschido",
-			"Ralgis"
+			"Ralgis",
+			"Macofe"
 		]
 	},
 	"survey-desc": "Herramienta de encuesta para MediaWiki",
@@ -41,7 +42,7 @@
 	"survey-navigation-list": "[[Special:Surveys|Lista de encuestas]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|Ver estadísticas]]",
 	"surveys-special-addnew": "Agregar una nueva encuesta",
-	"surveys-special-namedoc": "Introduzca un identificador único (ID) para la nueva encuesta. No se puede cambiar más tarde. Por ejemplo: motivación del editor.",
+	"surveys-special-namedoc": "Escribe un identificador único (ID) para la nueva encuesta. No se puede cambiar más tarde. Por ejemplo: editor-motivación.",
 	"surveys-special-newname": "Id. de la encuesta nueva:",
 	"surveys-special-add": "Añadir encuesta",
 	"surveys-special-existing": "Encuestas existentes",
