@@ -6,7 +6,8 @@
 			"Shirayuki",
 			"Simon Shek",
 			"LNDDYL",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
 	"survey-desc": "MediaWiki的調查工具",
@@ -63,7 +64,7 @@
 	"surveys-takesurvey-loading": "正在載入調查…",
 	"surveys-takesurvey-nosuchsurvey": "要求的調查不存在。",
 	"surveys-takesurvey-warn-notenabled": "此項調查尚未啟用，因此對使用者不可見。",
-	"surveys-takesurvey-surveynotenabled": "請求的調查尚未啟用。",
+	"surveys-takesurvey-surveynotenabled": "請求的調查尚未開啟。",
 	"surveys-surveystats-nosuchsurvey": "請求的調查不存在。您可以檢視[[Special:Surveys|可用調查清單]]。",
 	"surveys-surveystats-name": "調查ID",
 	"surveys-surveystats-title": "調查標題",
@@ -80,7 +81,7 @@
 	"surveys-surveystats-question-answer": "$1（$2個答案）",
 	"surveys-surveystats-unchecked": "取消勾選",
 	"surveys-surveystats-checked": "已勾選",
-	"surveys-special-unknown-name": "沒有調查為所請求的ID。",
+	"surveys-special-unknown-name": "未調查所請求的 ID。",
 	"survey-special-label-name": "調查ID",
 	"survey-special-label-title": "調查標題",
 	"survey-special-label-enabled": "已啟用的調查",
