@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ammartivari"
+			"Ammartivari",
+			"Kosovastar"
 		]
 	},
+	"special-surveystats": "Statistikat e anketimit",
 	"survey-user-type-editor": "Redaktorët"
 }

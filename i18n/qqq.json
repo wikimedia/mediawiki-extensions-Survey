@@ -10,7 +10,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Umherirrender",
-			"아라"
+			"아라",
+			"Liuxinyu970226"
 		]
 	},
 	"survey-desc": "{{desc|name=Survey|url=https://www.mediawiki.org/wiki/Extension:Survey}}",
@@ -41,8 +42,8 @@
 	"survey-question-type-select": "Input type for a question, selectable in administration interface.",
 	"survey-question-type-radio": "Input type for a question, selectable in administration interface.",
 	"survey-question-type-textarea": "Input type for a question, selectable in administration interface.",
-	"survey-question-type-check": "Input type for a question, selectable in administration interface.",
-	"survey-user-type-all": "Group of users for which a survey can be available.\n\nForm option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])",
+	"survey-question-type-check": "Input type for a question, selectable in administration interface.\n{{Identical|Checkbox}}",
+	"survey-user-type-all": "Group of users for which a survey can be available.\n\nForm option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])\n{{Identical|Everyone}}",
 	"survey-user-type-loggedin": "Group of users for which a survey can be available.\n\nForm option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])\n{{Identical|Logged in user}}",
 	"survey-user-type-confirmed": "Group of users for which a survey can be available.\n\nForm option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])",
 	"survey-user-type-editor": "Group of users for which a survey can be available.\n\nForm option behind message {{msg-mw|Survey-special-label-usertype}} ([[:File:Survey-survey.png|screenshot]])\n{{Identical|Editor}}",
