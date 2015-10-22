@@ -29,7 +29,7 @@
 	"survey-question-type-select": "Dropdownmenu",
 	"survey-question-type-radio": "Keuzerondjes",
 	"survey-question-type-textarea": "Tekstveld met meerdere regels",
-	"survey-question-type-check": "Vinkvakje",
+	"survey-question-type-check": "Selectievakje",
 	"survey-user-type-all": "Iedereen",
 	"survey-user-type-loggedin": "Aangemelde gebruikers",
 	"survey-user-type-confirmed": "Bevestigde gebruikers",
