@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Minh Nguyen"
 		]
 	},
 	"survey-question-type-number": "Số",
@@ -9,7 +10,7 @@
 	"surveys-special-title": "Tựa đề",
 	"surveys-special-status": "Trạng thái",
 	"surveys-special-stats": "Thống kê",
-	"surveys-special-edit": "Chỉnh Sửa",
+	"surveys-special-edit": "Sửa đổi",
 	"surveys-special-save": "Lưu",
 	"surveys-special-delete": "Xóa",
 	"survey-jquery-finish": "Kết thúc"
