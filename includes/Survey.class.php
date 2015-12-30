@@ -199,7 +199,7 @@ class Survey extends SurveyDBClass {
 		
 		$dbw = wfGetDB( DB_MASTER );
 		
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 
 		SurveyQuestion::update(
 			array( 'removed' => 1 ),
@@ -214,7 +214,7 @@ class Survey extends SurveyDBClass {
 			$success = $question->writeToDB() && $success;
 		}
 		
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 		
 		return $success;
 	}
@@ -284,7 +284,7 @@ class Survey extends SurveyDBClass {
 		
 		$dbw = wfGetDB( DB_MASTER );
 		
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 		
 		$sucecss = parent::removeFromDB();
 		
@@ -305,12 +305,12 @@ class Survey extends SurveyDBClass {
 			) && $sucecss;
 			
 			if ( $nr % 500 == 0 ) {
-				$dbw->commit();
-				$dbw->begin();
+				$dbw->commit( __METHOD__ );
+				$dbw->begin( __METHOD__ );
 			}
 		}
 		
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 		
 		return $sucecss;
 	}
