@@ -22,6 +22,10 @@ class SpecialSurvey extends SpecialSurveyPage {
 		parent::__construct( 'EditSurvey', 'surveyadmin', false );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * Main method.
 	 *
