@@ -6,11 +6,9 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-(function( $, mw, survey ) {
+( function( $, mw, survey ) {
 	
-	survey.answerSelector = function( options ) {
-		var _this = this;
-		
+	survey.answerSelector = function( options ) {		
 		var defaults = {
 			'visible': true,
 			'answers': []
@@ -52,4 +50,4 @@
 			
 	};
 	
-} )( jQuery, window.mediaWiki, window.survey );
+}( jQuery, mediaWiki, window.survey ) );

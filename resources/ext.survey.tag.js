@@ -6,7 +6,7 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-(function( $, survey ) {
+( function( $, survey ) {
 	
 	function getCookieName( options ) {
 		return ( typeof options.id !== 'undefined' ) ?
@@ -95,4 +95,4 @@
 	
 	} );
 	
-})( jQuery, window.survey );
+}( jQuery, window.survey ) );

@@ -6,9 +6,11 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-(function( $, mw, survey ) { $( document ).ready( function() {
+/*jshint -W061 */
+/*jshint -W007 */
 
-	var _this = this;
+( function( $, mw, survey ) {
+	$( document ).ready( function() {
 
 	var $table = null;
 	var newQuestionNr = 0;
@@ -139,7 +141,7 @@
 	}
 	
 	function removeQuestion( question ) {
-		$( '#survey-question-div-' + question.id ).closest( 'tr' ).slideUp( 'fast', function() { $( this ).remove(); } )
+		$( '#survey-question-div-' + question.id ).closest( 'tr' ).slideUp( 'fast', function() { $( this ).remove(); } );
 	}
 	
 	function onAddQuestionRequest() {
@@ -164,12 +166,13 @@
 		$table.append( '<tr><td colspan="2"><hr /></td></tr>' );
 		
 		$( '.survey-question-data' ).each( function( index, domElement ) {
+			var $this;
 			$this = $( domElement );
 			
 			addQuestion( {
 				'text': $this.attr( 'data-text' ),
 				'default': $this.attr( 'data-default' ),
-				'required': $this.attr( 'data-required' ) == '1',
+				'required': $this.attr( 'data-required' ) === '1',
 				'id': $this.attr( 'data-id' ),
 				'type': $this.attr( 'data-type' ),
 				'answers': eval( $this.attr( 'data-answers' ) )
@@ -183,4 +186,5 @@
 	
 	setup();
 	
-} ); })( jQuery, window.mediaWiki, window.survey );
+} );
+}( jQuery, mediaWiki, window.survey ) );

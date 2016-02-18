@@ -1,0 +1,3 @@
+resources/fancybox/**
+resources/jquery.numeric.js
+node_modules/**

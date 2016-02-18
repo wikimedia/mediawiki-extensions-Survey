@@ -6,7 +6,10 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $ ) { $.fn.mwSurvey = function( options ) {
+/*jshint -W087 */
+
+( function ( $, mw, survey ) {
+	$.fn.mwSurvey = function( options ) {
 	
 	var _this = this;
 	this.options = options;
@@ -32,7 +35,7 @@
 		requestArgs[ 'su' + this.identifierType + 's' ] = this.identifier;
 		
 		$.getJSON(
-			wgScriptPath + '/api.php',
+			mw.config.get( 'wgScriptPath' ) + '/api.php',
 			requestArgs,
 			function( data ) {
 				if ( data.surveys ) {
@@ -56,8 +59,12 @@
 		var $input;
 		var id = 'question-input-' + question.id;
 		
+		var answers;
+		
+		var i;
+		
 		switch ( question.type ) {
-			case type.TEXT: default:
+			case type.TEXT:
 				$input = $( '<input />' ).attr( {
 					'id': id,
 					'class': 'question-input survey-text'
@@ -71,7 +78,7 @@
 				} );
 				break;
 			case type.SELECT:
-				var answers = {};
+				answers = {};
 				
 				for ( i in question.answers ) {
 					answers[question.answers[i]] = question.answers[i]; 
@@ -83,7 +90,7 @@
 				} );
 				break;
 			case type.RADIO:
-				var answers = {};
+				answers = {};
 				
 				for ( i in question.answers ) {
 					answers[question.answers[i]] = question.answers[i]; 
@@ -114,7 +121,14 @@
 					'class': 'question-input survey-check'
 				} );
 				break;
+			default:
+				$input = $( '<input />' ).attr( {
+					'id': id,
+					'class': 'question-input survey-text'
+				} );
 		}
+		
+		var $q;
 		
 		$input.data( 'question-id', question.id );
 		
@@ -124,8 +138,7 @@
 		
 		if ( question.type === type.CHECK ) {
 			$q.prepend( $( '<label />' ).text( question.text ).attr( 'for', id ) );
-		}
-		else {
+		} else {
 			$q.prepend( $( '<p />' ).text( question.text ).attr( 'class', 'question-text' ) );
 		}
 		
@@ -133,8 +146,8 @@
 	};
 	
 	this.getSurveyQuestion = function( question ) {
-		if ( survey.question.typeHasAnswers( question.type )
-			&& question.answers.length == 0 ) {
+		if ( survey.question.typeHasAnswers( question.type ) &&
+			question.answers.length === 0 ) {
 			survey.log( 'getSurveyQuestion: no answers for: ' + question.id );
 			return '';
 		}
@@ -146,25 +159,26 @@
 	this.getSurveyQuestions = function( questions ) {
 		var $questions = $( '<div />' );
 		
-		for ( i in questions ) {
+		for ( var i in questions ) {
 			$questions.append( this.getSurveyQuestion( questions[i] ) );
 		}
 		
 		return $questions;
 	};
 	
-	this.getAnswers = function( surveyId ) {
+	this.getAnswers = function() {
 		var answers = [];
 		
 		for ( var i in this.inputs ) {
 			var $input = this.inputs[i].input;
 			var id = $input.data( 'question-id' );
+			var value;
 			
 			if ( this.inputs[i].type === survey.question.type.RADIO ) {
-				var value = $( 'input:radio[name=question-input-' + id + ']:checked' ).val();
+				value = $( 'input:radio[name=question-input-' + id + ']:checked' ).val();
 			}
 			else {
-				var value = $input.val();
+				value = $input.val();
 			}
 			
 			answers.push( {
@@ -187,9 +201,9 @@
 		requestArgs[this.identifierType] = this.identifier;
 		
 		$.post(
-			wgScriptPath + '/api.php',
+			mw.config.get( 'wgScriptPath' ) + '/api.php',
 			requestArgs,
-			function( data ) {
+			function() {
 				callback();
 				// TODO
 			}	
@@ -201,6 +215,7 @@
 	};
 	
 	this.showCompletion = function( surveyData ) {
+		var $div;
 		$div = $( '#survey-' + surveyData.id );
 		
 		$div.html( $( '<p />' ).text( surveyData.thanks ) );
@@ -212,6 +227,7 @@
 	};
 	
 	this.getSurveyBody = function( surveyData ) {
+		var $survey;
 		$survey = $( '<div />' );
 		
 		$survey.append( $( '<h1 />' ).text( surveyData.title ) );
@@ -230,7 +246,7 @@
 					_this.submitSurvey(
 						surveyData.id,
 						function() {
-							if ( surveyData.thanks == '' ) {
+							if ( surveyData.thanks === '' ) {
 								_this.doCompletion();
 							} else {
 								_this.showCompletion( surveyData );
@@ -252,6 +268,8 @@
 	};
 	
 	this.initSurvey = function( surveyData ) {
+		var $div;
+		var $link;
 		$div = $( '<div />' ).attr( {
 			'style': 'display:none'
 		} ).html( $( '<div />' ).attr( { 'id': 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
@@ -310,4 +328,5 @@
 	
 	this.init();
 	
-}; } )( jQuery );
+};
+}( jQuery, mediaWiki, window.survey ) );

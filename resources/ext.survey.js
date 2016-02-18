@@ -6,7 +6,9 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-window.survey = new( function() {
+/*jshint supernew:true */
+
+window.survey = new( function( survey, $ ) {
 	
 	this.log = function( message ) {
 		if ( mediaWiki.config.get( 'wgSurveyDebug' ) ) {
@@ -21,6 +23,7 @@ window.survey = new( function() {
 	};
 	
 	this.msg = function() {
+		var message;
 		if ( typeof mediaWiki === 'undefined' ) {
 			message = window.wgSurveyMessages[arguments[0]];
 			
@@ -35,6 +38,8 @@ window.survey = new( function() {
 	};
 	
 	this.htmlSelect = function( options, value, attributes, onChangeCallback ) {
+		var message;
+		var $select;
 		$select = $( '<select />' ).attr( attributes );
 		
 		for ( message in options ) {
@@ -48,7 +53,7 @@ window.survey = new( function() {
 		}
 		
 		if ( typeof onChangeCallback !== 'undefined' ) {
-			$select.change( function() { onChangeCallback( $( this ).val() ) } );
+			$select.change( function() { onChangeCallback( $( this ).val() ); } );
 		}
 		
 		return $select;
@@ -56,11 +61,13 @@ window.survey = new( function() {
 	
 	this.htmlRadio = function( options, value, name, attributes ) {
 		var $radio = $( '<div />' ).attr( attributes );
+		var message;
 		$radio.html( '' );
 		
 		for ( message in options ) {
 			var itemValue = options[message];
 			var id = name + itemValue;
+			var $input;
 			
 			$input = $( '<input />' ).attr( {
 				'id': id,
@@ -90,7 +97,7 @@ window.survey = new( function() {
 			this.RADIO = 3;
 			this.TEXTAREA = 4;
 			this.CHECK = 5;
-		} );
+		}() );
 		
 		this.typeHasAnswers = function( t ) {
 			return $.inArray( t, [ survey.question.type.RADIO, survey.question.type.SELECT ] ) !== -1;
@@ -98,6 +105,7 @@ window.survey = new( function() {
 		
 		this.getTypeSelector = function( value, attributes, onChangeCallback ) {
 			var options = [];
+			var msg;
 			
 			var types = {
 				'text': survey.question.type.TEXT,
@@ -118,8 +126,6 @@ window.survey = new( function() {
 			return survey.htmlSelect( options, parseInt( value ), attributes, onChangeCallback );
 		};
 		
-	} );
+	}() );
 	
-} )();
-
-
+}( window.survey, jQuery ) );

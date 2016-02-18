@@ -1,7 +1,5 @@
-.*
 *~
 *.kate-swp
 .*.swp
-
-!.gitignore
-!.gitreview
+.project
+node_modules/**

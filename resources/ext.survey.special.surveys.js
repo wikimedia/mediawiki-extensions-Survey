@@ -6,11 +6,12 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-(function( $ ) { $( document ).ready( function() {
+( function( $, mw ) {
+	$( document ).ready( function() {
 
 	function deleteSurvey( options, successCallback, failCallback ) {
 		$.post(
-			wgScriptPath + '/api.php',
+			mw.config.get( 'wgScriptPath' ) + '/api.php',
 			{
 				'action': 'deletesurvey',
 				'format': 'json',
@@ -47,4 +48,6 @@
 		return false;
 	} );
 	
-} ); })( jQuery );
+} );
+
+}( jQuery, mediaWiki ) );
