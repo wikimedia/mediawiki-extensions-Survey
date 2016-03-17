@@ -40,7 +40,7 @@
 	"survey-navigation-list": "[[Special:Surveys|Undersökningslista]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|Visa statistik]]",
 	"surveys-special-addnew": "Lägg till en ny undersökning",
-	"surveys-special-namedoc": "Ange en unik identifierare (ID) för den nya undersökningen. Inte kan ändras senare. Till exempel: editor-motivation.",
+	"surveys-special-namedoc": "Ange en unik identifierare (ID) för den nya undersökningen. Inte kan ändras senare. Till exempel: skribentmotivation.",
 	"surveys-special-newname": "Nytt undersöknings-ID:",
 	"surveys-special-add": "Lägg till undersökning",
 	"surveys-special-existing": "Befintliga undersökningar",
