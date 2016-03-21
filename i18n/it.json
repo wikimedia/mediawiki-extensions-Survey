@@ -51,7 +51,7 @@
 	"surveys-special-delete": "Cancella",
 	"surveys-special-enabled": "Attiva",
 	"surveys-special-disabled": "Disattiva",
-	"surveys-special-confirm-delete": "Sei sicuro di voler eliminare questo sondaggio?",
+	"surveys-special-confirm-delete": "Sei sicuro di voler cancellare questo sondaggio?",
 	"surveys-special-delete-failed": "Errore durante la cancellazione del sondaggio.",
 	"survey-special-label-usertype": "Gli utenti che dovrebbero rispondere al sondaggio",
 	"survey-special-label-minpages": "Numero minimo di pagine che l'utente deve visitare prima di poter rispondere al sondaggio",
