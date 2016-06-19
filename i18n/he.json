@@ -5,5 +5,7 @@
 		]
 	},
 	"right-surveyadmin": "ניהול סקרים",
-	"right-surveysubmit": "השתתפות בסקרים"
+	"right-surveysubmit": "השתתפות בסקרים",
+	"action-surveyadmin": "לנהל סקרים",
+	"action-surveysubmit": "להשתתף בסקרים"
 }
