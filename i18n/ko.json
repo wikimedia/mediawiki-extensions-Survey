@@ -3,7 +3,8 @@
 		"authors": [
 			"Priviet",
 			"아라",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Ykhwong"
 		]
 	},
 	"survey-desc": "미디어위키에 대한 설문 조사 도구",
@@ -41,7 +42,7 @@
 	"survey-user-type-editor": "편집자",
 	"survey-user-type-anon": "익명 사용자",
 	"survey-navigation-edit": "[[Special:Survey/$1|이 설문 조사 편집]]",
-	"survey-navigation-take": "[[Special:TakeSurvey/$1|이 설문 조사 하기]]",
+	"survey-navigation-take": "[[Special:TakeSurvey/$1|이 설문 조사하기]]",
 	"survey-navigation-list": "[[Special:Surveys|설문 조사 목록]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|통계 보기]]",
 	"surveys-special-addnew": "새 설문 조사 추가",
