@@ -35,7 +35,7 @@
 	"survey-question-type-select": "드롭다운 메뉴",
 	"survey-question-type-radio": "라디오 버튼",
 	"survey-question-type-textarea": "여러 줄 텍스트 필드",
-	"survey-question-type-check": "체크 박스",
+	"survey-question-type-check": "체크 상자",
 	"survey-user-type-all": "모두",
 	"survey-user-type-loggedin": "로그인한 사용자",
 	"survey-user-type-confirmed": "인증된 사용자",
