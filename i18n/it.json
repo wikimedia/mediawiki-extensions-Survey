@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Nemo bis"
 		]
 	},
 	"survey-desc": "Strumento per i sondaggi su MediaWiki",
@@ -32,7 +33,7 @@
 	"survey-user-type-all": "Tutti",
 	"survey-user-type-loggedin": "Utenti registrati",
 	"survey-user-type-confirmed": "Utenti confermati",
-	"survey-user-type-editor": "Editori",
+	"survey-user-type-editor": "Contributori",
 	"survey-user-type-anon": "Utenti anonimi",
 	"survey-navigation-edit": "[[Special:Survey/$1|Modifica questo sondaggio]]",
 	"survey-navigation-take": "[[Special:TakeSurvey/$1|Rispondi a questo sondaggio]]",
