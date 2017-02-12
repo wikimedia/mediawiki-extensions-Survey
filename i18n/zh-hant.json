@@ -60,7 +60,7 @@
 	"surveys-special-confirm-delete": "確定要刪除這調查嗎？",
 	"surveys-special-delete-failed": "刪除調查失敗。",
 	"survey-special-label-usertype": "應收到此項調查的使用者",
-	"survey-special-label-minpages": "使用者取得調查前需訪問的最小頁面數",
+	"survey-special-label-minpages": "使用者取得調查前需造访的最小頁面數",
 	"surveys-takesurvey-loading": "正在載入調查…",
 	"surveys-takesurvey-nosuchsurvey": "要求的調查不存在。",
 	"surveys-takesurvey-warn-notenabled": "此項調查尚未啟用，因此對使用者不可見。",
