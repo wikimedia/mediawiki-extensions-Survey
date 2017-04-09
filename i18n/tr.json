@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Incelemeelemani",
-			"Rapsar"
+			"Rapsar",
+			"Vito Genovese"
 		]
 	},
 	"surveys-special-add": "Anket ekle",
@@ -10,7 +11,7 @@
 	"surveys-special-title": "Başlık",
 	"surveys-special-status": "Durum",
 	"surveys-special-stats": "İstatistikler",
-	"surveys-special-edit": "Değiştir",
+	"surveys-special-edit": "Düzenle",
 	"surveys-special-enabled": "Etkin",
 	"surveys-special-disabled": "Devre dışı",
 	"surveys-surveystats-name": "Anket ID",
