@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Luckas Blade"
+			"Luckas Blade",
+			"Felipe L. Ewald"
 		]
 	},
+	"survey-user-type-all": "Todos",
 	"survey-user-type-confirmed": "Usuários confirmados",
 	"survey-user-type-editor": "Editores",
 	"survey-user-type-anon": "Usuários anônimos",
