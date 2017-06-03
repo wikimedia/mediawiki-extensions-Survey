@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Pitort",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Fitoschido"
 		]
 	},
 	"survey-question-type-number": "Nombre",
@@ -21,6 +22,6 @@
 	"surveys-surveystats-checked": "Seleccionat",
 	"survey-special-label-add-first": "Afegeix una pregunta",
 	"survey-special-label-add-another": "Afegeix una altra pregunta",
-	"survey-special-label-addquestion": "Nova pregunta",
+	"survey-special-label-addquestion": "Pregunta nova",
 	"survey-question-label-nr": "Pregunta #$1"
 }
