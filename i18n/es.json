@@ -95,7 +95,7 @@
 	"survey-special-label-header": "Texto que se muestra por encima de la encuesta",
 	"survey-special-label-footer": "Texto que se muestra debajo de la encuesta",
 	"survey-special-label-thanks": "Mensaje de agradecimiento a mostrar después del envío de la encuesta",
-	"survey-special-label-answers": "Respuestas disponibles, una por línea.",
+	"survey-special-label-answers": "Respuestas disponibles, una por renglón.",
 	"survey-jquery-submit": "Enviar",
 	"survey-jquery-finish": "Finalizar",
 	"survey-jquery-load-failed": "No se pudo cargar la encuesta."
