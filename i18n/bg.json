@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"StanProg"
 		]
 	},
 	"survey-desc": "Инструмент за проучвания за МедияУики",
@@ -58,7 +59,7 @@
 	"survey-special-label-add-first": "Добавяне на въпрос",
 	"survey-special-label-add-another": "Добавяне на друг въпрос",
 	"survey-special-label-addquestion": "Нов въпрос",
-	"survey-question-label-nr": "Въпрос #$1",
+	"survey-question-label-nr": "Въпрос №$1",
 	"survey-special-label-required": "Въпросът е задължителен за отговаряне",
 	"survey-special-label-type": "Тип въпрос",
 	"survey-special-label-text": "Текст на въпроса",
