@@ -87,20 +87,6 @@ class ApiSubmitSurvey extends ApiBase {
 		);
 	}
 	
-	public function getParamDescription() {
-		return array(
-			'id' => 'The ID of the survey being submitted.',
-			'name' => 'The name of the survey being submitted.',
-			'token' => 'Edit token. You can get one of these through prop=info.',
-		);
-	}
-	
-	public function getDescription() {
-		return array(
-			''
-		);
-	}
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=submitsurvey&',

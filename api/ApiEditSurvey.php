@@ -81,22 +81,6 @@ class ApiEditSurvey extends ApiBase {
 		return array_merge( Survey::getAPIParams(), $params );
 	}
 	
-	public function getParamDescription() {
-		return array(
-			'id' => 'The ID of the survey to modify',
-			'name' => 'The name of the survey',
-			'enabled' => 'Enable the survey or not',
-			'questions' => 'The questions that make up the survey',
-			'token' => 'Edit token. You can get one of these through prop=info.',
-		);
-	}
-	
-	public function getDescription() {
-		return array(
-			'API module for editing a survey.'
-		);
-	}
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=editsurvey&',

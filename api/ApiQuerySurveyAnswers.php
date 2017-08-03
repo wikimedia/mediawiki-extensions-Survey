@@ -101,28 +101,6 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getParamDescription()
-	 */
-	public function getParamDescription() {
-		$descs = array (
-			'props' => 'Survey data to query',
-			'continue' => 'Offset number from where to continue the query',
-			'limit' => 'Max amount of words to return',
-		);
-		
-		return array_merge( SurveyAnswer::getFieldDescriptions(), $descs );
-	}
-
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getDescription()
-	 */
-	public function getDescription() {
-		return 'API module for obatining survey answers';
-	}
-
-	/**
-	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getExamples()
 	 */
 	protected function getExamples() {

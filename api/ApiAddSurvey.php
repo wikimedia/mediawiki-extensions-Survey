@@ -91,22 +91,6 @@ class ApiAddSurvey extends ApiBase {
 		return array_merge( Survey::getAPIParams(), $params );
 	}
 	
-	public function getParamDescription() {
-		return array(
-			'name' => 'The name of the survey',
-			'enabled' => 'Enable the survey or not',
-			'questions' => 'The questions that make up the survey',
-			'token' => 'Edit token. You can get one of these through prop=info.',
-		);
-	}
-	
-	public function getDescription() {
-		return array(
-			'API module for adding surveys.'
-		);
-	}
-
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=addsurvey&name=My awesome survey&enabled=1&questions=',

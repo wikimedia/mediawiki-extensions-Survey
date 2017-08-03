@@ -69,19 +69,6 @@ class ApiDeleteSurvey extends ApiBase {
 		);
 	}
 	
-	public function getParamDescription() {
-		return array(
-			'ids' => 'The IDs of the surveys to delete',
-			'token' => 'Edit token. You can get one of these through prop=info.',
-		);
-	}
-	
-	public function getDescription() {
-		return array(
-			'API module for deleting surveys.'
-		);
-	}
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=deletesurvey&ids=42',

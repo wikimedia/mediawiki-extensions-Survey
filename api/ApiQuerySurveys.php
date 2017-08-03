@@ -158,30 +158,6 @@ class ApiQuerySurveys extends ApiQueryBase {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getParamDescription()
-	 */
-	public function getParamDescription() {
-		return array (
-			'ids' => 'The IDs of the surveys to return',
-			'names' => 'The names of the surveys to return',
-			'incquestions' => 'Include the questions of the surveys or not',
-			'enabled' => 'Enabled state to filter on',
-			'props' => 'Survey data to query',
-			'continue' => 'Offset number from where to continue the query',
-			'limit' => 'Max amount of words to return',
-		);
-	}
-
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getDescription()
-	 */
-	public function getDescription() {
-		return 'API module for obatining surveys and optionaly their questions';
-	}
-
-	/**
-	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getExamples()
 	 */
 	protected function getExamples() {
