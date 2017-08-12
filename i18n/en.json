@@ -161,5 +161,5 @@
 	"apihelp-query+surveysubmissions-param-survey_id": "The ID of the survey this submission is for.",
 	"apihelp-query+surveysubmissions-param-page_id": "The ID of the page this submission was made on.",
 	"apihelp-query+surveysubmissions-param-user_name": "The name of the user that made the submission (username or IP).",
-	"apihelp-query+surveysubmissions-param-time": "Timestamp idnicating when the submission was made."
+	"apihelp-query+surveysubmissions-param-time": "Timestamp indicating when the submission was made."
 }

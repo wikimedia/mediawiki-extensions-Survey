@@ -45,7 +45,7 @@ class SurveySubmission extends SurveyDBClass {
 	 * The name of the user that made the submission (username or ip).
 	 * 
 	 * time:
-	 * Timestamp idnicating when the submission was made.
+	 * Timestamp indicating when the submission was made.
 	 * 
 	 * @since 0.1
 	 * 
