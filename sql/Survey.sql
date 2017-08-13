@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS /*_*/surveys (
   survey_user_type         TINYINT unsigned    NOT NULL default '0', -- Type of users that can participate in the survey
   survey_namespaces        BLOB                NOT NULL, -- Namespaces on which the survey can be displayed
   survey_ratio             TINYINT unsigned    NOT NULL, -- Percentage of users to show the survey to
-  survey_expiry            INT unsigned        NOT NULL, -- Coockie expiry time for the survey
+  survey_expiry            INT unsigned        NOT NULL, -- Cookie expiry time for the survey
   survey_min_pages         TINYINT unsigned    NOT NULL -- Min amount of pages the user needs to view before getting the survey
 ) /*$wgDBTableOptions*/;
 
