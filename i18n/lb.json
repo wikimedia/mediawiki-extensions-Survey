@@ -92,5 +92,8 @@
 	"survey-special-label-answers": "Disponibel Äntwerten, eng pro Linn.",
 	"survey-jquery-submit": "Schécken",
 	"survey-jquery-finish": "Fäerdeg maachen",
-	"survey-jquery-load-failed": "D'Ëmfro konnt net geluede ginn."
+	"survey-jquery-load-failed": "D'Ëmfro konnt net geluede ginn.",
+	"apihelp-addsurvey-param-title": "Titel vun der Ëmfro.",
+	"apihelp-editsurvey-param-name": "Den Numm vun der Ëmfro.",
+	"apihelp-editsurvey-param-title": "Titel vun der Ëmfro."
 }

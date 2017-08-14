@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Uzdil"
+		]
+	},
+	"apihelp-addsurvey-param-title": "ماۋزۇنى ئېنىقلاش.",
+	"apihelp-editsurvey-param-title": "ماۋزۇنى ئېنىقلاش.",
+	"apihelp-query+surveys-param-props": "ئىزدەيدىغان تەكشۈرۈش سانلىق ئۇچۇرى.",
+	"apihelp-query+surveyanswers-param-props": "ئىزدەيدىغان تەكشۈرۈش سانلىق ئۇچۇرى."
+}

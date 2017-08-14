@@ -3,7 +3,9 @@
 		"authors": [
 			"Gomoko",
 			"Tpt",
-			"Verdy p"
+			"Verdy p",
+			"Envlh",
+			"Wladek92"
 		]
 	},
 	"survey-desc": "Outil de sondage pour MediaWiki",
@@ -101,5 +103,35 @@
 	"survey-special-label-answers": "Réponses possibles, une par ligne.",
 	"survey-jquery-submit": "Envoyer",
 	"survey-jquery-finish": "Terminer",
-	"survey-jquery-load-failed": "Impossible de charger le sondage."
+	"survey-jquery-load-failed": "Impossible de charger le sondage.",
+	"apihelp-addsurvey-summary": "Module d'API pour ajouter des enquêtes.",
+	"apihelp-addsurvey-param-name": "Le nom de l'enquête.",
+	"apihelp-addsurvey-param-enabled": "Démarrer l'enquête ou non.",
+	"apihelp-addsurvey-param-questions": "Les questions qui constituent le contenu de l'enquête.",
+	"apihelp-addsurvey-param-token": "Jeton d'édition. Vous pouvez en obtenir un au travers de  prop=info.",
+	"apihelp-addsurvey-param-title": "Titre de l'enquête.",
+	"apihelp-addsurvey-param-header": "Texte à afficher au-dessus du sondage.",
+	"apihelp-addsurvey-param-footer": "Texte à afficher en-dessous du sondage.",
+	"apihelp-addsurvey-param-thanks": "Texte à afficher après l'ouverture de l'enquête.",
+	"apihelp-addsurvey-param-user_type": "Types d'utilisateurs qui peuvent participer à l'enquête.",
+	"apihelp-addsurvey-param-namespaces": "Espaces de noms sur lesquels l'enquête peut être affichée.",
+	"apihelp-addsurvey-param-ratio": "Pourcentage d'utilisateurs à qui montrer le sondage.",
+	"apihelp-addsurvey-param-expiry": "Date d'expiration des témoins(cookies) pour le sondage.",
+	"apihelp-addsurvey-param-min_pages": "Nombre minimal de pages que les utilisateurs doivent afficher avant d'obtenir le sondage.",
+	"apihelp-deletesurvey-summary": "Module d'API pour supprimer des enquêtes.",
+	"apihelp-editsurvey-summary": "Module d'API pour modifier un sondage.",
+	"apihelp-editsurvey-param-name": "Le nom de l'enquête.",
+	"apihelp-editsurvey-param-enabled": "Démarrer l'enquête ou pas.",
+	"apihelp-editsurvey-param-questions": "Les questions qui constituent le contenu de l'enquête.",
+	"apihelp-editsurvey-param-token": "Jeton d'édition. Vous pouvez en obtenir l'un d'eux au travers de  prop=info.",
+	"apihelp-editsurvey-param-title": "Titre de l'enquête.",
+	"apihelp-editsurvey-param-header": "Texte à afficher au-dessus du sondage.",
+	"apihelp-editsurvey-param-footer": "Texte à afficher en-dessous du sondage.",
+	"apihelp-editsurvey-param-thanks": "Texte à afficher après l'ouverture du sondage.",
+	"apihelp-editsurvey-param-user_type": "Type d'utilisateurs qui peuvent participer au sondage.",
+	"apihelp-editsurvey-param-namespaces": "Espaces de noms sur lesquels le sondage peut être affiché.",
+	"apihelp-editsurvey-param-expiry": "Date d'expiration du témoin(cookie) pour le sondage.",
+	"apihelp-submitsurvey-summary": "Module d'API pour démarrer un sondage.",
+	"apihelp-submitsurvey-param-id": "L'ID du sondage à soumettre.",
+	"apihelp-submitsurvey-param-name": "Le nom du sondage à soumettre."
 }
