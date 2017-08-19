@@ -96,5 +96,6 @@
 	"survey-special-label-answers": "Tillgängliga svar, ett per rad.",
 	"survey-jquery-submit": "Skicka",
 	"survey-jquery-finish": "Slutför",
-	"survey-jquery-load-failed": "Kunder inte läsa in undersökning."
+	"survey-jquery-load-failed": "Kunder inte läsa in undersökning.",
+	"apihelp-query+surveysubmissions-param-time": "Tidsstämpel som indikerar när inlämningen gjordes."
 }
