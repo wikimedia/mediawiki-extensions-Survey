@@ -98,5 +98,7 @@
 	"survey-special-label-answers": "Respuestas disponibles, una por renglón.",
 	"survey-jquery-submit": "Enviar",
 	"survey-jquery-finish": "Finalizar",
-	"survey-jquery-load-failed": "No se pudo cargar la encuesta."
+	"survey-jquery-load-failed": "No se pudo cargar la encuesta.",
+	"apihelp-query+surveyanswers-param-limit": "Cantidad máxima de palabras que devolver.",
+	"apihelp-query+surveysubmissions-param-limit": "Cantidad máxima de palabras que devolver."
 }
