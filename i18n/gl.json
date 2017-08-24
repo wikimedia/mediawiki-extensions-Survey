@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Banjo"
 		]
 	},
 	"survey-desc": "Ferramenta de enquisa para MediaWiki",
@@ -99,5 +100,21 @@
 	"survey-special-label-answers": "Respostas dispoñibles, unha por liña.",
 	"survey-jquery-submit": "Enviar",
 	"survey-jquery-finish": "Rematar",
-	"survey-jquery-load-failed": "Non se puido cargar a enquisa."
+	"survey-jquery-load-failed": "Non se puido cargar a enquisa.",
+	"apihelp-addsurvey-param-name": "O nome da enquisa.",
+	"apihelp-addsurvey-param-enabled": "Habilitar a enquisa ou non.",
+	"apihelp-addsurvey-param-title": "Título da enquisa.",
+	"apihelp-addsurvey-param-header": "Texto para mostrar por riba da enquisa.",
+	"apihelp-addsurvey-param-footer": "Texto para mostrar baixo a enquisa.",
+	"apihelp-addsurvey-param-thanks": "Texto para mostrar após do envío da enquisa.",
+	"apihelp-addsurvey-param-user_type": "Tipo de usuarios que poden participar na enquisa.",
+	"apihelp-addsurvey-param-namespaces": "Espazos de nomes nos que pode amosarse a enquisa.",
+	"apihelp-editsurvey-param-name": "O nome da enquisa.",
+	"apihelp-editsurvey-param-enabled": "Habilitar a enquisa ou non.",
+	"apihelp-editsurvey-param-title": "Título da enquisa.",
+	"apihelp-editsurvey-param-header": "Texto para mostrar por riba da enquisa.",
+	"apihelp-editsurvey-param-footer": "Texto para mostrar baixo a enquisa.",
+	"apihelp-editsurvey-param-thanks": "Texto para mostrar após do envío da enquisa.",
+	"apihelp-editsurvey-param-user_type": "Tipo de usuarios que poden participar na enquisa.",
+	"apihelp-editsurvey-param-namespaces": "Espazos de nomes nos que pode amosarse a enquisa."
 }
