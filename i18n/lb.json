@@ -99,6 +99,7 @@
 	"apihelp-deletesurvey-summary": "API-Modul fir d'Läsche vun Ëmfroen.",
 	"apihelp-editsurvey-param-name": "Den Numm vun der Ëmfro.",
 	"apihelp-editsurvey-param-title": "Titel vun der Ëmfro.",
+	"apihelp-editsurvey-param-footer": "Text deen ënnert der Ëmfro gewise gëtt.",
 	"apihelp-submitsurvey-param-name": "Den Numm vun der Ëmfro deen erageschéckt gëtt.",
 	"apihelp-query+surveyanswers-param-text": "Den Text vun der Äntwert."
 }

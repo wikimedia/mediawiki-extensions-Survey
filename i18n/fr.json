@@ -135,7 +135,7 @@
 	"apihelp-editsurvey-param-namespaces": "Espaces de noms sur lesquels le sondage peut être affiché.",
 	"apihelp-editsurvey-param-ratio": "Pourcentage d’utilisateurs à qui afficher le sondage.",
 	"apihelp-editsurvey-param-expiry": "Date d'expiration du témoin(cookie) pour le sondage.",
-	"apihelp-editsurvey-param-min_pages": "Nombre minimal de pages que l’utilisateur doit avoir vu avant d'obtenir le sondage.",
+	"apihelp-editsurvey-param-min_pages": "Nombre minimal de pages que l’utilisateur doit avoir vues avant d’obtenir le sondage.",
 	"apihelp-submitsurvey-summary": "Module d'API pour démarrer un sondage.",
 	"apihelp-submitsurvey-param-id": "L'ID du sondage à soumettre.",
 	"apihelp-submitsurvey-param-name": "Le nom du sondage à soumettre.",
