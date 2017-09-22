@@ -98,6 +98,7 @@
 	"survey-jquery-finish": "Beenden",
 	"survey-jquery-load-failed": "Die Umfrage konnte nicht geladen werden.",
 	"apihelp-addsurvey-param-name": "Der Name der Umfrage.",
+	"apihelp-addsurvey-param-title": "Titel der Umfrage.",
 	"apihelp-editsurvey-param-title": "Titel der Umfrage.",
 	"apihelp-submitsurvey-param-answers": "Für diese Umfrage zu verwendende Antworten.",
 	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten."
