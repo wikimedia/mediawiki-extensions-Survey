@@ -54,7 +54,7 @@
 	"surveys-special-delete": "Borrar",
 	"surveys-special-enabled": "Activado",
 	"surveys-special-disabled": "Desactivado",
-	"surveys-special-confirm-delete": "¿Estás seguro de que quieres eliminar esta encuesta?",
+	"surveys-special-confirm-delete": "¿Confirmas que quieres borrar esta encuesta?",
 	"surveys-special-delete-failed": "Error al eliminar la encuesta.",
 	"survey-special-label-usertype": "Usuarios que deben recibir la encuesta",
 	"survey-special-label-minpages": "Cantidad mínima de páginas que el usuario debe visitar antes de llegar a la encuesta",
