@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"survey-desc": "Ferramenta de enquisa para MediaWiki",
@@ -116,5 +117,6 @@
 	"apihelp-editsurvey-param-footer": "Texto para mostrar baixo a enquisa.",
 	"apihelp-editsurvey-param-thanks": "Texto para mostrar após do envío da enquisa.",
 	"apihelp-editsurvey-param-user_type": "Tipo de usuarios que poden participar na enquisa.",
-	"apihelp-editsurvey-param-namespaces": "Espazos de nomes nos que pode amosarse a enquisa."
+	"apihelp-editsurvey-param-namespaces": "Espazos de nomes nos que pode amosarse a enquisa.",
+	"apihelp-query+surveyanswers-param-text": "O texto da resposta."
 }
