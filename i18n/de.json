@@ -110,5 +110,9 @@
 	"apihelp-editsurvey-param-name": "Der Name der Umfrage.",
 	"apihelp-editsurvey-param-title": "Titel der Umfrage.",
 	"apihelp-submitsurvey-param-answers": "Für diese Umfrage zu verwendende Antworten.",
-	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten."
+	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveyanswers-param-limit": "Maximale Anzahl der zurückzugebenden Wörter.",
+	"apihelp-query+surveyanswers-param-text": "Der Antworttext.",
+	"apihelp-query+surveysubmissions-param-props": "Abzufragende Umfragedaten."
 }
