@@ -3,9 +3,13 @@
 		"authors": [
 			"Luckas",
 			"Luckas Blade",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"survey-desc": "Ferramenta de pesquisa para MediaWiki",
+	"right-surveyadmin": "Gerenciar pesquisas",
+	"right-surveysubmit": "Participe de pesquisas",
 	"survey-user-type-all": "Todos",
 	"survey-user-type-confirmed": "Usuários confirmados",
 	"survey-user-type-editor": "Editores",
