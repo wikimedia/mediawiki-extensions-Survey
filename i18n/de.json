@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kghbln",
-			"Metalhead64"
+			"Metalhead64",
+			"ToBeFree"
 		]
 	},
 	"survey-desc": "Ermöglicht Umfragen",
@@ -109,6 +110,10 @@
 	"apihelp-editsurvey-param-id": "Die Kennung der zu verändernden Umfrage.",
 	"apihelp-editsurvey-param-name": "Der Name der Umfrage.",
 	"apihelp-editsurvey-param-title": "Titel der Umfrage.",
+	"apihelp-editsurvey-param-namespaces": "Namensräume, in denen die Umfrage angezeigt werden kann.",
+	"apihelp-editsurvey-param-ratio": "Prozentzahl der Benutzer, welchen die Umfrage gezeigt werden soll.",
+	"apihelp-editsurvey-param-expiry": "Cookie-Ablaufzeit für die Umfrage.",
+	"apihelp-editsurvey-param-min_pages": "Minimale Anzahl Seiten, die ein Benutzer ansehen muss, bevor ihm die Umfrage angezeigt wird.",
 	"apihelp-submitsurvey-param-answers": "Für diese Umfrage zu verwendende Antworten.",
 	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten.",
 	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
