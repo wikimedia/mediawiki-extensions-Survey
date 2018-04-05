@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"survey-desc": "Εργαλείο έρευνας για το MediaWiki",
+	"right-surveyadmin": "Διαχείριση ερευνών",
+	"right-surveysubmit": "Συμμετάχετε σε έρευνες",
+	"action-surveyadmin": "Διαχείριση ερευνών",
+	"action-surveysubmit": "Συμμετάσχετε σε έρευνες",
+	"group-surveyadmin": "Διαχειριστές ερευνών",
+	"group-surveysubmit": "Συμμετέχοντες της έρευνας",
+	"survey-question-type-number": "Αριθμός",
+	"survey-user-type-all": "ο καθένας",
+	"survey-user-type-editor": "Συντάκτες",
+	"surveys-special-title": "Τίτλος",
+	"surveys-special-status": "Κατάσταση",
+	"surveys-special-stats": "Στατιστικά",
+	"surveys-special-edit": "Επεξεργασία",
+	"surveys-special-save": "Αποθήκευση",
+	"surveys-special-delete": "Διαγραφή",
+	"surveys-special-enabled": "Ενεργός",
+	"surveys-special-disabled": "Απενεργοποιημένο",
+	"surveys-surveystats-enabled": "Ενεργός",
+	"surveys-surveystats-disabled": "Απενεργοποιημένο",
+	"survey-jquery-submit": "Υποβολή",
+	"survey-jquery-finish": "Ολοκλήρωση"
+}
