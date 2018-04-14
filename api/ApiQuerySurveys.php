@@ -139,7 +139,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			),
 			'incquestions' => array(
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => '0',
+				ApiBase::PARAM_DFLT => 0,
 			),
 			'enabled' => array(
 				ApiBase::PARAM_TYPE => 'integer',

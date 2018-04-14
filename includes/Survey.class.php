@@ -62,7 +62,7 @@ class Survey extends SurveyDBClass {
 		return array(
 			'name' => '',
 			'title' => '',
-			'enabled' => SurveySettings::get( 'defaultEnabled' ) ? '1' : '0',
+			'enabled' => SurveySettings::get( 'defaultEnabled' ) ? 1 : 0,
 			'header' => 'Thank you for taking this short survey. Please fill out the following questions:',
 			'footer' => '',
 			'thanks' => 'Thank you for your responses.',
