@@ -89,7 +89,14 @@
 	"apihelp-addsurvey-param-header": "Κείμενο για εμφάνιση πάνω από την έρευνα.",
 	"apihelp-addsurvey-param-footer": "Κείμενο για εμφάνιση κάτω από την έρευνα.",
 	"apihelp-addsurvey-param-user_type": "Τύπος χρηστών που μπορούν να συμμετάσχουν στην έρευνα.",
+	"apihelp-editsurvey-param-name": "Όνομα της έρευνας.",
+	"apihelp-editsurvey-param-enabled": "Ενεργοποίηση της έρευνας ή όχι.",
+	"apihelp-editsurvey-param-questions": "Οι ερωτήσεις που απαρτίζουν την έρευνα.",
 	"apihelp-editsurvey-param-title": "Τίτλος της έρευνας.",
+	"apihelp-editsurvey-param-header": "Κείμενο για εμφάνιση πάνω από την έρευνα.",
+	"apihelp-editsurvey-param-footer": "Κείμενο για εμφάνιση κάτω από την έρευνα.",
+	"apihelp-editsurvey-param-user_type": "Τύπος χρηστών που μπορούν να συμμετάσχουν στην έρευνα.",
+	"apihelp-query+surveyanswers-param-limit": "Μέγιστη ποσότητα λέξεων για επιστροφή.",
 	"apihelp-query+surveyanswers-param-text": "Το κείμενο της απάντησης.",
 	"apihelp-query+surveysubmissions-param-limit": "Μέγιστη ποσότητα λέξεων για επιστροφή."
 }
