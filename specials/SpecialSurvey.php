@@ -310,21 +310,19 @@ class SpecialSurvey extends SpecialSurveyPage {
 				'options' => $question->toArray()
 			);
 		}
-		
-		$form = new HTMLForm( $fields, $this->getContext() );
 
-		$form->setSubmitText( $this->msg( 'surveys-special-save' )->text() );
-		
-		$form->addButton(
-			'cancelEdit',
-			$this->msg( 'cancel' )->text(),
-			'cancelEdit',
-			array(
-				'onclick' => 'window.location="' . SpecialPage::getTitleFor( 'Surveys' )->getFullURL() . '";return false;'
+		$form = HTMLForm::factory( 'ooui', $fields, $this->getContext() );
+		$form
+			->setSubmitText( $this->msg( 'surveys-special-save' )->text() )
+			->addButton(
+				'cancelEdit',
+				$this->msg( 'cancel' )->text(),
+				'cancelEdit',
+				array(
+					'onclick' => 'window.location="' . SpecialPage::getTitleFor( 'Surveys' )->getFullURL() . '";return false;'
+				)
 			)
-		);
-		
-		$form->show();
+			->show();
 	}
 
 	protected function getGroupName() {
