@@ -61,36 +61,36 @@ class SpecialSurveys extends SpecialSurveyPage {
 		
 		$this->addModules( 'ext.survey.special.surveys' );
 	}
-	
+
 	/**
 	 * Displays a small form to add a new campaign.
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	protected function displayAddNewControl() {
 		$out = $this->getOutput();
-		
-		$out->addHTML( Html::openElement(
-			'form',
-			array(
-				'method' => 'post',
-				'action' => $this->getPageTitle()->getLocalURL(),
-			)
-		) );
-		$out->addHTML( '<fieldset>' );
-		$out->addHTML( '<legend>' . $this->msg( 'surveys-special-addnew' )->escaped() . '</legend>' );
-		$out->addHTML( Html::element( 'p', array(), $this->msg( 'surveys-special-namedoc' )->text() ) );
-		$out->addHTML( Html::element( 'label', array( 'for' => 'newcampaign' ), $this->msg( 'surveys-special-newname' )->text() ) );
-		$out->addHTML( '&#160;' . Html::input( 'newsurvey' ) . '&#160;' );
-		$out->addHTML( Html::input(
-			'addnewsurvey',
-				$this->msg( 'surveys-special-add' )->text(),
-			'submit'
-		) );
-		$out->addHTML( Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) );
-		$out->addHTML( '</fieldset></form>' );
+
+		$formDescriptor = [
+			'textbox' => [
+				'type' => 'text',
+				'name' => 'newsurvey',
+				'label' => $this->msg( 'surveys-special-newname' )->text(),
+			]
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->setHeaderText( $this->msg( 'surveys-special-namedoc' )->text() )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle()->getLocalURL() )
+			->setSubmitName( 'addnewsurvey' )
+			->setSubmitTextMsg( 'surveys-special-add' )
+			->setWrapperLegendMsg( 'surveys-special-addnew' )
+			->prepareForm()
+			->displayForm( false );
 	}
-	
+
 	/**
 	 * Displays a list of all survets.
 	 * 
