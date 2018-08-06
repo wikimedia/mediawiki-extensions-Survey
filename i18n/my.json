@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"survey-user-type-all": "လူတိုင်း",
+	"survey-user-type-confirmed": "အတည်ပြုထားသော အသုံးပြုသူများ",
+	"survey-user-type-editor": "တည်းဖြတ်သူများ",
+	"survey-user-type-anon": "အမည်မသိ အသုံးပြုသူများ",
+	"surveys-special-title": "ခေါင်းစဉ်",
+	"surveys-special-status": "အခြေအနေ",
+	"surveys-special-stats": "စာရင်းအင်း",
+	"surveys-special-edit": "ပြင်ဆင်",
+	"surveys-special-save": "သိမ်းရန်",
+	"surveys-special-delete": "ဖျက်ရန်",
+	"surveys-special-enabled": "လုပ်ခွင့်ပြုထားပြီး",
+	"surveys-special-disabled": "ပိတ်ထားပြီး"
+}
