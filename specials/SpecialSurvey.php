@@ -251,11 +251,11 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-user_type',
 			'name' => 'survey-user_type',
 			'options' => array(
-				$this->msg( 'survey-user-type-all' )->text() => Survey::$USER_ALL,
-				$this->msg( 'survey-user-type-loggedin' )->text() => Survey::$USER_LOGGEDIN,
-				$this->msg( 'survey-user-type-confirmed' )->text() => Survey::$USER_CONFIRMED,
-				$this->msg( 'survey-user-type-editor' )->text() => Survey::$USER_EDITOR,
-				$this->msg( 'survey-user-type-anon' )->text() => Survey::$USER_ANON,
+				$this->msg( 'survey-user-type-all' )->escaped() => Survey::$USER_ALL,
+				$this->msg( 'survey-user-type-loggedin' )->escaped() => Survey::$USER_LOGGEDIN,
+				$this->msg( 'survey-user-type-confirmed' )->escaped() => Survey::$USER_CONFIRMED,
+				$this->msg( 'survey-user-type-editor' )->escaped() => Survey::$USER_EDITOR,
+				$this->msg( 'survey-user-type-anon' )->escaped() => Survey::$USER_ANON,
 			),
 		);
 		
