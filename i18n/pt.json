@@ -107,7 +107,7 @@
 	"apihelp-addsurvey-param-title": "Título do inquérito.",
 	"apihelp-addsurvey-param-header": "Texto a apresentar acima do inquérito.",
 	"apihelp-addsurvey-param-footer": "Texto a apresentar abaixo do inquérito.",
-	"apihelp-addsurvey-param-thanks": "Texto a apresentar após o envio do inquérito.",
+	"apihelp-addsurvey-param-thanks": "Texto a apresentar depois do envio do inquérito.",
 	"apihelp-addsurvey-param-user_type": "Tipo de utilizadores que podem participar no inquérito.",
 	"apihelp-addsurvey-param-namespaces": "Espaços nominais nos quais o inquérito pode ser apresentado.",
 	"apihelp-addsurvey-param-ratio": "Percentagem dos utilizadores à qual apresentar o inquérito.",
