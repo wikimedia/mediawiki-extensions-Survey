@@ -4,7 +4,8 @@
 			"Crt",
 			"Silvonen",
 			"Pxos",
-			"Syreeni"
+			"Syreeni",
+			"Valtlait"
 		]
 	},
 	"survey-desc": "Kyselylaajennusosa",
@@ -23,8 +24,8 @@
 	"special-surveystats": "Kyselytilastot",
 	"special-takesurvey": "Vastaa kyselyyn",
 	"survey-err-id-xor-name": "Tarvitaan joko tunniste tai kyselyn nimi",
-	"survey-err-survey-name-unknown": "Nimellä \"$1\" ei löydy kyselyä",
-	"survey-err-duplicate-name": "Nimellä \"$1\" on jo kysely",
+	"survey-err-survey-name-unknown": "Nimellä ”$1” ei ole kyselyjä",
+	"survey-err-duplicate-name": "Nimellä ”$1” on jo kysely",
 	"survey-err-ids-xor-names": "Tarvitaan joko kyselyiden tunnisteet tai nimet",
 	"survey-question-type-text": "Yksirivinen tekstikenttä",
 	"survey-question-type-number": "Numero",
