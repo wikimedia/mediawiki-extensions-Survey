@@ -129,6 +129,7 @@
 	"apihelp-editsurvey-param-expiry": "Cookie-Ablaufzeit für die Umfrage.",
 	"apihelp-editsurvey-param-min_pages": "Minimale Anzahl Seiten, die ein Benutzer ansehen muss, bevor ihm die Umfrage angezeigt wird.",
 	"apihelp-submitsurvey-summary": "Das API-Modul zum Einreichen einer Umfrage.",
+	"apihelp-submitsurvey-param-id": "Die Kennung der zu übermittelnden Umfrage.",
 	"apihelp-submitsurvey-param-name": "Der Name der Unfrage, die eingereicht wird.",
 	"apihelp-submitsurvey-param-answers": "Für diese Umfrage zu verwendende Antworten.",
 	"apihelp-query+surveys-summary": "Das API-Modul für das Erhalten von Umfragen und der optionalen Fragen.",
