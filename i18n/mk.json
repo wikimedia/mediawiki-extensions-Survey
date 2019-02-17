@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"survey-desc": "Алатка на МедијаВики за анкети",
@@ -158,6 +159,6 @@
 	"apihelp-query+surveysubmissions-param-limit": "Колку највеќе зборови да се дадат.",
 	"apihelp-query+surveysubmissions-param-survey_id": "Назнака на анкетата на која се однесува поднесоков.",
 	"apihelp-query+surveysubmissions-param-page_id": "Назнака на страницата на која е направен поднесоков.",
-	"apihelp-query+surveysubmissions-param-user_name": "Име на корисникот што го направил поднесоков (корисничко име или IP-адреса).",
-	"apihelp-query+surveysubmissions-param-time": "Кога е направен поднесоков (датум и време)."
+	"apihelp-query+surveysubmissions-param-user_name": "Име на корисникот што го направил поднесокот (корисничко име или IP-адреса).",
+	"apihelp-query+surveysubmissions-param-time": "Кога е направен поднесокот (датум и време)."
 }
