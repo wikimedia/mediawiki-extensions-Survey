@@ -103,6 +103,7 @@
 	"apihelp-addsurvey-param-name": "Der Name der Umfrage.",
 	"apihelp-addsurvey-param-enabled": "Schaltet die Umfrage an oder aus.",
 	"apihelp-addsurvey-param-questions": "Die Fragen, die die Umfrage ausmachen.",
+	"apihelp-addsurvey-param-token": "Bearbeitungstoken. Du kannst einen über prop=info erhalten.",
 	"apihelp-addsurvey-param-title": "Titel der Umfrage.",
 	"apihelp-addsurvey-param-header": "Der Text, der oberhalb der Umfrage angezeigt werden soll.",
 	"apihelp-addsurvey-param-footer": "Der Text, der unterhalb der Umfrage angezeigt werden soll.",
@@ -114,6 +115,7 @@
 	"apihelp-addsurvey-param-min_pages": "Die Mindestanzahl an Seiten, die ein Benutzer aufgerufen haben muss, bevor er die Umfrage angezeigt bekommt.",
 	"apihelp-deletesurvey-summary": "API-Modul zur Löschung von Umfragen.",
 	"apihelp-deletesurvey-param-ids": "Die Kennungen der zu löschenden Umfragen.",
+	"apihelp-deletesurvey-param-token": "Bearbeitungstoken. Du kannst einen über prop=info erhalten.",
 	"apihelp-editsurvey-summary": "Das API-Modul zum Bearbeiten einer Umfrage.",
 	"apihelp-editsurvey-param-id": "Die Kennung der zu verändernden Umfrage.",
 	"apihelp-editsurvey-param-name": "Der Name der Umfrage.",
@@ -134,9 +136,12 @@
 	"apihelp-submitsurvey-param-answers": "Für diese Umfrage zu verwendende Antworten.",
 	"apihelp-query+surveys-summary": "Das API-Modul für das Erhalten von Umfragen und der optionalen Fragen.",
 	"apihelp-query+surveys-param-ids": "Gibt die Kennung der Umfrage wieder.",
+	"apihelp-query+surveys-param-names": "Die Namen der zurückzugebenden Umfragen.",
+	"apihelp-query+surveys-param-incquestions": "Schließt die Fragen der Umfragen ein oder nicht.",
 	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten.",
 	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
 	"apihelp-query+surveyanswers-param-limit": "Maximale Anzahl der zurückzugebenden Wörter.",
 	"apihelp-query+surveyanswers-param-text": "Der Antworttext.",
-	"apihelp-query+surveysubmissions-param-props": "Abzufragende Umfragedaten."
+	"apihelp-query+surveysubmissions-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveysubmissions-param-limit": "Maximale Anzahl der zurückzugebenden Wörter."
 }
