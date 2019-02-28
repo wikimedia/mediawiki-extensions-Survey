@@ -141,9 +141,11 @@
 	"apihelp-query+surveys-param-names": "Die Namen der zurückzugebenden Umfragen.",
 	"apihelp-query+surveys-param-incquestions": "Schließt die Fragen der Umfragen ein oder nicht.",
 	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveys-param-limit": "Maximale Anzahl zurückzugebender Wörter.",
 	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
 	"apihelp-query+surveyanswers-param-limit": "Maximale Anzahl der zurückzugebenden Wörter.",
 	"apihelp-query+surveyanswers-param-text": "Der Antworttext.",
+	"apihelp-query+surveyanswers-param-question_id": "Die Kennung der Frage, zu der diese Antwort gehört.",
 	"apihelp-query+surveysubmissions-param-props": "Abzufragende Umfragedaten.",
 	"apihelp-query+surveysubmissions-param-limit": "Maximale Anzahl der zurückzugebenden Wörter."
 }
