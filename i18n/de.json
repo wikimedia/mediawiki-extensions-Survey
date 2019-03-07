@@ -148,5 +148,10 @@
 	"apihelp-query+surveyanswers-param-text": "Der Antworttext.",
 	"apihelp-query+surveyanswers-param-question_id": "Die Kennung der Frage, zu der diese Antwort gehört.",
 	"apihelp-query+surveysubmissions-param-props": "Abzufragende Umfragedaten.",
-	"apihelp-query+surveysubmissions-param-limit": "Maximale Anzahl der zurückzugebenden Wörter."
+	"apihelp-query+surveysubmissions-param-continue": "Versatzzahl, von der die Abfrage fortgeführt werden soll.",
+	"apihelp-query+surveysubmissions-param-limit": "Maximale Anzahl der zurückzugebenden Wörter.",
+	"apihelp-query+surveysubmissions-param-survey_id": "Die Kennung der Umfrage, für die diese Einreichung ist.",
+	"apihelp-query+surveysubmissions-param-page_id": "Die Kennung der Seite, an der diese Einreichung durchgeführt wurde.",
+	"apihelp-query+surveysubmissions-param-user_name": "Der Name des Benutzers, der die Einreichung durchgeführt hat (Benutzername oder IP-Adresse).",
+	"apihelp-query+surveysubmissions-param-time": "Zeitstempel, der anzeigt, wann die Einreichung durchgeführt wurde."
 }
