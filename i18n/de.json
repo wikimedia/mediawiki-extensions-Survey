@@ -141,6 +141,7 @@
 	"apihelp-query+surveys-param-names": "Die Namen der zurückzugebenden Umfragen.",
 	"apihelp-query+surveys-param-incquestions": "Schließt die Fragen der Umfragen ein oder nicht.",
 	"apihelp-query+surveys-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveys-param-continue": "Versatzzahl, von der die Abfrage fortgeführt werden soll.",
 	"apihelp-query+surveys-param-limit": "Maximale Anzahl zurückzugebender Wörter.",
 	"apihelp-query+surveyanswers-summary": "API-Modul zum Abruf von Antworten der Umfrage.",
 	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
