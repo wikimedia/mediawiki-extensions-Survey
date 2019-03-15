@@ -145,6 +145,7 @@
 	"apihelp-query+surveys-param-limit": "Maximale Anzahl zurückzugebender Wörter.",
 	"apihelp-query+surveyanswers-summary": "API-Modul zum Abruf von Antworten der Umfrage.",
 	"apihelp-query+surveyanswers-param-props": "Abzufragende Umfragedaten.",
+	"apihelp-query+surveyanswers-param-continue": "Versatzzahl, von der die Abfrage fortgeführt werden soll.",
 	"apihelp-query+surveyanswers-param-limit": "Maximale Anzahl der zurückzugebenden Wörter.",
 	"apihelp-query+surveyanswers-param-text": "Der Antworttext.",
 	"apihelp-query+surveyanswers-param-question_id": "Die Kennung der Frage, zu der diese Antwort gehört.",
