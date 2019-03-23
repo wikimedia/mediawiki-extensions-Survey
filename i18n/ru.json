@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Kalan"
+			"Kalan",
+			"Diralik"
 		]
 	},
 	"survey-desc": "Проведение опросов в MediaWiki",
@@ -50,7 +51,7 @@
 	"surveys-special-edit": "Править",
 	"surveys-special-save": "Сохранить",
 	"surveys-special-delete": "Удалить",
-	"surveys-special-enabled": "Включен",
+	"surveys-special-enabled": "Включён",
 	"surveys-special-disabled": "Выключен",
 	"surveys-special-confirm-delete": "Вы точно хотите удалить этот опрос?",
 	"surveys-special-delete-failed": "Не удалось удалить опрос.",
@@ -58,15 +59,15 @@
 	"survey-special-label-minpages": "Минимальное количество страниц, которое пользователю нужно посетить, прежде чем приглашать его на опрос",
 	"surveys-takesurvey-loading": "Загрузка опроса…",
 	"surveys-takesurvey-nosuchsurvey": "Запрошенный опрос не существует.",
-	"surveys-takesurvey-warn-notenabled": "Опрос ещё не был включен и поэтому невидим для пользователей.",
-	"surveys-takesurvey-surveynotenabled": "Опрос ещё не был включен.",
+	"surveys-takesurvey-warn-notenabled": "Опрос ещё не был включён и поэтому невидим для пользователей.",
+	"surveys-takesurvey-surveynotenabled": "Опрос ещё не был включён.",
 	"surveys-surveystats-nosuchsurvey": "Запрошенный опрос не существует. Вы можете просмотреть [[Special:Surveys|список доступных опросов]].",
 	"surveys-surveystats-name": "Идентификатор опроса",
 	"surveys-surveystats-title": "Название опроса",
 	"surveys-surveystats-status": "Статус опроса",
 	"surveys-surveystats-questioncount": "Количество вопросов",
 	"surveys-surveystats-submissioncount": "Количество участников",
-	"surveys-surveystats-enabled": "Включен",
+	"surveys-surveystats-enabled": "Включён",
 	"surveys-surveystats-disabled": "Выключен",
 	"surveys-surveystats-questions": "Статистика по вопросу",
 	"surveys-surveystats-question-type": "Тип вопроса",
@@ -79,7 +80,7 @@
 	"surveys-special-unknown-name": "Не существует опроса с запрошенным идентификатором.",
 	"survey-special-label-name": "Идентификатор опроса",
 	"survey-special-label-title": "Название опроса",
-	"survey-special-label-enabled": "Опрос включен",
+	"survey-special-label-enabled": "Опрос включён",
 	"survey-special-label-ratio": "Процент людей, которым нужно показывать опрос",
 	"survey-special-label-add-first": "Добавить вопрос",
 	"survey-special-label-add-another": "Добавить другой вопрос",
