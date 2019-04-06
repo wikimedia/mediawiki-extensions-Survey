@@ -2,8 +2,8 @@
 /**
  * Initialization file for the Survey extension.
  *
- * Documentation:	 		http://www.mediawiki.org/wiki/Extension:Survey
- * Support					http://www.mediawiki.org/wiki/Extension_talk:Survey
+ * Documentation:	 		https://www.mediawiki.org/wiki/Extension:Survey
+ * Support					https://www.mediawiki.org/wiki/Extension_talk:Survey
  * Source code:			    https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git
  *
  * @file Survey.php
@@ -34,7 +34,7 @@ $wgExtensionCredits['other'][] = array(
 	'name' => 'Survey',
 	'version' => Survey_VERSION,
 	'author' => array(
-		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]',
+		'[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]',
 	),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Survey',
 	'descriptionmsg' => 'survey-desc'

@@ -1,6 +1,6 @@
 These are the release notes for the Survey extension.
-	
-Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Survey
+
+Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Survey
 Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git;a=blob;f=RELEASE-NOTES
 
 
@@ -15,7 +15,7 @@ Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=med
 2012-9-24
 
 * Dropped compatibility with MediaWiki 1.17.
-* Use of RequestContext methods to get rid of globals. 
+* Use of RequestContext methods to get rid of globals.
 * Cleanup of database table index code.
 * Added missing database table indexes.
 * Use of jquery.json for greater compatibility.
@@ -24,7 +24,7 @@ Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=med
 2011-11-14
 
 * Fixed issue with database index names causing update.php to fail when running after installation of Survey.
-* Fixed several IE JavaScript issues. 
+* Fixed several IE JavaScript issues.
 * Added missing action- messages.
 
 === Version 0.1.1 ===
