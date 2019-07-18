@@ -63,7 +63,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		}
 
 		if ( isset( $params['continue'] ) ) {
-			$this->addWhere( 'survey_id >= ' . wfGetDB( DB_SLAVE )->addQuotes( $params['continue'] ) );
+			$this->addWhere( 'survey_id >= ' . wfGetDB( DB_REPLICA )->addQuotes( $params['continue'] ) );
 		}
 
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );

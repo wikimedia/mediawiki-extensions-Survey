@@ -274,8 +274,8 @@ class Survey extends SurveyDBClass {
 	 * @return boolean Success indicator
 	 */
 	public function removeFromDB() {
-		$dbr= wfgetDB( DB_SLAVE );
 		
+		$dbr= wfgetDB( DB_REPLICA );
 		$submissionsForSurvey = $dbr->select(
 			'survey_submissions',
 			array( 'submission_id' ),

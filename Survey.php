@@ -23,11 +23,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-if ( version_compare( $wgVersion, '1.19c', '<' ) ) {
-	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.19 or above. For MediaWiki 1.18.x, you can use Survey 0.2.' );
+if ( version_compare( $wgVersion, '1.27c', '<' ) ) {
+	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.27 or above.' );
 }
 
-define( 'Survey_VERSION', '0.3.0 alpha' );
+define( 'Survey_VERSION', '0.4.0 alpha' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
@@ -176,7 +176,6 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 		'ext.survey',
 		'jquery.ui.button',
 		'ext.survey.numeric',
-		version_compare( $GLOBALS['wgVersion'], '1.24', '<' ) ? 'jquery.json' : 'json'
 	),
 	'messages' => array(
 		'survey-jquery-submit',

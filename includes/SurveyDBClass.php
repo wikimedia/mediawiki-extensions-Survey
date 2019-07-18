@@ -247,7 +247,7 @@ abstract class SurveyDBClass {
 	 * @return ResultWrapper
 	 */
 	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		
 		return $dbr->select(
 			static::getDBTable(),
