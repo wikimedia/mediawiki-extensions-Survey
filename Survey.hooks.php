@@ -127,15 +127,28 @@ final class SurveyHooks {
 			
 			if ( $nsValid ) {
 				global $wgOut;
-				$wgOut->addWikiText( Xml::element(
-					'survey',
-					array(
-						'id' => $survey->getId(),
-						'ratio' => $survey->getField( 'ratio' ),
-						'expiry' => $survey->getField( 'expiry' ),
-						'min-pages' => $survey->getField( 'min_pages' ),
-					)
-				) );
+				if ( method_exists( $wgOut, 'addWikiTextAsInterface' ) ) {
+					// MW 1.32+
+					$wgOut->addWikiTextAsInterface( Xml::element(
+						'survey',
+						array(
+							'id' => $survey->getId(),
+							'ratio' => $survey->getField( 'ratio' ),
+							'expiry' => $survey->getField( 'expiry' ),
+							'min-pages' => $survey->getField( 'min_pages' ),
+						)
+					) );
+				} else {
+					$wgOut->addWikiText( Xml::element(
+						'survey',
+						array(
+							'id' => $survey->getId(),
+							'ratio' => $survey->getField( 'ratio' ),
+							'expiry' => $survey->getField( 'expiry' ),
+							'min-pages' => $survey->getField( 'min_pages' ),
+						)
+					) );
+				}
 			}
 		}
 		

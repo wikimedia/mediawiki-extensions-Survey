@@ -70,15 +70,29 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 			$this->msg( 'survey-navigation-list' )->parse()
 		) );
 
-		$this->getOutput()->addWikiText( Xml::element(
-			'survey',
-			array(
-				'name' => $subPage,
-				'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
-				'cookie' => 'no'
-			),
-				$this->msg( 'surveys-takesurvey-loading' )->text()
-		) );
+		$out = $this->getOutput();
+		if ( method_exists( $out, 'addWikiTextAsInterface' ) ) {
+			// MW 1.32+
+			$out->addWikiTextAsInterface( Xml::element(
+				'survey',
+				array(
+					'name' => $subPage,
+					'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
+					'cookie' => 'no'
+				),
+					$this->msg( 'surveys-takesurvey-loading' )->text()
+			) );
+		} else {
+			$out->addWikiText( Xml::element(
+				'survey',
+				array(
+					'name' => $subPage,
+					'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
+					'cookie' => 'no'
+				),
+					$this->msg( 'surveys-takesurvey-loading' )->text()
+			) );
+		}
 	}
 
 	protected function getGroupName() {
