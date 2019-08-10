@@ -1,0 +1,191 @@
+{
+	"name": "Survey",
+	"version": "0.4.0-alpha",
+	"author": [
+		"[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]"
+	],
+	"license-name": "GPL-2.0-or-later",
+	"url": "https://www.mediawiki.org/wiki/Extension:Survey",
+	"descriptionmsg": "survey-desc",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.39.0"
+	},
+	"APIListModules": {
+		"surveys": "ApiQuerySurveys",
+		"surveyanswers": "ApiQuerySurveyAnswers",
+		"surveysubmissions": "ApiQuerySurveySubmissions"
+	},
+	"APIModules": {
+		"addsurvey": "ApiAddSurvey",
+		"deletesurvey": "ApiDeleteSurvey",
+		"editsurvey": "ApiEditSurvey",
+		"submitsurvey": "ApiSubmitSurvey"
+	},
+	"AvailableRights": [
+		"surveyadmin",
+		"surveysubmit"
+	],
+	"GroupPermissions": {
+		"*": {
+			"surveyadmin": false,
+			"surveysubmit": true
+		},
+		"user": {
+			"surveyadmin": false,
+			"surveysubmit": true
+		},
+		"autoconfirmed": {
+			"surveyadmin": false,
+			"surveysubmit": true
+		},
+		"bot": {
+			"surveyadmin": false,
+			"surveysubmit": false
+		},
+		"sysop": {
+			"surveyadmin": true,
+			"surveysubmit": true
+		}
+	},
+	"SpecialPages": {
+		"EditSurvey": "SpecialSurvey",
+		"Surveys": "SpecialSurveys",
+		"SurveyStats": "SpecialSurveyStats",
+		"TakeSurvey": "SpecialTakeSurvey"
+	},
+	"MessagesDirs": {
+		"Survey": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SurveyAlias": "Survey.alias.php"
+	},
+	"AutoloadClasses": {
+		"SurveyHooks": "Survey.hooks.php",
+		"SurveySettings": "Survey.settings.php",
+		"ApiAddSurvey": "api/ApiAddSurvey.php",
+		"ApiDeleteSurvey": "api/ApiDeleteSurvey.php",
+		"ApiEditSurvey": "api/ApiEditSurvey.php",
+		"ApiQuerySurveyAnswers": "api/ApiQuerySurveyAnswers.php",
+		"ApiQuerySurveys": "api/ApiQuerySurveys.php",
+		"ApiQuerySurveySubmissions": "api/ApiQuerySurveySubmissions.php",
+		"ApiSubmitSurvey": "api/ApiSubmitSurvey.php",
+		"Survey": "includes/Survey.class.php",
+		"SurveyAnswer": "includes/SurveyAnswer.php",
+		"SurveyCompat": "includes/SurveyCompat.php",
+		"SurveyDBClass": "includes/SurveyDBClass.php",
+		"SurveyQuestion": "includes/SurveyQuestion.php",
+		"SurveySubmission": "includes/SurveySubmission.php",
+		"SurveyTag": "includes/SurveyTag.php",
+		"SpecialSurvey": "specials/SpecialSurvey.php",
+		"SurveyQuestionField": "specials/SpecialSurvey.php",
+		"SurveyNameField": "specials/SpecialSurvey.php",
+		"SpecialSurveyPage": "specials/SpecialSurveyPage.php",
+		"SpecialSurveys": "specials/SpecialSurveys.php",
+		"SpecialSurveyStats": "specials/SpecialSurveyStats.php",
+		"SpecialTakeSurvey": "specials/SpecialTakeSurvey.php"
+	},
+	"ResourceModules": {
+		"ext.survey": {
+			"scripts": [
+				"ext.survey.js"
+			]
+		},
+		"ext.survey.special.surveys": {
+			"scripts": [
+				"ext.survey.special.surveys.js"
+			],
+			"dependencies": [
+				"ext.survey"
+			],
+			"messages": [
+				"surveys-special-confirm-delete",
+				"surveys-special-delete-failed"
+			]
+		},
+		"ext.survey.special.survey": {
+			"scripts": [
+				"ext.survey.answerSelector.js",
+				"ext.survey.special.survey.js"
+			],
+			"styles": [
+				"ext.survey.special.survey.css"
+			],
+			"dependencies": [
+				"ext.survey",
+				"jquery.ui"
+			],
+			"messages": [
+				"survey-question-type-text",
+				"survey-question-type-number",
+				"survey-question-type-select",
+				"survey-question-type-radio",
+				"survey-question-type-textarea",
+				"survey-question-type-check",
+				"survey-question-label-nr",
+				"survey-special-label-required",
+				"survey-special-label-type",
+				"survey-special-label-text",
+				"survey-special-label-addquestion",
+				"survey-special-label-add-first",
+				"survey-special-label-add-another",
+				"survey-special-remove",
+				"survey-special-remove-confirm",
+				"survey-special-label-answers"
+			]
+		},
+		"ext.survey.numeric": {
+			"scripts": [
+				"jquery.numeric.js"
+			]
+		},
+		"ext.survey.jquery": {
+			"scripts": [
+				"fancybox/jquery.fancybox-1.3.4.js",
+				"jquery.survey.js"
+			],
+			"styles": [
+				"jquery.survey.css",
+				"fancybox/jquery.fancybox-1.3.4.css"
+			],
+			"dependencies": [
+				"ext.survey",
+				"jquery.ui",
+				"ext.survey.numeric"
+			],
+			"messages": [
+				"survey-jquery-submit",
+				"survey-jquery-finish",
+				"survey-jquery-load-failed"
+			]
+		},
+		"ext.survey.tag": {
+			"scripts": [
+				"ext.survey.tag.js"
+			],
+			"dependencies": [
+				"ext.survey.jquery",
+				"jquery.cookie"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "Survey/resources"
+	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": "SurveyHooks::onSchemaUpdate",
+		"ParserFirstCallInit": "SurveyHooks::onParserFirstCallInit",
+		"ArticleViewHeader": "SurveyHooks::onArticleViewHeader",
+		"AdminLinks": "SurveyHooks::addToAdminLinks"
+	},
+	"config_prefix": "eg",
+	"config": {
+		"SurveySettings": {
+			"value": []
+		}
+	},
+	"manifest_version": 2
+}
