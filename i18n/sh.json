@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"surveys-special-title": "Naslov",
+	"surveys-special-status": "Status",
+	"surveys-special-stats": "Statistike",
+	"surveys-special-edit": "Uredi",
+	"surveys-special-save": "Snimi",
+	"surveys-special-delete": "Izbriši",
+	"surveys-special-enabled": "Omogućeno",
+	"surveys-special-disabled": "Onemogućeno"
+}
