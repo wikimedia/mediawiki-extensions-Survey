@@ -23,8 +23,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-if ( version_compare( $wgVersion, '1.27c', '<' ) ) {
-	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.27 or above.' );
+if ( version_compare( $wgVersion, '1.34c', '<' ) ) {
+	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.34 or above.' );
 }
 
 define( 'Survey_VERSION', '0.4.0 alpha' );
@@ -136,7 +136,7 @@ $wgResourceModules['ext.survey.special.survey'] = $moduleTemplate + array(
 	'styles' => array(
 		'ext.survey.special.survey.css'
 	),
-	'dependencies' => array( 'ext.survey', 'jquery.ui.button' ),
+	'dependencies' => array( 'ext.survey', 'jquery.ui' ),
 	'messages' => array(
 		'survey-question-type-text',
 		'survey-question-type-number',
@@ -174,7 +174,7 @@ $wgResourceModules['ext.survey.jquery'] = $moduleTemplate + array(
 	),
 	'dependencies' => array(
 		'ext.survey',
-		'jquery.ui.button',
+		'jquery.ui',
 		'ext.survey.numeric',
 	),
 	'messages' => array(
