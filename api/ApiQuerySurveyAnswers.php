@@ -13,7 +13,7 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiQuerySurveyAnswers extends ApiQueryBase {
-	
+
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action, 'qa' );
 	}
@@ -23,23 +23,23 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 	 */
 	public function execute() {
 		global $wgUser;
-		
+
 		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
-		
+
 		$starPropPosition = array_search( '*', $params['props'] );
-		
+
 		if ( $starPropPosition !== false ) {
 			unset( $params['props'][$starPropPosition] );
 			$params['props'] = array_merge( $params['props'], SurveyAnswer::getFieldNames() );
 		}
-		
+
 		$params = array_filter( $params, function( $param ) { return !is_null( $param ); } );
-		
+
 		$answers = SurveyAnswer::select(
 			$params['props'],
 			SurveyAnswer::getValidFields( $params ),
@@ -48,7 +48,7 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 				'ORDER BY' => SurveyAnswer::getPrefixedField( 'id' ) . ' ASC'
 			)
 		);
-		
+
 		$serializedAnswers = array();
 		$count = 0;
 
@@ -62,19 +62,19 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 				$this->setContinueEnumParameter( 'continue', $answer->getId() );
 				break;
 			}
-			
+
 			$serializedAnswers[] = $answer->toArray();
 		}
 
 		$this->getResult()->setIndexedTagName( $serializedAnswers, 'answer' );
-		
+
 		$this->getResult()->addValue(
 			null,
 			'answers',
 			$serializedAnswers
 		);
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
@@ -95,7 +95,7 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 			),
 			'continue' => null,
 		);
-		
+
 		return array_merge( SurveyAnswer::getAPIParams( false ), $params );
 	}
 
@@ -110,5 +110,5 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 			'api.php?action=query&list=surveyanswers&qaquestion_id=9001&qaprops=text',
 		);
 	}
-	
+
 }

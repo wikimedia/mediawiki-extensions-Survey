@@ -13,7 +13,7 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiQuerySurveySubmissions extends ApiQueryBase {
-	
+
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action, 'qs' );
 	}
@@ -23,23 +23,23 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 	 */
 	public function execute() {
 		global $wgUser;
-		
+
 		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
-		
+
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
-		
+
 		$starPropPosition = array_search( '*', $params['props'] );
-		
+
 		if ( $starPropPosition !== false ) {
 			unset( $params['props'][$starPropPosition] );
 			$params['props'] = array_merge( $params['props'], SurveySubmission::getFieldNames() );
 		}
-		
+
 		$params = array_filter( $params, function( $param ) { return !is_null( $param ); } );
-		
+
 		$results = SurveySubmission::select(
 			$params['props'],
 			SurveySubmission::getValidFields( $params ),
@@ -48,7 +48,7 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 				'ORDER BY' => SurveySubmission::getPrefixedField( 'id' ) . ' ASC'
 			)
 		);
-		
+
 		$serializedResults = array();
 		$count = 0;
 
@@ -62,19 +62,19 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 				$this->setContinueEnumParameter( 'continue', $result->getId() );
 				break;
 			}
-			
+
 			$serializedResults[] = $result->toArray();
 		}
 
 		$this->getResult()->setIndexedTagName( $serializedResults, 'submission' );
-		
+
 		$this->getResult()->addValue(
 			null,
 			'submissions',
 			$serializedResults
 		);
 	}
-	
+
 	/**
 	 * (non-PHPdoc)
 	 * @see includes/api/ApiBase#getAllowedParams()
@@ -95,7 +95,7 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 			),
 			'continue' => null,
 		);
-		
+
 		return array_merge( SurveySubmission::getAPIParams( false ), $params );
 	}
 
@@ -110,5 +110,5 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 			'api.php?action=query&list=surveysubmissions&qsuser_name=Jeroen%20De%20Dauw&qsprops=survey_id|page_id|time',
 		);
 	}
-	
+
 }
