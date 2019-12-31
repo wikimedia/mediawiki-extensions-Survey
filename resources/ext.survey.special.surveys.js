@@ -1,7 +1,7 @@
 /**
  * JavaScript for the Survey MediaWiki extension.
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
- * 
+ *
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
@@ -25,12 +25,12 @@
 					failCallback( mw.msg( 'surveys-special-delete-failed' ) );
 				}
 			}
-		);	
+		);
 	}
-	
+
 	$( '.survey-delete' ).click( function() {
 		var $this = $( this );
-		
+
 		if ( confirm( mw.msg( 'surveys-special-confirm-delete' ) ) ) {
 			deleteSurvey(
 				{
@@ -47,7 +47,7 @@
 		}
 		return false;
 	} );
-	
+
 } );
 
 }( jQuery, mediaWiki ) );
