@@ -2,20 +2,20 @@
 
 /**
  * Statistics interface for surveys.
- * 
+ *
  * @since 0.1
- * 
+ *
  * @file SpecialSurveyStats.php
  * @ingroup Survey
- * 
+ *
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SpecialSurveyStats extends SpecialSurveyPage {
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	public function __construct() {
@@ -34,12 +34,12 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		if ( !parent::execute( $subPage ) ) {
 			return;
 		}
-		
+
 		if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
 			$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
 		} else {
 			$subPage = trim( $subPage );
-			
+
 			if ( Survey::has( array( 'name' => $subPage ) ) ) {
 				$survey = Survey::newFromName( $subPage );
 
@@ -48,7 +48,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 					$this->msg( 'survey-navigation-take', $survey->getField( 'name' ) )->parse(),
 					$this->msg( 'survey-navigation-list' )->parse()
 				) );
-				
+
 				$this->displayStats( $survey );
 			}
 			else {
@@ -56,29 +56,29 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			}
 		}
 	}
-	
+
 	/**
 	 * Display the statistics that go with the survey.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param Survey $survey
 	 */
 	protected function displayStats( Survey $survey ) {
 		$this->displaySummary( $this->getSummaryData( $survey ) );
-		
+
 		if ( count( $survey->getQuestions() ) > 0 ) {
 			$this->displayQuestions( $survey );
 		}
 	}
-	
+
 	/**
 	 * Gets the summary data.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param Survey $survey
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getSummaryData( Survey $survey ) {
@@ -90,24 +90,24 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$stats['status'] = $this->msg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text();
 		$stats['questioncount'] = count( $survey->getQuestions() ) ;
 		$stats['submissioncount'] = SurveySubmission::count( array( 'survey_id' => $survey->getId() ) );
-		
+
 		return $stats;
 	}
-	
+
 	/**
 	 * Display a summary table with the provided data.
 	 * The keys are messages that get prepended with surveys-surveystats-.
 	 * message => value
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $stats
 	 */
 	protected function displaySummary( array $stats ) {
 		$out = $this->getOutput();
-		
+
 		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable survey-stats' ) ) );
-		
+
 		foreach ( $stats as $stat => $value ) {
 			$out->addHTML( '<tr>' );
 
@@ -119,29 +119,29 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 				array( 'class' => 'survey-stat-name' ),
 					$this->msg( 'surveys-surveystats-' . $stat )->text()
 			) );
-			
+
 			$out->addHTML( Html::element(
 				'td',
 				array( 'class' => 'survey-stat-value' ),
 				$value
 			) );
-			
+
 			$out->addHTML( '</tr>' );
 		}
-		
+
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
-	
+
 	/**
 	 * Displays a table with the surveys questions and some summary stats about them.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param Survey $survey
 	 */
 	protected function displayQuestions( Survey $survey ) {
 		$out = $this->getOutput();
-		
+
 		$out->addHTML( '<h2>' . $this->msg( 'surveys-surveystats-questions' )->escaped() . '</h2>' );
 		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable sortable survey-questions' ) ) );
 		$out->addHTML(
@@ -151,7 +151,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 				'<th class="unsortable">' . $this->msg( 'surveys-surveystats-question-text' )->escaped() . '</th>' .
 				'<th>' . $this->msg( 'surveys-surveystats-question-answercount' )->escaped() . '</th>' .
 				'<th class="unsortable">' . $this->msg( 'surveys-surveystats-question-answers' )->escaped() . '</th>' .
-			'</tr></thead>'	
+			'</tr></thead>'
 		);
 		$out->addHTML( '<tbody>' );
 
@@ -161,23 +161,23 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		foreach ( $survey->getQuestions() as $question ) {
 			$this->displayQuestionStats( $question );
 		}
-		
+
 		$out->addHTML( '</tbody>' );
 		$out->addHTML( Html::closeElement( 'table' ) );
 	}
-	
+
 	/**
 	 * Adds a table row with the summary stats for the provided question.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param SurveyQuestion $question
 	 */
 	protected function displayQuestionStats( SurveyQuestion $question ) {
 		static $qNr = 0;
-		
+
 		$out = $this->getOutput();
-		
+
 		$out->addHTML( '<tr>' );
 		$out->addHTML( Html::element(
 			'td',
@@ -193,35 +193,35 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			array(),
 				$this->msg( SurveyQuestion::getTypeMessage( $question->getField( 'type' ) ) )->text()
 		) );
-		
+
 		$out->addHTML( Html::element(
 			'td',
 			array(),
 			$question->getField( 'text' )
 		) );
-		
+
 		$out->addHTML( Html::element(
 			'td',
 			array(),
 			SurveyAnswer::count( array( 'question_id' => $question->getId() ) )
 		) );
-		
+
 		$out->addHTML( Html::rawElement(
 			'td',
 			array(),
 			$this->getAnswerList( $question )
 		) );
-		
+
 		$out->addHTML( '</tr>' );
 	}
-	
+
 	/**
 	 * Get a list of most provided answers for the question.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param SurveyQuestion $question
-	 * 
+	 *
 	 * @return string
 	 */
 	protected function getAnswerList( SurveyQuestion $question ) {
@@ -230,7 +230,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 
 			$answers = array();
 			$answerTranslations = array();
-			
+
 			if ( $question->getField( 'type' ) == SurveyQuestion::$TYPE_CHECK ) {
 				$possibilities = array( '0', '1' );
 				$answerTranslations['0'] = $this->msg( 'surveys-surveystats-unchecked' )->text();
@@ -239,25 +239,25 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			else {
 				$possibilities = $question->getField( 'answers' );
 			}
-			
+
 			foreach ( $possibilities as $answer ) {
 				$answers[$answer] = SurveyAnswer::count( array( 'text' => $answer ) );
 			}
-			
+
 			asort( $answers, SORT_NUMERIC );
-			
+
 			foreach ( array_reverse( $answers ) as $answer => $answerCount ) {
 				if ( array_key_exists( $answer, $answerTranslations ) ) {
 					$answer = $answerTranslations[$answer];
 				}
-				
+
 				$list .= Html::element(
 					'li',
 					array(),
 					$this->msg( 'surveys-surveystats-question-answer', $answer )->numParams( $answerCount )->text()
 				);
 			}
-			
+
 			return $list . '</ul>';
 		}
 		else {

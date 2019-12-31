@@ -2,19 +2,19 @@
 
 /**
  * Administration interface for surveys.
- * 
+ *
  * @since 0.1
- * 
+ *
  * @file SpecialSurveys.php
  * @ingroup Survey
- * 
+ *
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SpecialSurveys extends SpecialSurveyPage {
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	public function __construct() {
@@ -33,9 +33,9 @@ class SpecialSurveys extends SpecialSurveyPage {
 		if ( !parent::execute( $subPage ) ) {
 			return;
 		}
-		
+
 		$req = $this->getRequest();
-		
+
 		if ( $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) )
 			&& $req->getCheck( 'newsurvey' ) ) {
@@ -44,21 +44,21 @@ class SpecialSurveys extends SpecialSurveyPage {
 			$this->displaySurveys();
 		}
 	}
-	
+
 	/**
 	 * Displays surveys.
-	 * 
+	 *
 	 * @since 0.1
 	 */
 	protected function displaySurveys() {
 		$this->displayAddNewControl();
-		
+
 		$surveys = Survey::select( array( 'id', 'name', 'enabled', 'title' ) );
-		
+
 		if ( count( $surveys ) > 0 ) {
 			$this->displaySurveysTable( $surveys );
 		}
-		
+
 		$this->addModules( 'ext.survey.special.surveys' );
 	}
 
@@ -93,22 +93,22 @@ class SpecialSurveys extends SpecialSurveyPage {
 
 	/**
 	 * Displays a list of all survets.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $surveys
 	 */
 	protected function displaySurveysTable( array /* of Survey */ $surveys ) {
 		$out = $this->getOutput();
-		
+
 		$out->addHTML( Html::element( 'h2', array(), $this->msg( 'surveys-special-existing' )->text() ) );
-		
+
 		$out->addHTML( Xml::openElement(
 			'table',
 			array( 'class' => 'wikitable sortable' )
 		) );
-		
-		$out->addHTML( 
+
+		$out->addHTML(
 			'<thead><tr>' .
 				Html::element( 'th', array(), $this->msg( 'surveys-special-title' )->text() ) .
 				Html::element( 'th', array(), $this->msg( 'surveys-special-status' )->text() ) .
@@ -117,7 +117,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 				Html::element( 'th', array( 'class' => 'unsortable' ), $this->msg( 'surveys-special-delete' )->text() ) .
 			'</tr></thead>'
 		);
-		
+
 		$out->addHTML( '<tbody>' );
 
 		/**
@@ -127,7 +127,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 			$out->addHTML(
 				'<tr>' .
 					'<td data-sort-value="' . htmlspecialchars( $survey->getField( 'title' ) ) . '">' .
-						Html::element( 
+						Html::element(
 							'a',
 							array(
 								'href' => SpecialPage::getTitleFor( 'TakeSurvey', $survey->getField( 'name' ) )->getLocalURL()
@@ -139,7 +139,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 					// surveys-special-enabled, surveys-special-disabled
 					Html::element( 'td', array(), $this->msg( 'surveys-special-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text() ) .
 					'<td>' .
-						Html::element( 
+						Html::element(
 							'a',
 							array(
 								'href' => SpecialPage::getTitleFor( 'SurveyStats', $survey->getField( 'name' ) )->getLocalURL()
@@ -148,7 +148,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 						) .
 					'</td>' .
 					'<td>' .
-						Html::element( 
+						Html::element(
 							'a',
 							array(
 								'href' => SpecialPage::getTitleFor( 'EditSurvey', $survey->getField( 'name' ) )->getLocalURL()
@@ -157,7 +157,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 						) .
 					'</td>' .
 					'<td>' .
-						Html::element( 
+						Html::element(
 							'a',
 							array(
 								'href' => '#',
@@ -173,7 +173,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 				'</tr>'
 			);
 		}
-		
+
 		$out->addHTML( '</tbody>' );
 		$out->addHTML( '</table>' );
 	}
