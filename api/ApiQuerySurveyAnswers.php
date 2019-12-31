@@ -22,9 +22,9 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 	 * Retrieve the special words from the database.
 	 */
 	public function execute() {
-		global $wgUser;
+		$user = $this->getUser();
 
-		if ( !$wgUser->isAllowed( 'surveyadmin' ) || $wgUser->isBlocked() ) {
+		if ( !$user->isAllowed( 'surveyadmin' ) || $user->isBlocked() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
