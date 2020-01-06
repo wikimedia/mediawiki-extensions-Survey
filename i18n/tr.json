@@ -7,12 +7,14 @@
 			"BaRaN6161 TURK"
 		]
 	},
+	"survey-user-type-anon": "Anonim kullanıcılar",
 	"surveys-special-add": "Anket ekle",
 	"surveys-special-existing": "Mevcut anketler",
 	"surveys-special-title": "Başlık",
 	"surveys-special-status": "Durum",
 	"surveys-special-stats": "İstatistikler",
 	"surveys-special-edit": "Düzenle",
+	"surveys-special-save": "Kaydet",
 	"surveys-special-delete": "Sil",
 	"surveys-special-enabled": "Etkin",
 	"surveys-special-disabled": "Devre dışı",
