@@ -12,26 +12,26 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 final class SurveyHooks {
-	
+
 	/**
 	 * Register the survey tag extension when the parser initializes.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param Parser $parser
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'survey', __CLASS__ . '::onSurveyRender' );
 		return true;
 	}
-	
+
 	/**
 	 * Render the survey tag.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param mixed $input
 	 * @param array $args
 	 * @param Parser $parser
@@ -42,7 +42,7 @@ final class SurveyHooks {
 		$tag = new SurveyTag( $args, $input );
 		return $tag->render( $parser );
 	}
-	
+
 	/**
 	 * Schema update to set up the needed database tables.
 	 *
@@ -59,7 +59,7 @@ final class SurveyHooks {
 			__DIR__ . '/sql/Survey.sql',
 			true
 		) );
-		
+
 		$updater->addExtensionUpdate( array(
 			'addIndex',
 			'surveys',
@@ -70,24 +70,24 @@ final class SurveyHooks {
 
 		return true;
 	}
-	
+
 	/**
 	 * Hook to add PHPUnit test cases.
-	 * 
+	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $files
 	 *
 	 * @return boolean
 	 */
 	public static function registerUnitTests( array &$files ) {
 		$testDir = dirname( __FILE__ ) . '/test/';
-		
+
 		$files[] = $testDir . 'SurveyQuestionTest.php';
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Hook to insert things into article headers.
 	 *
@@ -103,7 +103,7 @@ final class SurveyHooks {
 		if ( !Survey::has( array( 'enabled' => 1 ) ) ) {
 			return true;
 		}
-		
+
 		$surveys = Survey::select(
 			array(
 				'id', 'namespaces', 'ratio', 'expiry', 'min_pages'
@@ -124,7 +124,7 @@ final class SurveyHooks {
 			else {
 				$nsValid = in_array( $article->getTitle()->getNamespace(), $survey->getField( 'namespaces' ) );
 			}
-			
+
 			if ( $nsValid ) {
 				global $wgOut;
 				if ( method_exists( $wgOut, 'addWikiTextAsInterface' ) ) {
@@ -151,13 +151,13 @@ final class SurveyHooks {
 				}
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Adds a link to Admin Links page.
-	 * 
+	 *
 	 * @since 0.1
 	 *
 	 * @param ALTree $admin_links_tree
