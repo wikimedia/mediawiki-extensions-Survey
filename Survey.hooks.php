@@ -104,13 +104,14 @@ final class SurveyHooks {
 			return true;
 		}
 
+		$user = $article->getContext()->getUser();
 		$surveys = Survey::select(
 			array(
 				'id', 'namespaces', 'ratio', 'expiry', 'min_pages'
 			),
 			array(
 				'enabled' => 1,
-				'user_type' => Survey::getTypesForUser( $GLOBALS['wgUser'] )
+				'user_type' => Survey::getTypesForUser( $user )
 			)
 		);
 

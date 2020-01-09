@@ -71,13 +71,14 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 		) );
 
 		$out = $this->getOutput();
+		$user = $this->getUser();
 		if ( method_exists( $out, 'addWikiTextAsInterface' ) ) {
 			// MW 1.32+
 			$out->addWikiTextAsInterface( Xml::element(
 				'survey',
 				array(
 					'name' => $subPage,
-					'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
+					'require-enabled' => $user->isAllowed( 'surveyadmin' ) ? '0' : '1',
 					'cookie' => 'no'
 				),
 					$this->msg( 'surveys-takesurvey-loading' )->text()
@@ -87,7 +88,7 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 				'survey',
 				array(
 					'name' => $subPage,
-					'require-enabled' => $GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ? '0' : '1',
+					'require-enabled' => $user->isAllowed( 'surveyadmin' ) ? '0' : '1',
 					'cookie' => 'no'
 				),
 					$this->msg( 'surveys-takesurvey-loading' )->text()

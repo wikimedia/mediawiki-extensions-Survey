@@ -49,7 +49,7 @@ class ApiSubmitSurvey extends ApiBase {
 		$submission = new SurveySubmission( array(
 			'survey_id' => $survey->getId(),
 			'page_id' => 0, // TODO
-			'user_name' => $GLOBALS['wgUser']->getName(),
+			'user_name' => $user->getName(),
 			'time' => wfTimestampNow()
 		) );
 
@@ -65,7 +65,7 @@ class ApiSubmitSurvey extends ApiBase {
 	}
 
 	public function getTokenSalt() {
-		return serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) );
+		return serialize( array( 'submitsurvey', $this->getUser()->getName() ) );
 	}
 
 	public function mustBePosted() {

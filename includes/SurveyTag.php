@@ -47,9 +47,11 @@ class SurveyTag {
 				}
 			}
 
+			$user = RequestContext::getMain()->getUser();
+
 			$this->parameters['class'] = 'surveytag';
 			$this->parameters['survey-data-token'] =
-				$GLOBALS['wgUser']->getEditToken( serialize( array( 'submitsurvey', $GLOBALS['wgUser']->getName() ) ) );
+				$user->getEditToken( serialize( array( 'submitsurvey', $user->getName() ) ) );
 		} else {
 			throw new MWException( 'Invalid parameters for survey tag.' );
 		}

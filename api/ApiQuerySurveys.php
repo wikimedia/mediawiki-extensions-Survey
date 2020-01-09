@@ -55,7 +55,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 			$this->addWhere( array( 'survey_name' => $params['names'] ) );
 		}
 
-		if ( !$GLOBALS['wgUser']->isAllowed( 'surveyadmin' ) ) {
+		if ( !$user->isAllowed( 'surveyadmin' ) ) {
 			$this->addWhere( array( 'survey_enabled' => 1 ) );
 		}
 		elseif ( isset( $params['enabled'] ) ) {
