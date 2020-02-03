@@ -21,6 +21,7 @@
 	"surveys-surveystats-name": "Anket ID",
 	"surveys-surveystats-enabled": "Etkin",
 	"surveys-surveystats-disabled": "Devre dışı",
+	"surveys-surveystats-unchecked": "Kontrol edilmemiş",
 	"survey-jquery-submit": "Gönder",
 	"survey-jquery-finish": "Tamamlandı"
 }
