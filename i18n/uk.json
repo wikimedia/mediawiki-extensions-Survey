@@ -8,7 +8,7 @@
 	"survey-desc": "Інструмент опистувань для MediaWiki",
 	"right-surveyadmin": "Керування опитуваннями",
 	"right-surveysubmit": "Участь в опитуваннях",
-	"action-surveyadmin": "керувати опитуваннями",
+	"action-surveyadmin": "керування опитуваннями",
 	"action-surveysubmit": "брати участь в опитуваннях",
 	"group-surveyadmin": "Адміністратори опитувань",
 	"group-surveyadmin-member": "{{GENDER:$1|адміністратор|адміністраторка}} опитувань",
