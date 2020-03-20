@@ -123,5 +123,6 @@
 	"apihelp-editsurvey-param-thanks": "Texto que mostrar tras enviar la encuesta.",
 	"apihelp-query+surveyanswers-param-limit": "Cantidad máxima de palabras que devolver.",
 	"apihelp-query+surveyanswers-param-text": "El texto de la respuesta.",
-	"apihelp-query+surveysubmissions-param-limit": "Cantidad máxima de palabras que devolver."
+	"apihelp-query+surveysubmissions-param-limit": "Cantidad máxima de palabras que devolver.",
+	"apihelp-query+surveysubmissions-param-time": "Cronomarcador que indica cuándo se efectuó el envío."
 }
