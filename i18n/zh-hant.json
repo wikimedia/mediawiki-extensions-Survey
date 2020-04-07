@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Justincheng12345",
-			"Littletung",
-			"Shirayuki",
-			"Simon Shek",
-			"LNDDYL",
-			"Liuxinyu970226",
 			"Cwlin0416",
-			"Kly"
+			"Justincheng12345",
+			"Kly",
+			"LNDDYL",
+			"Littletung",
+			"Liuxinyu970226",
+			"Shirayuki",
+			"Simon Shek"
 		]
 	},
 	"survey-desc": "MediaWiki 的調查工具",

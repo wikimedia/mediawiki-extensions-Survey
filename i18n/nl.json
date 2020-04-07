@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mar(c)",
 			"SPQRobin",
-			"Siebrand",
-			"Mar(c)"
+			"Siebrand"
 		]
 	},
 	"survey-desc": "Vragenlijstenhulpmiddel voor MediaWiki",

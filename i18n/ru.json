@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diralik",
 			"Kaganer",
-			"Kalan",
-			"Diralik"
+			"Kalan"
 		]
 	},
 	"survey-desc": "Проведение опросов в MediaWiki",
