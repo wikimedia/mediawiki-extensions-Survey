@@ -4,6 +4,7 @@
 			"Alirezaaa",
 			"Armin1392",
 			"Ebraminio",
+			"FarsiNevis",
 			"Mjbmr",
 			"پاناروما"
 		]
@@ -99,5 +100,28 @@
 	"survey-special-label-answers": "پاسخ‌های دردسترس، یکی در هر خط.",
 	"survey-jquery-submit": "ثبت",
 	"survey-jquery-finish": "پایان",
-	"survey-jquery-load-failed": "برآورد نتوانست بارگذاری شود."
+	"survey-jquery-load-failed": "برآورد نتوانست بارگذاری شود.",
+	"apihelp-addsurvey-param-title": "عنوان آمارگیری.",
+	"apihelp-addsurvey-param-header": "متن مورد نظر برای نمایش در بالای آمارگیری.",
+	"apihelp-addsurvey-param-footer": "متن مورد نظر برای نمایش در پایین آمارگیری.",
+	"apihelp-addsurvey-param-thanks": "متن مورد نظر برای نمایش پس از انجام آمارگیری.",
+	"apihelp-addsurvey-param-user_type": "نوع کاربرانی که می‌توانند در آمارگیری شرکت کنند.",
+	"apihelp-addsurvey-param-namespaces": "فضاهای نامی که آمارگیری می‌تواند در آن‌ها نمایش یابد.",
+	"apihelp-addsurvey-param-ratio": "درصد کاربرانی که آمارگیری باید برای‌شان نشان داده شود.",
+	"apihelp-addsurvey-param-expiry": "زمان انقضای کلوچک برای آمارگیری.",
+	"apihelp-addsurvey-param-min_pages": "کمینهٔ تعداد صفحه‌هایی که کاربر باید قبل از ورود به آمارگیری مشاهده کرده باشد.",
+	"apihelp-deletesurvey-param-ids": "شناسهٔ آمارگیری‌هایی که باید حذف شوند.",
+	"apihelp-editsurvey-param-id": "شناسهٔ آمارگیری‌ای که باید اصلاح شود.",
+	"apihelp-editsurvey-param-name": "نام آمارگیری.",
+	"apihelp-editsurvey-param-enabled": "آمارگیری فعال شود یا نه.",
+	"apihelp-editsurvey-param-questions": "پرسش‌هایی که آمارگیری را می‌سازند.",
+	"apihelp-editsurvey-param-title": "عنوان آمارگیری.",
+	"apihelp-editsurvey-param-header": "متن مورد نظر برای نمایش در بالای آمارگیری.",
+	"apihelp-editsurvey-param-footer": "متن مورد نظر برای نمایش در پایین آمارگیری.",
+	"apihelp-editsurvey-param-thanks": "متن مورد نظر برای نمایش پس از انجام آمارگیری.",
+	"apihelp-editsurvey-param-user_type": "نوع کاربرانی که می‌توانند در آمارگیری شرکت کنند.",
+	"apihelp-editsurvey-param-namespaces": "فضاهای نامی که آمارگیری می‌تواند در آن‌ها نمایش یابد.",
+	"apihelp-editsurvey-param-ratio": "درصد کاربرانی که آمارگیری باید برای‌شان نشان داده شود.",
+	"apihelp-editsurvey-param-expiry": "زمان انقضای کلوچک برای آمارگیری.",
+	"apihelp-editsurvey-param-min_pages": "کمینهٔ تعداد صفحه‌هایی که کاربر باید قبل از ورود به آمارگیری مشاهده کرده باشد."
 }
