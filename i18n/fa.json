@@ -6,6 +6,7 @@
 			"Ebraminio",
 			"FarsiNevis",
 			"Mjbmr",
+			"Reza1615",
 			"پاناروما"
 		]
 	},
@@ -101,6 +102,9 @@
 	"survey-jquery-submit": "ثبت",
 	"survey-jquery-finish": "پایان",
 	"survey-jquery-load-failed": "برآورد نتوانست بارگذاری شود.",
+	"apihelp-addsurvey-param-name": "نام آمارگیری.",
+	"apihelp-addsurvey-param-enabled": "آمارگیری فعال شود یا نه.",
+	"apihelp-addsurvey-param-questions": "پرسش‌هایی که آمارگیری را می‌سازند.",
 	"apihelp-addsurvey-param-title": "عنوان آمارگیری.",
 	"apihelp-addsurvey-param-header": "متن مورد نظر برای نمایش در بالای آمارگیری.",
 	"apihelp-addsurvey-param-footer": "متن مورد نظر برای نمایش در پایین آمارگیری.",
@@ -123,5 +127,10 @@
 	"apihelp-editsurvey-param-namespaces": "فضاهای نامی که آمارگیری می‌تواند در آن‌ها نمایش یابد.",
 	"apihelp-editsurvey-param-ratio": "درصد کاربرانی که آمارگیری باید برای‌شان نشان داده شود.",
 	"apihelp-editsurvey-param-expiry": "زمان انقضای کلوچک برای آمارگیری.",
-	"apihelp-editsurvey-param-min_pages": "کمینهٔ تعداد صفحه‌هایی که کاربر باید قبل از ورود به آمارگیری مشاهده کرده باشد."
+	"apihelp-editsurvey-param-min_pages": "کمینهٔ تعداد صفحه‌هایی که کاربر باید قبل از ورود به آمارگیری مشاهده کرده باشد.",
+	"apihelp-query+surveys-param-ids": "شناسهٔ آمارگیری‌هایی که باید بازگردانده شوند.",
+	"apihelp-query+surveys-param-continue": "شماره‌ای که از آنجا به بعد پرسمان ادامه می‌یابد",
+	"apihelp-query+surveyanswers-param-continue": "شماره‌ای که از آنجا به بعد پرسمان ادامه می‌یابد.",
+	"apihelp-query+surveyanswers-param-text": "متن پاسخ.",
+	"apihelp-query+surveysubmissions-param-continue": "شماره‌ای که از آنجا به بعد پرسمان ادامه می‌یابد"
 }
