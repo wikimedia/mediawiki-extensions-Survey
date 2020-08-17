@@ -182,7 +182,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( Html::element(
 			'td',
 			array( 'data-sort-value' => ++$qNr ),
-				$this->msg( 'surveys-surveystats-question-#', $qNr )->text()
+				$this->msg( 'surveys-surveystats-question-nr-format', $qNr )->text()
 		) );
 
 		// For grep: getTypeMessage returns any one of the following messages:

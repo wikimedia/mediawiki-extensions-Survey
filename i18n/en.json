@@ -73,7 +73,7 @@
 	"surveys-surveystats-disabled": "Disabled",
 	"surveys-surveystats-questions": "Question statistics",
 	"surveys-surveystats-question-nr": "#",
-	"surveys-surveystats-question-#": "$1",
+	"surveys-surveystats-question-nr-format": "$1",
 	"surveys-surveystats-question-type": "Question type",
 	"surveys-surveystats-question-text": "Question text",
 	"surveys-surveystats-question-answercount": "Number of answers",
