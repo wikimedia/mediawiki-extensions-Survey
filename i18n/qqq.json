@@ -83,7 +83,7 @@
 	"surveys-surveystats-disabled": "{{Identical|Disabled}}",
 	"surveys-surveystats-questions": "Used as table header on [[Special:SurveyStats]]",
 	"surveys-surveystats-question-nr": "{{notranslate}}",
-	"surveys-surveystats-question-#": "{{optional}}\nParameters:\n* $1 - question number",
+	"surveys-surveystats-question-#": "{{notranslate}}\nParameters:\n* $1 - question number",
 	"surveys-surveystats-question-type": "Used as table header on [[Special:SurveyStats]]",
 	"surveys-surveystats-question-text": "Used as table header on [[Special:SurveyStats]]",
 	"surveys-surveystats-question-answercount": "Used as table header on [[Special:SurveyStats]]",
