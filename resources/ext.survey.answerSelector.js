@@ -1,17 +1,18 @@
 /**
  * JavaScript for the Survey MediaWiki extension.
+ *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
  * @licence GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function( $, mw, survey ) {
+( function ( $, mw, survey ) {
 
-	survey.answerSelector = function( options ) {
+	survey.answerSelector = function ( options ) {
 		var defaults = {
-			'visible': true,
-			'answers': []
+			visible: true,
+			answers: []
 		};
 
 		options = $.extend( defaults, options );
@@ -27,23 +28,22 @@
 
 	survey.answerSelector.prototype = {
 
-		getHtml: function() {
+		getHtml: function () {
 			return this.$div;
 		},
 
-		show: function() {
+		show: function () {
 			this.$div.show();
 		},
 
-		hide: function() {
+		hide: function () {
 			this.$div.hide();
 		},
 
-		setVisible: function( visible ) {
+		setVisible: function ( visible ) {
 			if ( visible ) {
 				this.show();
-			}
-			else {
+			} else {
 				this.hide();
 			}
 		}
