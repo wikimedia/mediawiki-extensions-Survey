@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Ghybu"
 		]
 	},
 	"survey-user-type-all": "Her kes",
+	"surveys-special-stats": "Statîstîk",
 	"surveys-special-save": "Tomar bike",
 	"surveys-special-delete": "Jê bibe",
 	"survey-special-label-add-first": "Pirsekê lê zêde bike",
