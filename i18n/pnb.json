@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"survey-question-type-number": "نمبر",
+	"surveys-special-stats": "آنکڑے",
+	"surveys-special-edit": "لکھو",
+	"surveys-special-save": "بچاؤ",
+	"surveys-special-delete": "مٹاؤ",
+	"surveys-special-enabled": "قابل",
+	"surveys-special-disabled": "ناکارہ"
+}
