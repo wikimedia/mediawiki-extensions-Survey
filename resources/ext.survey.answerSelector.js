@@ -3,11 +3,11 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $, mw, survey ) {
+( function ( survey ) {
 
 	survey.answerSelector = function ( options ) {
 		var defaults = {
@@ -17,11 +17,11 @@
 
 		options = $.extend( defaults, options );
 
-		this.$div = $( '<div />' ).html( '' );
+		this.$div = $( '<div>' ).html( '' );
 
-		this.$div.append( $( '<p />' ).text( mw.msg( 'survey-special-label-answers' ) ) );
+		this.$div.append( $( '<p>' ).text( mw.msg( 'survey-special-label-answers' ) ) );
 
-		this.$div.append( $( '<textarea />' ).attr( options.attr ).val( options.answers.join( '\n' ) ) );
+		this.$div.append( $( '<textarea>' ).attr( options.attr ).val( options.answers.join( '\n' ) ) );
 
 		this.setVisible( options.visible );
 	};
@@ -50,4 +50,4 @@
 
 	};
 
-}( jQuery, mediaWiki, window.survey ) );
+}( window.survey ) );

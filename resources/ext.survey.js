@@ -3,27 +3,27 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-window.survey = new ( function ( survey, $ ) {
+window.survey = new ( function ( survey ) {
 
 	this.log = function ( message ) {
-		if ( mediaWiki.config.get( 'wgSurveyDebug' ) ) {
-			if ( typeof mediaWiki === 'undefined' ) {
+		if ( mw.config.get( 'wgSurveyDebug' ) ) {
+			if ( typeof mw === 'undefined' ) {
 				if ( typeof console !== 'undefined' ) {
 					console.log( 'Survey: ' + message );
 				}
 			} else {
-				return mediaWiki.log.call( mediaWiki.log, 'Survey: ' + message );
+				return mw.log.call( mw.log, 'Survey: ' + message );
 			}
 		}
 	};
 
 	this.msg = function () {
 		var message;
-		if ( typeof mediaWiki === 'undefined' ) {
+		if ( typeof mw === 'undefined' ) {
 			message = window.wgSurveyMessages[ arguments[ 0 ] ];
 
 			for ( var i = arguments.length - 1; i > 0; i-- ) {
@@ -32,14 +32,14 @@ window.survey = new ( function ( survey, $ ) {
 
 			return message;
 		} else {
-			return mediaWiki.msg.apply( mediaWiki.msg, arguments );
+			return mw.msg.apply( mw.msg, arguments );
 		}
 	};
 
 	this.htmlSelect = function ( options, value, attributes, onChangeCallback ) {
 		var message,
 			$select;
-		$select = $( '<select />' ).attr( attributes );
+		$select = $( '<select>' ).attr( attributes );
 
 		for ( message in options ) {
 			var attribs = { value: options[ message ] };
@@ -48,18 +48,20 @@ window.survey = new ( function ( survey, $ ) {
 				attribs.selected = 'selected';
 			}
 
-			$select.append( $( '<option />' ).text( message ).attr( attribs ) );
+			$select.append( $( '<option>' ).text( message ).attr( attribs ) );
 		}
 
 		if ( typeof onChangeCallback !== 'undefined' ) {
-			$select.on( 'change', function () { onChangeCallback( $( this ).val() ); } );
+			$select.on( 'change', function () {
+				onChangeCallback( $( this ).val() );
+			} );
 		}
 
 		return $select;
 	};
 
 	this.htmlRadio = function ( options, value, name, attributes ) {
-		var $radio = $( '<div />' ).attr( attributes ),
+		var $radio = $( '<div>' ).attr( attributes ),
 			message;
 		$radio.html( '' );
 
@@ -68,7 +70,7 @@ window.survey = new ( function ( survey, $ ) {
 				id = name + itemValue,
 				$input;
 
-			$input = $( '<input />' ).attr( {
+			$input = $( '<input>' ).attr( {
 				id: id,
 				type: 'radio',
 				name: name,
@@ -80,8 +82,8 @@ window.survey = new ( function ( survey, $ ) {
 			}
 
 			$radio.append( $input );
-			$radio.append( $( '<label />' ).attr( 'for', id ).text( message ) );
-			$radio.append( $( '<br />' ) );
+			$radio.append( $( '<label>' ).attr( 'for', id ).text( message ) );
+			$radio.append( $( '<br>' ) );
 		}
 
 		return $radio;
@@ -99,7 +101,9 @@ window.survey = new ( function ( survey, $ ) {
 		}() )();
 
 		this.typeHasAnswers = function ( t ) {
-			return $.inArray( t, [ survey.question.type.RADIO, survey.question.type.SELECT ] ) !== -1;
+			return $.inArray(
+				t, [ survey.question.type.RADIO, survey.question.type.SELECT ]
+			) !== -1;
 		};
 
 		this.getTypeSelector = function ( value, attributes, onChangeCallback ) {
@@ -114,10 +118,14 @@ window.survey = new ( function ( survey, $ ) {
 					check: survey.question.type.CHECK
 				};
 
-			// Give grep a chance to find the usages:
-			// survey-question-type-text, survey-question-type-number, survey-question-type-select,
-			// survey-question-type-radio, survey-question-type-textarea, survey-question-type-check
 			for ( msg in types ) {
+				// Messages that can be used here:
+				// * survey-question-type-text
+				// * survey-question-type-number
+				// * survey-question-type-select
+				// * survey-question-type-radio
+				// * survey-question-type-textarea
+				// * survey-question-type-check
 				options[ survey.msg( 'survey-question-type-' + msg ) ] = types[ msg ];
 			}
 
@@ -126,4 +134,4 @@ window.survey = new ( function ( survey, $ ) {
 
 	}() )();
 
-}( window.survey, jQuery ) )();
+}( window.survey ) )();

@@ -3,15 +3,15 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $, mw, survey ) {
-	$.fn.mwSurvey = function ( options ) {
+( function ( survey ) {
+	$.fn.mwSurvey = function ( setOptions ) {
 
 		var _this = this;
-		this.options = options;
+		this.options = setOptions;
 
 		this.inputs = [];
 
@@ -60,13 +60,13 @@
 
 			switch ( question.type ) {
 				case type.TEXT:
-					$input = $( '<input />' ).attr( {
+					$input = $( '<input>' ).attr( {
 						id: id,
 						class: 'question-input survey-text'
 					} );
 					break;
 				case type.NUMBER:
-					$input = $( '<input />' ).numeric().attr( {
+					$input = $( '<input>' ).numeric().attr( {
 						id: id,
 						class: 'question-input survey-number',
 						size: 7
@@ -102,7 +102,7 @@
 					);
 					break;
 				case type.TEXTAREA:
-					$input = $( '<textarea />' ).attr( {
+					$input = $( '<textarea>' ).attr( {
 						id: id,
 						class: 'question-input survey-textarea',
 						cols: 80,
@@ -110,14 +110,14 @@
 					} );
 					break;
 				case type.CHECK:
-					$input = $( '<input />' ).attr( {
+					$input = $( '<input>' ).attr( {
 						id: id,
 						type: 'checkbox',
 						class: 'question-input survey-check'
 					} );
 					break;
 				default:
-					$input = $( '<input />' ).attr( {
+					$input = $( '<input>' ).attr( {
 						id: id,
 						class: 'question-input survey-text'
 					} );
@@ -129,12 +129,12 @@
 
 			this.inputs.push( { input: $input, type: question.type } );
 
-			$q = $( '<div />' ).attr( 'class', 'survey-question' ).html( $input );
+			$q = $( '<div>' ).attr( 'class', 'survey-question' ).html( $input );
 
 			if ( question.type === type.CHECK ) {
-				$q.prepend( $( '<label />' ).text( question.text ).attr( 'for', id ) );
+				$q.prepend( $( '<label>' ).text( question.text ).attr( 'for', id ) );
 			} else {
-				$q.prepend( $( '<p />' ).text( question.text ).attr( 'class', 'question-text' ) );
+				$q.prepend( $( '<p>' ).text( question.text ).attr( 'class', 'question-text' ) );
 			}
 
 			return $q;
@@ -151,7 +151,7 @@
 		};
 
 		this.getSurveyQuestions = function ( questions ) {
-			var $questions = $( '<div />' );
+			var $questions = $( '<div>' );
 
 			for ( var i in questions ) {
 				$questions.append( this.getSurveyQuestion( questions[ i ] ) );
@@ -211,9 +211,9 @@
 			var $div;
 			$div = $( '#survey-' + surveyData.id );
 
-			$div.html( $( '<p />' ).text( surveyData.thanks ) );
+			$div.html( $( '<p>' ).text( surveyData.thanks ) );
 
-			$div.append( $( '<button />' )
+			$div.append( $( '<button>' )
 				.button( { label: mw.msg( 'survey-jquery-finish' ) } )
 				.click( this.doCompletion )
 			);
@@ -221,15 +221,15 @@
 
 		this.getSurveyBody = function ( surveyData ) {
 			var $survey;
-			$survey = $( '<div />' );
+			$survey = $( '<div>' );
 
-			$survey.append( $( '<h1 />' ).text( surveyData.title ) );
+			$survey.append( $( '<h1>' ).text( surveyData.title ) );
 
-			$survey.append( $( '<p />' ).text( surveyData.header ) );
+			$survey.append( $( '<p>' ).text( surveyData.header ) );
 
 			$survey.append( this.getSurveyQuestions( surveyData.questions ) );
 
-			var submissionButton = $( '<button />' )
+			var submissionButton = $( '<button>' )
 				.button( { label: mw.msg( 'survey-jquery-submit' ) } )
 				.click( function () {
 					var $this = $( this );
@@ -255,7 +255,7 @@
 
 			$survey.append( submissionButton );
 
-			$survey.append( $( '<p />' ).text( surveyData.footer ) );
+			$survey.append( $( '<p>' ).text( surveyData.footer ) );
 
 			return $survey;
 		};
@@ -263,11 +263,11 @@
 		this.initSurvey = function ( surveyData ) {
 			var $div,
 				$link;
-			$div = $( '<div />' ).attr( {
+			$div = $( '<div>' ).attr( {
 				style: 'display:none'
-			} ).html( $( '<div />' ).attr( { id: 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
+			} ).html( $( '<div>' ).attr( { id: 'survey-' + surveyData.id } ).html( this.getSurveyBody( surveyData ) ) );
 
-			$link = $( '<a />' ).attr( {
+			$link = $( '<a>' ).attr( {
 				href: '#survey-' + surveyData.id
 			} ).html( $div );
 
@@ -321,4 +321,4 @@
 		this.init();
 
 	};
-}( jQuery, mediaWiki, window.survey ) );
+}( window.survey ) );

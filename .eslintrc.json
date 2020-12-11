@@ -5,21 +5,15 @@
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
-	"globals": {
-		"mediaWiki": false,
-		"jQuery": false
-	},
 	"rules": {
 		"one-var": "warn",
 		"vars-on-top": "warn",
 		"camelcase": "warn",
 		"new-cap": "warn",
-		"max-statements-per-line": "warn",
 		"no-use-before-define": "warn",
 		"no-prototype-builtins": "warn",
 		"no-underscore-dangle": "warn",
 		"no-eval": "warn",
-		"no-shadow": "warn",
 		"no-console": "warn",
 		"no-alert": "warn",
 		"no-debugger": "warn",

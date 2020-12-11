@@ -3,12 +3,12 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $, mw ) {
-	$( document ).ready( function () {
+( function () {
+	$( function () {
 
 		function deleteSurvey( options, successCallback, failCallback ) {
 			$.post(
@@ -39,7 +39,9 @@
 						token: $this.attr( 'data-survey-token' )
 					},
 					function () {
-						$this.closest( 'tr' ).slideUp( 'slow', function () { $( this ).remove(); } );
+						$this.closest( 'tr' ).slideUp( 'slow', function () {
+							$( this ).remove();
+						} );
 					},
 					function ( error ) {
 						alert( error );
@@ -51,4 +53,4 @@
 
 	} );
 
-}( jQuery, mediaWiki ) );
+}() );

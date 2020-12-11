@@ -3,31 +3,31 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $, mw, survey ) {
-	$( document ).ready( function () {
+( function ( survey ) {
+	$( function () {
 
 		var $table = null,
 			newQuestionNr = 0,
 			questionNr = 0;
 
 		function addAddQuestionRow() {
-			var $tr = $( '<tr />' ).attr( {
+			var $tr = $( '<tr>' ).attr( {
 				class: 'add-question'
 			} );
 
 			$table.append( $tr );
 
-			$tr.append( $( '<td />' ).attr( { class: 'mw-label question-label' } ).html(
-				'' // $( '<label />' ).text( mw.msg( 'survey-special-label-addquestion' ) )
+			$tr.append( $( '<td>' ).attr( { class: 'mw-label question-label' } ).html(
+				'' // $( '<label>' ).text( mw.msg( 'survey-special-label-addquestion' ) )
 			) );
 
-			$tr.append( $( '<td />' ).attr( { class: 'mw-input' } ).html(
+			$tr.append( $( '<td>' ).attr( { class: 'mw-input' } ).html(
 				'' // getQuestionInput( { 'id': 'new', 'answers': [], 'type': 0 } )
-			).append( $( '<button />' ).button( { label: mw.msg( 'survey-special-label-add-first' ) } )
+			).append( $( '<button>' ).button( { label: mw.msg( 'survey-special-label-add-first' ) } )
 				.click( function () {
 					$( this ).button( { label: mw.msg( 'survey-special-label-add-another' ) } );
 					onAddQuestionRequest();
@@ -44,18 +44,18 @@
 		}
 
 		function addQuestion( question ) {
-			var $tr = $( '<tr />' ).attr( {
+			var $tr = $( '<tr>' ).attr( {
 				class: 'mw-htmlform-field-SurveyQuestionField'
 			} );
 
-			$tr.append( $( '<td />' ).attr( { class: 'mw-label question-label' } ).html(
-				$( '<label />' ).text( mw.msg( 'survey-question-label-nr', ++questionNr ) )
+			$tr.append( $( '<td>' ).attr( { class: 'mw-label question-label' } ).html(
+				$( '<label>' ).text( mw.msg( 'survey-question-label-nr', ++questionNr ) )
 			) );
 
-			$tr.append( $( '<td />' ).attr( { class: 'mw-input' } ).html(
+			$tr.append( $( '<td>' ).attr( { class: 'mw-input' } ).html(
 				getQuestionInput( question )
-					.append( '<br />' )
-					.append( $( '<button />' ).button( { label: mw.msg( 'survey-special-remove' ) } )
+					.append( '<br>' )
+					.append( $( '<button>' ).button( { label: mw.msg( 'survey-special-remove' ) } )
 						.click( function () {
 							if ( confirm( mw.msg( 'survey-special-remove-confirm' ) ) ) {
 								removeQuestion( question );
@@ -70,7 +70,7 @@
 		}
 
 		function getQuestionInput( question ) {
-			var $input = $( '<div />' ).attr( {
+			var $input = $( '<div>' ).attr( {
 					border: '1px solid black',
 					id: 'survey-question-div-' + question.id
 				} ),
@@ -85,22 +85,22 @@
 					answers: question.answers
 				} );
 
-			$input.append( $( '<label />' ).attr( {
+			$input.append( $( '<label>' ).attr( {
 				for: 'survey-question-text-' + question.id
 			} ).text( mw.msg( 'survey-special-label-text' ) ) );
 
-			$input.append( '<br />' );
+			$input.append( '<br>' );
 
-			$input.append( $( '<textarea />' ).attr( {
+			$input.append( $( '<textarea>' ).attr( {
 				rows: 2,
 				cols: 80,
 				id: 'survey-question-text-' + question.id,
 				name: 'survey-question-text-' + question.id
 			} ).val( question.text ) );
 
-			$input.append( '<br />' );
+			$input.append( '<br>' );
 
-			$input.append( $( '<label />' ).attr( {
+			$input.append( $( '<label>' ).attr( {
 				for: 'survey-question-type-' + question.id
 			} ).text( mw.msg( 'survey-special-label-type' ) ) );
 
@@ -111,12 +111,14 @@
 					name: 'survey-question-type-' + question.id
 				},
 				function ( newValue ) {
-					answerSelector.setVisible( survey.question.typeHasAnswers( parseInt( newValue ) ) );
+					answerSelector.setVisible(
+						survey.question.typeHasAnswers( parseInt( newValue ) )
+					);
 				}
 			) );
 
 			// Not implemented in actual survey yet, so don't show for now.
-			// $required = $( '<input />' ).attr( {
+			// $required = $( '<input>' ).attr( {
 			// 'id': 'survey-question-required-' + question.id,
 			// 'name': 'survey-question-required-' + question.id,
 			// 'type': 'checkbox',
@@ -128,7 +130,7 @@
 			//
 			// $input.append( $required );
 			//
-			// $input.append( $( '<label />' ).attr( {
+			// $input.append( $( '<label>' ).attr( {
 			//  'for': 'survey-question-required-' + question.id
 			// } ).text( mw.msg( 'survey-special-label-required' ) ) );
 
@@ -138,7 +140,10 @@
 		}
 
 		function removeQuestion( question ) {
-			$( '#survey-question-div-' + question.id ).closest( 'tr' ).slideUp( 'fast', function () { $( this ).remove(); } );
+			$( '#survey-question-div-' + question.id ).closest( 'tr' )
+				.slideUp( 'fast', function () {
+					$( this ).remove();
+				} );
 		}
 
 		function onAddQuestionRequest() {
@@ -184,4 +189,4 @@
 		setup();
 
 	} );
-}( jQuery, mediaWiki, window.survey ) );
+}( window.survey ) );

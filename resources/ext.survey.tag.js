@@ -3,11 +3,11 @@
  *
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-( function ( $, survey ) {
+( function ( survey ) {
 
 	function getCookieName( options ) {
 		return ( typeof options.id !== 'undefined' ) ?
@@ -83,7 +83,7 @@
 		}
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 
 		$( '.surveytag' ).each( function ( index, domElement ) {
 			initTag( $( domElement ) );
@@ -91,4 +91,4 @@
 
 	} );
 
-}( jQuery, window.survey ) );
+}( window.survey ) );
