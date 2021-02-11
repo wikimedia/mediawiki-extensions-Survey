@@ -4,5 +4,7 @@
 			"Eleassar"
 		]
 	},
-	"surveys-special-stats": "Statistika"
+	"survey-question-type-number": "Število",
+	"surveys-special-stats": "Statistika",
+	"surveys-special-save": "Shrani"
 }
