@@ -322,7 +322,7 @@ class Survey extends SurveyDBClass {
 	public static function getTypesForUser( User $user ) {
 		$userTypes = array( Survey::$USER_ALL );
 
-		$userTypes[] = $user->isLoggedIn() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
+		$userTypes[] = $user->isRegistered() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
 
 		if ( $user->isEmailConfirmed() ) {
 			$userTypes[] = Survey::$USER_CONFIRMED;
