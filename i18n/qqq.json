@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"EugeneZelenko",
+			"Jeeputer",
 			"Jeroen De Dauw",
 			"Kghbln",
 			"Liuxinyu970226",
@@ -60,7 +61,7 @@
 	"surveys-special-title": "{{Identical|Title}}",
 	"surveys-special-status": "{{Identical|Status}}",
 	"surveys-special-stats": "{{Identical|Statistics}}",
-	"surveys-special-edit": "{{Identical|Edit}}",
+	"surveys-special-edit": "ویرایش",
 	"surveys-special-save": "{{Identical|Save}}",
 	"surveys-special-delete": "{{Identical|Delete}}",
 	"surveys-special-enabled": "{{Identical|Enabled}}",
