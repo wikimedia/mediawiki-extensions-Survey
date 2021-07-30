@@ -6,7 +6,6 @@
 		"wikimedia/mediawiki"
 	],
 	"rules": {
-		"vars-on-top": "warn",
 		"camelcase": "warn",
 		"new-cap": "warn",
 		"no-use-before-define": "warn",
