@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Base",
+			"DDPAT",
 			"Piramidion"
 		]
 	},
@@ -13,13 +14,13 @@
 	"group-surveyadmin": "Адміністратори опитувань",
 	"group-surveyadmin-member": "{{GENDER:$1|адміністратор|адміністраторка}} опитувань",
 	"grouppage-surveyadmin": "{{ns:project}}:Адміністратори опитувань",
-	"group-surveysubmit": "Учасники опитувань",
-	"group-surveysubmit-member": "{{GENDER:$1|учасник|учасниця}} опитувань",
-	"grouppage-surveysubmit": "{{ns:project}}:Учасники опитувань",
+	"group-surveysubmit": "Користувачі опитувань",
+	"group-surveysubmit-member": "{{GENDER:$1|користувач|користувачка}} опитувань",
+	"grouppage-surveysubmit": "{{ns:project}}:Користувачі опитувань",
 	"special-editsurvey": "Керування опитуванням",
 	"special-surveys": "Керування опитуваннями",
 	"special-surveystats": "Статистика опитувань",
-	"special-takesurvey": "Взяти учать в опитуванні",
+	"special-takesurvey": "Взяти участь в опитуванні",
 	"survey-err-id-xor-name": "Ви повинні вказати ідентифікатор або назву опитування",
 	"survey-err-survey-name-unknown": "Не існує опитунвання з назвою «$1»",
 	"survey-err-duplicate-name": "Опитування з назвою «$1» вже існує",
