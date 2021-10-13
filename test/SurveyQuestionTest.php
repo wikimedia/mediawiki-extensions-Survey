@@ -9,7 +9,7 @@
  * @licence GNU GPL v3
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-class SurveyQuestionTest extends MediaWikiTestCase {
+class SurveyQuestionTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * Tests SurveyQuestion::newFromUrlData and SurveyQuestion::toUrlData
 	 */
