@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ioe2015",
 			"Minh Nguyen",
 			"පසිඳු කාවින්ද"
 		]
 	},
 	"survey-question-type-number": "Số",
+	"survey-question-type-select": "Bảng chọn thả xuống",
 	"survey-user-type-all": "Tất cả mọi người",
 	"surveys-special-title": "Tựa đề",
 	"surveys-special-status": "Trạng thái",
