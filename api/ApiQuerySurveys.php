@@ -23,7 +23,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	 */
 	public function execute() {
 		$user = $this->getUser();
-		if ( !$user->isAllowed( 'surveysubmit' ) || $user->isBlocked() ) {
+		if ( !$user->isAllowed( 'surveysubmit' ) || $user->getBlock() ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
