@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Shirayuki",
-			"Zhuyifei1999"
+			"Zhuyifei1999",
+			"Xiplus"
 		]
 	},
 	"survey-desc": "MediaWiki的调查工具",
@@ -112,7 +113,7 @@
 	"apihelp-addsurvey-param-footer": "调查下方显示的文本。",
 	"apihelp-addsurvey-param-thanks": "在调查提交后显示的文本。",
 	"apihelp-addsurvey-param-user_type": "可以参与调查的用户类型。",
-	"apihelp-addsurvey-param-namespaces": "可以显示调查的名字空间。",
+	"apihelp-addsurvey-param-namespaces": "可以显示调查的命名空间。",
 	"apihelp-addsurvey-param-ratio": "显示调查参与用户的百分比。",
 	"apihelp-addsurvey-param-expiry": "调查的Cookie逾期时间。",
 	"apihelp-addsurvey-param-min_pages": "用户获取调查之前需要访问的页面最小数量。",
@@ -130,7 +131,7 @@
 	"apihelp-editsurvey-param-footer": "调查下方显示的文本。",
 	"apihelp-editsurvey-param-thanks": "在调查提交后显示的文本。",
 	"apihelp-editsurvey-param-user_type": "可以参与调查的用户类型。",
-	"apihelp-editsurvey-param-namespaces": "可以显示调查的名字空间。",
+	"apihelp-editsurvey-param-namespaces": "可以显示调查的命名空间。",
 	"apihelp-editsurvey-param-ratio": "显示调查参与用户的百分比。",
 	"apihelp-editsurvey-param-expiry": "调查的Cookie逾期时间。",
 	"apihelp-editsurvey-param-min_pages": "用户获取调查之前需要访问的页面最小数量。",

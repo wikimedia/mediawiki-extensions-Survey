@@ -4,8 +4,14 @@
 			"Joao Xavier"
 		]
 	},
+	"survey-user-type-loggedin": "Enrejistrita uzeri",
 	"survey-user-type-anon": "Anonima uzeri",
 	"surveys-special-edit": "Redaktar",
 	"surveys-special-delete": "Efacar",
-	"surveys-surveystats-question-answercount": "Quanto di respondi"
+	"surveys-special-disabled": "Nekapabligita",
+	"surveys-surveystats-disabled": "Sen efekto",
+	"surveys-surveystats-question-answercount": "Quanto di respondi",
+	"surveys-surveystats-unchecked": "Ne verifikita",
+	"surveys-surveystats-checked": "Verifikita",
+	"survey-jquery-submit": "Sendez"
 }
