@@ -11,7 +11,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Umherirrender",
-			"아라"
+			"아라",
+			"Jeeputer"
 		]
 	},
 	"survey-desc": "{{desc|name=Survey|url=https://www.mediawiki.org/wiki/Extension:Survey}}",
@@ -82,7 +83,7 @@
 	"surveys-surveystats-enabled": "{{Identical|Enabled}}",
 	"surveys-surveystats-disabled": "{{Identical|Disabled}}",
 	"surveys-surveystats-questions": "Used as table header on [[Special:SurveyStats]]",
-	"surveys-surveystats-question-nr": "{{notranslate}}",
+	"surveys-surveystats-question-nr": "{{notranslate}}\nUsed as header in a table for the column of question numbers",
 	"surveys-surveystats-question-#": "{{optional}}\nParameters:\n* $1 - question number",
 	"surveys-surveystats-question-type": "Used as table header on [[Special:SurveyStats]]",
 	"surveys-surveystats-question-text": "Used as table header on [[Special:SurveyStats]]",

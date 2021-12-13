@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"survey-question-type-number": "Nùmmiru",
+	"survey-user-type-anon": "Utenti anònimi",
+	"surveys-special-title": "Tìtulu",
+	"surveys-special-status": "Statu",
+	"surveys-special-stats": "Statìstichi",
+	"surveys-special-edit": "Cancia",
+	"surveys-special-save": "Sarva",
+	"surveys-special-delete": "Cancella",
+	"surveys-special-enabled": "Attivatu",
+	"surveys-special-disabled": "Disattivatu",
+	"surveys-surveystats-enabled": "Attivatu",
+	"surveys-surveystats-disabled": "Disattivatu"
+}

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Kizule"
 		]
 	},
 	"survey-desc": "Алатка за анкете на Медијавикију",
@@ -69,7 +70,7 @@
 	"surveys-surveystats-enabled": "Омогућено",
 	"surveys-surveystats-disabled": "Онемогућено",
 	"surveys-surveystats-questions": "Статистика питања",
-	"surveys-surveystats-question-type": "Тип питања",
+	"surveys-surveystats-question-type": "Врста питања",
 	"surveys-surveystats-question-text": "Текст питања",
 	"surveys-surveystats-question-answercount": "Број одговора",
 	"surveys-surveystats-question-answers": "Најпружанији одговори",
@@ -86,7 +87,7 @@
 	"survey-special-label-addquestion": "Ново питање",
 	"survey-question-label-nr": "Питање #$1",
 	"survey-special-label-required": "Питање је тражено",
-	"survey-special-label-type": "Тип питања",
+	"survey-special-label-type": "Врста питања",
 	"survey-special-label-text": "Текст питања",
 	"survey-special-remove": "Уклони питање",
 	"survey-special-remove-confirm": "Да ли сте сигурни да желите да уклоните ово питање?",
@@ -106,7 +107,7 @@
 	"apihelp-addsurvey-param-header": "Текст за приказивање изнад истраживања",
 	"apihelp-addsurvey-param-footer": "Текст за приказивање испод истраживања",
 	"apihelp-addsurvey-param-thanks": "Текст за приказивање након подношење истраживања.",
-	"apihelp-addsurvey-param-user_type": "Тип корисника који могу учествовати у истраживању.",
+	"apihelp-addsurvey-param-user_type": "Какви корисници могу да учествују у анкети",
 	"apihelp-addsurvey-param-namespaces": "Именски простори на којима истраживање може бити приказано.",
 	"apihelp-addsurvey-param-ratio": "Проценат корисника којима је потребно приказати истраживање.",
 	"apihelp-addsurvey-param-expiry": "Време истицања колачића за истраживање.",
@@ -123,7 +124,7 @@
 	"apihelp-editsurvey-param-title": "Назив истраживања.",
 	"apihelp-editsurvey-param-header": "Текст за приказивање изнад истраживања",
 	"apihelp-editsurvey-param-thanks": "Текст за приказивање након подношење истраживања.",
-	"apihelp-editsurvey-param-user_type": "Тип корисника који могу учествовати у истраживању.",
+	"apihelp-editsurvey-param-user_type": "Какви корисници могу да учествују у анкети",
 	"apihelp-editsurvey-param-namespaces": "Именски простори на којима анкета може бити приказана.",
 	"apihelp-editsurvey-param-ratio": "Проценат корисника којима је потребно приказати анкету.",
 	"apihelp-editsurvey-param-expiry": "Време истицања колачића за анкету.",
