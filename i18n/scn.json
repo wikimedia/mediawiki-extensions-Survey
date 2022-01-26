@@ -15,5 +15,6 @@
 	"surveys-special-enabled": "Attivatu",
 	"surveys-special-disabled": "Disattivatu",
 	"surveys-surveystats-enabled": "Attivatu",
-	"surveys-surveystats-disabled": "Disattivatu"
+	"surveys-surveystats-disabled": "Disattivatu",
+	"survey-jquery-submit": "Manna"
 }
