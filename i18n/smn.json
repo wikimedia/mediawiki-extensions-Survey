@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
+	"survey-question-type-number": "Nummeer",
 	"surveys-special-stats": "Lovottuvah",
 	"surveys-special-save": "Vuorkkii"
 }
