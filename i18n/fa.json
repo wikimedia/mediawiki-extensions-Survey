@@ -7,7 +7,8 @@
 			"FarsiNevis",
 			"Mjbmr",
 			"Reza1615",
-			"پاناروما"
+			"پاناروما",
+			"Beginneruser"
 		]
 	},
 	"survey-desc": "ابزار برآورد برای مدیاویکی",
@@ -51,7 +52,7 @@
 	"surveys-special-existing": "براوردهای موجود",
 	"surveys-special-title": "عنوان",
 	"surveys-special-status": "وضعیت",
-	"surveys-special-stats": "آمار",
+	"surveys-special-stats": "آمارها",
 	"surveys-special-edit": "ویرایش",
 	"surveys-special-save": "ذخیره کردن",
 	"surveys-special-delete": "حذف‌کردن",
