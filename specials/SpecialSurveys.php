@@ -80,9 +80,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
 			->setHeaderText( $this->msg( 'surveys-special-namedoc' )->text() )
-			->setMethod( 'post' )
 			->setAction( $this->getPageTitle()->getLocalURL() )
 			->setSubmitName( 'addnewsurvey' )
 			->setSubmitTextMsg( 'surveys-special-add' )
