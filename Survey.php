@@ -23,8 +23,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-if ( version_compare( $wgVersion, '1.34c', '<' ) ) {
-	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.34 or above.' );
+if ( !defined( 'MW_VERSION' ) || version_compare( MW_VERSION, '1.34.1', '<' ) ) {
+	die( '<b>Error:</b> This version of Survey requires MediaWiki 1.34.1 or above.' );
 }
 
 define( 'Survey_VERSION', '0.4.0 alpha' );
