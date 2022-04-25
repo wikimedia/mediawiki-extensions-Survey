@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"Ex-Diktator"
 		]
 	},
 	"right-surveyadmin": "ניהול סקרים",
 	"right-surveysubmit": "השתתפות בסקרים",
 	"action-surveyadmin": "לנהל סקרים",
-	"action-surveysubmit": "להשתתף בסקרים"
+	"action-surveysubmit": "להשתתף בסקרים",
+	"surveys-special-delete": "מחיקה",
+	"survey-jquery-submit": "שליחה"
 }
