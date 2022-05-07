@@ -148,7 +148,7 @@ abstract class SurveyDBClass {
 	}
 
 	/**
-	 * Selects the the specified fields of the records matching the provided
+	 * Selects the specified fields of the records matching the provided
 	 * conditions. Field names get prefixed.
 	 *
 	 * @since 0.1
@@ -180,7 +180,7 @@ abstract class SurveyDBClass {
 	}
 
 	/**
-	 * Selects the the specified fields of the first matching record.
+	 * Selects the specified fields of the first matching record.
 	 * Field names get prefixed.
 	 *
 	 * @since 0.1
@@ -235,7 +235,7 @@ abstract class SurveyDBClass {
 	}
 
 	/**
-	 * Selects the the specified fields of the records matching the provided
+	 * Selects the specified fields of the records matching the provided
 	 * conditions. Field names do NOT get prefixed.
 	 *
 	 * @since 0.1
