@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator",
 			"Guycn2"
 		]
@@ -9,6 +10,9 @@
 	"right-surveysubmit": "השתתפות בסקרים",
 	"action-surveyadmin": "לנהל סקרים",
 	"action-surveysubmit": "להשתתף בסקרים",
+	"survey-user-type-editor": "עורכים",
+	"survey-navigation-edit": "[[Special:Survey/$1|עריכת הסקר הזה]]",
+	"surveys-special-edit": "עריכה",
 	"surveys-special-delete": "מחיקה",
 	"survey-jquery-submit": "שליחה"
 }
