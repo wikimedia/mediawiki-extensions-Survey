@@ -123,7 +123,7 @@
 	"apihelp-deletesurvey-param-ids": "Les ID des sondages à supprimer.",
 	"apihelp-deletesurvey-param-token": "Jeton de modification. Vous pouvez en obtenir un via prop=info.",
 	"apihelp-editsurvey-summary": "Module d’API pour modifier un sondage.",
-	"apihelp-editsurvey-param-id": "L’ID du sondage à modifier.",
+	"apihelp-editsurvey-param-id": "L’identifiant du sondage à modifier.",
 	"apihelp-editsurvey-param-name": "Le nom de l’enquête.",
 	"apihelp-editsurvey-param-enabled": "Démarrer l’enquête ou pas.",
 	"apihelp-editsurvey-param-questions": "Les questions qui constituent le contenu de l’enquête.",
