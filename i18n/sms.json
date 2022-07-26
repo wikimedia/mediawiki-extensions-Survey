@@ -4,12 +4,20 @@
 			"Yupik"
 		]
 	},
+	"survey-navigation-stats": "[[Special:SurveyStats/$1|Čuäʹjet ǩiõllstatistiikkid]]",
 	"surveys-special-add": "Lââʹzzet kõõjjõõzz",
 	"surveys-special-stats": "Statistiikk",
 	"surveys-special-edit": "Muuʹtt",
 	"surveys-special-save": "Ruõkk",
 	"surveys-special-delete": "Jaukkâd",
 	"surveys-surveystats-title": "Kõõjjõõzz nõmm",
+	"surveys-surveystats-questions": "Kõõččmõš-statistiikk",
+	"surveys-surveystats-question-text": "Kõõččmõõžž teʹkstt",
 	"survey-special-label-title": "Kõõjjõõzz nõmm",
-	"survey-special-label-add-first": "Lââʹzzet kõõččmõõžž"
+	"survey-special-label-add-first": "Lââʹzzet kõõččmõõžž",
+	"survey-special-label-addquestion": "Ođđ kõõččmõš",
+	"survey-question-label-nr": "$1. kõõččmõš",
+	"survey-special-label-text": "Kõõččmõõžž teʹkstt",
+	"survey-special-remove": "Jaukkâd kõõččmõõžž",
+	"survey-jquery-submit": "Vuõlttâd"
 }
