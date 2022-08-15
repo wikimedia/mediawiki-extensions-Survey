@@ -4,8 +4,12 @@
 			"Yupik"
 		]
 	},
+	"special-surveystats": "Kõõjjõs-statistiikk",
 	"survey-user-type-anon": "Nõõmteʹmes õõʹnni",
+	"survey-navigation-edit": "[[Special:Survey/$1|Muuʹtt tän kõõjjõõzz]]",
+	"survey-navigation-take": "[[Special:Survey/$1|Vuässõõđ tän kõõjjõʹsse]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|Čuäʹjet ǩiõllstatistiikkid]]",
+	"surveys-special-addnew": "Lââʹzzet ođđ kõõjjõõzz",
 	"surveys-special-add": "Lââʹzzet kõõjjõõzz",
 	"surveys-special-stats": "Statistiikk",
 	"surveys-special-edit": "Muuʹtt",
@@ -21,5 +25,9 @@
 	"survey-special-label-required": "Kõõččmõš lij pääkklaž",
 	"survey-special-label-text": "Kõõččmõõžž teʹkstt",
 	"survey-special-remove": "Jaukkâd kõõččmõõžž",
-	"survey-jquery-submit": "Vuõlttâd"
+	"survey-jquery-submit": "Vuõlttâd",
+	"apihelp-addsurvey-param-name": "Kõõjjõõzz nõmm.",
+	"apihelp-addsurvey-param-questions": "Kõõjjõõzz kõõččmõõžž",
+	"apihelp-editsurvey-param-name": "Kõõjjõõzz nõmm.",
+	"apihelp-editsurvey-param-questions": "Kõõjjõõzz kõõččmõõžž"
 }
