@@ -11,5 +11,9 @@
 	"surveys-special-edit": "Uredi",
 	"surveys-special-save": "Shrani",
 	"surveys-special-delete": "Izbriši",
+	"surveys-special-enabled": "Omogočeno",
+	"surveys-special-disabled": "Onemogočeno",
+	"surveys-surveystats-enabled": "Omogočeno",
+	"surveys-surveystats-disabled": "Onemogočeno",
 	"survey-jquery-submit": "Pošlji"
 }
