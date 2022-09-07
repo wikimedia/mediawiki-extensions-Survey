@@ -60,7 +60,7 @@
 	"surveys-special-delete": "Supprimer",
 	"surveys-special-enabled": "Activé",
 	"surveys-special-disabled": "Désactivé",
-	"surveys-special-confirm-delete": "Êtes-vous sûrs de vouloir supprimer ce sondage?",
+	"surveys-special-confirm-delete": "Êtes-vous sûr(e) de vouloir supprimer ce sondage ?",
 	"surveys-special-delete-failed": "Échec de la suppression du sondage.",
 	"survey-special-label-usertype": "Utilisateurs qui devraient obtenir le sondage",
 	"survey-special-label-minpages": "Nombre minimal de pages que l'utilisateur doit avoir vues avant d'obtenir le sondage",
