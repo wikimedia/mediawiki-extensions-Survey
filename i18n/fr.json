@@ -102,7 +102,7 @@
 	"survey-special-label-footer": "Texte à afficher en-dessous du sondage",
 	"survey-special-label-thanks": "Message de remerciement à afficher après l'envoi du sondage",
 	"survey-special-label-answers": "Réponses possibles, une par ligne.",
-	"survey-jquery-submit": "Envoyer",
+	"survey-jquery-submit": "Soumettre",
 	"survey-jquery-finish": "Terminer",
 	"survey-jquery-load-failed": "Impossible de charger le sondage.",
 	"apihelp-addsurvey-summary": "Module d’API pour ajouter des enquêtes.",
