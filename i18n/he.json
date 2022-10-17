@@ -13,6 +13,7 @@
 	"survey-user-type-editor": "עורכים",
 	"survey-navigation-edit": "[[Special:Survey/$1|עריכת הסקר הזה]]",
 	"surveys-special-edit": "עריכה",
+	"surveys-special-save": "שמירה",
 	"surveys-special-delete": "מחיקה",
 	"survey-jquery-submit": "שליחה"
 }
