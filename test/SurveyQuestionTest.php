@@ -8,6 +8,7 @@
  *
  * @licence GNU GPL v3
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @covers SurveyQuestion
  */
 class SurveyQuestionTest extends MediaWikiIntegrationTestCase {
 	/**
