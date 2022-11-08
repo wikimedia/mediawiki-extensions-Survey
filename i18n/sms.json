@@ -5,6 +5,7 @@
 		]
 	},
 	"special-surveystats": "Kõõjjõs-statistiikk",
+	"survey-user-type-all": "Puk",
 	"survey-user-type-confirmed": "Primmum õõʹnni",
 	"survey-user-type-anon": "Nõõmteʹmes õõʹnni",
 	"survey-navigation-edit": "[[Special:Survey/$1|Muuʹtt tän kõõjjõõzz]]",
