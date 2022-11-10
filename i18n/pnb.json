@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
 	"survey-question-type-number": "نمبر",
+	"surveys-special-status": "حالت",
 	"surveys-special-stats": "آنکڑے",
 	"surveys-special-edit": "لکھو",
 	"surveys-special-save": "بچاؤ",

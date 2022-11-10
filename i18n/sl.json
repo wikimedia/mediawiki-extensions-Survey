@@ -16,5 +16,6 @@
 	"surveys-special-disabled": "Onemogočeno",
 	"surveys-surveystats-enabled": "Omogočeno",
 	"surveys-surveystats-disabled": "Onemogočeno",
-	"survey-jquery-submit": "Pošlji"
+	"survey-jquery-submit": "Pošlji",
+	"survey-jquery-finish": "Končaj"
 }
