@@ -27,7 +27,7 @@
 	"special-editsurvey": "Administrateur de sondage",
 	"special-surveys": "Administrateur des sondages",
 	"special-surveystats": "Statistiques des sondages",
-	"special-takesurvey": "Prendre le sondage",
+	"special-takesurvey": "Participer au sondage",
 	"survey-err-id-xor-name": "Vous devez fournir soit l'ID soit le nom du sondage à soumettre",
 	"survey-err-survey-name-unknown": "Il n'y a pas de sondage avec le nom \"$1\"",
 	"survey-err-duplicate-name": "Il y a déjà un sondage avec le nom \"$1\"",
