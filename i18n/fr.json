@@ -81,7 +81,7 @@
 	"surveys-surveystats-question-text": "Texte de la question",
 	"surveys-surveystats-question-answercount": "Nombre de réponses",
 	"surveys-surveystats-question-answers": "Réponses les plus fréquentes",
-	"surveys-surveystats-question-answer": "$1 ($2 {{PLURAL:$2|réponse|réponses}})",
+	"surveys-surveystats-question-answer": "$1 ($2 réponse{{PLURAL:$2||s}})",
 	"surveys-surveystats-unchecked": "Non coché",
 	"surveys-surveystats-checked": "Coché",
 	"surveys-special-unknown-name": "Il n'y a pas de sondage avec l'ID demandé.",
