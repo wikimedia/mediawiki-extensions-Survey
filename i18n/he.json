@@ -12,8 +12,11 @@
 	"action-surveysubmit": "להשתתף בסקרים",
 	"survey-user-type-editor": "עורכים",
 	"survey-navigation-edit": "[[Special:Survey/$1|עריכת הסקר הזה]]",
+	"surveys-special-title": "כותרת",
 	"surveys-special-edit": "עריכה",
 	"surveys-special-save": "שמירה",
 	"surveys-special-delete": "מחיקה",
+	"surveys-surveystats-title": "כותרת הסקר",
+	"survey-special-label-title": "כותרת הסקר",
 	"survey-jquery-submit": "שליחה"
 }
