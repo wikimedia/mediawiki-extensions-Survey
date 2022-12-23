@@ -14,6 +14,7 @@
 	"surveys-special-delete": "Izbriši",
 	"surveys-special-enabled": "Omogočeno",
 	"surveys-special-disabled": "Onemogočeno",
+	"surveys-special-delete-failed": "Ankete ni bilo mogoče izbrisati.",
 	"surveys-surveystats-enabled": "Omogočeno",
 	"surveys-surveystats-disabled": "Onemogočeno",
 	"survey-jquery-submit": "Pošlji",
