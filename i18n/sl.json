@@ -5,6 +5,7 @@
 		]
 	},
 	"survey-question-type-number": "Število",
+	"survey-question-type-check": "Potrditveno polje",
 	"survey-user-type-loggedin": "Prijavljeni uporabniki",
 	"survey-user-type-editor": "Urejevalci",
 	"surveys-special-title": "Naslov",
@@ -19,5 +20,7 @@
 	"surveys-surveystats-enabled": "Omogočeno",
 	"surveys-surveystats-disabled": "Onemogočeno",
 	"survey-jquery-submit": "Pošlji",
-	"survey-jquery-finish": "Končaj"
+	"survey-jquery-finish": "Končaj",
+	"apihelp-query+surveys-param-props": "Anketni podatki za poizvedbo.",
+	"apihelp-query+surveysubmissions-param-props": "Anketni podatki za poizvedbo."
 }
