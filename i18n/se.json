@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
+	"survey-user-type-anon": "Anonyma geavaheaddjit",
 	"surveys-special-save": "Vurke",
 	"surveys-special-delete": "Sihko",
 	"survey-special-remove": "Sihko gažaldaga"
