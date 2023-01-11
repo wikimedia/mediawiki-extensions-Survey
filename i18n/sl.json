@@ -22,6 +22,8 @@
 	"surveys-special-disabled": "Onemogočeno",
 	"surveys-special-delete-failed": "Ankete ni bilo mogoče izbrisati.",
 	"survey-special-label-usertype": "Uporabniki, ki naj prejmejo anketo",
+	"surveys-takesurvey-loading": "Nalaganje ankete ...",
+	"surveys-takesurvey-nosuchsurvey": "Zahtevana anketa ne obstaja.",
 	"surveys-surveystats-title": "Naslov ankete",
 	"surveys-surveystats-enabled": "Omogočeno",
 	"surveys-surveystats-disabled": "Onemogočeno",
