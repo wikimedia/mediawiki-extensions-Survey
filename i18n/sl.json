@@ -4,8 +4,11 @@
 			"Eleassar"
 		]
 	},
+	"survey-question-type-text": "Enovrstično besedilno polje",
 	"survey-question-type-number": "Število",
+	"survey-question-type-textarea": "Večvrstično besedilno polje",
 	"survey-question-type-check": "Potrditveno polje",
+	"survey-user-type-all": "Vsi",
 	"survey-user-type-loggedin": "Prijavljeni uporabniki",
 	"survey-user-type-editor": "Urejevalci",
 	"surveys-special-addnew": "Dodaj novo anketo",
@@ -18,12 +21,19 @@
 	"surveys-special-enabled": "Omogočeno",
 	"surveys-special-disabled": "Onemogočeno",
 	"surveys-special-delete-failed": "Ankete ni bilo mogoče izbrisati.",
+	"survey-special-label-usertype": "Uporabniki, ki naj prejmejo anketo",
+	"surveys-takesurvey-loading": "Nalaganje ankete ...",
+	"surveys-takesurvey-nosuchsurvey": "Zahtevana anketa ne obstaja.",
 	"surveys-surveystats-title": "Naslov ankete",
 	"surveys-surveystats-enabled": "Omogočeno",
 	"surveys-surveystats-disabled": "Onemogočeno",
+	"surveys-surveystats-question-text": "Besedilo vprašanja",
 	"survey-special-label-title": "Naslov ankete",
+	"survey-question-label-nr": "Vprašanje št. $1",
+	"survey-special-label-text": "Besedilo vprašanja",
 	"survey-jquery-submit": "Pošlji",
 	"survey-jquery-finish": "Končaj",
 	"apihelp-query+surveys-param-props": "Anketni podatki za poizvedbo.",
+	"apihelp-query+surveyanswers-param-text": "Besedilo odgovora.",
 	"apihelp-query+surveysubmissions-param-props": "Anketni podatki za poizvedbo."
 }
