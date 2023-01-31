@@ -38,7 +38,7 @@
 	"survey-user-type-confirmed": "Onaylı kullanıcılar",
 	"survey-user-type-editor": "Editörler",
 	"survey-user-type-anon": "Anonim kullanıcılar",
-	"survey-navigation-edit": "[[Special:Survey/$1|Bu anketi düzenle]]",
+	"survey-navigation-edit": "[[Special:Survey/$1|Bu anketi değiştir]]",
 	"survey-navigation-take": "[[Special:TakeSurvey/$1|Bu ankete doldurun]]",
 	"survey-navigation-list": "[[Special:Surveys|Anket listesi]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|İstatistikleri görüntüle]]",
