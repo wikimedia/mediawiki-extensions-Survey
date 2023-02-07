@@ -6,6 +6,7 @@
 	},
 	"survey-question-type-text": "Enovrstično besedilno polje",
 	"survey-question-type-number": "Število",
+	"survey-question-type-select": "Spustni meni",
 	"survey-question-type-textarea": "Večvrstično besedilno polje",
 	"survey-question-type-check": "Potrditveno polje",
 	"survey-user-type-all": "Vsi",
