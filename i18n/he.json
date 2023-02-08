@@ -18,5 +18,7 @@
 	"surveys-special-delete": "מחיקה",
 	"surveys-surveystats-title": "כותרת הסקר",
 	"survey-special-label-title": "כותרת הסקר",
-	"survey-jquery-submit": "שליחה"
+	"survey-jquery-submit": "שליחה",
+	"apihelp-addsurvey-param-expiry": "זמן תפוגת עוגיות עבור הסקר.",
+	"apihelp-editsurvey-param-expiry": "זמן תפוגת עוגיות עבור הסקר."
 }
