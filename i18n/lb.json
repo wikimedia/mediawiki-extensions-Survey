@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Soued031",
-			"Les Meloures"
+			"Les Meloures",
+			"Volvox"
 		]
 	},
 	"survey-desc": "Tool fir Ëmfroe fir MediaWiki",
@@ -40,7 +41,7 @@
 	"surveys-special-addnew": "Eng nei Ëmfro derbäisetzen",
 	"surveys-special-newname": "Nei ID fir d'Ëmfro:",
 	"surveys-special-add": "Ëmfro derbäisetzen",
-	"surveys-special-existing": "Ëmfroen déi et gëtt",
+	"surveys-special-existing": "Ëmfroen, déi et gëtt",
 	"surveys-special-title": "Titel",
 	"surveys-special-status": "Status",
 	"surveys-special-stats": "Statistiken",
