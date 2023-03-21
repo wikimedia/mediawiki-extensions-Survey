@@ -16,6 +16,8 @@
 	"group-surveysubmit": "Participantes de questionario",
 	"group-surveysubmit-member": "{{GENDER:$1|participante}} de questionario",
 	"grouppage-surveysubmit": "{{ns:project}}:Participantes de questionario",
+	"group-surveyadmin.css": "/* Le codice CSS placiate hic affectara solmente administratores de sondages */",
+	"group-surveysubmit.css": "/* Le codice CSS placiate hic affectara solmente participantes de sondages */",
 	"special-editsurvey": "Administra questionario",
 	"special-surveys": "Administration de questionarios",
 	"special-surveystats": "Statisticas de questionario",
