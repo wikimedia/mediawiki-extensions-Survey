@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"survey-question-type-number": "Broj",
+	"survey-user-type-all": "Svatko",
+	"survey-user-type-loggedin": "Prijavljeni korisnici",
+	"survey-user-type-confirmed": "Potvrđeni korisnici",
+	"survey-user-type-editor": "Uređivači",
+	"survey-user-type-anon": "Anonimni korisnici",
+	"surveys-special-title": "Naslov",
+	"surveys-special-status": "Status",
+	"surveys-special-stats": "Statistike",
+	"surveys-special-edit": "Uredi",
+	"surveys-special-save": "Snimi",
+	"surveys-special-delete": "Izbriši",
+	"surveys-special-enabled": "Omogućeno",
+	"surveys-special-disabled": "Onemogućeno",
+	"surveys-surveystats-enabled": "Omogućeno",
+	"surveys-surveystats-disabled": "Onemogućeno",
+	"survey-jquery-submit": "Unesi"
+}
