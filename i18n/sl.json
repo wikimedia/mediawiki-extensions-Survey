@@ -40,7 +40,10 @@
 	"survey-special-remove-confirm": "Ali res želite odstraniti to vprašanje?",
 	"survey-jquery-submit": "Pošlji",
 	"survey-jquery-finish": "Končaj",
+	"apihelp-query+surveys-summary": "API-modul za pridobivanje anket in izbirno njihovih vprašanj.",
 	"apihelp-query+surveys-param-props": "Anketni podatki za poizvedbo.",
+	"apihelp-query+surveyanswers-summary": "API-modul za pridobivanje anketnih odgovorov.",
 	"apihelp-query+surveyanswers-param-text": "Besedilo odgovora.",
+	"apihelp-query+surveysubmissions-summary": "API-modul za pridobivanje predložitev ankete.",
 	"apihelp-query+surveysubmissions-param-props": "Anketni podatki za poizvedbo."
 }
