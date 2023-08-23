@@ -33,5 +33,8 @@
 	"surveys-special-delete-failed": "Nepavyko ištrinti apklausą.",
 	"surveys-takesurvey-loading": "Kraunama apklausa...",
 	"surveys-surveystats-name": "Apklausos ID",
-	"surveys-surveystats-title": "Apklausos pavadinimas"
+	"surveys-surveystats-title": "Apklausos pavadinimas",
+	"apihelp-query+surveys-summary": "API modulis apklausoms ir, pasirinktinai, jų klausimams gauti.",
+	"apihelp-query+surveyanswers-summary": "API modulis apklausos atsakymams gauti.",
+	"apihelp-query+surveysubmissions-summary": "API modulis apklausų pateikimui gauti."
 }
