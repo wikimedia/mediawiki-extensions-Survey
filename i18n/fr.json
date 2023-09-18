@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Envlh",
 			"Gomoko",
+			"Obscaeris",
 			"Thibaut120094",
 			"Tpt",
 			"Verdy p",
@@ -109,7 +111,7 @@
 	"apihelp-addsurvey-param-name": "Le nom de l’enquête.",
 	"apihelp-addsurvey-param-enabled": "Démarrer l’enquête ou non.",
 	"apihelp-addsurvey-param-questions": "Les questions qui constituent le contenu de l’enquête.",
-	"apihelp-addsurvey-param-token": "Jeton d’édition. Vous pouvez en obtenir un au travers de  prop=info.",
+	"apihelp-addsurvey-param-token": "Jeton d’édition. Vous pouvez en obtenir un au travers de prop=info.",
 	"apihelp-addsurvey-param-title": "Titre de l’enquête.",
 	"apihelp-addsurvey-param-header": "Texte à afficher au-dessus du sondage.",
 	"apihelp-addsurvey-param-footer": "Texte à afficher en-dessous du sondage.",
@@ -127,7 +129,7 @@
 	"apihelp-editsurvey-param-name": "Le nom de l’enquête.",
 	"apihelp-editsurvey-param-enabled": "Démarrer l’enquête ou pas.",
 	"apihelp-editsurvey-param-questions": "Les questions qui constituent le contenu de l’enquête.",
-	"apihelp-editsurvey-param-token": "Jeton d’édition. Vous pouvez en obtenir l’un d’eux au travers de  prop=info.",
+	"apihelp-editsurvey-param-token": "Jeton d’édition. Vous pouvez en obtenir un via prop=info.",
 	"apihelp-editsurvey-param-title": "Titre de l’enquête.",
 	"apihelp-editsurvey-param-header": "Texte à afficher au-dessus du sondage.",
 	"apihelp-editsurvey-param-footer": "Texte à afficher en-dessous du sondage.",
