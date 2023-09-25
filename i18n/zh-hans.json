@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"LittlePaw365",
 			"Liuxinyu970226",
 			"Shirayuki",
 			"Xiplus",
@@ -31,7 +32,7 @@
 	"survey-err-duplicate-name": "已存在同名的一项调查，\"$1\"",
 	"survey-err-ids-xor-names": "您需要提供ID或调查的名称用于查询",
 	"survey-question-type-text": "单行文本字段",
-	"survey-question-type-number": "数值",
+	"survey-question-type-number": "数字",
 	"survey-question-type-select": "下拉菜单",
 	"survey-question-type-radio": "单选按钮",
 	"survey-question-type-textarea": "多行文本字段",
