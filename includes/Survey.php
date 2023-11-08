@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple Survey object class.
  *
@@ -8,18 +7,20 @@
  * @file Survey.class.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class Survey extends SurveyDBClass {
-	public static $USER_ALL = 0;
-	public static $USER_LOGGEDIN = 1;
-	public static $USER_CONFIRMED = 2;
-	public static $USER_EDITOR = 3;
-	public static $USER_ANON = 4;
+	public static int $USER_ALL = 0;
+	public static int $USER_LOGGEDIN = 1;
+	public static int $USER_CONFIRMED = 2;
+	public static int $USER_EDITOR = 3;
+	public static int $USER_ANON = 4;
 
 	/**
 	 * @see SurveyDBClass::getDBTable()
+	 *
+	 * @return string
 	 */
 	public static function getDBTable() {
 		return 'surveys';
@@ -34,7 +35,7 @@ class Survey extends SurveyDBClass {
 	 * @return array
 	 */
 	protected static function getFieldTypes() {
-		return array(
+		return [
 			'id' => 'id',
 			'name' => 'str',
 			'title' => 'str',
@@ -47,7 +48,7 @@ class Survey extends SurveyDBClass {
 			'ratio' => 'int',
 			'expiry' => 'int',
 			'min_pages' => 'int'
-		);
+		];
 	}
 
 	/**
@@ -59,7 +60,7 @@ class Survey extends SurveyDBClass {
 	 * @return array
 	 */
 	public static function getDefaults() {
-		return array(
+		return [
 			'name' => '',
 			'title' => '',
 			'enabled' => SurveySettings::get( 'defaultEnabled' ) ? 1 : 0,
@@ -71,7 +72,7 @@ class Survey extends SurveyDBClass {
 			'ratio' => SurveySettings::get( 'defaultRatio' ),
 			'expiry' => SurveySettings::get( 'defaultExpiry' ),
 			'min_pages' => SurveySettings::get( 'defaultMinPages' ),
-		);
+		];
 	}
 
 	/**
@@ -92,12 +93,12 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @param string $surveyName
 	 * @param array|null $fields
-	 * @param boolean $loadQuestions
+	 * @param bool $loadQuestions
 	 *
 	 * @return Survey or false
 	 */
 	public static function newFromName( $surveyName, $fields = null, $loadQuestions = true ) {
-		return self::newFromDB( array( 'name' => $surveyName ), $fields, $loadQuestions );
+		return self::newFromDB( [ 'name' => $surveyName ], $fields, $loadQuestions );
 	}
 
 	/**
@@ -107,12 +108,12 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @param int $surveyId
 	 * @param array|null $fields
-	 * @param boolean $loadQuestions
+	 * @param bool $loadQuestions
 	 *
 	 * @return Survey or false
 	 */
 	public static function newFromId( $surveyId, $fields = null, $loadQuestions = true ) {
-		return self::newFromDB( array( 'id' => $surveyId ), $fields, $loadQuestions );
+		return self::newFromDB( [ 'id' => $surveyId ], $fields, $loadQuestions );
 	}
 
 	/**
@@ -124,7 +125,7 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @param array $conditions
 	 * @param array|null $fields
-	 * @param boolean $loadQuestions
+	 * @param bool $loadQuestions
 	 *
 	 * @return Survey or false
 	 */
@@ -152,10 +153,10 @@ class Survey extends SurveyDBClass {
 	 * @since 0.1
 	 *
 	 * @param array|null $fields
-	 * @param boolean $loadDefaults
+	 * @param bool $loadDefaults
 	 * @param array $questions
 	 */
-	public function __construct( $fields, $loadDefaults = false, array $questions = array() ) {
+	public function __construct( $fields, $loadDefaults = false, array $questions = [] ) {
 		parent::__construct( $fields, $loadDefaults );
 		$this->setQuestions( $questions );
 	}
@@ -175,7 +176,7 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function writeToDB() {
 		$success = parent::writeToDB();
@@ -192,18 +193,18 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function writeQuestionsToDB() {
 		$success = true;
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 
 		SurveyQuestion::update(
-			array( 'removed' => 1 ),
-			array( 'survey_id' => $this->getId() )
+			[ 'removed' => 1 ],
+			[ 'survey_id' => $this->getId() ]
 		);
 
 		/**
@@ -254,7 +255,7 @@ class Survey extends SurveyDBClass {
 	public function toArray( $fields = null ) {
 		$data = parent::toArray( $fields );
 
-		$data['questions'] = array();
+		$data['questions'] = [];
 
 		/**
 		 * @var $question SurveyQuestion
@@ -271,18 +272,18 @@ class Survey extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function removeFromDB() {
-		$dbr= wfgetDB( DB_REPLICA );
+		$dbr = wfgetDB( DB_REPLICA );
 
 		$submissionsForSurvey = $dbr->select(
 			'survey_submissions',
-			array( 'submission_id' ),
-			array( 'submission_survey_id' => $this->getId() )
+			[ 'submission_id' ],
+			[ 'submission_survey_id' => $this->getId() ]
 		);
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 
@@ -290,18 +291,18 @@ class Survey extends SurveyDBClass {
 
 		$sucecss = $dbw->delete(
 			'survey_questions',
-			array( 'question_survey_id' => $this->getId() )
+			[ 'question_survey_id' => $this->getId() ]
 		) && $sucecss;
 
 		$sucecss = $dbw->delete(
 			'survey_submissions',
-			array( 'submission_survey_id' => $this->getId() )
+			[ 'submission_survey_id' => $this->getId() ]
 		) && $sucecss;
 
 		foreach ( $submissionsForSurvey as $nr => $submission ) {
 			$sucecss = $dbw->delete(
 				'survey_answers',
-				array( 'answer_submission_id' => $submission->id )
+				[ 'answer_submission_id' => $submission->id ]
 			) && $sucecss;
 		}
 
@@ -320,16 +321,16 @@ class Survey extends SurveyDBClass {
 	 * @return array of Survey::$USER_
 	 */
 	public static function getTypesForUser( User $user ) {
-		$userTypes = array( Survey::$USER_ALL );
+		$userTypes = [ self::$USER_ALL ];
 
-		$userTypes[] = $user->isRegistered() ? Survey::$USER_LOGGEDIN : Survey::$USER_ANON;
+		$userTypes[] = $user->isRegistered() ? self::$USER_LOGGEDIN : self::$USER_ANON;
 
 		if ( $user->isEmailConfirmed() ) {
-			$userTypes[] = Survey::$USER_CONFIRMED;
+			$userTypes[] = self::$USER_CONFIRMED;
 		}
 
 		if ( $user->getEditCount() > 0 ) {
-			$userTypes[] = Survey::$USER_EDITOR;
+			$userTypes[] = self::$USER_EDITOR;
 		}
 
 		return $userTypes;

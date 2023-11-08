@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to get a list of surveys.
  *
@@ -9,11 +8,14 @@
  * @ingroup Surveys
  * @ingroup API
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiQuerySurveys extends ApiQueryBase {
-
+	/**
+	 * @param ApiMain $main
+	 * @param string $action
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action, 'su' );
 	}
@@ -24,14 +26,14 @@ class ApiQuerySurveys extends ApiQueryBase {
 	public function execute() {
 		$user = $this->getUser();
 		if ( !$user->isAllowed( 'surveysubmit' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieUsageMsg( [ 'badaccess-groups' ] );
 		}
 
 		// Get the requests parameters.
 		$params = $this->extractRequestParams();
 
 		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
-			 XOR ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
+			 xor ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
 			 ) ) {
 			$this->dieUsage( $this->msg( 'survey-err-ids-xor-names' )->text(), 'ids-xor-names' );
 		}
@@ -45,21 +47,20 @@ class ApiQuerySurveys extends ApiQueryBase {
 			$params['props'] = array_merge( $params['props'], Survey::getFieldNames() );
 		}
 
-		$fields = array_merge( array( 'id' ), $params['props'] );
+		$fields = array_merge( [ 'id' ], $params['props'] );
 
 		$this->addFields( Survey::getPrefixedFields( $fields ) );
 
 		if ( isset( $params['ids'] ) ) {
-			$this->addWhere( array( 'survey_id' => $params['ids'] ) );
+			$this->addWhere( [ 'survey_id' => $params['ids'] ] );
 		} else {
-			$this->addWhere( array( 'survey_name' => $params['names'] ) );
+			$this->addWhere( [ 'survey_name' => $params['names'] ] );
 		}
 
 		if ( !$user->isAllowed( 'surveyadmin' ) ) {
-			$this->addWhere( array( 'survey_enabled' => 1 ) );
-		}
-		elseif ( isset( $params['enabled'] ) ) {
-			$this->addWhere( array( 'survey_enabled' => $params['enabled'] ) );
+			$this->addWhere( [ 'survey_enabled' => 1 ] );
+		} elseif ( isset( $params['enabled'] ) ) {
+			$this->addWhere( [ 'survey_enabled' => $params['enabled'] ] );
 		}
 
 		if ( isset( $params['continue'] ) ) {
@@ -71,7 +72,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 
 		$surveys = $this->select( __METHOD__ );
 		$count = 0;
-		$resultSurveys = array();
+		$resultSurveys = [];
 
 		foreach ( $surveys as $survey ) {
 			if ( ++$count > $params['limit'] ) {
@@ -100,8 +101,6 @@ class ApiQuerySurveys extends ApiQueryBase {
 	}
 
 	/**
-	 *
-	 *
 	 * @since 0.1
 	 *
 	 * @param array $survey
@@ -118,53 +117,46 @@ class ApiQuerySurveys extends ApiQueryBase {
 		return $survey;
 	}
 
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getAllowedParams()
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		return array (
-			'ids' => array(
+		return [
+			'ids' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'names' => array(
+			],
+			'names' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'props' => array(
-				ApiBase::PARAM_TYPE => array_merge( Survey::getFieldNames(), array( '*' ) ),
+			],
+			'props' => [
+				ApiBase::PARAM_TYPE => array_merge( Survey::getFieldNames(), [ '*' ] ),
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => 'id|name|enabled'
-			),
-			'incquestions' => array(
+			],
+			'incquestions' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => 0,
-			),
-			'enabled' => array(
+			],
+			'enabled' => [
 				ApiBase::PARAM_TYPE => 'integer',
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 20,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			),
+			],
 			'continue' => null,
-		);
-
+		];
 	}
 
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getExamples()
-	 */
+	/** @inheritDoc */
 	protected function getExamples() {
-		return array (
+		return [
 			'api.php?action=query&list=surveys&suids=4|2',
 			'api.php?action=query&list=surveys&suenabled=1&suprops=id|name',
-		);
+		];
 	}
 
 }

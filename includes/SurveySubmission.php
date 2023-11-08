@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple survey submission object class.
  *
@@ -8,13 +7,15 @@
  * @file SurveySubmission.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SurveySubmission extends SurveyDBClass {
 
 	/**
 	 * @see SurveyDBClass::getDBTable()
+	 *
+	 * @return string
 	 */
 	public static function getDBTable() {
 		return 'survey_submissions';
@@ -52,13 +53,13 @@ class SurveySubmission extends SurveyDBClass {
 	 * @return array
 	 */
 	protected static function getFieldTypes() {
-		return array(
+		return [
 			'id' => 'id',
 			'survey_id' => 'id',
 			'page_id' => 'id',
 			'user_name' => 'str',
 			'time' => 'str',
-		);
+		];
 	}
 
 	/**
@@ -69,15 +70,23 @@ class SurveySubmission extends SurveyDBClass {
 	 */
 	protected $answers;
 
-
+	/**
+	 * @param SurveyAnswer $answer
+	 */
 	public function addAnswer( SurveyAnswer $answer ) {
 		$this->answers[] = $answer;
 	}
 
+	/**
+	 * @param array $answers
+	 */
 	public function setAnswers( array $answers ) {
 		$this->answers = $answers;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getAnswers() {
 		return $this->answers;
 	}
@@ -88,7 +97,7 @@ class SurveySubmission extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function writeToDB() {
 		$success = parent::writeToDB();

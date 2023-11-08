@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Abstract base class for representing objects that are stored in some DB table.
  *
@@ -8,7 +7,7 @@
  * @file SurveyDBClass.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 abstract class SurveyDBClass {
@@ -19,7 +18,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 * @var array
 	 */
-	protected $fields = array();
+	protected $fields = [];
 
 	/**
 	 * Constructor.
@@ -27,13 +26,13 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 *
 	 * @param array|null $fields
-	 * @param boolean $loadDefaults
+	 * @param bool $loadDefaults
 	 */
 	public function __construct( $fields, $loadDefaults = false ) {
 		$this->setField( static::getIDField(), null );
 
 		if ( !is_array( $fields ) ) {
-			$fields = array();
+			$fields = [];
 		}
 
 		if ( $loadDefaults ) {
@@ -61,7 +60,7 @@ abstract class SurveyDBClass {
 	 * @return array
 	 */
 	protected static function getFieldTypes() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -74,7 +73,7 @@ abstract class SurveyDBClass {
 	 * @return array
 	 */
 	public static function getFieldDescriptions() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -117,13 +116,13 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @param object $result
+	 * @param array $result
 	 *
 	 * @return SurveyDBClass
 	 */
 	public static function newFromDBResult( $result ) {
 		$result = (array)$result;
-		$data = array();
+		$data = [];
 		$idFieldLength = strlen( static::getFieldPrefix() );
 
 		foreach ( $result as $name => $value ) {
@@ -139,7 +138,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 *
 	 * @param array $data
-	 * @param boolean $loadDefaults
+	 * @param bool $loadDefaults
 	 *
 	 * @return SurveyDBClass
 	 */
@@ -159,8 +158,8 @@ abstract class SurveyDBClass {
 	 *
 	 * @return array of self
 	 */
-	public static function select( $fields = null, array $conditions = array(), array $options = array() ) {
-		if ( is_null( $fields ) ) {
+	public static function select( $fields = null, array $conditions = [], array $options = [] ) {
+		if ( $fields === null ) {
 			$fields = array_keys( static::getFieldTypes() );
 		}
 
@@ -170,7 +169,7 @@ abstract class SurveyDBClass {
 			$options
 		);
 
-		$objects = array();
+		$objects = [];
 
 		foreach ( $result as $record ) {
 			$objects[] = static::newFromDBResult( $record );
@@ -191,7 +190,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @return self|bool false
 	 */
-	public static function selectRow( $fields = null, array $conditions = array(), array $options = array() ) {
+	public static function selectRow( $fields = null, array $conditions = [], array $options = [] ) {
 		$options['LIMIT'] = 1;
 
 		$objects = static::select( $fields, $conditions, $options );
@@ -207,10 +206,10 @@ abstract class SurveyDBClass {
 	 *
 	 * @param array $conditions
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
-	public static function has( array $conditions = array() ) {
-		return static::selectRow( array( static::getIDField() ), $conditions ) !== false;
+	public static function has( array $conditions = [] ) {
+		return static::selectRow( [ static::getIDField() ], $conditions ) !== false;
 	}
 
 	/**
@@ -222,11 +221,11 @@ abstract class SurveyDBClass {
 	 * @param array $conditions
 	 * @param array $options
 	 *
-	 * @return integer
+	 * @return int
 	 */
-	public static function count( array $conditions = array(), array $options = array() ) {
+	public static function count( array $conditions = [], array $options = [] ) {
 		$res = static::rawSelect(
-			array( 'COUNT(*) AS rowcount' ),
+			[ 'COUNT(*) AS rowcount' ],
 			static::getPrefixedValues( $conditions ),
 			$options
 		)->fetchObject();
@@ -246,7 +245,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @return ResultWrapper
 	 */
-	public static function rawSelect( $fields = null, array $conditions = array(), array $options = array() ) {
+	public static function rawSelect( $fields = null, array $conditions = [], array $options = [] ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
 		return $dbr->select(
@@ -258,8 +257,13 @@ abstract class SurveyDBClass {
 		);
 	}
 
-	public static function update( array $values, array $conditions = array() ) {
-		$dbw = wfGetDB( DB_MASTER );
+	/**
+	 * @param array $values
+	 * @param array $conditions
+	 * @return bool
+	 */
+	public static function update( array $values, array $conditions = [] ) {
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		return $dbw->update(
 			static::getDBTable(),
@@ -274,7 +278,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function writeToDB() {
 		if ( $this->hasIdField() ) {
@@ -289,15 +293,15 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	protected function updateInDB() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		return $dbw->update(
 			$this->getDBTable(),
 			$this->getWriteValues(),
-			array( static::getFieldPrefix() . static::getIDField() => $this->getId() )
+			[ static::getFieldPrefix() . static::getIDField() => $this->getId() ]
 		);
 	}
 
@@ -306,10 +310,10 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	protected function insertIntoDB() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$result = $dbw->insert(
 			static::getDBTable(),
@@ -326,14 +330,14 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean Success indicator
+	 * @return bool Success indicator
 	 */
 	public function removeFromDB() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$sucecss = $dbw->delete(
 			static::getDBTable(),
-			array( static::getFieldPrefix() . static::getIDField() => $this->getId() )
+			[ static::getFieldPrefix() . static::getIDField() => $this->getId() ]
 		);
 
 		if ( $sucecss ) {
@@ -455,7 +459,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return integer|null
+	 * @return int|null
 	 */
 	public function getId() {
 		return $this->getField( static::getIDField() );
@@ -479,7 +483,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @param string $name
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function hasField( $name ) {
 		return array_key_exists( $name, $this->fields );
@@ -492,7 +496,7 @@ abstract class SurveyDBClass {
 	 *
 	 * @param string $name
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function canHasField( $name ) {
 		return array_key_exists( $name, static::getFieldTypes() );
@@ -503,11 +507,11 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function hasIdField() {
 		return $this->hasField( static::getIDField() )
-			&& !is_null( $this->getField( static::getIDField() ) );
+			&& $this->getField( static::getIDField() ) !== null;
 	}
 
 	/**
@@ -516,7 +520,7 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 *
 	 * @param array $fields The fields to set
-	 * @param boolean $override Override already set fields with the provided values?
+	 * @param bool $override Override already set fields with the provided values?
 	 */
 	public function setFields( array $fields, $override = true ) {
 		foreach ( $fields as $name => $value ) {
@@ -534,7 +538,7 @@ abstract class SurveyDBClass {
 	 * @return array
 	 */
 	protected function getWriteValues() {
-		$values = array();
+		$values = [];
 
 		foreach ( static::getFieldTypes() as $name => $type ) {
 			if ( array_key_exists( $name, $this->fields ) ) {
@@ -597,7 +601,7 @@ abstract class SurveyDBClass {
 	 * @return array
 	 */
 	public static function getPrefixedValues( array $values ) {
-		$prefixedValues = array();
+		$prefixedValues = [];
 
 		foreach ( $values as $field => $value ) {
 			$prefixedValues[static::getFieldPrefix() . $field] = $value;
@@ -612,13 +616,13 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @param param array|null $fields
+	 * @param array|null $fields
 	 *
 	 * @return array
 	 */
 	public function toArray( $fields = null ) {
-		$data = array();
-		$setFields = array();
+		$data = [];
+		$setFields = [];
 
 		if ( !is_array( $fields ) ) {
 			$setFields = $this->getSetFieldNames();
@@ -637,6 +641,9 @@ abstract class SurveyDBClass {
 		return $data;
 	}
 
+	/**
+	 * @param bool $override
+	 */
 	public function loadDefaults( $override = true ) {
 		$this->setFields( static::getDefaults(), $override );
 	}
@@ -650,7 +657,7 @@ abstract class SurveyDBClass {
 	 * @return array
 	 */
 	public static function getDefaults() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -658,20 +665,20 @@ abstract class SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @param boolean $requireParams
+	 * @param bool $requireParams
 	 *
 	 * @return array
 	 */
 	public static function getAPIParams( $requireParams = true ) {
-		$typeMap = array(
+		$typeMap = [
 			'id' => 'integer',
 			'int' => 'integer',
 			'str' => 'string',
 			'bool' => 'integer',
 			'array' => 'string'
-		);
+		];
 
-		$params = array();
+		$params = [];
 		$defaults = static::getDefaults();
 
 		foreach ( static::getFieldTypes() as $field => $type ) {
@@ -681,10 +688,10 @@ abstract class SurveyDBClass {
 
 			$hasDefault = array_key_exists( $field, $defaults );
 
-			$params[$field] = array(
+			$params[$field] = [
 				ApiBase::PARAM_TYPE => $typeMap[$type],
 				ApiBase::PARAM_REQUIRED => $requireParams && !$hasDefault
-			);
+			];
 
 			if ( $type == 'array' ) {
 				$params[$field][ApiBase::PARAM_ISMULTI] = true;
@@ -706,12 +713,12 @@ abstract class SurveyDBClass {
 	 * @since 0.1
 	 *
 	 * @param array $conditions
-	 * @param bool|integer $id false
+	 * @param bool|int $id false
 	 *
 	 * @return array
 	 */
 	public static function getValidFields( array $conditions, $id = false ) {
-		$validFields = array();
+		$validFields = [];
 
 		$fields = static::getFieldTypes();
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Base special page for special pages in the Survey extension,
  * taking care of some common stuff and providing compatibility helpers.
@@ -9,7 +8,7 @@
  * @file SpecialSurveyPage.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 abstract class SpecialSurveyPage extends SpecialPage {
@@ -17,6 +16,8 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @see SpecialPage::getDescription
 	 *
 	 * @since 0.1
+	 *
+	 * @return string
 	 */
 	public function getDescription() {
 		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
@@ -101,6 +102,11 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @param array $links
 	 */
 	protected function displayNavigation( array $links ) {
-		$this->getOutput()->addHTML( Html::rawElement( 'p', array(), $this->getLanguage()->pipeList( $links ) ) );
+		$this->getOutput()->addHTML(
+			Html::rawElement(
+				'p',
+				[],
+				$this->getLanguage()->pipeList( $links )
+			) );
 	}
 }

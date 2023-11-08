@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Statistics interface for surveys.
  *
@@ -8,7 +7,7 @@
  * @file SpecialSurveyStats.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SpecialSurveyStats extends SpecialSurveyPage {
@@ -28,30 +27,29 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 * @since 0.1
 	 *
 	 * @param null|string $subPage
-	 * @return bool|void
+	 * @return void
 	 */
 	public function execute( $subPage ) {
 		if ( !parent::execute( $subPage ) ) {
 			return;
 		}
 
-		if ( is_null( $subPage ) || trim( $subPage ) === '' ) {
+		if ( $subPage === null || trim( $subPage ) === '' ) {
 			$this->getOutput()->redirect( SpecialPage::getTitleFor( 'Surveys' )->getLocalURL() );
 		} else {
 			$subPage = trim( $subPage );
 
-			if ( Survey::has( array( 'name' => $subPage ) ) ) {
+			if ( Survey::has( [ 'name' => $subPage ] ) ) {
 				$survey = Survey::newFromName( $subPage );
 
-				$this->displayNavigation( array(
+				$this->displayNavigation( [
 					$this->msg( 'survey-navigation-edit', $survey->getField( 'name' ) )->parse(),
 					$this->msg( 'survey-navigation-take', $survey->getField( 'name' ) )->parse(),
 					$this->msg( 'survey-navigation-list' )->parse()
-				) );
+				] );
 
 				$this->displayStats( $survey );
-			}
-			else {
+			} else {
 				$this->showError( 'surveys-surveystats-nosuchsurvey' );
 			}
 		}
@@ -82,14 +80,16 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 * @return array
 	 */
 	protected function getSummaryData( Survey $survey ) {
-		$stats = array();
+		$stats = [];
 
 		// Give grep a chance to find the usages: surveys-surveystats-enabled, surveys-surveystats-disabled
 		$stats['name'] = $survey->getField( 'name' );
 		$stats['title'] = $survey->getField( 'title' );
-		$stats['status'] = $this->msg( 'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' ) )->text();
-		$stats['questioncount'] = count( $survey->getQuestions() ) ;
-		$stats['submissioncount'] = SurveySubmission::count( array( 'survey_id' => $survey->getId() ) );
+		$stats['status'] = $this->msg(
+			'surveys-surveystats-' . ( $survey->getField( 'enabled' ) ? 'enabled' : 'disabled' )
+		)->text();
+		$stats['questioncount'] = count( $survey->getQuestions() );
+		$stats['submissioncount'] = SurveySubmission::count( [ 'survey_id' => $survey->getId() ] );
 
 		return $stats;
 	}
@@ -106,7 +106,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	protected function displaySummary( array $stats ) {
 		$out = $this->getOutput();
 
-		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable survey-stats' ) ) );
+		$out->addHTML( Html::openElement( 'table', [ 'class' => 'wikitable survey-stats' ] ) );
 
 		foreach ( $stats as $stat => $value ) {
 			$out->addHTML( '<tr>' );
@@ -116,13 +116,13 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 			// surveys-surveystats-questioncount, surveys-surveystats-submissioncount
 			$out->addHTML( Html::element(
 				'th',
-				array( 'class' => 'survey-stat-name' ),
+				[ 'class' => 'survey-stat-name' ],
 					$this->msg( 'surveys-surveystats-' . $stat )->text()
 			) );
 
 			$out->addHTML( Html::element(
 				'td',
-				array( 'class' => 'survey-stat-value' ),
+				[ 'class' => 'survey-stat-value' ],
 				$value
 			) );
 
@@ -143,7 +143,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out = $this->getOutput();
 
 		$out->addHTML( '<h2>' . $this->msg( 'surveys-surveystats-questions' )->escaped() . '</h2>' );
-		$out->addHTML( Html::openElement( 'table', array( 'class' => 'wikitable sortable survey-questions' ) ) );
+		$out->addHTML( Html::openElement( 'table', [ 'class' => 'wikitable sortable survey-questions' ] ) );
 		$out->addHTML(
 			'<thead><tr>' .
 				'<th>' . $this->msg( 'surveys-surveystats-question-nr' )->escaped() . '</th>' .
@@ -181,7 +181,7 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		$out->addHTML( '<tr>' );
 		$out->addHTML( Html::element(
 			'td',
-			array( 'data-sort-value' => ++$qNr ),
+			[ 'data-sort-value' => ++$qNr ],
 				$this->msg( 'surveys-surveystats-question-nr-format', $qNr )->text()
 		) );
 
@@ -190,25 +190,25 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		// survey-question-type-radio, survey-question-type-textarea, survey-question-type-check
 		$out->addHTML( Html::element(
 			'td',
-			array(),
+			[],
 				$this->msg( SurveyQuestion::getTypeMessage( $question->getField( 'type' ) ) )->text()
 		) );
 
 		$out->addHTML( Html::element(
 			'td',
-			array(),
+			[],
 			$question->getField( 'text' )
 		) );
 
 		$out->addHTML( Html::element(
 			'td',
-			array(),
-			SurveyAnswer::count( array( 'question_id' => $question->getId() ) )
+			[],
+			SurveyAnswer::count( [ 'question_id' => $question->getId() ] )
 		) );
 
 		$out->addHTML( Html::rawElement(
 			'td',
-			array(),
+			[],
 			$this->getAnswerList( $question )
 		) );
 
@@ -228,20 +228,19 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 		if ( $question->isRestrictiveType() ) {
 			$list = '<ul>';
 
-			$answers = array();
-			$answerTranslations = array();
+			$answers = [];
+			$answerTranslations = [];
 
 			if ( $question->getField( 'type' ) == SurveyQuestion::$TYPE_CHECK ) {
-				$possibilities = array( '0', '1' );
+				$possibilities = [ '0', '1' ];
 				$answerTranslations['0'] = $this->msg( 'surveys-surveystats-unchecked' )->text();
 				$answerTranslations['1'] = $this->msg( 'surveys-surveystats-checked' )->text();
-			}
-			else {
+			} else {
 				$possibilities = $question->getField( 'answers' );
 			}
 
 			foreach ( $possibilities as $answer ) {
-				$answers[$answer] = SurveyAnswer::count( array( 'text' => $answer ) );
+				$answers[$answer] = SurveyAnswer::count( [ 'text' => $answer ] );
 			}
 
 			asort( $answers, SORT_NUMERIC );
@@ -253,18 +252,18 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 
 				$list .= Html::element(
 					'li',
-					array(),
+					[],
 					$this->msg( 'surveys-surveystats-question-answer', $answer )->numParams( $answerCount )->text()
 				);
 			}
 
 			return $list . '</ul>';
-		}
-		else {
+		} else {
 			return '';
 		}
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'other';
 	}
