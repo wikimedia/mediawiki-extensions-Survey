@@ -24,27 +24,27 @@ class ApiSubmitSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveysubmit' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
 
 		if ( !( isset( $params['id'] ) xor isset( $params['name'] ) ) ) {
-			$this->dieUsage( $this->msg( 'survey-err-id-xor-name' )->text(), 'id-xor-name' );
+			$this->dieWithError( $this->msg( 'survey-err-id-xor-name' )->text(), 'id-xor-name' );
 		}
 
 		if ( isset( $params['name'] ) ) {
 			$survey = Survey::newFromName( $params['name'], null, false );
 
 			if ( $survey === false ) {
-				$this->dieUsage( $this->msg( 'survey-err-survey-name-unknown',
+				$this->dieWithError( $this->msg( 'survey-err-survey-name-unknown',
 						$params['name'] )->text(), 'survey-name-unknown' );
 			}
 		} else {
 			$survey = Survey::newFromId( $params['id'], null, false );
 
 			if ( $survey === false ) {
-				$this->dieUsage( $this->msg( 'survey-err-survey-id-unknown',
+				$this->dieWithError( $this->msg( 'survey-err-survey-id-unknown',
 						$params['id'] )->text(), 'survey-id-unknown' );
 			}
 		}

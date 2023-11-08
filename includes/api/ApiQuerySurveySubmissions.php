@@ -27,7 +27,7 @@ class ApiQuerySurveySubmissions extends ApiQueryBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		// Get the requests parameters.

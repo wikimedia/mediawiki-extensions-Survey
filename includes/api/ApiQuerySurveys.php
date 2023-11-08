@@ -26,7 +26,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 	public function execute() {
 		$user = $this->getUser();
 		if ( !$user->isAllowed( 'surveysubmit' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		// Get the requests parameters.
@@ -35,7 +35,7 @@ class ApiQuerySurveys extends ApiQueryBase {
 		if ( !( ( isset( $params['ids'] ) && count( $params['ids'] ) > 0 )
 			 xor ( isset( $params['names'] ) && count( $params['names'] ) > 0 )
 			 ) ) {
-			$this->dieUsage( $this->msg( 'survey-err-ids-xor-names' )->text(), 'ids-xor-names' );
+			$this->dieWithError( $this->msg( 'survey-err-ids-xor-names' )->text(), 'ids-xor-names' );
 		}
 
 		$this->addTables( 'surveys' );

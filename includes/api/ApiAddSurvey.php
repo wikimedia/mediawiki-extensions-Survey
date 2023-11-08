@@ -24,7 +24,7 @@ class ApiAddSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
@@ -38,7 +38,7 @@ class ApiAddSurvey extends ApiBase {
 			$success = $survey->writeToDB();
 		} catch ( DBQueryError $ex ) {
 			if ( $ex->errno == 1062 ) {
-				$this->dieUsage( $this->msg(
+				$this->dieWithError( $this->msg(
 						'survey-err-duplicate-name',
 						$params['name']
 					)->text(),

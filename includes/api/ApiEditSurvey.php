@@ -24,7 +24,7 @@ class ApiEditSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
