@@ -8,18 +8,18 @@
 	"rules": {
 		"camelcase": "warn",
 		"new-cap": "warn",
-		"no-use-before-define": "warn",
-		"no-prototype-builtins": "warn",
-		"no-underscore-dangle": "warn",
-		"no-eval": "warn",
-		"no-console": "warn",
 		"no-alert": "warn",
-		"no-debugger": "warn",
-		"no-jquery/no-in-array": "warn",
 		"no-constant-condition": "warn",
-		"no-jquery/no-sizzle": "warn",
+		"no-console": "warn",
+		"no-debugger": "warn",
+		"no-eval": "warn",
+		"no-jquery/no-global-selector": "warn",
+		"no-jquery/no-in-array": "warn",
 		"no-jquery/no-parse-html-literal": "warn",
 		"no-jquery/no-slide": "warn",
-		"no-jquery/no-global-selector": "warn"
+		"no-jquery/no-sizzle": "warn",
+		"no-prototype-builtins": "warn",
+		"no-underscore-dangle": "warn",
+		"no-use-before-define": "warn"
 	}
 }
