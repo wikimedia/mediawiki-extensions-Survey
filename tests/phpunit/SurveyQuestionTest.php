@@ -6,7 +6,7 @@
  * @ingroup Survey
  * @since 0.1
  *
- * @licence GNU GPL v3
+ * @license GPL-3.0-only
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  * @covers SurveyQuestion
  */
