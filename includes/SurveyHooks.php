@@ -56,7 +56,7 @@ final class SurveyHooks {
 		$updater->addExtensionUpdate( array(
 			'addTable',
 			'surveys',
-			__DIR__ . '/sql/Survey.sql',
+			__DIR__ . '/../sql/Survey.sql',
 			true
 		) );
 
@@ -64,7 +64,7 @@ final class SurveyHooks {
 			'addIndex',
 			'surveys',
 			'surveys_survey_title',
-			__DIR__ . '/sql/AddMissingIndexes.sql',
+			__DIR__ . '/../sql/AddMissingIndexes.sql',
 			true
 		) );
 
