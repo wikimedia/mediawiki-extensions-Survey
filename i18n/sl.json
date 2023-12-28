@@ -4,6 +4,12 @@
 			"Eleassar"
 		]
 	},
+	"survey-desc": "Anketno orodje za MediaWiki",
+	"right-surveyadmin": "Upravljanje anket",
+	"right-surveysubmit": "Sodelovanje v anketah",
+	"action-surveyadmin": "upravljanje anket",
+	"action-surveysubmit": "sodelovanje v anketah",
+	"group-surveyadmin": "Administratorji anket",
 	"survey-question-type-text": "Enovrstično besedilno polje",
 	"survey-question-type-number": "Število",
 	"survey-question-type-select": "Spustni meni",
