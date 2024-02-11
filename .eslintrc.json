@@ -21,5 +21,6 @@
 		"no-prototype-builtins": "warn",
 		"no-underscore-dangle": "warn",
 		"no-use-before-define": "warn"
-	}
+	},
+	"ignorePatterns": ["resources/*"]
 }

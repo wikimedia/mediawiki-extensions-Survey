@@ -9,6 +9,7 @@
  */
 
 ( function ( survey ) {
+
 	$( function () {
 
 		var $table = null,
@@ -86,6 +87,8 @@
 					answers: question.answers
 				} );
 
+
+
 			$input.append( $( '<label>' ).attr( {
 				for: 'survey-question-text-' + question.id
 			} ).text( mw.msg( 'survey-special-label-text' ) ) );
@@ -104,8 +107,7 @@
 			$input.append( $( '<label>' ).attr( {
 				for: 'survey-question-type-' + question.id
 			} ).text( mw.msg( 'survey-special-label-type' ) ) );
-
-			$input.append( survey.question.getTypeSelector(
+			$input.append( window.survey.question.getTypeSelector(
 				question.type,
 				{
 					id: 'survey-question-type-' + question.id,
