@@ -300,7 +300,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			'id' => 'survey-thanks',
 			'name' => 'survey-thanks',
 		];
-
+		
 		/**
 		 * @var $question SurveyQuestion
 		 */
@@ -311,7 +311,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 			];
 		}
 
-		$form = HTMLForm::factory( 'ooui', $fields, $this->getContext() );
+		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
 		$form
 			->setSubmitText( $this->msg( 'surveys-special-save' )->text() )
 			->addButton(

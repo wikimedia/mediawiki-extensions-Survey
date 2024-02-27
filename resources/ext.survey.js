@@ -7,7 +7,7 @@
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
-window.survey = ( function ( survey ) {
+window.survey = new ( function ( survey ) {
 	this.log = function ( message ) {
 		if ( mw.config.get( 'wgSurveyDebug' ) ) {
 			if ( typeof mw === 'undefined' ) {
@@ -88,7 +88,7 @@ window.survey = ( function ( survey ) {
 		return $radio;
 	};
 
-	this.question = ( function () {
+	this.question = new ( function () {
 
 		this.type = {
 			TEXT: 0,
@@ -99,9 +99,11 @@ window.survey = ( function ( survey ) {
 			CHECK: 5
 		};
 
+
 		this.typeHasAnswers = function ( t ) {
+			console.log('t', window.survey, t);
 			return $.inArray(
-				t, [ survey.question.type.RADIO, survey.question.type.SELECT ]
+				t, [ window.survey.question.type.RADIO, window.survey.question.type.SELECT ]
 			) !== -1;
 		};
 
@@ -131,5 +133,5 @@ window.survey = ( function ( survey ) {
 			return survey.htmlSelect( options, parseInt( value ), attributes, onChangeCallback );
 		};
 	})();
-
-})();
+	console.log('this', this.question);
+})(window.survey);
