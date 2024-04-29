@@ -1,6 +1,7 @@
 /**
  * JavaScript for the Survey MediaWiki extension.
  *
+ * @param survey
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
  * @license GNU GPL v3 or later
