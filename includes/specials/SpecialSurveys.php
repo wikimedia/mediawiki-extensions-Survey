@@ -83,7 +83,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
-			->setHeaderText( $this->msg( 'surveys-special-namedoc' )->text() )
+			->setHeaderHtml( $this->msg( 'surveys-special-namedoc' )->parse() )
 			->setAction( $this->getPageTitle()->getLocalURL() )
 			->setSubmitName( 'addnewsurvey' )
 			->setSubmitTextMsg( 'surveys-special-add' )
