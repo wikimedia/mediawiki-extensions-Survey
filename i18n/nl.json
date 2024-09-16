@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mar(c)",
+			"McDutchie",
 			"SPQRobin",
 			"Siebrand",
 			"McDutchie"
@@ -140,6 +141,7 @@
 	"apihelp-submitsurvey-param-name": "De naam van de te verzenden vragenlijst.",
 	"apihelp-submitsurvey-param-token": "Bewerkingstoken. U kunt er een krijgen via prop=info.",
 	"apihelp-submitsurvey-param-answers": "Antwoorden om te gebruiken voor deze vragenlijst.",
+	"apihelp-query+surveys-summary": "API-module voor het opvragen van vragenlijsten en, optioneel, de vragen ervan.",
 	"apihelp-query+surveys-param-ids": "De ID’s van de te retourneren vragenlijsten.",
 	"apihelp-query+surveys-param-names": "De namen van de te retourneren vragenlijsten.",
 	"apihelp-query+surveys-param-incquestions": "De vragen van de vragenlijst al dan niet erin opnemen.",
@@ -147,12 +149,14 @@
 	"apihelp-query+surveys-param-props": "De op te vragen vragenlijstgegevens.",
 	"apihelp-query+surveys-param-continue": "Nummer waarvandaan de zoekopdracht moet worden voortgezet.",
 	"apihelp-query+surveys-param-limit": "Maximaal aantal te retourneren woorden.",
+	"apihelp-query+surveyanswers-summary": "API-module voor het verkrijgen van vragenlijst-antwoorden.",
 	"apihelp-query+surveyanswers-param-props": "De op te vragen vragenlijstgegevens.",
 	"apihelp-query+surveyanswers-param-continue": "Nummer waarvandaan de zoekopdracht moet worden voortgezet.",
 	"apihelp-query+surveyanswers-param-limit": "Maximaal aantal te retourneren woorden.",
 	"apihelp-query+surveyanswers-param-text": "De antwoordtekst.",
 	"apihelp-query+surveyanswers-param-submission_id": "De ID van de inzending waarvan dit antwoord deel uitmaakt.",
 	"apihelp-query+surveyanswers-param-question_id": "De ID van de vraag waarop dit een antwoord is.",
+	"apihelp-query+surveysubmissions-summary": "API-module voor het verkrijgen van vragenlijst-inzendingen.",
 	"apihelp-query+surveysubmissions-param-props": "De op te vragen vragenlijstgegevens.",
 	"apihelp-query+surveysubmissions-param-continue": "Nummer waarvandaan de zoekopdracht moet worden voortgezet.",
 	"apihelp-query+surveysubmissions-param-limit": "Maximaal aantal te retourneren woorden.",

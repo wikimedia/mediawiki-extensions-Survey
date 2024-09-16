@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Static class for hooks handled by the Survey extension.
  *
@@ -8,7 +7,7 @@
  * @file Survey.hooks.php
  * @ingroup Survey
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 final class SurveyHooks {
@@ -18,13 +17,10 @@ final class SurveyHooks {
 	 *
 	 * @since 0.1
 	 *
-	 * @param Parser $parser
-	 *
-	 * @return boolean
+	 * @param Parser &$parser
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'survey', __CLASS__ . '::onSurveyRender' );
-		return true;
 	}
 
 	/**
@@ -50,40 +46,23 @@ final class SurveyHooks {
 	 *
 	 * @param DatabaseUpdater $updater
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onSchemaUpdate( DatabaseUpdater $updater ) {
-		$updater->addExtensionUpdate( array(
+		$updater->addExtensionUpdate( [
 			'addTable',
 			'surveys',
-			__DIR__ . '/sql/Survey.sql',
+			__DIR__ . '/../sql/Survey.sql',
 			true
-		) );
+		] );
 
-		$updater->addExtensionUpdate( array(
+		$updater->addExtensionUpdate( [
 			'addIndex',
 			'surveys',
 			'surveys_survey_title',
-			__DIR__ . '/sql/AddMissingIndexes.sql',
+			__DIR__ . '/../sql/AddMissingIndexes.sql',
 			true
-		) );
-
-		return true;
-	}
-
-	/**
-	 * Hook to add PHPUnit test cases.
-	 *
-	 * @since 0.1
-	 *
-	 * @param array $files
-	 *
-	 * @return boolean
-	 */
-	public static function registerUnitTests( array &$files ) {
-		$testDir = dirname( __FILE__ ) . '/test/';
-
-		$files[] = $testDir . 'SurveyQuestionTest.php';
+		] );
 
 		return true;
 	}
@@ -94,25 +73,25 @@ final class SurveyHooks {
 	 * @since 0.1
 	 *
 	 * @param Article &$article
-	 * @param boolean $outputDone
-	 * @param boolean $useParserCache
+	 * @param bool &$outputDone
+	 * @param bool &$useParserCache
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onArticleViewHeader( Article &$article, &$outputDone, &$useParserCache ) {
-		if ( !Survey::has( array( 'enabled' => 1 ) ) ) {
+		if ( !Survey::has( [ 'enabled' => 1 ] ) ) {
 			return true;
 		}
 
 		$user = $article->getContext()->getUser();
 		$surveys = Survey::select(
-			array(
+			[
 				'id', 'namespaces', 'ratio', 'expiry', 'min_pages'
-			),
-			array(
+			],
+			[
 				'enabled' => 1,
 				'user_type' => Survey::getTypesForUser( $user )
-			)
+			]
 		);
 
 		/**
@@ -121,35 +100,21 @@ final class SurveyHooks {
 		foreach ( $surveys as $survey ) {
 			if ( count( $survey->getField( 'namespaces' ) ) == 0 ) {
 				$nsValid = true;
-			}
-			else {
+			} else {
 				$nsValid = in_array( $article->getTitle()->getNamespace(), $survey->getField( 'namespaces' ) );
 			}
 
 			if ( $nsValid ) {
 				global $wgOut;
-				if ( method_exists( $wgOut, 'addWikiTextAsInterface' ) ) {
-					// MW 1.32+
-					$wgOut->addWikiTextAsInterface( Xml::element(
-						'survey',
-						array(
-							'id' => $survey->getId(),
-							'ratio' => $survey->getField( 'ratio' ),
-							'expiry' => $survey->getField( 'expiry' ),
-							'min-pages' => $survey->getField( 'min_pages' ),
-						)
-					) );
-				} else {
-					$wgOut->addWikiText( Xml::element(
-						'survey',
-						array(
-							'id' => $survey->getId(),
-							'ratio' => $survey->getField( 'ratio' ),
-							'expiry' => $survey->getField( 'expiry' ),
-							'min-pages' => $survey->getField( 'min_pages' ),
-						)
-					) );
-				}
+				$wgOut->addWikiTextAsInterface( Xml::element(
+					'survey',
+					[
+						'id' => $survey->getId(),
+						'ratio' => $survey->getField( 'ratio' ),
+						'expiry' => $survey->getField( 'expiry' ),
+						'min-pages' => $survey->getField( 'min_pages' ),
+					]
+				) );
 			}
 		}
 
@@ -161,17 +126,17 @@ final class SurveyHooks {
 	 *
 	 * @since 0.1
 	 *
-	 * @param ALTree $admin_links_tree
+	 * @param ALTree &$admin_links_tree
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function addToAdminLinks( &$admin_links_tree ) {
 		$section = new ALSection( 'Survey' );
 		$row = new ALRow( 'smw' );
-	    $row->addItem( AlItem::newFromSpecialPage( 'Surveys' ) );
+		$row->addItem( AlItem::newFromSpecialPage( 'Surveys' ) );
 		$section->addRow( $row );
 		$admin_links_tree->addSection( $section, 'Survey' );
-	    return true;
+		return true;
 	}
 
 }

@@ -1,6 +1,7 @@
 /**
  * JavaScript for the Survey MediaWiki extension.
  *
+ * @param survey
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
  * @license GNU GPL v3 or later
@@ -16,16 +17,15 @@
 	}
 
 	function getCookie( options ) {
-		var cookie = $.cookie( getCookieName( options ) );
+		var cookie = mw.cookie.get( getCookieName( options ) );
 		survey.log( 'read "' + cookie + '" from cookie ' + getCookieName( options ) );
 		return cookie;
 	}
 
 	function setCookie( options, cookieValue ) {
-		var date = new Date();
-		date.setTime( date.getTime() + options.expiry * 1000 );
-		$.cookie( getCookieName( options ), cookieValue, { expires: date, path: '/' } );
-		survey.log( 'wrote "' + cookieValue + '" to cookie ' + getCookieName( options ) );
+		var cookieName = getCookieName( options );
+		mw.cookie.set( cookieName, cookieValue, { expires: options.expiry, path: '/' } );
+		survey.log( 'wrote "' + cookieValue + '" to cookie ' + cookieName );
 	}
 
 	function hasCookie( options ) {

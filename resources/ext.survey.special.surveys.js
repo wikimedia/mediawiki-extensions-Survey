@@ -11,15 +11,13 @@
 	$( function () {
 
 		function deleteSurvey( options, successCallback, failCallback ) {
-			$.post(
-				mw.config.get( 'wgScriptPath' ) + '/api.php',
-				{
+			( new mw.Api() ).postWithToken( 'csrf', {
 					action: 'deletesurvey',
 					format: 'json',
 					ids: options.id,
 					token: options.token
-				},
-				function ( data ) {
+				} )
+				.done( function ( data ) {
 					if ( data.success ) {
 						successCallback();
 					} else {

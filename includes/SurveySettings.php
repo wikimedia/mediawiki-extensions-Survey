@@ -1,5 +1,4 @@
 <?php
-
 /**
  * File defining the settings for the Survey extension.
  * More info can be found at https://www.mediawiki.org/wiki/Extension:Survey#Settings
@@ -13,7 +12,7 @@
  * @file Survey.settings.php
  * @ingroup Survey
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SurveySettings {
@@ -27,15 +26,15 @@ class SurveySettings {
 	 * @return array
 	 */
 	protected static function getDefaultSettings() {
-		return array(
+		return [
 			'JSDebug' => false,
 			'defaultEnabled' => false,
 			'defaultUserType' => Survey::$USER_ALL,
-			'defaultNamespaces' => array(),
+			'defaultNamespaces' => [],
 			'defaultRatio' => 100,
 			'defaultExpiry' => 60 * 60 * 24 * 30,
 			'defaultMinPages' => 0
-		);
+		];
 	}
 
 	/**

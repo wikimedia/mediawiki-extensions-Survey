@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alesaru",
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"Strainu"
 		]
 	},
 	"right-surveyadmin": "Gestionează sondaje",
@@ -46,5 +48,8 @@
 	"survey-special-label-text": "Textul întrebării",
 	"survey-special-remove": "Elimină întrebarea",
 	"survey-special-remove-confirm": "Sigur doriți să ștergeți această întrebare?",
-	"survey-jquery-submit": "Trimite"
+	"survey-jquery-submit": "Trimite",
+	"apihelp-query+surveys-summary": "Modul API pentru obținerea de sondaje și, opțional, întrebările acestora.",
+	"apihelp-query+surveyanswers-summary": "Modul API pentru obținerea de rspunsuri la sondaj.",
+	"apihelp-query+surveysubmissions-summary": "Modul API pentru obținerea de trimiteri la sondaj."
 }

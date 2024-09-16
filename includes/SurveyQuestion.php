@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Simple survey question object class.
  *
@@ -8,20 +7,22 @@
  * @file SurveyQuestion.php
  * @ingroup Survey
  *
- * @licence GNU GPL v3 or later
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class SurveyQuestion extends SurveyDBClass {
 
-	public static $TYPE_TEXT = 0;
-	public static $TYPE_NUMBER = 1;
-	public static $TYPE_SELECT = 2;
-	public static $TYPE_RADIO = 3;
-	public static $TYPE_TEXTAREA = 4;
-	public static $TYPE_CHECK = 5;
+	public static int $TYPE_TEXT = 0;
+	public static int $TYPE_NUMBER = 1;
+	public static int $TYPE_SELECT = 2;
+	public static int $TYPE_RADIO = 3;
+	public static int $TYPE_TEXTAREA = 4;
+	public static int $TYPE_CHECK = 5;
 
 	/**
 	 * @see SurveyDBClass::getDBTable()
+	 *
+	 * @return string
 	 */
 	public static function getDBTable() {
 		return 'survey_questions';
@@ -71,7 +72,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @return array
 	 */
 	protected static function getFieldTypes() {
-		return array(
+		return [
 			'id' => 'id',
 			'survey_id' => 'int',
 			'text' => 'str',
@@ -79,7 +80,7 @@ class SurveyQuestion extends SurveyDBClass {
 			'required' => 'bool',
 			'answers' => 'array',
 			'removed' => 'bool',
-		);
+		];
 	}
 
 	/**
@@ -91,13 +92,13 @@ class SurveyQuestion extends SurveyDBClass {
 	 * @return array
 	 */
 	public static function getDefaults() {
-		return array(
+		return [
 			'text' => '',
 			'type' => self::$TYPE_TEXT,
 			'required' => false,
-			'answers' => array(),
+			'answers' => [],
 			'removed' => false,
-		);
+		];
 	}
 
 	/**
@@ -132,13 +133,13 @@ class SurveyQuestion extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @param integer $surveyId
-	 * @param boolean $incRemoved
+	 * @param int $surveyId
+	 * @param bool $incRemoved
 	 *
 	 * @return array of SurveyQuestion
 	 */
 	public static function getQuestionsForSurvey( $surveyId, $incRemoved = false ) {
-		$conditions = array( 'survey_id' => $surveyId );
+		$conditions = [ 'survey_id' => $surveyId ];
 
 		if ( $incRemoved === false ) {
 			$conditions['removed'] = 0;
@@ -153,7 +154,7 @@ class SurveyQuestion extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @param integer $type
+	 * @param int $type
 	 *
 	 * @return string
 	 */
@@ -161,14 +162,14 @@ class SurveyQuestion extends SurveyDBClass {
 		static $messageMap = false;
 
 		if ( $messageMap === false ) {
-			$messageMap = array(
+			$messageMap = [
 				self::$TYPE_TEXT => 'text',
 				self::$TYPE_NUMBER => 'number',
 				self::$TYPE_SELECT => 'select',
 				self::$TYPE_RADIO => 'radio',
 				self::$TYPE_TEXTAREA => 'textarea',
 				self::$TYPE_CHECK => 'check',
-			);
+			];
 		}
 
 		// Give grep a chance to find the usages:
@@ -183,10 +184,17 @@ class SurveyQuestion extends SurveyDBClass {
 	 *
 	 * @since 0.1
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isRestrictiveType() {
-		return in_array( $this->getField( 'type' ), array( self::$TYPE_SELECT, self::$TYPE_RADIO, self::$TYPE_CHECK ) );
+		return in_array(
+			$this->getField( 'type' ),
+			[
+				self::$TYPE_SELECT,
+				self::$TYPE_RADIO,
+				self::$TYPE_CHECK
+			]
+		);
 	}
 
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to edit surveys.
  *
@@ -9,11 +8,14 @@
  * @ingroup Survey
  * @ingroup API
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiEditSurvey extends ApiBase {
-
+	/**
+	 * @param ApiMain $main
+	 * @param string $action
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
@@ -22,7 +24,7 @@ class ApiEditSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
@@ -56,6 +58,9 @@ class ApiEditSurvey extends ApiBase {
 		return 'csrf';
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getTokenSalt() {
 		return 'editsurvey';
 	}
@@ -64,27 +69,29 @@ class ApiEditSurvey extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		$params = array(
-			'id' => array(
+		$params = [
+			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'questions' => array(
+			],
+			'questions' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_REQUIRED => true,
-			),
+			],
 			'token' => null,
-		);
+		];
 
 		return array_merge( Survey::getAPIParams(), $params );
 	}
 
+	/** @inheritDoc */
 	protected function getExamples() {
-		return array(
+		return [
 			'api.php?action=editsurvey&',
-		);
+		];
 	}
 
 }

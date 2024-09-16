@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to get a list of survey answers.
  *
@@ -9,11 +8,14 @@
  * @ingroup Surveys
  * @ingroup API
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiQuerySurveyAnswers extends ApiQueryBase {
-
+	/**
+	 * @param ApiMain $main
+	 * @param string $action
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action, 'qa' );
 	}
@@ -25,7 +27,7 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		// Get the requests parameters.
@@ -38,18 +40,20 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 			$params['props'] = array_merge( $params['props'], SurveyAnswer::getFieldNames() );
 		}
 
-		$params = array_filter( $params, function( $param ) { return !is_null( $param ); } );
+		$params = array_filter( $params, static function ( $param ) {
+			return $param !== null;
+		} );
 
 		$answers = SurveyAnswer::select(
 			$params['props'],
 			SurveyAnswer::getValidFields( $params ),
-			array(
+			[
 				'LIMIT' => $params['limit'] + 1,
 				'ORDER BY' => SurveyAnswer::getPrefixedField( 'id' ) . ' ASC'
-			)
+			]
 		);
 
-		$serializedAnswers = array();
+		$serializedAnswers = [];
 		$count = 0;
 
 		/**
@@ -75,40 +79,34 @@ class ApiQuerySurveyAnswers extends ApiQueryBase {
 		);
 	}
 
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getAllowedParams()
-	 */
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		$params = array (
-			'props' => array(
-				ApiBase::PARAM_TYPE => array_merge( SurveyAnswer::getFieldNames(), array( '*' ) ),
+		$params = [
+			'props' => [
+				ApiBase::PARAM_TYPE => array_merge( SurveyAnswer::getFieldNames(), [ '*' ] ),
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => '*'
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 20,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			),
+			],
 			'continue' => null,
-		);
+		];
 
 		return array_merge( SurveyAnswer::getAPIParams( false ), $params );
 	}
 
-	/**
-	 * (non-PHPdoc)
-	 * @see includes/api/ApiBase#getExamples()
-	 */
+	/** @inheritDoc */
 	protected function getExamples() {
-		return array (
+		return [
 			'api.php?action=query&list=surveyanswers&qaid=42',
 			'api.php?action=query&list=surveyanswers&qaid=42&qaprops=text|submission_id',
 			'api.php?action=query&list=surveyanswers&qaquestion_id=9001&qaprops=text',
-		);
+		];
 	}
 
 }

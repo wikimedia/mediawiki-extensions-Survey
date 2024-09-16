@@ -1,13 +1,23 @@
 /**
  * JavaScript for the Survey MediaWiki extension.
  *
+ * @param survey
  * @see https://secure.wikimedia.org/wikipedia/mediawiki/wiki/Extension:Survey
  *
  * @license GNU GPL v3 or later
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */
 
+$.browser = {};
 ( function ( survey ) {
+
+	$.browser.msie = false;
+	$.browser.version = 0;
+	if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+		$.browser.msie = true;
+		$.browser.version = RegExp.$1;
+	}
+
 	$.fn.mwSurvey = function ( setOptions ) {
 
 		var _this = this;
@@ -180,7 +190,7 @@
 				} );
 			}
 
-			return $.toJSON( answers );
+			return JSON.stringify( answers );
 		};
 
 		this.submitSurvey = function ( surveyId, callback ) {
@@ -193,14 +203,13 @@
 
 			requestArgs[ this.identifierType ] = this.identifier;
 
-			$.post(
-				mw.config.get( 'wgScriptPath' ) + '/api.php',
-				requestArgs,
-				function () {
+			( new mw.Api() ).postWithToken( 'csrf', requestArgs )
+				.done ( function () {
 					callback();
 				// TODO
 				}
 			);
+
 		};
 
 		this.doCompletion = function () {
@@ -316,6 +325,7 @@
 					}
 				);
 			}
+
 		};
 
 		this.init();

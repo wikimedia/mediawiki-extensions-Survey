@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to delete surveys.
  *
@@ -9,11 +8,14 @@
  * @ingroup Survey
  * @ingroup API
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiDeleteSurvey extends ApiBase {
-
+	/**
+	 * @param ApiMain $main
+	 * @param string $action
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
@@ -22,7 +24,7 @@ class ApiDeleteSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
@@ -30,7 +32,7 @@ class ApiDeleteSurvey extends ApiBase {
 		$everythingOk = true;
 
 		foreach ( $params['ids'] as $id ) {
-			$surey = new Survey( array( 'id' => $id ) );
+			$surey = new Survey( [ 'id' => $id ] );
 			$everythingOk = $surey->removeFromDB() && $everythingOk;
 		}
 
@@ -45,11 +47,18 @@ class ApiDeleteSurvey extends ApiBase {
 		return 'csrf';
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getTokenSalt() {
 		$params = $this->extractRequestParams();
 		return $this->getWebUITokenSalt( $params );
 	}
 
+	/**
+	 * @param array $params
+	 * @return string
+	 */
 	protected function getWebUITokenSalt( array $params ) {
 		return 'deletesurvey' . implode( '|', $params['ids'] );
 	}
@@ -58,22 +67,24 @@ class ApiDeleteSurvey extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		return array(
-			'ids' => array(
+		return [
+			'ids' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_ISMULTI => true,
-			),
+			],
 			'token' => null,
-		);
+		];
 	}
 
+	/** @inheritDoc */
 	protected function getExamples() {
-		return array(
+		return [
 			'api.php?action=deletesurvey&ids=42',
 			'api.php?action=deletesurvey&ids=4|2',
-		);
+		];
 	}
 
 }

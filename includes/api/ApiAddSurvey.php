@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to add surveys.
  *
@@ -9,10 +8,14 @@
  * @ingroup Survey
  * @ingroup API
  *
- * @licence GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 class ApiAddSurvey extends ApiBase {
+	/**
+	 * @param ApiMain $main
+	 * @param string $action
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
@@ -21,7 +24,7 @@ class ApiAddSurvey extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isAllowed( 'surveyadmin' ) || $user->getBlock() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieWithError( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
@@ -33,10 +36,9 @@ class ApiAddSurvey extends ApiBase {
 		try {
 			$survey = new Survey( Survey::getValidFields( $params ) );
 			$success = $survey->writeToDB();
-		}
-		catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError $ex ) {
 			if ( $ex->errno == 1062 ) {
-				$this->dieUsage( $this->msg(
+				$this->dieWithError( $this->msg(
 						'survey-err-duplicate-name',
 						$params['name']
 					)->text(),
@@ -70,6 +72,9 @@ class ApiAddSurvey extends ApiBase {
 		return 'csrf';
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getTokenSalt() {
 		return 'addsurvey';
 	}
@@ -78,23 +83,25 @@ class ApiAddSurvey extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		$params = array(
-			'questions' => array(
+		$params = [
+			'questions' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => '',
-			),
+			],
 			'token' => null,
-		);
+		];
 
 		return array_merge( Survey::getAPIParams(), $params );
 	}
 
+	/** @inheritDoc */
 	protected function getExamples() {
-		return array(
+		return [
 			'api.php?action=addsurvey&name=My awesome survey&enabled=1&questions=',
-		);
+		];
 	}
 
 }
