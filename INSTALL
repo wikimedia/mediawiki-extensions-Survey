@@ -1,36 +1,36 @@
 This is the install file for the Survey extension.
 
 Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Survey
-Latest version of the install file: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Survey.git;a=blob;f=INSTALL
-
 
 == Requirements ==
 
-Survey requires:
+This version of Survey requires MediaWiki 1.39 or above.
 
-* MediaWiki 1.18 or above (Use Survey 0.1.2 if you are running MediaWiki 1.17.x and cannot upgrade to 1.18 or later.)
-* PHP 5.3 or above
-
-== Download ==
-
-You can find the current version of Survey on the [https://code.google.com/p/mwsuvey/downloads/list Google Code download page],
-as well as a [https://code.google.com/p/mwsuvey/downloads/list?can=1 list of legacy downloads].
-
-You can also get the code directly from SVN. Tags can be obtained via
-
- svn checkout http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/REL_version
-
-Where 'version' is the version number of the tag, such as 0_1 (see the [http://svn.wikimedia.org/svnroot/mediawiki/tags/extensions/Survey/ available tags]).
-The latest code can be obtained from trunk:
-
- svn checkout http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/Survey/
+Older versions of Survey require support older versions of Mediawiki, Survey 0.1.2 supports Mediawiki 1.17 and Survey 0.2 supports 1.18 and later.
 
 == Installation ==
 
-Once you have downloaded the code, place the ''Survey'' directory within your MediaWiki
-'extensions' directory. Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
+Download this extension from [https://www.mediawiki.org/wiki/Extension:Survey the extension page], or by cloning from [https://github.com/wikimedia/mediawiki-extensions-Survey Github] or [https://gerrit.wikimedia.org/g/mediawiki/extensions/Survey Mediawiki Gerrit].
+Place the ''Survey'' directory within your MediaWiki 'extensions' directory.  For example,
 
-# Survey
+cd mediawiki/extensions
+git clone https://github.com/wikimedia/mediawiki-extensions-Survey.git Survey
+
+Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
+
+wfLoadExtension( 'Survey' );
+
+If you cloned a git repository, you may wish to check out an appropriate branch.  LTS branches and master are currently supported.
+
+cd extensions/Survey
+git checkout REL1_39
+
+Survey for the oldest versions of Mediawiki may be found via git tags:
+
+git checkout 0.2
+
+Instead of wfLoadExtension, older tagged versions will require this in the LocalSettings.php file:
+
 require_once( "$IP/extensions/Survey/Survey.php" );
 
 == Configuration ==
