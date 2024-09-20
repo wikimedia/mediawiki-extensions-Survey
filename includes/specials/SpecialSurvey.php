@@ -222,7 +222,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		];
 
 		$fields[] = [
-			'class' => 'SurveyNameField',
+			'class' => SurveyNameField::class,
 			'default' => $survey->getField( 'name' ),
 			'label-message' => 'survey-special-label-name',
 			'style' => 'font-weight: bold;'
@@ -306,7 +306,7 @@ class SpecialSurvey extends SpecialSurveyPage {
 		 */
 		foreach ( $survey->getQuestions() as $question ) {
 			$fields[] = [
-				'class' => 'SurveyQuestionField',
+				'class' => SurveyQuestionField::class,
 				'options' => $question->toArray()
 			];
 		}
