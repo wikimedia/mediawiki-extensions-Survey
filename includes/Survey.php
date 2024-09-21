@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Simple Survey object class.
  *
@@ -198,7 +201,7 @@ class Survey extends SurveyDBClass {
 	public function writeQuestionsToDB() {
 		$success = true;
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 
@@ -275,7 +278,7 @@ class Survey extends SurveyDBClass {
 	 * @return bool Success indicator
 	 */
 	public function removeFromDB() {
-		$dbr = wfgetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$submissionsForSurvey = $dbr->select(
 			'survey_submissions',
@@ -283,7 +286,7 @@ class Survey extends SurveyDBClass {
 			[ 'submission_survey_id' => $this->getId() ]
 		);
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 

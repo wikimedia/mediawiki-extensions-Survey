@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * API module to get a list of surveys.
  *
@@ -64,7 +67,8 @@ class ApiQuerySurveys extends ApiQueryBase {
 		}
 
 		if ( isset( $params['continue'] ) ) {
-			$this->addWhere( 'survey_id >= ' . wfGetDB( DB_REPLICA )->addQuotes( $params['continue'] ) );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+			$this->addWhere( 'survey_id >= ' . $dbr->addQuotes( $params['continue'] ) );
 		}
 
 		$this->addOption( 'LIMIT', $params['limit'] + 1 );

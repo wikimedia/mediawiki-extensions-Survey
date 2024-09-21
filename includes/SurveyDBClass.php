@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Abstract base class for representing objects that are stored in some DB table.
  *
@@ -246,7 +249,7 @@ abstract class SurveyDBClass {
 	 * @return ResultWrapper
 	 */
 	public static function rawSelect( $fields = null, array $conditions = [], array $options = [] ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		return $dbr->select(
 			static::getDBTable(),
@@ -263,7 +266,7 @@ abstract class SurveyDBClass {
 	 * @return bool
 	 */
 	public static function update( array $values, array $conditions = [] ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		return $dbw->update(
 			static::getDBTable(),
@@ -296,7 +299,7 @@ abstract class SurveyDBClass {
 	 * @return bool Success indicator
 	 */
 	protected function updateInDB() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		return $dbw->update(
 			$this->getDBTable(),
@@ -313,7 +316,7 @@ abstract class SurveyDBClass {
 	 * @return bool Success indicator
 	 */
 	protected function insertIntoDB() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$result = $dbw->insert(
 			static::getDBTable(),
@@ -333,7 +336,7 @@ abstract class SurveyDBClass {
 	 * @return bool Success indicator
 	 */
 	public function removeFromDB() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$sucecss = $dbw->delete(
 			static::getDBTable(),
