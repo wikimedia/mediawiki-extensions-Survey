@@ -20,7 +20,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 	 * @return string
 	 */
 	public function getDescription() {
-		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
+		return $this->msg( 'special-' . strtolower( $this->getName() ) );
 	}
 
 	/**
@@ -32,7 +32,7 @@ abstract class SpecialSurveyPage extends SpecialPage {
 		$out = $this->getOutput();
 		$out->setArticleRelated( false );
 		$out->setRobotPolicy( 'noindex,nofollow' );
-		$out->setPageTitle( $this->getDescription() );
+		$out->setPageTitle( $this->getDescription()->text() );
 	}
 
 	/**
