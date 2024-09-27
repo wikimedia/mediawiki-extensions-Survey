@@ -22,5 +22,7 @@
 		"no-underscore-dangle": "warn",
 		"no-use-before-define": "warn"
 	},
-	"ignorePatterns": ["resources/*"]
+	"ignorePatterns": [
+		"resources/*"
+	]
 }
