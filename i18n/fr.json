@@ -1,16 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
 			"Envlh",
 			"Gomoko",
 			"Obscaeris",
 			"Thibaut120094",
 			"Tpt",
 			"Verdy p",
-			"Wladek92",
-			"Amire80",
-			"Obscaeris"
+			"Wladek92"
 		]
 	},
 	"survey-desc": "Outil de sondage pour MediaWiki",
