@@ -8,5 +8,7 @@
 	"survey-question-type-number": "Nummeer",
 	"surveys-special-stats": "Statistiikeh",
 	"surveys-special-save": "Vuorkkii",
-	"surveys-special-delete": "Siho"
+	"surveys-special-delete": "Siho",
+	"surveys-special-disabled": "Meddâlistum kiävtust",
+	"surveys-surveystats-disabled": "Meddâlistum kiävtust"
 }
