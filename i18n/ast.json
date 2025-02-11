@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"survey-desc": "Ferramienta d'encuestes pa MediaWiki",
@@ -128,7 +129,7 @@
 	"apihelp-editsurvey-param-ratio": "Porcentaxe d'usuarios a los qu'amosar la encuesta.",
 	"apihelp-editsurvey-param-expiry": "Tiempu de caducidá de la cookie pa la encuesta.",
 	"apihelp-editsurvey-param-min_pages": "Cantidá mínima de páxines que l'usuariu tien de visitar antes de recibir la encuesta.",
-	"apihelp-submitsurvey-summary": "Módulu de la API pa unviar una encuesta.",
+	"apihelp-submitsurvey-summary": "Módulu de l'API pa unviar una encuesta.",
 	"apihelp-submitsurvey-param-id": "L'identificador de la encuesta que s'unvia.",
 	"apihelp-submitsurvey-param-name": "El nome de la encuesta que s'unvia.",
 	"apihelp-submitsurvey-param-token": "Editar pase. Puedes recibir unu d'estos con prop=info.",
@@ -148,7 +149,7 @@
 	"apihelp-query+surveyanswers-param-text": "El testu de la respuesta.",
 	"apihelp-query+surveyanswers-param-submission_id": "L'identificador del unviu del que forma parte esta respuesta.",
 	"apihelp-query+surveyanswers-param-question_id": "L'identificador de la entruga a la que correspuende esta respuesta.",
-	"apihelp-query+surveysubmissions-summary": "Módulu de la API pa llograr unvios d'encuestes.",
+	"apihelp-query+surveysubmissions-summary": "Módulu de l'API pa llograr unvios d'encuestes.",
 	"apihelp-query+surveysubmissions-param-props": "Datos de la encuesta a consultar.",
 	"apihelp-query+surveysubmissions-param-continue": "Posición a partir de la que siguir cola consulta.",
 	"apihelp-query+surveysubmissions-param-limit": "Cantidá máxima de palabres a devolver.",
