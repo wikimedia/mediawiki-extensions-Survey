@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
+	"right-surveysubmit": "Сорулуулагъа къошул",
 	"survey-user-type-anon": "Анонимлеге",
 	"survey-special-label-usertype": "Соруулаугъа къатышыргъа кимг теджелсин"
 }
