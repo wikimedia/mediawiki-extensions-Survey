@@ -6,6 +6,7 @@
 			"Obscaeris",
 			"Thibaut120094",
 			"Tpt",
+			"Urhixidur",
 			"Verdy p",
 			"Wladek92"
 		]
@@ -136,7 +137,7 @@
 	"apihelp-editsurvey-param-user_type": "Type d’utilisateurs qui peuvent participer au sondage.",
 	"apihelp-editsurvey-param-namespaces": "Espaces de noms sur lesquels le sondage peut être affiché.",
 	"apihelp-editsurvey-param-ratio": "Pourcentage d’utilisateurs à qui afficher le sondage.",
-	"apihelp-editsurvey-param-expiry": "Date d’expiration du cookie pour le sondage.",
+	"apihelp-editsurvey-param-expiry": "Date d’expiration du témoin (''cookie'') pour le sondage.",
 	"apihelp-editsurvey-param-min_pages": "Nombre minimal de pages que l’utilisateur doit avoir vues avant d’obtenir le sondage.",
 	"apihelp-submitsurvey-summary": "Module d'API pour démarrer un sondage.",
 	"apihelp-submitsurvey-param-id": "L'ID du sondage à soumettre.",
