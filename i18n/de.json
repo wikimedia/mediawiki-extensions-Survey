@@ -42,7 +42,7 @@
 	"survey-navigation-list": "[[Special:Surveys|Umfragenliste]]",
 	"survey-navigation-stats": "[[Special:SurveyStats/$1|Umfragestatistiken ansehen]]",
 	"surveys-special-addnew": "Eine neue Umfrage hinzufügen",
-	"surveys-special-namedoc": "Gib eine eindeutige Kennung für die neue Umfrage an, z. B. Bearbeitermotivation. Sie kann später nicht mehr verändert werden.",
+	"surveys-special-namedoc": "{{#FORMAL:Gib|Geben Sie}} eine eindeutige Kennung für die neue Umfrage an, z. B. Bearbeitermotivation. Sie kann später nicht mehr verändert werden.",
 	"surveys-special-newname": "Die neue Umfragekennung:",
 	"surveys-special-add": "Umfrage hinzufügen",
 	"surveys-special-existing": "Vorhanden Umfragen",
