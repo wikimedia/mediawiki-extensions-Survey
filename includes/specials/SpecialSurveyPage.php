@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Html\Html;
+
 /**
  * Base special page for special pages in the Survey extension,
  * taking care of some common stuff and providing compatibility helpers.
