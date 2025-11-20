@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sveinn í Felli"
+		]
+	},
+	"apihelp-addsurvey-param-enabled": "Virkja könnunina eða ekki.",
+	"apihelp-editsurvey-param-enabled": "Virkja könnunina eða ekki."
+}
