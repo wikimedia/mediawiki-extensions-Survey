@@ -182,7 +182,15 @@ $specialPageAliases['uk'] = [
 	'EditSurvey' => [ 'Опитування' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'EditSurvey' => [ 'EditSurvey' ],
+	'Surveys' => [ 'Surveys' ],
+	'SurveyStats' => [ 'SurveyStats' ],
+	'TakeSurvey' => [ 'TakeSurvey' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'EditSurvey' => [ '编辑问卷' ],
 	'Surveys' => [ '问卷' ],
@@ -190,7 +198,7 @@ $specialPageAliases['zh-hans'] = [
 	'TakeSurvey' => [ '做问卷' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'EditSurvey' => [ '編輯問卷' ],
 	'Surveys' => [ '問卷' ],
