@@ -107,7 +107,7 @@ class SpecialSurveys extends SpecialSurveyPage {
 
 		$out->addHTML( Html::element( 'h2', [], $this->msg( 'surveys-special-existing' )->text() ) );
 
-		$out->addHTML( Xml::openElement(
+		$out->addHTML( Html::openElement(
 			'table',
 			[ 'class' => 'wikitable sortable' ]
 		) );
