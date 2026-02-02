@@ -21,7 +21,11 @@ class SpecialSurveyStats extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	public function __construct() {
-		parent::__construct( 'SurveyStats', 'surveyadmin', false );
+		parent::__construct( 'SurveyStats', 'surveyadmin' );
+	}
+
+	public function isListed(): bool {
+		return false;
 	}
 
 	/**
