@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"survey-question-type-check": "ਡੱਬੇ ਉੱਤੇ ਨਿਸ਼ਾਨ",
+	"survey-user-type-loggedin": "ਦਾਖ਼ਲ ਹੋਏ ਵਰਤੋਂਕਾਰ",
+	"survey-user-type-confirmed": "ਤਸਦੀਕ ਕੀਤੇ ਵਰਤੋਂਕਾਰ",
+	"survey-user-type-editor": "ਸੋਧਕ",
+	"survey-user-type-anon": "ਅਣਪਛਾਤੇ ਵਰਤੋਂਕਾਰ",
+	"surveys-special-title": "ਸਿਰਲੇਖ",
+	"surveys-special-stats": "ਅੰਕੜੇ",
+	"surveys-special-edit": "ਸੋਧੋ",
+	"surveys-special-save": "ਸਾਂਭੋ",
+	"surveys-special-delete": "ਮਿਟਾਓ",
+	"surveys-special-enabled": "ਚਾਲੂ ਕੀਤਾ",
+	"surveys-surveystats-enabled": "ਚਾਲੂ ਕੀਤਾ",
+	"surveys-surveystats-questions": "ਸਵਾਲ ਅੰਕੜੇ",
+	"surveys-surveystats-question-type": "ਸਵਾਲ ਦੀ ਕਿਸਮ",
+	"surveys-surveystats-question-text": "ਸਵਾਲ ਲਿਖਤ",
+	"surveys-surveystats-question-answercount": "ਜਵਾਬਾਂ ਦੀ ਗਿਣਤੀ",
+	"surveys-surveystats-question-answers": "ਸਭ ਤੋਂ ਵੱਧ ਦਿੱਤੇ ਗਏ ਜਵਾਬ",
+	"surveys-surveystats-question-answer": "$1 ( $2 {{PLURAL:$2| ਜਵਾਬ|ਜਵਾਬ}})",
+	"survey-special-label-add-first": "ਸਵਾਲ ਜੋੜੋ",
+	"survey-special-label-add-another": "ਇੱਕ ਹੋਰ ਸਵਾਲ ਜੋੜੋ",
+	"survey-special-label-addquestion": "ਨਵਾਂ ਸਵਾਲ",
+	"survey-question-label-nr": "ਸਵਾਲ #$1",
+	"survey-special-label-required": "ਸਵਾਲ ਲੋੜੀਂਦਾ ਏ",
+	"survey-special-label-type": "ਸਵਾਲ ਦੀ ਕਿਸਮ",
+	"survey-special-label-text": "ਸਵਾਲ ਲਿਖਤ",
+	"survey-special-remove": "ਸਵਾਲ ਹਟਾਓ",
+	"survey-special-remove-confirm": "ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ 'ਤੇ ਇਸ ਸਵਾਲ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
+	"survey-jquery-submit": "ਹਵਾਲੇ ਕਰੋ"
+}
