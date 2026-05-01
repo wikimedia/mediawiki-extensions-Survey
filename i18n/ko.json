@@ -4,7 +4,8 @@
 			"Hwangjy9",
 			"Priviet",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Tensama0415"
 		]
 	},
 	"survey-desc": "미디어위키에 대한 설문 조사 도구",
@@ -114,6 +115,7 @@
 	"apihelp-addsurvey-param-thanks": "설문 조사 제출 후 표시할 텍스트입니다.",
 	"apihelp-addsurvey-param-user_type": "설문 조사에 참여할 수 있는 사용자 유형입니다.",
 	"apihelp-addsurvey-param-namespaces": "설문 조사를 표시할 수 있는 이름공간입니다.",
+	"apihelp-addsurvey-param-ratio": "설문 조사를 보여줄 사람의 백분율입니다.",
 	"apihelp-addsurvey-param-expiry": "설문 조사의 쿠키 초과 시간입니다.",
 	"apihelp-addsurvey-param-min_pages": "사용자가 설문 조사를 하기 전에 보아야 하는 문서의 최소 수",
 	"apihelp-deletesurvey-summary": "설문 조사를 삭제하기 위한 API 모듈입니다.",
@@ -131,6 +133,7 @@
 	"apihelp-editsurvey-param-thanks": "설문 조사 제출 후 표시할 텍스트입니다.",
 	"apihelp-editsurvey-param-user_type": "설문 조사에 참여할 수 있는 사용자의 유형입니다.",
 	"apihelp-editsurvey-param-namespaces": "설문 조사를 표시할 수 있는 이름공간입니다.",
+	"apihelp-editsurvey-param-ratio": "설문 조사를 보여줄 사람의 백분율입니다.",
 	"apihelp-editsurvey-param-expiry": "설문 조사의 쿠키 초과 시간입니다.",
 	"apihelp-editsurvey-param-min_pages": "사용자가 설문 조사를 하기 전에 보아야 하는 문서의 최소 수",
 	"apihelp-submitsurvey-summary": "설문 조사를 제출하기 위한 API 모듈입니다.",
@@ -142,15 +145,23 @@
 	"apihelp-query+surveys-param-ids": "반환할 설문 조사의 ID입니다.",
 	"apihelp-query+surveys-param-names": "반환할 설문 조사의 이름입니다.",
 	"apihelp-query+surveys-param-incquestions": "설문 조사의 질문을 포함하거나 포함하지 않습니다.",
+	"apihelp-query+surveys-param-enabled": "필터링에 사용할 상태입니다.",
 	"apihelp-query+surveys-param-props": "조회할 설문 조사 데이터입니다.",
+	"apihelp-query+surveys-param-continue": "조회를 계속할 시작 위치의 오프셋 번호입니다.",
 	"apihelp-query+surveys-param-limit": "반환할 최대 단어 수입니다.",
 	"apihelp-query+surveyanswers-summary": "설문 조사 답변을 가져오기 위한 API 모듈입니다.",
 	"apihelp-query+surveyanswers-param-props": "조회할 설문 조사 데이터입니다.",
+	"apihelp-query+surveyanswers-param-continue": "조회를 계속할 시작 위치의 오프셋 번호입니다.",
 	"apihelp-query+surveyanswers-param-limit": "반환할 최대 단어 수입니다.",
 	"apihelp-query+surveyanswers-param-text": "답변 텍스트입니다.",
+	"apihelp-query+surveyanswers-param-submission_id": "이 답변이 속한 제출의 ID입니다.",
 	"apihelp-query+surveyanswers-param-question_id": "이 답변과 일치하는 질문의 ID입니다.",
 	"apihelp-query+surveysubmissions-summary": "설문 조사 제출을 가져오기 위한 API 모듈입니다.",
 	"apihelp-query+surveysubmissions-param-props": "조회할 설문 조사 데이터입니다.",
+	"apihelp-query+surveysubmissions-param-continue": "조회를 계속할 시작 위치의 오프셋 번호입니다.",
 	"apihelp-query+surveysubmissions-param-limit": "반환할 최대 단어 수입니다.",
-	"apihelp-query+surveysubmissions-param-user_name": "제출한 사용자의 이름(사용자 이름 또는 IP)입니다."
+	"apihelp-query+surveysubmissions-param-survey_id": "이 제출이 속한 설문조사의 ID입니다.",
+	"apihelp-query+surveysubmissions-param-page_id": "이것이 제출된 문서의 ID입니다.",
+	"apihelp-query+surveysubmissions-param-user_name": "제출한 사용자의 이름(사용자 이름 또는 IP)입니다.",
+	"apihelp-query+surveysubmissions-param-time": "제출 시점을 나타내는 타임스탬프입니다."
 }
