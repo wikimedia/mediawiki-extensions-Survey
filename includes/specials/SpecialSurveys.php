@@ -20,7 +20,12 @@ class SpecialSurveys extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	public function __construct() {
-		parent::__construct( 'Surveys', 'surveyadmin' );
+		parent::__construct( 'Surveys' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'surveyadmin';
 	}
 
 	/**

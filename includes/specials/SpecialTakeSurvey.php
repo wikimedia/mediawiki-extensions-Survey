@@ -17,7 +17,12 @@ class SpecialTakeSurvey extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	public function __construct() {
-		parent::__construct( 'TakeSurvey', 'surveysubmit' );
+		parent::__construct( 'TakeSurvey' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'surveysubmit';
 	}
 
 	/**

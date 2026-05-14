@@ -18,7 +18,12 @@ class SpecialSurvey extends SpecialSurveyPage {
 	 * @since 0.1
 	 */
 	public function __construct() {
-		parent::__construct( 'EditSurvey', 'surveyadmin' );
+		parent::__construct( 'EditSurvey' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'surveyadmin';
 	}
 
 	public function isListed(): bool {
