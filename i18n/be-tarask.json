@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"EugeneZelenko",
+			"Ucukor",
 			"Wizardist"
 		]
 	},
@@ -43,7 +44,7 @@
 	"surveys-special-namedoc": "Пазначце ўнікальны ідэнтыфікатар для новага апытаньня. Ён ня зможа быць зьменены ў будучыні. Напрыклад: editor-motivation.",
 	"surveys-special-newname": "Ідэнтыфікатар апытаньня:",
 	"surveys-special-add": "Стварыць апытаньне",
-	"surveys-special-existing": "Існуючыя апытаньні",
+	"surveys-special-existing": "Існыя апытаньні",
 	"surveys-special-title": "Назва",
 	"surveys-special-status": "Статус",
 	"surveys-special-stats": "Статыстыка",
