@@ -114,7 +114,7 @@
 	"apihelp-addsurvey-param-thanks": "Tekst om weer te geven na het indienen van de beantwoorde vragenlijst.",
 	"apihelp-addsurvey-param-user_type": "Type gebruikers dat de vragenlijst kan beantwoorden.",
 	"apihelp-addsurvey-param-namespaces": "Naamruimten waarin de vragenlijst kan worden weergegeven.",
-	"apihelp-addsurvey-param-ratio": "Percentage gebruikers aan wie de vragenlijst moet worden getoond.",
+	"apihelp-addsurvey-param-ratio": "Percentage gebruikers aan wie de vragenlijst moet worden weergegeven.",
 	"apihelp-addsurvey-param-expiry": "Cookie-vervaltijd voor de vragenlijst.",
 	"apihelp-addsurvey-param-min_pages": "Minimum aantal pagina’s dat de gebruiker moet bezoeken voordat die de vragenlijst te zien krijgt.",
 	"apihelp-deletesurvey-summary": "API-module voor het verwijderen van vragenlijsten.",
