@@ -39,7 +39,7 @@
 	"survey-user-type-all": "Iedereen",
 	"survey-user-type-loggedin": "Aangemelde gebruikers",
 	"survey-user-type-confirmed": "Bevestigde gebruikers",
-	"survey-user-type-editor": "Redacteuren",
+	"survey-user-type-editor": "Bewerkers",
 	"survey-user-type-anon": "Anonieme gebruikers",
 	"survey-navigation-edit": "[[Special:Survey/$1|Deze vragenlijst bewerken]]",
 	"survey-navigation-take": "[[Special:TakeSurvey/$1|Deelnemen aan deze vragenlijst]]",
