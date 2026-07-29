@@ -5,7 +5,8 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Luckas",
-			"Luckas Blade"
+			"Luckas Blade",
+			"NenhumaFênix"
 		]
 	},
 	"survey-desc": "Ferramenta de pesquisa para MediaWiki",
@@ -14,7 +15,7 @@
 	"action-surveyadmin": "gerenciar pesquisas",
 	"action-surveysubmit": "participar de pesquisas",
 	"group-surveyadmin": "Administradores de pesquisa",
-	"group-surveyadmin-member": "{{GENDER:$1|administrador|administradora}} de inquéritos",
+	"group-surveyadmin-member": "{{GENDER:$1|administrador|administradora|administrador(a)}} de inquéritos",
 	"grouppage-surveyadmin": "{{ns:project}}:Administradores de inquéritos",
 	"group-surveysubmit": "Participantes em inquéritos",
 	"group-surveysubmit-member": "{{GENDER:$1|participante}} em inquéritos",
