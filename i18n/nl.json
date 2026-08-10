@@ -132,7 +132,7 @@
 	"apihelp-editsurvey-param-thanks": "Tekst om weer te geven na het indienen van de beantwoorde vragenlijst.",
 	"apihelp-editsurvey-param-user_type": "Type gebruikers dat de vragenlijst kan beantwoorden.",
 	"apihelp-editsurvey-param-namespaces": "Naamruimten waarin de vragenlijst kan worden weergegeven.",
-	"apihelp-editsurvey-param-ratio": "Percentage gebruikers aan wie de vragenlijst moet worden getoond.",
+	"apihelp-editsurvey-param-ratio": "Percentage gebruikers aan wie de vragenlijst moet worden weergegeven.",
 	"apihelp-editsurvey-param-expiry": "Cookie-vervaltijd voor de vragenlijst.",
 	"apihelp-editsurvey-param-min_pages": "Minimum aantal pagina’s dat de gebruiker moet bezoeken voordat die de vragenlijst te zien krijgt.",
 	"apihelp-submitsurvey-summary": "API-module voor het indienen van een vragenlijst.",
